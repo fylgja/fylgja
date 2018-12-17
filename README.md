@@ -4,5 +4,5 @@ Fylgja is still in development and this repository is just here until the first 
 
 ## Extensions:
 
-* (fontface)[https://github.com/getfylgja/fylgja-fontface]
-* (stylelint-config)[https://github.com/getfylgja/stylelint-config]
+* [fontface](https://github.com/getfylgja/fylgja-fontface)
+* [stylelint-config](https://github.com/getfylgja/stylelint-config)
