@@ -1,0 +1,22 @@
+{
+  "name": "fylgja",
+  "version": "1.0.0",
+  "description": "Fylgja framework, includes all fylgja core components",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "fylgja.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja components",
+    "css framework",
+    "scss"
+  ],
+  "dependencies": {}
+}

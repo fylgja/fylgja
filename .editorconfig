@@ -1,0 +1,25 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{md,mdx}]
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[*.{less,sass,scss,js,ts,jsx,tsx,mjs,vue}]
+indent_size = 4
+max_line_length = 80
+
+[*.{xml,phtml,php}]
+indent_size = 4
+max_line_length = 120
