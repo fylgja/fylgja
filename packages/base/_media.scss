@@ -1,0 +1,19 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+// Removes the extra inline space
+img,
+svg {
+    vertical-align: middle;
+}
+
+// Default responsive behavior
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Unset the browser default border
+iframe {
+    border: 0;
+}

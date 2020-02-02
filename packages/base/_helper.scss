@@ -1,0 +1,97 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$root-font-size: null !default;
+$root-bg: #fff !default;
+$root-fg: #000 !default;
+
+$color-text: change-color($root-fg, $alpha: 0.87) !default;
+$color-text-alt: change-color($root-fg, $alpha: 0.68) !default;
+$color-text-muted: change-color($root-fg, $alpha: 0.56) !default;
+
+// Color pallet
+$color-theme: #1565c0 !default;
+$color-on-theme: #fff !default;
+
+$color-alert: #d50000 !default;
+$color-warning: #ffab40 !default;
+$color-success: #00e676 !default;
+
+// Typography
+$family-main: (system-ui, -apple-system, Helvetica, Arial, sans-serif) !default;
+$family-header: $family-main !default;
+$family-code: (Consolas, Liberation Mono, Menlo, monospace) !default;
+$font-size: 1rem !default;
+$font-weight: normal !default;
+$line-height: 1.5 !default;
+$letter-spacing: normal !default;
+$caption-size: 0.9em !default;
+
+$item-spacer: 1em 0 !default;
+
+$quotes: "“" "”" "‘" "’" !default;
+
+$link-color: var(--color-theme, #{$color-theme}) !default;
+$link-color-state: var(--color-theme, #{$color-theme}) !default;
+$link-style: underline !default;
+$link-style-state: none !default;
+
+$hr-size: 1px !default;
+$hr-style: inset !default;
+$hr-color: currentColor !default;
+$hr-gap: 1.25em 0 !default;
+
+$mark-padding: 0 0.15em !default;
+$mark-bg: change-color($color-theme, $alpha: 0.3) !default;
+$mark-color: inherit !default;
+
+$selection-bg: $mark-bg !default;
+$selection-color: $mark-color !default;
+
+// Headings
+@mixin build-h($name, $values, $font-size: false) {
+    @if ($name == h1) or ($name == h2) or ($name == h3) {
+        @if not map-has-key($values, font-family) {
+            --h-family: var(--family-header);
+        }
+    }
+    @if (map-has-key($values, font-size) == false) and ($font-size) {
+        --h-size: #{$font-size};
+    }
+    @each $selector, $value in $values {
+        @if $selector == font-family {
+            --h-family: #{$value};
+        } @else if $selector == font-size {
+            --h-size: #{$value};
+        } @else if $selector == line-height {
+            --h-line: #{$value};
+        } @else if $selector == font-weight {
+            --h-weight: #{$value};
+        } @else {
+            #{$selector}: $value;
+        }
+    }
+}
+
+$h1: (
+    line-height: 1.1,
+    font-weight: 300
+) !default;
+$h2: (
+    line-height: 1.1
+) !default;
+$h3: (
+    line-height: 1.1
+) !default;
+$h4: (
+    line-height: 1.2
+) !default;
+$h5: (
+    line-height: 1.3
+) !default;
+$h6: () !default;
+
+// List
+$list-margin: $item-spacer;
+$dl-margin: $item-spacer;
+$dd-margin: 0 0 0.5rem;

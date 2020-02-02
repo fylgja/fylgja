@@ -1,0 +1,46 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@import "helper";
+
+// *1 Option to change the default font-size, by default disabled
+:root {
+    --item-spacer: #{$item-spacer};
+    --color-theme: #{$color-theme};
+    --color-on-theme: #{$color-on-theme};
+    --color-text: #{$color-text};
+    --color-text-alt: #{$color-text-alt};
+    --color-text-muted: #{$color-text-muted};
+    --selection-bg: #{$selection-bg};
+    --selection-color: #{$selection-color};
+    --family-main: #{$family-main};
+    --family-header: #{$family-header};
+    --family-code: #{$family-code};
+    --font-size: #{$font-size};
+    --line-height: #{$line-height};
+    font-size: $root-font-size; // *1
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+// *1 Prevent adjustments of font size after orientation changes on iOS
+body {
+    margin: 0;
+    background-color: var(--color-bg, #{$root-bg});
+    color: var(--color-text);
+    font-family: var(--family-main);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
+    -webkit-text-size-adjust: 100%; // *1
+}
+
+::selection {
+    text-shadow: none;
+    background-color: var(--selection-bg, #{$selection-bg});
+    color: var(--selection-color, #{$selection-color});
+}

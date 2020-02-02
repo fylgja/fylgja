@@ -1,0 +1,119 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@import "helper";
+
+p {
+    margin: var(--item-spacer, #{$item-spacer});
+}
+
+a {
+    color: var(--link-color, #{$link-color});
+    text-decoration: $link-style;
+
+    &:hover,
+    &:focus {
+        color: var(--link-color-state, #{$link-color-state});
+        text-decoration: $link-style-state;
+    }
+}
+
+%h-base {
+    margin: var(--h-margin, 0.6em) 0;
+    font-family: var(--h-family, inherit);
+    font-size: var(--h-size, 1rem);
+    line-height: var(--h-line, inherit);
+    font-weight: var(--h-weight, normal);
+}
+
+h1,
+.h1 {
+    @extend %h-base;
+    @include build-h(h1, $h1, 2.75rem);
+}
+
+h2,
+.h2 {
+    @extend %h-base;
+    @include build-h(h2, $h2, 2.25rem);
+}
+
+h3,
+.h3 {
+    @extend %h-base;
+    @include build-h(h3, $h3, 1.875rem);
+}
+
+h4,
+.h4 {
+    @extend %h-base;
+    @include build-h(h4, $h4, 1.5rem);
+}
+
+h5,
+.h5 {
+    @extend %h-base;
+    @include build-h(h5, $h5, 1.25rem);
+}
+
+h6,
+.h6 {
+    @extend %h-base;
+    @include build-h(h6, $h6);
+}
+
+address {
+    margin: var(--item-spacer);
+    font-style: normal;
+}
+
+// Add the correct font weight in Chrome, Edge, and Safari.
+b,
+strong {
+    font-weight: var(--bold, bolder);
+}
+
+small,
+.text-small {
+    font-size: var(--small, smaller);
+}
+
+blockquote,
+q {
+    quotes: var(--quotes, #{$quotes});
+}
+
+blockquote,
+figure {
+    margin: var(--item-spacer);
+}
+
+cite {
+    display: block;
+    font-size: var(--caption-size, #{$caption-size});
+    font-style: normal;
+}
+
+hr {
+    margin: var(--hr-gap, $hr-gap);
+    border: var(--hr-size, $hr-size) var(--hr-style, $hr-style)
+        var(--hr-color, $hr-color);
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+mark {
+    padding: $mark-padding;
+    background-color: var(--mark-bg, #{$mark-bg});
+    color: var(--mark-color, #{$mark-color});
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: var(--family-code);
+}

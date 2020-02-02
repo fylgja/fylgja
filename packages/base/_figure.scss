@@ -1,0 +1,13 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@import "helper";
+
+figure {
+    display: inline-block;
+    margin: var(--item-spacer);
+}
+
+figcaption {
+    font-size: var(--caption-size, #{$caption-size});
+}

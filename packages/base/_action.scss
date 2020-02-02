@@ -1,0 +1,27 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+// Make sure the buttons behaves the same on each browser
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+// Removes outline on elements that have a negative tab index
+// But show it, if it programmatically receive focus
+[tabindex="-1"]:focus:not(:focus-visible) {
+    outline: none !important; // stylelint-disable-line declaration-no-important
+}
+
+// Prevent touch delay on touch devices
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}

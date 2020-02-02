@@ -1,0 +1,31 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@import "helper";
+
+ul,
+ol {
+    margin: var(--item-spacer, #{$list-margin});
+
+    & & {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+dl {
+    margin: var(--item-spacer, #{$dl-margin});
+}
+
+dt {
+    font-weight: bolder;
+}
+
+dd {
+    margin: var(--dd-margin, #{$dd-margin});
+}
+
+// Make sure the summary has the same display on each browser
+summary {
+    display: list-item;
+}
