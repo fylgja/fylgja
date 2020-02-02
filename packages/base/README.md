@@ -1,4 +1,4 @@
-# Base component
+# Fylgja - Base
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/base.svg)](https://www.npmjs.org/package/@fylgja/base)
 
