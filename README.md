@@ -5,7 +5,7 @@
 Fylgja is still in (Super) active development.
 And this repository is just here until the first version is ready for release.
 
-Where hoping to go live summer in 2020.
+Where hoping to go live spring in 2021.
 
 For now checkout out our released components.
 
