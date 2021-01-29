@@ -1,0 +1,30 @@
+{
+  "name": "@fylgja/form",
+  "version": "1.0.0",
+  "description": "Fylgja form component, Create beautiful forms without classes.",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "form.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/form"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "form"
+  ],
+  "scripts": {
+    "build-field": "sass form-style-field.scss form-style-field.css --no-source-map -s compressed",
+    "build-box": "sass form-style-box.scss form-style-box.css --no-source-map -s compressed",
+    "build-default": "sass form.scss form.css --no-source-map -s compressed",
+    "build": "npm run build-field && npm run build-box && npm run build-default"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.0"
+  }
+}
