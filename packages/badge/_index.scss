@@ -1,0 +1,24 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$badge-padding: 0.3em 0.35em !default;
+$badge-radius: 0.25rem !default;
+$badge-bg: var(--color-theme, #{$color-theme}) !default;
+$badge-color: var(--color-on-theme, #{$color-on-theme}) !default;
+$badge-font-size: 0.85em !default;
+$badge-line-height: 1 !default;
+
+.badge {
+    display: inline-block;
+    padding: var(--badge-padding, #{$badge-padding});
+    border-radius: var(--badge-radius, #{$badge-radius});
+    background-color: var(--badge-bg, #{$badge-bg});
+    color: var(--badge-color, #{$badge-color});
+    font-size: $badge-font-size;
+    line-height: $badge-line-height;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}

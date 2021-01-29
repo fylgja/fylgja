@@ -1,0 +1,1 @@
+.badge{display:inline-block;padding:var(--badge-padding, 0.3em 0.35em);border-radius:var(--badge-radius, 0.25rem);background-color:var(--badge-bg, var(--color-theme, #1565c0));color:var(--badge-color, var(--color-on-theme, #fff));font-size:.85em;line-height:1;text-align:center;vertical-align:baseline;white-space:nowrap}
