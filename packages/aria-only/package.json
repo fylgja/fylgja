@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/aria-only",
+  "version": "1.0.0",
+  "description": "Fylgja aria-only component, to hide text visually but still accessible to screen-readers and other aria tools",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "aria-only.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/aria-only"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "a11y",
+    "aria-only",
+    "sr-only",
+    "visually-hidden"
+  ],
+  "scripts": {
+    "build": "sass aria-only.scss aria-only.css --no-source-map -s compressed"
+  }
+}
