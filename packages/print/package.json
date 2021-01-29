@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/print",
+  "version": "1.0.0",
+  "description": "The Fylgja print component, for better printing",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "print.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/print"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "print"
+  ],
+  "scripts": {
+    "build": "sass print.scss print.css --no-source-map -s compressed"
+  }
+}
