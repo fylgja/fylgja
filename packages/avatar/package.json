@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/avatar",
+  "version": "1.0.0",
+  "description": "The Fylgja avatar component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "avatar.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/avatar"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "avatar"
+  ],
+  "scripts": {
+    "build": "sass avatar.scss avatar.css --no-source-map -s compressed"
+  }
+}
