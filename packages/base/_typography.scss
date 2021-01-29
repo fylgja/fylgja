@@ -1,13 +1,14 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
-@import "helper";
+@use "@fylgja/theme" as *;
+@use "helper" as *;
 
 p {
     margin: var(--item-spacer, #{$item-spacer});
 }
 
-a {
+:any-link {
     color: var(--link-color, #{$link-color});
     text-decoration: $link-style;
 
@@ -18,48 +19,72 @@ a {
     }
 }
 
-%h-base {
-    margin: var(--h-margin, 0.6em) 0;
-    font-family: var(--h-family, inherit);
-    font-size: var(--h-size, 1rem);
-    line-height: var(--h-line, inherit);
-    font-weight: var(--h-weight, normal);
+%heading-base {
+    margin: var(--h-margin, #{$h-margin});
+    font-family: var(--h-family, #{$h-family});
+    font-size: var(--h-font-size, #{$h-font-size});
+    line-height: var(--h-line-height, #{$h-line-height});
+    font-weight: var(--h-font-weight, #{$h-font-weight});
 }
 
 h1,
 .h1 {
-    @extend %h-base;
-    @include build-h(h1, $h1, 2.75rem);
+    @extend %heading-base;
+    @include if-var("h-margin", $h1-margin);
+    @include if-var("h-family", $h1-family);
+    @include if-var("h-font-size", $h1-font-size);
+    @include if-var("h-line-height", $h1-line-height);
+    @include if-var("h-font-weight", $h1-font-weight);
 }
 
 h2,
 .h2 {
-    @extend %h-base;
-    @include build-h(h2, $h2, 2.25rem);
+    @extend %heading-base;
+    @include if-var("h-margin", $h2-margin);
+    @include if-var("h-family", $h2-family);
+    @include if-var("h-font-size", $h2-font-size);
+    @include if-var("h-line-height", $h2-line-height);
+    @include if-var("h-font-weight", $h2-font-weight);
 }
 
 h3,
 .h3 {
-    @extend %h-base;
-    @include build-h(h3, $h3, 1.875rem);
+    @extend %heading-base;
+    @include if-var("h-margin", $h3-margin);
+    @include if-var("h-family", $h3-family);
+    @include if-var("h-font-size", $h3-font-size);
+    @include if-var("h-line-height", $h3-line-height);
+    @include if-var("h-font-weight", $h3-font-weight);
 }
 
 h4,
 .h4 {
-    @extend %h-base;
-    @include build-h(h4, $h4, 1.5rem);
+    @extend %heading-base;
+    @include if-var("h-margin", $h4-margin);
+    @include if-var("h-family", $h4-family);
+    @include if-var("h-font-size", $h4-font-size);
+    @include if-var("h-line-height", $h4-line-height);
+    @include if-var("h-font-weight", $h4-font-weight);
 }
 
 h5,
 .h5 {
-    @extend %h-base;
-    @include build-h(h5, $h5, 1.25rem);
+    @extend %heading-base;
+    @include if-var("h-margin", $h5-margin);
+    @include if-var("h-family", $h5-family);
+    @include if-var("h-font-size", $h5-font-size);
+    @include if-var("h-line-height", $h5-line-height);
+    @include if-var("h-font-weight", $h5-font-weight);
 }
 
 h6,
 .h6 {
-    @extend %h-base;
-    @include build-h(h6, $h6);
+    @extend %heading-base;
+    @include if-var("h-margin", $h6-margin);
+    @include if-var("h-family", $h6-family);
+    @include if-var("h-font-size", $h6-font-size);
+    @include if-var("h-line-height", $h6-line-height);
+    @include if-var("h-font-weight", $h6-font-weight);
 }
 
 address {
@@ -95,9 +120,10 @@ cite {
 }
 
 hr {
-    margin: var(--hr-gap, $hr-gap);
-    border: var(--hr-size, $hr-size) var(--hr-style, $hr-style)
-        var(--hr-color, $hr-color);
+    margin: var(--hr-margin, #{$hr-margin});
+    border: 0;
+    border-top: var(--hr-size, #{$hr-size}) var(--hr-style, #{$hr-style})
+        var(--hr-color, #{$hr-color});
 }
 
 abbr[title] {
@@ -109,11 +135,4 @@ mark {
     padding: $mark-padding;
     background-color: var(--mark-bg, #{$mark-bg});
     color: var(--mark-color, #{$mark-color});
-}
-
-pre,
-code,
-kbd,
-samp {
-    font-family: var(--family-code);
 }

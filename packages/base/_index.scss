@@ -1,6 +1,10 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
-// Imports only!
-// For source maps it is better to load the code in a named file
-@import "base.scss";
+@forward "helper";
+@forward "body";
+@forward "typography";
+@forward "action";
+@forward "list";
+@forward "media";
+@forward "figure";

@@ -24,5 +24,8 @@
   ],
   "scripts": {
     "build": "sass base.scss base.css --no-source-map -s compressed"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.0"
   }
 }

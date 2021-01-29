@@ -1,7 +1,7 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
-@import "helper";
+@use "helper" as *;
 
 figure {
     display: inline-block;

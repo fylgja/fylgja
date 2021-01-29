@@ -18,10 +18,10 @@ npm install @fylgja/base
 
 And include the component in to your code via;
 
-```scss 
-@import "@fylgja/base"; // DartSass or LibSass >= 3.6
-@import "@fylgja/base/index"; // LibSass <= 3.5
-@import "@fylgja/base/base.css"; // CSS or PostCSS
+```scss
+@use "@fylgja/base";
+// Or via PostCSS and other options as plain CSS
+@import "@fylgja/base/base.css";
 ```
 
 
@@ -35,19 +35,17 @@ Since these are small css setters to the body, typography and media.
 Down here is small list of each component.
 And what main things each component does.
 
-| Component Parts | Description                                                |
-| --------------- | ---------------------------------------------------------- |
-| Action          | Acts as css reset for any clickable elements               |
-| Body            | Sets the base font, box-sizing and root vars               |
-| Figure          | Set default spacing                                        |
-| List            | Set default spacing                                        |
-| Media           | Makes images responsive by default                         |
-| Typography      | Sets defaults for all common text elements, mainly spacing |
+| Component Parts | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| Action          | Acts as css reset for any clickable element behavior |
+| Body            | Sets the base font, box-sizing and root vars         |
+| Figure          | Set default spacing                                  |
+| List            | Set default spacing                                  |
+| Media           | Makes images responsive by default                   |
+| Typography      | Sets defaults for all common text elements           |
 
 There are also few helper classes.
 But next to that all styles are set on the html elements directly.
-
-Helper classes that can be found in the typography component;
 
 | Class          | Description                               |
 | -------------- | ----------------------------------------- |
@@ -56,106 +54,105 @@ Helper classes that can be found in the typography component;
 
 ## Config
 
-The base component comes with allot of config.
-So the naming had to be simple and easy to understand.
+As with almost all of our components.
+CSS variables can be configured to add your own look/style.
 
-Down here is a full list of each variable;
+Want direct control on the base styles.
+Down here are the following scss variables can you modify.
 
 ```scss
-$root-font-size: null !default;
-$root-bg: #fff !default;
-$root-fg: #000 !default;
-
-$color-text: change-color($root-fg, $alpha: 0.87) !default;
-$color-text-alt: change-color($root-fg, $alpha: 0.68) !default;
-$color-text-muted: change-color($root-fg, $alpha: 0.56) !default;
-
-// Color pallet
-$color-theme: #1565c0 !default;
-$color-on-theme: #fff !default;
-
-$color-alert: #d50000 !default;
-$color-warning: #ffab40 !default;
-$color-success: #00e676 !default;
-
 // Typography
 $family-main: (system-ui, -apple-system, Helvetica, Arial, sans-serif) !default;
 $family-header: $family-main !default;
-$family-code: (Consolas, Liberation Mono, Menlo, monospace) !default;
 $font-size: 1rem !default;
 $font-weight: normal !default;
 $line-height: 1.5 !default;
 $letter-spacing: normal !default;
 $caption-size: 0.9em !default;
 
-$item-spacer: 1em 0 !default;
-
 $quotes: "“" "”" "‘" "’" !default;
 
-$link-color: $color-theme !default;
-$link-color-state: $color-theme !default;
+$link-color: var(--color-theme, #{$color-theme}) !default;
+$link-color-state: var(--color-theme, #{$color-theme}) !default;
 $link-style: underline !default;
 $link-style-state: none !default;
 
+$selection-bg: color.change($color-theme, $alpha: 0.3) !default;
+$selection-color: inherit !default;
+
 $hr-size: 1px !default;
-$hr-style: inset !default;
+$hr-style: solid !default;
 $hr-color: currentColor !default;
-$hr-gap: 1.25em 0 !default;
+$hr-margin: 1em 0 !default;
 
-$mark-padding: 0 0.3125rem !default;
-$mark-bg: change-color($color-theme, $alpha: 0.3) !default;
-$mark-color: inherit !default;
-
-$selection-bg: $color-theme !default;
-$selection-color: $color-on-theme !default;
-
-$h1: (
-    line-height: 1.1,
-    font-weight: 300
-) !default;
-$h2: (
-    line-height: 1.1
-) !default;
-$h3: (
-    line-height: 1.1
-) !default;
-$h4: (
-    line-height: 1.2
-) !default;
-$h5: (
-    line-height: 1.3
-) !default;
-$h6: () !default;
+$mark-padding: 0 0.15em !default;
+$mark-bg: var(--selection-bg, #{$selection-bg}) !default;
+$mark-color: var(--selection-color, #{$selection-color}) !default;
 
 // List
 $list-margin: $item-spacer;
 $dl-margin: $item-spacer;
 $dd-margin: 0 0 0.5rem;
+
+// Headings
+$h-margin: 1.33em 0 0.67em !default;
+$h-family: inherit !default;
+$h-font-size: 1em !default;
+$h-line-height: inherit !default;
+$h-font-weight: normal !default;
+
+$h1-margin: 0 0 0.45em !default;
+$h1-family: null !default;
+$h1-font-size: 2.5em !default;
+$h1-line-height: null !default;
+$h1-font-weight: null !default;
+
+$h2-margin: 1.33em 0 0.55em !default;
+$h2-family: null !default;
+$h2-font-size: 2em !default;
+$h2-line-height: null !default;
+$h2-font-weight: null !default;
+
+$h3-margin: 1.33em 0 0.6em !default;
+$h3-family: null !default;
+$h3-font-size: 1.75em !default;
+$h3-line-height: null !default;
+$h3-font-weight: null !default;
+
+$h4-margin: null !default;
+$h4-family: null !default;
+$h4-font-size: 1.5em !default;
+$h4-line-height: null !default;
+$h4-font-weight: null !default;
+
+$h5-margin: null !default;
+$h5-family: null !default;
+$h5-font-size: 1.25em !default;
+$h5-line-height: null !default;
+$h5-font-weight: 500 !default;
+
+$h6-margin: null !default;
+$h6-family: null !default;
+$h6-font-size: null !default;
+$h6-line-height: null !default;
+$h6-font-weight: bold !default;
 ```
 
 ## FAQ
 
-<details><summary>Is this a restCSS or Normalizer css component?</summary>
+**Is this a RestCSS or Normalizer CSS component?**
 
-**No!**
-
-The base component is a setter for common styles but not a reset file.
+No. The base component is a setter for common styles but not a reset file.
 
 Each reset for a specific html element is handled by the component that needs it.
 And not first set by one reset file and then restyled by the component.
-Which creates double css.
+Which creates double CSS.
 
-</details>
+**Do I need everything in this CSS component?**
 
-<details><summary>Do I need everything in this css component?</summary>
-
-**No!**
-
-If you need only parts of the base component just import these parts only.
+No. If you need only parts of the base component just import these parts only.
 
 ```scss
-@import "@fylgja/base/body";
-@import "@fylgja/base/media";
+@use "@fylgja/base/body";
+@use "@fylgja/base/media";
 ```
-
-</details>

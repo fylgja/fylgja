@@ -9,9 +9,9 @@ button {
 }
 
 // Removes outline on elements that have a negative tab index
-// But show it, if it programmatically receive focus
-[tabindex="-1"]:focus:not(:focus-visible) {
-    outline: none !important; // stylelint-disable-line declaration-no-important
+[tabindex="-1"]:focus {
+    // stylelint-disable-next-line declaration-no-important
+    outline: 0 !important;
 }
 
 // Prevent touch delay on touch devices
@@ -24,4 +24,9 @@ select,
 summary,
 textarea {
     touch-action: manipulation;
+}
+
+// Makes sure no focus ring is shown for mouse clicks
+:focus:not(:focus-visible) {
+    outline: 0;
 }
