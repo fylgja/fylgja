@@ -1,0 +1,62 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "sass:selector";
+@use "helper" as *;
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: var(--card-dir, column);
+    border-radius: var(--card-radius, #{$card-radius});
+    border: var(--card-border, #{$card-border});
+    box-shadow: var(--card-elevation, #{$card-elevation});
+    background-color: var(--card-bg, #{$card-bg});
+    color: var(--card-color, #{$card-color});
+    overflow: hidden;
+
+    &-media {
+        @extend %card-child;
+        flex: var(--card-flex, 0 0 auto);
+        padding: var(--card-padding, 0);
+    }
+
+    &-content {
+        @extend %card-child;
+        flex: var(--card-flex, 1 1 auto);
+        padding: var(--card-padding, #{$card-padding});
+    }
+
+    &-action {
+        @extend %card-child;
+        flex: var(--card-flex, 0 0 auto);
+        padding: var(--card-padding, #{$card-padding});
+    }
+}
+
+%card-child {
+    background-color: var(--card-bg);
+    color: var(--card-color);
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    @if $enable-card-link {
+        @at-root #{selector.unify(&, a)} {
+            text-decoration: none;
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+                background-color: var(--card-focus-bg, #{$card-focus-bg});
+                color: var(--card-focus-color, #{$card-focus-color});
+            }
+        }
+    }
+}
