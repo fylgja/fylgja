@@ -1,0 +1,13 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$container-size: 1200px !default;
+$container-gap: 0 1.25rem !default;
+
+.container {
+    width: 100%;
+    max-width: var(--container-width, #{$container-size});
+    margin-right: auto;
+    margin-left: auto;
+    padding: var(--container-gap, #{$container-gap});
+}
