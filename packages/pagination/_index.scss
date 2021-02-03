@@ -1,0 +1,142 @@
+// Fylgja v0.2.4 (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$enable-pagination-old-gap: true !default;
+$enable-pagination-dots-style: true !default;
+
+$pagination-size: 2em !default;
+$pagination-gap: 2px !default;
+$pagination-padding: 0.25em 0.5em !default;
+$pagination-border-size: 1px !default;
+$pagination-border-style: solid !default;
+$pagination-radius: 4px !default;
+$pagination-transition: 0.2s linear;
+$pagination-transition-property: (
+    color,
+    background-color,
+    border-color,
+    box-shadow
+) !default;
+
+$pagination-stroke: transparent !default;
+$pagination-bg: transparent !default;
+$pagination-color: inherit !default;
+
+$pagination-focus-stroke: currentColor !default;
+$pagination-focus-bg: transparent !default;
+$pagination-focus-color: inherit !default;
+
+$pagination-active-stroke: var(--color-theme, #{$color-theme}) !default;
+$pagination-active-bg: var(--color-theme, #{$color-theme}) !default;
+$pagination-active-color: var(--color-on-theme, #{$color-on-theme}) !default;
+
+$pagination-disabled-opacity: 0.8 !default;
+
+$pagination-dots-size: 0.625em !default;
+$pagination-dots-gap: 0.35em !default;
+
+.pagination {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+    @if $enable-pagination-old-gap {
+        > * {
+            margin-top: calc(var(--pagination-gap, #{$pagination-gap}) / 2);
+            margin-bottom: calc(var(--pagination-gap, #{$pagination-gap}) / 2);
+
+            &:not(:last-child) {
+                margin-right: var(--pagination-gap, #{$pagination-gap});
+            }
+        }
+    } @else {
+        gap: var(--pagination-gap, #{$pagination-gap});
+    }
+
+    a,
+    &-item,
+    &-ellipsis {
+        display: block;
+        min-width: var(--pagination-size, #{$pagination-size});
+        min-height: var(--pagination-size, #{$pagination-size});
+        padding: var(--pagination-padding, #{$pagination-padding});
+        border: #{$pagination-border-size} #{$pagination-border-style}
+            var(--pagination-stroke, #{$pagination-stroke});
+        border-radius: var(--pagination-radius, #{$pagination-radius});
+        background-color: var(--pagination-bg, $pagination-bg);
+        color: var(--pagination-color, $pagination-color);
+        text-align: center;
+        text-decoration: none;
+        transition: $pagination-transition;
+        transition-property: $pagination-transition-property;
+        user-select: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
+        -webkit-appearance: none; // unset iOS styles on <button>
+    }
+
+    a,
+    &-item {
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+            border-color: var(
+                --pagination-focus-stroke,
+                $pagination-focus-stroke
+            );
+            background-color: var(--pagination-focus-bg, $pagination-focus-bg);
+            color: var(--pagination-focus-color, $pagination-focus-color);
+            text-decoration: none;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &.is-active,
+        &[aria-current="page"] {
+            border-color: var(
+                --pagination-active-stroke,
+                $pagination-active-stroke
+            );
+            background-color: var(
+                --pagination-active-bg,
+                $pagination-active-bg
+            );
+            color: var(--pagination-active-color, $pagination-active-color);
+        }
+
+        &.is-disabled {
+            opacity: $pagination-disabled-opacity;
+            pointer-events: none;
+        }
+    }
+}
+
+@if $enable-pagination-dots-style {
+    .pagination.-dots {
+        a,
+        .pagination-item {
+            --pagination-size: #{$pagination-dots-size};
+            --pagination-gap: #{$pagination-dots-gap};
+            --pagination-padding: 0;
+            --pagination-radius: 50%;
+            @if $pagination-stroke == transparent {
+                --pagination-stroke: currentColor;
+            }
+
+            @if ($pagination-focus-bg == transparent) and
+                ($pagination-focus-stroke == currentColor)
+            {
+                --pagination-focus-bg: var(--color-theme, #{$color-theme});
+                --pagination-focus-stroke: var(--color-theme, #{$color-theme});
+            }
+        }
+    }
+}
