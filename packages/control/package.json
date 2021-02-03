@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/control",
+  "version": "1.0.0",
+  "description": "The Fylgja control component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "control.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/control"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "control"
+  ],
+  "scripts": {
+    "build": "sass control.scss control.css --no-source-map -s compressed"
+  },
+  "dependencies": {
+    "@fylgja/theme": "*"
+  }
+}

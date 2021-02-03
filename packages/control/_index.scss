@@ -1,0 +1,151 @@
+// Fylgja v1.0.0 (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+%control {
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: var(--control-width, #{$control-size});
+    height: var(--control-height, #{$control-size});
+    margin: 0;
+    padding: 0;
+    border-radius: var(--control-radius, #{$control-radius});
+    border: $control-border-width $control-border-style
+        var(--control-stroke, #{$control-border-color});
+    background-color: var(--control-bg, #{$control-bg});
+    color: var(--control-color, #{$control-color});
+    transition: $control-transition;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute; // Prevents alignment issues
+        width: 100%;
+        height: 100%;
+        background: currentColor center/contain no-repeat;
+        background-clip: content-box;
+        opacity: 0;
+        transition: $control-transition;
+    }
+
+    &:focus {
+        box-shadow: var(--control-focus-shadow, #{$control-focus-shadow});
+        outline: 0;
+    }
+
+    &.is-active,
+    &:checked {
+        border-color: var(--control-checked-stroke, #{$control-checked-stroke});
+        background-color: var(--control-checked-bg, #{$control-checked-bg});
+        color: var(--control-checked-color, #{$control-checked-color});
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &.is-disabled,
+    &:disabled {
+        --control-bg: #{$control-disabled-bg};
+        opacity: $control-disabled-opacity;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+.control-checkbox,
+[type="checkbox"] {
+    @extend %control;
+
+    &.is-active,
+    &:checked {
+        &::before {
+            @if $control-checkbox-icon-as-mask {
+                // stylelint-disable-next-line property-no-vendor-prefix
+                -webkit-mask-image: $control-checkbox-icon-checked;
+                mask-image: $control-checkbox-icon-checked;
+            } @else {
+                background-color: transparent;
+                background-image: $control-checkbox-icon-checked;
+            }
+        }
+    }
+}
+
+@if $enable-control-checkbox-indeterminate {
+    [type="checkbox"]:indeterminate {
+        border-color: var(--control-checked-stroke, #{$control-checked-stroke});
+        background-color: var(--control-checked-bg, #{$control-checked-bg});
+        color: var(--control-checked-color, #{$control-checked-color});
+
+        &::before {
+            opacity: 1;
+
+            @if $control-checkbox-icon-as-mask {
+                // stylelint-disable-next-line property-no-vendor-prefix
+                -webkit-mask-image: $control-checkbox-icon-indeterminate;
+                mask-image: $control-checkbox-icon-indeterminate;
+            } @else {
+                background-color: transparent;
+                background-image: $control-checkbox-icon-indeterminate;
+            }
+        }
+    }
+}
+
+.control-radio,
+[type="radio"] {
+    @extend %control;
+    --control-radius: 50%;
+    --control-icon-gap: #{$control-radio-icon-gap};
+
+    &::before {
+        padding: var(--control-icon-gap);
+        border-radius: inherit;
+    }
+}
+
+@if $enable-control-switch {
+    .control-switch {
+        @extend %control;
+        --control-width: #{$control-switch-width};
+        --control-height: #{$control-switch-height};
+        --control-radius: #{$control-switch-radius};
+        --control-icon-size: #{$control-switch-icon-size};
+        --control-icon-gap: #{$control-switch-icon-gap};
+
+        &::before {
+            left: -$control-border-width;
+            width: var(--control-icon-size);
+            height: var(--control-icon-size);
+            padding: var(--control-icon-gap);
+            border-radius: inherit;
+            transform: translateX(var(--control-thumb-position));
+            opacity: 1;
+            transition: $control-switch-transition;
+        }
+
+        &.is-active,
+        &:checked {
+            $thumb-pos: calc(var(--control-width) - var(--control-icon-size));
+            --control-thumb-position: #{$thumb-pos};
+
+            &::before {
+                @if $control-checkbox-icon-as-mask {
+                    // stylelint-disable-next-line property-no-vendor-prefix
+                    -webkit-mask-image: none;
+                    mask-image: none;
+                } @else {
+                    background-color: currentColor;
+                    background-image: none;
+                }
+            }
+        }
+    }
+}
