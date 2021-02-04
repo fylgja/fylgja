@@ -7,7 +7,6 @@
 %form-field {
     display: block;
     width: 100%;
-    margin: var(--form-margin, 0);
     padding: var(--form-padding, #{$form-padding});
     border-width: $form-border-width;
     border-style: $form-border-style;
