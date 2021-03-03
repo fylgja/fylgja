@@ -19,7 +19,8 @@
     "control"
   ],
   "scripts": {
-    "build": "sass control.scss control.css --no-source-map -s compressed"
+    "dev": "sass control.scss control.css --no-source-map --load-path=node_modules",
+    "build": "sass control.scss control.css --no-source-map -s compressed --load-path=node_modules"
   },
   "dependencies": {
     "@fylgja/theme": "*"

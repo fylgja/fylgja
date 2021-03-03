@@ -5,18 +5,12 @@
 @use "@fylgja/theme" as *;
 
 $control-size: 1em !default;
-$control-margin: 2px !default;
-$control-padding: 2px !default;
 $control-radius: 0.25rem !default;
 $control-border-width: 1px !default;
 $control-border-style: solid !default;
 $control-border-color: currentColor !default;
 $control-bg: transparent !default;
 $control-color: inherit !default;
-$control-transition: opacity 0.15s !default;
-
-$control-icon-size: $control-size !default;
-$control-icon-bg: #fff;
 
 $control-focus-color: var(
     --selection-bg,
@@ -24,30 +18,28 @@ $control-focus-color: var(
 ) !default;
 $control-focus-shadow: 0 0 0 0.2rem $control-focus-color !default;
 
-$control-disabled-bg: change-color(#fff, $alpha: 0.1) !default;
-$control-disabled-opacity: 0.5 !default;
+$control-disabled-opacity: 0.7 !default;
+$control-disabled-border-style: dashed !default;
 
 $control-checked-stroke: var(--color-theme, #{$color-theme}) !default;
 $control-checked-bg: var(--color-theme, #{$color-theme}) !default;
 $control-checked-color: var(--color-on-theme, #{$color-on-theme}) !default;
 
 // Checkbox
-$enable-control-checkbox-indeterminate: true !default;
-$control-checkbox-icon-as-mask: true !default;
-$control-checkbox-icon-checked: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>') !default;
-$control-checkbox-icon-indeterminate: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"></line></svg>') !default;
+$control-checkbox-icon: url("#") !default;
+$control-checked-checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") !default;
+$control-indeterminate-checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") !default;
 
 // Radio
-$control-radio-icon-gap: 3px !default;
-$control-checked-radio-stroke: var(--color-theme, #{$color-theme}) !default;
-$control-checked-radio-bg: var(--color-on-theme, #{$color-on-theme}) !default;
-$control-checked-radio-color: var(--color-theme, #{$color-theme}) !default;
+$control-radio-icon: url("#") !default;
+$control-checked-radio-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='4'/%3e%3c/svg%3e") !default;
 
 // Switch
 $enable-control-switch: true !default;
-$control-switch-width: ($control-size * 2.5 / 1.5) !default;
+
+$control-switch-width: ($control-size * 1.75) !default;
 $control-switch-height: $control-size !default;
 $control-switch-radius: 3rem !default;
-$control-switch-transition: transform 0.15s !default;
-$control-switch-icon-gap: 3px !default;
-$control-switch-icon-size: $control-switch-height !default;
+
+$control-switch-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='5'/%3e%3c/svg%3e") !default;
+$control-checked-switch-icon: var(--control-icon) !default;
