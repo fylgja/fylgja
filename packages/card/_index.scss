@@ -6,7 +6,11 @@
 @use "helper" as *;
 
 .card {
-    @extend %card-link !optional;
+    @if $enable-card-auto-link {
+        @at-root #{selector.unify(&, a)} {
+            @extend %card-link;
+        }
+    }
     display: flex;
     flex-direction: var(--card-dir, column);
     border-radius: var(--card-radius, #{$card-radius});
