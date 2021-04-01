@@ -45,9 +45,6 @@
 }
 
 %card-child {
-    background-color: var(--card-bg, #{$card-bg});
-    color: var(--card-color, #{$card-color});
-
     > :first-child {
         margin-top: 0;
     }
