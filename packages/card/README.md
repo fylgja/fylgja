@@ -6,6 +6,10 @@ The card component is a wrapper component.
 Which allow you to make visual sectioned content,
 that is not part of the main flow.
 
+- [Installation](#installation)
+- [How to use](#how-to-use)
+- [Config](#config)
+
 ## Installation
 
 ```bash

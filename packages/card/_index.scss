@@ -33,10 +33,18 @@
         flex: var(--card-flex, 0 0 auto);
         padding: var(--card-padding, #{$card-padding});
     }
+
+    &-has-link {
+        @extend %card-link;
+    }
 }
 
 %card-child {
-    @extend %card-link !optional;
+    @if $enable-card-auto-link {
+        @at-root #{selector.unify(&, a)} {
+            @extend %card-link;
+        }
+    }
     background-color: var(--card-bg, #{$card-bg});
     color: var(--card-color, #{$card-color});
 
@@ -49,31 +57,27 @@
     }
 }
 
-@if $enable-card-link {
-    %card-link {
-        @at-root #{selector.unify(&, a)} {
-            position: relative;
-            text-decoration: none;
+%card-link {
+    position: relative;
+    text-decoration: none;
 
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: currentColor;
-                opacity: 0;
-                pointer-events: none;
-            }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor;
+        opacity: 0;
+        pointer-events: none;
+    }
 
-            &:focus,
-            &:hover {
-                &::after {
-                    transition: opacity 0.15s linear;
-                    opacity: var(--card-link-opacity, 0.1);
-                }
-            }
+    &:focus,
+    &:hover {
+        &::after {
+            transition: opacity 0.15s linear;
+            opacity: var(--card-link-opacity, 0.1);
         }
     }
 }
