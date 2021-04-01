@@ -6,7 +6,7 @@
 @use "helper" as *;
 
 .card {
-    position: relative;
+    @extend %card-link !optional;
     display: flex;
     flex-direction: var(--card-dir, column);
     border-radius: var(--card-radius, #{$card-radius});
@@ -36,8 +36,9 @@
 }
 
 %card-child {
-    background-color: var(--card-bg);
-    color: var(--card-color);
+    @extend %card-link !optional;
+    background-color: var(--card-bg, #{$card-bg});
+    color: var(--card-color, #{$card-color});
 
     > :first-child {
         margin-top: 0;
@@ -46,16 +47,32 @@
     > :last-child {
         margin-bottom: 0;
     }
+}
 
-    @if $enable-card-link {
+@if $enable-card-link {
+    %card-link {
         @at-root #{selector.unify(&, a)} {
+            position: relative;
             text-decoration: none;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: currentColor;
+                opacity: 0;
+                pointer-events: none;
+            }
 
             &:focus,
             &:hover {
-                text-decoration: none;
-                background-color: var(--card-focus-bg, #{$card-focus-bg});
-                color: var(--card-focus-color, #{$card-focus-color});
+                &::after {
+                    transition: opacity 0.15s linear;
+                    opacity: var(--card-link-opacity, 0.1);
+                }
             }
         }
     }
