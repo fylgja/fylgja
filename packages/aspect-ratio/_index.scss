@@ -4,14 +4,13 @@
 $aspect-ratio: "16/9" !default;
 
 .aspect-ratio {
-    --aspect-ratio: #{$aspect-ratio};
     position: relative;
     overflow: hidden;
 
     &::before {
         content: "";
         display: block;
-        padding-top: calc(100% / (var(--aspect-ratio)));
+        padding-top: calc(100% / (var(--aspect-ratio, #{$aspect-ratio})));
     }
 
     > *,
@@ -27,6 +26,6 @@ $aspect-ratio: "16/9" !default;
     }
 
     img {
-        object-fit: cover;
+        object-fit: var(--aspect-img, cover);
     }
 }

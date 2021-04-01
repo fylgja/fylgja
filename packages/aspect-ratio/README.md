@@ -5,11 +5,6 @@
 The aspect ratio component allows you to make not just videos.
 But anything you want to a certain responsive aspect ratio.
 
-- [Installation](#installation)
-- [How to use](#how-to-use)
-- [Config](#config)
-- [PostCSS Calc & CSSNano issue](#postcss-calc--cssnano-issue)
-
 ## Installation
 
 ```bash
