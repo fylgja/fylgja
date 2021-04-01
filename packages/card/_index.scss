@@ -6,11 +6,6 @@
 @use "helper" as *;
 
 .card {
-    @if $enable-card-auto-link {
-        @at-root #{selector.unify(&, a)} {
-            @extend %card-link;
-        }
-    }
     display: flex;
     flex-direction: var(--card-dir, column);
     border-radius: var(--card-radius, #{$card-radius});
@@ -38,17 +33,18 @@
         padding: var(--card-padding, #{$card-padding});
     }
 
-    &-has-link {
-        @extend %card-link;
+    @if $enable-card-link {
+        @at-root #{selector.unify(&, a)} {
+            @extend %card-link;
+        }
+
+        &.-has-link {
+            @extend %card-link;
+        }
     }
 }
 
 %card-child {
-    @if $enable-card-auto-link {
-        @at-root #{selector.unify(&, a)} {
-            @extend %card-link;
-        }
-    }
     background-color: var(--card-bg, #{$card-bg});
     color: var(--card-color, #{$card-color});
 

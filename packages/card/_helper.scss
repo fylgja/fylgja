@@ -4,7 +4,7 @@
 @use "sass:color";
 @use "@fylgja/theme" as *;
 
-$enable-card-auto-link: true !default;
+$enable-card-link: true !default;
 
 $card-padding: 1rem !default;
 $card-radius: 6px !default;
