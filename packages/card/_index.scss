@@ -6,6 +6,7 @@
 @use "helper" as *;
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: var(--card-dir, column);
     border-radius: var(--card-radius, #{$card-radius});
@@ -55,7 +56,6 @@
 }
 
 %card-link {
-    position: relative;
     text-decoration: none;
 
     &::after {
