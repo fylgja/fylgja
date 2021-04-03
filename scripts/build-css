@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Compiles all components for the CSS version
+# Used for deploying a new version of Fylgja's core components
+
+cd packages
+for i in * ; do
+  FILE="$i/package.json"
+  if [[ -f "$FILE" ]]; then
+    cd $i
+    if npm run | grep -q build; then
+      npm i &> /dev/null &&
+      npm run --silent build &&
+      echo "✅ build ($i.css)"
+    fi
+    cd - > /dev/null
+  fi
+done
