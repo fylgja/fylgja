@@ -2,8 +2,9 @@
 # see https://help.github.com/articles/ignoring-files/#create-a-global-gitignore for more information
 
 # Development
-/.vscode
 node_modules
+/.vscode
+!/.vscode/fylgja.code-snippets
 
 # Cache/Temporary
 /cache
