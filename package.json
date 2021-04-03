@@ -3,20 +3,34 @@
   "version": "1.0.0",
   "description": "Fylgja framework, includes all fylgja core components",
   "homepage": "https://getfylgja.com/",
+  "repository": "https://github.com/fylgja/fylgja",
+  "bugs": "https://github.com/fylgja/fylgja/issues",
   "author": "Fylgja",
   "license": "MIT",
+  "main": "_index.scss",
   "style": "fylgja.css",
-  "sass": "_index.scss",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fylgja/fylgja"
-  },
-  "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
-    "fylgja components",
-    "css framework",
-    "scss"
+    "css",
+    "sass",
+    "framework",
+    "modular"
   ],
-  "dependencies": {}
+  "files": [
+    "*.{css,scss}",
+    "packages/**/*.{css,scss,md}"
+  ],
+  "scripts": {
+    "test": "stylelint packages/**/*.scss",
+    "build-css": "./scripts/build-css"
+  },
+  "stylelint": {
+    "extends": "@fylgja/stylelint-config/scss"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@fylgja/stylelint-config": "^3.4.0",
+    "sass": "^1.32.8",
+    "stylelint": "^13.12.0"
+  }
 }
