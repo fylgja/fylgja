@@ -1,6 +1,7 @@
 # Container component
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/container.svg)](https://www.npmjs.org/package/@fylgja/container)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/container)](https://www.npmjs.org/package/@fylgja/container)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The container component is wrapper component.
 To make all child elements fit better in the page.

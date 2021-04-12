@@ -1,6 +1,7 @@
 # Fylgja - Pagination
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/pagination.svg)](https://www.npmjs.org/package/@fylgja/pagination)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/pagination)](https://www.npmjs.org/package/@fylgja/pagination)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Pagination component makes it easy to build many pagination patterns.
 Like button only next previous nav or dots nav.

@@ -1,6 +1,7 @@
 # Fylgja - Dialog
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/dialog.svg)](https://www.npmjs.org/package/@fylgja/dialog)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/dialog)](https://www.npmjs.org/package/@fylgja/dialog)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The dialog is 3 components in 1.
 It is by default a modal.
@@ -11,11 +12,6 @@ With this, the code is super tiny compared to other solutions.
 And is super flexible.
 Since you can show it as modal on desktop and a offcanvas on mobile.
 by changing a few CSS variables.
-
-- [Installation](#installation)
-- [How to use](#how-to-use)
-  - [Support](#support)
-- [Config](#config)
 
 ## Installation
 

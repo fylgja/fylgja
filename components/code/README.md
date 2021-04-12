@@ -1,6 +1,7 @@
 # Fylgja - Code
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/code.svg)](https://www.npmjs.org/package/@fylgja/code)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/code)](https://www.npmjs.org/package/@fylgja/code)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The Code component is a extension component to the base component.
 

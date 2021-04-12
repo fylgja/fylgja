@@ -1,6 +1,7 @@
 # Fylgja - Scroll-slider
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/scroll-slider.svg)](https://www.npmjs.org/package/@fylgja/scroll-slider)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/scroll-slider)](https://www.npmjs.org/package/@fylgja/scroll-slider)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 This CSS slider component allows you to make sliders with eas.
 And no requirements to any Javascript.

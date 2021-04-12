@@ -1,6 +1,7 @@
 # Fylgja - Input-group
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/input-group.svg)](https://www.npmjs.org/package/@fylgja/input-group)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/input-group)](https://www.npmjs.org/package/@fylgja/input-group)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The input group extends upon the `@fylgja/form`.
 By providing a wrapper that allows for more complex form field styles.

@@ -1,6 +1,7 @@
 # Fylgja - Avatar
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/avatar.svg)](https://www.npmjs.org/package/@fylgja/avatar)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/avatar)](https://www.npmjs.org/package/@fylgja/avatar)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The avatar component allows you to make an avatar style with ease.
 

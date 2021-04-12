@@ -1,6 +1,7 @@
 # Fylgja - Details
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/details.svg)](https://www.npmjs.org/package/@fylgja/details)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/details)](https://www.npmjs.org/package/@fylgja/details)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The details components enhances the default details behavior.
 

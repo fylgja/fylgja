@@ -1,6 +1,7 @@
 # Fylgja - Aria-only
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/aria-only.svg)](https://www.npmjs.org/package/@fylgja/aria-only)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/aria-only)](https://www.npmjs.org/package/@fylgja/aria-only)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The aria-only (a.k.a. sr-only) visually hides elements.
 But keeps it accessible to screen-readers and other aria tools.

@@ -1,6 +1,7 @@
 # Fylgja - Section
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/section.svg)](https://www.npmjs.org/package/@fylgja/section)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/section)](https://www.npmjs.org/package/@fylgja/section)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The Section component is a wrapper component to show content in a sectioned area.
 Like a Hero, Banner or just simple section with a different color in the page.

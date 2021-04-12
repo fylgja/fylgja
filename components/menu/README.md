@@ -1,6 +1,7 @@
 # Fylgja - Menu
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/menu.svg)](https://www.npmjs.org/package/@fylgja/menu)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/menu)](https://www.npmjs.org/package/@fylgja/menu)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The menu component makes it easy to build many common navigation patterns.
 Like a navbar or menu in a dropdown.

@@ -1,6 +1,7 @@
 # Fylgja - Table
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/table.svg)](https://www.npmjs.org/package/@fylgja/table)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/table)](https://www.npmjs.org/package/@fylgja/table)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The table component is super easy to use.
 Since it is a zero config module that styles the table directly.

@@ -1,6 +1,7 @@
 # Fylgja - Control
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/control.svg)](https://www.npmjs.org/package/@fylgja/control)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/control)](https://www.npmjs.org/package/@fylgja/control)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The control component styles the default `input[radio]` and `input[checkbox]`.
 Allowing an easier control on the style of both these elements.

@@ -1,6 +1,7 @@
 # Fylgja - Base
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/base.svg)](https://www.npmjs.org/package/@fylgja/base)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/base)](https://www.npmjs.org/package/@fylgja/base)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Common defaults to make your body and typography look good.
 And easy to change to your needs.

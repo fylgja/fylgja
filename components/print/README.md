@@ -1,6 +1,7 @@
 # Fylgja - Print
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/print.svg)](https://www.npmjs.org/package/@fylgja/print)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/print)](https://www.npmjs.org/package/@fylgja/print)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Print component will add solid foundation for printing.
 

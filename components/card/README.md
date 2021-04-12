@@ -1,6 +1,7 @@
 # Fylgja - Card
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/card.svg)](https://www.npmjs.org/package/@fylgja/card)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/card)](https://www.npmjs.org/package/@fylgja/card)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The card component is a wrapper component.
 Which allows you to make visual sectioned content,

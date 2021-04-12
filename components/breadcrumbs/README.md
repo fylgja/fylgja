@@ -1,6 +1,7 @@
 # Fylgja - Breadcrumbs
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/breadcrumbs.svg)](https://www.npmjs.org/package/@fylgja/breadcrumbs)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/breadcrumbs)](https://www.npmjs.org/package/@fylgja/breadcrumbs)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Breadcrumbs component will show your visitors where they are
 currently on the website.

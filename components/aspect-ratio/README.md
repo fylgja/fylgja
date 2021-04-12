@@ -1,6 +1,7 @@
 # Fylgja - Aspect Ratio
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/aspect-ratio.svg)](https://www.npmjs.org/package/@fylgja/aspect-ratio)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/aspect-ratio)](https://www.npmjs.org/package/@fylgja/aspect-ratio)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The aspect ratio component allows you to make not just videos,
 but anything you want to a certain responsive aspect ratio.

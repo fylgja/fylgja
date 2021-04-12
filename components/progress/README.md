@@ -1,6 +1,7 @@
 # Fylgja - Progress
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/progress.svg)](https://www.npmjs.org/package/@fylgja/progress)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/progress)](https://www.npmjs.org/package/@fylgja/progress)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The progress component show a progression of a form or somethings else.
 

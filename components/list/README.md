@@ -1,6 +1,7 @@
 # Fylgja - List
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/list.svg)](https://www.npmjs.org/package/@fylgja/list)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/list)](https://www.npmjs.org/package/@fylgja/list)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The list component add more control on how you can style lists.
 By adding a custom marker option with full flexibility to style and animate.

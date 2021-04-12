@@ -1,6 +1,7 @@
 # Fylgja - Theme
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/theme.svg)](https://www.npmjs.org/package/@fylgja/theme)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/theme)](https://www.npmjs.org/package/@fylgja/theme)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Helper component for adding theme specific variables to multiple components.
 

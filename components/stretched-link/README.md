@@ -1,6 +1,7 @@
 # Fylgja - Stretched-link
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/stretched-link.svg)](https://www.npmjs.org/package/@fylgja/stretched-link)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/stretched-link)](https://www.npmjs.org/package/@fylgja/stretched-link)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Make any component fully clickable via a nested link.
 

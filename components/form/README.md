@@ -1,6 +1,7 @@
 # Fylgja - Form
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/form.svg)](https://www.npmjs.org/package/@fylgja/form)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/form)](https://www.npmjs.org/package/@fylgja/form)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The form component is super easy to use.
 Since it is a zero config module that styles the form elements directly.
