@@ -1,17 +1,53 @@
-# Fylgja
+<h1 align="center">
+  <a href="https://getfylgja.com/">
+    <img src="assets/logo.svg" alt="Fylgja" width="300" height="130">
+  </a>
+</h1>
 
-![Build Status](https://img.shields.io/badge/Status-in%20development-orange.svg)
+[![npm version](https://img.shields.io/npm/v/fylgja)](https://www.npmjs.com/package/fylgja)
+![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-Fylgja is still in (Super) active development.
-And this repository is just here until the first version is ready for release.
+Fylgja is a component based CSS framework.
+Allowing you to use only what you need.
 
-Where hoping to go live spring in 2021.
+Each component is build as foundation for a specific component.
+So you can style it to your own look.
+Without having to build the base styles.
 
-For now checkout out our released components.
+Fylgja is powered via SCSS.
+But can also be used via PostCSS or just as plain css.
 
-* [Flex Grid](https://github.com/fylgja/fylgja-flex-grid)
-* [Utilkit](https://github.com/fylgja/fylgja-utilkit)
-* [FontFace](https://github.com/fylgja/fylgja-fontface)
-* [Stylelint config](https://github.com/fylgja/stylelint-config)
+Want to learn more?
+Check out our site, [getfylgja.com](https://getfylgja.com/)
 
-Or our [Twitter](https://twitter.com/FylgjaCode)
+## Installation
+
+See each component on on how to install them.
+
+Or download Fylgja as one package.
+
+```bash
+npm install fylgja
+```
+
+Include the fylgja in to your code via;
+
+```scss
+@use "fylgja";
+// Or via PostCSS and other options as plain CSS
+@import "fylgja/fylgja.css";
+```
+
+For on how to configure each component via this one import,
+[See our Getting Started](https://getfylgja.com/getting-started/) config section.
+
+## Support
+
+Want to support Fylgja,
+You do so via many ways.
+
+- Share Fylgja
+- Help the docs here or on the site
+- Write a guide for the site
+- Found a bug or typo, Open a issue
+- Fixed it your self, Open a Pull Request

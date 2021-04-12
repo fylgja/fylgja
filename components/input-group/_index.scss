@@ -1,0 +1,72 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$input-group-style: default !default;
+@use "@fylgja/form/helper" as input with ($form-style: $input-group-style);
+
+$input-group-border-width: input.$form-border-width !default;
+$input-group-border-style: input.$form-border-style !default;
+$input-group-border-color: var(
+    --form-stroke,
+    #{input.$form-border-color}
+) !default;
+$input-group-radius: var(--form-radius, #{input.$form-radius}) !default;
+$input-group-bg: var(--form-bg, #{input.$form-bg}) !default;
+$input-group-color: var(--form-color, #{input.$form-color}) !default;
+$input-group-focus-color: input.$form-focus-color !default;
+$input-group-focus-style: input.$form-focus-style !default;
+
+.input-extra,
+.input-icon {
+    flex: 0 0 auto;
+    width: auto;
+    border-radius: 0;
+}
+
+.input-icon {
+    color: $input-group-border-color;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: var(--input-group-height);
+    border-width: $input-group-border-width;
+    border-style: $input-group-border-style;
+    border-color: $input-group-border-color;
+    border-radius: $input-group-radius;
+    background-color: $input-group-bg;
+    color: $input-group-color;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        transition: box-shadow 0.15s linear;
+    }
+
+    &:focus-within {
+        --form-stroke: #{$input-group-focus-color};
+        outline: 0;
+
+        // After needed to prevent autocomplete styles from breaking the focus
+        &::after {
+            box-shadow: $input-group-focus-style;
+        }
+    }
+
+    > input,
+    > select,
+    > textarea {
+        flex: 1 1 auto;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+}

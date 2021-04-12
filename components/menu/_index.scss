@@ -1,0 +1,106 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+%menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--menu-item-padding, #{$menu-item-padding});
+    border-radius: var(--menu-item-radius, #{$menu-item-radius});
+    border: var(--menu-item-border, #{$menu-item-border});
+    background-color: var(--menu-item-bg, #{$menu-item-bg});
+    color: var(--menu-item-color, #{$menu-item-color});
+    text-decoration: none;
+}
+
+%menu-item-states {
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus,
+    &:hover {
+        border-color: var(--menu-item-focus-stroke, #{$menu-item-focus-stroke});
+        background-color: var(--menu-item-focus-bg, #{$menu-item-focus-bg});
+        color: var(--menu-item-focus-color, #{$menu-item-focus-color});
+        text-decoration: none;
+    }
+
+    &:active,
+    &#{$menu-item-active-selector} {
+        border-color: var(
+            --menu-item-active-stroke,
+            #{$menu-item-active-stroke}
+        );
+        background-color: var(--menu-item-active-bg, #{$menu-item-active-bg});
+        color: var(--menu-item-active-color, #{$menu-item-active-color});
+    }
+}
+
+.menu {
+    &,
+    ul,
+    ol {
+        list-style: none;
+        display: var(--menu-display, flex);
+        flex-direction: var(--menu-dir, column);
+        margin: var(--menu-margin, 0);
+        padding: var(--menu-padding, 0);
+        padding-inline-start: var(--menu-nested-indent);
+    }
+
+    @if $enable-menu-nested {
+        ul,
+        ol {
+            ul,
+            ol {
+                --menu-nested-indent: #{$menu-nested-indent};
+            }
+        }
+    }
+
+    @if $enable-menu-row {
+        &.-row {
+            --menu-display: inline-flex;
+            --menu-dir: row;
+            --menu-items: center;
+
+            @if $enable-menu-nested {
+                ul,
+                ol {
+                    ul,
+                    ol {
+                        --menu-nested-indent: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @if $menu-item-auto-selector {
+        li {
+            > #{$menu-item-auto-selector} {
+                @extend %menu-item;
+                @extend %menu-item-states;
+            }
+        }
+
+        > #{$menu-item-auto-selector} {
+            @extend %menu-item;
+            @extend %menu-item-states;
+        }
+    }
+
+    .menu-label {
+        @extend %menu-item;
+        font-weight: $menu-label-weight;
+    }
+
+    .menu-item {
+        @extend %menu-item;
+        @extend %menu-item-states;
+    }
+}

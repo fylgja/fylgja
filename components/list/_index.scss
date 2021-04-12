@@ -1,0 +1,45 @@
+@forward "helper";
+@use "helper" as *;
+
+.list-style {
+    --marker-icon: "#{$list-marker-icon}";
+    list-style-type: none;
+
+    > li {
+        position: relative;
+
+        // Used as ::marker
+        &::before {
+            content: var(--marker-icon);
+            position: absolute;
+            right: 100%;
+            margin-inline-end: var(--marker-gap, #{$list-marker-gap});
+            color: if(
+                $list-marker-color,
+                var(--marker-color, #{$list-marker-color}),
+                var(--marker-color)
+            );
+            font-variant-numeric: tabular-nums;
+            white-space: pre;
+        }
+    }
+
+    @at-root #{selector-unify(&, ol)} {
+        @include list-style(decimal, counter, $gap: 0.4ch, $suffix: ".");
+    }
+
+    [dir="rtl"] &,
+    &[dir="rtl"] {
+        > li::before {
+            right: auto;
+            left: 100%;
+        }
+    }
+
+    @if $enable-list-style-none {
+        &.-none {
+            --marker-icon: none;
+            padding: 0;
+        }
+    }
+}

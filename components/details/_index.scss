@@ -1,0 +1,43 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$details-animation: details-show 0.3s ease-in-out !default;
+$details-margin: 1em 0 !default;
+
+@if $details-animation {
+    @keyframes details-show {
+        from {
+            opacity: 0;
+            transform: var(--details-translate, translateY(-1em));
+        }
+    }
+}
+
+// *1: Fix for Chrome/Webkit, child elements will not inhereting the box-sizing.
+// * And being content-box again.
+// *2: Makes sure any child is inline, usefull for headings
+details {
+    margin: var(--details-margin, #{$details-margin});
+
+    > summary {
+        display: list-item;
+        font-weight: bolder;
+        cursor: pointer;
+
+        > * {
+            display: inline; // *2
+        }
+    }
+
+    > *:not(summary) {
+        box-sizing: border-box; // *1
+    }
+
+    @if $details-animation {
+        &[open] > *:not(summary) {
+            animation: $details-animation;
+        }
+    }
+}

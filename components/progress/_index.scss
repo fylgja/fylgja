@@ -1,0 +1,108 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$progress-height: 0.8em !default;
+$progress-margin: 1em 0 !default;
+$progress-radius: 0.5em !default;
+$progress-border: 0 !default;
+$progress-bg: rgba(#ddd, 0.3) !default;
+$progress-color: var(--color-theme, #{$color-theme}) !default;
+$progress-animation-timing: 1s linear infinite !default;
+$progress-transition: width 0.6s ease !default;
+$progress-loader-bg: rgba($color-on-theme, 0.2) !default;
+
+@mixin progress-loading {
+    background-image: linear-gradient(
+        45deg,
+        rgba(white, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(white, 0.15) 50%,
+        rgba(white, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1em 1em;
+    animation: progress-loading 1s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+}
+
+%progress {
+    display: block;
+    width: 100%;
+    height: $progress-height;
+    border-radius: $progress-radius;
+    border: $progress-border;
+    background-color: $progress-bg;
+    color: $progress-color;
+    vertical-align: baseline;
+    overflow: hidden;
+}
+
+@keyframes progress-loading {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1em 0;
+    }
+}
+
+progress {
+    @extend %progress;
+    animation-name: none; // unset dots indeterminate EdgeHtml
+    -webkit-appearance: none;
+
+    &::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    &::-webkit-progress-value {
+        border-radius: $progress-radius;
+        background-color: currentColor;
+    }
+
+    &::-moz-progress-bar {
+        border-radius: $progress-radius;
+        background-color: currentColor;
+    }
+
+    &:indeterminate {
+        @include progress-loading;
+        background-color: currentColor;
+
+        &::-webkit-progress-value {
+            background: none;
+        }
+
+        &::-moz-progress-bar {
+            background: none;
+        }
+    }
+}
+
+.progress {
+    @extend %progress;
+
+    &::after {
+        content: "";
+        display: block;
+        width: var(--progress);
+        height: 100%;
+        border-radius: $progress-radius;
+        background-color: currentColor;
+    }
+
+    &.is-loading {
+        --progress: 100%;
+
+        &::after {
+            @include progress-loading;
+        }
+    }
+}

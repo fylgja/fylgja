@@ -1,0 +1,31 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:color";
+@use "@fylgja/theme" as *;
+
+$breadcrumbs-divider: "  /  " !default;
+$breadcrumbs-flow: row wrap !default;
+$breadcrumbs-margin: 10px 0 !default;
+$breadcrumbs-padding: 0 !default;
+$breadcrumbs-color: inherit !default;
+$breadcrumbs-current-color: var(--color-text-alt, #{$color-text-alt}) !default;
+$breadcrumbs-divider-color: #ccc !default;
+
+.breadcrumbs {
+    display: flex;
+    flex-flow: $breadcrumbs-flow;
+    margin: $breadcrumbs-margin;
+    padding: $breadcrumbs-padding;
+    list-style-type: none;
+
+    [aria-current="page"] {
+        color: var(--breadcrumbs-current-color, #{$breadcrumbs-current-color});
+    }
+
+    li + li::before {
+        content: var(--breadcrumbs-divider, "#{$breadcrumbs-divider}");
+        color: var(--breadcrumbs-divider-color, #{$breadcrumbs-divider-color});
+        white-space: pre;
+    }
+}

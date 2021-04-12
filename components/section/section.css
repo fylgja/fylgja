@@ -1,0 +1,1 @@
+.hero{min-height:var(--hero-height, 300px);background:var(--hero-img, none) var(--hero-bg, rgba(0, 0, 0, 0.05)) var(--hero-img-layout, center/cover) var(--hero-img-repeat, no-repeat);color:var(--hero-color, inherit)}

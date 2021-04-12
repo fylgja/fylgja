@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/scroll-slider",
+  "version": "1.0.0",
+  "description": "The Fylgja scroll-slider component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "scroll-slider.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/scroll-slider"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "scroll-slider"
+  ],
+  "scripts": {
+    "build": "sass scroll-slider.scss scroll-slider.css --no-source-map -s compressed"
+  }
+}

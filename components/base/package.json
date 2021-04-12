@@ -1,0 +1,31 @@
+{
+  "name": "@fylgja/base",
+  "version": "1.0.0",
+  "description": "Common defaults to make your body and typography look good. And easy to change to your needs.",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "base.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/base"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "fylgja base",
+    "css base",
+    "typography",
+    "list",
+    "media"
+  ],
+  "scripts": {
+    "build": "sass base.scss base.css --no-source-map -s compressed --load-path=node_modules"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^0.1.0"
+  }
+}

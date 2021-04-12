@@ -1,0 +1,25 @@
+{
+  "name": "@fylgja/code",
+  "version": "1.0.0",
+  "description": "The Fylgja code component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "main": "_index.scss",
+  "style": "code.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/code"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "code block",
+    "keyboard key"
+  ],
+  "scripts": {
+    "build": "sass code.scss code.css --no-source-map -s compressed"
+  }
+}

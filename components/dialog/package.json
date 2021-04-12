@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/dialog",
+  "version": "1.0.0",
+  "description": "The Fylgja dialog component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "dialog.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/dialog"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "dialog"
+  ],
+  "scripts": {
+    "build": "sass dialog.scss dialog.css --no-source-map -s compressed"
+  },
+  "dependencies": {
+    "@fylgja/theme": "*"
+  }
+}

@@ -1,0 +1,25 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$auto-grid-cols: 250px !default;
+$auto-grid-gap: 1em !default;
+
+/// Renders auto fit column grid
+/// @param {Number} $cols-size - Size of each col
+/// @param {Number} $gap - Size of the gap
+/// @param {String} $auto - if the grid needs to fit or fill
+@mixin build-auto-grid(
+    $cols-size: $auto-grid-cols,
+    $gap: $auto-grid-gap,
+    $fill: true
+) {
+    display: grid;
+    gap: var(--gap, #{$gap});
+    grid-template-columns: var(
+        --cols,
+        repeat(
+            var(--grid-auto, #{if($fill, auto-fill, auto-fit)}),
+            minmax(min(100%, var(--cols-size, #{$cols-size})), 1fr)
+        )
+    );
+}

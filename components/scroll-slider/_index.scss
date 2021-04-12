@@ -1,0 +1,64 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$enable-scroll-overflow-fix: true !default;
+
+$scroll-gap: 0.5em !default;
+$scroll-padding-y: 1rem !default;
+$scroll-padding-x: 1.25rem !default;
+
+// Item
+$scroll-align: center !default;
+$scroll-stop: always !default;
+$scroll-stop-fine: normal !default;
+
+.scroll-slider {
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-block-start: var(--scroll-padding-y, #{$scroll-padding-y});
+    padding-block-end: var(--scroll-padding-y, #{$scroll-padding-y});
+    padding-inline-start: var(--scroll-padding-x, #{$scroll-padding-x});
+    padding-inline-end: var(--scroll-padding-x, #{$scroll-padding-x});
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
+
+    > :not([hidden]) {
+        flex: 0 0 auto;
+        width: var(--scroll-width);
+        scroll-snap-align: var(--scroll-align, #{$scroll-align});
+        scroll-snap-stop: if(
+            $scroll-stop,
+            var(--scroll-stop, #{$scroll-stop}),
+            var(--scroll-stop)
+        );
+
+        @if $scroll-stop-fine {
+            @media (any-pointer: fine) {
+                scroll-snap-stop: var(--scroll-stop, #{$scroll-stop-fine});
+            }
+        }
+
+        ~ :not([hidden]) {
+            margin-inline-start: var(--scroll-gap, #{$scroll-gap});
+        }
+    }
+
+    // * FIX for overflow padding at end of the scroll zone
+    // * By adding a fake extra element to create the missing overflow padding
+    @if $enable-scroll-overflow-fix {
+        &::after {
+            content: "";
+            order: 1; // rtl support
+            flex: 0 0 auto;
+            display: block;
+            width: var(--scroll-padding-x, #{$scroll-padding-x});
+        }
+    }
+}

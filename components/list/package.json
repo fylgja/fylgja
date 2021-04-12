@@ -1,0 +1,26 @@
+{
+  "name": "@fylgja/list",
+  "version": "1.0.0",
+  "description": "The Fylgja list component, giving more control on how you can style lists",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "list.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/list"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "list",
+    "bullet",
+    "symbols"
+  ],
+  "scripts": {
+    "build": "sass list.scss list.css --no-source-map -s compressed"
+  }
+}

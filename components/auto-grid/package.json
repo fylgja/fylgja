@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/autogrid",
+  "version": "1.0.0",
+  "description": "A super small grid with auto flowing behavior based on the container size. Using a similar method to container queries.",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "grid.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/autogrid"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "grid"
+  ],
+  "scripts": {
+    "build": "sass auto-grid.scss auto-grid.css --no-source-map -s compressed"
+  }
+}

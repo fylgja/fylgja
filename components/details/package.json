@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/details",
+  "version": "1.0.0",
+  "description": "The Fylgja details component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "details.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/details"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "details"
+  ],
+  "scripts": {
+    "build": "sass details.scss details.css --no-source-map -s compressed"
+  },
+  "dependencies": {
+    "@fylgja/theme": "*"
+  }
+}

@@ -1,0 +1,57 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+@use "helper" as *;
+
+// *1: Option to change the default font-size, by default disabled
+:root {
+    --item-spacer: #{$item-spacer};
+    --color-theme: #{$color-theme};
+    --color-on-theme: #{$color-on-theme};
+    --color-bg: #{$root-bg};
+    --color-text: #{$color-text};
+    --color-text-alt: #{$color-text-alt};
+    --color-text-muted: #{$color-text-muted};
+    --color-success: #{$color-success};
+    --color-warning: #{$color-warning};
+    --color-error: #{$color-error};
+    --selection-bg: #{$selection-bg};
+    --selection-color: #{$selection-color};
+    --family-main: #{$family-main};
+    --family-header: #{$family-header};
+    --font-size: #{$font-size};
+    --line-height: #{$line-height};
+    --font-weight: #{$font-weight};
+    color-scheme: var(--color-scheme, #{$color-scheme});
+    font-size: $root-font-size; // *1
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    border: 0 solid currentColor;
+}
+
+// *1: Prevent adjustments of font size after orientation changes on iOS
+body {
+    margin: 0;
+    background-color: var(--color-bg, #{$root-bg});
+    color: var(--color-text);
+    font-family: var(--family-main);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
+    -webkit-text-size-adjust: 100%; // *1
+}
+
+::selection {
+    text-shadow: none;
+    background-color: var(--selection-bg, #{$selection-bg});
+    color: var(--selection-color, #{$selection-color});
+}

@@ -1,0 +1,23 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:color";
+@use "@fylgja/theme" as *;
+
+$enable-card-link: true !default;
+
+$card-padding: 1rem !default;
+$card-radius: 6px !default;
+$card-border: 0 !default;
+$card-elevation: var(
+    --elevation-z2,
+    0 3px 1px -2px rgba(black, 0.2),
+    0 2px 2px rgba(black, 0.14),
+    0 1px 5px rgba(black, 0.12)
+) !default;
+$card-bg: color.adjust($root-bg, $lightness: 10%) !default;
+$card-color: $color-text !default;
+
+// Only with enable-card-link
+$card-link-opacity: 0.05 !default;
+$card-link-color: currentColor !default;

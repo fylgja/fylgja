@@ -1,0 +1,30 @@
+{
+  "name": "@fylgja/input-group",
+  "version": "1.0.0",
+  "description": "The input group extends upon the `@fylgja/form`. By providing a wrapper that allows for more complex form field styles.",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "input-group.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/input-group"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "input-group"
+  ],
+  "scripts": {
+    "build-field": "sass input-group-style-field.scss input-group-style-field.css --no-source-map -s compressed --load-path=node_modules",
+    "build-box": "sass input-group-style-box.scss input-group-style-box.css --no-source-map -s compressed --load-path=node_modules",
+    "build-default": "sass input-group.scss input-group.css --no-source-map -s compressed --load-path=node_modules",
+    "build": "npm run build-field && npm run build-box && npm run build-default"
+  },
+  "dependencies": {
+    "@fylgja/form": "^1.0"
+  }
+}

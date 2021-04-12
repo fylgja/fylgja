@@ -1,0 +1,18 @@
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 4 | @use "@fylgja/theme" as *;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   _index.scss 4:1    @use
+ *   progress.scss 4:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @use \"@fylgja/theme\" as *;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   _index.scss 4:1    @use\a   progress.scss 4:1  root stylesheet";
+}

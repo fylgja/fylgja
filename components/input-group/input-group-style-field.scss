@@ -1,4 +1,4 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
-@use "index";
+@use "index" with ($input-group-style: field);

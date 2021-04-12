@@ -1,0 +1,29 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:color";
+@use "@fylgja/theme" as *;
+
+$enable-menu-row: true !default;
+$enable-menu-nested: true !default;
+
+$menu-nested-indent: 1em !default;
+
+$menu-item-active-selector: ".is-active" !default;
+$menu-item-auto-selector: "a:not(.btn)" !default;
+
+$menu-label-weight: bolder !default;
+
+$menu-item-padding: 0.4375rem 1em !default;
+$menu-item-radius: 4px !default;
+$menu-item-border: 0 !default;
+$menu-item-bg: transparent !default;
+$menu-item-color: inherit !default;
+
+$menu-item-focus-stroke: 0 !default;
+$menu-item-focus-bg: change-color($root-fg, $alpha: 0.05) !default;
+$menu-item-focus-color: inherit !default;
+
+$menu-item-active-stroke: 0 !default;
+$menu-item-active-bg: var(--color-theme-fade, #{$color-theme-fade}) !default;
+$menu-item-active-color: inherit !default;

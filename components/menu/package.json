@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/menu",
+  "version": "1.0.0",
+  "description": "The menu component makes it easy to build many common navigation patterns",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "menu.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/menu"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "menu"
+  ],
+  "scripts": {
+    "build": "sass menu.scss menu.css --no-source-map -s compressed"
+  },
+  "dependencies": {
+    "@fylgja/theme": "*"
+  }
+}

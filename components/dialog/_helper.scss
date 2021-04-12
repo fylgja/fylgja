@@ -1,0 +1,73 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$enable-dialog-polyfill: true !default;
+
+// Modal (default)
+$dialog-offset: 2em !default;
+$dialog-max-width: calc(100% - #{$dialog-offset}) !default;
+$dialog-max-height: $dialog-max-width !default;
+$dialog-radius: 0.3em !default;
+$dialog-padding: 2em !default;
+
+$dialog-elevation: var(--elevation-z6) !default;
+$dialog-bg: var(--color-bg, #{$root-bg}) !default;
+$dialog-color: inherit !default;
+
+$dialog-backdrop: rgba(black, 0.2) !default;
+
+// Snackbar
+$dialog-snackbar-from: end !default;
+$dialog-snackbar-offset: 1em !default;
+
+// Offcanvas
+$dialog-offcanvas-radius: 0 !default;
+
+// *1: Needed until fit-content is better supported by Firefox and Safari
+/// Add dialog snackbar styles based on position
+/// @param {String} $position - (inline)|block postion where it opens from
+/// @param {Color} $bg - the snackbar background-color
+/// @param {Color} $color - the snackbar color
+/// @param {Number} $offset - Position offset
+/// @return {*} - Dialog snackbar styles
+@mixin dialog-snackbar(
+    $position: $dialog-snackbar-from,
+    $offset: $dialog-snackbar-offset
+) {
+    $position-block: if(length($position) > 1, nth($position, 2), $position);
+    $position-inline: if(length($position) > 1, nth($position, 1), null);
+    @if $position-block == start {
+        --dialog-translate: translateY(-#{$offset});
+    }
+    top: if($position-block == start, 0, auto); // *1
+    bottom: if($position-block == start, auto, 0); // *1
+    margin-block-#{$position-block}: $offset;
+    margin-inline-#{$position-inline}: if($position-inline, $offset, null);
+    transform: initial; // *1
+}
+
+/// Add dialog offcanvas styles based on position
+/// @param {String} $position - inline postion where it opens from
+/// @return {*} - Dialog offcanvas styles
+@mixin dialog-offcanvas($position: start) {
+    @if (length($position) > 1) {
+        @error "$position can only accept 1 value";
+    }
+    $offset: if($position == start, -100%, 100%);
+    $offset-rtl: if($position == start, 100%, -100%);
+    --dialog-height: 100%;
+    --dialog-max-height: 100%;
+    --dialog-translate: translateX(#{$offset});
+    border-radius: $dialog-offcanvas-radius;
+    margin-inline-#{$position}: 0;
+    top: 0; // *1
+    bottom: 0; // *1
+    transform: initial;
+
+    [dir="rtl"] &,
+    &[dir="rtl"] {
+        --dialog-translate: translateX(#{$offset-rtl});
+    }
+}

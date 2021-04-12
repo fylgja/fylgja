@@ -1,0 +1,80 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:list";
+
+$enable-list-style-none: true !default;
+
+$list-marker-gap: 1ch !default;
+$list-marker-icon: "•" !default;
+$list-marker-color: null !default;
+
+// Only for the image style
+$list-marker-icon-width: 1em !default;
+$list-marker-icon-height: 1.5em !default; // Same as line-height default
+
+/// @param {String} $symbol - list marker to use
+/// @param {String} $style - list style to generate (string, image, counter)
+/// @param {String} $gap - extra space after the list marker
+/// @param {Color} $color
+/// @param {String} $prefix - only works for the counter style
+/// @param {String} $suffix - only works for the counter style
+/// @return {*} - return styles needed for list style
+@mixin list-style(
+    $symbol,
+    $style: string,
+    $gap: false,
+    $color: false,
+    $prefix: false,
+    $suffix: false
+) {
+    $length: list.length($symbol);
+
+    @if $gap {
+        --marker-gap: #{$gap};
+    }
+
+    @if ($style == counter) {
+        @if $prefix and $suffix {
+            --marker-icon: "#{$prefix}"#{counter(li, $symbol)}"#{$suffix}";
+        } @else if $prefix {
+            --marker-icon: "#{$prefix}"#{counter(li, $symbol)};
+        } @else if $suffix {
+            --marker-icon: #{counter(li, $symbol)} "#{$suffix}";
+        } @else {
+            --marker-icon: #{counter(li, $symbol)};
+        }
+        counter-reset: li 0;
+
+        > li {
+            counter-increment: li 1;
+        }
+    } @else if ($style == image) {
+        --marker-icon: #{if($length > 1, list.nth($symbol, 1), $symbol)};
+
+        > li::before {
+            content: "";
+            width: var(--marker-icon-width, #{$list-marker-icon-width});
+            height: var(--marker-icon-height, #{$list-marker-icon-height});
+            background: var(--marker-icon) center/contain no-repeat;
+        }
+
+        @if ($length > 1) {
+            @for $i from 2 through $length {
+                > li:nth-child(#{$i}) {
+                    --marker-icon: #{list.nth($symbol, $i)};
+                }
+            }
+        }
+    } @else {
+        --marker-icon: "#{if($length > 1, list.nth($symbol, 1), $symbol)}";
+
+        @if ($length > 1) {
+            @for $i from 2 through $length {
+                > li:nth-child(#{$i}) {
+                    --marker-icon: "#{list.nth($symbol, $i)}";
+                }
+            }
+        }
+    }
+}

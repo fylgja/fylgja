@@ -1,0 +1,93 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+@keyframes dialog-show {
+    from {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}
+
+@keyframes dialog-hide {
+    to {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}
+
+// *1: Needed until fit-content is better supported by Firefox and Safari
+// * The top/bottom is now calculated via a transform instead
+// * The fit-content does not work in Firefox
+// * And Safari adds weird extra space below it
+dialog {
+    z-index: 9; // Not needed for the native version
+    position: fixed;
+    top: 50%; // *1
+    right: 0;
+    bottom: auto; // *1
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--dialog-width, max-content); // *1
+    max-width: var(--dialog-max-width, #{$dialog-max-width});
+    height: var(--dialog-height, auto); // *1
+    max-height: var(--dialog-max-height, #{$dialog-max-height});
+    box-shadow: var(--dialog-elevation, #{$dialog-elevation});
+    border: var(--dialog-border, 0);
+    border-radius: var(--dialog-radius, #{$dialog-radius});
+    margin: auto;
+    padding: var(--dialog-padding, #{$dialog-padding});
+    background: var(--dialog-bg, $dialog-bg);
+    color: var(--dialog-color, $dialog-color);
+    transform: translateY(-50%); // *1
+    // stylelint-disable-next-line property-no-unknown
+    content-visibility: auto;
+
+    &:not([open]) {
+        visibility: hidden;
+        transition: visibility 0s 200ms;
+        animation: dialog-hide 200ms;
+    }
+
+    &[open] {
+        animation: dialog-show 300ms;
+        transition: none;
+    }
+
+    // Notification
+    &.snackbar {
+        @include dialog-snackbar($dialog-snackbar-from);
+    }
+
+    // Offcanvas style
+    &.offcanvas {
+        @include dialog-offcanvas(start);
+    }
+
+    &.offcanvas-end {
+        @include dialog-offcanvas(end);
+    }
+
+    &::backdrop {
+        background-color: $dialog-backdrop;
+    }
+
+    @if $enable-dialog-polyfill {
+        + .backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $dialog-backdrop;
+        }
+    }
+}
+
+.dialog-inner {
+    overflow: auto;
+    overscroll-behavior: contain;
+}
