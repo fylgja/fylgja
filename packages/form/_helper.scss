@@ -8,10 +8,7 @@
 
 $enable-webkit-autofill-dark-mode: true !default;
 
-$form-focus-color: var(
-    --form-focus-color,
-    var(--color-theme, #{$color-theme})
-) !default;
+$form-focus-color: var(--color-theme, #{$color-theme}) !default;
 $form-placeholder-opacity: 0.5 !default;
 $form-disabled-opacity: 0.7 !default;
 $form-not-editable-border-style: dotted !default;
@@ -41,7 +38,7 @@ $form-styles: (
         bg: transparent,
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 3px 3px 0 0
+        file-btn-radius: 3px 3px 0 0,
     ),
     box: (
         padding: 0.375em 0.625em,
@@ -53,8 +50,8 @@ $form-styles: (
         bg: if($root-fg == #000, #eee, #222),
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 4px 4px 0 0
-    )
+        file-btn-radius: 4px 4px 0 0,
+    ),
 ) !default;
 $form-styles: map.merge(
     (
@@ -68,8 +65,8 @@ $form-styles: map.merge(
             bg: transparent,
             color: inherit,
             file-btn-padding: 0.375em 0.625em,
-            file-btn-radius: 0
-        )
+            file-btn-radius: 0,
+        ),
     ),
     $form-styles
 );
