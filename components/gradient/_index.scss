@@ -1,0 +1,74 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$enable-gradient-border: true !default;
+$enable-gradient-bg: true !default;
+
+$gradient-colors: (
+    "theme": var(--color-theme),
+    "bg": var(--color-bg),
+    "color": currentColor
+) !default;
+
+// prettier-ignore
+$gradient-angles: (
+    "top-right": "to top right",
+    "top-left": "to top left",
+    "right": "90deg", // Same as `to right`
+    "left": "270deg", // Same as `to left`
+    "bottom": "180deg", // Same as `to bottom`
+    "bottom-right": "to bottom right",
+    "bottom-left": "to bottom left"
+) !default;
+
+$gradient-transparent: rgb(0 0 0 / 0);
+
+%util-gradient {
+    --gradient-from: currentColor;
+    --gradient-stops: var(--gradient-from),
+        var(--gradient-to, #{$gradient-transparent});
+    --gradient: linear-gradient(
+        var(--gradient-angle, 0deg),
+        var(--gradient-stops)
+    );
+
+    @if $gradient-colors {
+        @each $name, $color in $gradient-colors {
+            &.-from-#{$name} {
+                --gradient-from: #{$color};
+            }
+
+            &.-stop-#{$name} {
+                --gradient-stops: var(--gradient-from), #{$color},
+                    var(--gradient-to, #{$gradient-transparent});
+            }
+
+            &.-to-#{$name} {
+                --gradient-to: #{$color};
+            }
+        }
+    }
+
+    @if $gradient-angles {
+        @each $name, $angle in $gradient-angles {
+            &.-angle-#{$name} {
+                --gradient-angle: #{$angle};
+            }
+        }
+    }
+}
+
+@if $enable-gradient-border {
+    .border-gradient {
+        @extend %util-gradient;
+        border-image-source: var(--gradient);
+        border-image-slice: 1;
+    }
+}
+
+@if $enable-gradient-bg {
+    .bg-gradient {
+        @extend %util-gradient;
+        background-image: var(--gradient);
+    }
+}

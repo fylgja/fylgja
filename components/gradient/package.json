@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/gradient",
+  "version": "1.0.0",
+  "description": "Add gradient's with easy via the gradient utility class.",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "gradient.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/gradient"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "gradient"
+  ],
+  "scripts": {
+    "build": "sass gradient.scss gradient.css --no-source-map -s compressed"
+  }
+}
