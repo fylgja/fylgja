@@ -6,19 +6,41 @@
 
 // Native Elements
 @forward "./components/base";
+@forward "./components/dialog";
+@forward "./components/details";
+@forward "./components/form";
+@forward "./components/control";
+@forward "./components/code";
+@forward "./components/details";
+@forward "./components/progress";
+@forward "./components/table";
 
 // Elements
 @forward "./components/avatar";
 @forward "./components/badge";
 @forward "./components/button";
+@forward "./components/list";
+@forward "./components/input-group";
 
 // Navigation
 @forward "./components/breadcrumbs";
+@forward "./components/menu";
+@forward "./components/pagination";
 
 // Layout
 @forward "./components/aspect-ratio";
 @forward "./components/auto-grid";
 @forward "./components/card";
+@forward "./components/container";
+@forward "./components/scroll-slider";
+@forward "./components/section";
 
 // Utils
 @forward "./components/aria-only";
+@forward "./components/elevation";
+@forward "./components/gradient";
+@forward "./components/hashlink";
+@forward "./components/scrollbar";
+@forward "./components/stretched-link";
+@forward "./components/transform";
+@forward "./components/transition";
