@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-utilpack-color-responsive: false !default;
@@ -10,10 +10,10 @@ $utilpack-defaults-color: (
         "class": "text",
         "property": "color",
         "values": (
-            "reset": "currentColor"
+            "reset": "currentColor",
         ),
         "responsive": $enable-utilpack-color-responsive,
         "print": $enable-utilpack-color-print,
-        "important": $enable-utilpack-color-important
-    )
+        "important": $enable-utilpack-color-important,
+    ),
 ) !default;

@@ -4,7 +4,7 @@
     "prefix": "!fylgja-copy",
     "description": "Adds the fylgja copyright",
     "body": [
-      "$LINE_COMMENT Fylgja (getfylgja.com)",
+      "$LINE_COMMENT Fylgja (https://fylgja.dev)",
       "$LINE_COMMENT Licensed under MIT Open Source"
     ]
   },
@@ -47,14 +47,11 @@
       "# Fylgja - ${TM_DIRECTORY/^.+\\/(.*)$/${1:/capitalize}/}\n",
       "[![NPM version](https://img.shields.io/npm/v/@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}.svg)](https://www.npmjs.org/package/@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/})\n",
       "<!-- TODO: Description -->\n",
-      "- [Installation](#installation)",
-      "- [How to use](#how-to-use)",
-      "- [Config](#config)\n",
       "## Installation\n",
       "```bash",
       "npm install @fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}",
       "```\n",
-      "And include the component in to your code via;\n",
+      "Then include the component in to your code via;\n",
       "```scss",
       "@import \"@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\";",
       "// Or via PostCSS and other options as plain CSS",
@@ -63,10 +60,10 @@
       "## How to use\n",
       "<!-- TODO: How to use -->\n",
       "## Config\n",
-      "As with almost all of our components.",
-      "CSS variables can be configured to add your own look/style.\n",
-      "Want direct control on the base styles.",
-      "Down here are the following scss variables can you modify.\n",
+      "As with almost all of our components, CSS variables can be ",
+      "configured to add your own look/style.\n",
+      "Want direct control on the base styles, here are the following",
+      "SCSS variables can you modify.\n",
       "```scss\n\n```"
     ]
   }

@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-utilpack-border-responsive: true !default;
@@ -16,12 +16,12 @@ $utilpack-border-sizes: (
     "default": 1px $utilpack-border-style $utilpack-border-color,
     "0": 0,
     "2": 2px $utilpack-border-style $utilpack-border-color,
-    "3": 3px $utilpack-border-style $utilpack-border-color
+    "3": 3px $utilpack-border-style $utilpack-border-color,
 ) !default;
 
 $utilpack-divider-sizes: (
     "default": "1px solid var(--divide-color, currentColor)",
-    "none": "0"
+    "none": "0",
 ) !default;
 
 $utilpack-defaults-border: (
@@ -30,31 +30,31 @@ $utilpack-defaults-border: (
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
-        "important": $enable-utilpack-border-important
+        "important": $enable-utilpack-border-important,
     ),
     "border-block-start": (
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
-        "important": $enable-utilpack-border-important
+        "important": $enable-utilpack-border-important,
     ),
     "border-block-end": (
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
-        "important": $enable-utilpack-border-important
+        "important": $enable-utilpack-border-important,
     ),
     "border-inline-end": (
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
-        "important": $enable-utilpack-border-important
+        "important": $enable-utilpack-border-important,
     ),
     "border-inline-start": (
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
-        "important": $enable-utilpack-border-important
+        "important": $enable-utilpack-border-important,
     ),
     "divider-block": (
         "property": border-block-start,
@@ -63,7 +63,7 @@ $utilpack-defaults-border: (
         "values": $utilpack-divider-sizes,
         "responsive": $enable-utilpack-divider-responsive,
         "print": $enable-utilpack-divider-print,
-        "important": $enable-utilpack-divider-important
+        "important": $enable-utilpack-divider-important,
     ),
     "divider-inline": (
         "property": border-inline-start,
@@ -72,6 +72,6 @@ $utilpack-defaults-border: (
         "values": $utilpack-divider-sizes,
         "responsive": $enable-utilpack-divider-responsive,
         "print": $enable-utilpack-divider-print,
-        "important": $enable-utilpack-divider-important
-    )
+        "important": $enable-utilpack-divider-important,
+    ),
 ) !default;

@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-gradient-border: true !default;
@@ -7,7 +7,7 @@ $enable-gradient-bg: true !default;
 $gradient-colors: (
     "theme": var(--color-theme),
     "bg": var(--color-bg),
-    "color": currentColor
+    "color": currentColor,
 ) !default;
 
 // prettier-ignore

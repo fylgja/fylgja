@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://getfylgja.com/">
+  <a href="https://https://fylgja.dev/">
     <img src="assets/logo.svg" alt="Fylgja" width="300" height="130">
   </a>
 </h1>
@@ -18,7 +18,7 @@ Fylgja is powered via SCSS.
 But can also be used via PostCSS or just as plain css.
 
 Want to learn more?
-Check out our site, [getfylgja.com](https://getfylgja.com/)
+Check out our site, [https://fylgja.dev](https://https://fylgja.dev/)
 
 ## Installation
 
@@ -39,7 +39,7 @@ Include the fylgja in to your code via;
 ```
 
 For on how to configure each component via this one import,
-[See our Getting Started](https://getfylgja.com/getting-started/) config section.
+[See our Getting Started](https://https://fylgja.dev/getting-started/) config section.
 
 ## Support
 

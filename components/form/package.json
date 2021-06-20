@@ -2,7 +2,7 @@
   "name": "@fylgja/form",
   "version": "1.0.0",
   "description": "The form component is super easy to use. Since it is a zero config module that styles the form elements directly",
-  "homepage": "https://getfylgja.com/",
+  "homepage": "https://https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "main": "_index.scss",

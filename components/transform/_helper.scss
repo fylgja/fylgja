@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 @use "sass:map";
@@ -100,7 +100,7 @@ $transform-utils-breakpoints: (
     "sm": 640px,
     "md": 768px,
     "lg": 1024px,
-    "xl": 1440px
+    "xl": 1440px,
 ) !default;
 
 $enable-3d-transform: true !default;
@@ -113,7 +113,7 @@ $transform-utils-defaults: (
         "half": 50%,
         "full": 100%,
         "nhalf": -50%,
-        "nfull": -100%
+        "nfull": -100%,
     ),
     "tx": (
         "1": 1em,
@@ -121,7 +121,7 @@ $transform-utils-defaults: (
         "half": 50%,
         "full": 100%,
         "nhalf": -50%,
-        "nfull": -100%
+        "nfull": -100%,
     ),
     "ty": (
         "1": 1em,
@@ -129,25 +129,25 @@ $transform-utils-defaults: (
         "half": 50%,
         "full": 100%,
         "nhalf": -50%,
-        "nfull": -100%
+        "nfull": -100%,
     ),
     "s": (
         "50": 0.5,
         "90": 0.9,
         "100": 1,
-        "120": 1.2
+        "120": 1.2,
     ),
     "sx": (
         "50": 0.5,
         "90": 0.9,
         "100": 1,
-        "120": 1.2
+        "120": 1.2,
     ),
     "sy": (
         "50": 0.5,
         "90": 0.9,
         "100": 1,
-        "120": 1.2
+        "120": 1.2,
     ),
     "origin": (
         "center": center,
@@ -158,8 +158,8 @@ $transform-utils-defaults: (
         "bottom": bottom,
         "bottom-left": bottom left,
         "left": left,
-        "top-left": top left
-    )
+        "top-left": top left,
+    ),
 ) !default;
 
 $transform-utils: if(

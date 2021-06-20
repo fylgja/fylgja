@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 @use "sass:map";
@@ -49,7 +49,7 @@ $utilpack-spacers: (
     "9": 2.25em,
     "10": 2.5em,
     "11": 2.75em,
-    "12": 3em
+    "12": 3em,
 ) !default;
 
 $utilpack-margin: () !default;
@@ -72,7 +72,7 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-margin,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-block": (
         "property": margin-block-start margin-block-end,
@@ -80,21 +80,21 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-block-start": (
         "class": "mt",
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-block-end": (
         "class": "mb",
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-inline": (
         "property": margin-inline-start margin-inline-end,
@@ -102,28 +102,28 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-inline-start": (
         "class": "ms",
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "margin-inline-end": (
         "class": "me",
         "values": $utilpack-margin-all,
         "responsive": $enable-utilpack-margin-responsive,
         "print": $enable-utilpack-margin-print,
-        "important": $enable-utilpack-margin-important
+        "important": $enable-utilpack-margin-important,
     ),
     "padding": (
         "class": "p",
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-block": (
         "property": padding-block-start padding-block-end,
@@ -131,21 +131,21 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-block-start": (
         "class": "pt",
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-block-end": (
         "class": "pb",
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-inline": (
         "property": padding-inline-start padding-inline-end,
@@ -153,21 +153,21 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-inline-start": (
         "class": "ps",
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "padding-inline-end": (
         "class": "pe",
         "values": $utilpack-padding,
         "responsive": $enable-utilpack-padding-responsive,
         "print": $enable-utilpack-padding-print,
-        "important": $enable-utilpack-padding-important
+        "important": $enable-utilpack-padding-important,
     ),
     "space-block": (
         "property": margin-block-start,
@@ -176,7 +176,7 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-space,
         "responsive": $enable-utilpack-space-responsive,
         "print": $enable-utilpack-space-print,
-        "important": $enable-utilpack-space-important
+        "important": $enable-utilpack-space-important,
     ),
     "space-inline": (
         "property": margin-inline-start,
@@ -185,6 +185,6 @@ $utilpack-defaults-spacers: (
         "values": $utilpack-space,
         "responsive": $enable-utilpack-space-responsive,
         "print": $enable-utilpack-space-print,
-        "important": $enable-utilpack-space-important
-    )
+        "important": $enable-utilpack-space-important,
+    ),
 ) !default;

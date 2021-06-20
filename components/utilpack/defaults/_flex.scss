@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-utilpack-flex-responsive: true !default;
@@ -12,18 +12,18 @@ $utilpack-defaults-flex: (
             "row": row,
             "row-reverse": row-reverse,
             "col": column,
-            "col-reverse": column-reverse
+            "col-reverse": column-reverse,
         ),
         "responsive": $enable-utilpack-flex-responsive,
         "print": $enable-utilpack-flex-print,
-        "important": $enable-utilpack-flex-important
+        "important": $enable-utilpack-flex-important,
     ),
     "flex-wrap": (
         "class": "flex",
         "values": nowrap wrap wrap-reverse,
         "responsive": $enable-utilpack-flex-responsive,
         "print": $enable-utilpack-flex-print,
-        "important": $enable-utilpack-flex-important
+        "important": $enable-utilpack-flex-important,
     ),
     "flex": (
         "class": "flex",
@@ -33,21 +33,21 @@ $utilpack-defaults-flex: (
             "shrink": 0 0 auto,
             "grow": 1 0 auto,
             "initial": 0 1 auto,
-            "none": none
+            "none": none,
         ),
         "responsive": $enable-utilpack-flex-responsive,
         "print": $enable-utilpack-flex-print,
-        "important": $enable-utilpack-flex-important
+        "important": $enable-utilpack-flex-important,
     ),
     "order": (
         "values": (
             "first": -1,
             "0": 0,
             "1": 1,
-            "last": 9
+            "last": 9,
         ),
         "responsive": $enable-utilpack-flex-responsive,
         "print": $enable-utilpack-flex-print,
-        "important": $enable-utilpack-flex-important
-    )
+        "important": $enable-utilpack-flex-important,
+    ),
 ) !default;

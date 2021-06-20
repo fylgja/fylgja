@@ -2,7 +2,7 @@
   "name": "@fylgja/stretched-link",
   "version": "1.0.0",
   "description": "The Fylgja stretched-link component, make any component fully clickable via a nested link",
-  "homepage": "https://getfylgja.com/",
+  "homepage": "https://https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "stretched-link.css",

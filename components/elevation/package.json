@@ -2,7 +2,7 @@
   "name": "@fylgja/elevation",
   "version": "1.0.0",
   "description": "The Elevation component is a util package for shadows. Where it offers shadows as CSS variables",
-  "homepage": "https://getfylgja.com/",
+  "homepage": "https://https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "elevation.css",

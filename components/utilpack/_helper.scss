@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 @use "sass:map";
@@ -31,7 +31,7 @@ $utilpack-breakpoints: (
     "sm": 640px,
     "md": 768px,
     "lg": 1024px,
-    "xl": 1440px
+    "xl": 1440px,
 ) !default;
 
 $utilpack: () !default;

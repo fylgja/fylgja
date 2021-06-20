@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 @use "sass:math";
@@ -26,11 +26,11 @@ $utilpack-defaults-sizing: (
             "66": calc(100% / 1.5),
             "75": 75%,
             "full": 100%,
-            "screen": 100vw
+            "screen": 100vw,
         ),
         "responsive": $enable-utilpack-width-responsive,
         "print": $enable-utilpack-width-print,
-        "important": $enable-utilpack-width-important
+        "important": $enable-utilpack-width-important,
     ),
     "min-width": (
         "class": "min-w",
@@ -38,11 +38,11 @@ $utilpack-defaults-sizing: (
             "none": 0,
             "full": 100%,
             "screen": 100vw,
-            "content": "min-content"
+            "content": "min-content",
         ),
         "responsive": $enable-utilpack-width-responsive,
         "print": $enable-utilpack-width-print,
-        "important": $enable-utilpack-width-important
+        "important": $enable-utilpack-width-important,
     ),
     "max-width": (
         "class": "max-w",
@@ -50,11 +50,11 @@ $utilpack-defaults-sizing: (
             "none": 0,
             "full": 100%,
             "screen": 100vw,
-            "content": "max-content"
+            "content": "max-content",
         ),
         "responsive": $enable-utilpack-width-responsive,
         "print": $enable-utilpack-width-print,
-        "important": $enable-utilpack-width-important
+        "important": $enable-utilpack-width-important,
     ),
     "height": (
         "class": "h",
@@ -67,32 +67,32 @@ $utilpack-defaults-sizing: (
             "66": calc(100% / 1.5),
             "75": 75%,
             "full": 100%,
-            "screen": 100vh
+            "screen": 100vh,
         ),
         "responsive": $enable-utilpack-height-responsive,
         "print": $enable-utilpack-height-print,
-        "important": $enable-utilpack-height-important
+        "important": $enable-utilpack-height-important,
     ),
     "min-height": (
         "class": "min-h",
         "values": (
             "none": 0,
             "full": 100%,
-            "screen": 100vh
+            "screen": 100vh,
         ),
         "responsive": $enable-utilpack-height-responsive,
         "print": $enable-utilpack-height-print,
-        "important": $enable-utilpack-height-important
+        "important": $enable-utilpack-height-important,
     ),
     "max-height": (
         "class": "max-h",
         "values": (
             "none": 0,
             "full": 100%,
-            "screen": 100vh
+            "screen": 100vh,
         ),
         "responsive": $enable-utilpack-height-responsive,
         "print": $enable-utilpack-height-print,
-        "important": $enable-utilpack-height-important
-    )
+        "important": $enable-utilpack-height-important,
+    ),
 ) !default;

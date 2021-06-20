@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-utilpack-display-responsive: true !default;
@@ -20,7 +20,7 @@ $enable-utilpack-overflow-important: false !default;
 $enable-utilpack-position-important: false !default;
 
 $utilpack-positions: (
-    "0": 0
+    "0": 0,
 );
 
 $utilpack-defaults-layout: (
@@ -31,96 +31,96 @@ $utilpack-defaults-layout: (
             inline-block,
             flex,
             inline-flex,
-            flow-root
+            flow-root,
         ),
         "responsive": $enable-utilpack-display-responsive,
         "print": $enable-utilpack-display-print,
-        "important": $enable-utilpack-display-important
+        "important": $enable-utilpack-display-important,
     ),
     "hidden": (
         "class": "",
         "property": "display",
         "values": (
-            "hidden": none
+            "hidden": none,
         ),
         "responsive": $enable-utilpack-display-responsive,
         "print": $enable-utilpack-display-print,
-        "important": $enable-utilpack-display-important
+        "important": $enable-utilpack-display-important,
     ),
     "float": (
         "values": right left none,
         "responsive": $enable-utilpack-float-responsive,
         "print": $enable-utilpack-float-print,
-        "important": $enable-utilpack-float-important
+        "important": $enable-utilpack-float-important,
     ),
     "clear": (
         "values": right left both none,
         "responsive": $enable-utilpack-float-responsive,
         "print": $enable-utilpack-float-print,
-        "important": $enable-utilpack-float-important
+        "important": $enable-utilpack-float-important,
     ),
     "object-fit": (
         "class": "object",
         "values": contain cover fill none scale-down,
         "responsive": $enable-utilpack-object-responsive,
         "print": $enable-utilpack-object-print,
-        "important": $enable-utilpack-object-important
+        "important": $enable-utilpack-object-important,
     ),
     "object-position": (
         "class": "object",
         "values": top right bottom left,
         "responsive": $enable-utilpack-object-responsive,
         "print": $enable-utilpack-object-print,
-        "important": $enable-utilpack-object-important
+        "important": $enable-utilpack-object-important,
     ),
     "overflow": (
         "values": auto hidden visible scroll,
         "responsive": $enable-utilpack-overflow-responsive,
         "print": $enable-utilpack-overflow-print,
-        "important": $enable-utilpack-overflow-important
+        "important": $enable-utilpack-overflow-important,
     ),
     "overflow-y": (
         "values": auto hidden visible scroll,
         "responsive": $enable-utilpack-overflow-responsive,
         "print": $enable-utilpack-overflow-print,
-        "important": $enable-utilpack-overflow-important
+        "important": $enable-utilpack-overflow-important,
     ),
     "overflow-x": (
         "values": auto hidden visible scroll,
         "responsive": $enable-utilpack-overflow-responsive,
         "print": $enable-utilpack-overflow-print,
-        "important": $enable-utilpack-overflow-important
+        "important": $enable-utilpack-overflow-important,
     ),
     "position": (
         "class": "",
         "values": static relative absolute fixed sticky,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "top": (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "right": (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "bottom": (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "left": (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "inset": (
         "property": top right bottom left,
@@ -128,7 +128,7 @@ $utilpack-defaults-layout: (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "inset-y": (
         "property": top bottom,
@@ -136,7 +136,7 @@ $utilpack-defaults-layout: (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
+        "important": $enable-utilpack-position-important,
     ),
     "inset-x": (
         "property": right left,
@@ -144,6 +144,6 @@ $utilpack-defaults-layout: (
         "values": $utilpack-positions,
         "responsive": $enable-utilpack-position-responsive,
         "print": $enable-utilpack-position-print,
-        "important": $enable-utilpack-position-important
-    )
+        "important": $enable-utilpack-position-important,
+    ),
 ) !default;

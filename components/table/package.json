@@ -2,7 +2,7 @@
   "name": "@fylgja/table",
   "version": "1.0.0",
   "description": "The table component is super easy to use. Since it is a zero config module that styles the table directly. Allowing you to focus on the table it self",
-  "homepage": "https://getfylgja.com/",
+  "homepage": "https://https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "table.css",

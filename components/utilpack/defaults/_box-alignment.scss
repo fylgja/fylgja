@@ -1,4 +1,4 @@
-// Fylgja (getfylgja.com)
+// Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
 $enable-utilpack-box-alignment-responsive: true !default;
@@ -14,23 +14,23 @@ $utilpack-defaults-box-alignment: (
             "center": center,
             "between": space-between,
             "around": space-around,
-            "evenly": space-evenly
+            "evenly": space-evenly,
         ),
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
+        "important": $enable-utilpack-box-alignment-important,
     ),
     "justify-items": (
         "values": start end center stretch,
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
+        "important": $enable-utilpack-box-alignment-important,
     ),
     "justify-self": (
         "values": start end center stretch,
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
+        "important": $enable-utilpack-box-alignment-important,
     ),
     "align-content": (
         "class": "content",
@@ -40,11 +40,11 @@ $utilpack-defaults-box-alignment: (
             "center": center,
             "between": space-between,
             "around": space-around,
-            "evenly": space-evenly
+            "evenly": space-evenly,
         ),
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
+        "important": $enable-utilpack-box-alignment-important,
     ),
     "align-items": (
         "class": "items",
@@ -53,11 +53,11 @@ $utilpack-defaults-box-alignment: (
             "end": flex-end,
             "center": center,
             "baseline": baseline,
-            "stretch": stretch
+            "stretch": stretch,
         ),
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
+        "important": $enable-utilpack-box-alignment-important,
     ),
     "align-self": (
         "class": "self",
@@ -65,10 +65,10 @@ $utilpack-defaults-box-alignment: (
             "start": flex-start,
             "end": flex-end,
             "center": center,
-            "stretch": stretch
+            "stretch": stretch,
         ),
         "responsive": $enable-utilpack-box-alignment-responsive,
         "print": $enable-utilpack-box-alignment-print,
-        "important": $enable-utilpack-box-alignment-important
-    )
+        "important": $enable-utilpack-box-alignment-important,
+    ),
 ) !default;
