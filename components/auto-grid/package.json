@@ -1,5 +1,5 @@
 {
-  "name": "@fylgja/autogrid",
+  "name": "@fylgja/auto-grid",
   "version": "1.0.0",
   "description": "A super small grid with auto flowing behavior based on the container size. Using a similar method to container queries",
   "homepage": "https://fylgja.dev/",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "components/autogrid"
+    "directory": "components/auto-grid"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
