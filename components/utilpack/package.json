@@ -1,8 +1,8 @@
 {
   "name": "@fylgja/utilpack",
-  "version": "2.5.2",
-  "description": "The Fylgja utilpack component",
-  "homepage": "https://getfylgja.com/",
+  "version": "1.0.0",
+  "description": "Build and use your own CSS utility classes with Sass using the Fylgja utilpack.",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "utilpack.css",
@@ -16,7 +16,9 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "utilpack"
+    "utilpack",
+    "css-utilities",
+    "utility-classes"
   ],
   "scripts": {
     "build": "sass utilpack.scss utilpack.css --no-source-map -s compressed"

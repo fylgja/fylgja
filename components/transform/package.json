@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/transform",
-  "version": "1.0.0",
-  "description": "The Fylgja transform component",
+  "version": "1.0.1",
+  "description": "Add transforms with ease, with the power of CSS variables.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
