@@ -1,6 +1,6 @@
-# Fylgja - autoGrid
+# Fylgja - Auto Grid
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/grid)](https://www.npmjs.org/package/@fylgja/grid)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/auto-grid)](https://www.npmjs.org/package/@fylgja/auto-grid)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 A super small grid with auto flowing behavior, based on the container size.
