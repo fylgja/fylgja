@@ -3,9 +3,11 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/input-group)](https://www.npmjs.org/package/@fylgja/input-group)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The input group extends upon the `@fylgja/form`.
-By providing a wrapper that allows for more complex form field styles.
-Like a search bar with button in the same form field.
+The input group extends upon the `@fylgja/form`, 
+
+by providing a wrapper that allows for more complex form field styles,
+
+like a search bar with button in the same form field.
 
 ## Installation
 
@@ -13,7 +15,7 @@ Like a search bar with button in the same form field.
 npm install @fylgja/input-group
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/input-group";
@@ -44,15 +46,20 @@ Import the style directly via;
 
 ## How to use
 
-The input group allows you to build simple things.
-Like a search form with a submit button in the same form field.
+The input group allows you to build simple things,
+like a search form with a submit button in the same form field.
 
 ```html
+<style>
+    .input-group .btn {
+        --btn-radius: 0;
+    }
+</style>
 <form id="search-form">
     <label for="search">Search</label>
     <div class="input-group">
         <input type="search" name="search" />
-        <button class="btn -icon" style="--btn-radius: 0;">
+        <button class="btn -icon">
             <svg>..</svg>
         </button>
     </div>
@@ -61,8 +68,8 @@ Like a search form with a submit button in the same form field.
 
 To more complex things.
 
-The main focus is that you have the freedom to add anything.
-So down here are all the classes that you have to your disposal.
+The main focus is that you have the freedom to add anything,
+so down here are all the classes that you have to your disposal.
 
 ### Input group
 
@@ -97,16 +104,40 @@ Via the variables found down here;
 
 ```scss
 $input-group-style: default !default;
-
-$input-group-border-width: input.$form-border-width !default;
-$input-group-border-style: input.$form-border-style !default;
-$input-group-border-color: var(
-    --form-stroke,
-    #{input.$form-border-color}
+$input-group-styles: (
+    field: (
+        padding: 0.375em 1px,
+        border-width: 0 0 1px,
+        border-style: solid,
+        border-color: currentColor,
+        radius: 0,
+        shadow: inset 0 -1px 0 $form-focus-color,
+        bg: transparent,
+        color: inherit,
+        file-btn-padding: 0.375em 0.625em,
+        file-btn-radius: 3px 3px 0 0
+    ),
+    box: (
+        padding: 0.375em 0.625em,
+        border-width: 0 0 1px,
+        border-style: solid,
+        border-color: currentColor,
+        radius: 4px 4px 0 0,
+        shadow: inset 0 -1px 0 $form-focus-color,
+        bg: if($root-fg == #000, #eee, #222),
+        color: inherit,
+        file-btn-padding: 0.375em 0.625em,
+        file-btn-radius: 4px 4px 0 0
+    )
 ) !default;
-$input-group-radius: var(--form-radius, #{input.$form-radius}) !default;
-$input-group-bg: var(--form-bg, #{input.$form-bg}) !default;
-$input-group-color: var(--form-color, #{input.$form-color}) !default;
-$input-group-focus-color: input.$form-focus-color !default;
-$input-group-focus-style: input.$form-focus-style !default;
+$input-group-styles: map.merge($input-group-styles, $form-styles);
+
+$input-group-border-width: $form-border-width !default;
+$input-group-border-style: $form-border-style !default;
+$input-group-border-color: var(--form-stroke, #{$form-border-color}) !default;
+$input-group-radius: var(--form-radius, #{$form-radius}) !default;
+$input-group-bg: var(--form-bg, #{$form-bg}) !default;
+$input-group-color: var(--form-color, #{$form-color}) !default;
+$input-group-focus-color: $form-focus-color !default;
+$input-group-focus-style: $form-focus-style !default;
 ```

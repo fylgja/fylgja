@@ -107,22 +107,6 @@ small,
     font-size: var(--small, smaller);
 }
 
-blockquote,
-q {
-    quotes: var(--quotes, #{$quotes});
-}
-
-blockquote,
-figure {
-    margin: var(--item-spacer);
-}
-
-cite {
-    display: block;
-    font-size: var(--caption-size, #{$caption-size});
-    font-style: normal;
-}
-
 hr,
 .hr {
     margin: var(--hr-margin, #{$hr-margin});

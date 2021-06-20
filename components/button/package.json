@@ -1,0 +1,27 @@
+{
+  "name": "@fylgja/button",
+  "version": "1.0.0",
+  "description": "The Button component serves as an interactive element. To call your users to an action",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "main": "_index.scss",
+  "style": "button.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/button"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "button"
+  ],
+  "scripts": {
+    "build": "sass button.scss button.css --no-source-map -s compressed --load-path=node_modules"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^0.1.0"
+  }
+}

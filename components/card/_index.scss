@@ -65,9 +65,16 @@
     > :last-child {
         margin-bottom: 0;
     }
+
+    @if $enable-card-link {
+        @at-root #{selector.unify(&, a)} {
+            @extend %card-link;
+        }
+    }
 }
 
 %card-link {
+    position: relative;
     text-decoration: none;
 
     &::after {

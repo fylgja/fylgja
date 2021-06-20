@@ -1,0 +1,64 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:color";
+@use "sass:meta";
+@use "@fylgja/theme" as *;
+
+$scrollbar-thumb-color: color.change($root-fg, $alpha: 0.2) !default;
+$scrollbar-track-color: color.change($root-fg, $alpha: 0) !default;
+
+// *1: Only supported in webkit
+// *2 Blink & Webkit require a number for the scrollbar to work
+// *3 Firefox require a name of the options for the scrollbar to work
+
+/// @param {Color} $thumb - thumb color
+/// @param {Color} $track - track color
+/// @param {String|Number} $width - width of the scrollbar
+/// @param {Number} $radius - border radius of the scrollbar // *1
+/// @param {Number} $width-size - $width setter for the older spec // *2
+/// @param {String} $width-name - $width setter for the newer spec // *3
+// prettier-ignore
+@mixin scrollbar(
+    $thumb: $scrollbar-thumb-color,
+    $track: $scrollbar-track-color,
+    $width: auto,
+    $radius: 0.5rem,
+    $width-size: if(
+        meta.type-of($width) == number,
+        $width,
+        if($width == thin, 0.4rem, 0.6rem)
+    ),
+    $width-name: if(meta.type-of($width) == number, auto, $width)
+) {
+    @if $width == none {
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    } @else {
+        scrollbar-width: $width-name;
+        scrollbar-color:
+            var(--scrollbar-thumb-color, #{$thumb})
+            var(--scrollbar-track-color, #{$track});
+
+        &::-webkit-scrollbar {
+            width: $width-size;
+            height: $width-size;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: $radius;
+            background-color: var(--scrollbar-thumb-color, #{$thumb});
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--scrollbar-track-color, #{$track});
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: var(--scrollbar-track-color, #{$track});
+        }
+    }
+}

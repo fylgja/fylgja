@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/breadcrumbs",
   "version": "1.0.0",
-  "description": "Breadcrumbs component will show your visitors where they are currently on the website.",
+  "description": "Breadcrumbs component will show your visitors where they are currently on the website",
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",

@@ -11,7 +11,7 @@ Make any component fully clickable via a nested link.
 npm install @fylgja/stretched-link
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/stretched-link";
@@ -21,12 +21,13 @@ And include the component in to your code via;
 
 ## How to use
 
-To use the stretched-link make sure you component is relative positioned.
-Like a the `@fylgja/card`.
+To use the stretched-link make sure you component is relative positioned,
+like a the `@fylgja/card`.
 
 This sample is made with the card component with a nested link
-and to make the card completely clickable.
-We also added the stretched-link on the nested link.
+and to make the card completely clickable,
+
+we also added the stretched-link on the nested link.
 
 ```html
 <div class="card">
@@ -38,26 +39,24 @@ We also added the stretched-link on the nested link.
 </div>
 ```
 
-Since the `.card` class has the style `position: relative;`.
+Since the `.card` class has the style `position: relative;`
+
 The card becomes clickable with the href from the nested link.
 
 ## Why use this
 
-Why do this.
-You might ask.
-Well for accessibility.
+Why do this, you might ask, well for accessibility.
 
-If you use a link on the card.
-The complete content becomes part of the link description,
-which causes a bad description for the link.
+If you use a link on the card, the complete content becomes part of the link description,
 
-Instead the link should only describe where the link will go to.
+that causes a bad description for the link, instead the link should only describe where the link will go to.
 
-So:
+Example:
 
 ```html
 <!-- Bad accessibility but clickable completely -->
 <a href="#" class="card">
+    <img src=".." class="card-media">
     <div class="card-content">
         <p>..</p>
     </div>

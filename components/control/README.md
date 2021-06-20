@@ -3,8 +3,8 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/control)](https://www.npmjs.org/package/@fylgja/control)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The control component styles the default `input[radio]` and `input[checkbox]`.
-Allowing an easier control on the style of both these elements.
+The control component styles the default `input[radio]` and `input[checkbox]`,
+allowing an easier control on the style of both these elements.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Allowing an easier control on the style of both these elements.
 npm install @fylgja/control
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/control";
@@ -23,11 +23,10 @@ And include the component in to your code via;
 ## How to use
 
 Out of the box all the styling is done directly,
-to the `input[type=radio]` and `input[type=checkbox]`.
-So no extra steps are needed.
+to the `input[type=radio]` and `input[type=checkbox]`,
 
-Except for the switch style.
-This requires a class on the `input[type=checkbox]`.
+so no extra steps are needed, except for the switch style,
+that requires a class on the `input[type=checkbox]`.
 
 ```html
 <input type="checkbox" class="control-switch">
@@ -42,11 +41,11 @@ You can use the class `.control-radio`, `.control-checkbox` and `.control-switch
 
 ## Config
 
-As with almost all of our components.
+As with almost all of our components,
 CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Want direct control on the base styles,
+here are the following SCSS variables can you modify.
 
 ```scss
 $control-size: 1em !default;

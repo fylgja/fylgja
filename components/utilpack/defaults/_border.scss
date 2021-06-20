@@ -1,0 +1,77 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+$enable-utilpack-border-responsive: true !default;
+$enable-utilpack-divider-responsive: true !default;
+
+$enable-utilpack-border-print: false !default;
+$enable-utilpack-divider-print: false !default;
+
+$enable-utilpack-border-important: false !default;
+$enable-utilpack-divider-important: false !default;
+
+$utilpack-border-style: var(--border-style, solid) !default;
+$utilpack-border-color: var(--border-color, currentColor) !default;
+$utilpack-border-sizes: (
+    "default": 1px $utilpack-border-style $utilpack-border-color,
+    "0": 0,
+    "2": 2px $utilpack-border-style $utilpack-border-color,
+    "3": 3px $utilpack-border-style $utilpack-border-color
+) !default;
+
+$utilpack-divider-sizes: (
+    "default": "1px solid var(--divide-color, currentColor)",
+    "none": "0"
+) !default;
+
+$utilpack-defaults-border: (
+    "border": (
+        "property": "border",
+        "values": $utilpack-border-sizes,
+        "responsive": $enable-utilpack-border-responsive,
+        "print": $enable-utilpack-border-print,
+        "important": $enable-utilpack-border-important
+    ),
+    "border-block-start": (
+        "values": $utilpack-border-sizes,
+        "responsive": $enable-utilpack-border-responsive,
+        "print": $enable-utilpack-border-print,
+        "important": $enable-utilpack-border-important
+    ),
+    "border-block-end": (
+        "values": $utilpack-border-sizes,
+        "responsive": $enable-utilpack-border-responsive,
+        "print": $enable-utilpack-border-print,
+        "important": $enable-utilpack-border-important
+    ),
+    "border-inline-end": (
+        "values": $utilpack-border-sizes,
+        "responsive": $enable-utilpack-border-responsive,
+        "print": $enable-utilpack-border-print,
+        "important": $enable-utilpack-border-important
+    ),
+    "border-inline-start": (
+        "values": $utilpack-border-sizes,
+        "responsive": $enable-utilpack-border-responsive,
+        "print": $enable-utilpack-border-print,
+        "important": $enable-utilpack-border-important
+    ),
+    "divider-block": (
+        "property": border-block-start,
+        "class": "divide-y",
+        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "values": $utilpack-divider-sizes,
+        "responsive": $enable-utilpack-divider-responsive,
+        "print": $enable-utilpack-divider-print,
+        "important": $enable-utilpack-divider-important
+    ),
+    "divider-inline": (
+        "property": border-inline-start,
+        "class": "divide-x",
+        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "values": $utilpack-divider-sizes,
+        "responsive": $enable-utilpack-divider-responsive,
+        "print": $enable-utilpack-divider-print,
+        "important": $enable-utilpack-divider-important
+    )
+) !default;

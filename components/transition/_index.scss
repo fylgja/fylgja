@@ -1,0 +1,9 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+.transition {
+    @include transition;
+}

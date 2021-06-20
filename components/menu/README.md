@@ -3,8 +3,8 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/menu)](https://www.npmjs.org/package/@fylgja/menu)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The menu component makes it easy to build many common navigation patterns.
-Like a navbar or menu in a dropdown.
+The menu component makes it easy to build common navigation patterns,
+like a navbar or menu in a dropdown.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Like a navbar or menu in a dropdown.
 npm install @fylgja/menu
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/menu";
@@ -22,8 +22,7 @@ And include the component in to your code via;
 
 ## How to use
 
-The most simple use case is just using the `.menu` class as wrapper,
-around a set of links.
+The most simple usecase is just using the `.menu` class as wrapper, around a set of links.
 
 ```html
 <nav class="menu">
@@ -32,7 +31,7 @@ around a set of links.
 </nav>
 ```
 
-Or as list.
+Or as a list.
 
 ```html
 <nav class="menu">
@@ -44,16 +43,17 @@ Or as list.
 ```
 
 By default the menu is column based, like a normal list.
-By using the modifier `.-row` the menu items can be placed in a row layout.
+
+Using the modifier `-row` the menu items can be placed in a row layout.
 
 ### Menu items
 
 The menu class will style all links automatically,
-But only if the are a child of the menu class or if a direct child of list item.
 
-If you want to use a wrapper.
-Then use the class `.menu-item`.
-To add the same logic and styles as the auto menu item version.
+but only if links are a child of the menu class or a direct child of list item.
+
+If you want to use a wrapper, then use the class `.menu-item`, 
+to add the same logic and styles as the auto menu item version.
 
 ```html
 <nav>
@@ -72,8 +72,8 @@ To add the same logic and styles as the auto menu item version.
 ### Menu label
 
 If you want a heading for your menu items you can use the `.menu-label` class.
-To add an item styled as the `.menu-item` class,
-without all the hover, focus and active states.
+
+To add an item styled as the `.menu-item` class, without all the hover, focus and active states.
 
 ```html
 <nav class="menu">
@@ -89,11 +89,11 @@ without all the hover, focus and active states.
 
 ### Menu divider
 
-The menu divider is not part of this component.
-Since it is not specifically for the menu.
+The menu divider is not part of this component, since it is not specifically for the menu.
 
-You need the use `.hr` class from the component `@fylgja/base`.
-Combine it with the correct markup and you have a menu divider.
+You need the use `.hr` class from the component `@fylgja/base`,
+
+combine it with the correct markup and you have a menu divider.
 
 ```html
 <nav class="menu">
@@ -107,11 +107,9 @@ Combine it with the correct markup and you have a menu divider.
 
 ## Config
 
-As with almost all of our components.
-CSS variables can be configured to add your own look/style.
+As with almost all of our components, CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Want direct control on the base styles, here are the following SCSS variables can you modify.
 
 ```scss
 $enable-menu-row: true !default;

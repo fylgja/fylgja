@@ -3,10 +3,10 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/gradient)](https://www.npmjs.org/package/@fylgja/gradient)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-Add gradient's with easy via the gradient utility class.
+Add gradient's with ease via the gradient utility class.
 
-This component offers both the background and border versions.
-Which you can modify to your needs.
+This component offers both the background and border versions,
+which you can modify to your needs.
 
 ## Installation
 
@@ -14,7 +14,7 @@ Which you can modify to your needs.
 npm install @fylgja/gradient
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @import "@fylgja/gradient";
@@ -24,8 +24,10 @@ And include the component in to your code via;
 
 ## How to use
 
-To use the `.bg-gradient` or `.border-gradient` simply add them to any element.
-`.bg-gradient` will work out of the box.
+To use the `.bg-gradient` or `.border-gradient` simply add them to any element,
+
+`.bg-gradient` will work out of the box,
+
 `.border-gradient` requires that the element already has a border-width.
 
 This can be done via the border class from the `@fylgja/utilpack`;
@@ -67,11 +69,11 @@ Default angles:
 - `bottom-right`
 - `bottom-left`
 
-_Top the the default value_
+_Top is the default value_
 
 ### Modifying the color
 
-Both gradients offer CSS variables and class variables for the gradient angle.
+Both gradients offer CSS variables and class variables for the color options.
 
 ```html
 <!-- Class variables -->
@@ -98,11 +100,9 @@ Default colors:
 
 ## Config
 
-As with almost all of our components.
-CSS variables can be configured to add your own look/style.
+As with almost all of our components, CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following scss variables can you modify.
+Want direct control on the base styles, here are the following scss variables can you modify.
 
 ```scss
 $enable-gradient-border: true !default;

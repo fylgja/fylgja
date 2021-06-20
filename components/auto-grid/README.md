@@ -3,16 +3,18 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/grid)](https://www.npmjs.org/package/@fylgja/grid)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-A super small grid with auto flowing behavior based on the container size.
+A super small grid with auto flowing behavior, based on the container size.
+
 Using a similar method to container queries.
 
-This grid uses a minmax method.
-That fills the grid items based on the space available.
+This grid uses a minmax method,
+it fills the grid items based on the space available.
+
 Where the min value is static value and the max value is `1fr`.
 
-This creates a grid without needing to setup any columns and rows.
-Since the grid items will do this for you.
-Following the **content first** approach!
+It creates a grid without needing to setup any columns and rows,
+
+since the grid items will do this for you, following the **content first** approach!
 
 ## Installation
 
@@ -20,7 +22,7 @@ Following the **content first** approach!
 npm install @fylgja/auto-grid
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/auto-grid";
@@ -39,37 +41,24 @@ The grid can be added by just adding the class `.auto-grid`.
 </div>
 ```
 
-In the first example the grid is 2 cols.
-If the container size something like `625px`.
-Since the grid tries to fill the space.
-Until there is not enough space for a `250px` col.
-Which is the default col size.
+In this example we have a container thats `800px` width,
+using a default col size of `250px` this wil result in 3 equal columns, 
+even if there are only 2 child's to fill the space.
+The third one is an empty placeholder, making the grid truly auto.
 
-If the container size was something like `750px`.
-It would be 3 cols even if there are 2 child's to fill the space.
-The third one is an empty placeholder.
-Making the grid truly auto.
-
-You can change the min value and the gap via the CSS variables.
-Taking control of each grid on each specific page or section.
-Or take complete control via the CSS variable `--cols`.
-Changing the complete `grid-template-columns` value.
-
-Which allows you to build a static grid based on the viewport,
-on desktop and fallback to the auto-grid.
+You can change the behavior by adjusting the min value and the gap via the CSS variables.
 
 ### Using a static grid
 
-Do you want to use grid columns based on the viewport width instead.
-Simple add the var `--cols` to take complete control of the grid cols.
+Do you want to use grid columns based on the viewport width instead?<br>
+Then add the var `--cols` to take complete control of the grid cols.
+
+Which allows you to build a static grid based on the viewport,
+on desktop and fallback to the auto-grid on mobile.
 
 
 ```html
 <style>
-    #cool-products {
-        --cols: repeat(2, 1fr);
-    }
-
     @media (min-width: 640px) {
         #cool-products {
             --cols: repeat(3, 1fr);
@@ -84,8 +73,8 @@ Simple add the var `--cols` to take complete control of the grid cols.
 
 ## Config
 
-Want more control on the base styles, than the CSS variable.
-Down here are the following SCSS variables you can modify.
+Do you want more control over the Auto Grid CSS variables,
+modify the following SCSS variables.
 
 ```scss
 $auto-grid-cols: 250px !default;

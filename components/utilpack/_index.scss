@@ -1,0 +1,159 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "sass:map";
+@use "sass:meta";
+@use "helper" as *;
+
+/// Handels the single CSS util building for the utilpack-build
+///
+/// @param {String} $class
+/// @param {String|List} $property
+/// @param {String} $value
+/// @param {String|List} $states - states of the class
+/// @param {Boolean} $important - if the value is important
+/// @param {String} $mq-prefix - the class @media prefix
+/// @param {String} $sepparator - sepparator style
+/// @return {Mixed} - CSS util class
+@mixin utilpack-build-class(
+    $class,
+    $property,
+    $value,
+    $states: null,
+    $important: false,
+    $mq-prefix: null,
+    $class-nested: null,
+    $sepparator: "-"
+) {
+    $prefix: if($mq-prefix, "#{$mq-prefix}#{$sepparator}", "");
+    $safeprefix: if($mq-prefix, "#{$mq-prefix}-", "");
+    $value: if($important, $value "!important", $value);
+
+    %use-#{$safeprefix}#{$class} {
+        @if $class-nested {
+            #{$class-nested} {
+                @if meta.type-of($property) == "list" {
+                    @each $p in $property {
+                        #{$p}: #{$value};
+                    }
+                } @else {
+                    #{$property}: #{$value};
+                }
+            }
+        } @else {
+            @if meta.type-of($property) == "list" {
+                @each $p in $property {
+                    #{$p}: #{$value};
+                }
+            } @else {
+                #{$property}: #{$value};
+            }
+        }
+    }
+
+    .#{$prefix}#{$class} {
+        @extend %use-#{$safeprefix}#{$class};
+    }
+
+    @if $states {
+        @each $state in $states {
+            .#{"#{$prefix}#{$state}-#{$class}:#{$state}"} {
+                @extend %use-#{$safeprefix}#{$class};
+            }
+        }
+    }
+}
+
+/// Builds the CSS util class based on specific params
+///
+/// @require {Mixin} utilpack-build-class - Handels the single CSS util building
+/// @param {String} $property - CSS property
+/// @param {Map} $util - Util options and values
+/// @param {String} $mq-prefix - Has mq prefix
+/// @return {Mixed} - CSS util classes
+@mixin utilpack-build(
+    $property,
+    $util,
+    $mq-prefix: null,
+    $sepparator: $utilpack-sepparator
+) {
+    $values: map.get($util, "values");
+    $class: if(map.get($util, "class"), map.get($util, "class"), $property);
+    $props: if(
+        map.get($util, "property"),
+        map.get($util, "property"),
+        $property
+    );
+    $states: map.get($util, "states");
+    $important: map.get($util, "important");
+    $class-nested: map.get($util, "class-nested");
+
+    @if meta.type-of($values) == "map" {
+        @each $key, $value in $values {
+            $classname: if(
+                $class == "",
+                #{$key},
+                if($key == "default", "#{$class}", "#{$class}-#{$key}")
+            );
+            @include utilpack-build-class(
+                $class: $classname,
+                $property: $props,
+                $value: $value,
+                $states: $states,
+                $important: $important,
+                $mq-prefix: $mq-prefix,
+                $class-nested: $class-nested,
+                $sepparator: $sepparator
+            );
+        }
+    } @else {
+        @each $value in $values {
+            @if type-of($value) != "string" {
+                @error "#{$value} is not a string value, " +
+                    "Use a key if the value must be #{type-of($value)} type";
+            }
+
+            $classname: if(
+                $class == "",
+                #{$value},
+                if($value == "default", "#{$class}", "#{$class}-#{$value}")
+            );
+            @include utilpack-build-class(
+                $class: $classname,
+                $property: $props,
+                $value: $value,
+                $states: $states,
+                $important: $important,
+                $mq-prefix: $mq-prefix,
+                $class-nested: $class-nested,
+                $sepparator: $sepparator
+            );
+        }
+    }
+}
+
+// Build each util class
+@each $key, $util in $utilpack {
+    @include utilpack-build($key, $util);
+}
+
+// Build each util class in a specific min-width mq
+@each $mq-name, $mq in $utilpack-breakpoints {
+    @media (min-width: $mq) {
+        @each $key, $util in $utilpack {
+            @if meta.type-of($util) == "map" and map.get($util, responsive) {
+                @include utilpack-build($key, $util, $mq-name);
+            }
+        }
+    }
+}
+
+// Build each util class in a specific print mq
+@media print {
+    @each $key, $util in $utilpack {
+        @if meta.type-of($util) == "map" and map.get($util, print) {
+            @include utilpack-build($key, $util, "print");
+        }
+    }
+}

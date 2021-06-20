@@ -13,9 +13,9 @@ $color-text-alt: color.change($root-fg, $alpha: 0.68) !default;
 $color-text-muted: color.change($root-fg, $alpha: 0.56) !default;
 
 // Color pallet
-$color-theme: #1565c0 !default;
-$color-on-theme: #fff !default;
+$color-theme: #1565c1 !default;
 $color-theme-fade: color.change($color-theme, $alpha: 0.2) !default;
+$color-on-theme: #fff !default;
 
 $color-error: #b00020 !default;
 $color-warning: #ffab40 !default;

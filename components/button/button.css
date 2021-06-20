@@ -1,0 +1,19 @@
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 5 | @use "@fylgja/theme" as *;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   _helper.scss 5:1  @forward
+ *   _index.scss 4:1   @use
+ *   button.scss 4:1   root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 5 \2502  @use \"@fylgja/theme\" as *;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   _helper.scss 5:1  @forward\a   _index.scss 4:1   @use\a   button.scss 4:1   root stylesheet";
+}

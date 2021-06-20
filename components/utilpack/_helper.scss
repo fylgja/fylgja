@@ -1,0 +1,64 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:map";
+@use "sass:meta";
+@forward "defaults/border";
+@forward "defaults/box-alignment";
+@forward "defaults/color";
+@forward "defaults/flex";
+@forward "defaults/layout";
+@forward "defaults/sizing";
+@forward "defaults/spacers";
+@forward "defaults/typography";
+@use "defaults/border" as *;
+@use "defaults/box-alignment" as *;
+@use "defaults/color" as *;
+@use "defaults/flex" as *;
+@use "defaults/layout" as *;
+@use "defaults/sizing" as *;
+@use "defaults/spacers" as *;
+@use "defaults/typography" as *;
+
+// * The sepparator style can be a safe css sepparator, the "-" (hyphen)
+// * Or the unsafe css "\\:" (TailwindCSS sepparator)
+// * Or use a underscore "_".
+// * If you want something diffrent that is still a safe sepparator
+$utilpack-sepparator: "-" !default;
+
+$utilpack-breakpoints: (
+    "xs": 420px,
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1440px
+) !default;
+
+$utilpack: () !default;
+$utilpack-defaults: () !default;
+
+// prettier-ignore
+@if $utilpack-defaults {
+    @each $map in (
+        $utilpack-defaults-border,
+        $utilpack-defaults-box-alignment,
+        $utilpack-defaults-color,
+        $utilpack-defaults-flex,
+        $utilpack-defaults-layout,
+        $utilpack-defaults-sizing,
+        $utilpack-defaults-spacers,
+        $utilpack-defaults-typography,
+    ) {
+        $utilpack-defaults: if(
+            meta.type-of($map) == map,
+            map.merge($map, $utilpack-defaults),
+            $utilpack-defaults
+        );
+    }
+}
+
+$utilpack: if(
+    meta.type-of($utilpack-defaults) == map,
+    map.merge($utilpack-defaults, $utilpack),
+    $utilpack
+);

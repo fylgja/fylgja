@@ -3,9 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/code)](https://www.npmjs.org/package/@fylgja/code)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The Code component is a extension component to the base component.
+The Code component is a extension component on the base component.
 
-This includes more styling to the `<code>`, `<pre>` and `<kbd>` element.
+This includes more styling to the `<code>`, `<pre>` and `<kbd>` elements.
 
 ## Installation
 
@@ -13,7 +13,7 @@ This includes more styling to the `<code>`, `<pre>` and `<kbd>` element.
 npm install @fylgja/code
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/code";
@@ -23,23 +23,24 @@ And include the component in to your code via;
 
 ## How to use
 
-Out of the box all the styling is done directly.
-So no extra steps are needed.
+Out of the box all the styling is done directly,
+no extra steps are needed.
 
-But for a more complete code syntax highlighting in `<pre>` element.
-Use a frameworks like
+For a more complete code syntax highlighting in `<pre>` element,
+
+use a frameworks like
 [Prims](https://prismjs.com/),
-[highlight.js](https://highlightjs.org/)
-or [shiki](https://shiki.matsu.io/) instead.
-Or combine it with `@fylgja/code`.
+[highlight](https://highlightjs.org/)
+or [shiki](https://shiki.matsu.io/) instead,
+or combine it with `@fylgja/code`.
 
 ## Config
 
-As with almost all of our components.
+As with almost all of our components,
 CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Want direct control on the base styles,  
+Here are the following SCSS variables can you modify.
 
 ```scss
 $family-code: (

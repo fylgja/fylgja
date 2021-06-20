@@ -8,6 +8,7 @@
 :root {
     --item-spacer: #{$item-spacer};
     --color-theme: #{$color-theme};
+    --color-theme-fade: #{$color-theme-fade};
     --color-on-theme: #{$color-on-theme};
     --color-bg: #{$root-bg};
     --color-text: #{$color-text};
@@ -31,11 +32,11 @@ html {
     box-sizing: border-box;
 }
 
+// *1: Always inherit, allowing easier switching between the options
 *,
 ::before,
 ::after {
-    box-sizing: inherit;
-    border: 0 solid currentColor;
+    box-sizing: inherit; // *1
 }
 
 // *1: Prevent adjustments of font size after orientation changes on iOS

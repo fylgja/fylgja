@@ -3,8 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/table)](https://www.npmjs.org/package/@fylgja/table)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The table component is super easy to use.
-Since it is a zero config module that styles the table directly.
+The table component is super easy to use,
+since it is a zero config module that styles the table directly.
+
 Allowing you to focus on the table it self.
 
 ## Installation
@@ -13,7 +14,7 @@ Allowing you to focus on the table it self.
 npm install @fylgja/table
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/table";
@@ -23,15 +24,15 @@ And include the component in to your code via;
 
 ## How to use
 
-No instruction are really needed.
-The table styles are automatically added when loaded.
+No instruction are really needed,
+the table styles are automatically added when loaded.
 
-That said no site is the same.
-And if you need more than this basis.
-Then consider adding you own styles to improve on this basis.
+That said no site is the same, and if you need more than this basis,
+
+then consider adding you own styles to improve on this basis.
 
 For example,
-A simple stripped style can be made with just this bit of code;
+a simple stripped style can be made with just this bit of code;
 
 ```scss
 .table-striped {
@@ -44,18 +45,19 @@ A simple stripped style can be made with just this bit of code;
 ### Single level styled by default
 
 The table styles are unlike other frameworks set on a single level basis.
-Making overriding the behavior or adding anything super easy.
-Since there is no styles set to deep, to block your styles.
+
+Making overriding the behavior or adding anything super easy,
+since there is no styles set to deep, to block your styles.
 
 ### Overflow
 
-Tables are as responsive as the content.
-So it is hard to make a responsive behavior that fits all table data types.
+Tables are as responsive as the content,
+so it is hard to make a responsive behavior that fits all table data types.
 
-So use the `@fylgja/utilpack` overflow util class.
-That at least allows your table not the break the page
-and can be scrolled instead.
-Giving a basic user experience.
+Use the `@fylgja/utilpack` overflow util class,
+that allows your table not the break the page
+
+and can be scrolled instead, giving a basic user experience.
 
 ```html
 <div class="overflow-x-auto">
@@ -63,16 +65,17 @@ Giving a basic user experience.
 </div>
 ```
 
-If you really want your table to shine on mobile devices.
-Use some custom CSS for collapsing the expected data in the layout you want.
+If you really want your table to shine on mobile devices,
+
+use some custom CSS for collapsing the expected data in the layout you want.
 
 ## Config
 
-As with almost all of our components.
+As with almost all of our components,
 CSS variables can be configured to add your own look/style.
 
 Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Here are the following SCSS variables can you modify.
 
 ```scss
 $table-margin: 1rem 0 !default;

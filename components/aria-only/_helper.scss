@@ -6,19 +6,26 @@
 
 $enable-aria-only-important: false !default;
 
-@mixin aria-only($enforce: false) {
+/// @param {Boolean} $enforce - set all values to important
+/// @param {Boolean} $unset - unset all values to default
+/// @return {Mixed} - aria-only (sr-only) styles
+@mixin aria-only($enforce: false, $unset: false) {
     $important: if($enforce, "!important", null);
-    position: absolute #{$important};
-    width: 1px #{$important};
-    height: 1px #{$important};
-    margin: -1px #{$important};
-    white-space: nowrap #{$important}; // *1
-    overflow: hidden #{$important};
-    clip-path: inset(50%) #{$important};
+    position: if($unset, unset, absolute) #{$important};
+    width: if($unset, unset, 1px) #{$important};
+    height: if($unset, unset, 1px) #{$important};
+    margin: if($unset, unset, -1px) #{$important};
+    white-space: if($unset, unset, nowrap) #{$important}; // *1
+    overflow: if($unset, unset, hidden) #{$important};
+    clip-path: if($unset, unset, inset(50%)) #{$important};
 }
 
-@mixin aria-only-focusable($enforce: false) {
+/// @require {Mixin} aria-only
+/// @param {Boolean} $enforce - set all values to important
+/// @param {Boolean} $unset - unset all values to default
+/// @return {Mixed} - aria-only (sr-only) styles for none focus
+@mixin aria-only-focusable($enforce: false, $unset: false) {
     &:not(:focus) {
-        @include aria-only($enforce);
+        @include aria-only($enforce, $unset);
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/progress",
   "version": "1.0.0",
-  "description": "The progress component show a progression of a form or somethings else.",
+  "description": "The progress component show a progression of a form or somethings else",
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",

@@ -63,7 +63,7 @@ pre {
     font-size: var(--code-font-size, #{$pre-font-size});
     tab-size: $pre-tab-index;
     direction: ltr;
-    overflow: auto;
+    overflow-x: auto;
 }
 
 :not(kbd) > kbd {

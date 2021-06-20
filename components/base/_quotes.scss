@@ -1,0 +1,22 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+blockquote,
+q {
+    quotes: var(--quotes, #{$quotes});
+}
+
+blockquote {
+    margin: var(--blockquote-margin, #{$blockquote-margin});
+    padding-inline-start: var(
+        --blockquote-padding-start,
+        #{$blockquote-padding-start}
+    );
+    border-inline-start: var(
+        --blockquote-border-start,
+        #{$blockquote-border-start}
+    );
+    font-style: $blockquote-font-style;
+}

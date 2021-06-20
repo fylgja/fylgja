@@ -11,7 +11,7 @@ Helper component for adding theme specific variables to multiple components.
 npm install @fylgja/theme
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/theme";
@@ -20,8 +20,8 @@ And include the component in to your code via;
 ## How to use
 
 This component does not create any CSS.
-And only contains some SCSS variable for Fylgja components.
-That have theme specific styles.
+
+And only contains some SCSS variable for Fylgja components, that have theme specific styles.
 
 You can use this component to quickly override the specific styles,
 set to a button, links and more, via;
@@ -35,8 +35,9 @@ set to a button, links and more, via;
 
 Instead of the default the theme is now a teal color.
 
-And you also reuse this in your own components.
-By importing the `@fylgja/theme` or use it directly in your styles via;
+And you can also reuse this in your own components,
+
+by importing the `@fylgja/theme` or use it directly in your styles via;
 
 ```scss
 @use "@fylgja/theme" as ft with (
@@ -67,9 +68,9 @@ $color-text-alt: color.change($root-fg, $alpha: 0.68) !default;
 $color-text-muted: color.change($root-fg, $alpha: 0.56) !default;
 
 // Color pallet
-$color-theme: #1565c0 !default;
+$color-theme: #1565c1 !default;
+$color-theme-fade: color.change($color-theme, $alpha: 0.2) !default;
 $color-on-theme: #fff !default;
-$color-theme-soft: color.change($color-theme, $alpha: 0.2) !default;
 
 $color-error: #b00020 !default;
 $color-warning: #ffab40 !default;

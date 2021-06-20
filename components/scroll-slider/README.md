@@ -3,11 +3,12 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/scroll-slider)](https://www.npmjs.org/package/@fylgja/scroll-slider)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-This CSS slider component allows you to make sliders with eas.
-And no requirements to any Javascript.
+This CSS slider component allows you to make sliders with ease,
+and has no requirements to any Javascript.
 
 The only reason to add some additional Javascript,
-Would be to add extra supporting functions.
+would be to add extra supporting functions.
+
 Like a navigation and a active state.
 
 ## Installation
@@ -16,7 +17,7 @@ Like a navigation and a active state.
 npm install @fylgja/scroll-slider
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/scroll-slider";
@@ -26,8 +27,8 @@ And include the component in to your code via;
 
 ## How to use
 
-To create a slider.
-You will need a wrapper element with the class `.scroll-slider`.
+To create a slider, you will need a wrapper element with the class `.scroll-slider`.
+
 Any direct children of the slider will become scroll items.
 
 ```html
@@ -37,15 +38,33 @@ Any direct children of the slider will become scroll items.
 </div>
 ```
 
-The scroll items will by default will the space they have in size.
+The scroll items will by default have the size from the content.
 
-If you want your slides to a specific size.
-Add the `@fylgja/utilkit` width classes.
+If you want your slides to have a specific size, 
+you can use the CSS variables provided by this CSS component.
+
+A full width slider can be made by setting the scroll-size to 100%
+and setting the inline gap to 0.
+
+If you also want to reserve the scroll gap, set the block gap to whatever your want.
+
+```html
+<style>
+    .scroll-slider.-full-slide {
+        --scroll-size: 100%;
+        --gap-inline: 0;
+    }
+</style>
+<div class="scroll-slider -full-slide">
+    <div>..</div>
+    <img src="">
+</div>
+```
 
 ## Config
 
-Want more control on the base styles, than the CSS variables.
-Down here are the following SCSS variables you can modify.
+Want more control on the base styles, then the CSS variables,
+here are the following SCSS variables you can modify.
 
 ```scss
 $enable-scroll-overflow-fix: true !default;
@@ -62,19 +81,21 @@ $scroll-stop-fine: normal !default;
 
 ## Tips
 
-Down here some usefull tips to enhance your slider.
+Down here some useful tips to enhance your slider.
 
 ### Adding a navigation
 
-You can create a navigation for the slider.
-By using an anchor hash link pagination.
-And using the `@fylgja/pagination` as CSS component for the style.
+You can create a navigation for the slider,
+by using an anchor hash link pagination,
 
-If don't like the hash to appear in your url.
-You can add a little javascript to enhance this behavior.
-And remove the hash from your url.
+and using the `@fylgja/pagination` as CSS component for the style.
 
-<details class="faq-panel"><summary>Example of the Html and Javascript pagination</summary>
+If don't like the hash to appear in your url,
+you can add a little javascript to enhance this behavior,
+
+and remove the hash from your url.
+
+<details class="faq-panel"><summary>Example of the HTML and Javascript pagination</summary>
 
 ```html
 <div class="scroll-slider">
@@ -98,15 +119,14 @@ And remove the hash from your url.
 </script>
 ```
 
-> An event listener would have been better. But this is just sample 😉
+_An event listener would have been better. But this is just sample 😉_
 
 </details>
 
-### Hiding the scrollbar
+### Hiding or Changing the scrollbar
 
-By default we don't hide the scrollbar.
-This should by default left to the choice of the Dev and the OS.
+By default we don't hide or change the scrollbar.
 
-But if you want to hide the scrollbar.
-You can add the `@fylgja/scrollbar` component.
-And use the `.hide-scrollbar` class.
+If you slider requires a more custom style use the `@fylgja/scrollbar` component,
+adding the thin or hide class.
+

@@ -6,6 +6,7 @@
 $enable-dialog-polyfill: true !default;
 
 // Modal (default)
+$dialog-index: 9 !default;
 $dialog-offset: 2em !default;
 $dialog-max-width: calc(100% - #{$dialog-offset}) !default;
 $dialog-max-height: $dialog-max-width !default;
@@ -26,12 +27,12 @@ $dialog-snackbar-offset: 1em !default;
 $dialog-offcanvas-radius: 0 !default;
 
 // *1: Needed until fit-content is better supported by Firefox and Safari
-/// Add dialog snackbar styles based on position
-/// @param {String} $position - (inline)|block postion where it opens from
+/// Adds the dialog snackbar styles based on position
+/// @param {String} $position - (inline)|block position where it opens from
 /// @param {Color} $bg - the snackbar background-color
 /// @param {Color} $color - the snackbar color
 /// @param {Number} $offset - Position offset
-/// @return {*} - Dialog snackbar styles
+/// @return {Mixed} - Dialog snackbar styles
 @mixin dialog-snackbar(
     $position: $dialog-snackbar-from,
     $offset: $dialog-snackbar-offset
@@ -48,9 +49,10 @@ $dialog-offcanvas-radius: 0 !default;
     transform: initial; // *1
 }
 
+// *1: Needed until fit-content is better supported by Firefox and Safari
 /// Add dialog offcanvas styles based on position
-/// @param {String} $position - inline postion where it opens from
-/// @return {*} - Dialog offcanvas styles
+/// @param {String} $position - inline position where it opens from
+/// @return {Mixed} - Dialog offcanvas styles
 @mixin dialog-offcanvas($position: start) {
     @if (length($position) > 1) {
         @error "$position can only accept 1 value";

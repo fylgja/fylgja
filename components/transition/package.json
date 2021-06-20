@@ -1,0 +1,24 @@
+{
+  "name": "@fylgja/transition",
+  "version": "1.0.0",
+  "description": "The Fylgja transition component",
+  "homepage": "https://getfylgja.com/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "transition.css",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/transition"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "transition"
+  ],
+  "scripts": {
+    "build": "sass transition.scss transition.css --no-source-map -s compressed"
+  }
+}

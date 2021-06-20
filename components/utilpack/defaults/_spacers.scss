@@ -1,0 +1,190 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:map";
+
+/// Converters a map with unit values to a negative unit version
+///
+/// @param {Map} $map - map with unit values
+/// @return {Map} - with native unit values
+@function map-negative($map, $change-key: false) {
+    $result: ();
+
+    @each $key, $value in $map {
+        $new-key: if($change-key, "n" + $key, $key);
+
+        @if $key != 0 {
+            // prettier-ignore
+            $result: map.merge($result, ($new-key: -$value));
+        }
+    }
+
+    @return $result;
+}
+
+$enable-utilpack-margin-responsive: true !default;
+$enable-utilpack-padding-responsive: true !default;
+$enable-utilpack-space-responsive: true !default;
+
+$enable-utilpack-margin-print: false !default;
+$enable-utilpack-padding-print: false !default;
+$enable-utilpack-space-print: false !default;
+
+$enable-utilpack-margin-important: false !default;
+$enable-utilpack-padding-important: false !default;
+$enable-utilpack-space-important: false !default;
+
+$enable-utilpack-negative-margins: false !default;
+
+$utilpack-spacers: (
+    "0": 0,
+    "1": 0.25em,
+    "2": 0.5em,
+    "3": 0.75em,
+    "4": 1em,
+    "5": 1.25em,
+    "6": 1.5em,
+    "7": 1.75em,
+    "8": 2em,
+    "9": 2.25em,
+    "10": 2.5em,
+    "11": 2.75em,
+    "12": 3em
+) !default;
+
+$utilpack-margin: () !default;
+// prettier-ignore
+$utilpack-margin: map.merge($utilpack-spacers, ("auto": auto));
+$utilpack-margin-all: if(
+    $enable-utilpack-negative-margins,
+    map.merge(
+        map-negative($utilpack-spacers, $change-key: true),
+        $utilpack-margin
+    ),
+    $utilpack-margin
+);
+$utilpack-padding: $utilpack-spacers !default;
+$utilpack-space: $utilpack-spacers !default;
+
+$utilpack-defaults-spacers: (
+    "margin": (
+        "class": "m",
+        "values": $utilpack-margin,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-block": (
+        "property": margin-block-start margin-block-end,
+        "class": "my",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-block-start": (
+        "class": "mt",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-block-end": (
+        "class": "mb",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-inline": (
+        "property": margin-inline-start margin-inline-end,
+        "class": "mx",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-inline-start": (
+        "class": "ms",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "margin-inline-end": (
+        "class": "me",
+        "values": $utilpack-margin-all,
+        "responsive": $enable-utilpack-margin-responsive,
+        "print": $enable-utilpack-margin-print,
+        "important": $enable-utilpack-margin-important
+    ),
+    "padding": (
+        "class": "p",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-block": (
+        "property": padding-block-start padding-block-end,
+        "class": "py",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-block-start": (
+        "class": "pt",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-block-end": (
+        "class": "pb",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-inline": (
+        "property": padding-inline-start padding-inline-end,
+        "class": "px",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-inline-start": (
+        "class": "ps",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "padding-inline-end": (
+        "class": "pe",
+        "values": $utilpack-padding,
+        "responsive": $enable-utilpack-padding-responsive,
+        "print": $enable-utilpack-padding-print,
+        "important": $enable-utilpack-padding-important
+    ),
+    "space-block": (
+        "property": margin-block-start,
+        "class": "space-y",
+        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "values": $utilpack-space,
+        "responsive": $enable-utilpack-space-responsive,
+        "print": $enable-utilpack-space-print,
+        "important": $enable-utilpack-space-important
+    ),
+    "space-inline": (
+        "property": margin-inline-start,
+        "class": "space-x",
+        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "values": $utilpack-space,
+        "responsive": $enable-utilpack-space-responsive,
+        "print": $enable-utilpack-space-print,
+        "important": $enable-utilpack-space-important
+    )
+) !default;

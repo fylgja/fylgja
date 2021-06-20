@@ -80,6 +80,12 @@
         background-image: var(--select-icon, #{$form-select-icon});
     }
 
+    // * NOTE has no effect until the Bug in Chrome is fixed
+    // * https://bugs.chromium.org/p/chromium/issues/detail?id=1021515&q=Auto-filled%20input
+    // &:autofill {
+    //     background: var(--select-icon, #{$form-select-icon});
+    // }
+
     @if $has-states {
         &:focus {
             @extend %form-field-focus;

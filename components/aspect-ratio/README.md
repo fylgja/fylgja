@@ -3,8 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/aspect-ratio)](https://www.npmjs.org/package/@fylgja/aspect-ratio)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The aspect ratio component allows you to make not just videos,
-but anything you want to a certain responsive aspect ratio.
+The aspect ratio component is used to set videos to a certain responsive aspect ratio, 
+
+but can also be used for images and other content.
 
 ## Installation
 
@@ -12,7 +13,7 @@ but anything you want to a certain responsive aspect ratio.
 npm install @fylgja/aspect-ratio
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/aspect-ratio";
@@ -22,8 +23,8 @@ And include the component in to your code via;
 
 ## How to use
 
-To use the aspect-ratio, create element with the class `.aspect-ratio`.
-Any child of the aspect-ratio will now always be the ratio set by the class.
+To use the aspect-ratio, create element with the class `.aspect-ratio`,
+any child of the aspect-ratio will now always be show in the ratio set by the class.
 
 _16/9 is the default ratio._
 
@@ -35,11 +36,9 @@ To edit the ratio use the css variable with the same name.
 
 ## Config
 
-As with almost all of our components.
-CSS variables can be configured to add your own look/style.
+As with almost all of our components, CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Want direct control on the base styles, here are the following SCSS variables can you modify.
 
 ```scss
 $aspect-ratio: "16/9" !default;
@@ -47,9 +46,9 @@ $aspect-ratio: "16/9" !default;
 
 ## PostCSS Calc & CSSNano issue
 
-At the moment PostCSS Calc which is also part of CSSNano,
-has an open issue where is removes the parentheses around a nested calc.
-This breaks the CSS aspect ratio calc.
+At the moment PostCSS Calc, which is also part of CSSNano,
+has an open issue where is removes the parentheses around a nested calc,
+this breaks the CSS aspect ratio calc.
 
 You can at the moment work around this issue by;
 

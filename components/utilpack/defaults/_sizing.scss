@@ -1,0 +1,98 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:math";
+@use "sass:meta";
+@use "sass:map";
+
+$enable-utilpack-width-responsive: true !default;
+$enable-utilpack-height-responsive: true !default;
+
+$enable-utilpack-width-print: false !default;
+$enable-utilpack-height-print: false !default;
+
+$enable-utilpack-width-important: false !default;
+$enable-utilpack-height-important: false !default;
+
+$utilpack-defaults-sizing: (
+    "width": (
+        "class": "w",
+        "values": (
+            "auto": auto,
+            "none": 0,
+            "25": 25%,
+            "33": calc(100% / 3),
+            "50": 50%,
+            "66": calc(100% / 1.5),
+            "75": 75%,
+            "full": 100%,
+            "screen": 100vw
+        ),
+        "responsive": $enable-utilpack-width-responsive,
+        "print": $enable-utilpack-width-print,
+        "important": $enable-utilpack-width-important
+    ),
+    "min-width": (
+        "class": "min-w",
+        "values": (
+            "none": 0,
+            "full": 100%,
+            "screen": 100vw,
+            "content": "min-content"
+        ),
+        "responsive": $enable-utilpack-width-responsive,
+        "print": $enable-utilpack-width-print,
+        "important": $enable-utilpack-width-important
+    ),
+    "max-width": (
+        "class": "max-w",
+        "values": (
+            "none": 0,
+            "full": 100%,
+            "screen": 100vw,
+            "content": "max-content"
+        ),
+        "responsive": $enable-utilpack-width-responsive,
+        "print": $enable-utilpack-width-print,
+        "important": $enable-utilpack-width-important
+    ),
+    "height": (
+        "class": "h",
+        "values": (
+            "auto": auto,
+            "none": 0,
+            "25": 25%,
+            "33": calc(100% / 3),
+            "50": 50%,
+            "66": calc(100% / 1.5),
+            "75": 75%,
+            "full": 100%,
+            "screen": 100vh
+        ),
+        "responsive": $enable-utilpack-height-responsive,
+        "print": $enable-utilpack-height-print,
+        "important": $enable-utilpack-height-important
+    ),
+    "min-height": (
+        "class": "min-h",
+        "values": (
+            "none": 0,
+            "full": 100%,
+            "screen": 100vh
+        ),
+        "responsive": $enable-utilpack-height-responsive,
+        "print": $enable-utilpack-height-print,
+        "important": $enable-utilpack-height-important
+    ),
+    "max-height": (
+        "class": "max-h",
+        "values": (
+            "none": 0,
+            "full": 100%,
+            "screen": 100vh
+        ),
+        "responsive": $enable-utilpack-height-responsive,
+        "print": $enable-utilpack-height-print,
+        "important": $enable-utilpack-height-important
+    )
+) !default;

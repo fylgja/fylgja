@@ -19,12 +19,12 @@
     "form"
   ],
   "scripts": {
-    "build-field": "sass form-style-field.scss form-style-field.css --no-source-map -s compressed",
-    "build-box": "sass form-style-box.scss form-style-box.css --no-source-map -s compressed",
-    "build-default": "sass form.scss form.css --no-source-map -s compressed",
+    "build-field": "sass form-style-field.scss form-style-field.css --no-source-map -s compressed --load-path=node_modules",
+    "build-box": "sass form-style-box.scss form-style-box.css --no-source-map -s compressed --load-path=node_modules",
+    "build-default": "sass form.scss form.css --no-source-map -s compressed --load-path=node_modules",
     "build": "npm run build-field && npm run build-box && npm run build-default"
   },
   "dependencies": {
-    "@fylgja/theme": "*"
+    "@fylgja/theme": "^0.1.0"
   }
 }

@@ -1,0 +1,169 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:map";
+@use "sass:meta";
+
+// stylelint-disable custom-property-empty-line-before
+
+/// @param {Number} $tx - TranslateX
+/// @param {Number} $ty - TranslateY
+/// @param {Number} $tz - TranslateZ
+/// @param {Number} $ta - rotate
+/// @param {Number} $sx - ScaleX
+/// @param {Number} $sy - ScaleY
+/// @param {Number} $sz - ScaleZ
+/// @param {Number} $ax - SkewX
+/// @param {Number} $ay - SkewY
+/// @param {Boolean} $enable-3d - force enable 3D mode
+/// @return {Mixed} - transform shorthand with CSS variables
+@mixin transform(
+    $tx: 0,
+    $ty: 0,
+    $tz: 0,
+    $ta: 0,
+    $sx: 1,
+    $sy: 1,
+    $sz: 1,
+    $ax: 0,
+    $ay: 0,
+    $enable-3d: false
+) {
+    $has3d: $enable-3d;
+    @if $tz != 0, $sz != 0 {
+        $has3d: true;
+    }
+
+    $transform: if(
+        $has3d,
+        translate3d(var(--tx), var(--ty), var(--tz)),
+        translate(var(--tx), var(--ty))
+    );
+    $skew: skew(var(--ax), var(--ay));
+    $scale: if(
+        $has3d,
+        scale3d(var(--sx), var(--sy), var(--sz)),
+        scale(var(--sx), var(--sy))
+    );
+
+    --tx: #{$tx};
+    --ty: #{$ty};
+    @if $has3d {
+        --tz: #{$tz};
+    }
+    --ta: #{$ta};
+    --sx: #{$sz};
+    --sy: #{$sz};
+    @if $has3d {
+        --sz: #{$sz};
+    }
+    --ax: #{$ax};
+    --ay: #{$ay};
+    --origin: 50% 50% 0;
+    transform: $transform rotate(var(--ta)) $skew $scale;
+    transform-origin: var(--origin);
+}
+
+/// @param {String|Boolean} $prefix - if to use a prefix and what
+/// @param {String} $separator - separator for the prefix
+/// @param {Map} $map - map of transform utils
+/// @return {Mixed} - CSS util classes
+@mixin build-transform-utils(
+    $prefix: false,
+    $separator: $transform-utils-separator,
+    $map: $transform-utils
+) {
+    @each $name, $value in $map {
+        $class: if($prefix, #{$prefix}#{$separator}#{$name}, $name);
+
+        @if $name == "t" or $name == "s" or $name == "a" {
+            @each $n, $v in $value {
+                .transform.-#{$class}-#{$n} {
+                    --#{$name}x: #{$v};
+                    --#{$name}y: #{$v};
+                }
+            }
+        } @else {
+            @each $n, $v in $value {
+                .transform.-#{$class}-#{$n} {
+                    --#{$name}: #{$v};
+                }
+            }
+        }
+    }
+}
+
+$transform-utils-separator: "-" !default;
+
+$transform-utils-breakpoints: (
+    "xs": 420px,
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1440px
+) !default;
+
+$enable-3d-transform: true !default;
+
+$transform-utils: () !default;
+$transform-utils-defaults: (
+    "t": (
+        "1": 1em,
+        "n1": -1em,
+        "half": 50%,
+        "full": 100%,
+        "nhalf": -50%,
+        "nfull": -100%
+    ),
+    "tx": (
+        "1": 1em,
+        "n1": -1em,
+        "half": 50%,
+        "full": 100%,
+        "nhalf": -50%,
+        "nfull": -100%
+    ),
+    "ty": (
+        "1": 1em,
+        "n1": -1em,
+        "half": 50%,
+        "full": 100%,
+        "nhalf": -50%,
+        "nfull": -100%
+    ),
+    "s": (
+        "50": 0.5,
+        "90": 0.9,
+        "100": 1,
+        "120": 1.2
+    ),
+    "sx": (
+        "50": 0.5,
+        "90": 0.9,
+        "100": 1,
+        "120": 1.2
+    ),
+    "sy": (
+        "50": 0.5,
+        "90": 0.9,
+        "100": 1,
+        "120": 1.2
+    ),
+    "origin": (
+        "center": center,
+        "top": top,
+        "top-right": top right,
+        "right": right,
+        "bottom-right": bottom right,
+        "bottom": bottom,
+        "bottom-left": bottom left,
+        "left": left,
+        "top-left": top left
+    )
+) !default;
+
+$transform-utils: if(
+    meta.type-of($transform-utils-defaults) == map,
+    map.merge($transform-utils-defaults, $transform-utils),
+    $transform-utils
+);

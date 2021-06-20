@@ -1,0 +1,28 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+.transform {
+    @include transform;
+}
+
+@if $enable-3d-transform {
+    .transform3d {
+        @include transform($enable-3d: true);
+    }
+}
+
+@if $transform-utils {
+    @include build-transform-utils;
+
+    @each $mq-name, $mq in $transform-utils-breakpoints {
+        @media (min-width: $mq) {
+            @include build-transform-utils(
+                $prefix: $mq-name,
+                $separator: $transform-utils-separator
+            );
+        }
+    }
+}

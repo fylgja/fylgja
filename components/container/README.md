@@ -3,8 +3,8 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/container)](https://www.npmjs.org/package/@fylgja/container)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The container component is wrapper component.
-To make all child elements fit better in the page.
+The container component is wrapper component,
+to make all child elements fit better in the page.
 
 ## Installation
 
@@ -12,7 +12,7 @@ To make all child elements fit better in the page.
 npm install @fylgja/container
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/container";
@@ -28,28 +28,29 @@ To use the container create element with the class `.container`.
 <div class="container">..</div>
 ```
 
-The container is pretty straight forward.
-But its power is found in its customization via CSS variables.
+The container is pretty straight forward,
+its power is found in its customization via CSS variables.
 
 Allowing for smaller of bigger containers when needed.
 
-A more content max width based solution can be made via;
+A more content max width based solution, can be made via;
 
 ```html
-<div class="container" style="--container-width: 65ch;">..</div>
+<div class="container" style="--container-size: 65ch;">..</div>
 ```
 
-Making your text better readable for your users when needed.
+Making your content better readable for your users when needed.
 
 ## Config
 
-As with almost all of our components.
+As with almost all of our components,
 CSS variables can be configured to add your own look/style.
 
-Want direct control on the base styles.
-Down here are the following SCSS variables can you modify.
+Want direct control on the base styles,
+Here are the following SCSS variables can you modify.
 
 ```scss
-$container-width: 1280px !default;
-$container-padding: 0 1.25rem !default;
+$container-size: 1280px !default;
+$container-padding-y: 0 !default;
+$container-padding-x: 1.25rem !default;
 ```

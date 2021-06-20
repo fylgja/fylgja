@@ -25,10 +25,9 @@ $progress-loader-bg: rgba($color-on-theme, 0.2) !default;
         transparent
     );
     background-size: 1em 1em;
-    animation: progress-loading 1s linear infinite;
 
-    @media (prefers-reduced-motion: reduce) {
-        animation: none;
+    @media (prefers-reduced-motion: no-preference) {
+        animation: progress-loading 1s linear infinite;
     }
 }
 

@@ -11,7 +11,7 @@ Print component will add solid foundation for printing.
 npm install @fylgja/print
 ```
 
-And include the component in to your code via;
+Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/print";

@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/section",
   "version": "1.0.0",
-  "description": "The Section component is a wrapper component to show content in a sectioned area.",
+  "description": "The Section component is a wrapper component to show content in a sectioned area",
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",

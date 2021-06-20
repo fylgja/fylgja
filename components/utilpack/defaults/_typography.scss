@@ -1,0 +1,118 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+// * font-weight and font-style both use the font-variation-settings naming
+// * But in the full name version instead
+// * Link to the docs https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings
+
+$enable-utilpack-typography-responsive: true !default;
+$enable-utilpack-typography-print: false !default;
+$enable-utilpack-typography-important: false !default;
+
+$enable-utilpack-typography-color-responsive: false !default;
+$enable-utilpack-typography-color-print: false !default;
+$enable-utilpack-typography-color-important: false !default;
+
+$enable-utilpack-typography-alignment-responsive: true !default;
+$enable-utilpack-typography-alignment-print: false !default;
+$enable-utilpack-typography-alignment-important: false !default;
+
+$utilpack-defaults-typography: (
+    "text-color": (
+        "class": "text",
+        "property": "color",
+        "values": (
+            "reset": "currentColor"
+        ),
+        "responsive": $enable-utilpack-typography-color-responsive,
+        "print": $enable-utilpack-typography-color-print,
+        "important": $enable-utilpack-typography-color-important
+    ),
+    "text-decoration": (
+        "class": "",
+        "values": (
+            "underline": "underline",
+            "line-through": "line-through",
+            "no-underline": "none"
+        ),
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "text-align": (
+        "class": "text",
+        "values": start end center,
+        "responsive": $enable-utilpack-typography-alignment-responsive,
+        "print": $enable-utilpack-typography-alignment-print,
+        "important": $enable-utilpack-typography-alignment-important
+    ),
+    "vertical-align": (
+        "class": "align",
+        "values": baseline top middle bottom text-top text-bottom,
+        "responsive": $enable-utilpack-typography-alignment-responsive,
+        "print": $enable-utilpack-typography-alignment-print,
+        "important": $enable-utilpack-typography-alignment-important
+    ),
+    "text-transform": (
+        "class": "text",
+        "values": uppercase lowercase capitalize,
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "text-wrap": (
+        "class": "text",
+        "property": white-space,
+        "values": wrap nowrap,
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "text-break": (
+        "class": "break",
+        "property": overflow-wrap,
+        "values": (
+            "normal": normal,
+            "word": break-word,
+            "any": anywhere,
+            "auto": auto
+        ),
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "text-hyphens": (
+        "class": "break",
+        "property": hyphens,
+        "values": auto,
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "font-weight": (
+        "class": "weight",
+        "values": (
+            "thin": 100,
+            "extralight": 200,
+            "light": 300,
+            "normal": 400,
+            "strong": 500,
+            "semibold": 600,
+            "bold": 700,
+            "extrabold": 800,
+            "black": 900,
+            "lighter": lighter,
+            "bolder": bolder
+        ),
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    ),
+    "font-style": (
+        "class": "slant",
+        "values": normal italic,
+        "responsive": $enable-utilpack-typography-responsive,
+        "print": $enable-utilpack-typography-print,
+        "important": $enable-utilpack-typography-important
+    )
+) !default;

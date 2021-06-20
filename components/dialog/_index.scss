@@ -23,7 +23,7 @@
 // * The fit-content does not work in Firefox
 // * And Safari adds weird extra space below it
 dialog {
-    z-index: 9; // Not needed for the native version
+    z-index: $dialog-index; // Not needed for the native version
     position: fixed;
     top: 50%; // *1
     right: 0;
@@ -43,7 +43,6 @@ dialog {
     background: var(--dialog-bg, $dialog-bg);
     color: var(--dialog-color, $dialog-color);
     transform: translateY(-50%); // *1
-    // stylelint-disable-next-line property-no-unknown
     content-visibility: auto;
 
     &:not([open]) {

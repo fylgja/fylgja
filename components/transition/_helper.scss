@@ -1,0 +1,28 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+// * Better than using the all keyword
+$transition-properties: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter !default;
+$transition-duration: 0.2s !default;
+$transition-easing: ease-in !default;
+$transition-delay: 0s !default;
+
+/// @param {List} $property - List of transition properties
+/// @param {Number} $duration - Duration in ms or s
+/// @param {String} $easing - Easing via keyword of cubic-bezier
+/// @param {Number} $delay - Delay in ms or s
+/// @return {Mixed} - Transition shorthand with CSS variables
+@mixin transition(
+    $property: $transition-properties,
+    $duration: $transition-duration,
+    $easing: $transition-easing,
+    $delay: $transition-delay
+) {
+    --property: #{$property};
+    --duration: #{$duration};
+    --easing: #{$easing};
+    --delay: #{$delay};
+    transition: var(--duration) var(--easing) var(--delay);
+    transition-property: var(--property);
+}

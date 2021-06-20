@@ -1,0 +1,40 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:color";
+@use "@fylgja/theme" as *;
+
+$enable-btn-theme: true !default;
+$enable-btn-outline: true !default;
+$enable-btn-icon: true !default;
+
+$btn-icon-size: 2.125em !default;
+
+$btn-padding: 0.375rem 0.8rem !default;
+$btn-border-size: 1px !default;
+$btn-border-style: solid !default;
+$btn-radius: 4px !default;
+$btn-font-size: inherit !default;
+$btn-line-height: inherit !default;
+$btn-font-weight: 500 !default;
+$btn-transition: 0.2s linear;
+$btn-transition-property: (
+    color,
+    background-color,
+    border-color,
+    box-shadow
+) !default;
+
+$btn-stroke: transparent !default;
+$btn-bg: transparent !default;
+$btn-color: inherit !default;
+
+$btn-focus-stroke: transparent !default;
+$btn-focus-bg: color.change($root-fg, $alpha: 0.05) !default;
+$btn-focus-color: inherit !default;
+
+$btn-active-stroke: transparent !default;
+$btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
+$btn-active-color: inherit !default;
+
+$btn-disabled-opacity: 0.7 !default;
