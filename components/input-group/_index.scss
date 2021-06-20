@@ -3,7 +3,7 @@
 
 @use "sass:map";
 @use "@fylgja/theme" as *;
-@use "../form/helper" as *;
+@use "@fylgja/form/helper" as *;
 
 $input-group-style: default !default;
 $input-group-styles: (
