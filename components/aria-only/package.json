@@ -2,7 +2,7 @@
   "name": "@fylgja/aria-only",
   "version": "1.0.0",
   "description": "The aria-only (a.k.a. sr-only) visually hides elements. But keeps it accessible to screen-readers and other aria tools",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "aria-only.css",

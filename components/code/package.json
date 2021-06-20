@@ -2,7 +2,7 @@
   "name": "@fylgja/code",
   "version": "1.0.0",
   "description": "The Fylgja code component",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "main": "_index.scss",

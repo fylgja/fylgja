@@ -2,7 +2,7 @@
   "name": "@fylgja/aspect-ratio",
   "version": "1.0.0",
   "description": "The aspect ratio component allows you to make not just videos. But anything you want to a certain responsive aspect ratio",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "aspect-ratio.css",

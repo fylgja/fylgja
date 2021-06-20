@@ -2,7 +2,7 @@
   "name": "@fylgja/pagination",
   "version": "1.0.0",
   "description": "Pagination component makes it easy to build many pagination patterns",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "pagination.css",

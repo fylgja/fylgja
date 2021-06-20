@@ -2,7 +2,7 @@
   "name": "@fylgja/control",
   "version": "1.0.0",
   "description": "The control component styles the default input radio's and checkbox's",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "main": "_index.scss",

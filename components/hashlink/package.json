@@ -2,7 +2,7 @@
   "name": "@fylgja/hashlink",
   "version": "1.0.0",
   "description": "The Fylgja hashlink component",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "hashlink.css",

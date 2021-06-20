@@ -2,7 +2,7 @@
   "name": "@fylgja/list",
   "version": "1.0.0",
   "description": "The Fylgja list component, giving more control on how you can style lists",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "list.css",

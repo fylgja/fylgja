@@ -2,7 +2,7 @@
   "name": "@fylgja/scroll-slider",
   "version": "1.0.0",
   "description": "The Fylgja scroll-slider component",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "scroll-slider.css",

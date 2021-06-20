@@ -50,8 +50,8 @@ you can nest the pagination with buttons and there is a class
 
 ```html
 <nav aria-label="pagination" class="pagination justify-center">
-    <button class="pagination-item flex-grow-1 md-flex-grow-0">Previous</button>
-    <button class="pagination-item flex-grow-1 md-flex-grow-0 md-order-last">Next</button>
+    <button class="pagination-item flex-grow md-flex-initial">Previous</button>
+    <button class="pagination-item flex-grow md-flex-initial md-order-last">Next</button>
     <ol class="pagination">
         <li><a href="#item" aria-label="Page 1">1</a></li>
         <li><a href="#item" aria-label="Page 2" aria-current="page">2</a></li>

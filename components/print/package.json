@@ -2,7 +2,7 @@
   "name": "@fylgja/print",
   "version": "1.0.0",
   "description": "Print component will add solid foundation for printing",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "print.css",

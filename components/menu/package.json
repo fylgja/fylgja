@@ -2,7 +2,7 @@
   "name": "@fylgja/menu",
   "version": "1.0.0",
   "description": "The menu component makes it easy to build many common navigation patterns",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "menu.css",

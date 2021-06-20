@@ -2,7 +2,7 @@
   "name": "@fylgja/section",
   "version": "1.0.0",
   "description": "The Section component is a wrapper component to show content in a sectioned area",
-  "homepage": "https://https://fylgja.dev/",
+  "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "style": "section.css",
