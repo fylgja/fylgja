@@ -18,8 +18,7 @@
     "modular"
   ],
   "files": [
-    "*.{css,scss}",
-    "components/**/*.{css,scss,md}"
+    "*.{css,scss}"
   ],
   "scripts": {
     "test": "stylelint components/**/*.scss",
@@ -32,11 +31,43 @@
     "extends": "@fylgja/stylelint-config/scss"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.0.0",
+    "@fylgja/aria-only": "^1.0.0",
+    "@fylgja/aspect-ratio": "^1.0.0",
+    "@fylgja/auto-grid": "^1.0.0",
+    "@fylgja/avatar": "^1.0.0",
+    "@fylgja/badge": "^1.0.0",
+    "@fylgja/base": "^1.0.0",
+    "@fylgja/breadcrumbs": "^1.0.0",
+    "@fylgja/button": "^1.0.0",
+    "@fylgja/card": "^1.0.0",
+    "@fylgja/code": "^1.0.0",
+    "@fylgja/container": "^1.0.0",
+    "@fylgja/control": "^1.0.0",
+    "@fylgja/details": "^1.0.0",
+    "@fylgja/dialog": "^1.0.0",
+    "@fylgja/elevation": "^1.0.0",
+    "@fylgja/form": "^1.0.0",
+    "@fylgja/gradient": "^1.0.0",
+    "@fylgja/hashlink": "^1.0.0",
+    "@fylgja/input-group": "^1.0.0",
+    "@fylgja/list": "^1.0.0",
+    "@fylgja/menu": "^1.0.0",
+    "@fylgja/pagination": "^1.0.0",
+    "@fylgja/print": "^1.0.0",
+    "@fylgja/progress": "^1.0.0",
+    "@fylgja/scroll-slider": "^1.0.0",
+    "@fylgja/scrollbar": "^1.0.0",
+    "@fylgja/section": "^1.0.0",
+    "@fylgja/stretched-link": "^1.0.0",
+    "@fylgja/table": "^1.0.0",
+    "@fylgja/transform": "^1.0.0",
+    "@fylgja/transition": "^1.0.0",
+    "@fylgja/utilpack": "^1.0.0"
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^3.4.0",
-    "sass": "^1.35.1",
-    "stylelint": "^13.13.1"
+    "sass": "^1.32.13",
+    "stylelint": "^13.13.0"
   }
 }
