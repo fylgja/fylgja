@@ -39,7 +39,7 @@ $form-styles: (
         bg: transparent,
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 3px 3px 0 0
+        file-btn-radius: 3px 3px 0 0,
     ),
     box: (
         padding: 0.375em 0.625em,
@@ -51,8 +51,8 @@ $form-styles: (
         bg: if($root-fg == #000, #eee, #222),
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 4px 4px 0 0
-    )
+        file-btn-radius: 4px 4px 0 0,
+    ),
 ) !default;
 $form-styles: map.merge(
     (
@@ -66,8 +66,8 @@ $form-styles: map.merge(
             bg: transparent,
             color: inherit,
             file-btn-padding: 0.375em 0.625em,
-            file-btn-radius: 0
-        )
+            file-btn-radius: 0,
+        ),
     ),
     $form-styles
 );
