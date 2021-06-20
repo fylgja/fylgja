@@ -22,6 +22,6 @@
     "build": "sass card.scss card.css --no-source-map -s compressed --load-path=node_modules"
   },
   "dependencies": {
-    "@fylgja/theme": "^0.1.0"
+    "@fylgja/theme": "^1.0.0"
   }
 }

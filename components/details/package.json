@@ -19,9 +19,9 @@
     "details"
   ],
   "scripts": {
-    "build": "sass details.scss details.css --no-source-map -s compressed"
+    "build": "sass details.scss details.css --no-source-map -s compressed --load-path=node_modules"
   },
   "dependencies": {
-    "@fylgja/theme": "*"
+    "@fylgja/theme": "^1.0.0"
   }
 }

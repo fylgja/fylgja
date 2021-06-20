@@ -19,6 +19,9 @@
     "section"
   ],
   "scripts": {
-    "build": "sass section.scss section.css --no-source-map -s compressed"
+    "build": "sass section.scss section.css --no-source-map -s compressed --load-path=node_modules"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.0.0"
   }
 }

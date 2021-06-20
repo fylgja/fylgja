@@ -126,7 +126,7 @@ $form-select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/sv
 // Form color
 $form-color-radius: null !default;
 $form-color-size: 2.375rem !default;
-$form-color-padding: math.div($form-padding-y, 2) !default;
+$form-color-padding: calc(#{$form-padding-y} / 2) !default;
 
 // Form file
 $form-file-gap-y: $form-padding-y !default;

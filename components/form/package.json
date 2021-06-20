@@ -25,6 +25,6 @@
     "build": "npm run build-field && npm run build-box && npm run build-default"
   },
   "dependencies": {
-    "@fylgja/theme": "^0.1.0"
+    "@fylgja/theme": "^1.0.0"
   }
 }

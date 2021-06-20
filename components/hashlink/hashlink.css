@@ -1,1 +1,1 @@
-html:focus-within{scroll-behavior:smooth}@media(prefers-reduced-motion: reduce){html:focus-within{scroll-behavior:auto}}[id]{scroll-margin-top:var(--scroll-offset, 1rem)}.hashlink{position:absolute;margin-inline-start:.5ch;text-decoration:none}.hashlink::before{content:"#";opacity:0;transition:opacity .2s ease}:hover>.hashlink::before,.hashlink:focus::before{opacity:1}
+@media(prefers-reduced-motion: no-preference){html:focus-within{scroll-behavior:smooth}}[id]{scroll-margin-top:var(--scroll-offset, 1rem)}
