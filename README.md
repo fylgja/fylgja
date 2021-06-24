@@ -49,15 +49,14 @@ Do you want to support Fylgja?
 
 You can that in many ways.
 
-Start with starring the repro on Github Give start to Fylgja
-
+Start with starring the repro.
 Or share us on your favorite social network with the hashtag #fylgja.
-
 Making it easier for others to find Fylgja.
 
 But you also contribute directly to fylgja by;
 
-Adding a issue to our github repo
-Adding a pull request to our github repo
-Helping out with the Site doc and guides, via the github repo
+- Adding a issue or feature.
+- Adding a pull request to our github repo.
+- Helping out with the Site doc and guides, via the github repo.
+
 We appreciate any contribution, no mather if it is small or big.
