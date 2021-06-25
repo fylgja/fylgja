@@ -21,6 +21,6 @@
     "page section"
   ],
   "scripts": {
-    "build": "sass container.scss container.css --no-source-map -s compressed"
+    "build": "npx sass container.scss container.css --no-source-map -s compressed -I node_modules"
   }
 }

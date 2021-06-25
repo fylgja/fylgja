@@ -19,6 +19,6 @@
     "transition"
   ],
   "scripts": {
-    "build": "sass transition.scss transition.css --no-source-map -s compressed"
+    "build": "npx sass transition.scss transition.css --no-source-map -s compressed -I node_modules"
   }
 }

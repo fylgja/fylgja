@@ -19,6 +19,6 @@
     "hashlink"
   ],
   "scripts": {
-    "build": "sass hashlink.scss hashlink.css --no-source-map -s compressed"
+    "build": "npx sass hashlink.scss hashlink.css --no-source-map -s compressed -I node_modules"
   }
 }

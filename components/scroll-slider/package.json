@@ -19,6 +19,6 @@
     "scroll-slider"
   ],
   "scripts": {
-    "build": "sass scroll-slider.scss scroll-slider.css --no-source-map -s compressed"
+    "build": "npx sass scroll-slider.scss scroll-slider.css --no-source-map -s compressed -I node_modules"
   }
 }

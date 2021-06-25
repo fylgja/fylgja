@@ -22,6 +22,6 @@
     "visually-hidden"
   ],
   "scripts": {
-    "build": "sass aria-only.scss aria-only.css --no-source-map -s compressed"
+    "build": "npx sass aria-only.scss aria-only.css --no-source-map -s compressed -I node_modules"
   }
 }

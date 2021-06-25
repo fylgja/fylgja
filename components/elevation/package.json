@@ -19,6 +19,6 @@
     "elevation"
   ],
   "scripts": {
-    "build": "sass elevation.scss elevation.css --no-source-map -s compressed"
+    "build": "npx sass elevation.scss elevation.css --no-source-map -s compressed -I node_modules"
   }
 }

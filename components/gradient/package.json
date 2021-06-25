@@ -19,6 +19,6 @@
     "gradient"
   ],
   "scripts": {
-    "build": "sass gradient.scss gradient.css --no-source-map -s compressed"
+    "build": "npx sass gradient.scss gradient.css --no-source-map -s compressed -I node_modules"
   }
 }

@@ -19,10 +19,10 @@
     "input-group"
   ],
   "scripts": {
-    "build-field": "sass input-group-style-field.scss input-group-style-field.css --no-source-map -s compressed --load-path=node_modules",
-    "build-box": "sass input-group-style-box.scss input-group-style-box.css --no-source-map -s compressed --load-path=node_modules",
-    "build-default": "sass input-group.scss input-group.css --no-source-map -s compressed --load-path=node_modules",
-    "build": "npm run build-field && npm run build-box && npm run build-default"
+    "build-field": "npx sass input-group-style-field.scss input-group-style-field.css --no-source-map -s compressed -I node_modules",
+    "build-box": "npx sass input-group-style-box.scss input-group-style-box.css --no-source-map -s compressed -I node_modules",
+    "build-default": "npx sass input-group.scss input-group.css --no-source-map -s compressed -I node_modules",
+    "build": "npm run build:field && npm run build:box && npm run build:default"
   },
   "dependencies": {
     "@fylgja/theme": "^1.0.0",

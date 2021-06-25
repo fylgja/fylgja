@@ -19,6 +19,6 @@
     "print"
   ],
   "scripts": {
-    "build": "sass print.scss print.css --no-source-map -s compressed"
+    "build": "npx sass print.scss print.css --no-source-map -s compressed -I node_modules"
   }
 }

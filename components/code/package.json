@@ -20,6 +20,6 @@
     "keyboard key"
   ],
   "scripts": {
-    "build": "sass code.scss code.css --no-source-map -s compressed"
+    "build": "npx sass code.scss code.css --no-source-map -s compressed -I node_modules"
   }
 }

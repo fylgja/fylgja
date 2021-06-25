@@ -21,6 +21,6 @@
     "utility-classes"
   ],
   "scripts": {
-    "build": "sass utilpack.scss utilpack.css --no-source-map -s compressed"
+    "build": "npx sass utilpack.scss utilpack.css --no-source-map -s compressed -I node_modules"
   }
 }

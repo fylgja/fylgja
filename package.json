@@ -22,10 +22,12 @@
   ],
   "scripts": {
     "test": "stylelint components/**/*.scss",
-    "build-css": "./scripts/build-css",
-    "build-sass": "sass fylgja.scss fylgja.css --no-source-map -s compressed --load-path=node_modules",
+    "start": "npx sass components:components -w -I node_modules",
+    "dev": "npm start",
+    "build:pkg": "npx sass components:components --no-source-map -s compressed -I node_modules",
+    "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
     "prebuild": "npm test",
-    "build": "npm run build-css && npm run build-sass"
+    "build": "npm run build:pkg && npm run build:main"
   },
   "stylelint": {
     "extends": "@fylgja/stylelint-config/scss"

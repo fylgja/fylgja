@@ -23,7 +23,7 @@
     "media"
   ],
   "scripts": {
-    "build": "sass base.scss base.css --no-source-map -s compressed --load-path=node_modules"
+    "build": "npx sass base.scss base.css --no-source-map -s compressed -I node_modules"
   },
   "dependencies": {
     "@fylgja/theme": "^1.0.0"

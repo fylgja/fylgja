@@ -21,6 +21,6 @@
     "symbols"
   ],
   "scripts": {
-    "build": "sass list.scss list.css --no-source-map -s compressed"
+    "build": "npx sass list.scss list.css --no-source-map -s compressed -I node_modules"
   }
 }
