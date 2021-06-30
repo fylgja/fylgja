@@ -50,7 +50,7 @@ Do you want to support Fylgja?
 You can that in many ways.
 
 Start with starring the repro.
-Or share us on your favorite social network with the hashtag #fylgja.
+Or share us on your favorite social network with the hashtag #FylgjaCode.
 Making it easier for others to find Fylgja.
 
 But you also contribute directly to fylgja by;
