@@ -14,7 +14,7 @@ and many styles can be build on top of this foundation.
 ## Installation
 
 ```bash
-npm install @fylgja/buttons
+npm install @fylgja/button
 ```
 
 Then include the component in to your code via;
