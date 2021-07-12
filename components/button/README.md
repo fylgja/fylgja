@@ -1,6 +1,6 @@
 # Fylgja - Button
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/breadcrumbs)](https://www.npmjs.org/package/@fylgja/breadcrumbs)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/button)](https://www.npmjs.org/package/@fylgja/button)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 The Button component serves as an interactive element.
