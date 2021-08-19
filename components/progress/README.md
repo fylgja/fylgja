@@ -24,11 +24,19 @@ Then include the component in to your code via;
 ## How to use
 
 No instructions are really needed.
+
 The progress styles are automatically added when loaded.
 
-That said no site is the same.
-And if you need more than this basis.
-Then consider adding you own styles to improve on this basis.
+For the native html element progress.
+
+But if you can't use the native html element, use the progress class instead.
+
+```html
+<div class="progress" style="--progress: 70%;"></div>
+```
+
+For this you will need to use also the CSS variable `--progress` to set the progress,
+instead of using the value attribute.
 
 ## Config
 

@@ -26,7 +26,7 @@ Then include the component in to your code via;
 
 By default all form styles are set to the fylgja default style. 
 
-If you whatnt to use the field or box style,
+If you want to use the field or box style,
 change the variable `$form-style` to one of the other options.
 
 Or if you are importing this as plain CSS or in PostCSS use;
