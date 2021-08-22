@@ -22,7 +22,7 @@
 
 %form-field-focus {
     border-color: var(--form-focus-color, #{$form-focus-color});
-    box-shadow: $form-focus-style;
+    box-shadow: var(--form-focus-style, #{$form-focus-style});
     outline: 0;
 }
 
