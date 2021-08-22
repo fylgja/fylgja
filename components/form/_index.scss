@@ -88,7 +88,9 @@ optgroup {
     } @else if $field == color {
         input[type="color"] {
             @include form-field($has-readonly: false);
-            --form-radius: #{$form-color-radius};
+            @if $form-color-radius {
+                --form-radius: #{$form-color-radius};
+            }
             display: inline-block;
             width: $form-color-size;
             height: $form-color-size;
