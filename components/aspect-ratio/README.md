@@ -58,7 +58,9 @@ You can at the moment work around this issue by;
 
 ```js
 cssnano: {
-    preset: ['default', { calc: false }]
+    preset: ['default', {
+        calc: false
+    }]
 }
 ```
 
