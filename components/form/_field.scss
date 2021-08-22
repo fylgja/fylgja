@@ -8,8 +8,7 @@
     display: block;
     width: 100%;
     padding: var(--form-padding, #{$form-padding});
-    border-width: $form-border-width;
-    border-style: $form-border-style;
+    border: #{$form-border-width} #{$form-border-style};
     border-color: var(--form-stroke, #{$form-border-color});
     border-radius: var(--form-radius, #{$form-radius});
     background-color: var(--form-bg, #{$form-bg});
