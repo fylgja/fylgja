@@ -6,5 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2021-08-22
+### Changed
+- Code moved SCSS variables to helper file
+
+### Fixed
+- Form input color radius var is empty when null
+- Form missing focus style var,
+  and merged border width and style to keep supporting CSSNano
+
 ## [1.0.0] - 2021-06-22
 Initial Release 🎉
