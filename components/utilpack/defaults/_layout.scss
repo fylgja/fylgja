@@ -21,7 +21,7 @@ $enable-utilpack-position-important: false !default;
 
 $utilpack-positions: (
     "0": 0,
-);
+) !default;
 
 $utilpack-defaults-layout: (
     "display": (
