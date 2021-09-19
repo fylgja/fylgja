@@ -105,50 +105,30 @@ $transform-utils-breakpoints: (
 
 $enable-3d-transform: true !default;
 
+$transform-translates: (
+    "1": 1em,
+    "n1": -1em,
+    "half": 50%,
+    "full": 100%,
+    "nhalf": -50%,
+    "nfull": -100%,
+) !default;
+
+$transform-scales: (
+    "50": 0.5,
+    "90": 0.9,
+    "100": 1,
+    "120": 1.2,
+) !default;
+
 $transform-utils: () !default;
 $transform-utils-defaults: (
-    "t": (
-        "1": 1em,
-        "n1": -1em,
-        "half": 50%,
-        "full": 100%,
-        "nhalf": -50%,
-        "nfull": -100%,
-    ),
-    "tx": (
-        "1": 1em,
-        "n1": -1em,
-        "half": 50%,
-        "full": 100%,
-        "nhalf": -50%,
-        "nfull": -100%,
-    ),
-    "ty": (
-        "1": 1em,
-        "n1": -1em,
-        "half": 50%,
-        "full": 100%,
-        "nhalf": -50%,
-        "nfull": -100%,
-    ),
-    "s": (
-        "50": 0.5,
-        "90": 0.9,
-        "100": 1,
-        "120": 1.2,
-    ),
-    "sx": (
-        "50": 0.5,
-        "90": 0.9,
-        "100": 1,
-        "120": 1.2,
-    ),
-    "sy": (
-        "50": 0.5,
-        "90": 0.9,
-        "100": 1,
-        "120": 1.2,
-    ),
+    "t": $transform-translates,
+    "tx": $transform-translates,
+    "ty": $transform-translates,
+    "s": $transform-scales,
+    "sx": $transform-scales,
+    "sy": $transform-scales,
     "origin": (
         "center": center,
         "top": top,
