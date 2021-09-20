@@ -73,6 +73,7 @@
                 ol {
                     ul,
                     ol {
+                        --menu-dir: column;
                         --menu-nested-indent: 0;
                     }
                 }
