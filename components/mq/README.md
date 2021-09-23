@@ -1,4 +1,4 @@
-# Fylgja - Theme
+# Fylgja - MQ
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/mq)](https://www.npmjs.org/package/@fylgja/mq)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
@@ -90,5 +90,4 @@ $md-max: "max-width: #{(getMq(md) - 1px)}" !default;
 $lg-max: "max-width: #{(getMq(lg) - 1px)}" !default;
 $xl-max: "max-width: #{(getMq(xl) - 1px)}" !default;
 $xxl-max: "max-width: #{(getMq(xxl) - 1px)}" !default;
-
 ```
