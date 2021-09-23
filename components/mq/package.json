@@ -1,0 +1,22 @@
+{
+  "name": "@fylgja/mq",
+  "version": "1.0.0",
+  "description": "Helper component for adding mq specific variables to multiple components",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "sass": "_index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/mq"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "media queries",
+    "dark mode"
+  ],
+  "scripts": {}
+}
