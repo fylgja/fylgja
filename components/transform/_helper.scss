@@ -108,9 +108,13 @@ $enable-3d-transform: true !default;
 $transform-translates: (
     "1": 1em,
     "n1": -1em,
+    "25": 25%,
     "50": 50%,
+    "75": 75%,
     "full": 100%,
+    "n25": -25%,
     "n50": -50%,
+    "n75": -75%,
     "nfull": -100%,
 ) !default;
 
