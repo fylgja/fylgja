@@ -54,6 +54,7 @@
     "@fylgja/input-group": "^1.0.0",
     "@fylgja/list": "^1.0.0",
     "@fylgja/menu": "^1.0.0",
+    "@fylgja/mq": "^1.0.0",
     "@fylgja/pagination": "^1.0.0",
     "@fylgja/print": "^1.0.0",
     "@fylgja/progress": "^1.0.0",

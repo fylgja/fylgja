@@ -1,8 +1,10 @@
 // Fylgja v0.2.4 (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "@fylgja/theme" as *;
+
 @forward "helper";
-@use "./helper";
+@use "./helper" as *;
 
 .pagination {
     list-style: none;
