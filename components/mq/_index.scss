@@ -8,14 +8,11 @@
     @return map.get($map, $name);
 }
 
-$mode-dark: "prefers-color-scheme: dark" !default;
-$mode-light: "prefers-color-scheme: light" !default;
+$scheme-dark: "prefers-color-scheme: dark" !default;
+$scheme-light: "prefers-color-scheme: light" !default;
 
-$motion-prefer: "prefers-reduced-motion: no-preference" !default;
+$motion-safe: "prefers-reduced-motion: no-preference" !default;
 $motion-reduce: "prefers-reduced-motion" !default;
-
-$has-pointer: "any-pointer: fine" !default;
-$has-touch: "any-pointer: coarse" !default;
 
 $mq-breakpoints: (
     "xs": 420px,
