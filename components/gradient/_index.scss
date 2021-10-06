@@ -75,3 +75,16 @@ $gradient-transparent: rgb(0 0 0 / 0);
         background-image: var(--gradient);
     }
 }
+
+@if $enable-gradient-text {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        .text-gradient {
+            @extend %util-gradient;
+            // stylelint-disable-next-line property-no-vendor-prefix
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image: var(--gradient);
+            color: transparent;
+        }
+    }
+}
