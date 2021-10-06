@@ -6,8 +6,8 @@
 
 %menu-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: var(--menu-item-justify, space-between);
+    align-items: var(--menu-item-align, center);
     padding: var(--menu-item-padding, #{$menu-item-padding});
     border-radius: var(--menu-item-radius, #{$menu-item-radius});
     border: var(--menu-item-border, #{$menu-item-border});
@@ -18,7 +18,7 @@
 
 %menu-item-states {
     &:focus {
-        outline: 0;
+        outline: $menu-item-outline;
     }
 
     &:focus,
@@ -41,24 +41,27 @@
 }
 
 .menu {
-    &,
-    ul,
-    ol {
-        list-style: none;
-        display: var(--menu-display, flex);
-        flex-direction: var(--menu-dir, column);
-        margin: var(--menu-margin, 0);
-        padding: var(--menu-padding, 0);
-        padding-inline-start: var(--menu-nested-indent);
+    list-style: none;
+    display: var(--menu-display, flex);
+    flex-direction: var(--menu-dir, column);
+    margin: var(--menu-margin, 0);
+    padding: var(--menu-padding, 0);
+    padding-inline-start: var(--menu-nested-indent);
+
+    &-label {
+        @extend %menu-item;
+        font-weight: $menu-label-weight;
+    }
+
+    &-item {
+        @extend %menu-item;
+        @extend %menu-item-states;
     }
 
     @if $enable-menu-nested {
         ul,
         ol {
-            ul,
-            ol {
-                --menu-nested-indent: #{$menu-nested-indent};
-            }
+            --menu-nested-indent: #{$menu-nested-indent};
         }
     }
 
@@ -71,37 +74,18 @@
             @if $enable-menu-nested {
                 ul,
                 ol {
-                    ul,
-                    ol {
-                        --menu-dir: column;
-                        --menu-nested-indent: 0;
-                    }
+                    --menu-dir: column;
+                    --menu-nested-indent: 0;
                 }
             }
         }
     }
 
     @if $menu-item-auto-selector {
-        li {
-            > #{$menu-item-auto-selector} {
-                @extend %menu-item;
-                @extend %menu-item-states;
-            }
-        }
-
-        > #{$menu-item-auto-selector} {
+        > #{$menu-item-auto-selector},
+        li > #{$menu-item-auto-selector} {
             @extend %menu-item;
             @extend %menu-item-states;
         }
-    }
-
-    .menu-label {
-        @extend %menu-item;
-        font-weight: $menu-label-weight;
-    }
-
-    .menu-item {
-        @extend %menu-item;
-        @extend %menu-item-states;
     }
 }
