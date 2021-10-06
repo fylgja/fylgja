@@ -73,3 +73,40 @@ $dialog-offcanvas-radius: 0 !default;
         --dialog-translate: translateX(#{$offset-rtl});
     }
 }
+
+// *1: Needed until fit-content is better supported by Firefox and Safari
+// * The top/bottom is now calculated via a transform instead
+// * The fit-content does not work in Firefox
+// * And Safari adds weird extra space below it
+%dialog {
+    z-index: $dialog-index; // Not needed for the native version
+    position: fixed;
+    top: 50%; // *1
+    right: 0;
+    bottom: auto; // *1
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--dialog-width, max-content); // *1
+    max-width: var(--dialog-max-width, #{$dialog-max-width});
+    height: var(--dialog-height, auto); // *1
+    max-height: var(--dialog-max-height, #{$dialog-max-height});
+    box-shadow: var(--dialog-elevation, #{$dialog-elevation});
+    border: var(--dialog-border, 0);
+    border-radius: var(--dialog-radius, #{$dialog-radius});
+    margin: auto;
+    padding: var(--dialog-padding, #{$dialog-padding});
+    background: var(--dialog-bg, $dialog-bg);
+    color: var(--dialog-color, $dialog-color);
+    transform: translateY(-50%); // *1
+    content-visibility: auto;
+}
+
+%backdrop-polyfill {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dialog-backdrop;
+}

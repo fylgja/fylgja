@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - _Aria Only_: added breakpoint option, (enable this option with `$enable-aria-only-mq`)
 - _Base_: added `accent-color` option
+- _Dialog_: added support for custom dialogs via extends
 - New _Mq_ helper package
 - _Transform_: More Transform translate utilities
 - _Utilpack_: Visibility utility class
