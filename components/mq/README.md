@@ -38,17 +38,17 @@ You can use this component to quickly adjust the Fylgja component media queries.
 );
 ```
 
-Or ny using it in your own CSS components.
+Or you can use it in your own CSS components.
 
 ```scss
 @use "@fylgja/mq";
 
-@media (mq.$has-touch) {
-    // Your touch based styles
+@media (mq.$motion-reduce) {
+    // Your motion reduced based styles here
 }
 
 @media (mq.$md) {
-    // Your viewport size based styles
+    // Your viewport size based styles here
 }
 ```
 
@@ -59,14 +59,11 @@ _You can also use it without the prefix if you want via * selector_
 The following variables are available.
 
 ```scss
-$mode-dark: "prefers-color-scheme: dark" !default;
-$mode-light: "prefers-color-scheme: light" !default;
+$scheme-dark: "prefers-color-scheme: dark" !default;
+$scheme-light: "prefers-color-scheme: light" !default;
 
-$motion-prefer: "prefers-reduced-motion: no-preference" !default;
+$motion-safe: "prefers-reduced-motion: no-preference" !default;
 $motion-reduce: "prefers-reduced-motion" !default;
-
-$has-pointer: "any-pointer: fine" !default;
-$has-touch: "any-pointer: coarse" !default;
 
 $mq-breakpoints: (
     "xs": 420px,
