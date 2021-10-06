@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/mq",
   "version": "1.0.0",
-  "description": "Helper component for adding mq specific variables to multiple components",
+  "description": "Helper component for adding media query specific variables to multiple components",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
