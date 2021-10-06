@@ -23,5 +23,8 @@
   ],
   "scripts": {
     "build": "npx sass aria-only.scss aria-only.css --no-source-map -s compressed -I node_modules"
+  },
+  "dependencies": {
+    "@fylgja/mq": "^1.0.0"
   }
 }

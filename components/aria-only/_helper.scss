@@ -1,10 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "@fylgja/mq" as *;
+
 // *1: preventing text to be condensed
 // See https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-
-$enable-aria-only-important: false !default;
 
 /// @param {Boolean} $enforce - set all values to important
 /// @param {Boolean} $unset - unset all values to default
@@ -29,3 +29,13 @@ $enable-aria-only-important: false !default;
         @include aria-only($enforce, $unset);
     }
 }
+
+// * The separator style can be a safe css separator, the "-" (hyphen)
+// * Or the unsafe css "\\:" (TailwindCSS separator)
+// * Or use a underscore "_".
+// * If you want something different that is still a safe separator
+$aria-only-separator: "-" !default;
+
+$enable-aria-only-mq: true !default;
+$aria-only-breakpoints: $mq-breakpoints !default;
+$enable-aria-only-important: false !default;
