@@ -31,6 +31,8 @@ $blockquote-border-color: var(
 $blockquote-border-start: 0.25em solid $blockquote-border-color !default;
 $blockquote-font-style: italic !default;
 
+$accent-color: var(--color-theme) !default;
+
 $link-color: var(--color-theme) !default;
 $link-color-focus: var(--color-theme) !default;
 $link-style: none !default;

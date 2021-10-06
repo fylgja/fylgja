@@ -52,23 +52,40 @@ As with almost all of our components, you can configure CSS variables to add you
 Direct control on the base styles, you can you modify the following SCSS variables.
 
 ```scss
-// Typography
-$family-main: (system-ui, -apple-system, Helvetica, Arial, sans-serif) !default;
+$family-main: (
+    system-ui,
+    -apple-system,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+) !default;
 $family-header: $family-main !default;
 $font-size: 1rem !default;
 $font-weight: normal !default;
 $line-height: 1.5 !default;
 $letter-spacing: normal !default;
-$caption-size: 0.9em !default;
+$caption-size: 0.875em !default;
 
 $quotes: "“" "”" "‘" "’" !default;
+$blockquote-margin: 2em 0 !default;
+$blockquote-padding-start: 1em !default;
+$blockquote-border-color: var(
+    --quote-border-color,
+    var(--color-theme, currentColor)
+) !default;
+$blockquote-border-start: 0.25em solid $blockquote-border-color !default;
+$blockquote-font-style: italic !default;
 
-$link-color: var(--color-theme, #{$color-theme}) !default;
-$link-color-state: var(--color-theme, #{$color-theme}) !default;
-$link-style: underline !default;
-$link-style-state: none !default;
+$accent-color: var(--color-theme) !default;
 
-$selection-bg: $color-theme-soft !default;
+$link-color: var(--color-theme) !default;
+$link-color-focus: var(--color-theme) !default;
+$link-style: none !default;
+$link-style-focus: underline !default;
+
+$selection-bg: $color-theme-fade !default;
 $selection-color: inherit !default;
 
 $hr-size: 1px !default;
@@ -77,8 +94,8 @@ $hr-color: currentColor !default;
 $hr-margin: 1em 0 !default;
 
 $mark-padding: 0 0.15em !default;
-$mark-bg: var(--selection-bg, #{$selection-bg}) !default;
-$mark-color: var(--selection-color, #{$selection-color}) !default;
+$mark-bg: var(--selection-bg) !default;
+$mark-color: var(--selection-color) !default;
 
 // List
 $list-margin: $item-spacer;
@@ -87,46 +104,46 @@ $dd-margin: 0 0 0.5rem;
 
 // Headings
 $h-margin: 1.33em 0 0.67em !default;
-$h-family: inherit !default;
+$h-family: var(--family-header) !default;
 $h-font-size: 1em !default;
 $h-line-height: inherit !default;
 $h-font-weight: normal !default;
 
 $h1-margin: 0 0 0.45em !default;
 $h1-family: null !default;
-$h1-font-size: 2.5em !default;
+$h1-font-size: 2.2em !default;
 $h1-line-height: null !default;
 $h1-font-weight: null !default;
 
 $h2-margin: 1.33em 0 0.55em !default;
 $h2-family: null !default;
-$h2-font-size: 2em !default;
+$h2-font-size: 1.6em !default;
 $h2-line-height: null !default;
 $h2-font-weight: null !default;
 
 $h3-margin: 1.33em 0 0.6em !default;
 $h3-family: null !default;
-$h3-font-size: 1.75em !default;
+$h3-font-size: 1.35em !default;
 $h3-line-height: null !default;
 $h3-font-weight: null !default;
 
 $h4-margin: null !default;
 $h4-family: null !default;
-$h4-font-size: 1.5em !default;
+$h4-font-size: 1.25em !default;
 $h4-line-height: null !default;
 $h4-font-weight: null !default;
 
 $h5-margin: null !default;
 $h5-family: null !default;
-$h5-font-size: 1.25em !default;
+$h5-font-size: 1.125em !default;
 $h5-line-height: null !default;
 $h5-font-weight: 500 !default;
 
 $h6-margin: null !default;
 $h6-family: null !default;
-$h6-font-size: null !default;
+$h6-font-size: 1em !default;
 $h6-line-height: null !default;
-$h6-font-weight: bold !default;
+$h6-font-weight: bolder !default;
 ```
 
 ## FAQ
