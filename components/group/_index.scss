@@ -1,0 +1,9 @@
+// Experimental util helper to replace space, divide and add input-group
+
+.group {
+    display: inline-flex;
+    flex-direction: var(--dir);
+    gap: var(--gap);
+    border-radius: var(--radius);
+    border: var(--border);
+}
