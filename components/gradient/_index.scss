@@ -1,12 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "@fylgja/theme" as *;
+
 $enable-gradient-border: true !default;
 $enable-gradient-bg: true !default;
+$enable-gradient-text: true !default;
 
 $gradient-colors: (
-    "theme": var(--color-theme),
-    "bg": var(--color-bg),
+    "theme": var(--color-theme, #{$color-theme}),
+    "bg": var(--color-bg, #{$root-bg}),
     "color": currentColor,
 ) !default;
 
