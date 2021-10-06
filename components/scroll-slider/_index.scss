@@ -41,13 +41,16 @@ $scroll-align: start !default;
 
     // * FIX for overflow padding at end of the scroll zone
     // * By adding a fake extra element to create the missing overflow padding
+    // * @source https://nshki.com/fixing-overflow-padding-in-firefox/
     @if $enable-scroll-overflow-fix {
-        &::after {
-            content: "";
-            order: 1; // rtl support
-            flex: 0 0 auto;
-            display: block;
-            inline-size: var(--gap-inline, #{$scroll-padding});
+        @supports not (contain: paint) {
+            &::after {
+                content: "";
+                order: 1; // rtl support
+                flex: 0 0 auto;
+                display: block;
+                inline-size: var(--gap-inline, #{$scroll-padding});
+            }
         }
     }
 }

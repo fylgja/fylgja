@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - _Menu_: **[Possible Breaking Change]** Removed extra list layer from menu.
   This makes the CSS component smaller and easier to edit.
 - _Pagination_: Moved variables to helper for easier reuse
+- _Scroll-Slider_: Moved overflow fix to only effect Safari, Firefox and Chrome have fixed this issue
 - _Transform_: Make easier to edit via a separate variable
 - _Utilpack_: sizing utils like `w-content` have been replaced with `w-max` and `w-min`
   The util classes use the min/max-content values.
