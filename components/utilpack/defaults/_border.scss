@@ -20,9 +20,12 @@ $utilpack-border-sizes: (
 ) !default;
 
 $utilpack-divider-sizes: (
-    "default": "1px solid var(--divide-color, currentColor)",
-    "none": "0",
+    "default": 1px $utilpack-border-style $utilpack-border-color,
+    "none": 0,
 ) !default;
+
+// stylelint-disable-next-line max-line-length
+$utilpack-divider-class-nested: "> :not([hidden]):not(template) ~ :not([hidden]):not(template)" !default;
 
 $utilpack-defaults-border: (
     "border": (
@@ -58,7 +61,7 @@ $utilpack-defaults-border: (
     "divider-block": (
         "property": border-block-start,
         "class": "divide-y",
-        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "class-nested": $utilpack-divider-class-nested,
         "values": $utilpack-divider-sizes,
         "responsive": $enable-utilpack-divider-responsive,
         "print": $enable-utilpack-divider-print,
@@ -67,7 +70,7 @@ $utilpack-defaults-border: (
     "divider-inline": (
         "property": border-inline-start,
         "class": "divide-x",
-        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "class-nested": $utilpack-divider-class-nested,
         "values": $utilpack-divider-sizes,
         "responsive": $enable-utilpack-divider-responsive,
         "print": $enable-utilpack-divider-print,

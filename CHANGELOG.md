@@ -5,19 +5,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.0] - 2021-10-?
 ### Added
-- _Utilpack_: Visibility utility class
+- _Aria Only_: added breakpoint option, (enable this option with `$enable-aria-only-mq`)
+- _Base_: added `accent-color` option
+- New _Mq_ helper package
 - _Transform_: More Transform translate utilities
-- New Mq helper package
+- _Utilpack_: Visibility utility class
 
 ### Changed
+- _Menu_: **[Possible Breaking Change]** Removed extra list layer from menu.
+  This makes the CSS component smaller and easier to edit.
+- _Pagination_: Moved variables to helper for easier reuse
 - _Transform_: Make easier to edit via a separate variable
+- _Utilpack_: sizing utils like `w-content` have been replaced with `w-max` and `w-min`
+  The util classes use the min/max-content values.
+  Also adding more freedom for other max-w/h and min-w/h versions.
 
 ### Fixed
-- _Utilpack_: text-break has wrong css value option
 - _Base_: heading not inheriting the family-header CSS variable
 - _Transform_: **[Breaking Change]** translate naming inconsistency
-  the `-t-half` is now `-t-50` matching the naming used in the Utilpack.
+  the `-t(y/x)-half` is now `-t(y/x)-50` matching the naming used in the Utilpack.
+- _Utilpack_: text-break has wrong css value option
+- _Utilpack_: **[Breaking Change]** Fixed typo for `$utilpack-separator` was `$utilpack-sepparator`
+- _Utilpack_: space and divide utilities now also ignores template tags.
+  Making it easier to work with loops in [AlpineJS](https://alpinejs.dev/)
+  To unset this back to just the `[hidden]` attribute change the;
+  - `$utilpack-space-class-nested`
+  - `$utilpack-divider-class-nested`
 
 ## [1.0.2] - 2021-08-22
 ### Changed
