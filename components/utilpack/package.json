@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/utilpack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Build and use your own CSS utility classes with Sass using the Fylgja utilpack.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
