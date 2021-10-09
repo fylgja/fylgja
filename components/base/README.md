@@ -52,6 +52,7 @@ As with almost all of our components, you can configure CSS variables to add you
 Direct control on the base styles, you can you modify the following SCSS variables.
 
 ```scss
+// Typography
 $family-main: (
     system-ui,
     -apple-system,
