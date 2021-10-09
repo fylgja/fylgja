@@ -65,7 +65,7 @@ When enabled you can use the `aria-only` with the mq prefix
 and exclusive to the mq option the `not-aria-only`,
 which unset's the aria-only styles.
 
-For what mq options are available [see the mq package](/components/mq/).
+For what mq options are available [see the mq package](https://fylgja.dev/components/mq/).
 
 All mq values used by the `$aria-only-breakpoints` variable
 take the values directly from the Fylgja Mq component.
