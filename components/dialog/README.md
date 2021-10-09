@@ -101,3 +101,50 @@ $dialog-snackbar-offset: 1em !default;
 // Offcanvas
 $dialog-offcanvas-radius: 0 !default;
 ```
+
+## Tips
+
+If you need to use the older solutions, that don't use the HTML Dialog.
+But you do like to use the Fylgja Dialog styles.
+
+You can do so with the 2 extend classes available to you.
+
+```scss
+@use "@fylgja/dialog/helper" as *;
+
+@keyframes dialog-show {
+    from {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}
+
+@keyframes dialog-hide {
+    to {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}
+
+.dialog {
+    @extend %dialog;
+
+    &[hidden] {
+        visibility: hidden;
+        transition: visibility 0s 200ms;
+        animation: dialog-hide 200ms;
+    }
+
+    &:not([hidden]) {
+        animation: dialog-show 300ms;
+        transition: none;
+    }
+}
+
+.backdrop {
+    @extend %backdrop-polyfill;
+}
+```
+
+_You do still have to make your own logic for the open and closed styles._
+_As seen above._
