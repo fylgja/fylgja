@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New _Mq_ helper package
 - _Transform_: More Transform translate utilities
 - _Utilpack_: Visibility utility class
+- _Utilpack_: index utility class
 
 ### Changed
 - _Menu_: **[Possible Breaking Change]** Removed extra list layer from menu.
