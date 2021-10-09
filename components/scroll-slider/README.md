@@ -129,4 +129,3 @@ By default we don't hide or change the scrollbar.
 
 If you slider requires a more custom style use the `@fylgja/scrollbar` component,
 adding the thin or hide class.
-
