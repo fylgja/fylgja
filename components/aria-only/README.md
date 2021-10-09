@@ -48,6 +48,28 @@ If you do prefer this, you can enable this via the variable
 
 `$enable-aria-only-important`, and set the value to `true`.
 
+### Use as media query version
+
+This feature is disabled by default
+and can be enabled via the variable `$enable-aria-only-mq`,
+or can be imported as CSS.
+
+```scss
+// SCSS
+@use "@fylgja/aria-only" with ($enable-aria-only-mq: true);
+// PostCSS and other options as plain CSS
+@import "@fylgja/aria-only/aria-only-mq.css";
+```
+
+When enabled you can use the `aria-only` with the mq prefix
+and exclusive to the mq option the `not-aria-only`,
+which unset's the aria-only styles.
+
+For what mq options are available [see the mq package](/components/mq/).
+
+All mq values used by the `$aria-only-breakpoints` variable
+take the values directly from the Fylgja Mq component.
+
 ### Mixin (SCSS only)
 
 You can also use it as a mixin with your own styles, via;
@@ -57,10 +79,25 @@ You can also use it as a mixin with your own styles, via;
 
 .new-class {
     // Set $enforce to true to set the values to !important
-    @include aria-only($enforce: false);
+    @include aria-only($enforce: false, $unset: false);
     // If you want it to still show on focus
-    @include aria-only-focusable($enforce: false);
+    @include aria-only-focusable($enforce: false, $unset: false);
 }
+```
+
+## Config
+
+As with almost all of our components,
+CSS variables can be configured to add your own look/style.
+
+Want direct control on the base styles,
+here are the following SCSS variables can you modify.
+
+```scss
+$enable-aria-only-important: false !default;
+$enable-aria-only-mq: false !default;
+$aria-only-separator: "-" !default;
+$aria-only-breakpoints: $mq-breakpoints !default;
 ```
 
 ## Tips
@@ -69,7 +106,8 @@ You can also use it as a mixin with your own styles, via;
 
 The `.aria-only-focusable` will unset its own styles when receiving focus.
 
-To prevent this for some styles, you must set some styles to always take effect, even when the skip link has focus.
+To prevent this for some styles, you must set some styles to always take effect,
+even when the skip link has focus.
 
 You only need this sample to prevent layout jank.
 
@@ -85,14 +123,10 @@ But we need some extra styles so the text is also usable to visual users.
 ```scss
 .skip-link {
     @include aria-only-focusable;
+    --link-color-state: var(--color-text);
     z-index: 5;
     position: absolute;
     background-color: var(--color-bg);
     padding: 1em;
-
-    &:focus,
-    &:hover {
-        --link-color-state: var(--color-text);
-    }
 }
 ```

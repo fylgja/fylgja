@@ -18,9 +18,15 @@
     @each $mq-name, $mq in $aria-only-breakpoints {
         @media (min-width: $mq) {
             .#{$mq-name}#{$aria-only-separator} {
-                &aria-only,
-                &aria-only-focusable:not(:focus) {
+                &aria-only {
                     @include aria-only($enable-aria-only-important);
+                }
+
+                &not-aria-only {
+                    @include aria-only(
+                        $enable-aria-only-important,
+                        $unset: true
+                    );
                 }
             }
         }

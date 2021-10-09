@@ -22,6 +22,7 @@
     "visually-hidden"
   ],
   "scripts": {
+    "build-mq": "npx sass aria-only-mq.scss aria-only-mq.css --no-source-map -s compressed -I node_modules",
     "build": "npx sass aria-only.scss aria-only.css --no-source-map -s compressed -I node_modules"
   },
   "dependencies": {

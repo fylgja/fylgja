@@ -36,6 +36,6 @@
 // * If you want something different that is still a safe separator
 $aria-only-separator: "-" !default;
 
-$enable-aria-only-mq: true !default;
+$enable-aria-only-mq: false !default;
 $aria-only-breakpoints: $mq-breakpoints !default;
 $enable-aria-only-important: false !default;
