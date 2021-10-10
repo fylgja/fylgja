@@ -24,8 +24,9 @@
     --font-size: #{$font-size};
     --line-height: #{$line-height};
     --font-weight: #{$font-weight};
-    color-scheme: var(--color-scheme, #{$color-scheme});
     font-size: $root-font-size; // *1
+    color-scheme: var(--color-scheme, #{$color-scheme});
+    accent-color: #{$accent-color};
 }
 
 html {

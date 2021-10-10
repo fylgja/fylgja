@@ -34,8 +34,8 @@ The most simple usecase is just using the `.menu` class as wrapper, around a set
 Or as a list.
 
 ```html
-<nav class="menu">
-    <ul>
+<nav>
+    <ul class="menu">
         <li><a href="#">..<a></li>
         <li><a href="#">..<a></li>
     </ul>
@@ -76,8 +76,8 @@ If you want a heading for your menu items you can use the `.menu-label` class.
 To add an item styled as the `.menu-item` class, without all the hover, focus and active states.
 
 ```html
-<nav class="menu">
-    <ul>
+<nav>
+    <ul class="menu">
         <li><div class="menu-label">Topic</div></li>
         <ul>
             <li><a href="#">..<a></li>
@@ -96,8 +96,8 @@ You need the use `.hr` class from the component `@fylgja/base`,
 combine it with the correct markup and you have a menu divider.
 
 ```html
-<nav class="menu">
-    <ul>
+<nav>
+    <ul class="menu">
         <li><a href="#">..<a></li>
         <li class="hr" role="separator"></li>
         <li><a href="#">..<a></li>
@@ -127,6 +127,8 @@ $menu-item-radius: 4px !default;
 $menu-item-border: 0 !default;
 $menu-item-bg: transparent !default;
 $menu-item-color: inherit !default;
+
+$menu-item-outline: 0 !default;
 
 $menu-item-focus-stroke: 0 !default;
 $menu-item-focus-bg: change-color($root-fg, $alpha: 0.05) !default;

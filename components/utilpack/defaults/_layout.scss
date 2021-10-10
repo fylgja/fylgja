@@ -5,23 +5,44 @@ $enable-utilpack-display-responsive: true !default;
 $enable-utilpack-float-responsive: true !default;
 $enable-utilpack-object-responsive: false !default;
 $enable-utilpack-overflow-responsive: false !default;
+$enable-utilpack-visibility-responsive: true !default;
+$enable-utilpack-index-responsive: false !default;
 $enable-utilpack-position-responsive: true !default;
 
 $enable-utilpack-display-print: false !default;
 $enable-utilpack-float-print: false !default;
 $enable-utilpack-object-print: false !default;
 $enable-utilpack-overflow-print: false !default;
+$enable-utilpack-visibility-print: false !default;
+$enable-utilpack-index-print: false !default;
 $enable-utilpack-position-print: false !default;
 
 $enable-utilpack-display-important: false !default;
 $enable-utilpack-float-important: false !default;
 $enable-utilpack-object-important: false !default;
 $enable-utilpack-overflow-important: false !default;
+$enable-utilpack-visibility-important: false !default;
+$enable-utilpack-index-important: false !default;
 $enable-utilpack-position-important: false !default;
 
 $utilpack-positions: (
+    "auto": auto,
     "0": 0,
-);
+    "50": 50%,
+    "full": 100%,
+) !default;
+
+$utilpack-index-dept: 1 !default;
+// prettier-ignore
+$utilpack-indexes: (
+    "auto": auto,
+    "0": 0,
+    "1": (1 * $utilpack-index-dept),
+    "2": (2 * $utilpack-index-dept),
+    "3": (3 * $utilpack-index-dept),
+    "4": (4 * $utilpack-index-dept),
+    "5": (5 * $utilpack-index-dept),
+) !default;
 
 $utilpack-defaults-layout: (
     "display": (
@@ -90,6 +111,20 @@ $utilpack-defaults-layout: (
         "responsive": $enable-utilpack-overflow-responsive,
         "print": $enable-utilpack-overflow-print,
         "important": $enable-utilpack-overflow-important,
+    ),
+    "visibility": (
+        "class": "",
+        "values": invisible visible,
+        "responsive": $enable-utilpack-visibility-responsive,
+        "print": $enable-utilpack-visibility-print,
+        "important": $enable-utilpack-visibility-important,
+    ),
+    "z-index": (
+        "class": "z",
+        "values": $utilpack-indexes,
+        "responsive": $enable-utilpack-index-responsive,
+        "print": $enable-utilpack-index-print,
+        "important": $enable-utilpack-index-important,
     ),
     "position": (
         "class": "",

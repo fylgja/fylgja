@@ -1,12 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "@fylgja/theme" as *;
+
 $enable-gradient-border: true !default;
 $enable-gradient-bg: true !default;
+$enable-gradient-text: true !default;
 
 $gradient-colors: (
-    "theme": var(--color-theme),
-    "bg": var(--color-bg),
+    "theme": var(--color-theme, #{$color-theme}),
+    "bg": var(--color-bg, #{$root-bg}),
     "color": currentColor,
 ) !default;
 
@@ -70,5 +73,18 @@ $gradient-transparent: rgb(0 0 0 / 0);
     .bg-gradient {
         @extend %util-gradient;
         background-image: var(--gradient);
+    }
+}
+
+@if $enable-gradient-text {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        .text-gradient {
+            @extend %util-gradient;
+            // stylelint-disable-next-line property-no-vendor-prefix
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image: var(--gradient);
+            color: transparent;
+        }
     }
 }

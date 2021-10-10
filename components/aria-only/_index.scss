@@ -12,3 +12,23 @@
 .aria-only-focusable:not(:focus) {
     @include aria-only($enable-aria-only-important);
 }
+
+@if $enable-aria-only-mq {
+    // Build each util class in a specific min-width mq
+    @each $mq-name, $mq in $aria-only-breakpoints {
+        @media (min-width: $mq) {
+            .#{$mq-name}#{$aria-only-separator} {
+                &aria-only {
+                    @include aria-only($enable-aria-only-important);
+                }
+
+                &not-aria-only {
+                    @include aria-only(
+                        $enable-aria-only-important,
+                        $unset: true
+                    );
+                }
+            }
+        }
+    }
+}

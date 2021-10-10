@@ -3,6 +3,8 @@
 
 @use "sass:map";
 @use "sass:meta";
+@use "@fylgja/mq" as *;
+
 @forward "defaults/border";
 @forward "defaults/box-alignment";
 @forward "defaults/color";
@@ -20,19 +22,12 @@
 @use "defaults/spacers" as *;
 @use "defaults/typography" as *;
 
-// * The sepparator style can be a safe css sepparator, the "-" (hyphen)
-// * Or the unsafe css "\\:" (TailwindCSS sepparator)
+// * The separator style can be a safe css separator, the "-" (hyphen)
+// * Or the unsafe css "\\:" (TailwindCSS separator)
 // * Or use a underscore "_".
-// * If you want something diffrent that is still a safe sepparator
-$utilpack-sepparator: "-" !default;
-
-$utilpack-breakpoints: (
-    "xs": 420px,
-    "sm": 640px,
-    "md": 768px,
-    "lg": 1024px,
-    "xl": 1440px,
-) !default;
+// * If you want something different that is still a safe separator
+$utilpack-separator: "-" !default;
+$utilpack-breakpoints: $mq-breakpoints !default;
 
 $utilpack: () !default;
 $utilpack-defaults: () !default;

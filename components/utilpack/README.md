@@ -186,18 +186,43 @@ $enable-utilpack-UTIL-important: false;
 $enable-utilpack-typography-responsive: true;
 ```
 
+<details class="faq-panel"><summary>Options for UTIL</summary>
+
+- border
+- divider
+- box-alignment
+- color
+- flex
+- display
+- float
+- object
+- overflow
+- visibility
+- index
+- position
+- width
+- height
+- margin
+- padding
+- space
+- typography
+
+</details>
+
 ### Breakpoints
 
 The responsive mode will use the breakpoint values set in the map `$utilpack-breakpoints`,
-these are the defaults;
+these are the defaults from the component `@fylgja/mq`;
 
 ```scss
-$utilpack-breakpoints: (
-    "xs": 420px, // Mobile larger
-    "sm": 640px, // Tablet
-    "md": 768px, // Tablet large
-    "lg": 1024px, // Laptop
-    "xl": 1440px // Desktop
+// $utilpack-breakpoints: $mq-breakpoints !default;
+$mq-breakpoints: (
+    "xs": 420px,   // Mobile larger
+    "sm": 640px,   // Tablet
+    "md": 768px,   // Tablet large
+    "lg": 1024px,  // Laptop
+    "xl": 1440px,  // Desktop
+    "xxl": 2200px, // Large Desktop / TV
 ) !default;
 ```
 
