@@ -24,9 +24,9 @@ Then include the component in to your code via;
 
 ## How to use
 
-To use the `.bg-gradient` or `.border-gradient` simply add them to any element,
+To use the `.bg-gradient`, `.border-gradient` or `.text-gradient` simply add them to any element,
 
-`.bg-gradient` will work out of the box,
+`.bg-gradient` and `.text-gradient` will work out of the box,
 
 `.border-gradient` requires that the element already has a border-width.
 
@@ -107,13 +107,15 @@ Want direct control on the base styles, here are the following scss variables ca
 ```scss
 $enable-gradient-border: true !default;
 $enable-gradient-bg: true !default;
+$enable-gradient-text: true !default;
 
 $gradient-colors: (
-    "theme": var(--color-theme),
-    "bg": var(--color-bg),
-    "color": currentColor
+    "theme": var(--color-theme, #{$color-theme}),
+    "bg": var(--color-bg, #{$root-bg}),
+    "color": currentColor,
 ) !default;
 
+// prettier-ignore
 $gradient-angles: (
     "top-right": "to top right",
     "top-left": "to top left",
