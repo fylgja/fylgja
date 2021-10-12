@@ -66,6 +66,9 @@ $utilpack-margin-all: if(
 $utilpack-padding: $utilpack-spacers !default;
 $utilpack-space: $utilpack-spacers !default;
 
+// stylelint-disable-next-line max-line-length
+$utilpack-space-class-nested: "> :not([hidden]):not(template) ~ :not([hidden]):not(template)" !default;
+
 $utilpack-defaults-spacers: (
     "margin": (
         "class": "m",
@@ -172,7 +175,7 @@ $utilpack-defaults-spacers: (
     "space-block": (
         "property": margin-block-start,
         "class": "space-y",
-        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "class-nested": $utilpack-space-class-nested,
         "values": $utilpack-space,
         "responsive": $enable-utilpack-space-responsive,
         "print": $enable-utilpack-space-print,
@@ -181,7 +184,7 @@ $utilpack-defaults-spacers: (
     "space-inline": (
         "property": margin-inline-start,
         "class": "space-x",
-        "class-nested": "> :not([hidden]) ~ :not([hidden])",
+        "class-nested": $utilpack-space-class-nested,
         "values": $utilpack-space,
         "responsive": $enable-utilpack-space-responsive,
         "print": $enable-utilpack-space-print,

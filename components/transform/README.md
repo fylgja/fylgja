@@ -212,15 +212,10 @@ You can also change it with the following variables;
 
 ```scss
 $transform-utils-separator: "-" !default;
-
-$transform-utils-breakpoints: (
-    "xs": 420px,
-    "sm": 640px,
-    "md": 768px,
-    "lg": 1024px,
-    "xl": 1440px
-) !default;
+$transform-utils-breakpoints: $mq-breakpoints !default;
 ```
+
+_`$mq-breakpoints` is a variable from the `@fylgja/mq` component._
 
 #### Config options
 
@@ -253,5 +248,29 @@ To change or edit any value;
 );
 ```
 
-_If the key already exists in the defaults it will override any value in there._
-_So make sure to re-add the defaults, if you need them._
+If the key already exists in the defaults it will override any value in there.
+So make sure to re-add the defaults, if you need them.
+
+Or override the default values directly;
+
+```scss
+$transform-translates: (
+    "1": 1em,
+    "n1": -1em,
+    "25": 25%,
+    "50": 50%,
+    "75": 75%,
+    "full": 100%,
+    "n25": -25%,
+    "n50": -50%,
+    "n75": -75%,
+    "nfull": -100%,
+) !default;
+
+$transform-scales: (
+    "50": 0.5,
+    "90": 0.9,
+    "100": 1,
+    "120": 1.2,
+) !default;
+```

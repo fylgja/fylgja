@@ -1,0 +1,38 @@
+// Fylgja v0.2.4 (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$enable-pagination-old-gap: true !default;
+$enable-pagination-dots-style: true !default;
+
+$pagination-size: 2em !default;
+$pagination-gap: 2px !default;
+$pagination-padding: 0.25em 0.5em !default;
+$pagination-border-size: 1px !default;
+$pagination-border-style: solid !default;
+$pagination-radius: 4px !default;
+$pagination-transition: 0.2s linear;
+$pagination-transition-property: (
+    color,
+    background-color,
+    border-color,
+    box-shadow
+) !default;
+
+$pagination-stroke: transparent !default;
+$pagination-bg: transparent !default;
+$pagination-color: inherit !default;
+
+$pagination-focus-stroke: currentColor !default;
+$pagination-focus-bg: transparent !default;
+$pagination-focus-color: inherit !default;
+
+$pagination-active-stroke: var(--color-theme, #{$color-theme}) !default;
+$pagination-active-bg: var(--color-theme, #{$color-theme}) !default;
+$pagination-active-color: var(--color-on-theme, #{$color-on-theme}) !default;
+
+$pagination-disabled-opacity: 0.8 !default;
+
+$pagination-dots-size: 0.625em !default;
+$pagination-dots-gap: 0.35em !default;

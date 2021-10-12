@@ -150,5 +150,15 @@
         &:disabled {
             @extend %control-disabled;
         }
+
+        [dir="rtl"] &,
+        &[dir="rtl"] {
+            --control-icon-position: right center;
+
+            &.is-active,
+            &:checked {
+                --control-icon-position: left center;
+            }
+        }
     }
 }

@@ -76,7 +76,7 @@
     $property,
     $util,
     $mq-prefix: null,
-    $sepparator: $utilpack-sepparator
+    $sepparator: $utilpack-separator
 ) {
     $values: map.get($util, "values");
     $class: if(map.get($util, "class"), map.get($util, "class"), $property);

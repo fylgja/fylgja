@@ -31,6 +31,8 @@ $blockquote-border-color: var(
 $blockquote-border-start: 0.25em solid $blockquote-border-color !default;
 $blockquote-font-style: italic !default;
 
+$accent-color: var(--color-theme) !default;
+
 $link-color: var(--color-theme) !default;
 $link-color-focus: var(--color-theme) !default;
 $link-style: none !default;
@@ -55,7 +57,7 @@ $dd-margin: 0 0 0.5rem;
 
 // Headings
 $h-margin: 1.33em 0 0.67em !default;
-$h-family: inherit !default;
+$h-family: var(--family-header) !default;
 $h-font-size: 1em !default;
 $h-line-height: inherit !default;
 $h-font-weight: normal !default;
