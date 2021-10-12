@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Text gradients to _gradient_ component.
+
 ## [1.1.0] - 2021-10-10
 ### Added
 - _Aria Only_: added breakpoint option, (enable this option with `$enable-aria-only-mq`)
