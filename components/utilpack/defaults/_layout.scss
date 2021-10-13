@@ -114,7 +114,10 @@ $utilpack-defaults-layout: (
     ),
     "visibility": (
         "class": "",
-        "values": invisible visible,
+        "values": (
+            "invisible": hidden,
+            "visible": visible,
+        ),
         "responsive": $enable-utilpack-visibility-responsive,
         "print": $enable-utilpack-visibility-print,
         "important": $enable-utilpack-visibility-important,
