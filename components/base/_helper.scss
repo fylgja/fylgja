@@ -56,43 +56,44 @@ $dl-margin: $item-spacer;
 $dd-margin: 0 0 0.5rem;
 
 // Headings
-$h-margin: 1.33em 0 0.67em !default;
+// TODO: *1: replace with margin-[start/end]
+$h-margin: 1.33em 0 0.67em !default; // *1
 $h-family: var(--family-header) !default;
 $h-font-size: 1em !default;
 $h-line-height: inherit !default;
 $h-font-weight: normal !default;
 
-$h1-margin: 0 0 0.45em !default;
+$h1-margin: 0 0 0.45em !default; // *1
 $h1-family: null !default;
 $h1-font-size: 2.2em !default;
 $h1-line-height: null !default;
 $h1-font-weight: null !default;
 
-$h2-margin: 1.33em 0 0.55em !default;
+$h2-margin: 1.33em 0 0.55em !default; // *1
 $h2-family: null !default;
 $h2-font-size: 1.6em !default;
 $h2-line-height: null !default;
 $h2-font-weight: null !default;
 
-$h3-margin: 1.33em 0 0.6em !default;
+$h3-margin: 1.33em 0 0.6em !default; // *1
 $h3-family: null !default;
 $h3-font-size: 1.35em !default;
 $h3-line-height: null !default;
 $h3-font-weight: null !default;
 
-$h4-margin: null !default;
+$h4-margin: null !default; // *1
 $h4-family: null !default;
 $h4-font-size: 1.25em !default;
 $h4-line-height: null !default;
 $h4-font-weight: null !default;
 
-$h5-margin: null !default;
+$h5-margin: null !default; // *1
 $h5-family: null !default;
 $h5-font-size: 1.125em !default;
 $h5-line-height: null !default;
 $h5-font-weight: 500 !default;
 
-$h6-margin: null !default;
+$h6-margin: null !default; // *1
 $h6-family: null !default;
 $h6-font-size: 1em !default;
 $h6-line-height: null !default;

@@ -26,8 +26,10 @@ p {
     line-height: var(--h-line-height, #{$h-line-height});
     font-weight: var(--h-font-weight, #{$h-font-weight});
 
+    // TODO: convert to newer :is syntax
     &:first-child {
-        --h-margin: 0 0 0.67em;
+        // TODO: Replace with variable for block-start
+        margin-block-start: 0;
     }
 }
 
