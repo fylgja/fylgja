@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.1.3] - 2021-10-17
+### Changed
+- Updated dev dependencies
+
 ### Fixed
 - _Base_: Corrected heading first child insistent margin-top unset
 

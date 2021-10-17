@@ -38,7 +38,7 @@
     "@fylgja/auto-grid": "^1.0.1",
     "@fylgja/avatar": "^1.0.0",
     "@fylgja/badge": "^1.0.0",
-    "@fylgja/base": "^1.0.1",
+    "@fylgja/base": "^1.0.2",
     "@fylgja/breadcrumbs": "^1.0.0",
     "@fylgja/button": "^1.0.0",
     "@fylgja/card": "^1.0.0",
@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^3.5.1",
-    "sass": "^1.32.13",
-    "stylelint": "^13.13.0"
+    "sass": "^1.43.2",
+    "stylelint": "^13.13.1"
   }
 }
