@@ -13,13 +13,12 @@ $auto-grid-gap: 1em !default;
     $gap: $auto-grid-gap,
     $fill: true
 ) {
+    --cols-size, #{$cols-size}
+    --cols: repeat(
+        var(--grid-auto, #{if($fill, auto-fill, auto-fit)}),
+        minmax(min(100%, var(--cols-size)), 1fr)
+    );
     display: grid;
     gap: var(--gap, #{$gap});
-    grid-template-columns: var(
-        --cols,
-        repeat(
-            var(--grid-auto, #{if($fill, auto-fill, auto-fit)}),
-            minmax(min(100%, var(--cols-size, #{$cols-size})), 1fr)
-        )
-    );
+    grid-template-columns: var(--cols);
 }
