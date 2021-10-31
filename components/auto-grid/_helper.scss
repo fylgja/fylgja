@@ -13,7 +13,7 @@ $auto-grid-gap: 1em !default;
     $gap: $auto-grid-gap,
     $fill: true
 ) {
-    --cols-size, #{$cols-size}
+    --cols-size: #{$cols-size};
     --cols: repeat(
         var(--grid-auto, #{if($fill, auto-fill, auto-fit)}),
         minmax(min(100%, var(--cols-size)), 1fr)
