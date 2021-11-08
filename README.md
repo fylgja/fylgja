@@ -4,9 +4,9 @@
   </a>
 </h1>
 
-[![npm version](https://img.shields.io/npm/v/fylgja?logo=npm&style=flat-square)](https://www.npmjs.com/package/fylgja)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ffylgja%2Ffylgja%2Fbadge%3Fref%3Dmain&color=%2343a047&label=Actions&style=flat-square)](https://actions-badge.atrox.dev/fylgja/fylgja/goto?ref=main)
-![license](https://img.shields.io/github/license/fylgja/fylgja?color=%23234&style=flat-square)
+[![NPM version](https://img.shields.io/npm/v/fylgja?logo=npm&style=flat-square)](https://www.npmjs.com/package/fylgja)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fylgja/fylgja/Test?color=%2343a047)
+![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234&style=flat-square)
 
 Fylgja is a component based CSS framework.
 Allowing you to use only what you need.

@@ -29,9 +29,6 @@
     "prebuild": "npm test",
     "build": "npm run build:pkg && npm run build:main"
   },
-  "stylelint": {
-    "extends": "@fylgja/stylelint-config/scss"
-  },
   "dependencies": {
     "@fylgja/aria-only": "^1.1.0",
     "@fylgja/aspect-ratio": "^1.0.0",
@@ -69,8 +66,8 @@
     "@fylgja/utilpack": "^1.1.0"
   },
   "devDependencies": {
-    "@fylgja/stylelint-config": "^3.5.1",
+    "@fylgja/stylelint-config": "^4.0.0",
     "sass": "^1.43.2",
-    "stylelint": "^13.13.1"
+    "stylelint": "^14.0.1"
   }
 }
