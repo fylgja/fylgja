@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - _Transform_: added rotate utility modifiers
 
+### Changed
+- Updated stylelint-config
+
 ### Fixed
 - _Auto Grid_: **[Possible Breaking Change]** Scoped the variables
 
