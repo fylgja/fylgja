@@ -65,9 +65,9 @@
         &.-theme {
             --btn-bg: var(--color-theme, #{$color-theme});
             --btn-color: var(--color-on-theme, #{$color-on-theme});
-            --btn-focus-bg: #{scale-color($color-theme, $lightness: 12%)};
+            --btn-focus-bg: #{color.scale($color-theme, $lightness: 12%)};
             --btn-focus-color: #{$color-on-theme};
-            --btn-active-bg: #{scale-color($color-theme, $lightness: 22%)};
+            --btn-active-bg: #{color.scale($color-theme, $lightness: 22%)};
             --btn-active-color: #{$color-on-theme};
         }
     }

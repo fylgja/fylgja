@@ -1,6 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:list";
 @use "@fylgja/theme" as *;
 
 $enable-dialog-polyfill: true !default;
@@ -37,8 +38,16 @@ $dialog-offcanvas-radius: 0 !default;
     $position: $dialog-snackbar-from,
     $offset: $dialog-snackbar-offset
 ) {
-    $position-block: if(length($position) > 1, nth($position, 2), $position);
-    $position-inline: if(length($position) > 1, nth($position, 1), null);
+    $position-block: if(
+        list.length($position) > 1,
+        list.nth($position, 2),
+        $position
+    );
+    $position-inline: if(
+        list.length($position) > 1,
+        list.nth($position, 1),
+        null
+    );
     @if $position-block == start {
         --dialog-translate: translateY(-#{$offset});
     }
