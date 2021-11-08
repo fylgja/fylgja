@@ -66,7 +66,7 @@
     "@fylgja/utilpack": "^1.1.0"
   },
   "devDependencies": {
-    "@fylgja/stylelint-config": "^4.0.0",
+    "@fylgja/stylelint-config": "^4.0.1",
     "sass": "^1.43.2",
     "stylelint": "^14.0.1"
   }
