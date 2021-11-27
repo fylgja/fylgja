@@ -21,8 +21,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/hashlink";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/hashlink/hashlink.css";
+// Or via PostCSS import
+@import "@fylgja/hashlink";
 ```
 
 ## How to use

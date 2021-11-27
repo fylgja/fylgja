@@ -19,8 +19,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/input-group";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/input-group/input-group.css";
+// Or via PostCSS import
+@import "@fylgja/input-group";
 ```
 
 ### Styles

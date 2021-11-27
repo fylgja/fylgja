@@ -16,8 +16,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/pagination";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/pagination/pagination.css";
+// Or via PostCSS import
+@import "@fylgja/pagination";
 ```
 
 ## How to use

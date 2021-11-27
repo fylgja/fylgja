@@ -16,8 +16,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/breadcrumbs";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/breadcrumbs/breadcrumbs.css";
+// Or via PostCSS import
+@import "@fylgja/breadcrumbs";
 ```
 
 ## How to use

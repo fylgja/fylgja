@@ -15,8 +15,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/print";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/print/print.css";
+// Or via PostCSS import
+@import "@fylgja/print";
 ```
 
 ## How to use

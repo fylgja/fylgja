@@ -19,8 +19,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/elevation";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/elevation/elevation.css";
+// Or via PostCSS import
+@import "@fylgja/elevation";
 ```
 
 ## How to use

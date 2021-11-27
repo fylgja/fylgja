@@ -18,8 +18,8 @@ Then include the component in to your code via;
 
 ```scss
 @import "@fylgja/gradient";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/gradient/gradient.css";
+// Or via PostCSS import
+@import "@fylgja/gradient";
 ```
 
 ## How to use

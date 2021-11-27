@@ -5,7 +5,7 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "sass": "_index.scss",
+  "main": "_index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
