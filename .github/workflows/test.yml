@@ -9,7 +9,7 @@ on:
     branches: [opened, synchronize, reopened, edited]
 
 env:
-  NODE: 14
+  NODE: 16
 
 jobs:
   test-pkg:

@@ -32,8 +32,8 @@ change the variable `$form-style` to one of the other options.
 Or if you are importing this as plain CSS or in PostCSS use;
 
 ```css
-@import "@fylgja/form/form-style-field.css";
-@import "@fylgja/form/form-style-box.css";
+@import "@fylgja/form/style-field.css";
+@import "@fylgja/form/style-box.css";
 ```
 
 ## How to use

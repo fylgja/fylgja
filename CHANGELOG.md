@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.1.4] - 2021-11-27
+### Added
+- _Transform_: added rotate utility modifiers
+
+### Changed
+- Updated stylelint-config
+- _Details_: Removed Summary from details scope, making the css smaller and easier to edit
+- _Form_: **[Possible Breaking Change]** removed input prefix from type,
+  Making it easier to edit the form styles with utility classes
+- _Form_: Removed form prefix from CSS imports for style versions
+- _Input Group_: Removed input-group prefix from CSS imports for style versions
+
+### Fixed
+- _Auto Grid_: **[Possible Breaking Change]** Scoped the variables
 
 ## [1.1.3] - 2021-10-17
 ### Changed

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Compiles all components for the CSS version
+cd components
+for i in * ; do
+  FILE="$i/package.json"
+  if [[ -f "$FILE" ]]; then
+    cd $i
+    if npm run | grep -q build; then
+      npm i &> /dev/null &&
+      npm run --silent build &&
+      echo "✅ build component $i"
+    fi
+    cd - > /dev/null
+  fi
+done

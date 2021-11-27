@@ -116,6 +116,12 @@ $transform-translates: (
     "nfull": -100%,
 ) !default;
 
+$transform-angles: (
+    "45": 45deg,
+    "90": 90deg,
+    "180": 180deg,
+) !default;
+
 $transform-scales: (
     "50": 0.5,
     "90": 0.9,
@@ -128,6 +134,7 @@ $transform-utils-defaults: (
     "t": $transform-translates,
     "tx": $transform-translates,
     "ty": $transform-translates,
+    "ta": $transform-angles,
     "s": $transform-scales,
     "sx": $transform-scales,
     "sy": $transform-scales,

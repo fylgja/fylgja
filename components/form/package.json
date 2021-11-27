@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The form component is super easy to use. Since it is a zero config module that styles the form elements directly",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -19,8 +19,8 @@
     "form"
   ],
   "scripts": {
-    "build:field": "npx sass form-style-field.scss form-style-field.css --no-source-map -s compressed -I node_modules",
-    "build:box": "npx sass form-style-box.scss form-style-box.css --no-source-map -s compressed -I node_modules",
+    "build:field": "npx sass style-field.scss style-field.css --no-source-map -s compressed -I node_modules",
+    "build:box": "npx sass style-box.scss style-box.css --no-source-map -s compressed -I node_modules",
     "build:default": "npx sass form.scss form.css --no-source-map -s compressed -I node_modules",
     "build": "npm run build:field && npm run build:box && npm run build:default"
   },
