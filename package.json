@@ -23,6 +23,7 @@
   "scripts": {
     "test": "stylelint components/**/*.scss",
     "start": "npx sass components:components -w -I node_modules",
+    "update": "./scripts/update-all",
     "dev": "npm start",
     "build:pkg": "npx sass components:components --no-source-map -s compressed -I node_modules",
     "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
