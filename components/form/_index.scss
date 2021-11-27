@@ -61,6 +61,10 @@ optgroup {
     height: auto;
 }
 
+input:not([type]) {
+    @include form-field;
+}
+
 @each $field in $form-fields {
     @if $field == textarea {
         textarea {
@@ -73,11 +77,11 @@ optgroup {
             @include form-select;
         }
     } @else if $field == date {
-        input[type*="date"] {
+        [type*="date"] {
             @include form-field;
         }
     } @else if $field == search {
-        input[type="search"] {
+        [type="search"] {
             @include form-field;
 
             // Removes the extra space in older webkit browsers
@@ -86,7 +90,7 @@ optgroup {
             }
         }
     } @else if $field == color {
-        input[type="color"] {
+        [type="color"] {
             @include form-field($has-readonly: false);
             @if $form-color-radius {
                 --form-radius: #{$form-color-radius};
@@ -112,7 +116,7 @@ optgroup {
         }
     } @else if $field == file {
         // *1: Needed for Safari overflow
-        input[type="file"] {
+        [type="file"] {
             @include form-field($has-readonly: false);
             overflow: hidden; // *1
 
@@ -126,7 +130,7 @@ optgroup {
             }
         }
     } @else {
-        input[type="#{$field}"] {
+        [type="#{$field}"] {
             @include form-field;
         }
     }

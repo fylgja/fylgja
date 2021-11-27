@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Updated stylelint-config
+- _Form_: **[Possible Breaking Change]** removed input prefix from type,
+  Making it easier to edit the form styles with utility classes
 - _Form_: Removed form prefix from CSS imports for style versions
 
 ### Fixed
