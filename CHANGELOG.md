@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - _Form_: **[Possible Breaking Change]** removed input prefix from type,
   Making it easier to edit the form styles with utility classes
 - _Form_: Removed form prefix from CSS imports for style versions
+- _Input Group_: Removed input-group prefix from CSS imports for style versions
 
 ### Fixed
 - _Auto Grid_: **[Possible Breaking Change]** Scoped the variables
