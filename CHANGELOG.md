@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Updated stylelint-config
+- _Form_: Removed form prefix from CSS imports for style versions
 
 ### Fixed
 - _Auto Grid_: **[Possible Breaking Change]** Scoped the variables

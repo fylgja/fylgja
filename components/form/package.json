@@ -19,8 +19,8 @@
     "form"
   ],
   "scripts": {
-    "build:field": "npx sass form-style-field.scss form-style-field.css --no-source-map -s compressed -I node_modules",
-    "build:box": "npx sass form-style-box.scss form-style-box.css --no-source-map -s compressed -I node_modules",
+    "build:field": "npx sass style-field.scss style-field.css --no-source-map -s compressed -I node_modules",
+    "build:box": "npx sass style-box.scss style-box.css --no-source-map -s compressed -I node_modules",
     "build:default": "npx sass form.scss form.css --no-source-map -s compressed -I node_modules",
     "build": "npm run build:field && npm run build:box && npm run build:default"
   },
