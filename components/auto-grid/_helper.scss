@@ -18,7 +18,8 @@ $auto-grid-gap: 1em !default;
         var(--grid-auto, #{if($fill, auto-fill, auto-fit)}),
         minmax(min(100%, var(--cols-size)), 1fr)
     );
+    --gap: #{$gap};
     display: grid;
-    gap: var(--gap, #{$gap});
+    gap: var(--gap);
     grid-template-columns: var(--cols);
 }
