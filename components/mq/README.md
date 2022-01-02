@@ -65,7 +65,7 @@ To use it, simply use at media with the Fylgja CSS media variable.
 > If your planing to use the CSS version,
 > we also recommend you use the [PurgeCSS variables option](https://purgecss.com/configuration.html#options)
 > or use [PostCSS JIT Props](https://github.com/GoogleChromeLabs/postcss-jit-props).
-> See each option, for what is possible and what fit better with you nad your project.
+> See each option, for what is possible and what fit better with you and your project.
 
 ## Config
 
