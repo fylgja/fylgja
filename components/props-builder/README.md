@@ -35,7 +35,7 @@ const spacers = {
     "size-3": "1.5em",
 };
 
-propsBuilder({ filename: "spacers.css", spacers });
+propsBuilder({ filename: "spacers.css", props: spacers });
 ```
 
 Now you have a css file with your own spacers;
