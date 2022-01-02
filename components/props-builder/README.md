@@ -5,9 +5,8 @@
 
 Build your own CSS props a.k.a Design Tokens, with ease.
 
-> This package is mainly use for our own CSS props components,
-> but also available to any one,
-> to build there own CSS props.
+> This package is mainly used for our own CSS props components,
+> but also available to any one that wants to build there own CSS props.
 
 ## Installation
 
