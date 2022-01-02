@@ -1,0 +1,35 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "index" as mq;
+
+// stylelint-disable custom-media-pattern, at-rule-empty-line-before
+
+// Only works with https://github.com/postcss/postcss-custom-media at the moment
+// If you need the older syntax use the SCSS syntax instead
+
+/* Prefers mq's */
+@custom-media --schemeDark: (#{mq.$scheme-dark});
+@custom-media --schemeLight: (#{mq.$scheme-light});
+
+@custom-media --motionSafe: (#{mq.$motion-safe});
+@custom-media --motionReduce: (#{mq.$motion-reduce});
+
+@custom-media --opacitySafe: (#{mq.$opacity-safe});
+@custom-media --opacityReduce: (#{mq.$opacity-reduce});
+
+@custom-media --dataSafe: (#{mq.$data-safe});
+@custom-media --dataReduce: (#{mq.$data-reduce});
+
+@custom-media --contrastHigh: (#{mq.$contrast-high});
+@custom-media --contrastLow: (#{mq.$contrast-low});
+
+@custom-media --hdColor: (#{mq.$hd-color});
+@custom-media --portrait: (#{mq.$portrait});
+@custom-media --landscape: (#{mq.$landscape});
+
+/* Sizing mq's */
+@each $name, $value in mq.$breakpoints {
+    @custom-media --#{$name}: (width >= #{$value});
+    @custom-media --#{$name}Max: (width < #{$value});
+}

@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/mq",
   "version": "1.0.0",
-  "description": "Helper component for adding media query specific variables to multiple components",
+  "description": "Helper component and collection of media query specific variables props",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
@@ -18,5 +18,8 @@
     "media queries",
     "dark mode"
   ],
-  "scripts": {}
+  "scripts": {
+    "test": "npx sass mq.scss mq.css --no-source-map -I node_modules",
+    "build": "npx sass mq.scss mq.css --no-source-map -s compressed -I node_modules"
+  }
 }
