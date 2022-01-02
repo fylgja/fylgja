@@ -17,8 +17,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/section";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/section/section.css";
+// Or via PostCSS import
+@import "@fylgja/section";
 ```
 
 ## How to use

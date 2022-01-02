@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Cleanup `package.json` for all components.
+
+### Fixed
+- _Auto Grid_: **[Possible Breaking Change]** Also Scoped the gap variable,
+  making all of the auto-grid variables scoped.
+- _Auto Grid_: Fixed relative PostCSS import
+
 ## [1.1.4] - 2021-11-27
 ### Added
 - _Transform_: added rotate utility modifiers

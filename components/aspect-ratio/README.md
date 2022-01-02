@@ -17,8 +17,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/aspect-ratio";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/aspect-ratio/aspect-ratio.css";
+// Or via PostCSS import
+@import "@fylgja/aspect-ratio";
 ```
 
 ## How to use

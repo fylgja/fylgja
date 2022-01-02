@@ -5,8 +5,9 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "grid.css",
-  "sass": "_index.scss",
+  "main": "_index.scss",
+  "unpkg": "auto-grid.css",
+  "style": "auto-grid.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",

@@ -18,8 +18,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/card";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/card/card.css";
+// Or via PostCSS import
+@import "@fylgja/card";
 ```
 
 ## How to use

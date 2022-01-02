@@ -37,8 +37,8 @@ Include fylgja as one package in to your code via;
 
 ```scss
 @use "fylgja";
-// Or via PostCSS and other options as plain CSS
-@import "fylgja/fylgja.css";
+// Or via PostCSS import
+@import "fylgja";
 ```
 
 For on how to configure each component via this one import,

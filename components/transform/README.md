@@ -15,8 +15,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/transform";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/transform/transform.css";
+// Or via PostCSS import
+@import "@fylgja/transform";
 ```
 
 ## How to use

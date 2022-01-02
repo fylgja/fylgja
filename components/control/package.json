@@ -6,6 +6,7 @@
   "author": "Fylgja",
   "license": "MIT",
   "main": "_index.scss",
+  "unpkg": "control.css",
   "style": "control.css",
   "repository": {
     "type": "git",

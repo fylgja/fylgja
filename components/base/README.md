@@ -16,8 +16,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/base";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/base/base.css";
+// Or via PostCSS import
+@import "@fylgja/base";
 ```
 
 

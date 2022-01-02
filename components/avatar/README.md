@@ -15,8 +15,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/avatar";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/avatar/avatar.css";
+// Or via PostCSS import
+@import "@fylgja/avatar";
 ```
 
 ## How to use

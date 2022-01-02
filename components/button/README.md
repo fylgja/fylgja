@@ -21,8 +21,8 @@ Then include the component in to your code via;
 
 ```scss
 @use "@fylgja/button";
-// Or via PostCSS and other options as plain CSS
-@import "@fylgja/button/button.css";
+// Or via PostCSS import
+@import "@fylgja/button";
 ```
 
 ## How to use
