@@ -67,5 +67,5 @@ just in case if you don't have an editor with those super powers.
 | prefix    | string                                | `""`              |
 | varOnly   | boolean                               | `false`           |
 | varSyntax | string                                | `"--"`            |
-| keyOnly   | boolean                               | `false`           |
+| frameOnly | boolean                               | `false`           |
 

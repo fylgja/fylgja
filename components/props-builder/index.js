@@ -10,7 +10,7 @@ import fs from "fs";
  * @param {string} options.prefix
  * @param {boolean} options.varOnly
  * @param {string} options.varSyntax
- * @param {boolean} options.keyOnly
+ * @param {boolean} options.frameOnly
  */
 export const propsBuilder = ({
     filename,
@@ -19,41 +19,67 @@ export const propsBuilder = ({
     prefix = "",
     varOnly = false,
     varSyntax = "--",
-    keyOnly = false,
+    frameOnly = false,
 }) => {
+    let appendedMeta = "";
+    let hasSelector = selector ? true : false;
+    let lineBr = ";\n";
+    let selectorSpace = " ";
+    let str = "";
+    let tabSize = "    ";
+
+    // Type specific settings
     if (varOnly) {
-        selector = "";
+        hasSelector = false;
+        tabSize = "";
         varSyntax = varSyntax === "--" ? "$" : varSyntax;
     }
 
-    if (keyOnly) {
-        selector = "";
+    if (frameOnly) {
+        hasSelector = false;
+        tabSize = "";
     }
 
+    // Language specific settings
+    if (selector === "json") {
+        hasSelector = true;
+        lineBr = ",\n";
+        selector = "";
+        selectorSpace = "";
+        str = '"';
+        tabSize = "  ";
+        varSyntax = "";
+        varOnly = true;
+        frameOnly = false;
+    }
+
+    // Create token file
     const file = fs.createWriteStream(filename);
-    const tabSize = selector ? "    " : "";
 
-    let appendedMeta = "";
+    if (hasSelector) file.write(`${selector}${selectorSpace}{\n`);
 
-    if (selector) file.write(`${selector} {\n`);
+    Object.entries(props).forEach(([name, value], index) => {
+        if (hasSelector && index === Object.keys(props).length - 1)
+            lineBr = "\n";
 
-    Object.entries(props).forEach(([name, value]) => {
         // The ending -@ is to keep the same syntax as postcss-jit-props
         if (name.endsWith("-@")) {
-            if (varOnly && !keyOnly) return;
+            if (varOnly && !frameOnly) return;
 
             appendedMeta += value + "\n";
             return;
         }
 
-        if (keyOnly && !varOnly) return;
+        if (frameOnly && !varOnly) return;
         const varName = prefix
             ? `${varSyntax}${prefix}${name}`
             : `${varSyntax}${name}`;
 
-        file.write(`${tabSize}${varName}: ${value};\n`);
+        file.write(
+            `${tabSize}${str}${varName}${str}: ${str}${value}${str}${lineBr}`
+        );
     });
 
-    if (selector) file.write("}\n");
+    if (hasSelector) file.write("}\n");
     file.end(appendedMeta);
 };

@@ -45,7 +45,7 @@ propsBuilder({
     props,
     selector,
     prefix,
-    keyOnly: true,
+    frameOnly: true,
 });
 
 // Keyframes and SCSS variables
@@ -54,6 +54,16 @@ propsBuilder({
     props,
     selector,
     prefix,
-    keyOnly: true,
+    frameOnly: true,
     varOnly: true,
+});
+
+// as json
+propsBuilder({
+    filename: "_tests_/tokens.json",
+    props,
+    selector: "json",
+    prefix,
+    frameOnly: true,
+    varOnly: false,
 });
