@@ -5,6 +5,7 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
+  "type": "module",
   "main": "_index.scss",
   "unpkg": "aspect-ratio.css",
   "style": "aspect-ratio.css",
@@ -20,6 +21,12 @@
     "aspect-ratio"
   ],
   "scripts": {
-    "build": "npx sass aspect-ratio.scss aspect-ratio.css --no-source-map -s compressed -I node_modules"
+    "build:props": "node _build.js",
+    "build:scss": "npx sass aspect-ratio.scss aspect-ratio.css --no-source-map -s compressed",
+    "build:scss:legacy": "npx sass legacy.scss legacy.css --no-source-map -s compressed",
+    "build": "npm run build:props && npm run build:scss && npm run build:scss:legacy"
+  },
+  "devDependencies": {
+    "@fylgja/props-builder": "file:../props-builder"
   }
 }
