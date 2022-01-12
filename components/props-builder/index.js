@@ -1,7 +1,8 @@
 import fs from "fs";
 
 /**
- * Builds a CSS or SCSS variable file from a javascript object with CSS props.
+ * Builds a token CSS, SCSS or JSON file,
+ * from a javascript object with CSS props.
  *
  * @param {Object} options
  * @param {string} options.filename
@@ -21,31 +22,29 @@ export const propsBuilder = ({
     varSyntax = "--",
     frameOnly = false,
 }) => {
+    const jsonMode = filename.endsWith(".json");
     let appendedMeta = "";
+    let el = `${selector} `;
     let hasSelector = selector ? true : false;
     let lineBr = ";\n";
-    let selectorSpace = " ";
     let str = "";
-    let tabSize = "    ";
+    let tabSize = selector ? "    " : "";
 
     // Type specific settings
-    if (varOnly) {
+    if (frameOnly || varOnly) {
         hasSelector = false;
         tabSize = "";
+    }
+
+    if (varOnly) {
         varSyntax = varSyntax === "--" ? "$" : varSyntax;
     }
 
-    if (frameOnly) {
-        hasSelector = false;
-        tabSize = "";
-    }
-
     // Language specific settings
-    if (selector === "json") {
+    if (jsonMode) {
+        el = "";
         hasSelector = true;
         lineBr = ",\n";
-        selector = "";
-        selectorSpace = "";
         str = '"';
         tabSize = "  ";
         varSyntax = "";
@@ -56,11 +55,12 @@ export const propsBuilder = ({
     // Create token file
     const file = fs.createWriteStream(filename);
 
-    if (hasSelector) file.write(`${selector}${selectorSpace}{\n`);
+    if (hasSelector) file.write(`${el}{\n`);
 
     Object.entries(props).forEach(([name, value], index) => {
-        if (hasSelector && index === Object.keys(props).length - 1)
+        if (jsonMode && index === Object.keys(props).length - 1) {
             lineBr = "\n";
+        }
 
         // The ending -@ is to keep the same syntax as postcss-jit-props
         if (name.endsWith("-@")) {
@@ -74,6 +74,12 @@ export const propsBuilder = ({
         const varName = prefix
             ? `${varSyntax}${prefix}${name}`
             : `${varSyntax}${name}`;
+
+        // TEMP save mode for SCSS / values that need to be quoted,
+        // until SCSS version 2.0, which drops native / calc support
+        if (filename.endsWith(".scss") && varSyntax === "$") {
+            value.includes("/") && (value = `"${value}"`);
+        }
 
         file.write(
             `${tabSize}${str}${varName}${str}: ${str}${value}${str}${lineBr}`

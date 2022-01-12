@@ -59,11 +59,4 @@ propsBuilder({
 });
 
 // as json
-propsBuilder({
-    filename: "_tests_/tokens.json",
-    props,
-    selector: "json",
-    prefix,
-    frameOnly: true,
-    varOnly: false,
-});
+propsBuilder({ filename: "_tests_/tokens.json", props });
