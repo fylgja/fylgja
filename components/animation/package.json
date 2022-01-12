@@ -1,0 +1,32 @@
+{
+  "name": "@fylgja/animation",
+  "version": "1.0.0",
+  "description": "The Fylgja animation Design Tokens (CSS props) component",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "type": "module",
+  "main": "_index.css",
+  "unpkg": "animation.css",
+  "style": "animation.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "packages/animation"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "props",
+    "animation"
+  ],
+  "scripts": {
+    "build:props": "node _build.js",
+    "build:scss": "npx sass animation.scss animation.css --no-source-map -s compressed",
+    "build": "npm run build:props && npm run build:scss"
+  },
+  "devDependencies": {
+    "@fylgja/props-builder": "file:../props-builder"
+  }
+}
