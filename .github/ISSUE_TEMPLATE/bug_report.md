@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 
+<!--
 Before opening a report please:
 
 - [Search for duplicate or closed issues](https://github.com/fylgja/fylgja/issues?utf8=%E2%9C%93&q=is%3Aissue)
@@ -17,3 +18,5 @@ Bug reports, please include:
 - Operating system and version (Windows, macOS, Android, iOS)
 - Browser and version (Chrome, Firefox, Safari, Microsoft Edge, Opera, Android Browser)
 - A [reduced test case](https://css-tricks.com/reduced-test-cases/) or suggested fix using [CodePen](https://codepen.io/) or [CodeSandbox](https://codesandbox.io/)
+-->
+
