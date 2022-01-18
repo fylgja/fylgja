@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve Fylgja
-title: "\U0001F41E Describe your bug"
+title: "bug"
 labels: bug
 assignees: ''
 
