@@ -1,1 +1,37 @@
-:root{--family-code: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace}pre,code,kbd,samp{font-family:var(--family-code);direction:ltr}:not(pre)>code{border-radius:.2rem;border:1px solid var(--code-stroke, rgba(0, 0, 0, 0.05));padding:0 .15em;background-color:var(--code-bg, #eee);color:var(--code-color, #111);overflow-wrap:break-word}pre{margin:1em 0;padding:1rem;border-radius:.2rem;border:1px solid var(--code-stroke, rgba(0, 0, 0, 0.05));background-color:var(--code-bg, #f2f2f2);color:var(--code-color, #111);font-size:var(--code-font-size, 0.875em);tab-size:4;direction:ltr;overflow-x:auto}:not(kbd)>kbd{border-radius:.3em;border:1px solid currentColor;box-shadow:inset 0 -1px 0 currentColor;padding:.1em .25em;font-size:.875em}
+:root {
+    --family-code: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+pre,
+code,
+kbd,
+samp {
+    font-family: var(--family-code);
+    direction: ltr;
+}
+:not(pre) > code {
+    border-radius: 0.2rem;
+    border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.05));
+    padding: 0 0.15em;
+    background-color: var(--code-bg, #eee);
+    color: var(--code-color, #111);
+    overflow-wrap: break-word;
+}
+pre {
+    margin: 1em 0;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.05));
+    background-color: var(--code-bg, #f2f2f2);
+    color: var(--code-color, #111);
+    font-size: var(--code-font-size, 0.875em);
+    tab-size: 4;
+    direction: ltr;
+    overflow-x: auto;
+}
+:not(kbd) > kbd {
+    border-radius: 0.3em;
+    border: 1px solid currentcolor;
+    box-shadow: inset 0 -1px 0 currentcolor;
+    padding: 0.1em 0.25em;
+    font-size: 0.875em;
+}

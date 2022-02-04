@@ -11,7 +11,7 @@ $enable-utilpack-border-important: false !default;
 $enable-utilpack-divider-important: false !default;
 
 $utilpack-border-style: var(--border-style, solid) !default;
-$utilpack-border-color: var(--border-color, currentColor) !default;
+$utilpack-border-color: var(--border-color, currentcolor) !default;
 $utilpack-border-sizes: (
     "default": 1px $utilpack-border-style $utilpack-border-color,
     "0": 0,

@@ -97,11 +97,11 @@
             --pagination-padding: 0;
             --pagination-radius: 50%;
             @if $pagination-stroke == transparent {
-                --pagination-stroke: currentColor;
+                --pagination-stroke: currentcolor;
             }
 
             @if ($pagination-focus-bg == transparent) and
-                ($pagination-focus-stroke == currentColor)
+                ($pagination-focus-stroke == currentcolor)
             {
                 --pagination-focus-bg: var(--color-theme, #{$color-theme});
                 --pagination-focus-stroke: var(--color-theme, #{$color-theme});

@@ -63,17 +63,17 @@ progress {
 
     &::-webkit-progress-value {
         border-radius: $progress-radius;
-        background-color: currentColor;
+        background-color: currentcolor;
     }
 
     &::-moz-progress-bar {
         border-radius: $progress-radius;
-        background-color: currentColor;
+        background-color: currentcolor;
     }
 
     &:indeterminate {
         @include progress-loading;
-        background-color: currentColor;
+        background-color: currentcolor;
 
         &::-webkit-progress-value {
             background: none;
@@ -94,7 +94,7 @@ progress {
         width: var(--progress);
         height: 100%;
         border-radius: $progress-radius;
-        background-color: currentColor;
+        background-color: currentcolor;
     }
 
     &.is-loading {

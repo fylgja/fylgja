@@ -67,8 +67,8 @@ $pre-font-size: 0.875em !default;
 $pre-tab-index: 4 !default;
 
 $key-radius: 0.3em !default;
-$key-border: 1px solid currentColor !default;
-$key-shadow: inset 0 -1px 0 currentColor !default;
+$key-border: 1px solid currentcolor !default;
+$key-shadow: inset 0 -1px 0 currentcolor !default;
 $key-padding: 0.1em 0.25em !default;
 $key-bg: null !default;
 $key-fg: null !default;

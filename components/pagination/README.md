@@ -118,7 +118,7 @@ $pagination-stroke: transparent !default;
 $pagination-bg: transparent !default;
 $pagination-color: inherit !default;
 
-$pagination-focus-stroke: currentColor !default;
+$pagination-focus-stroke: currentcolor !default;
 $pagination-focus-bg: transparent !default;
 $pagination-focus-color: inherit !default;
 

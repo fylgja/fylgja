@@ -93,5 +93,5 @@ $card-color: $color-text !default;
 
 // Only with enable-card-link
 $card-link-opacity: 0.1 !default;
-$card-link-color: currentColor !default;
+$card-link-color: currentcolor !default;
 ```
