@@ -78,7 +78,9 @@ export const propsBuilder = ({
         // TEMP save mode for SCSS / values that need to be quoted,
         // until SCSS version 2.0, which drops native / calc support
         if (filename.endsWith(".scss") && varSyntax === "$") {
-            value.includes("/") && (value = `"${value}"`);
+            if (typeof value === "string") {
+                value.includes("/") && (value = `"${value}"`);
+            }
         }
 
         file.write(
