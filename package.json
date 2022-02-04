@@ -68,7 +68,7 @@
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^4.0.1",
-    "sass": "^1.43.5",
+    "sass": "^1.49.7",
     "stylelint": "^14.1.0"
   }
 }
