@@ -1,1 +1,1 @@
-.auto-grid{--cols-size: 250px;--cols: repeat( var(--grid-auto, auto-fill), minmax(min(100%, var(--cols-size)), 1fr) );display:grid;gap:var(--gap, 1em);grid-template-columns:var(--cols)}
+.auto-grid{--cols-size: 250px;--cols: repeat( var(--grid-auto, auto-fill), minmax(min(100%, var(--cols-size)), 1fr) );--gap: 1em;display:grid;gap:var(--gap);grid-template-columns:var(--cols)}
