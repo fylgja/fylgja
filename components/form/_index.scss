@@ -15,7 +15,7 @@ textarea {
 
 label {
     display: inline-block;
-    margin: var(--label-margin);
+    margin: var(--label-margin, #{$label-margin});
 }
 
 fieldset {
