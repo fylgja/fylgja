@@ -22,7 +22,7 @@ $utilpack-defaults-typography: (
         "class": "text",
         "property": "color",
         "values": (
-            "reset": "currentColor",
+            "reset": "currentcolor",
         ),
         "responsive": $enable-utilpack-typography-color-responsive,
         "print": $enable-utilpack-typography-color-print,

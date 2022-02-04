@@ -56,8 +56,8 @@
 
     @if $enable-btn-outline {
         &.-outline {
-            --btn-stroke: currentColor;
-            --btn-focus-stroke: currentColor;
+            --btn-stroke: currentcolor;
+            --btn-focus-stroke: currentcolor;
         }
     }
 

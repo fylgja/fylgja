@@ -26,7 +26,7 @@ $blockquote-margin: 2em 0 !default;
 $blockquote-padding-start: 1em !default;
 $blockquote-border-color: var(
     --quote-border-color,
-    var(--color-theme, currentColor)
+    var(--color-theme, currentcolor)
 ) !default;
 $blockquote-border-start: 0.25em solid $blockquote-border-color !default;
 $blockquote-font-style: italic !default;
@@ -43,7 +43,7 @@ $selection-color: inherit !default;
 
 $hr-size: 1px !default;
 $hr-style: solid !default;
-$hr-color: currentColor !default;
+$hr-color: currentcolor !default;
 $hr-margin: 1em 0 !default;
 
 $mark-padding: 0 0.15em !default;
