@@ -5,10 +5,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Fixed
-- _Menu_: default auto-selector for use with Hyva (Tailwind `@apply`) with `.btn`
-
-## [1.1.5] - 2022-02-04
 ### Added
 - _Form_: scss option added, to set the `$label-margin`
 
@@ -19,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - _Auto Grid_: **[Possible Breaking Change]** Also Scoped the gap variable,
   making all of the auto-grid variables scoped.
 - _Auto Grid_: Fixed relative PostCSS import
+- _Menu_: default auto-selector for use with Hyva (Tailwind `@apply`) with `.btn`
 
 ## [1.1.4] - 2021-11-27
 ### Added
