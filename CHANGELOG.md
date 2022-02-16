@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - _Form_: scss option added, to set the `$label-margin`
+- _Dialog_: add variable support for backdrop
 
 ### Changed
 - Cleanup `package.json` for all components.

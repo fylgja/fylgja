@@ -18,7 +18,7 @@ $dialog-elevation: var(--elevation-z6) !default;
 $dialog-bg: var(--color-bg, #{$root-bg}) !default;
 $dialog-color: inherit !default;
 
-$dialog-backdrop: rgba(black, 0.2) !default;
+$dialog-backdrop: var(--backdrop, rgba(black, 0.2)) !default;
 
 // Snackbar
 $dialog-snackbar-from: end !default;
