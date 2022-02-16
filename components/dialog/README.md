@@ -107,35 +107,24 @@ $dialog-offcanvas-radius: 0 !default;
 If you need to use the older solutions, that don't use the HTML Dialog.
 But you do like to use the Fylgja Dialog styles.
 
-You can do so with the 2 extend classes available to you.
+You can use the class `.dialog` or use your own version,
+by using the two extend classes available to you;
 
 ```scss
+// Sample use case
 @use "@fylgja/dialog/helper" as *;
-
-@keyframes dialog-show {
-    from {
-        opacity: 0;
-        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
-    }
-}
-
-@keyframes dialog-hide {
-    to {
-        opacity: 0;
-        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
-    }
-}
+@use "@fylgja/dialog/keyframes";
 
 .dialog {
     @extend %dialog;
 
-    &[hidden] {
+    &[open] {
         visibility: hidden;
         transition: visibility 0s 200ms;
         animation: dialog-hide 200ms;
     }
 
-    &:not([hidden]) {
+    &:not([open]) {
         animation: dialog-show 300ms;
         transition: none;
     }
