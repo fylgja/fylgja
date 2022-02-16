@@ -1,0 +1,15 @@
+@use "helper" as *;
+
+@keyframes dialog-show {
+    from {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}
+
+@keyframes dialog-hide {
+    to {
+        opacity: 0;
+        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    }
+}

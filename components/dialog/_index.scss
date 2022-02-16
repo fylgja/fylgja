@@ -3,22 +3,11 @@
 
 @forward "helper";
 @use "helper" as *;
+@use "keyframes";
 
-@keyframes dialog-show {
-    from {
-        opacity: 0;
-        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
-    }
-}
-
-@keyframes dialog-hide {
-    to {
-        opacity: 0;
-        transform: var(--dialog-translate, translateY(#{$dialog-offset}));
-    }
-}
-
-dialog {
+// TODO: Add support for `:is()` in v2
+dialog,
+.dialog {
     @extend %dialog;
 
     &:not([open]) {
