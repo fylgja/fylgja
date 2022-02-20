@@ -69,7 +69,7 @@ So it also ships with a class for disabled and active state;
 
 As with almost all of our components, CSS variables can be configured to add your own look/style.
 
-All CSS varibles are prefixed with the name btn,
+All CSS variables are prefixed with the name btn,
 and can be viewed in the browsers dev tools.
 
 Want direct control on the base styles, here are the following SCSS variables can you modify.
