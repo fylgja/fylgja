@@ -49,6 +49,8 @@ CSS variables can be configured to add your own look/style.
 For direct control of the base styles,
 here are the following SCSS variables can you modify.
 
+<details class="faq-panel"><summary>View SCSS variables</summary>
+
 ```scss
 $enable-webkit-autofill-dark-mode: true !default;
 
@@ -165,3 +167,5 @@ $form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
 > that contains the predefined form styles.
 > 
 > Inspect the `helper.scss` file tot see what is in the default styles.
+
+</details>
