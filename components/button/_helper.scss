@@ -38,3 +38,78 @@ $btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
 $btn-active-color: inherit !default;
 
 $btn-disabled-opacity: 0.7 !default;
+
+@mixin btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--btn-margin, 0);
+    padding: var(--btn-padding, #{$btn-padding});
+    border: $btn-border-size $btn-border-style var(--btn-stroke, #{$btn-stroke});
+    border-radius: var(--btn-radius, #{$btn-radius});
+    background-color: var(--btn-bg, #{$btn-bg});
+    color: var(--btn-color, #{$btn-color});
+    font-size: var(--btn-font-size, #{$btn-font-size});
+    line-height: var(--btn-line-height, #{$btn-line-height});
+    font-weight: var(--btn-font-weight, #{$btn-font-weight});
+    vertical-align: middle;
+    text-decoration: none;
+    transition: $btn-transition;
+    transition-property: $btn-transition-property;
+    user-select: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
+    -webkit-appearance: none; // unset iOS styles on <button>
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus,
+    &:hover {
+        border-color: var(--btn-focus-stroke, #{$btn-focus-stroke});
+        background-color: var(--btn-focus-bg, #{$btn-focus-bg});
+        color: var(--btn-focus-color, #{$btn-focus-color});
+        text-decoration: none;
+    }
+
+    &:is(.is-active, :active) {
+        border-color: var(--btn-active-stroke, #{$btn-active-stroke});
+        background-color: var(--btn-active-bg, #{$btn-active-bg});
+        color: var(--btn-active-color, #{$btn-active-color});
+    }
+
+    &:is(.is-disabled, :disabled) {
+        opacity: $btn-disabled-opacity;
+        pointer-events: none;
+    }
+}
+
+@mixin btn-variants {
+    @if $enable-btn-outline {
+        &.-outline {
+            --btn-stroke: currentcolor;
+            --btn-focus-stroke: currentcolor;
+        }
+    }
+
+    @if $enable-btn-theme {
+        &.-theme {
+            --btn-bg: var(--color-theme, #{$color-theme});
+            --btn-color: var(--color-on-theme, #{$color-on-theme});
+            --btn-focus-bg: #{color.scale($color-theme, $lightness: 12%)};
+            --btn-focus-color: #{$color-on-theme};
+            --btn-active-bg: #{color.scale($color-theme, $lightness: 22%)};
+            --btn-active-color: #{$color-on-theme};
+        }
+    }
+
+    @if $enable-btn-icon {
+        &.-icon {
+            --btn-padding: 1px;
+            --btn-size: #{$btn-icon-size};
+            min-width: var(--btn-size);
+            min-height: var(--btn-size);
+        }
+    }
+}
