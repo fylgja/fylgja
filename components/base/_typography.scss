@@ -17,7 +17,7 @@ p {
     font-weight: var(--h-font-weight, #{$h-font-weight});
 
     &:first-child {
-        --h-margin-start: 0;
+        --h-mt: 0;
     }
 }
 
