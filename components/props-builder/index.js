@@ -70,7 +70,8 @@ export const propsBuilder = ({
     if (hasSelector) file.write(`${el}{\n`);
 
     Object.entries(props).forEach(([name, value], index) => {
-        if (jsonMode && index === Object.keys(props).length - 1) {
+        const isLast = index === Object.keys(props).length - 1;
+        if (jsonMode && isLast) {
             lineBr = "\n";
         }
 
@@ -78,7 +79,9 @@ export const propsBuilder = ({
         if (name.endsWith("-@")) {
             if (varOnly && !frameOnly) return;
 
-            appendedMeta += value + "\n";
+            const appendedMetaBr = appendedMeta.length > 0 ? "\n" : "";
+
+            appendedMeta += appendedMetaBr + value + "\n";
             return;
         }
 
@@ -106,5 +109,8 @@ export const propsBuilder = ({
     });
 
     if (hasSelector) file.write("}\n");
+    if ((varOnly && frameOnly) || (!varOnly && !frameOnly && appendedMeta)) {
+        file.write("\n");
+    }
     file.end(appendedMeta);
 };
