@@ -21,11 +21,14 @@
     "*.{css,scss}"
   ],
   "scripts": {
-    "test": "stylelint components/**/*.scss",
-    "start": "npx sass components:components -w -I node_modules",
+    "test:style": "stylelint components/**/*.scss",
+    "test": "npm run test:style",
+    "start": "npm run dev",
     "update": "./scripts/update-all",
-    "dev": "npm start",
-    "build:pkg": "npx sass components:components --no-source-map -s compressed -I node_modules",
+    "dev:playground": "vite serve --host",
+    "dev:components": "npx sass components:components --no-source-map -w -I node_modules",
+    "dev": "npm run dev:components & npm run dev:playground",
+    "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
     "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
     "prebuild": "npm test",
     "build": "npm run build:pkg && npm run build:main"
@@ -69,6 +72,7 @@
   "devDependencies": {
     "@fylgja/stylelint-config": "^4.0.1",
     "sass": "^1.49.7",
-    "stylelint": "^14.3.0"
+    "stylelint": "^14.3.0",
+    "vite": "^2.8.4"
   }
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fylgja boilderplate</title>
+  <!-- Other styles -->
+  <link rel="stylesheet" href="../components/base/base.css">
+  <link rel="stylesheet" href="../components/container/container.css">
+  <link rel="stylesheet" href="../components/auto-grid/auto-grid.css">
+  <link rel="stylesheet" href="../components/menu/menu.css">
+  <link rel="stylesheet" href="../components/utilpack/utilpack.css">
+  <!-- Test styles -->
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/control/control.css">
+  <link rel="stylesheet" href="../components/progress/progress.css">
+</head>
+<body>
+  <header class="container flex items-center py-4 border-block-end">
+    <a href="/"><img src="../assets/logo.svg" width="100" height="43" alt="Fylgja" class="me-8"></a>
+    <nav class="menu -row">
+      <a href="text.html">Text</a>
+      <a href="action.html" aria-current="page">Action</a>
+    </nav>
+  </header>
+  <main class="container my-8">
+    <div>
+      <button>Default</button>
+      <a href="#nolink" class="btn">Link</a>
+      <button class="btn -theme">Theme</button>
+      <button class="btn -outline">Outline</button>
+    </div>
+    <form class="relative">
+      <fieldset class="auto-grid items-start">
+        <input type="text" placeholder="text">
+        <input type="number" placeholder="number">
+        <input type="email" placeholder="email">
+        <input type="tel" placeholder="tel">
+        <input type="password" placeholder="password">
+        <input type="search" placeholder="search">
+        <input type="url" placeholder="url">
+        <input type="date" placeholder="data">
+        <input type="datetime-local" placeholder="datetime-local">
+        <input type="time" placeholder="time">
+        <input type="month" placeholder="month">
+        <input type="week" placeholder="week">
+        <span>
+          <input type="color" placeholder="color" value="#e91e63">
+          <input type="color" placeholder="color" value="#2537bb">
+        </span>
+        <input type="file" placeholder="file">
+        <select>
+          <option value="option 1">option 1</option>
+          <option value="option 2">option 2</option>
+          <option value="option 3">option 3</option>
+        </select>
+        <textarea placeholder="textarea" rows="3"></textarea>
+      </fieldset>
+      <fieldset class="space-y-4">
+        <progress value="60" max="100"></progress>
+        <progress indeterminate></progress>
+      </fieldset>
+      <fieldset>
+        <meter value="20" min="0" max="100"></meter>
+        <meter value="60" min="0" max="100"></meter>
+      </fieldset>
+      <fieldset>
+        <legend>Checkbox</legend>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">Default</label>
+        <input type="checkbox" id="checkbox-checked" checked />
+        <label for="checkbox-checked">Checked</label>
+        <input indeterminate type="checkbox" id="checkbox-indeterminate" />
+        <label for="checkbox-indeterminate">Indeterminate</label>
+        <input type="checkbox" disabled id="checkbox-disabled" />
+        <label for="checkbox-disabled">Disabled</label>
+        <input type="checkbox" id="checkbox-disabled-checked" checked disabled />
+        <label for="checkbox-disabled-checked">Disabled Checked</label>
+      </fieldset>
+      <fieldset>
+        <legend>Radio</legend>
+        <input name="group" type="radio" id="radio" />
+        <label for="radio">Default</label>
+        <input checked name="group" type="radio" id="radio-checked" />
+        <label for="radio-checked">Checked</label>
+        <input name="group-2" disabled type="radio" id="radio-disabled" />
+        <label for="radio-disabled">Disabled</label>
+        <input name="group-2" disabled checked type="radio" id="radio-disabled-checked" />
+        <label for="radio-disabled-checked">Disabled Checked</label>
+      </fieldset>
+      <fieldset>
+        <legend>Switch (checkbox)</legend>
+        <input type="checkbox" id="switch" class="control-switch" />
+        <label for="switch">Default</label>
+        <input type="checkbox" id="switch-checked" checked class="control-switch" />
+        <label for="switch-checked">Checked</label>
+        <input type="checkbox" id="switch-disabled" disabled class="control-switch" />
+        <label for="switch-disabled">Disabled</label>
+        <input type="checkbox" id="switch-disabled" checked disabled class="control-switch" />
+        <label for="switch-disabled">Disabled Checked</label>
+        <hr>
+        <label>
+          <input type="checkbox" class="control-switch me-2" data-color-preference>
+          <span>Toggle Dark or Light mode</span>
+        </label>
+      </fieldset>
+      <fieldset class="styled-material">
+        <legend>Styled (material)</legend>
+        <input type="radio" name="material-radio" id="material-radio" />
+        <input type="radio" name="material-radio" checked />
+        <label for="material-radio">Radio</label>
+        <input type="checkbox" id="material-checkbox" />
+        <label for="material-checkbox">Checkbox</label>
+      </fieldset>
+    </form>
+  </main>
+</body>
+<script>
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-color-preference]")) return;
+    theme = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  });
+</script>
+</html>
