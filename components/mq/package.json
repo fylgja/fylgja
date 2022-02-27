@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/mq",
   "version": "1.0.0",
-  "description": "Helper component and collection of media query specific variables props",
+  "description": "The Fylgja MQ offers Design Tokens (CSS props) for consistent use of media queries",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",

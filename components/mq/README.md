@@ -3,9 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/mq)](https://www.npmjs.org/package/@fylgja/mq)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The Fylgja MQ CSS component is an helper component and collection of media query specific variables props.
-
-Available to be used as CSS props in our own CSS.
+The Fylgja MQ offers Design Tokens (CSS props) for consistent use of media queries.
 
 ## Installation
 
@@ -54,7 +52,8 @@ or you can use it in your own SCSS components;
 ### CSS version
 
 As for the CSS variables,
-this only allows you to use the variables in your CSS, and it can not adjust the Fylgja CSS components directly.
+this only allows you to use the variables in your CSS,
+and it can not adjust the Fylgja CSS components directly.
 
 To use it, simply use at media with the Fylgja CSS media variable.
 
@@ -62,17 +61,12 @@ To use it, simply use at media with the Fylgja CSS media variable.
 @media (--md) {..}
 ```
 
-> If your planing to use the CSS version,
-> we also recommend you use the [PurgeCSS variables option](https://purgecss.com/configuration.html#options)
-> or use [PostCSS JIT Props](https://github.com/GoogleChromeLabs/postcss-jit-props).
-> See each option, for what is possible and what fit better with you and your project.
-
 ## Config
 
 The following variables are available.
 
-With the CSS variables you can use the same name with `--` as prefix instead of `$` and writing in cameCase.
-For example `$scheme-dark` is now `--schemeDark`;
+With the CSS variables you can use the same name, only with `--` as prefix,
+instead of `$`.
 
 ```scss
 $scheme-dark: "prefers-color-scheme: dark";
