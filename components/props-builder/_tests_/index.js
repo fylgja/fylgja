@@ -7,7 +7,7 @@ const red = "#f00";
 const green = "#0f0";
 const blue = "#00f";
 
-const slideIn = `@keyframes slideIn {
+const slideIn = `@keyframes slide-in {
     from {
         transform: translateX(var(--tx: 100%));
     }
@@ -19,9 +19,9 @@ const props = {
     red,
     green,
     blue,
-    slideInOut: "slideIn 3s, slideOut 3s",
+    slideInOut: "slide-in 3s, slide-out 3s",
     "slideIn-@": slideIn,
-    "slideOut-@": `@keyframes slideOut {
+    "slideOut-@": `@keyframes slide-out {
     to {
         transform: translateX(var(--tx: -100%));
     }
@@ -30,12 +30,12 @@ const props = {
 };
 
 // Just style
-propsBuilder({ filename: "_tests_/style.css", props, selector, prefix });
-propsBuilder({ filename: "_tests_/style.scss", props, selector, prefix });
+propsBuilder({ filename: "_tests_/_style.css", props, selector, prefix });
+propsBuilder({ filename: "_tests_/_style.scss", props, selector, prefix });
 
 // Just SCSS variables
 propsBuilder({
-    filename: "_tests_/var.scss",
+    filename: "_tests_/_var.scss",
     props,
     selector,
     prefix,
@@ -44,7 +44,7 @@ propsBuilder({
 
 // Just keyframes
 propsBuilder({
-    filename: "_tests_/keyframes.css",
+    filename: "_tests_/_keyframes.css",
     props,
     selector,
     prefix,
@@ -53,7 +53,7 @@ propsBuilder({
 
 // Keyframes and SCSS variables
 propsBuilder({
-    filename: "_tests_/scss.scss",
+    filename: "_tests_/_scss.scss",
     props,
     selector,
     prefix,
@@ -62,4 +62,4 @@ propsBuilder({
 });
 
 // As json and keep camelCase
-propsBuilder({ filename: "_tests_/tokens.json", props, keepCamelCase: true });
+propsBuilder({ filename: "_tests_/_tokens.json", props, keepCamelCase: true });
