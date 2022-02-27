@@ -1,1 +1,6 @@
 *.css
+
+# CSS Tokens
+# These files will always cause file length warning
+components/shadow/*.css
+components/shadow/*.scss

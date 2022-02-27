@@ -31,7 +31,7 @@
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
     "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
     "prebuild": "npm test",
-    "build": "npm run build:pkg && npm run build:main"
+    "build": "npm run build:components && npm run build:main"
   },
   "dependencies": {
     "@fylgja/aria-only": "^1.1.0",

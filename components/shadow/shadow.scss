@@ -1,4 +1,4 @@
-:where(html) {
+:root {
     --shadow-color: 0 0% 50%;
     --shadow-strength: 1%;
     --shadow-1: 0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%)), 0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%)), 0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%));

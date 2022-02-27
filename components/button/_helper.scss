@@ -84,6 +84,7 @@ $btn-disabled-opacity: 0.7 !default;
         color: var(--btn-active-color, #{$btn-active-color});
     }
 
+    // stylelint-disable-next-line no-descending-specificity
     :disabled &,
     &:is(.is-disabled, :disabled) {
         opacity: $btn-disabled-opacity;
