@@ -8,17 +8,6 @@ p {
     margin: var(--item-spacer, #{$item-spacer});
 }
 
-:any-link {
-    color: var(--link-color, #{$link-color});
-    text-decoration: $link-style;
-
-    &:hover,
-    &:focus {
-        color: var(--link-color-focus, #{$link-color-focus});
-        text-decoration: $link-style-focus;
-    }
-}
-
 %heading-base {
     margin: var(--h-margin, #{$h-margin});
     font-family: var(--h-family, #{$h-family});
