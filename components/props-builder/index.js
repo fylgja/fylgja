@@ -1,5 +1,9 @@
 import fs from "fs";
 
+function kababCase(string) {
+    return string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
 // *1: until Safari supports :where(html) better, we stick using :root
 // TODO: set default selector to :where(html) when safari 16 is released
 
@@ -10,11 +14,12 @@ import fs from "fs";
  * @param {Object} options
  * @param {string} options.filename
  * @param {Object.<string, string | number>} options.props
- * @param {string} options.selector
- * @param {string} options.prefix
- * @param {boolean} options.varOnly
- * @param {string} options.varSyntax
- * @param {boolean} options.frameOnly
+ * @param {string} options.selector - default: :root
+ * @param {string} options.prefix - default: ""
+ * @param {boolean} options.varOnly - default: false
+ * @param {string} options.varSyntax - default: "--"
+ * @param {boolean} options.frameOnly - default: false
+ * @param {boolean} options.keepCamelCase - default: false
  */
 export const propsBuilder = ({
     filename,
@@ -24,6 +29,7 @@ export const propsBuilder = ({
     varOnly = false,
     varSyntax = "--",
     frameOnly = false,
+    keepCamelCase = false,
 }) => {
     const jsonMode = filename.endsWith(".json");
     let appendedMeta = "";
@@ -74,6 +80,11 @@ export const propsBuilder = ({
         }
 
         if (frameOnly && !varOnly) return;
+
+        if (!keepCamelCase) {
+            name = kababCase(name);
+        }
+
         const varName = prefix
             ? `${varSyntax}${prefix}${name}`
             : `${varSyntax}${name}`;

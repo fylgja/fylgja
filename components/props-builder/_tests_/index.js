@@ -7,7 +7,7 @@ const red = "#f00";
 const green = "#0f0";
 const blue = "#00f";
 
-const slidein = `@keyframes slidein {
+const slideIn = `@keyframes slideIn {
     from {
         transform: translateX(var(--tx: 100%));
     }
@@ -15,10 +15,13 @@ const slidein = `@keyframes slidein {
 
 const props = {
     z1: 1,
-    red: red,
-    slideinout: "slidein 3s, slideout 3s",
-    "slide-@": slidein,
-    "slideout-@": `@keyframes slideout {
+    zTop: 100,
+    red,
+    green,
+    blue,
+    slideInOut: "slideIn 3s, slideOut 3s",
+    "slideIn-@": slideIn,
+    "slideOut-@": `@keyframes slideOut {
     to {
         transform: translateX(var(--tx: -100%));
     }
@@ -41,7 +44,7 @@ propsBuilder({
 
 // Just keyframes
 propsBuilder({
-    filename: "_tests_/key.css",
+    filename: "_tests_/keyframes.css",
     props,
     selector,
     prefix,
@@ -58,5 +61,5 @@ propsBuilder({
     varOnly: true,
 });
 
-// as json
-propsBuilder({ filename: "_tests_/tokens.json", props });
+// As json and keep camelCase
+propsBuilder({ filename: "_tests_/tokens.json", props, keepCamelCase: true });
