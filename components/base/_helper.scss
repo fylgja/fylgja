@@ -14,7 +14,7 @@ $family-main: (
     "Apple Color Emoji",
     "Segoe UI Emoji"
 ) !default;
-$family-header: $family-main !default;
+$family-header: var(--family-main) !default;
 $font-size: 1rem !default;
 $font-weight: normal !default;
 $line-height: 1.5 !default;
