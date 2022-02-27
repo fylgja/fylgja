@@ -6,7 +6,6 @@
 
 // *1: Option to change the default font-size, by default disabled
 :root {
-    --item-spacer: #{$item-spacer};
     --color-theme: #{$color-theme};
     --color-theme-fade: #{$color-theme-fade};
     --color-on-theme: #{$color-on-theme};
