@@ -79,7 +79,7 @@ $layer5: 8;
 You don't need high z-index values structure!
 
 If you keep the index layer to a specific structure,
-you can prevent index override issue.
+you can prevent index override issues.
 
 For example, Something that is layered;
 
@@ -104,7 +104,7 @@ to something that matches the same value in you project.
 This better then changing your own styles,
 to match there ridicules z-index value.
 
-Let hope 3de party vendors start to support CSS variables 
+Lets hope 3de party vendors will start to support CSS variables in there CSS 🤞
 
 ### CSS grid can be layered
 
@@ -112,4 +112,4 @@ If you need a component to be layered, and also to be content aware,
 its probably better to use CSS grid instead.
 
 You can still use this package with `position: relative`,
-but it better avoided.
+if the order of the DOM is mixed.
