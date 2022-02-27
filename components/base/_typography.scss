@@ -8,23 +8,20 @@ p {
     margin: var(--item-spacer, #{$item-spacer});
 }
 
-%heading-base {
+:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
     margin: var(--h-margin, #{$h-margin});
     font-family: var(--h-family, #{$h-family});
     font-size: var(--h-font-size, #{$h-font-size});
     line-height: var(--h-line-height, #{$h-line-height});
     font-weight: var(--h-font-weight, #{$h-font-weight});
 
-    // TODO: convert to newer :is syntax
     &:first-child {
-        // TODO: Replace with variable for block-start
-        margin-block-start: 0;
+        --h-margin-start: 0;
     }
 }
 
 h1,
 .h1 {
-    @extend %heading-base;
     @include if-var("h-margin", $h1-margin);
     @include if-var("h-family", $h1-family);
     @include if-var("h-font-size", $h1-font-size);
@@ -34,7 +31,6 @@ h1,
 
 h2,
 .h2 {
-    @extend %heading-base;
     @include if-var("h-margin", $h2-margin);
     @include if-var("h-family", $h2-family);
     @include if-var("h-font-size", $h2-font-size);
@@ -44,7 +40,6 @@ h2,
 
 h3,
 .h3 {
-    @extend %heading-base;
     @include if-var("h-margin", $h3-margin);
     @include if-var("h-family", $h3-family);
     @include if-var("h-font-size", $h3-font-size);
@@ -54,7 +49,6 @@ h3,
 
 h4,
 .h4 {
-    @extend %heading-base;
     @include if-var("h-margin", $h4-margin);
     @include if-var("h-family", $h4-family);
     @include if-var("h-font-size", $h4-font-size);
@@ -64,7 +58,6 @@ h4,
 
 h5,
 .h5 {
-    @extend %heading-base;
     @include if-var("h-margin", $h5-margin);
     @include if-var("h-family", $h5-family);
     @include if-var("h-font-size", $h5-font-size);
@@ -74,7 +67,6 @@ h5,
 
 h6,
 .h6 {
-    @extend %heading-base;
     @include if-var("h-margin", $h6-margin);
     @include if-var("h-family", $h6-family);
     @include if-var("h-font-size", $h6-font-size);
