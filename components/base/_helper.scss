@@ -51,9 +51,10 @@ $mark-bg: var(--selection-bg) !default;
 $mark-color: var(--selection-color) !default;
 
 // List
-$list-margin: $item-spacer;
-$dl-margin: $item-spacer;
-$dd-margin: 0 0 0.5rem;
+$list-mt: 1em !default;
+$list-mb: 1em !default;
+$list-item-mt: 0.5em !default;
+$list-item-mb: 0.5em !default;
 
 // Headings
 // TODO: *1: replace with margin-[start/end]
