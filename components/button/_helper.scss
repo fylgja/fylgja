@@ -25,13 +25,17 @@ $btn-transition-property: (
     box-shadow
 ) !default;
 
+// Only set for focus
+$btn-outline: null !default;
+$btn-outline-offset: null !default;
+
 $btn-stroke: transparent !default;
 $btn-bg: transparent !default;
 $btn-color: inherit !default;
 
-$btn-focus-stroke: transparent !default;
-$btn-focus-bg: color.change($root-fg, $alpha: 0.05) !default;
-$btn-focus-color: inherit !default;
+$btn-hover-stroke: transparent !default;
+$btn-hover-bg: color.change($root-fg, $alpha: 0.05) !default;
+$btn-hover-color: inherit !default;
 
 $btn-active-stroke: transparent !default;
 $btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
@@ -45,7 +49,8 @@ $btn-disabled-opacity: 0.7 !default;
     align-items: center;
     margin: var(--btn-margin, 0);
     padding: var(--btn-padding, #{$btn-padding});
-    border: $btn-border-size $btn-border-style var(--btn-stroke, #{$btn-stroke});
+    border: var(--btn-border-width, #{$btn-border-size}) $btn-border-style
+        var(--btn-stroke, #{$btn-stroke});
     border-radius: var(--btn-radius, #{$btn-radius});
     background-color: var(--btn-bg, #{$btn-bg});
     color: var(--btn-color, #{$btn-color});
@@ -62,14 +67,14 @@ $btn-disabled-opacity: 0.7 !default;
     -webkit-appearance: none; // unset iOS styles on <button>
 
     &:focus {
-        outline: 0;
+        outline: $btn-outline;
+        outline-offset: $btn-outline-offset;
     }
 
-    &:focus,
     &:hover {
-        border-color: var(--btn-focus-stroke, #{$btn-focus-stroke});
-        background-color: var(--btn-focus-bg, #{$btn-focus-bg});
-        color: var(--btn-focus-color, #{$btn-focus-color});
+        border-color: var(--btn-hover-stroke, #{$btn-hover-stroke});
+        background-color: var(--btn-hover-bg, #{$btn-hover-bg});
+        color: var(--btn-hover-color, #{$btn-hover-color});
         text-decoration: none;
     }
 
@@ -79,6 +84,7 @@ $btn-disabled-opacity: 0.7 !default;
         color: var(--btn-active-color, #{$btn-active-color});
     }
 
+    :disabled &,
     &:is(.is-disabled, :disabled) {
         opacity: $btn-disabled-opacity;
         pointer-events: none;
@@ -89,7 +95,7 @@ $btn-disabled-opacity: 0.7 !default;
     @if $enable-btn-outline {
         &.-outline {
             --btn-stroke: currentcolor;
-            --btn-focus-stroke: currentcolor;
+            --btn-hover-stroke: currentcolor;
         }
     }
 
@@ -97,8 +103,8 @@ $btn-disabled-opacity: 0.7 !default;
         &.-theme {
             --btn-bg: var(--color-theme, #{$color-theme});
             --btn-color: var(--color-on-theme, #{$color-on-theme});
-            --btn-focus-bg: #{color.scale($color-theme, $lightness: 12%)};
-            --btn-focus-color: #{$color-on-theme};
+            --btn-hover-bg: #{color.scale($color-theme, $lightness: 12%)};
+            --btn-hover-color: #{$color-on-theme};
             --btn-active-bg: #{color.scale($color-theme, $lightness: 22%)};
             --btn-active-color: #{$color-on-theme};
         }
