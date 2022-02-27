@@ -1,5 +1,8 @@
 import fs from "fs";
 
+// *1: until Safari supports :where(html) better, we stick using :root
+// TODO: set default selector to :where(html) when safari 16 is released
+
 /**
  * Builds a token CSS, SCSS or JSON file,
  * from a javascript object with CSS props.
@@ -16,7 +19,7 @@ import fs from "fs";
 export const propsBuilder = ({
     filename,
     props,
-    selector = ":where(html)",
+    selector = ":root", // *1
     prefix = "",
     varOnly = false,
     varSyntax = "--",
