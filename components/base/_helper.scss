@@ -21,12 +21,15 @@ $line-height: 1.5 !default;
 $letter-spacing: normal !default;
 $caption-size: 0.875em !default;
 
-$quotes: "“" "”" "‘" "’" !default;
+$p-margin: 0 0 1em !default;
+$figure-margin: 0 !default;
+$address-margin: 1em 0 !default;
+
 $blockquote-margin: 2em 0 !default;
 $blockquote-padding-start: 1em !default;
 $blockquote-border-color: var(
     --quote-border-color,
-    var(--color-theme, currentcolor)
+    var(--color-theme)
 ) !default;
 $blockquote-border-start: 0.25em solid $blockquote-border-color !default;
 $blockquote-font-style: italic !default;

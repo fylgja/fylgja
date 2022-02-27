@@ -5,9 +5,10 @@
 @use "helper" as *;
 
 p {
-    margin: var(--item-spacer, #{$item-spacer});
+    margin: var(--p-margin, #{$p-margin});
 }
 
+// TODO: replace with :where when safari 16 is out
 :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
     margin-block-start: var(--h-mt, #{$h-mt});
     margin-block-end: var(--h-mb, #{$h-mb});
@@ -77,7 +78,7 @@ h6,
 }
 
 address {
-    margin: var(--item-spacer);
+    margin: var(--address-margin, #{$address-margin});
     font-style: normal;
 }
 
@@ -92,12 +93,13 @@ small,
     font-size: var(--small, smaller);
 }
 
+// *1: Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 hr,
 .hr {
     margin: var(--hr-margin, #{$hr-margin});
-    border: 0;
-    border-top: var(--hr-size, #{$hr-size}) var(--hr-style, #{$hr-style})
-        var(--hr-color, #{$hr-color});
+    border: 0 var(--hr-style, #{$hr-style}) var(--hr-color, #{$hr-color});
+    border-block-start-width: var(--hr-size, #{$hr-size});
+    color: inherit; // *1
 }
 
 abbr[title] {
