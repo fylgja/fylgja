@@ -34,9 +34,9 @@ $blockquote-font-style: italic !default;
 $accent-color: var(--color-theme) !default;
 
 $link-color: var(--color-theme) !default;
-$link-color-focus: var(--color-theme) !default;
+$link-hover-color: var(--color-theme) !default;
 $link-style: none !default;
-$link-style-focus: underline !default;
+$link-hover-style: underline !default;
 
 $selection-bg: $color-theme-fade !default;
 $selection-color: inherit !default;

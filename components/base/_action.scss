@@ -5,11 +5,11 @@
 
 :any-link {
     color: var(--link-color, #{$link-color});
-    text-decoration: $link-style;
+    text-decoration: var(--link-style, #{$link-style});
 
     &:hover {
-        color: var(--link-color-focus, #{$link-color-focus});
-        text-decoration: $link-style-focus;
+        color: var(--link-hover-color, #{$link-hover-color});
+        text-decoration: var(--link-hover-style, #{$link-hover-style});
     }
 }
 
