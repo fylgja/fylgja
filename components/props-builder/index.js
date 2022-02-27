@@ -1,3 +1,6 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 import fs from "fs";
 
 function kababCase(string) {
