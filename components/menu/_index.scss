@@ -17,20 +17,14 @@
 }
 
 %menu-item-states {
-    &:focus {
-        outline: $menu-item-outline;
-    }
-
-    &:focus,
     &:hover {
-        border-color: var(--menu-item-focus-stroke, #{$menu-item-focus-stroke});
-        background-color: var(--menu-item-focus-bg, #{$menu-item-focus-bg});
-        color: var(--menu-item-focus-color, #{$menu-item-focus-color});
+        border-color: var(--menu-item-hover-stroke, #{$menu-item-hover-stroke});
+        background-color: var(--menu-item-hover-bg, #{$menu-item-hover-bg});
+        color: var(--menu-item-hover-color, #{$menu-item-hover-color});
         text-decoration: none;
     }
 
-    &:active,
-    &#{$menu-item-active-selector} {
+    &:is(.is-active, :active, [aria-current="page"]) {
         border-color: var(
             --menu-item-active-stroke,
             #{$menu-item-active-stroke}
