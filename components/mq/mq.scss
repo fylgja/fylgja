@@ -9,27 +9,27 @@
 // If you need the older syntax use the SCSS syntax instead
 
 /* Prefers mq's */
-@custom-media --schemeDark: (#{mq.$scheme-dark});
-@custom-media --schemeLight: (#{mq.$scheme-light});
+@custom-media --scheme-dark: (#{mq.$scheme-dark});
+@custom-media --scheme-light: (#{mq.$scheme-light});
 
-@custom-media --motionSafe: (#{mq.$motion-safe});
-@custom-media --motionReduce: (#{mq.$motion-reduce});
+@custom-media --motion-safe: (#{mq.$motion-safe});
+@custom-media --motion-reduce: (#{mq.$motion-reduce});
 
-@custom-media --opacitySafe: (#{mq.$opacity-safe});
-@custom-media --opacityReduce: (#{mq.$opacity-reduce});
+@custom-media --opacity-safe: (#{mq.$opacity-safe});
+@custom-media --opacity-reduce: (#{mq.$opacity-reduce});
 
-@custom-media --dataSafe: (#{mq.$data-safe});
-@custom-media --dataReduce: (#{mq.$data-reduce});
+@custom-media --data-safe: (#{mq.$data-safe});
+@custom-media --data-reduce: (#{mq.$data-reduce});
 
-@custom-media --contrastHigh: (#{mq.$contrast-high});
-@custom-media --contrastLow: (#{mq.$contrast-low});
+@custom-media --contrast-high: (#{mq.$contrast-high});
+@custom-media --contrast-low: (#{mq.$contrast-low});
 
-@custom-media --hdColor: (#{mq.$hd-color});
+@custom-media --hd-color: (#{mq.$hd-color});
 @custom-media --portrait: (#{mq.$portrait});
 @custom-media --landscape: (#{mq.$landscape});
 
 /* Sizing mq's */
 @each $name, $value in mq.$breakpoints {
     @custom-media --#{$name}: (width >= #{$value});
-    @custom-media --#{$name}Max: (width < #{$value});
+    @custom-media --#{$name}-max: (width < #{$value});
 }
