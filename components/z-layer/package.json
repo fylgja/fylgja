@@ -1,18 +1,18 @@
 {
-  "name": "@fylgja/z-index",
+  "name": "@fylgja/z-layer",
   "version": "1.0.0",
-  "description": "The Fylgja z-index Design Tokens (CSS props) component",
+  "description": "The Fylgja z-layer offers Design Tokens (CSS props) for consistent and semantic z-indexing.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
   "main": "_index.css",
-  "unpkg": "z-index.css",
-  "style": "z-index.css",
+  "unpkg": "z-layer.css",
+  "style": "z-layer.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "packages/z-index"
+    "directory": "components/z-layer"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "build:props": "node _build.js",
-    "build:scss": "npx sass z-index.scss z-index.css --no-source-map -s compressed",
+    "build:scss": "npx sass z-layer.scss z-layer.css --no-source-map -s compressed",
     "build": "npm run build:props && npm run build:scss"
   },
   "dependencies": {
