@@ -3,7 +3,7 @@
 
 @use "helper" as *;
 
+// Force a common default for margin
 figure {
-    display: inline-block;
-    margin: var(--item-spacer);
+    margin: var(--figure-margin, #{$figure-margin});
 }
