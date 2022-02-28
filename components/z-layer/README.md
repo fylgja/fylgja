@@ -37,7 +37,7 @@ or use it in a React or Vue based project.
 ```scss
 @use "@fylgja/z-layer" as *;
 
-.layer {
+.box {
     z-index: $layer1;
 }
 ```
@@ -45,7 +45,7 @@ or use it in a React or Vue based project.
 ### CSS version
 
 ```css
-.layer {
+.box {
     z-index: var(--layer1);
 }
 ```

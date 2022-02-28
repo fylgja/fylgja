@@ -1,10 +1,16 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Design Tokens
 @forward "@fylgja/theme";
 @forward "@fylgja/mq";
+// @forward "@fylgja/elevation"; // Deprecated
+// @forward "@fylgja/color"; // TODO create
+// @forward "@fylgja/typography"; // TODO create
+// @forward "@fylgja/shadow"; // TODO publish
+// @forward "@fylgja/z-layer"; // TODO publish
 
-@forward "@fylgja/aria-only";
+// Components
 @forward "@fylgja/aspect-ratio";
 @forward "@fylgja/auto-grid";
 @forward "@fylgja/avatar";
@@ -18,10 +24,7 @@
 @forward "@fylgja/control";
 @forward "@fylgja/details";
 @forward "@fylgja/dialog";
-@forward "@fylgja/elevation";
 @forward "@fylgja/form";
-@forward "@fylgja/gradient";
-@forward "@fylgja/hashlink";
 @forward "@fylgja/input-group";
 @forward "@fylgja/list";
 @forward "@fylgja/menu";
@@ -29,10 +32,15 @@
 @forward "@fylgja/print";
 @forward "@fylgja/progress";
 @forward "@fylgja/scroll-slider";
-@forward "@fylgja/scrollbar";
 @forward "@fylgja/section";
-@forward "@fylgja/stretched-link";
 @forward "@fylgja/table";
+
+// Utilities
+@forward "@fylgja/aria-only";
+@forward "@fylgja/gradient";
+@forward "@fylgja/hashlink";
+@forward "@fylgja/scrollbar";
+@forward "@fylgja/stretched-link";
 @forward "@fylgja/transform";
 @forward "@fylgja/transition";
 @forward "@fylgja/utilpack";
