@@ -29,9 +29,13 @@
     "dev:components": "npx sass components:components --no-source-map -w -I node_modules",
     "dev": "npm run dev:components & npm run dev:playground",
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
-    "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:tokens": "npx sass fylgja-tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:utils": "npx sass fylgja-utils.scss fylgja-utils.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:slim": "npx sass fylgja-slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:pkg": "npm run build:pkg:tokens & npm run build:pkg:utils & npm run build:pkg:slim & npm run build:pkg:main",
     "prebuild": "npm test",
-    "build": "npm run build:components && npm run build:main"
+    "build": "npm run build:components && npm run build:pkg"
   },
   "dependencies": {
     "@fylgja/aria-only": "^1.1.0",
