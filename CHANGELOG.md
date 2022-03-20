@@ -9,9 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - _Form_: scss option added, to set the `$label-margin`
 - _Dialog_: add variable support for backdrop
 - _Dialog_: add class support
+- _Print_: add option to disable media query print,
+  In case you want to load the file separate from the main styles
 
 ### Changed
 - Cleanup `package.json` for all components.
+- _Print_: Made link logic smaller with not syntax
+- _Print_: Moved style logic to mixin
 
 ### Fixed
 - _Auto Grid_: **[Possible Breaking Change]** Also Scoped the gap variable,
