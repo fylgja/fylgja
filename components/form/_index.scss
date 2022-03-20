@@ -61,6 +61,19 @@ optgroup {
     height: auto;
 }
 
+// Fix extra space set by webkit browsers for date fields
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+    padding-block-start: 0;
+    padding-block-end: 0;
+}
+
 input:not([type]) {
     @include form-field;
 }

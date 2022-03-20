@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   making all of the auto-grid variables scoped.
 - _Auto Grid_: Fixed relative PostCSS import
 - _Menu_: default auto-selector for use with Hyva (Tailwind `@apply`) with `.btn`
+- _Form_: safari data input height difference
 
 ## [1.1.4] - 2021-11-27
 ### Added
