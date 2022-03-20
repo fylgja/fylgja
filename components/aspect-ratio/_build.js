@@ -1,6 +1,11 @@
 import { propsBuilder } from "@fylgja/props-builder";
 import props from "./index.js";
 
-propsBuilder({ filename: "aspect-ratio.scss", props });
-propsBuilder({ filename: "_helper.scss", props, varOnly: true });
-propsBuilder({ filename: "tokens.json", props });
+propsBuilder({ props, filename: "_helper.scss" }); // Will become the new index later
+propsBuilder({ props, filename: "aspect-ratio.css", props });
+propsBuilder({
+    props,
+    filename: "aspect-ratio.scss",
+    props,
+    generationSyntax: "css",
+});
