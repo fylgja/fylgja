@@ -4,15 +4,6 @@
 @forward "helper";
 @use "helper" as *;
 
-// V2
-// :is(.btn, button) {
-//     @include btn;
-// }
-
-// .btn {
-//     @include btn-variants;
-// }
-
 :is(.btn, button) {
     @include btn;
 }
