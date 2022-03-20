@@ -20,6 +20,7 @@
     "scrollbar"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx sass scrollbar.scss scrollbar.css --no-source-map -s compressed -I node_modules"
   },
   "dependencies": {
