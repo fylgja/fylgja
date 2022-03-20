@@ -25,10 +25,6 @@ $btn-transition-property: (
     box-shadow
 ) !default;
 
-// Only set for focus
-$btn-outline: null !default;
-$btn-outline-offset: null !default;
-
 $btn-stroke: transparent !default;
 $btn-bg: transparent !default;
 $btn-color: inherit !default;
@@ -65,11 +61,6 @@ $btn-disabled-opacity: 0.7 !default;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
     -webkit-appearance: none; // unset iOS styles on <button>
-
-    &:focus {
-        outline: $btn-outline;
-        outline-offset: $btn-outline-offset;
-    }
 
     &:hover {
         border-color: var(--btn-hover-stroke, #{$btn-hover-stroke});
