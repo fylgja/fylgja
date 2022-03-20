@@ -1,6 +1,6 @@
 import { propsBuilder } from "@fylgja/props-builder";
 import props from "./index.js";
 
-propsBuilder({ filename: "easing.scss", props });
-propsBuilder({ filename: "_index.scss", props, varOnly: true });
-propsBuilder({ filename: "tokens.json", props });
+propsBuilder({ props, filename: "_index.scss" });
+propsBuilder({ props, filename: "easing.css" });
+propsBuilder({ props, filename: "easing.scss", generationSyntax: "css" });

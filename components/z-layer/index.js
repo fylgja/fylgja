@@ -1,7 +1,9 @@
 export default {
-    layer1: 1,
-    layer2: 2,
-    layer3: 4,
-    layer4: 6,
-    layer5: 8,
+    layer: {
+        1: 1,
+        2: 2,
+        3: 4,
+        4: 6,
+        5: 8,
+    },
 };

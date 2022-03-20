@@ -6,7 +6,7 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "_index.css",
+  "main": "index.js",
   "unpkg": "z-layer.css",
   "style": "z-layer.css",
   "repository": {
@@ -22,9 +22,8 @@
     "z-index"
   ],
   "scripts": {
-    "build:props": "node _build.js",
-    "build:scss": "npx sass z-layer.scss z-layer.css --no-source-map -s compressed",
-    "build": "npm run build:props && npm run build:scss"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node _build.js"
   },
   "dependencies": {
     "@fylgja/props-builder": "file:../props-builder"

@@ -21,40 +21,50 @@ Then include the component in to your code via;
 
 ## How to use
 
-This component comes in 4 syntax versions.
+This component comes in 3 syntaxes.
 
-The SCSS offers both the default import, same as the CSS version,
-and offers the helper with just SCSS variables.
-
-The CSS version is the same as the SCSS version.
-
-The Javascript and JSON tokens are also available,
-if you want to combine it a with anther design token systems,
-or use it in a React or Vue based project.
+- SCSS, offered in both:
+  - the SCSS variable syntax
+  - the CSS variable syntax
+- CSS variables
+- Javascript Style Tokens,
+  if you want to use it in a Javascript based environment, like React or Vue.
 
 ### SCSS version
 
 ```scss
 @use "@fylgja/shadow" as *;
 
-.box {
-    box-shadow: $shadow1;
+.style {
+    box-shadow: $shadow-1;
+}
+
+// CSS variable syntax
+@use "@fylgja/shadow/shadow";
+
+.style {
+    box-shadow: var(--shadow-1);
 }
 ```
 
 ### CSS version
 
 ```css
-.box {
-    box-shadow: var(--shadow1);
+.style {
+    box-shadow: var(--shadow-1);
 }
 ```
 
 ### Javascript
 
 ```js
-import shadow from "@fylgja/shadow"
-import shadow from "@fylgja/shadow/tokens.json"; // Or as JSON
+import props from "@fylgja/shadow"
+
+const style = {
+    "--shadow-color": props.shadow.color,
+    "--shadow-weight": props.shadow.weight,
+    boxShadow: props.shadow[1],
+}
 ```
 
 ## Config

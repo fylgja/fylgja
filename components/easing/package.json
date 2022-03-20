@@ -6,7 +6,7 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "_index.css",
+  "main": "index.js",
   "unpkg": "easing.css",
   "style": "easing.css",
   "repository": {
@@ -22,9 +22,8 @@
     "easing"
   ],
   "scripts": {
-    "build:props": "node _build.js",
-    "build:scss": "npx sass easing.scss easing.css --no-source-map -s compressed",
-    "build": "npm run build:props && npm run build:scss"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node _build.js"
   },
   "devDependencies": {
     "@fylgja/props-builder": "file:../props-builder"
