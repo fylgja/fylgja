@@ -2,115 +2,95 @@
 // Licensed under MIT Open Source
 
 import fs from "fs";
-
-function kababCase(string) {
-    return string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-}
-
-// *1: until Safari supports :where(html) better, we stick using :root
-// TODO: set default selector to :where(html) when safari 16 is released
+import fileType from "./src/fileType.js";
+import flattenObj from "./src/flattenObj.js";
+import jsonObj from "./src/jsonObj.js";
+import toStyleTokens from "./src/toStyle.js";
+import toTokens from "./src/toTokens.js";
 
 /**
  * Builds a token CSS, SCSS or JSON file,
  * from a javascript object with CSS props.
  *
  * @param {Object} options
+ * @param {Object} options.props
  * @param {string} options.filename
- * @param {Object.<string, string | number>} options.props
- * @param {string} options.selector - default: :root
- * @param {string} options.prefix - default: ""
- * @param {boolean} options.varOnly - default: false
- * @param {string} options.varSyntax - default: "--"
- * @param {boolean} options.frameOnly - default: false
- * @param {boolean} options.keepCamelCase - default: false
+ * @param {string} [options.selector] default: `:root`
+ * @param {string} [options.prefix]
+ * @param {string} [options.generationSyntax] default: if empty the default is based on the file extension
+ * @param {string[]} [options.jsonColorKeys] default: {defaultColorKeys}
  */
 export const propsBuilder = ({
-    filename,
     props,
-    selector = ":root", // *1
+    filename = "tokens.css",
+    selector = ":root",
     prefix = "",
-    varOnly = false,
-    varSyntax = "--",
-    frameOnly = false,
-    keepCamelCase = false,
+    generationSyntax,
+    jsonColorKeys,
 }) => {
-    const jsonMode = filename.endsWith(".json");
-    let appendedMeta = "";
-    let el = `${selector} `;
-    let hasSelector = selector ? true : false;
-    let lineBr = ";\n";
-    let str = "";
-    let tabSize = selector ? "    " : "";
-
-    // Type specific settings
-    if (frameOnly || varOnly) {
-        hasSelector = false;
-        tabSize = "";
-    }
-
-    if (varOnly) {
-        varSyntax = varSyntax === "--" ? "$" : varSyntax;
-    }
-
-    // Language specific settings
-    if (jsonMode) {
-        el = "";
-        hasSelector = true;
-        lineBr = ",\n";
-        str = '"';
-        tabSize = "  ";
-        varSyntax = "";
-        varOnly = true;
-        frameOnly = false;
-    }
-
-    // Create token file
+    const mode = generationSyntax || fileType(filename);
     const file = fs.createWriteStream(filename);
+    const flatProps = flattenObj(props);
+    let jsonProps = jsonObj(flatProps);
 
-    if (hasSelector) file.write(`${el}{\n`);
+    switch (mode) {
+        case "figma":
+            const figmaMode = true;
+            const figmaTokens = toTokens(jsonProps, jsonColorKeys, figmaMode);
+            file.write(JSON.stringify(figmaTokens, null, 2));
+            file.write("\n");
+            break;
 
-    Object.entries(props).forEach(([name, value], index) => {
-        const isLast = index === Object.keys(props).length - 1;
-        if (jsonMode && isLast) {
-            lineBr = "\n";
-        }
+        case "json":
+            const jsonTokens = toTokens(jsonProps, jsonColorKeys);
+            file.write(JSON.stringify(Object.fromEntries(jsonTokens), null, 2));
+            file.write("\n");
+            break;
 
-        // The ending -@ is to keep the same syntax as postcss-jit-props
-        if (name.endsWith("-@")) {
-            if (varOnly && !frameOnly) return;
-
-            const appendedMetaBr = appendedMeta.length > 0 ? "\n" : "";
-
-            appendedMeta += appendedMetaBr + value + "\n";
-            return;
-        }
-
-        if (frameOnly && !varOnly) return;
-
-        if (!keepCamelCase) {
-            name = kababCase(name);
-        }
-
-        const varName = prefix
-            ? `${varSyntax}${prefix}${name}`
-            : `${varSyntax}${name}`;
-
-        // TEMP save mode for SCSS / values that need to be quoted,
-        // until SCSS version 2.0, which drops native / calc support
-        if (filename.endsWith(".scss") && varSyntax === "$") {
-            if (typeof value === "string") {
-                value.includes("/") && (value = `"${value}"`);
+        case "scss":
+            const { styles: scss, appendedMeta: scssKey } = toStyleTokens(
+                flatProps,
+                prefix,
+                "$"
+            );
+            const hasScssValues = scss.length;
+            const hasScssFrames = scssKey.length;
+            if (hasScssValues) {
+                scss.map((style) => file.write(style));
             }
-        }
+            if (hasScssValues && hasScssFrames) {
+                file.write("\n");
+            }
+            if (hasScssFrames) {
+                file.write(scssKey);
+                file.write("\n");
+            }
+            break;
 
-        file.write(
-            `${tabSize}${str}${varName}${str}: ${str}${value}${str}${lineBr}`
-        );
-    });
+        case "css":
+            const { styles: css, appendedMeta: cssKey } = toStyleTokens(
+                flatProps,
+                prefix
+            );
+            const hasCssValues = css.length;
+            const hasCssFrames = cssKey.length;
+            if (hasCssValues) {
+                file.write(`${selector} {\n`);
+                css.map((style) => file.write(style));
+                file.write("}\n");
+            }
+            if (hasCssValues && hasCssFrames) {
+                file.write("\n");
+            }
+            if (hasCssFrames) {
+                file.write(cssKey);
+                file.write("\n");
+            }
+            break;
 
-    if (hasSelector) file.write("}\n");
-    if ((varOnly && frameOnly) || (!varOnly && !frameOnly && appendedMeta)) {
-        file.write("\n");
+        default:
+            console.warn("Filetype is is not supported");
+            break;
     }
-    file.end(appendedMeta);
+    file.end();
 };

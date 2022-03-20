@@ -35,14 +35,17 @@ const spacers = {
     "size-3": "1.5em",
 };
 
-propsBuilder({ filename: "spacers.css", props: spacers });
+propsBuilder({
+    filename: "spacers.css",
+    props: spacers
+});
 ```
 
 Now you have a css file with your own spacers;
 
 ```css
 /* File: spacers.css */
-:where(:root) {
+:root {
     --size-1: 0.5em;
     --size-2: 1em;
     --size-3: 1.5em;
@@ -59,13 +62,14 @@ Each option is visible if your using an IDE that supports JSDoc or/and Typescrip
 But here are the options,
 just in case if you don't have an editor with those super powers.
 
-| Option    | Type                                  | default           |
-| --------- | ------------------------------------- | ----------------- |
-| filename  | string                                | ...               |
-| props     | { `[key: string]`: string \| number } | ...               |
-| selector  | string                                | `":where(:root)"` |
-| prefix    | string                                | `""`              |
-| varOnly   | boolean                               | `false`           |
-| varSyntax | string                                | `"--"`            |
-| frameOnly | boolean                               | `false`           |
+| Option        | Type                                  | default   |
+| ------------- | ------------------------------------- | --------- |
+| filename      | string                                | ...       |
+| props         | { `[key: string]`: string \| number } | ...       |
+| selector      | string                                | `":root"` |
+| prefix        | string                                | `""`      |
+| varOnly       | boolean                               | `false`   |
+| varSyntax     | string                                | `"--"`    |
+| frameOnly     | boolean                               | `false`   |
+| keepCamelCase | boolean                               | `false`   |
 

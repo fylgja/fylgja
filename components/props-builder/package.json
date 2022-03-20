@@ -19,6 +19,10 @@
     "props"
   ],
   "scripts": {
-    "test": "node _tests_/index.js"
+    "clean:css": "rimraf _tests_/*.css",
+    "clean:scss": "rimraf _tests_/*.scss",
+    "clean:json": "rimraf _tests_/*.json",
+    "clean": "npm run clean:css && npm run clean:scss && npm run clean:json",
+    "test": "npm run clean && node _tests_/index.js"
   }
 }
