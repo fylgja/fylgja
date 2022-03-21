@@ -3,73 +3,15 @@
 
 // stylelint-disable declaration-no-important
 
-$enable-print-economic: true !default;
-$enable-print-urls: true !default;
+@forward "helper";
+@use "helper" as print;
 
-@media print {
-    * {
-        // Ensure a "black-on-white" print by;
-        // - Removing background colors,
-        // - Using black text everywhere
-        // - forcing the browser to use economic printing.
-        @if $enable-print-economic {
-            background-color: transparent !important;
-            color: black !important;
-            color-adjust: economy;
-            box-shadow: none !important;
-            text-shadow: none !important;
-        } @else {
-            // Otherwise, prevent any economy by the browser.
-            color-adjust: exact;
-        }
+$enable-print-mq: true !default;
+
+@if ($enable-print-mq) {
+    @media print {
+        @include print.boilerplate;
     }
-
-    abbr[title]::after {
-        content: " (" attr(title) ")";
-    }
-
-    a {
-        text-decoration: underline;
-
-        @if $enable-print-urls {
-            &[href]::after {
-                content: " (" attr(href) ")";
-            }
-
-            &[href^="#"]::after,
-            &[href^="javascript:"]::after {
-                content: "";
-            }
-        }
-    }
-
-    // Repeat the table header per page
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img,
-    svg,
-    pre,
-    blockquote {
-        page-break-inside: avoid;
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-        border: 1px solid currentcolor;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+} @else {
+    @include print.boilerplate;
 }

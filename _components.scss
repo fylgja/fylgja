@@ -3,10 +3,12 @@
 
 @forward "@fylgja/theme";
 
+@forward "@fylgja/base";
+@forward "@fylgja/print";
+
 @forward "@fylgja/auto-grid";
 @forward "@fylgja/avatar";
 @forward "@fylgja/badge";
-@forward "@fylgja/base";
 @forward "@fylgja/breadcrumbs";
 @forward "@fylgja/button";
 @forward "@fylgja/card";
@@ -20,7 +22,6 @@
 @forward "@fylgja/list";
 @forward "@fylgja/menu";
 @forward "@fylgja/pagination";
-@forward "@fylgja/print";
 @forward "@fylgja/progress";
 @forward "@fylgja/scroll-slider";
 @forward "@fylgja/section";

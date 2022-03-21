@@ -5,19 +5,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.5] - 2022-03-21
 ### Added
 - _Form_: scss option added, to set the `$label-margin`
 - _Dialog_: add variable support for backdrop
 - _Dialog_: add class support
+- _Print_: add option to disable media query print,
+  In case you want to load the file separate from the main styles
+- Added slim version of full Fylgja package, thats without the utilities,
+  _which is only 30kb minified_
 
 ### Changed
 - Cleanup `package.json` for all components.
+- _Button_: Moved style logic to mixin
+- _Print_: Made link logic smaller with not syntax
+- _Print_: Moved style logic to mixin
 
 ### Fixed
 - _Auto Grid_: **[Possible Breaking Change]** Also Scoped the gap variable,
   making all of the auto-grid variables scoped.
 - _Auto Grid_: Fixed relative PostCSS import
 - _Menu_: default auto-selector for use with Hyva (Tailwind `@apply`) with `.btn`
+- _Form_: safari data input height difference
+- Fixed import order for full Fylgja package, by moving base styles to top
 
 ## [1.1.4] - 2021-11-27
 ### Added
