@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - _Dialog_: add class support
 - _Print_: add option to disable media query print,
   In case you want to load the file separate from the main styles
+- Added slim version of full Fylgja package, thats without the utilities,
+  _which is only 30kb minified_
 
 ### Changed
 - Cleanup `package.json` for all components.

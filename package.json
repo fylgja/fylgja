@@ -1,6 +1,6 @@
 {
   "name": "fylgja",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "The modular CSS framework. Powered via CSS components",
   "homepage": "https://fylgja.dev/",
   "repository": "https://github.com/fylgja/fylgja",
@@ -25,10 +25,12 @@
     "start": "npx sass components:components -w -I node_modules",
     "update": "./scripts/update-all",
     "dev": "npm start",
-    "build:pkg": "npx sass components:components --no-source-map -s compressed -I node_modules",
-    "build:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
+    "build:pkg:slim": "npx sass fylgja-slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:pkg": "npm run build:pkg:slim & npm run build:pkg:main",
     "prebuild": "npm test",
-    "build": "npm run build:pkg && npm run build:main"
+    "build": "npm run build:components && npm run build:pkg"
   },
   "dependencies": {
     "@fylgja/aria-only": "^1.1.0",
