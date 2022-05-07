@@ -3,6 +3,9 @@
 
 @use "sass:color";
 
+// This works as global variables for Fylgja
+// And can impact each Fylgja Component if changed
+
 $color-scheme: light !default;
 $root-font-size: null !default;
 $root-bg: if($color-scheme == dark, #000, #fff) !default;
