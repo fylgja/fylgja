@@ -24,4 +24,11 @@ $color-error: #b00020 !default;
 $color-warning: #ffab40 !default;
 $color-success: #00e676 !default;
 
-$item-spacer: 0 0 1em !default;
+$base-spacing: 1em !default;
+$item-spacer: 0 0 $base-spacing !default; // Legacy support
+
+// For any thing like forms and buttons
+$action-padding-block: 0.375em !default;
+$action-padding-inline: 0.625em !default;
+$action-padding: $action-padding-block $action-padding-inline;
+$action-border-width: 1px !default;
