@@ -1,0 +1,24 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$avatar-size: 3em !default;
+$avatar-radius: 50% !default;
+$avatar-bg: #eee !default;
+$avatar-color: null !default;
+
+@mixin avatar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    width: var(--avatar-size, #{$avatar-size});
+    height: var(--avatar-size, #{$avatar-size});
+    background-color: var(--avatar-bg, #{$avatar-bg});
+    color: if(
+        $avatar-color,
+        var(--avatar-color, #{$avatar-color}),
+        var(--avatar-color)
+    );
+    border-radius: var(--avatar-radius, #{$avatar-radius});
+    overflow: hidden;
+}
