@@ -1,0 +1,33 @@
+{
+  "name": "@fylgja/colors",
+  "version": "1.0.0",
+  "description": "The Fylgja colors offers Design Tokens (CSS props) component",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "type": "module",
+  "main": "_index.css",
+  "unpkg": "colors.css",
+  "style": "colors.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/colors"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "props",
+    "colors",
+    "color-tokens"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:hsl": "mkdir -p temp && node src/create-hsl-json.js",
+    "build": "node _build.js"
+  },
+  "dependencies": {
+    "@fylgja/props-builder": "file:../props-builder"
+  }
+}
