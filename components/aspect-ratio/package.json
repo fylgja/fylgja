@@ -22,9 +22,8 @@
   ],
   "scripts": {
     "build:props": "node _build.js",
-    "build:scss": "npx sass aspect-ratio.scss aspect-ratio.css --no-source-map -s compressed",
-    "build:scss:legacy": "npx sass legacy.scss legacy.css --no-source-map -s compressed",
-    "build": "npm run build:props && npm run build:scss && npm run build:scss:legacy"
+    "build:legacy": "npx sass aspect-ratio.scss aspect-ratio.css --no-source-map -s compressed",
+    "build": "npm run build:props && npm run build:legacy"
   },
   "devDependencies": {
     "@fylgja/props-builder": "file:../props-builder"
