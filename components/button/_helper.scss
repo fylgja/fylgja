@@ -7,6 +7,7 @@
 $enable-btn-theme: true !default;
 $enable-btn-outline: true !default;
 $enable-btn-icon: true !default;
+$enable-native-btn: false !default; // will be removed in v2, as it is default
 
 $btn-icon-size: 2.125em !default;
 
@@ -17,7 +18,8 @@ $btn-radius: 4px !default;
 $btn-font-size: inherit !default;
 $btn-line-height: inherit !default;
 $btn-font-weight: 500 !default;
-$btn-transition: 0.2s linear;
+$btn-transition: 0.2s linear !default;
+// ADD outline-offset for v2
 $btn-transition-property: (
     color,
     background-color,
@@ -32,6 +34,11 @@ $btn-color: inherit !default;
 $btn-hover-stroke: transparent !default;
 $btn-hover-bg: color.change($root-fg, $alpha: 0.05) !default;
 $btn-hover-color: inherit !default;
+
+// Being replaced for `$btn-hover` in v2 for consistency
+$btn-focus-stroke: $btn-hover-stroke !default; // will be removed in v2
+$btn-focus-bg: $btn-hover-bg !default; // will be removed in v2
+$btn-focus-color: $btn-hover-color !default; // will be removed in v2
 
 $btn-active-stroke: transparent !default;
 $btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
@@ -62,10 +69,20 @@ $btn-disabled-opacity: 0.7 !default;
     -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
     -webkit-appearance: none; // unset iOS styles on <button>
 
-    &:hover {
-        border-color: var(--btn-hover-stroke, #{$btn-hover-stroke});
-        background-color: var(--btn-hover-bg, #{$btn-hover-bg});
-        color: var(--btn-hover-color, #{$btn-hover-color});
+    // For v2
+    // &:not(:active):focus-visible {
+    //     outline-offset: 5px;
+    // }
+
+    // Will be dropped in v2
+    &:focus {
+        outline: 0;
+    }
+
+    &:is(:focus, :hover) {
+        border-color: var(--btn-focus-stroke, #{$btn-hover-stroke});
+        background-color: var(--btn-focus-bg, #{$btn-hover-bg});
+        color: var(--btn-focus-color, #{$btn-hover-color});
         text-decoration: none;
     }
 
@@ -95,8 +112,8 @@ $btn-disabled-opacity: 0.7 !default;
         &.-theme {
             --btn-bg: var(--color-theme, #{$color-theme});
             --btn-color: var(--color-on-theme, #{$color-on-theme});
-            --btn-hover-bg: #{color.scale($color-theme, $lightness: 12%)};
-            --btn-hover-color: #{$color-on-theme};
+            --btn-focus-bg: #{color.scale($color-theme, $lightness: 12%)};
+            --btn-focus-color: #{$color-on-theme};
             --btn-active-bg: #{color.scale($color-theme, $lightness: 22%)};
             --btn-active-color: #{$color-on-theme};
         }

@@ -4,10 +4,17 @@
 @forward "helper";
 @use "helper" as *;
 
-:is(.btn, button) {
-    @include btn;
-}
+@if $enable-native-btn {
+    :is(.btn, button) {
+        @include btn;
+    }
 
-.btn {
-    @include btn-variants;
+    .btn {
+        @include btn-variants;
+    }
+} @else {
+    .btn {
+        @include btn;
+        @include btn-variants;
+    }
 }
