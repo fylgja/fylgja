@@ -78,7 +78,7 @@ optgroup {
     display: block;
 }
 
-// Fix extra space set by webkit browsers for date fields
+// Fix extra space set by macOS safari, with unset on date inputs
 ::-webkit-datetime-edit,
 ::-webkit-datetime-edit-fields-wrapper,
 ::-webkit-datetime-edit-text,
