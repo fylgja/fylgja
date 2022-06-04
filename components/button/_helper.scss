@@ -93,7 +93,6 @@ $btn-disabled-opacity: 0.7 !default;
     }
 
     // stylelint-disable-next-line no-descending-specificity
-    :disabled &,
     &:is(.is-disabled, :disabled) {
         opacity: $btn-disabled-opacity;
         pointer-events: none;

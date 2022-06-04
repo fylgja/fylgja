@@ -1,29 +1,19 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// *1. Make elements block by default (https://github.com/mozdevs/cssremedy/issues/14)
-// *2. Add align to middle, if element is inline-block, for a sensibly default (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-// This can trigger a poorly considered lint error in some tools,
-// but is included by design.
+// TODO: consider adding the block default behavior for images (https://github.com/mozdevs/cssremedy/issues/14)
 
+// Removes the extra inline space
 img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-    display: block; // *1
-    vertical-align: middle; // *2
+svg {
+    vertical-align: middle;
 }
 
-// Constrain images and videos to the parent width
-// and preserve their intrinsic aspect ratio (https://github.com/mozdevs/cssremedy/issues/14)
+// Constrain it self to the parent width and preserve their intrinsic aspect
 img,
 video {
-    max-width: 100%; // *1
-    height: auto; // *1
+    max-width: 100%;
+    height: auto;
 }
 
 // Unset the browser default border

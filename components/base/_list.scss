@@ -3,7 +3,7 @@
 
 @use "helper" as *;
 
-// TODO: replace with :wehere when safari 16 is out
+// TODO: replace with :where in v2 when safari also has better support
 :is(ul, ol, dl) {
     margin-block-start: var(--list-mt, #{$list-mt});
     margin-block-end: var(--list-mb, #{$list-mb});

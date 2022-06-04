@@ -5,11 +5,11 @@
 
 Add easing with ease to any project using Fylgja ease props.
 
-This Fylgja component is a design token and props system.
+This Fylgja component is a design tokens and CSS props system.
 
 You can use it in its simplest form with CSS.
 
-But this package also ships with a Javascript and JSON token version,
+But this package also ships with a Javascript version,
 if you want to use it with anther front-end Javascript framework.
 
 ## Installation

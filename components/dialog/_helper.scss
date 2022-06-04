@@ -132,3 +132,12 @@ $dialog-offcanvas-radius: 0 !default;
     left: 0;
     background-color: $dialog-backdrop;
 }
+
+// Only backwards compatibility, will be dropped in v2
+%dailog {
+    @include dialog;
+}
+
+%backdrop-polyfill {
+    @include backdrop;
+}
