@@ -26,8 +26,8 @@
     "update": "./scripts/update-all",
     "dev": "npm start",
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
-    "build:pkg:slim": "npx sass fylgja-slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
-    "build:pkg:main": "npx sass fylgja.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:main": "npx sass bundles/main.scss fylgja.css --no-source-map -s compressed -I node_modules",
     "build:pkg": "npm run build:pkg:slim & npm run build:pkg:main",
     "prebuild": "npm test",
     "build": "npm run build:components && npm run build:pkg"
