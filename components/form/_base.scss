@@ -10,6 +10,17 @@ textarea {
     font: inherit;
 }
 
+select {
+    // Remove the inheritance of word-wrap in Safari.
+    // See https://github.com/twbs/bootstrap/issues/24990
+    word-wrap: normal;
+
+    // This fixes the overflow issue in Safari for long option names.
+    // See https://github.com/fylgja/fylgja/issues/66
+    overflow: hidden;
+    text-overflow: ellipsis; // Same as Firefox in style
+}
+
 label {
     display: inline-block;
     margin: var(--label-margin, #{$label-margin});
