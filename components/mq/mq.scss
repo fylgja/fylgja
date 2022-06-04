@@ -21,8 +21,8 @@
 @custom-media --data-safe: (#{mq.$data-safe});
 @custom-media --data-reduce: (#{mq.$data-reduce});
 
-@custom-media --contrast-high: (#{mq.$contrast-high});
-@custom-media --contrast-low: (#{mq.$contrast-low});
+@custom-media --contrast-more: (#{mq.$contrast-more});
+@custom-media --contrast-less: (#{mq.$contrast-less});
 
 @custom-media --hd-color: (#{mq.$hd-color});
 @custom-media --portrait: (#{mq.$portrait});
