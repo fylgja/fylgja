@@ -5,6 +5,7 @@
 @use "helper" as *;
 
 :root {
+    --item-spacer: #{$item-spacer}; // Drop in v2
     --color-theme: #{$color-theme};
     --color-theme-fade: #{$color-theme-fade};
     --color-on-theme: #{$color-on-theme};
@@ -22,6 +23,7 @@
     --font-size: #{$font-size};
     --line-height: #{$line-height};
     --font-weight: #{$font-weight};
+    color-scheme: var(--color-scheme, #{$color-scheme}); // Drop in v2
     accent-color: #{$accent-color};
 }
 

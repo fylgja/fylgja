@@ -5,5 +5,7 @@
 
 // Force a common default for margin
 figure {
-    margin: var(--figure-margin, #{$figure-margin});
+    display: inline-block;
+    margin: var(--item-spacer);
+    // margin: var(--figure-margin, #{$figure-margin}); // For v2
 }

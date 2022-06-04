@@ -3,6 +3,12 @@
 
 @use "helper" as *;
 
+// Will be dropped in v2
+blockquote,
+q {
+    quotes: var(--quotes, #{$quotes});
+}
+
 blockquote {
     margin: var(--blockquote-margin, #{$blockquote-margin});
     padding-inline-start: var(

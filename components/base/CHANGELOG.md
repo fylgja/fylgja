@@ -5,19 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-<!-- for v2 replace code back to v1 when merging to main, to prevent any breaking changes -->
 ### Added
-- block and inline support,
-  this will **break some variables**, so check the changes in the variables
-  This also includes the removal of the `$item-spacer`
+- block and inline SCSS vars for v2,
+  you can use them, but each value will be passed to the current SCSS var for now
 
 ### Changed
-- Replaced `$h-margin` and other heading variants for `$h-mt` and `$h-mb` to add block support
-- Replaced `$item-spacer` for `$list-mt` and `$list-mb` to add block support
-- Dropped `$item-spacer` for dedicated variables for `p`, `figure`, `address`,
-
-### Removed
-- quotes as variable
+- ul and ol nested syntax to `:is` selector, this makes the CSS smaller
+- h{1/6} syntax to `:is` selector, this makes the CSS smaller
 
 ## [1.0.2] - 2021-10-17
 ### Fixed
