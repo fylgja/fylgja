@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/props-builder",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Build your own Design Tokens (CSS props) with ease",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -16,7 +16,10 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "props"
+    "css-variables",
+    "css-props",
+    "css-builder",
+    "design-tokens"
   ],
   "scripts": {
     "clean:css": "rimraf _tests_/*.css",
