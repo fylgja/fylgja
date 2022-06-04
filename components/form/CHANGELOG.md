@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - safari data input height difference
-- safari overflow in long option text for select field (fixes #66)
+- safari overflow in long option text for select field [(fixes #66)](https://github.com/fylgja/fylgja/issues/66)
 
 ## [1.0.4] - 2022-03-21
 ### Added
