@@ -3,18 +3,15 @@
 
 @use "helper" as *;
 
-ul,
-ol {
-    margin: var(--item-spacer, #{$list-margin});
+// TODO: replace with :where in v2 when safari also has better support
+:is(ul, ol, dl) {
+    margin-block-start: var(--list-mt, #{$list-mt});
+    margin-block-end: var(--list-mb, #{$list-mb});
 
-    & & {
-        margin-top: 0;
-        margin-bottom: 0;
+    :is(ul, ol, dl) {
+        --list-mt: var(--list-item-mt, #{$list-item-mt});
+        --list-mb: var(--list-item-mb, #{$list-item-mb});
     }
-}
-
-dl {
-    margin: var(--item-spacer, #{$dl-margin});
 }
 
 dt {
@@ -22,7 +19,9 @@ dt {
 }
 
 dd {
-    margin: var(--dd-margin, #{$dd-margin});
+    margin-inline-start: var(--list-item-ms, 0);
+    margin-block-start: var(--list-item-mt, #{$list-item-mt});
+    margin-block-end: var(--list-item-mb, #{$list-item-mb});
 }
 
 // Make sure the summary has the same display on each browser

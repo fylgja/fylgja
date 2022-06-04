@@ -20,6 +20,7 @@
     "scroll-slider"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx sass scroll-slider.scss scroll-slider.css --no-source-map -s compressed -I node_modules"
   }
 }

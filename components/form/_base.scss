@@ -1,0 +1,101 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+input,
+select,
+textarea {
+    margin: var(--form-margin, 0);
+    font: inherit;
+}
+
+select {
+    // Remove the inheritance of word-wrap in Safari.
+    // See https://github.com/twbs/bootstrap/issues/24990
+    word-wrap: normal;
+
+    // This fixes the overflow issue in Safari for long option names.
+    // See https://github.com/fylgja/fylgja/issues/66
+    overflow: hidden;
+    text-overflow: ellipsis; // Same as Firefox in style
+}
+
+label {
+    display: inline-block;
+    margin: var(--label-margin, #{$label-margin});
+}
+
+fieldset {
+    min-inline-size: 0; // unset browser default
+    margin: var(--fieldset-margin, #{$fieldset-margin});
+    padding: var(--fieldset-padding, #{$fieldset-padding});
+    border: var(--fieldset-padding, #{$fieldset-border});
+}
+
+// *1: Make it full width like a heading
+legend {
+    display: block; // *1
+    width: 100%; // *1
+    margin: var(--legend-margin, #{$legend-margin});
+    padding: var(--legend-padding, #{$legend-padding});
+    border: var(--legend-border, #{$legend-border});
+    font-size: var(--legend-font-size, #{$legend-font-size});
+}
+
+optgroup {
+    font-weight: bolder;
+    font-style: normal;
+}
+
+::placeholder {
+    color: inherit;
+    opacity: var(--form-placeholder, #{$form-placeholder-opacity});
+}
+
+// Fixes color issue with webkit autofill background and dark mode
+@if $enable-webkit-autofill-dark-mode {
+    :-webkit-autofill {
+        color-scheme: light;
+    }
+}
+
+// Correct the cursor style of increment and decrement buttons in Safari.
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+
+// Removes the extra space in older webkit browsers
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+// Fix display by webkit browsers for date fields
+// Manly a Safari fix, since they use inline-block instead of block
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-fields-wrapper {
+    display: block;
+}
+
+// Fix extra space set by macOS safari, with unset on date inputs
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+    padding-block-start: 0;
+    padding-block-end: 0;
+}
+
+// A few input types should stay LTR
+// See https://rtlstyling.com/posts/rtl-styling#form-inputs
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+    direction: ltr;
+}

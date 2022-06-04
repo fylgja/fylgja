@@ -1,14 +1,17 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// TODO: consider adding the block default behavior for images (https://github.com/mozdevs/cssremedy/issues/14)
+
 // Removes the extra inline space
 img,
 svg {
     vertical-align: middle;
 }
 
-// Default responsive behavior
-img {
+// Constrain it self to the parent width and preserve their intrinsic aspect
+img,
+video {
     max-width: 100%;
     height: auto;
 }

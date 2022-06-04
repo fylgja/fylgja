@@ -35,11 +35,11 @@
             left: 100%;
         }
     }
+}
 
-    @if $enable-list-style-none {
-        &.-none {
-            --marker-icon: none;
-            padding: 0;
-        }
+@if $enable-list-style-none {
+    .list-none {
+        list-style-type: none;
+        padding: 0;
     }
 }

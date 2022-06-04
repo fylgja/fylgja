@@ -51,6 +51,8 @@ As with almost all of our components, you can configure CSS variables to add you
 
 Direct control on the base styles, you can you modify the following SCSS variables.
 
+<details class="faq-panel"><summary>View SCSS variables</summary>
+
 ```scss
 // Typography
 $family-main: (
@@ -146,6 +148,8 @@ $h6-font-size: 1em !default;
 $h6-line-height: null !default;
 $h6-font-weight: bolder !default;
 ```
+
+</details>
 
 ## FAQ
 

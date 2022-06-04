@@ -3,13 +3,16 @@
 
 @use "helper" as *;
 
+// *1 Force default display for all browsers
+// Fun fact Chromium browser use this as default display value for date fields
+
 // Form field templates
-%form-field {
-    display: block;
+@mixin form-field {
+    display: flex; // *1
     width: 100%;
     padding: var(--form-padding, #{$form-padding});
-    border: #{$form-border-width} #{$form-border-style};
-    border-color: var(--form-stroke, #{$form-border-color});
+    border: var(--form-border-width, #{$form-border-width}) $form-border-style
+        var(--form-stroke, #{$form-border-color});
     border-radius: var(--form-radius, #{$form-radius});
     background-color: var(--form-bg, #{$form-bg});
     color: var(--form-color, #{$form-color});
@@ -17,82 +20,21 @@
     transition-property: $form-transition-property;
     -webkit-appearance: none;
     appearance: none;
-}
 
-%form-field-focus {
-    border-color: var(--form-focus-color, #{$form-focus-color});
-    box-shadow: var(--form-focus-style, #{$form-focus-style});
-    outline: 0;
-}
-
-%form-field-disabled {
-    border-style: $form-not-editable-border-style;
-    box-shadow: none;
-    opacity: $form-disabled-opacity;
-    pointer-events: none;
-}
-
-%form-field-read-only {
-    border-style: $form-not-editable-border-style;
-}
-
-%form-field-read-only-focus {
-    box-shadow: none;
-}
-
-@mixin form-field($has-states: true, $has-readonly: true) {
-    @extend %form-field;
-
-    @if $has-states {
-        &:focus {
-            @extend %form-field-focus;
-        }
-
-        &.is-disabled,
-        &:disabled {
-            @extend %form-field-disabled;
-        }
+    &:focus {
+        border-color: var(--form-focus-color, #{$form-focus-color});
+        box-shadow: var(--form-focus-style, #{$form-focus-style});
+        outline: 0;
     }
 
-    @if $has-readonly {
-        &:read-only {
-            @extend %form-field-read-only;
-
-            &:focus {
-                @extend %form-field-read-only-focus;
-            }
-        }
-    }
-}
-
-@mixin form-select($has-states: true) {
-    @extend %form-field;
-    $select-padding: calc(
-        #{$form-padding-x} + var(--select-icon-size, #{$form-icon-size})
-    );
-
-    &:not([multiple]) {
-        padding-right: var(--select-icon-padding, #{$select-padding});
-        background: var(--form-bg, #{$form-bg}) right
-            var(--select-icon-offset, #{$form-padding-x})
-            center/var(--select-icon-size, #{$form-icon-size}) no-repeat;
-        background-image: var(--select-icon, #{$form-select-icon});
+    &:is(:disabled, .is-disabled) {
+        border-style: $form-not-editable-border-style;
+        box-shadow: none;
+        opacity: $form-disabled-opacity;
+        pointer-events: none;
     }
 
-    // * NOTE has no effect until the Bug in Chrome is fixed
-    // * https://bugs.chromium.org/p/chromium/issues/detail?id=1021515&q=Auto-filled%20input
-    // &:autofill {
-    //     background: var(--select-icon, #{$form-select-icon});
-    // }
-
-    @if $has-states {
-        &:focus {
-            @extend %form-field-focus;
-        }
-
-        &.is-disabled,
-        &:disabled {
-            @extend %form-field-disabled;
-        }
+    &[readonly] {
+        border-style: $form-not-editable-border-style;
     }
 }

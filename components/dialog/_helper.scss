@@ -87,7 +87,7 @@ $dialog-offcanvas-radius: 0 !default;
 // * The top/bottom is now calculated via a transform instead
 // * The fit-content does not work in Firefox
 // * And Safari adds weird extra space below it
-%dialog {
+@mixin dialog {
     z-index: $dialog-index; // Not needed for the native version
     position: fixed;
     top: 50%; // *1
@@ -111,11 +111,33 @@ $dialog-offcanvas-radius: 0 !default;
     content-visibility: auto;
 }
 
-%backdrop-polyfill {
+@mixin dialog-open {
+    &:not([open]) {
+        visibility: hidden;
+        transition: visibility 0s 200ms;
+        animation: dialog-hide 200ms;
+    }
+
+    &[open] {
+        animation: dialog-show 300ms;
+        transition: none;
+    }
+}
+
+@mixin backdrop {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: $dialog-backdrop;
+}
+
+// Only backwards compatibility, will be dropped in v2
+%dailog {
+    @include dialog;
+}
+
+%backdrop-polyfill {
+    @include backdrop;
 }

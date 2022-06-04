@@ -4,9 +4,7 @@
 @use "@fylgja/theme" as *;
 @use "helper" as *;
 
-// *1: Option to change the default font-size, by default disabled
 :root {
-    --item-spacer: #{$item-spacer};
     --color-theme: #{$color-theme};
     --color-theme-fade: #{$color-theme-fade};
     --color-on-theme: #{$color-on-theme};
@@ -24,13 +22,14 @@
     --font-size: #{$font-size};
     --line-height: #{$line-height};
     --font-weight: #{$font-weight};
-    font-size: $root-font-size; // *1
-    color-scheme: var(--color-scheme, #{$color-scheme});
     accent-color: #{$accent-color};
 }
 
+// *1: Option to change the default font-size, by default disabled
+// If null this property will be ignored
 html {
     box-sizing: border-box;
+    font-size: $root-font-size; // *1
 }
 
 // *1: Always inherit, allowing easier switching between the options

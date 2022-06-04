@@ -2,12 +2,10 @@
 // Licensed under MIT Open Source
 
 @forward "@fylgja/theme";
-@forward "@fylgja/mq";
 
 @forward "@fylgja/base";
 @forward "@fylgja/print";
 
-@forward "@fylgja/aspect-ratio";
 @forward "@fylgja/auto-grid";
 @forward "@fylgja/avatar";
 @forward "@fylgja/badge";
@@ -19,7 +17,6 @@
 @forward "@fylgja/control";
 @forward "@fylgja/details";
 @forward "@fylgja/dialog";
-@forward "@fylgja/elevation";
 @forward "@fylgja/form";
 @forward "@fylgja/input-group";
 @forward "@fylgja/list";

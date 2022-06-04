@@ -15,12 +15,14 @@ $enable-print-urls: true !default;
         @if $enable-print-economic {
             background-color: transparent !important;
             color: black !important;
-            color-adjust: economy;
+            -webkit-print-color-adjust: economy;
+            print-color-adjust: economy;
             box-shadow: none !important;
             text-shadow: none !important;
         } @else {
             // Otherwise, prevent any economy by the browser.
-            color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
     }
 

@@ -3,6 +3,13 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/elevation)](https://www.npmjs.org/package/@fylgja/elevation)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
+> The `@fylgja/elevation` component has been replaced by [`@fylgja/shadow`](https://fylgja.dev/components/shadow/).
+>
+> The shadow component offers better shadow defaults,
+> and fully embraces the Design Token (CSS Props) system.
+>
+> This package will be deprecated in the next release.
+
 The Elevation component is a util package for shadows, where it offers shadows as CSS variables.
 
 It follows the same principals as Google's material design.

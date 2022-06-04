@@ -2,11 +2,19 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
-@use "sass:color";
-@use "@fylgja/theme" as *;
 @use "helper" as *;
 
-.btn {
-    @include btn;
-    @include btn-variants;
+@if $enable-native-btn {
+    :is(.btn, button) {
+        @include btn;
+    }
+
+    .btn {
+        @include btn-variants;
+    }
+} @else {
+    .btn {
+        @include btn;
+        @include btn-variants;
+    }
 }

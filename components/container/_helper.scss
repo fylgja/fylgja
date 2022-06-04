@@ -1,0 +1,17 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$container-size: 1280px !default;
+$container-padding-y: 0 !default;
+$container-padding-x: 1.25rem !default;
+
+@mixin container {
+    inline-size: 100%;
+    max-inline-size: var(--container-size);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding-block-start: var(--container-padding-y);
+    padding-block-end: var(--container-padding-y);
+    padding-inline-start: var(--container-padding-x);
+    padding-inline-end: var(--container-padding-x);
+}
