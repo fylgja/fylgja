@@ -5,38 +5,26 @@
 @use "helper" as *;
 
 p {
-    margin: var(--item-spacer, #{$item-spacer});
+    margin: var(--p-margin, #{$p-margin});
 }
 
-:any-link {
-    color: var(--link-color, #{$link-color});
-    text-decoration: $link-style;
-
-    &:hover,
-    &:focus {
-        color: var(--link-color-focus, #{$link-color-focus});
-        text-decoration: $link-style-focus;
-    }
-}
-
-%heading-base {
-    margin: var(--h-margin, #{$h-margin});
+:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    margin-block-start: var(--h-mt, #{$h-mt});
+    margin-block-end: var(--h-mb, #{$h-mb});
     font-family: var(--h-family, #{$h-family});
     font-size: var(--h-font-size, #{$h-font-size});
     line-height: var(--h-line-height, #{$h-line-height});
     font-weight: var(--h-font-weight, #{$h-font-weight});
 
-    // TODO: convert to newer :is syntax
     &:first-child {
-        // TODO: Replace with variable for block-start
-        margin-block-start: 0;
+        --h-mt: 0;
     }
 }
 
 h1,
 .h1 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h1-margin);
+    @include if-var("h-mt", $h1-mt);
+    @include if-var("h-mb", $h1-mb);
     @include if-var("h-family", $h1-family);
     @include if-var("h-font-size", $h1-font-size);
     @include if-var("h-line-height", $h1-line-height);
@@ -45,9 +33,8 @@ h1,
 
 h2,
 .h2 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h2-margin);
-    @include if-var("h-family", $h2-family);
+    @include if-var("h-mt", $h2-mt);
+    @include if-var("h-mb", $h2-mb);
     @include if-var("h-font-size", $h2-font-size);
     @include if-var("h-line-height", $h2-line-height);
     @include if-var("h-font-weight", $h2-font-weight);
@@ -55,9 +42,8 @@ h2,
 
 h3,
 .h3 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h3-margin);
-    @include if-var("h-family", $h3-family);
+    @include if-var("h-mt", $h3-mt);
+    @include if-var("h-mb", $h3-mb);
     @include if-var("h-font-size", $h3-font-size);
     @include if-var("h-line-height", $h3-line-height);
     @include if-var("h-font-weight", $h3-font-weight);
@@ -65,9 +51,8 @@ h3,
 
 h4,
 .h4 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h4-margin);
-    @include if-var("h-family", $h4-family);
+    @include if-var("h-mt", $h4-mt);
+    @include if-var("h-mb", $h4-mb);
     @include if-var("h-font-size", $h4-font-size);
     @include if-var("h-line-height", $h4-line-height);
     @include if-var("h-font-weight", $h4-font-weight);
@@ -75,9 +60,8 @@ h4,
 
 h5,
 .h5 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h5-margin);
-    @include if-var("h-family", $h5-family);
+    @include if-var("h-mt", $h5-mt);
+    @include if-var("h-mb", $h5-mb);
     @include if-var("h-font-size", $h5-font-size);
     @include if-var("h-line-height", $h5-line-height);
     @include if-var("h-font-weight", $h5-font-weight);
@@ -85,16 +69,15 @@ h5,
 
 h6,
 .h6 {
-    @extend %heading-base;
-    @include if-var("h-margin", $h6-margin);
-    @include if-var("h-family", $h6-family);
+    @include if-var("h-mt", $h6-mt);
+    @include if-var("h-mb", $h6-mb);
     @include if-var("h-font-size", $h6-font-size);
     @include if-var("h-line-height", $h6-line-height);
     @include if-var("h-font-weight", $h6-font-weight);
 }
 
 address {
-    margin: var(--item-spacer);
+    margin: var(--address-margin, #{$address-margin});
     font-style: normal;
 }
 
@@ -109,12 +92,13 @@ small,
     font-size: var(--small, smaller);
 }
 
+// *1: Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 hr,
 .hr {
     margin: var(--hr-margin, #{$hr-margin});
-    border: 0;
-    border-top: var(--hr-size, #{$hr-size}) var(--hr-style, #{$hr-style})
-        var(--hr-color, #{$hr-color});
+    border: 0 var(--hr-style, #{$hr-style}) var(--hr-color, #{$hr-color});
+    border-block-start-width: var(--hr-size, #{$hr-size});
+    color: inherit; // *1
 }
 
 abbr[title] {
@@ -126,4 +110,21 @@ mark {
     padding: $mark-padding;
     background-color: var(--mark-bg, #{$mark-bg});
     color: var(--mark-color, #{$mark-color});
+}
+
+// Prevent sub and sup elements from affecting the line height in all browsers
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
 }

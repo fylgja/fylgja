@@ -1,0 +1,56 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// * Fixed in chrome 91 - waiting for FF and Safari
+$enable-scroll-overflow-fix: true !default;
+
+$scroll-padding: 1.25em !default;
+$scroll-gap: 0.5em !default;
+$scroll-align: start !default;
+
+@mixin scroll-slider {
+    --gap-inline: #{$scroll-padding};
+    --gap-block: calc(var(--gap-inline) / 2);
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: inline mandatory;
+    padding-block-start: var(--gap-block);
+    padding-block-end: var(--gap-block);
+    padding-inline-start: var(--gap-inline);
+    padding-inline-end: var(--gap-inline);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: var(--gap-inline);
+    scroll-padding-right: var(--gap-inline);
+    scroll-padding-inline: var(--gap-inline);
+
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+
+    > :not([hidden]) {
+        flex: 0 0 auto;
+        inline-size: var(--scroll-size);
+        scroll-snap-align: var(--scroll-align, #{$scroll-align});
+
+        ~ :not([hidden]) {
+            margin-inline-start: var(--item-gap, #{$scroll-gap});
+        }
+    }
+
+    // * FIX for overflow padding at end of the scroll zone
+    // * By adding a fake extra element to create the missing overflow padding
+    // * @source https://nshki.com/fixing-overflow-padding-in-firefox/
+    @if $enable-scroll-overflow-fix {
+        @supports not (contain: paint) {
+            &::after {
+                content: "";
+                order: 1; // rtl support
+                flex: 0 0 auto;
+                display: block;
+                inline-size: var(--gap-inline, #{$scroll-padding});
+            }
+        }
+    }
+}

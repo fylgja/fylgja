@@ -25,7 +25,7 @@
       "\t\"repository\": {",
       "\t\t\"type\": \"git\",",
       "\t\t\"url\": \"https://github.com/fylgja/fylgja\",",
-      "\t\t\"directory\": \"packages/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\"",
+      "\t\t\"directory\": \"components/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\"",
       "\t},",
       "\t\"bugs\": \"https://github.com/fylgja/fylgja/issues\",",
       "\t\"keywords\": [",

@@ -1,5 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@forward "./components";
-@forward "./utilities";
+// Design Tokens
+@forward "tokens";
+
+// Components
+@forward "components";
+
+// Utilities
+@forward "utils";

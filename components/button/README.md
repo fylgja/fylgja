@@ -34,7 +34,7 @@ In your html you only need the `.btn` class to use the button style.
 <button class="btn">..</button>
 ```
 
-The buttons component is by default is blank with a soft focus and active color.
+The buttons component is by default is blank with a soft hover and active color.
 
 Based on the `root-fg` color, which is black by default.
 
@@ -46,27 +46,32 @@ which allow easier construction of specific button styles via a modifier class.
 
 By default we also offer some base default variable class, that can be disabled via de SCSS variables if needed.
 
-| Class      | Description                                         |
-| ---------- | --------------------------------------------------- |
-| `-outline` | Paints the btn with an outlined color               |
-| `-theme`   | Paints the btn with and filled `$color-theme` color |
-| `-icon`    | Creates a icon btn's with equal width and height    |
+| Class      | Description                                               |
+| ---------- | --------------------------------------------------------- |
+| `-outline` | Paints the btn with an border color, using the text color |
+| `-theme`   | Paints the btn with the filled `$color-theme` color       |
+| `-icon`    | Creates a icon btn's with equal width and height          |
 
 Besides these variable classes, we try to keep away from adding more variable classes.
 
 As this will create to much extra CSS you will most likely never use.
 
-### Active class
+### State classes
 
-The button can be used for more stateful components.
+The button states can be used with javascript state, through css class modifiers.
 
-So it also ships with a `.is-active` class that does the same as the active state.
+So it also ships with a class for disabled and active state;
+
+- Disable = `.is-disabled`
+- Active = `.is-active`
 
 ## Config
 
 As with almost all of our components, CSS variables can be configured to add your own look/style.
 
 Want direct control on the base styles, here are the following SCSS variables can you modify.
+
+<details class="faq-panel"><summary>View SCSS variables</summary>
 
 ```scss
 $enable-btn-theme: true !default;
@@ -104,3 +109,5 @@ $btn-active-color: inherit !default;
 
 $btn-disabled-opacity: 0.7 !default;
 ```
+
+</details>

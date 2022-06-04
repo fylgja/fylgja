@@ -8,13 +8,28 @@
     @return map.get($map, $name);
 }
 
-$scheme-dark: "prefers-color-scheme: dark" !default;
-$scheme-light: "prefers-color-scheme: light" !default;
+// prefers mq's
+$scheme-dark: "prefers-color-scheme: dark";
+$scheme-light: "prefers-color-scheme: light";
 
-$motion-safe: "prefers-reduced-motion: no-preference" !default;
-$motion-reduce: "prefers-reduced-motion" !default;
+$motion-safe: "prefers-reduced-motion: no-preference";
+$motion-reduce: "prefers-reduced-motion: reduce";
 
-$mq-breakpoints: (
+$opacity-safe: "prefers-reduced-transparency: no-preference";
+$opacity-reduce: "prefers-reduced-transparency: reduce";
+
+$data-safe: "prefers-reduced-data: no-preference";
+$data-reduce: "prefers-reduced-data: reduce";
+
+$contrast-more: "prefers-contrast: more";
+$contrast-less: "prefers-contrast: less";
+
+$hd-color: "dynamic-range: high";
+$portrait: "orientation: portrait";
+$landscape: "orientation: landscape";
+
+// Sizing mq's
+$breakpoints: (
     "xs": 420px,
     "sm": 640px,
     "md": 768px,
@@ -22,6 +37,7 @@ $mq-breakpoints: (
     "xl": 1440px,
     "xxl": 2200px,
 ) !default;
+$mq-breakpoints: $breakpoints; // fallback alias
 
 $xs: "min-width: #{getMq(xs)}" !default;
 $sm: "min-width: #{getMq(sm)}" !default;

@@ -106,50 +106,25 @@ $form-color: form-style-get(color) !default;
 
 // Form fields to load the styling on
 $form-fields: (
-    text,
-    number,
-    email,
-    tel,
-    password,
-    search,
-    url,
-    date,
-    textarea,
-    select,
-    color,
-    file
+    "[type=text]",
+    "[type=number]",
+    "[type=email]",
+    "[type=tel]",
+    "[type=password]",
+    "[type=search]",
+    "[type=url]",
+    "[type=date]",
+    "[type=datetime-local]",
+    "[type=time]",
+    "[type=month]",
+    "[type=week]",
+    "[type=color]",
+    "[type=file]"
 ) !default;
 
 // Form select
 $form-icon-size: 1.25em !default;
 $form-icon-color: $color-text !default;
+// This a static svg turned to to a dataUri,
+// you can also use the `@fylgja/sass` package to generate this
 $form-select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#{$form-icon-color}"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>') !default;
-
-// Form color
-$form-color-radius: null !default;
-$form-color-size: 2.375rem !default;
-$form-color-padding: calc(#{$form-padding-y} / 2) !default;
-
-// Form file
-$form-file-gap-y: $form-padding-y !default;
-$form-file-gap-x: $form-padding-x !default;
-$form-file-btn-gap: 1ch !default;
-$form-file-btn-padding: form-style-get(file-btn-padding) !default;
-$form-file-btn-radius: form-style-get(file-btn-radius) !default;
-$form-file-btn-bg: var(--color-theme, #{$color-theme}) !default;
-$form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
-
-@mixin form-input-file-button {
-    margin: calc(var(--form-file-gap-y, #{$form-file-gap-y}) / -1)
-        calc(var(--form-file-gap-x, #{$form-file-gap-x}) / -1);
-    margin-inline-end: $form-file-btn-gap;
-    padding: var(--form-file-btn-padding, #{$form-file-btn-padding});
-    border: 0;
-    border-radius: var(--form-file-btn-radius, $form-file-btn-radius);
-    background-color: var(--form-file-btn-bg, #{$form-file-btn-bg});
-    color: var(--form-file-btn-color, #{$form-file-btn-color});
-    font: inherit;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-}

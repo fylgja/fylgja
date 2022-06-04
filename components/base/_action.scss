@@ -1,6 +1,18 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "helper" as *;
+
+:any-link {
+    color: var(--link-color, #{$link-color});
+    text-decoration: var(--link-style, #{$link-style});
+
+    &:hover {
+        color: var(--link-hover-color, #{$link-hover-color});
+        text-decoration: var(--link-hover-style, #{$link-hover-style});
+    }
+}
+
 // Make sure the buttons behaves the same on each browser
 button {
     font-family: inherit;

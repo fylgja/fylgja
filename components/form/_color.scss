@@ -1,0 +1,34 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+$form-color-radius: null !default;
+$form-color-size: 2.375rem !default;
+$form-color-padding: 3px !default;
+
+@mixin form-input-color {
+    [type="color"] {
+        @if $form-color-radius {
+            --form-radius: #{$form-color-radius};
+        }
+        display: inline-block;
+        width: $form-color-size;
+        height: $form-color-size;
+        padding: $form-color-padding;
+
+        &::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        &::-moz-color-swatch {
+            border: 0;
+            border-radius: var(--form-radius, #{$form-radius});
+        }
+
+        &::-webkit-color-swatch {
+            border: 0;
+            border-radius: var(--form-radius, #{$form-radius});
+        }
+    }
+}

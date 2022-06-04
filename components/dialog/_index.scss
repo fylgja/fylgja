@@ -8,18 +8,8 @@
 // TODO: Add support for `:is()` in v2
 dialog,
 .dialog {
-    @extend %dialog;
-
-    &:not([open]) {
-        visibility: hidden;
-        transition: visibility 0s 200ms;
-        animation: dialog-hide 200ms;
-    }
-
-    &[open] {
-        animation: dialog-show 300ms;
-        transition: none;
-    }
+    @include dialog;
+    @include dialog-open;
 
     &::backdrop {
         background-color: $dialog-backdrop;
@@ -47,6 +37,6 @@ dialog,
 
 @if $enable-dialog-polyfill {
     .backdrop {
-        @extend %backdrop-polyfill;
+        @include backdrop;
     }
 }

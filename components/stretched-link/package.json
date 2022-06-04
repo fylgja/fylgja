@@ -20,6 +20,7 @@
     "stretched-link"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx sass stretched-link.scss stretched-link.css --no-source-map -s compressed -I node_modules"
   }
 }

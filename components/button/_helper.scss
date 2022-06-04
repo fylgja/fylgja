@@ -7,6 +7,7 @@
 $enable-btn-theme: true !default;
 $enable-btn-outline: true !default;
 $enable-btn-icon: true !default;
+$enable-native-btn: false !default; // will be removed in v2, as it is default
 
 $btn-icon-size: 2.125em !default;
 
@@ -17,7 +18,8 @@ $btn-radius: 4px !default;
 $btn-font-size: inherit !default;
 $btn-line-height: inherit !default;
 $btn-font-weight: 500 !default;
-$btn-transition: 0.2s linear;
+$btn-transition: 0.2s linear !default;
+// ADD outline-offset for v2
 $btn-transition-property: (
     color,
     background-color,
@@ -29,9 +31,14 @@ $btn-stroke: transparent !default;
 $btn-bg: transparent !default;
 $btn-color: inherit !default;
 
-$btn-focus-stroke: transparent !default;
-$btn-focus-bg: color.change($root-fg, $alpha: 0.05) !default;
-$btn-focus-color: inherit !default;
+$btn-hover-stroke: transparent !default;
+$btn-hover-bg: color.change($root-fg, $alpha: 0.05) !default;
+$btn-hover-color: inherit !default;
+
+// Being replaced for `$btn-hover` in v2 for consistency
+$btn-focus-stroke: $btn-hover-stroke !default; // will be removed in v2
+$btn-focus-bg: $btn-hover-bg !default; // will be removed in v2
+$btn-focus-color: $btn-hover-color !default; // will be removed in v2
 
 $btn-active-stroke: transparent !default;
 $btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
@@ -45,7 +52,7 @@ $btn-disabled-opacity: 0.7 !default;
     align-items: center;
     margin: var(--btn-margin, 0);
     padding: var(--btn-padding, #{$btn-padding});
-    border: #{$btn-border-size} #{$btn-border-style}
+    border: var(--btn-border-width, #{$btn-border-size}) $btn-border-style
         var(--btn-stroke, #{$btn-stroke});
     border-radius: var(--btn-radius, #{$btn-radius});
     background-color: var(--btn-bg, #{$btn-bg});
@@ -62,27 +69,31 @@ $btn-disabled-opacity: 0.7 !default;
     -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
     -webkit-appearance: none; // unset iOS styles on <button>
 
+    // For v2
+    // &:not(:active):focus-visible {
+    //     outline-offset: 5px;
+    // }
+
+    // Will be dropped in v2
     &:focus {
         outline: 0;
     }
 
-    &:hover,
-    &:focus {
-        border-color: var(--btn-focus-stroke, #{$btn-focus-stroke});
-        background-color: var(--btn-focus-bg, #{$btn-focus-bg});
-        color: var(--btn-focus-color, #{$btn-focus-color});
+    &:is(:focus, :hover) {
+        border-color: var(--btn-focus-stroke, #{$btn-hover-stroke});
+        background-color: var(--btn-focus-bg, #{$btn-hover-bg});
+        color: var(--btn-focus-color, #{$btn-hover-color});
         text-decoration: none;
     }
 
-    &.is-active,
-    &:active {
+    &:is(.is-active, :active) {
         border-color: var(--btn-active-stroke, #{$btn-active-stroke});
         background-color: var(--btn-active-bg, #{$btn-active-bg});
         color: var(--btn-active-color, #{$btn-active-color});
     }
 
-    &.is-disabled,
-    &:disabled {
+    // stylelint-disable-next-line no-descending-specificity
+    &:is(.is-disabled, :disabled) {
         opacity: $btn-disabled-opacity;
         pointer-events: none;
     }
@@ -92,7 +103,7 @@ $btn-disabled-opacity: 0.7 !default;
     @if $enable-btn-outline {
         &.-outline {
             --btn-stroke: currentcolor;
-            --btn-focus-stroke: currentcolor;
+            --btn-hover-stroke: currentcolor;
         }
     }
 

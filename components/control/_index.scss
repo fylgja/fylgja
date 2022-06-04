@@ -61,9 +61,12 @@
 }
 
 %control-disabled {
-    border-style: $control-disabled-border-style;
+    border-style: var(
+        --control-disabled-border-style,
+        $control-disabled-border-style
+    );
     box-shadow: none;
-    opacity: $control-disabled-opacity;
+    opacity: var(--control-disabled-opacity, $control-disabled-opacity);
     pointer-events: none;
 }
 

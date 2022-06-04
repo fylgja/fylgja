@@ -1,0 +1,43 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+@use "helper" as *;
+
+$form-file-gap-y: $form-padding-y !default;
+$form-file-gap-x: $form-padding-x !default;
+$form-file-btn-gap: 1ch !default;
+$form-file-btn-padding: form-style-get(file-btn-padding) !default;
+$form-file-btn-radius: form-style-get(file-btn-radius) !default;
+$form-file-btn-bg: var(--color-theme, #{$color-theme}) !default;
+$form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
+
+@mixin form-input-file-button {
+    margin: calc(var(--form-file-gap-y, #{$form-file-gap-y}) / -1)
+        calc(var(--form-file-gap-x, #{$form-file-gap-x}) / -1);
+    margin-inline-end: $form-file-btn-gap;
+    padding: var(--form-file-btn-padding, #{$form-file-btn-padding});
+    border: 0;
+    border-radius: var(--form-file-btn-radius, $form-file-btn-radius);
+    background-color: var(--form-file-btn-bg, #{$form-file-btn-bg});
+    color: var(--form-file-btn-color, #{$form-file-btn-color});
+    font: inherit;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@mixin form-input-file {
+    [type="file"] {
+        overflow: hidden; // *1
+
+        &::-webkit-file-upload-button {
+            @include form-input-file-button;
+        }
+
+        // stylelint-disable-next-line selector-pseudo-element-no-unknown
+        &::file-selector-button {
+            @include form-input-file-button;
+        }
+    }
+}

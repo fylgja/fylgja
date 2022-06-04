@@ -7,6 +7,6 @@ node_modules
 !/.vscode/fylgja.code-snippets
 
 # Cache/Temporary
-/cache
-/tmp
-/temp
+cache
+tmp
+temp

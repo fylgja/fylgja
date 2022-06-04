@@ -3,148 +3,37 @@
 
 @forward "helper";
 @forward "field";
+@forward "color";
+@forward "file";
 @use "helper" as *;
+@use "base";
 @use "field" as *;
+@use "color" as *;
+@use "file" as *;
 
-input,
-select,
-textarea {
-    margin: var(--form-margin, 0);
-    font: inherit;
-}
-
-label {
-    display: inline-block;
-    margin: var(--label-margin, #{$label-margin});
-}
-
-fieldset {
-    min-inline-size: 0; // unset browser default
-    margin: var(--fieldset-margin, #{$fieldset-margin});
-    padding: var(--fieldset-padding, #{$fieldset-padding});
-    border: var(--fieldset-padding, #{$fieldset-border});
-}
-
-// *1: Enable text wrapping in EdgeHTML
-// *2: Make it full width like a heading
-legend {
-    display: block; // *2
-    width: 100%; // *2
-    max-width: 100%; // *1
-    margin: var(--legend-margin, #{$legend-margin});
-    padding: var(--legend-padding, #{$legend-padding});
-    border: if($legend-border, var(--legend-padding, #{$legend-border}), null);
-    font-size: var(--legend-font-size, #{$legend-font-size});
-    white-space: normal; // *1
-}
-
-optgroup {
-    font-weight: bolder;
-    font-style: normal;
-}
-
-::placeholder {
-    color: inherit;
-    opacity: var(--form-placeholder, #{$form-placeholder-opacity});
-}
-
-// Fixes color issue with webkit autofill background and dark mode
-@if $enable-webkit-autofill-dark-mode {
-    :-webkit-autofill {
-        color-scheme: light;
-    }
-}
-
-// Correct the cursor style of increment and decrement buttons in Safari.
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-    height: auto;
-}
-
-// Fix extra space set by webkit browsers for date fields
-::-webkit-datetime-edit,
-::-webkit-datetime-edit-fields-wrapper,
-::-webkit-datetime-edit-text,
-::-webkit-datetime-edit-minute,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-year-field {
-    padding-block-start: 0;
-    padding-block-end: 0;
-}
-
-input:not([type]) {
+input:not([type]),
+:is(#{$form-fields}, textarea, select) {
     @include form-field;
 }
 
-@each $field in $form-fields {
-    @if $field == textarea {
-        textarea {
-            @include form-field;
-            overflow: auto;
-            resize: vertical;
-        }
-    } @else if $field == select {
-        select {
-            @include form-select;
-        }
-    } @else if $field == date {
-        [type*="date"] {
-            @include form-field;
-        }
-    } @else if $field == search {
-        [type="search"] {
-            @include form-field;
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
 
-            // Removes the extra space in older webkit browsers
-            &::-webkit-search-decoration {
-                -webkit-appearance: none;
-            }
-        }
-    } @else if $field == color {
-        [type="color"] {
-            @include form-field($has-readonly: false);
-            @if $form-color-radius {
-                --form-radius: #{$form-color-radius};
-            }
-            display: inline-block;
-            width: $form-color-size;
-            height: $form-color-size;
-            padding: $form-color-padding;
+select {
+    $select-padding: calc(
+        #{$form-padding-x} + var(--select-icon-size, #{$form-icon-size})
+    );
 
-            &::-webkit-color-swatch-wrapper {
-                padding: 0;
-            }
-
-            &::-moz-color-swatch {
-                border: 0;
-                border-radius: var(--form-radius, #{$form-radius});
-            }
-
-            &::-webkit-color-swatch {
-                border: 0;
-                border-radius: var(--form-radius, #{$form-radius});
-            }
-        }
-    } @else if $field == file {
-        // *1: Needed for Safari overflow
-        [type="file"] {
-            @include form-field($has-readonly: false);
-            overflow: hidden; // *1
-
-            &::-webkit-file-upload-button {
-                @include form-input-file-button;
-            }
-
-            // stylelint-disable-next-line selector-pseudo-element-no-unknown
-            &::file-selector-button {
-                @include form-input-file-button;
-            }
-        }
-    } @else {
-        [type="#{$field}"] {
-            @include form-field;
-        }
+    &:not([multiple]) {
+        padding-right: var(--select-icon-padding, #{$select-padding});
+        background: var(--form-bg, #{$form-bg}) right
+            var(--select-icon-offset, #{$form-padding-x})
+            center/var(--select-icon-size, #{$form-icon-size}) no-repeat;
+        background-image: var(--select-icon, #{$form-select-icon});
     }
 }
+
+@include form-input-color;
+@include form-input-file;

@@ -1,33 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "@fylgja/theme" as *;
-
-$badge-padding: 0.125em 0.75em !default;
-$badge-radius: 0.375em !default;
-$badge-bg: if($root-fg == #000, #eee, #222) !default;
-$badge-color: $color-text !default;
-$badge-font-size: 0.75em !default;
-$badge-font-weight: 500 !default;
+@forward "helper";
+@use "helper" as *;
 
 .badge {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 2em;
-    min-height: 2em;
-    padding: var(--badge-padding, #{$badge-padding});
-    border-radius: var(--badge-radius, #{$badge-radius});
-    background-color: var(--badge-bg, #{$badge-bg});
-    color: if(
-        $badge-color,
-        var(--badge-color, #{$badge-color}),
-        var(--badge-color)
-    );
-    font-size: var(--badge-font-size, #{$badge-font-size});
-    font-weight: var(--badge-font-weight, #{$badge-font-weight});
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
+    @include badge;
 
     &.-theme {
         --badge-bg: var(--color-theme, #{$color-theme});

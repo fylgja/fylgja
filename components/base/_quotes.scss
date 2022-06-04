@@ -3,11 +3,6 @@
 
 @use "helper" as *;
 
-blockquote,
-q {
-    quotes: var(--quotes, #{$quotes});
-}
-
 blockquote {
     margin: var(--blockquote-margin, #{$blockquote-margin});
     padding-inline-start: var(
