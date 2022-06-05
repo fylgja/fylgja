@@ -26,7 +26,7 @@
     "update": "./scripts/update-all",
     "dev": "npm run dev:playground | npm run dev:components",
     "dev:playground": "npx http-server -s -o",
-    "dev:components": "npx sass components:components -w -I node_modules",
+    "dev:components": "npx sass components:components -w --no-source-map -s compressed -I node_modules",
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
     "build:pkg:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
     "build:pkg:main": "npx sass bundles/main.scss fylgja.css --no-source-map -s compressed -I node_modules",

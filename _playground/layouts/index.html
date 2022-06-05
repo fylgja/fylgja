@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../../components/card/card.css">
 
   <!-- Other styles -->
+  <link rel="stylesheet" href="../../components/aria-only/mq.css">
   <link rel="stylesheet" href="../../components/utilpack/utilpack.css">
 
   <style>
@@ -49,7 +50,7 @@
     <section class="hero -theme p-8">
       <h1>Hero!!!</h1>
     </section>
-    <div class="auto-grid mt-8">
+    <section class="auto-grid my-8">
       <div class="card card-content">
         Simple Card
       </div>
@@ -69,7 +70,13 @@
           <a href="#" class="btn">Action</a>
         </div>
       </div>
-    </div>
+    </section>
+    <section>
+      <h2>aria-only (sr-only)</h2>
+      <p>Inspect to see me and the hidden text next to me</p>
+      <p class="aria-only">This is a hidden text</p>
+      <p class="aria-only md-not-aria-only">I am hidden on small screens</p>
+    </section>
   </main>
 </body>
 <script>
