@@ -40,7 +40,7 @@ This component comes in 3 syntaxes.
 }
 
 // CSS Syntax
-@use "@fylgja/z-layer/lib";
+@use "@fylgja/z-layer/props";
 
 .style {
     z-index: var(--layer-1);
