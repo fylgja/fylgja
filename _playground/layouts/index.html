@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../../components/auto-grid/auto-grid.css">
   <link rel="stylesheet" href="../../components/section/section.css">
   <link rel="stylesheet" href="../../components/card/card.css">
+  <link rel="stylesheet" href="../../components/dialog/dialog.css">
 
   <!-- Other styles -->
   <link rel="stylesheet" href="../../components/aria-only/mq.css">
@@ -77,6 +78,73 @@
       <p>Inspect to see me and the hidden text next to me</p>
       <p class="aria-only">This is a hidden text</p>
       <p class="aria-only md-not-aria-only">I am hidden on small screens</p>
+    </section>
+    <section>
+      <!-- Modal -->
+      <button onclick="document.querySelector('#dialog-modal').showModal()">Open</button>
+      <dialog id="dialog-modal">
+        <div class="flex justify-between items-center">
+          <h1 class="my-0">Hello from Modal</h1>
+          <button onclick="document.querySelector('#dialog-modal').close()">X</button>
+        </div>
+        <div class="dialog-inner">
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, in incidunt, id quos facere hic corrupti, quia
+              perferendis atque consectetur ipsum eaque quo quod explicabo.
+              Aspernatur repudiandae voluptas dolore impedit? Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quibusdam, in
+              incidunt, id quos facere hic corrupti, quia perferendis atque
+              consectetur ipsum eaque quo quod explicabo. Aspernatur
+              repudiandae voluptas dolore impedit?
+          </p>
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, in incidunt, id quos facere hic corrupti, quia
+              perferendis atque consectetur ipsum eaque quo quod explicabo.
+              Aspernatur repudiandae voluptas dolore impedit? Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quibusdam, in
+              incidunt, id quos facere hic corrupti, quia perferendis atque
+              consectetur ipsum eaque quo quod explicabo. Aspernatur
+              repudiandae voluptas dolore impedit?
+          </p>
+      </div>
+      </dialog>
+
+      <!-- Snackbar -->
+      <button onclick="document.querySelector('#dialog-snackbar').show()">Open</button>
+      <dialog id="dialog-snackbar" class="snackbar flex-row justify-between items-center">
+          <p class="my-0">Hello from Snackbar</p>
+          <button onclick="document.querySelector('#dialog-snackbar').close()">X</button>
+      </dialog>
+
+      <!-- Offcanvas -->
+      <button onclick="document.querySelector('#dialog-offcanvas').showModal()">Open</button>
+      <dialog id="dialog-offcanvas" class="offcanvas">
+        <div class="flex justify-between items-center">
+          <h1 class="my-0">Hello from Modal</h1>
+          <button onclick="document.querySelector('#dialog-offcanvas').close()">X</button>
+        </div>
+        <div class="dialog-inner">
+          <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+            <li>item 7</li>
+            <li>item 8</li>
+            <li>item 9</li>
+            <li>item 10</li>
+            <li>item 11</li>
+            <li>item 12</li>
+            <li>item 13</li>
+            <li>item 14</li>
+            <li>item 15</li>
+          </ul>
+      </div>
+      </dialog>
     </section>
   </main>
 </body>
