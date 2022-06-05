@@ -24,7 +24,7 @@
     &:focus {
         border-color: var(--form-focus-color, #{$form-focus-color});
         box-shadow: var(--form-focus-style, #{$form-focus-style});
-        outline: 0;
+        outline: 0; // Will be dropped in v2
     }
 
     &:is(:disabled, .is-disabled) {

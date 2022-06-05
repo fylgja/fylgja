@@ -1,0 +1,18 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+$select-padding: calc(
+    #{$form-padding-x} + var(--select-icon-size, #{$form-icon-size})
+);
+
+@mixin select {
+    &:not([multiple]) {
+        padding-right: var(--select-icon-padding, #{$select-padding});
+        background: var(--form-bg, #{$form-bg}) right
+            var(--select-icon-offset, #{$form-padding-x})
+            center/var(--select-icon-size, #{$form-icon-size}) no-repeat;
+        background-image: var(--select-icon, #{$form-select-icon});
+    }
+}

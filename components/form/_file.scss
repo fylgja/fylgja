@@ -4,17 +4,22 @@
 @use "@fylgja/theme" as *;
 @use "helper" as *;
 
-$form-file-gap-y: $form-padding-y !default;
-$form-file-gap-x: $form-padding-x !default;
+// *1 Has no effect, Will be dropped in v2
+$form-file-gap-y: $form-padding-y !default; // *1
+$form-file-gap-x: $form-padding-x !default; // *1
 $form-file-btn-gap: 1ch !default;
-$form-file-btn-padding: form-style-get(file-btn-padding) !default;
-$form-file-btn-radius: form-style-get(file-btn-radius) !default;
+$form-file-btn-padding: var(
+    --form-padding,
+    #{form-style-get(file-btn-padding)}
+) !default;
+$form-file-btn-radius: var(
+    --form-radius,
+    #{form-style-get(file-btn-radius)}
+) !default;
 $form-file-btn-bg: var(--color-theme, #{$color-theme}) !default;
 $form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
 
 @mixin form-input-file-button {
-    margin: calc(var(--form-file-gap-y, #{$form-file-gap-y}) / -1)
-        calc(var(--form-file-gap-x, #{$form-file-gap-x}) / -1);
     margin-inline-end: $form-file-btn-gap;
     padding: var(--form-file-btn-padding, #{$form-file-btn-padding});
     border: 0;
@@ -29,6 +34,7 @@ $form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
 
 @mixin form-input-file {
     [type="file"] {
+        padding: 0; // The button will handle the spacing
         overflow: hidden; // *1
 
         &::-webkit-file-upload-button {
