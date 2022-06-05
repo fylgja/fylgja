@@ -62,14 +62,15 @@ Each option is visible if your using an IDE that supports JSDoc or/and Typescrip
 But here are the options,
 just in case if you don't have an editor with those super powers.
 
-| Option        | Type                                  | default   |
-| ------------- | ------------------------------------- | --------- |
-| filename      | string                                | ...       |
-| props         | { `[key: string]`: string \| number } | ...       |
-| selector      | string                                | `":root"` |
-| prefix        | string                                | `""`      |
-| varOnly       | boolean                               | `false`   |
-| varSyntax     | string                                | `"--"`    |
-| frameOnly     | boolean                               | `false`   |
-| keepCamelCase | boolean                               | `false`   |
+| Option           | Type                                      | default   |
+| ---------------- | ----------------------------------------- | --------- |
+| props            | { [key: string\|number]: string\|number } | ...       |
+| filename         | string                                    | ...       |
+| selector         | string                                    | `":root"` |
+| prefix           | string                                    | `""`      |
+| generationSyntax | string                                    | _(\*1)_   |
+| jsonColorKeys    | string[]                                  | _(\*2)_   |
 
+> **NOTE** 1 If empty the default is based on the file extension
+
+> **NOTE** 2 If empty default color map is used
