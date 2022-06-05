@@ -1,141 +1,44 @@
 // Fylgja v1.0.0 (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// stylelint-disable property-no-vendor-prefix
-
 @forward "helper";
 @use "helper" as *;
 
-%control {
-    position: relative;
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: var(--control-width, #{$control-size});
-    height: var(--control-height, #{$control-size});
-    margin: var(--form-margin, 0);
-    padding: 0;
-    border-radius: var(--control-radius, #{$control-radius});
-    border: $control-border-width $control-border-style
-        var(--control-stroke, #{$control-border-color});
-    background: var(--control-bg, #{$control-bg}) center/contain no-repeat;
-    color: var(--control-color, #{$control-color});
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
+:is(#{$control-fields}) {
+    @include control;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: currentcolor;
-        -webkit-mask-image: var(--control-icon);
-        mask-image: var(--control-icon);
-        -webkit-mask-size: var(--control-icon-size, contain);
-        mask-size: var(--control-icon-size, contain);
-        -webkit-mask-position: var(--control-icon-position, center);
-        mask-position: var(--control-icon-position, center);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        transition: -webkit-mask-position 0.15s ease, mask-position 0.15s ease;
+    &:is(:checked, .is-active) {
+        @include control-checked;
     }
 
-    &:focus {
-        box-shadow: var(--control-focus-shadow, #{$control-focus-shadow});
-        outline: 0;
+    &:is(:disabled, .is-disabled) {
+        @include control-disabled;
     }
-}
-
-%control-checked {
-    border-color: var(--control-checked-stroke, #{$control-checked-stroke});
-    background-color: var(--control-checked-bg, #{$control-checked-bg});
-    color: var(--control-checked-color, #{$control-checked-color});
-
-    &::before {
-        -webkit-mask-image: var(--control-checked-icon);
-        mask-image: var(--control-checked-icon);
-    }
-}
-
-%control-disabled {
-    border-style: var(
-        --control-disabled-border-style,
-        $control-disabled-border-style
-    );
-    box-shadow: none;
-    opacity: var(--control-disabled-opacity, $control-disabled-opacity);
-    pointer-events: none;
 }
 
 // The controls
 [type="checkbox"],
 .control-checkbox {
-    @extend %control;
     --control-icon: #{$control-checkbox-icon};
     --control-checked-icon: #{$control-checked-checkbox-icon};
 }
 
-[type="checkbox"] {
-    &:checked {
-        @extend %control-checked;
-    }
-
-    &:disabled {
-        @extend %control-disabled;
-    }
-
-    &:indeterminate {
-        --control-icon: #{$control-indeterminate-checkbox-icon};
-        border-color: var(--control-checked-stroke, #{$control-checked-stroke});
-        background-color: var(--control-checked-bg, #{$control-checked-bg});
-        color: var(--control-checked-color, #{$control-checked-color});
-    }
-}
-
-.control-checkbox {
-    &.is-active {
-        @extend %control-checked;
-    }
-
-    &.is-disabled {
-        @extend %control-disabled;
-    }
+[type="checkbox"]:indeterminate {
+    --control-icon: #{$control-indeterminate-checkbox-icon};
+    border-color: var(--control-checked-stroke, #{$control-checked-stroke});
+    background-color: var(--control-checked-bg, #{$control-checked-bg});
+    color: var(--control-checked-color, #{$control-checked-color});
 }
 
 [type="radio"],
 .control-radio {
-    @extend %control;
     --control-radius: 50%;
     --control-icon: #{$control-radio-icon};
     --control-checked-icon: #{$control-checked-radio-icon};
 }
 
-[type="radio"] {
-    &:checked {
-        @extend %control-checked;
-    }
-
-    &:disabled {
-        @extend %control-disabled;
-    }
-}
-
-.control-radio {
-    &.is-active {
-        @extend %control-checked;
-    }
-
-    &.is-disabled {
-        @extend %control-disabled;
-    }
-}
-
 @if $enable-control-switch {
     .control-switch {
-        @extend %control;
         --control-icon: #{$control-switch-icon};
         --control-width: #{$control-switch-width};
         --control-height: #{$control-switch-height};
@@ -143,23 +46,15 @@
         --control-icon-position: left center;
         --control-checked-icon: #{$control-checked-switch-icon};
 
-        &.is-active,
-        &:checked {
-            @extend %control-checked;
+        &:is(:checked, .is-active) {
             --control-icon-position: right center;
-        }
-
-        &.is-disabled,
-        &:disabled {
-            @extend %control-disabled;
         }
 
         [dir="rtl"] &,
         &[dir="rtl"] {
             --control-icon-position: right center;
 
-            &.is-active,
-            &:checked {
+            &:is(:checked, .is-active) {
                 --control-icon-position: left center;
             }
         }
