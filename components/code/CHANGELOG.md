@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-06-05
+_Nothing besides docs_
+
 ## [1.0.1] - 2021-08-22
 ### Changed
 - moved SCSS variables to helper file
