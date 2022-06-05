@@ -71,6 +71,6 @@ just in case if you don't have an editor with those super powers.
 | generationSyntax | string                                    | _(\*1)_   |
 | jsonColorKeys    | string[]                                  | _(\*2)_   |
 
-> **NOTE** 1 If empty the default is based on the file extension
+> **Note** 1 If empty the default is based on the file extension
 
-> **NOTE** 2 If empty default color map is used
+> **Note** 2 If empty default color map is used
