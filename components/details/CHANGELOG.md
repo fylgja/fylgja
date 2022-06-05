@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-06-05
+### Fixed
+- Toggle animation when opening another time, after closing it
+
 ## [1.0.1] - 2021-11-27
 ### Changed
 - Removed Summary from details scope, making the css smaller and easier to edit

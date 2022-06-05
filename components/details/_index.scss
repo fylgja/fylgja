@@ -15,24 +15,24 @@ $details-margin: 1em 0 !default;
     }
 }
 
-// *1: Makes sure any child is inline, useful for headings
 summary {
     display: list-item;
     font-weight: bolder;
     cursor: pointer;
 
     > * {
-        display: inline; // *1
+        display: inline; // Makes sure any child is inline, useful for headings
     }
 }
 
-// *1: Fix for Chrome/Webkit, child elements will not inhereting the box-sizing.
+// *1: Fix for Chrome/Webkit, child elements will not inheriting the box-sizing.
 // * And being content-box again.
 details {
     margin: var(--details-margin, #{$details-margin});
 
     > *:not(summary) {
         box-sizing: border-box; // *1
+        animation: none;
     }
 
     @if $details-animation {
