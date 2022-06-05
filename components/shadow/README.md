@@ -40,7 +40,7 @@ This component comes in 3 syntaxes.
 }
 
 // CSS variable syntax
-@use "@fylgja/shadow/shadow";
+@use "@fylgja/shadow/props";
 
 .style {
     box-shadow: var(--shadow-1);
