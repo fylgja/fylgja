@@ -4,27 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fylgja boilderplate</title>
+  <title>Fylgja Playground - Actions</title>
   <!-- Other styles -->
-  <link rel="stylesheet" href="../components/base/base.css">
-  <link rel="stylesheet" href="../components/container/container.css">
-  <link rel="stylesheet" href="../components/auto-grid/auto-grid.css">
-  <link rel="stylesheet" href="../components/menu/menu.css">
-  <link rel="stylesheet" href="../components/utilpack/utilpack.css">
+  <link rel="stylesheet" href="../../components/base/base.css">
+  <link rel="stylesheet" href="../../components/container/container.css">
+  <link rel="stylesheet" href="../../components/auto-grid/auto-grid.css">
+  <link rel="stylesheet" href="../../components/menu/menu.css">
+
   <!-- Test styles -->
-  <link rel="stylesheet" href="../components/button/button.css">
-  <link rel="stylesheet" href="../components/form/form.css">
-  <link rel="stylesheet" href="../components/control/control.css">
-  <link rel="stylesheet" href="../components/progress/progress.css">
+  <link rel="stylesheet" href="../../components/button/button.css">
+  <link rel="stylesheet" href="../../components/form/form.css">
+  <link rel="stylesheet" href="../../components/control/control.css">
+  <link rel="stylesheet" href="../../components/progress/progress.css">
+
+  <!-- Other styles -->
+  <link rel="stylesheet" href="../../components/utilpack/utilpack.css">
+
+  <style>
+    [data-theme="dark"] {
+      --color-scheme: dark;
+      --color-bg: #111;
+      --color-text: #fff;
+      --color-text-alt: #fff8;
+      --color-text-muted: #fff6;
+
+      --select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsl(0deg 0% 100%)"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>');
+    }
+  </style>
 </head>
 <body>
   <header class="container flex items-center py-4 border-block-end">
-    <a href="/"><img src="../assets/logo.svg" width="100" height="43" alt="Fylgja" class="me-8"></a>
+    <a href="/"><img src="../../assets/logo.svg" width="100" height="43" alt="Fylgja" class="me-8"></a>
     <nav class="menu -row">
-      <a href="text.html">Text</a>
-      <a href="action.html" aria-current="page">Action</a>
-      <a href="layout.html">Layout</a>
+      <a href="/_playground/text">Text</a>
+      <a href="/_playground/actions" aria-current="page">Action</a>
+      <a href="/_playground/layouts">Layout</a>
     </nav>
+    <button class="btn ms-auto" data-color-preference>Toggle mode</button>
   </header>
   <main class="container my-8">
     <div>
@@ -101,11 +117,6 @@
         <label for="switch-disabled">Disabled</label>
         <input type="checkbox" id="switch-disabled" checked disabled class="control-switch" />
         <label for="switch-disabled">Disabled Checked</label>
-        <hr>
-        <label>
-          <input type="checkbox" class="control-switch me-2" data-color-preference>
-          <span>Toggle Dark or Light mode</span>
-        </label>
       </fieldset>
       <fieldset class="styled-material">
         <legend>Styled (material)</legend>
@@ -119,6 +130,7 @@
   </main>
 </body>
 <script>
+  let theme = "light";
   document.addEventListener("click", (e) => {
     if (!e.target.closest("[data-color-preference]")) return;
     theme = theme === "light" ? "dark" : "light";

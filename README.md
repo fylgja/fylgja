@@ -61,3 +61,13 @@ But you also contribute directly to fylgja by;
 - Helping out with the Site doc and guides, via the github repo.
 
 We appreciate any contribution, no mather if it is small or big.
+
+## Testing/Playground
+
+We have a very simple testing ground for a our CSS Components.
+
+The entry file is found in the root (`index.html`) and all sub pages are found in `_playground`,
+and each file is a basis html file.
+
+We have a option to start the playground with a localhost port,
+run `npm run dev:playground` or `npm run dev`

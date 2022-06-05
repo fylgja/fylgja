@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fylgja Playground - Layout</title>
+  <!-- Test styles -->
+  <link rel="stylesheet" href="../../components/base/base.css">
+
+  <!-- Other styles -->
+  <link rel="stylesheet" href="../../components/container/container.css">
+  <link rel="stylesheet" href="../../components/menu/menu.css">
+  <link rel="stylesheet" href="../../components/button/button.css">
+
+  <!-- Test styles -->
+  <link rel="stylesheet" href="../../components/auto-grid/auto-grid.css">
+  <link rel="stylesheet" href="../../components/section/section.css">
+  <link rel="stylesheet" href="../../components/card/card.css">
+
+  <!-- Other styles -->
+  <link rel="stylesheet" href="../../components/utilpack/utilpack.css">
+
+  <style>
+    [data-theme="dark"] {
+      --color-scheme: dark;
+      --color-bg: #111;
+      --color-text: #fff;
+      --color-text-alt: #fff8;
+      --color-text-muted: #fff6;
+
+      /* Specific dark mode styles */
+      --card-bg: #222;
+      --card-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="container flex items-center py-4 border-block-end">
+    <a href="/"><img src="../../assets/logo.svg" width="100" height="43" alt="Fylgja" class="me-8"></a>
+    <nav class="menu -row">
+      <a href="/_playground/text">Text</a>
+      <a href="/_playground/actions">Action</a>
+      <a href="/_playground/layouts" aria-current="page">Layout</a>
+    </nav>
+    <button class="btn ms-auto" data-color-preference>Toggle mode</button>
+  </header>
+  <main class="container my-8">
+    <section class="hero -theme p-8">
+      <h1>Hero!!!</h1>
+    </section>
+    <div class="auto-grid mt-8">
+      <div class="card card-content">
+        Simple Card
+      </div>
+      <figure class="card card-media">
+        <img src="../assets/logo.svg" alt="Fylgja Rocks!">
+        <figcaption>Simple Card Media</figcaption>
+      </figure>
+      <div class="card">
+        <div class="card-media">
+          <img src="../assets/logo.svg" alt="Fylgja Rocks!">
+        </div>
+        <div class="card-content">
+          Card with layers
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn me-2">Action</a>
+          <a href="#" class="btn">Action</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  let theme = "light";
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-color-preference]")) return;
+    theme = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  });
+</script>
+</html>
