@@ -13,8 +13,15 @@ $dialog-max-width: calc(100% - #{$dialog-offset}) !default;
 $dialog-max-height: $dialog-max-width !default;
 $dialog-radius: 0.3em !default;
 $dialog-padding: 2em !default;
+$dialog-show: dialog-show 300ms !default;
+$dialog-hide: dialog-hide 200ms !default;
 
-$dialog-elevation: var(--elevation-z6) !default;
+$dialog-elevation: var(
+    --elevation-z6,
+    0 7px 8px -4px rgba(0, 0, 0, 0.2),
+    0 12px 17px 2px rgba(0, 0, 0, 0.14),
+    0 5px 22px 4px rgba(0, 0, 0, 0.12)
+) !default;
 $dialog-bg: var(--color-bg, #{$root-bg}) !default;
 $dialog-color: inherit !default;
 
@@ -28,10 +35,54 @@ $dialog-snackbar-offset: 1em !default;
 $dialog-offcanvas-radius: 0 !default;
 
 // *1: Needed until fit-content is better supported by Firefox and Safari
+// * The top/bottom is now calculated via a transform instead
+// * The fit-content does not work in Firefox
+// * And Safari adds weird extra space below it
+@mixin dialog {
+    z-index: $dialog-index; // Not needed for the native version
+    position: fixed;
+    top: 50%; // *1
+    right: 0;
+    bottom: auto; // *1
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--dialog-width, max-content); // *1
+    max-width: var(--dialog-max-width, #{$dialog-max-width});
+    height: var(--dialog-height, auto); // *1
+    max-height: var(--dialog-max-height, #{$dialog-max-height});
+    box-shadow: var(--dialog-elevation, #{$dialog-elevation});
+    border: var(--dialog-border, 0);
+    border-radius: var(--dialog-radius, #{$dialog-radius});
+    margin: auto;
+    padding: var(--dialog-padding, #{$dialog-padding});
+    background: var(--dialog-bg, $dialog-bg);
+    color: var(--dialog-color, $dialog-color);
+    transition: visibility 0s 200ms;
+    transform: translateY(-50%); // *1
+    animation: $dialog-hide;
+    visibility: hidden;
+    content-visibility: auto;
+}
+
+@mixin dialog-open {
+    transition: none;
+    animation: $dialog-show;
+    visibility: visible;
+}
+
+@mixin backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dialog-backdrop;
+}
+
+// *1: Needed until fit-content is better supported by Firefox and Safari
 /// Adds the dialog snackbar styles based on position
 /// @param {String} $position - (inline)|block position where it opens from
-/// @param {Color} $bg - the snackbar background-color
-/// @param {Color} $color - the snackbar color
 /// @param {Number} $offset - Position offset
 /// @return {Mixed} - Dialog snackbar styles
 @mixin dialog-snackbar(
@@ -81,56 +132,6 @@ $dialog-offcanvas-radius: 0 !default;
     &[dir="rtl"] {
         --dialog-translate: translateX(#{$offset-rtl});
     }
-}
-
-// *1: Needed until fit-content is better supported by Firefox and Safari
-// * The top/bottom is now calculated via a transform instead
-// * The fit-content does not work in Firefox
-// * And Safari adds weird extra space below it
-@mixin dialog {
-    z-index: $dialog-index; // Not needed for the native version
-    position: fixed;
-    top: 50%; // *1
-    right: 0;
-    bottom: auto; // *1
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: var(--dialog-width, max-content); // *1
-    max-width: var(--dialog-max-width, #{$dialog-max-width});
-    height: var(--dialog-height, auto); // *1
-    max-height: var(--dialog-max-height, #{$dialog-max-height});
-    box-shadow: var(--dialog-elevation, #{$dialog-elevation});
-    border: var(--dialog-border, 0);
-    border-radius: var(--dialog-radius, #{$dialog-radius});
-    margin: auto;
-    padding: var(--dialog-padding, #{$dialog-padding});
-    background: var(--dialog-bg, $dialog-bg);
-    color: var(--dialog-color, $dialog-color);
-    transform: translateY(-50%); // *1
-    content-visibility: auto;
-}
-
-@mixin dialog-open {
-    &:not([open]) {
-        visibility: hidden;
-        transition: visibility 0s 200ms;
-        animation: dialog-hide 200ms;
-    }
-
-    &[open] {
-        animation: dialog-show 300ms;
-        transition: none;
-    }
-}
-
-@mixin backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: $dialog-backdrop;
 }
 
 // Only backwards compatibility, will be dropped in v2

@@ -5,14 +5,11 @@
 @use "helper" as *;
 @use "keyframes";
 
-// TODO: Add support for `:is()` in v2
-dialog,
-.dialog {
+:is(dialog, .dialog) {
     @include dialog;
-    @include dialog-open;
 
-    &::backdrop {
-        background-color: $dialog-backdrop;
+    &:is([open], .is-open) {
+        @include dialog-open;
     }
 
     // Notification
@@ -33,6 +30,10 @@ dialog,
 .dialog-inner {
     overflow: auto;
     overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+    background-color: $dialog-backdrop;
 }
 
 @if $enable-dialog-polyfill {
