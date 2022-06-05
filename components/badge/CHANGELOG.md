@@ -6,5 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-06-05
+### Added
+- Option to disable the badge-addon wrapper
+- Option to disable the badge -theme style
+- Moved badge-addon style logic to mixin
+
 ## [1.0.0] - 2021-06-22
 Initial Release 🎉

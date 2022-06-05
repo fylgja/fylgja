@@ -3,6 +3,9 @@
 
 @use "@fylgja/theme" as *;
 
+$enable-badge-addon: true !default;
+$enable-badge-theme: true !default;
+
 $badge-padding: 0.125em 0.75em !default;
 $badge-radius: 0.375em !default;
 $badge-bg: if($root-fg == #000, #eee, #222) !default;
@@ -28,4 +31,33 @@ $badge-font-weight: 500 !default;
     font-weight: var(--badge-font-weight, #{$badge-font-weight});
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+}
+
+@mixin badge-variants {
+    @if $enable-badge-theme {
+        &.-theme {
+            --badge-bg: var(--color-theme, #{$color-theme});
+            --badge-color: var(--color-on-theme, #{$color-on-theme});
+        }
+    }
+}
+
+@mixin badge-addon {
+    @if $enable-badge-addon {
+        display: inline-flex;
+        border-radius: var(--badge-radius, #{$badge-radius});
+        vertical-align: baseline;
+
+        .badge {
+            &:not(:first-child) {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &:not(:last-child) {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
 }

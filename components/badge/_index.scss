@@ -6,27 +6,9 @@
 
 .badge {
     @include badge;
-
-    &.-theme {
-        --badge-bg: var(--color-theme, #{$color-theme});
-        --badge-color: var(--color-on-theme, #{$color-on-theme});
-    }
+    @include badge-variants;
 }
 
 .badge-addon {
-    display: inline-flex;
-    border-radius: var(--badge-radius, #{$badge-radius});
-    vertical-align: baseline;
-
-    .badge {
-        &:not(:first-child) {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        &:not(:last-child) {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-    }
+    @include badge-addon;
 }
