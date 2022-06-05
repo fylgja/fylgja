@@ -21,6 +21,16 @@
   <link rel="stylesheet" href="../../components/utilpack/utilpack.css">
 
   <style>
+    .styled-material {
+      --control-border-width: 2px;
+    }
+
+    .styled-material [type="radio"] {
+      --control-checked-bg: transparent;
+      --control-checked-color: var(--color-theme);
+      --control-checked-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='5'/%3e%3c/svg%3e");
+    }
+
     [data-theme="dark"] {
       --color-scheme: dark;
       --color-bg: #111;
