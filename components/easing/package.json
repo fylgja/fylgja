@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/easing",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "The Fylgja easing Design Tokens (CSS props) component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -22,7 +22,6 @@
     "easing"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node _build.js"
   },
   "devDependencies": {

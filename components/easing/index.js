@@ -1,3 +1,6 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 export default {
     // ease = cubic-bezier(0.25,0.1,0.25,1)
     ease: {
