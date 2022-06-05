@@ -43,14 +43,14 @@ This component comes in 3 syntaxes.
 @use "@fylgja/easing" as *;
 
 .style {
-    transition-timing-function: $layer-1;
+    transition-timing-function: $ease-1;
 }
 
 // CSS Syntax
 @use "@fylgja/easing/props";
 
 .style {
-    transition-timing-function: var(--layer-1);
+    transition-timing-function: var(--ease-1);
 }
 ```
 
@@ -60,7 +60,7 @@ This component comes in 3 syntaxes.
 @import "@fylgja/easing";
 
 .style {
-    transition-timing-function: var(--layer-1);
+    transition-timing-function: var(--ease-1);
 }
 ```
 
@@ -70,7 +70,7 @@ This component comes in 3 syntaxes.
 import props from "@fylgja/easing"
 
 const style = {
-    transitionTimingFunction: props.layer[1]
+    transitionTimingFunction: props.ease[1]
 }
 ```
 
