@@ -79,6 +79,7 @@ $btn-disabled-opacity: 0.7 !default;
         outline: 0;
     }
 
+    // focus will be removed in v2
     &:is(:focus, :hover) {
         border-color: var(--btn-focus-stroke, #{$btn-hover-stroke});
         background-color: var(--btn-focus-bg, #{$btn-hover-bg});
