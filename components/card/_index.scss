@@ -2,62 +2,27 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
-@use "sass:selector";
 @use "helper" as *;
 
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: var(--card-dir, column);
-    border-radius: var(--card-radius, #{$card-radius});
-    border: var(--card-border, #{$card-border});
-    box-shadow: var(--card-elevation, #{$card-elevation});
-    background-color: var(--card-bg, #{$card-bg});
-    color: var(--card-color, #{$card-color});
-    overflow: hidden;
-
-    &-media {
-        @extend %card-child;
-        flex: var(--card-flex, 0 0 auto);
-        padding: var(--card-padding, 0);
-
-        @if $enable-card-link {
-            @at-root #{selector.unify(&, a)} {
-                @extend %card-link;
-            }
-        }
-    }
-
-    &-content {
-        @extend %card-child;
-        flex: var(--card-flex, 1 1 auto);
-        padding: var(--card-padding, #{$card-padding});
-
-        @if $enable-card-link {
-            @at-root #{selector.unify(&, a)} {
-                @extend %card-link;
-            }
-        }
-    }
-
-    &-action {
-        @extend %card-child;
-        flex: var(--card-flex, 0 0 auto);
-        padding: var(--card-padding, #{$card-padding});
-    }
-
-    @if $enable-card-link {
-        @at-root #{selector.unify(&, a)} {
-            @extend %card-link;
-        }
-
-        &.-has-link {
-            @extend %card-link;
-        }
-    }
+    @include card;
 }
 
-%card-child {
+.card-media,
+.card-content,
+.card-action {
+    @include card-item;
+}
+
+.card-media {
+    --card-padding: 0;
+}
+
+.card-content {
+    --card-flex: 1 1 auto;
+}
+
+:is(.card-media, .card-content, .card-action) {
     > :first-child {
         margin-top: 0;
     }
@@ -65,37 +30,8 @@
     > :last-child {
         margin-bottom: 0;
     }
-
-    @if $enable-card-link {
-        @at-root #{selector.unify(&, a)} {
-            @extend %card-link;
-        }
-    }
 }
 
-%card-link {
-    position: relative;
-    text-decoration: none;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: var(--card-link-color, #{$card-link-color});
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    &:focus,
-    &:hover {
-        text-decoration: none;
-
-        &::after {
-            transition: opacity 0.15s linear;
-            opacity: var(--card-link-opacity, #{$card-link-opacity});
-        }
-    }
+a:is(.card, .card.-has-link, .card-media, .card-content, .card-action) {
+    @include card-is-link;
 }

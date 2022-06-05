@@ -6,5 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2022-06-05
+### Added
+- Moved style logic to mixin
+
+### Changed
+- Slimmed down the CSS by using the `:is` selector
+
 ## [1.0.0] - 2021-06-22
 Initial Release 🎉
