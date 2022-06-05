@@ -1,16 +1,17 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 const shadowUmbra =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))";
+    "hsl(var(--shadow-color, 0 0% 50%) / calc(var(--shadow-weight, 1%) + 18%))";
 const shadowPenumbra =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%))";
+    "hsl(var(--shadow-color, 0 0% 50%) / calc(var(--shadow-weight, 1%) + 12%))";
 const shadowAmbient =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))";
+    "hsl(var(--shadow-color, 0 0% 50%) / calc(var(--shadow-weight, 1%) + 10%))";
 const shadowInset =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 9%))";
+    "hsl(var(--shadow-color, 0 0% 50%) / calc(var(--shadow-weight, 1%) + 9%))";
 
 export default {
     shadow: {
-        color: "0 0% 50%",
-        weight: "1%",
         1: `0 2px 1px -1px ${shadowUmbra}, 0 1px 1px ${shadowPenumbra}, 0 1px 3px ${shadowAmbient}`,
         2: `0 3px 1px -2px ${shadowUmbra}, 0 2px 2px ${shadowPenumbra}, 0 1px 5px ${shadowAmbient}`,
         3: `0 2px 4px -1px ${shadowUmbra}, 0 4px 5px ${shadowPenumbra}, 0 1px 10px ${shadowAmbient}`,
