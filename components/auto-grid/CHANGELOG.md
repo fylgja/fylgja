@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2022-06-05
+_Nothing besides docs_
+
 ## [1.0.3] - 2022-03-21
 ### Fixed
 - **[Possible Breaking Change]** Also Scoped the gap variable,
