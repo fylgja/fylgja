@@ -1,70 +1,23 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "sass:map";
-@use "@fylgja/theme" as *;
-@use "@fylgja/form/helper" as *;
+@forward "helper";
+@use "helper" as *;
 
-$input-group-style: default !default;
-$input-group-styles: (
-    field: (
-        padding: 0.375em 1px,
-        border-width: 0 0 1px,
-        border-style: solid,
-        border-color: currentcolor,
-        radius: 0,
-        shadow: inset 0 -1px 0 $form-focus-color,
-        bg: transparent,
-        color: inherit,
-        file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 3px 3px 0 0,
-    ),
-    box: (
-        padding: 0.375em 0.625em,
-        border-width: 0 0 1px,
-        border-style: solid,
-        border-color: currentcolor,
-        radius: 4px 4px 0 0,
-        shadow: inset 0 -1px 0 $form-focus-color,
-        bg: if($root-fg == #000, #eee, #222),
-        color: inherit,
-        file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 4px 4px 0 0,
-    ),
-) !default;
-$input-group-styles: map.merge($input-group-styles, $form-styles);
-
-$input-group-border-width: $form-border-width !default;
-$input-group-border-style: $form-border-style !default;
-$input-group-border-color: var(--form-stroke, #{$form-border-color}) !default;
-$input-group-radius: var(--form-radius, #{$form-radius}) !default;
-$input-group-bg: var(--form-bg, #{$form-bg}) !default;
-$input-group-color: var(--form-color, #{$form-color}) !default;
-$input-group-focus-color: $form-focus-color !default;
-$input-group-focus-style: $form-focus-style !default;
-
-.input-extra,
-.input-icon {
-    flex: 0 0 auto;
-    width: auto;
-    border-radius: 0;
-}
-
-.input-icon {
-    color: $input-group-border-color;
-}
+// ? consider updating this to a grid layout for multi layout input group
+// Something for v2 maybe?
 
 .input-group {
     position: relative;
     display: flex;
     width: 100%;
     min-height: var(--input-group-height);
-    border-width: $input-group-border-width;
-    border-style: $input-group-border-style;
-    border-color: $input-group-border-color;
-    border-radius: $input-group-radius;
-    background-color: $input-group-bg;
-    color: $input-group-color;
+    border: var(--form-border-width, #{$input-group-border-width})
+        $input-group-border-style
+        var(--form-stroke, #{$input-group-border-color});
+    border-radius: var(--form-radius, #{$input-group-radius});
+    background-color: var(--form-bg, #{$input-group-bg});
+    color: var(--form-color, #{$input-group-color});
     overflow: hidden;
 
     &::after {
@@ -74,26 +27,32 @@ $input-group-focus-style: $form-focus-style !default;
         right: 0;
         bottom: 0;
         left: 0;
-        pointer-events: none;
         transition: box-shadow 0.15s linear;
+        pointer-events: none;
     }
 
     &:focus-within {
         --form-stroke: #{$input-group-focus-color};
         outline: 0;
 
-        // After needed to prevent autocomplete styles from breaking the focus
+        // Needed as after pseudo element,
+        // to prevent autocomplete styles from breaking the focus
         &::after {
-            box-shadow: $input-group-focus-style;
+            box-shadow: var(--form-focus-style, #{$input-group-focus-style});
         }
     }
 
-    > input,
-    > select,
-    > textarea {
-        flex: 1 1 auto;
-        border: 0;
+    > * {
         border-radius: 0;
+    }
+
+    > :is(input, select, textarea) {
+        border: 0;
         background-color: transparent;
     }
+}
+
+.input-icon,
+.input-group > svg {
+    color: $input-group-icon-color;
 }

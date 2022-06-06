@@ -1,0 +1,45 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "sass:map";
+@use "@fylgja/theme" as *;
+@use "@fylgja/form/helper" as *;
+
+$input-group-style: default !default;
+$input-group-styles: (
+    field: (
+        padding: 0.375em 1px,
+        border-width: 0 0 1px,
+        border-style: solid,
+        border-color: currentcolor,
+        radius: 0,
+        shadow: inset 0 -1px 0 $form-focus-color,
+        bg: transparent,
+        color: inherit,
+        file-btn-padding: 0.375em 0.625em,
+        file-btn-radius: 3px 3px 0 0,
+    ),
+    box: (
+        padding: 0.375em 0.625em,
+        border-width: 0 0 1px,
+        border-style: solid,
+        border-color: currentcolor,
+        radius: 4px 4px 0 0,
+        shadow: inset 0 -1px 0 $form-focus-color,
+        bg: if($root-fg == #000, #eee, #222),
+        color: inherit,
+        file-btn-padding: 0.375em 0.625em,
+        file-btn-radius: 4px 4px 0 0,
+    ),
+) !default;
+$input-group-styles: map.merge($input-group-styles, $form-styles);
+
+$input-group-border-width: $form-border-width !default;
+$input-group-border-style: $form-border-style !default;
+$input-group-border-color: var(--form-stroke, #{$form-border-color}) !default;
+$input-group-radius: var(--form-radius, #{$form-radius}) !default;
+$input-group-bg: var(--form-bg, #{$form-bg}) !default;
+$input-group-color: var(--form-color, #{$form-color}) !default;
+$input-group-focus-color: $form-focus-color !default;
+$input-group-focus-style: $form-focus-style !default;
+$input-group-icon-color: var(--form-stroke, #{$form-border-color}) !default;

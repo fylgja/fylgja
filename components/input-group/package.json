@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/input-group",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "The input group extends upon the `@fylgja/form`. By providing a wrapper that allows for more complex form field styles",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -26,7 +26,7 @@
     "build": "npm run build:field && npm run build:box && npm run build:default"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0",
-    "@fylgja/form": "^1.0.0"
+    "@fylgja/form": "^1.0.6",
+    "@fylgja/theme": "^1.0.0"
   }
 }
