@@ -97,6 +97,7 @@ $breakpoints: (
     "xl": 1440px,
     "xxl": 2200px,
 ) !default;
+$mq-breakpoints: $breakpoints; // fallback alias
 
 $xs: "min-width: #{getMq(xs)}" !default;
 $sm: "min-width: #{getMq(sm)}" !default;
@@ -113,5 +114,8 @@ $xl-max: "max-width: #{(getMq(xl) - 1px)}" !default;
 $xxl-max: "max-width: #{(getMq(xxl) - 1px)}" !default;
 ```
 
-_Some prefers media queries have bad support at them moment of writing,_
-_so always check what is usable._
+> **Note** Some prefers media queries have bad support at them moment of writing,
+> so always check what is usable.
+
+> **Note** `getMq()` is a sass function that gets a value from the `$breakpoints` map,
+> with a fail save if the value is missing

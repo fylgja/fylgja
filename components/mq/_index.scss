@@ -1,8 +1,17 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 @use "sass:map";
 
-@function getMq($name, $map: $mq-breakpoints) {
+/// @group media-queries
+///
+/// @param {String} $name - name of the media query to from the map
+/// @param {Map} - map of media query values, default is `$breakpoints`
+/// @return {String} - media query string
+@function getMq($name, $map: $breakpoints) {
     @if not(map.has-key($map, $name)) {
         @debug "MQ breakpoint '#{$name}' is not found in #{$map}";
+        @return "";
     }
 
     @return map.get($map, $name);

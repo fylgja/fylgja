@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/mq",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The Fylgja MQ offers Design Tokens (CSS props) for consistent use of media queries",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -16,10 +16,10 @@
     "fylgja",
     "fylgja component",
     "media queries",
-    "dark mode"
+    "dark mode",
+    "prefers-media"
   ],
   "scripts": {
-    "test": "npx sass mq.scss mq.css --no-source-map -I node_modules",
-    "build": "npx sass mq.scss mq.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass mq.scss mq.css --no-source-map -I node_modules"
   }
 }

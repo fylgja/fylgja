@@ -8,7 +8,7 @@
 // Only works with https://github.com/postcss/postcss-custom-media at the moment
 // If you need the older syntax use the SCSS syntax instead
 
-/* Prefers mq's */
+// Prefers mq's
 @custom-media --scheme-dark: (#{mq.$scheme-dark});
 @custom-media --scheme-light: (#{mq.$scheme-light});
 
@@ -28,7 +28,7 @@
 @custom-media --portrait: (#{mq.$portrait});
 @custom-media --landscape: (#{mq.$landscape});
 
-/* Sizing mq's */
+// Sizing mq's
 @each $name, $value in mq.$breakpoints {
     @custom-media --#{$name}: (width >= #{$value});
     @custom-media --#{$name}-max: (width < #{$value});
