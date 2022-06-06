@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Padding inline end missing for file input text
+
 ## [1.0.5] - 2022-06-05
 ### Added
 - Moved select style logic to mixin

@@ -34,7 +34,10 @@ $form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
 
 @mixin form-input-file {
     [type="file"] {
-        padding: 0; // The button will handle the spacing
+        // *2 The button will handle the spacing
+        padding-block-start: 0; // *2
+        padding-block-end: 0; // *2
+        padding-inline-start: 0; // *2
         overflow: hidden; // *1
 
         &::-webkit-file-upload-button {
