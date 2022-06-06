@@ -118,7 +118,7 @@ $enable-menu-nested: true !default;
 $menu-nested-indent: 1em !default;
 
 $menu-item-active-selector: ".is-active" !default;
-$menu-item-auto-selector: "a:not(.btn)" !default;
+$menu-item-auto-selector: "a:not([class*=btn])" !default;
 
 $menu-label-weight: bolder !default;
 

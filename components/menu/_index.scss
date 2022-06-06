@@ -4,36 +4,6 @@
 @forward "helper";
 @use "helper" as *;
 
-%menu-item {
-    display: flex;
-    justify-content: var(--menu-item-justify, space-between);
-    align-items: var(--menu-item-align, center);
-    padding: var(--menu-item-padding, #{$menu-item-padding});
-    border-radius: var(--menu-item-radius, #{$menu-item-radius});
-    border: var(--menu-item-border, #{$menu-item-border});
-    background-color: var(--menu-item-bg, #{$menu-item-bg});
-    color: var(--menu-item-color, #{$menu-item-color});
-    text-decoration: none;
-}
-
-%menu-item-states {
-    &:hover {
-        border-color: var(--menu-item-hover-stroke, #{$menu-item-hover-stroke});
-        background-color: var(--menu-item-hover-bg, #{$menu-item-hover-bg});
-        color: var(--menu-item-hover-color, #{$menu-item-hover-color});
-        text-decoration: none;
-    }
-
-    &:is(.is-active, :active, [aria-current="page"]) {
-        border-color: var(
-            --menu-item-active-stroke,
-            #{$menu-item-active-stroke}
-        );
-        background-color: var(--menu-item-active-bg, #{$menu-item-active-bg});
-        color: var(--menu-item-active-color, #{$menu-item-active-color});
-    }
-}
-
 .menu {
     list-style: none;
     display: var(--menu-display, flex);
@@ -42,19 +12,8 @@
     padding: var(--menu-padding, 0);
     padding-inline-start: var(--menu-nested-indent);
 
-    &-label {
-        @extend %menu-item;
-        font-weight: $menu-label-weight;
-    }
-
-    &-item {
-        @extend %menu-item;
-        @extend %menu-item-states;
-    }
-
     @if $enable-menu-nested {
-        ul,
-        ol {
+        :is(ul, ol) {
             --menu-nested-indent: #{$menu-nested-indent};
         }
     }
@@ -66,20 +25,45 @@
             --menu-items: center;
 
             @if $enable-menu-nested {
-                ul,
-                ol {
+                :is(ul, ol) {
                     --menu-dir: column;
                     --menu-nested-indent: 0;
                 }
             }
         }
     }
+}
 
-    @if $menu-item-auto-selector {
-        > #{$menu-item-auto-selector},
-        li > #{$menu-item-auto-selector} {
-            @extend %menu-item;
-            @extend %menu-item-states;
-        }
+@if $menu-item-auto-selector {
+    $item: $menu-item-auto-selector;
+
+    :is(.menu-item, .menu-label, .menu > #{$item}, .menu li > #{$item}) {
+        @include menu-item;
     }
+
+    :is(.menu-item, .menu > #{$item}, .menu li > #{$item}) {
+        @include menu-item-states;
+    }
+} @else {
+    .menu-item,
+    .menu-label {
+        @include menu-item;
+    }
+
+    .menu-item {
+        @include menu-item-states;
+    }
+}
+
+.menu-label {
+    font-weight: $menu-label-weight;
+}
+
+// Only backwards compatibility, will be dropped in v2
+%menu-item {
+    @include menu-item;
+}
+
+%menu-item-states {
+    @include menu-item-states;
 }

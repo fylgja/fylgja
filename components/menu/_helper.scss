@@ -24,6 +24,49 @@ $menu-item-hover-stroke: 0 !default;
 $menu-item-hover-bg: change-color($root-fg, $alpha: 0.05) !default;
 $menu-item-hover-color: inherit !default;
 
+// *1: Will be dropped in v2 in favor of $menu-item-hover
+$menu-item-focus-stroke: $menu-item-hover-stroke !default; // *1
+$menu-item-focus-bg: $menu-item-hover-bg !default; // *1
+$menu-item-focus-color: $menu-item-focus-stroke !default; // *1
+
+$menu-item-outline: 0 !default; // Will be dropped in v2
+
 $menu-item-active-stroke: 0 !default;
 $menu-item-active-bg: var(--color-theme-fade, #{$color-theme-fade}) !default;
 $menu-item-active-color: inherit !default;
+
+@mixin menu-item {
+    display: flex;
+    justify-content: var(--menu-item-justify, space-between);
+    align-items: var(--menu-item-align, center);
+    padding: var(--menu-item-padding, #{$menu-item-padding});
+    border-radius: var(--menu-item-radius, #{$menu-item-radius});
+    border: var(--menu-item-border, #{$menu-item-border});
+    background-color: var(--menu-item-bg, #{$menu-item-bg});
+    color: var(--menu-item-color, #{$menu-item-color});
+    text-decoration: none;
+}
+
+@mixin menu-item-states {
+    // Will be dropped in v2
+    &:focus {
+        outline: $menu-item-outline;
+    }
+
+    // focus will be removed in v2
+    &:is(:focus, :hover) {
+        border-color: var(--menu-item-focus-stroke, #{$menu-item-focus-stroke});
+        background-color: var(--menu-item-focus-bg, #{$menu-item-focus-bg});
+        color: var(--menu-item-focus-color, #{$menu-item-focus-color});
+        text-decoration: none;
+    }
+
+    &:is(#{$menu-item-active-selector}, :active, [aria-current="page"]) {
+        border-color: var(
+            --menu-item-active-stroke,
+            #{$menu-item-active-stroke}
+        );
+        background-color: var(--menu-item-active-bg, #{$menu-item-active-bg});
+        color: var(--menu-item-active-color, #{$menu-item-active-color});
+    }
+}

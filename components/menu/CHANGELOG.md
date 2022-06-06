@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-06-06
+### Changed
+- Slimmed down the CSS by using the `:is` selector
+- Moved style logic to mixin
+
 ## [1.1.1] - 2022-03-21
 ### Fixed
 - default auto-selector for use with Hyva (Tailwind `@apply`) with `.btn`
