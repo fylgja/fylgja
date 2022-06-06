@@ -132,5 +132,5 @@ $pagination-dots-size: 0.625em !default;
 $pagination-dots-gap: 0.35em !default;
 ```
 
-_Setting the `$enable-pagination-old-gap` to false._
-_Will set the pagination gap via the CSS property gap instead._
+> **Note** Setting the `$enable-pagination-old-gap` to false,
+> will set the pagination gap via the CSS property gap instead.
