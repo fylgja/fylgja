@@ -3,8 +3,9 @@
 
 @use "@fylgja/theme" as *;
 
+// *1 Has no effect, Will be dropped in v2
 $enable-gradient-border: true !default;
-$enable-gradient-bg: true !default;
+$enable-gradient-bg: true !default; // *1
 $enable-gradient-text: true !default;
 
 $gradient-colors: (
@@ -26,7 +27,7 @@ $gradient-angles: (
 
 $gradient-transparent: rgb(0 0 0 / 0);
 
-%util-gradient {
+:is(.bg-gradient, .border-gradient, .text-gradient) {
     --gradient-from: currentcolor;
     --gradient-stops: var(--gradient-from),
         var(--gradient-to, #{$gradient-transparent});
@@ -61,25 +62,20 @@ $gradient-transparent: rgb(0 0 0 / 0);
     }
 }
 
-@if $enable-gradient-border {
-    .border-gradient {
-        @extend %util-gradient;
-        border-image-source: var(--gradient);
-        border-image-slice: 1;
-    }
+.bg-gradient {
+    background-image: var(--gradient);
 }
 
-@if $enable-gradient-bg {
-    .bg-gradient {
-        @extend %util-gradient;
-        background-image: var(--gradient);
+@if $enable-gradient-border {
+    .border-gradient {
+        border-image-source: var(--gradient);
+        border-image-slice: 1;
     }
 }
 
 @if $enable-gradient-text {
     @supports (background-clip: text) or (-webkit-background-clip: text) {
         .text-gradient {
-            @extend %util-gradient;
             // stylelint-disable-next-line property-no-vendor-prefix
             -webkit-background-clip: text;
             background-clip: text;
