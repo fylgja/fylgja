@@ -8,6 +8,18 @@
       "$LINE_COMMENT Licensed under MIT Open Source"
     ]
   },
+  "Fylgja FAQ panel": {
+    "scope": "markdown",
+    "prefix": "!fylgja-faq-panel",
+    "description": "Adds the fylgja faq",
+    "body": [
+      "<details class=\"faq-panel\"><summary>${1:View SCSS variables}</summary>",
+      "",
+      "$TM_SELECTED_TEXT",
+      "",
+      "</details>"
+    ]
+  },
   "Fylgja Package": {
     "scope": "json",
     "prefix": "!fylgja-pkg",
