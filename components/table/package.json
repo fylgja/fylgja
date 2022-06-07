@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The table component is super easy to use. Since it is a zero config module that styles the table directly. Allowing you to focus on the table it self",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -20,7 +20,6 @@
     "table"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx sass table.scss table.css --no-source-map -s compressed -I node_modules"
   }
 }
