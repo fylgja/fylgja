@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../../components/section/section.css">
   <link rel="stylesheet" href="../../components/gradient/gradient.css">
   <link rel="stylesheet" href="../../components/card/card.css">
+  <link rel="stylesheet" href="../../components/scroll-slider/scroll-slider.css">
   <link rel="stylesheet" href="../../components/dialog/dialog.css">
 
   <!-- Other styles -->
@@ -49,8 +50,8 @@
     </nav>
     <button class="btn ms-auto" data-color-preference>Toggle mode</button>
   </header>
-  <main class="container my-8">
-    <div class="flex">
+  <main class="my-8">
+    <div class="container flex">
       <section class="w-50 hero -theme p-8">
         <h1>Hero!!!</h1>
       </section>
@@ -58,7 +59,7 @@
         <h1>Gradient Hero!!!</h1>
       </section>
     </div>
-    <section class="auto-grid my-8">
+    <section class="container auto-grid my-8">
       <div class="card card-content">
         Simple Card
       </div>
@@ -79,13 +80,13 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="container">
       <h2>aria-only (sr-only)</h2>
       <p>Inspect to see me and the hidden text next to me</p>
       <p class="aria-only">This is a hidden text</p>
       <p class="aria-only md-not-aria-only">I am hidden on small screens</p>
     </section>
-    <section>
+    <section class="container">
       <!-- Modal -->
       <button onclick="document.querySelector('#dialog-modal').showModal()">Open</button>
       <dialog id="dialog-modal">
@@ -151,6 +152,76 @@
           </ul>
       </div>
       </dialog>
+    </section>
+    <section>
+      <ul class="scroll-slider">
+        <li class="card card-content">
+          <p>slide 1</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 2</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 3</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 4</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 5</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 6</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 7</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 8</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 9</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 10</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 11</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 12</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 13</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 14</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 15</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 16</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 17</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 18</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 19</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 20</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 21</p>
+        </li>
+        <li class="card card-content">
+          <p>slide 22</p>
+        </li>
+      </ul>
     </section>
   </main>
 </body>
