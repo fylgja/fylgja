@@ -5,8 +5,8 @@
 
 $enable-section-theme: true !default;
 
-section,
-.section {
+// Replace with `:where()` selector when creating v2
+:is(section, .section) {
     min-height: var(--height);
     background: var(--img, none) var(--bg) var(--img-layout, center/cover)
         var(--img-repeat, no-repeat);
