@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Moved api logic from index to `_api.scss`
+
+### Fixed
+- **[Possible Breaking Change]** Separator key typo in api build and build-item (was sepparator)
+
 ## [1.1.1] - 2021-10-13
 ### Fixed
 - _Utilpack_: Typo for visibility value
