@@ -21,9 +21,11 @@
     "*.{css,scss}"
   ],
   "scripts": {
-    "test": "stylelint components/**/*.scss",
     "start": "npm run dev",
-    "update": "./scripts/update-all",
+    "test:css": "npx stylelint components/**/*.scss",
+    "test:pkg": "npx npm-check-updates -e 2 -f @fylgja",
+    "test": "npm run test:css && npm run test:pkg",
+    "update:pkg": "npx npm-check-updates -u -f @fylgja",
     "dev": "npm run dev:playground | npm run dev:components",
     "dev:playground": "npx http-server -s -o",
     "dev:components": "npx sass components:components -w --no-source-map -s compressed -I node_modules",
