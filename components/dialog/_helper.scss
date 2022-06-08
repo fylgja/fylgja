@@ -135,7 +135,7 @@ $dialog-offcanvas-radius: 0 !default;
 }
 
 // Only backwards compatibility, will be dropped in v2
-%dailog {
+%dialog {
     @include dialog;
 }
 
