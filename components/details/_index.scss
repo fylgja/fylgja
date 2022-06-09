@@ -25,12 +25,12 @@ summary {
     }
 }
 
-// *1: Fix for Chrome/Webkit, child elements will not inheriting the box-sizing.
-// * And being content-box again.
+// *1: Fix for Chrome/Webkit, child elements will not inheriting the box-sizing,
+// * and being set back to content-box
 details {
     margin: var(--details-margin, #{$details-margin});
 
-    > *:not(summary) {
+    > * {
         box-sizing: border-box; // *1
         animation: none;
     }

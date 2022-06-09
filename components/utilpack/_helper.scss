@@ -5,14 +5,6 @@
 @use "sass:meta";
 @use "@fylgja/mq" as *;
 
-@forward "defaults/border";
-@forward "defaults/box-alignment";
-@forward "defaults/color";
-@forward "defaults/flex";
-@forward "defaults/layout";
-@forward "defaults/sizing";
-@forward "defaults/spacers";
-@forward "defaults/typography";
 @use "defaults/border" as *;
 @use "defaults/box-alignment" as *;
 @use "defaults/color" as *;
