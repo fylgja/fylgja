@@ -106,21 +106,38 @@ $form-color: form-style-get(color) !default;
 
 // Form fields to load the styling on
 $form-fields: (
-    "[type=text]",
-    "[type=number]",
-    "[type=email]",
-    "[type=tel]",
-    "[type=password]",
-    "[type=search]",
-    "[type=url]",
-    "[type=date]",
-    "[type=datetime-local]",
-    "[type=time]",
-    "[type=month]",
-    "[type=week]",
-    "[type=color]",
-    "[type=file]"
+    text,
+    number,
+    email,
+    tel,
+    password,
+    search,
+    url,
+    date,
+    time,
+    month,
+    week,
+    color,
+    file
 ) !default;
+
+$form-field-selectors: () !default;
+
+// TEMP: fallback for old option list until v2,
+// where we will drop the old option list
+@each $el in $form-fields {
+    @if $el == date {
+        $form-field-selectors: append($form-field-selectors, "[type=date],");
+        $form-field-selectors: append(
+            $form-field-selectors,
+            "[type=datetime-local],"
+        );
+    } @else if $el == textarea or $el == select {
+        // skip
+    } @else {
+        $form-field-selectors: append($form-field-selectors, "[type=#{$el}],");
+    }
+}
 
 // Form select
 $form-icon-size: 1.25em !default;

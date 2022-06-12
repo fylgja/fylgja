@@ -14,7 +14,7 @@
 @use "file" as *;
 
 input:not([type]),
-:is(#{$form-fields}, textarea, select) {
+:is(#{$form-field-selectors}, textarea, select) {
     @include form-field;
 }
 
