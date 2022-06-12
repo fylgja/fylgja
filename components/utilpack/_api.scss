@@ -3,7 +3,7 @@
 
 @use "sass:map";
 @use "sass:meta";
-@use "helper";
+@use "helper" as *;
 
 /// Handel's the single CSS util building for the build process
 ///
