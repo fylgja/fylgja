@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.5] - 2022-06-06
+## [1.0.7] - 2022-06-12
+### Fixed
+- syntax for `$form-fields` using the newer v2 version already,
+  now uses the v1 version again
+
+## [1.0.6] - 2022-06-06
 ### Fixed
 - Padding inline end missing for file input text
 
