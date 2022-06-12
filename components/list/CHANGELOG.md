@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-06-12
+### Fixed
+- class name for `list-style -none` it was using the newer v2 `list-none` version already
+
 ## [1.0.1] - 2022-06-06
 _Nothing besides docs_
 
