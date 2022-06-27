@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.2] - 2022-06-27
+### Fixed
+- Border radius in offcanvas being static instead a CSS variable
+- Some sass variable not being escaped
+
 ## [1.2.1] - 2022-06-08
 ### Fixed
 - typo in extend

@@ -56,8 +56,8 @@ $dialog-offcanvas-radius: 0 !default;
     border-radius: var(--dialog-radius, #{$dialog-radius});
     margin: auto;
     padding: var(--dialog-padding, #{$dialog-padding});
-    background: var(--dialog-bg, $dialog-bg);
-    color: var(--dialog-color, $dialog-color);
+    background: var(--dialog-bg, #{$dialog-bg});
+    color: var(--dialog-color, #{$dialog-color});
     transition: visibility 0s 200ms;
     transform: translateY(-50%); // *1
     animation: $dialog-hide;
@@ -122,7 +122,7 @@ $dialog-offcanvas-radius: 0 !default;
     --dialog-height: 100%;
     --dialog-max-height: 100%;
     --dialog-translate: translateX(#{$offset});
-    border-radius: $dialog-offcanvas-radius;
+    --dialog-border: #{$dialog-offcanvas-radius};
     margin-inline-#{$position}: 0;
     top: 0; // *1
     bottom: 0; // *1
