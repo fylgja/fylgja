@@ -49,14 +49,14 @@
     "@fylgja/code": "^1.0.2",
     "@fylgja/container": "^1.0.1",
     "@fylgja/control": "^1.1.0",
-    "@fylgja/details": "^1.0.2",
+    "@fylgja/details": "^1.0.3",
     "@fylgja/dialog": "^1.2.1",
     "@fylgja/elevation": "^1.0.1",
-    "@fylgja/form": "^1.0.6",
+    "@fylgja/form": "^1.0.7",
     "@fylgja/gradient": "^1.0.2",
     "@fylgja/hashlink": "^1.0.1",
     "@fylgja/input-group": "^1.1.0",
-    "@fylgja/list": "^1.0.1",
+    "@fylgja/list": "^1.0.2",
     "@fylgja/menu": "^1.1.2",
     "@fylgja/mq": "^1.1.0",
     "@fylgja/pagination": "^1.0.2",
@@ -65,7 +65,7 @@
     "@fylgja/scroll-slider": "^1.0.2",
     "@fylgja/scrollbar": "^1.0.0",
     "@fylgja/section": "^1.0.1",
-    "@fylgja/stretched-link": "^1.0.1",
+    "@fylgja/stretched-link": "^1.0.2",
     "@fylgja/table": "^1.0.1",
     "@fylgja/theme": "^1.0.0",
     "@fylgja/transform": "^1.1.1",
@@ -74,7 +74,7 @@
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^4.1.1",
-    "sass": "^1.52.2",
+    "sass": "^1.53.2",
     "stylelint": "^14.9.0"
   }
 }
