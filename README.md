@@ -25,7 +25,7 @@ Check out our site, [https://fylgja.dev](https://fylgja.dev/)
 
 ## Installation
 
-See each component on on how to install them separately.
+See each component on how to install them separately.
 
 Or download Fylgja as one package.
 
@@ -60,7 +60,7 @@ But you also contribute directly to fylgja by;
 - Adding a pull request to our github repo.
 - Helping out with the Site doc and guides, via the github repo.
 
-We appreciate any contribution, no mather if it is small or big.
+We appreciate any contribution, no matter if it is small or big.
 
 ## Testing/Playground
 
