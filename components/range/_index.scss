@@ -1,0 +1,120 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@forward "helper";
+@use "helper" as *;
+
+[type="range"] {
+    --_fill: 0;
+    --_height: var(--range-track-height, #{$range-track-height});
+    --_radius: var(--range-track-radius, #{$range-track-radius});
+    --_bg: var(--range-track-bg, #{$range-track-bg});
+    --_color: var(--range-track-color, #{$range-track-color});
+    --_disabled-bg: var(--range-track-disabled-bg, #{$range-track-disabled-bg});
+    --_disabled-color: var(
+        --range-track-disabled-color,
+        #{$range-track-disabled-color}
+    );
+    --_thumb-color: var(--range-thumb-color, #{$range-thumb-color});
+    --_thumb-disabled-color: var(
+        --range-thumb-disabled-color,
+        #{$range-thumb-disabled-color}
+    );
+    --_thumb-size: var(--range-thumb-size, #{$range-thumb-size});
+    --_thumb-radius: var(--range-thumb-radius, #{$range-thumb-radius});
+    --_thumb-border-size: var(
+        --range-thumb-border-size,
+        #{$range-thumb-border-size}
+    );
+    --_thumb-stroke: var(--range-thumb-stroke, #{$range-thumb-border-color});
+    --_thumb-shadow: var(--range-thumb-shadow, #{$range-thumb-shadow});
+    width: 100%;
+    height: var(--_thumb-size);
+    min-height: 1.25rem;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &.fill-reverse {
+        --_fill-direction: left;
+    }
+
+    &[dir="rtl"],
+    [dir="rtl"] & {
+        --_fill-direction: left;
+
+        &.fill-reverse {
+            --_fill-direction: right;
+        }
+    }
+
+    &::-webkit-slider-runnable-track {
+        @include track;
+    }
+
+    &::-moz-range-track {
+        @include track;
+    }
+
+    &::-webkit-slider-thumb {
+        @include thumb;
+        margin-top: calc(0.5 * calc(var(--_height) - var(--_thumb-size)));
+    }
+
+    &::-moz-range-thumb {
+        @include thumb;
+        box-sizing: border-box;
+    }
+
+    &:is(:active, :focus) {
+        &::-webkit-slider-thumb {
+            --_focus-ring: var(--range-focus-shadow, #{$range-focus-shadow});
+        }
+
+        &::-moz-range-thumb {
+            --_focus-ring: var(--range-focus-shadow, #{$range-focus-shadow});
+        }
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:active {
+        &::-webkit-slider-thumb {
+            cursor: grabbing;
+        }
+
+        &::-moz-range-thumb {
+            cursor: grabbing;
+        }
+    }
+
+    &:disabled {
+        &::-webkit-slider-runnable-track {
+            background: var(--_disabled-bg);
+            color: var(--_disabled-color);
+            cursor: not-allowed;
+        }
+
+        &::-moz-range-track {
+            background: var(--_disabled-bg);
+            color: var(--_disabled-color);
+            cursor: not-allowed;
+        }
+
+        &::-webkit-slider-thumb {
+            box-shadow: none;
+            border-color: var(--_thumb-disabled-stroke);
+            background: none var(--_thumb-disabled-color);
+            cursor: not-allowed;
+        }
+
+        &::-moz-range-thumb {
+            box-shadow: none;
+            border-color: var(--_thumb-disabled-stroke);
+            background: none var(--_thumb-disabled-color);
+            cursor: not-allowed;
+        }
+    }
+}

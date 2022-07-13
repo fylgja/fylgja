@@ -1,0 +1,28 @@
+{
+  "name": "@fylgja/range",
+  "version": "1.0.0",
+  "description": "Range component will add solid foundation for range",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "main": "_index.scss",
+  "unpkg": "range.css",
+  "style": "range.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/range"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "range"
+  ],
+  "scripts": {
+    "build": "npx sass range.scss range.css --no-source-map -s compressed -I node_modules"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.0.0"
+  }
+}

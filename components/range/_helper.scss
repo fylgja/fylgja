@@ -1,0 +1,57 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+@function track-fill($color) {
+    @return linear-gradient(
+        to var(--_fill-direction, right),
+        $color 0%,
+        $color calc(var(--_fill) * 1%),
+        currentcolor calc(var(--_fill) * 1%),
+        currentcolor 100%
+    );
+}
+
+$range-track-height: 0.5rem;
+$range-track-radius: 1rem;
+$range-track-bg: track-fill(var(--color-theme, #{$color-theme}));
+$range-track-color: #ccc;
+$range-track-disabled-bg: currentcolor;
+$range-track-disabled-color: #ddd;
+
+$range-thumb-size: 1rem;
+$range-thumb-radius: 100%;
+$range-thumb-border-size: 0;
+$range-thumb-border-color: var(--color-theme, #{$color-theme});
+$range-thumb-color: var(--color-theme, #{$color-theme});
+$range-thumb-disabled-color: #aaa;
+$range-thumb-shadow: 0 1px 2px rgb(0 0 0 / 50%);
+
+$range-focus-color: var(--color-theme-fade, #{$color-theme-fade}) !default;
+$range-focus-shadow: 0 0 0 0.4rem
+    var(--range-focus-color, #{$range-focus-color}) !default;
+
+@mixin track {
+    width: 100%;
+    height: var(--_height);
+    border-radius: var(--_radius);
+    background: var(--_bg);
+    color: var(--_color);
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+}
+
+@mixin thumb($webkit: false) {
+    --_focus-ring: 0 0 0 transparent;
+    width: var(--_thumb-size);
+    height: var(--_thumb-size);
+    box-shadow: var(--_thumb-shadow), var(--_focus-ring);
+    border: var(--_thumb-border-size) solid var(--_thumb-stroke, currentcolor);
+    border-radius: var(--_thumb-radius);
+    background-color: var(--_thumb-bg, currentcolor);
+    color: var(--_thumb-color);
+    transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
+    -webkit-appearance: none;
+    appearance: none;
+}
