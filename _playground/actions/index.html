@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../../components/form/form.css">
   <link rel="stylesheet" href="../../components/input-group/input-group.css">
   <link rel="stylesheet" href="../../components/control/control.css">
+  <link rel="stylesheet" href="../../components/range/range.css">
   <link rel="stylesheet" href="../../components/progress/progress.css">
 
   <!-- Other styles -->
@@ -41,8 +42,14 @@
       --color-text-muted: #fff6;
 
       --select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsl(0deg 0% 100%)"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>');
+
+      --range-track-color: #333;
+      --range-track-disabled-color: #222;
+      --range-thumb-disabled-color: #333;
     }
   </style>
+
+  <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
   <header class="container flex items-center py-4 border-block-end">
@@ -105,6 +112,101 @@
       <fieldset class="space-y-4">
         <progress value="60" max="100"></progress>
         <progress indeterminate></progress>
+      </fieldset>
+      <fieldset>
+        <input type="range" name="price-max-disabled" id="range-sample">
+        <input type="range" name="price-max-disabled" id="range-sample-disabled" disabled>
+        <input type="range" name="color-range" id="range-sample-color" style="--range-track-bg:linear-gradient(to var(--fill-direction, right), red, orange, yellow, lightgreen, green, blue, purple, pink);--_height: 1rem;--_thumb-border-size: 2px;--_thumb-color:hsl(0deg 0% 100% / 70%);--_thumb-stroke:hsl(0deg 0% 0% / 50%);">
+        <script>
+          function rangeValue(input) {
+            console.log(input);
+            console.log(input.value);
+
+            return {
+              min: input.getAttribute('min') || 0,
+              max: input.getAttribute('max') || 100,
+              value: input.value || 50,
+              fill: this.value,
+              setValue: function(value) {
+                console.log(this.value);
+                this.value = value;
+                this.fill = Math.round(100 * (this.value - this.min) / (this.max - this.min));
+              }
+            }
+          }
+        </script>
+        <label class="w-full" x-data="rangeValue($el)">
+          Range slider with fill
+          <span class="flex items-center w-full">
+            <input
+              type="range"
+              name="range-sample-fill"
+              id="range-sample-fill"
+              value="50"
+              min="10"
+              max="130"
+              :value="value"
+              :style="{ '--_fill': fill }"
+              @input="setValue($event.target.value)"
+            />
+            <output x-text="value" style="width: 2ch;text-align: end;margin-inline-start: 1ch;"></output>
+          </span>
+        </label>
+       <label x-data="{ value: 10 }" class="flex items-center w-full">
+        <input
+          type="range"
+          name="canvas-size"
+          id="canvas-size"
+          :value="value"
+          style="--_height: 2px; --_thumb-border-size: 2px; --_thumb-color: #fff;"
+          :style="{ '--_fill': value }"
+          @input="value = $event.target.value"
+        />
+        <output x-text="value" style="width: 2ch;text-align: end;margin-inline-start: 1ch;"></output>
+       </label>
+       <label
+        x-data="{ min: 20, max: 130 }"
+        class="flex items-center w-full my-4"
+        style="--color-theme: #c419b2; --color-theme-fade: rgba(174, 0, 165, 0.5);"
+      >
+        <output class="flex me-4" style="font-variant-numeric: tabular-nums slashed-zero;">
+          <span class="flex justify-between" style="width: 6ch;">
+            <span>Min:</span>
+            <span x-text="min"></span>
+          </span>
+          <span class="mx-2">/</span>
+          <span class="flex justify-between" style="width: 6ch;">
+            <span>Max:</span>
+            <span x-text="max"></span>
+          </span>
+          <span class="ms-2">€</span>
+        </output>
+        <input
+          type="range"
+          name="canvas-part-1"
+          id="canvas-part-1"
+          min="0"
+          max="100"
+          step="10"
+          class="fill-reverse"
+          style="--_radius: 1rem 0 0 1rem;"
+          :value="min"
+          :style="{ '--_fill': 100 - min }"
+          @input="min = $event.target.value"
+        />
+        <input
+          type="range"
+          name="canvas-part-2"
+          id="canvas-part-2"
+          min="100"
+          max="200"
+          step="10"
+          style="--_radius: 0 1rem 1rem 0;"
+          :value="max"
+          :style="{ '--_fill': max - 100 }"
+          @input="max = $event.target.value"
+        />
+       </label>
       </fieldset>
       <fieldset>
         <meter value="20" min="0" max="100"></meter>
