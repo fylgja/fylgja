@@ -62,14 +62,14 @@ Each option is visible if your using an IDE that supports JSDoc or/and Typescrip
 But here are the options,
 just in case if you don't have an editor with those super powers.
 
-| Option           | Type                                      | default   |
-| ---------------- | ----------------------------------------- | --------- |
-| props            | { [key: string\|number]: string\|number } | ...       |
-| filename         | string                                    | ...       |
-| selector         | string                                    | `":root"` |
-| prefix           | string                                    | `""`      |
-| generationSyntax | string                                    | _(**Note** 1)_   |
-| jsonColorKeys    | string[]                                  | _(**Note** 2)_   |
+| Option           | Type                                      | default    |
+| ---------------- | ----------------------------------------- | ---------- |
+| props            | { [key: string\|number]: string\|number } | ...        |
+| filename         | string                                    | ...        |
+| selector         | string                                    | `":root"`  |
+| prefix           | string                                    | `""`       |
+| generationSyntax | string                                    | **Note** 1 |
+| jsonColorKeys    | string[]                                  | **Note** 2 |
 
 > **Note** 1 If empty the default is based on the file extension
 
