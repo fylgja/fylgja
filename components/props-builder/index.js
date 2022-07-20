@@ -15,10 +15,10 @@ import toTokens from "./src/toTokens.js";
  * @param {Object} options
  * @param {Object} options.props
  * @param {string} options.filename
- * @param {string} [options.selector] default: `:root`
- * @param {string} [options.prefix]
- * @param {string} [options.generationSyntax] default: if empty the default is based on the file extension
- * @param {string[]} [options.jsonColorKeys] default: {defaultColorKeys}
+ * @param {string} options.selector default: `:root`
+ * @param {string} options.prefix
+ * @param {string} options.generationSyntax default: if empty the default is based on the file extension
+ * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
  */
 export const propsBuilder = ({
     props,
