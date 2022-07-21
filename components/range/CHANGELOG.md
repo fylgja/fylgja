@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-07-13
 ### Changed
 - Made range slider a mixin so it's easier to add to scoped classes
 
