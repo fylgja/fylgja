@@ -40,14 +40,14 @@ And comes packing in both HEX and HSL syntax;
 @use "@fylgja/colors" as *;
 
 .style {
-    color: $blue-500;
+    color: $blue-5;
 }
 
 // CSS Syntax
 @use "@fylgja/colors/props";
 
 .style {
-    color: var(--blue-500);
+    color: var(--blue-5);
 }
 ```
 
@@ -57,7 +57,7 @@ And comes packing in both HEX and HSL syntax;
 @import "@fylgja/colors";
 
 .style {
-    color: var(--blue-500);
+    color: var(--blue-5);
 }
 ```
 
@@ -67,7 +67,7 @@ And comes packing in both HEX and HSL syntax;
 import props from "@fylgja/colors"
 
 const style = {
-    color: props.blue[500]
+    color: props.blue[5]
 }
 ```
 
@@ -81,7 +81,7 @@ Instead of importing the default version you can import the hsl version using;
 @import "@fylgja/colors/hsl"; // *
 
 .silver-card {
-    background-color: hsl(var(--blue-gray-400) / 10%);
+    background-color: hsl(var(--blue-gray-4) / 10%);
 }
 ```
 
@@ -90,8 +90,8 @@ Instead of importing the default version you can import the hsl version using;
 Instead of importing all the color options you can import 1 of the many colors, using the following import path;
 
 ```css
-@use "@fylgja/colors/hex/blue"; /* As HEX */
-@use "@fylgja/colors/hsl/blue"; /* As HSL */
+@import "@fylgja/colors/hex/blue"; /* As HEX */
+@import "@fylgja/colors/hsl/blue"; /* As HSL */
 ```
 
 _This only available for the CSS syntax_
