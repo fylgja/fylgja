@@ -46,7 +46,7 @@
     "@fylgja/button": "^1.2.0",
     "@fylgja/card": "^1.1.0",
     "@fylgja/code": "^1.0.2",
-    "@fylgja/colors": "^1.0.0",
+    "@fylgja/colors": "^1.0.1",
     "@fylgja/container": "^1.1.0",
     "@fylgja/control": "^1.1.0",
     "@fylgja/details": "^1.0.3",
@@ -73,7 +73,7 @@
     "@fylgja/theme": "^1.0.0",
     "@fylgja/transform": "^1.1.1",
     "@fylgja/transition": "^1.0.1",
-    "@fylgja/utilpack": "^1.1.1",
+    "@fylgja/utilpack": "^1.2.0",
     "@fylgja/z-layer": "^1.0.1"
   },
   "devDependencies": {
