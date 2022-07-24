@@ -1,3 +1,6 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 // ? Consider swapping this logic with colorjs.io library later, when stable
 
 function hexToHsl(colorInput) {

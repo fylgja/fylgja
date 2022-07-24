@@ -1,3 +1,6 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 import fs from "fs";
 import hexToHsl from "./hexToHsl.js";
 import props from "../index.js";
@@ -6,8 +9,9 @@ import props from "../index.js";
 const propsHsl = {};
 Object.keys(props).forEach((color) => {
     propsHsl[color] = {};
+
     Object.keys(props[color]).forEach((key) => {
-        propsHsl[color][key] = hexToHsl(props[color][key]);
+        propsHsl[color][key + "-hsl"] = hexToHsl(props[color][key]);
     });
 });
 

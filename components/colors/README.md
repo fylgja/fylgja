@@ -3,10 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/colors)](https://www.npmjs.org/package/@fylgja/colors)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-Add a collection of prebuild colors to any project with ease  using Fylgja Colors.
-
-This one of the Fylgja Design Token components,
-that is offered in both SCSS and CSS syntax.
+Add a collection of prebuild colors to any project with ease, using Fylgja Colors.
 
 ## Installation
 
@@ -22,42 +19,79 @@ Then include the component in to your code via;
 @import "@fylgja/colors"; // *
 ```
 
-The Fylgja Colors components also a offers a CSS version for SCSS using;
-
-```scss
-@use "@fylgja/colors/hex";
-```
-
-And also in HSL syntax for both SCSS and CSS;
-
-```scss
-@use "@fylgja/colors/hsl"; // scss
-@import "@fylgja/colors/hsl"; // css
-```
-
 ## How to use
 
-The syntax may differ per language,
-but the keys are always the same.
+This component comes in 3 syntaxes.
 
-### SCSS variables
+- SCSS is offered in both the SCSS and CSS variable syntax
+- CSS is offered as CSS variables
+- Javascript Style Tokens,
+  if you want to use it in a Javascript based environment, like React or Vue.
+
+And comes packing in both HEX and HSL syntax;
+
+### Color options
+
+> **Info**: For a full list of available colors see https://fylgja.dev/components/colors/
+
+### SCSS version
 
 ```scss
-@use "@fylgja/color" as *;
+@use "@fylgja/colors" as *;
 
-.box {
-    background-color: $indigo-800;
-    color: $indigo-50;
+.style {
+    color: $blue-500;
+}
+
+// CSS Syntax
+@use "@fylgja/colors/props";
+
+.style {
+    color: var(--blue-500);
 }
 ```
 
-### CSS variables (for both version)
+### CSS version
 
 ```css
-.box {
-    background-color: var(--indigo-800);
-    color: var(--indigo-50);
+@import "@fylgja/colors";
+
+.style {
+    color: var(--blue-500);
 }
 ```
 
-For a full list of available colors see https://fylgja.dev/components/colors/
+### Javascript
+
+```js
+import props from "@fylgja/colors"
+
+const style = {
+    color: props.blue[500]
+}
+```
+
+### Using HSL syntax
+
+Instead of importing the default version you can import the hsl version using;
+
+```scss
+@use "@fylgja/colors/props.hsl";
+// Or via PostCSS and other options as plain CSS
+@import "@fylgja/colors/colors.hsl"; // *
+
+.silver-card {
+    background-color: hsl(var(--blue-gray-400) / 10%);
+}
+```
+
+### Using a single colors
+
+Instead of importing all the color options you can import 1 of the many colors, using the following import path;
+
+```css
+@use "@fylgja/colors/hex/blue"; /* As HEX */
+@use "@fylgja/colors/hsl/blue"; /* As HSL */
+```
+
+_This only available for the CSS syntax_
