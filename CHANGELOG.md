@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- New components for Design Tokens (CSS props)
+  - aspect-ratio
+  - colors
+  - easing
+  - mq
+  - shadow (will replace elevation in the next release)
+  - sizes
+  - z-layer
+- Add new bundle option specific for Design Tokens (CSS props)
+
+### Changed
+- Updated all packages,
+  this contains too many changes to list here; instead,
+  see each package to learn what has changed.
+
+### Fixed
+- Issue [#40](https://github.com/fylgja/fylgja/issues/40)
+
 ## [1.1.5] - 2022-03-21
 ### Added
 - slim version of full Fylgja package, thats without the utilities,
