@@ -1,0 +1,30 @@
+{
+  "name": "@fylgja/sizes",
+  "version": "1.0.0",
+  "description": "The Fylgja Sizes offers Design Tokens (CSS props) for consistent and semantic sizes, in typography, spacing and general sizes",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "unpkg": "sizes.css",
+  "style": "sizes.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/sizes"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "props",
+    "sizes"
+  ],
+  "scripts": {
+    "build": "node _build.js"
+  },
+  "devDependencies": {
+    "@fylgja/props-builder": "^1.0.0"
+  }
+}
