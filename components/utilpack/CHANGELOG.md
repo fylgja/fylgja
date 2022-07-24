@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-07-24
 ### Changed
 - Moved api logic from index to `_api.scss`
 - Moved border default to top import to slim down the utilpack size
