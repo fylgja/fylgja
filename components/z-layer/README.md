@@ -23,10 +23,8 @@ Then include the component in to your code via;
 
 This component comes in 3 syntaxes.
 
-- SCSS, offered in both:
-  - the SCSS variable syntax
-  - the CSS variable syntax
-- CSS variables
+- SCSS is offered in both the SCSS and CSS variable syntax
+- CSS is offered as CSS variables
 - Javascript Style Tokens,
   if you want to use it in a Javascript based environment, like React or Vue.
 
@@ -115,6 +113,8 @@ This better then changing your own styles,
 to match there ridicules z-index value.
 
 Lets hope 3de party vendors will start to support CSS variables in there CSS 🤞
+
+> **Tip** If you need to scope z-indexes you might want to checkout [CSS Isolation](https://developer.mozilla.org/en-US/docs/Web/CSS/isolation)
 
 ### CSS grid can be layered
 
