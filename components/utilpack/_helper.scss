@@ -5,15 +5,6 @@
 @use "sass:meta";
 @use "@fylgja/mq" as *;
 
-@use "defaults/border" as *;
-@use "defaults/box-alignment" as *;
-@use "defaults/color" as *;
-@use "defaults/flex" as *;
-@use "defaults/layout" as *;
-@use "defaults/sizing" as *;
-@use "defaults/spacers" as *;
-@use "defaults/typography" as *;
-
 // * The separator style can be a safe css separator, the "-" (hyphen)
 // * Or the unsafe css "\\:" (TailwindCSS separator)
 // * Or use a underscore "_".
@@ -23,29 +14,3 @@ $utilpack-breakpoints: $mq-breakpoints !default;
 
 $utilpack: () !default;
 $utilpack-defaults: () !default;
-
-// prettier-ignore
-@if $utilpack-defaults {
-    @each $map in (
-        $utilpack-defaults-border,
-        $utilpack-defaults-box-alignment,
-        $utilpack-defaults-color,
-        $utilpack-defaults-flex,
-        $utilpack-defaults-layout,
-        $utilpack-defaults-sizing,
-        $utilpack-defaults-spacers,
-        $utilpack-defaults-typography,
-    ) {
-        $utilpack-defaults: if(
-            meta.type-of($map) == map,
-            map.merge($map, $utilpack-defaults),
-            $utilpack-defaults
-        );
-    }
-}
-
-$utilpack: if(
-    meta.type-of($utilpack-defaults) == map,
-    map.merge($utilpack-defaults, $utilpack),
-    $utilpack
-);

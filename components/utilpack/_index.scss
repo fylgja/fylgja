@@ -7,6 +7,9 @@
 @use "api" as utilpack;
 @use "helper" as *;
 @use "base";
+@use "defaults" as *;
+
+$utilpack: map.merge($utilpack-defaults, $utilpack) !default;
 
 // Build each util class
 @each $key, $util in $utilpack {
