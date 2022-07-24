@@ -1,4 +1,4 @@
-:root {
+:host {
     --ease-1: cubic-bezier(0.25, 0.1, 0.1, 1);
     --ease-2: cubic-bezier(0.25, 0.1, 0.2, 1);
     --ease-3: cubic-bezier(0.25, 0.1, 0.3, 1);

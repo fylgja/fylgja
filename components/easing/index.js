@@ -34,15 +34,22 @@ export default {
         4: "cubic-bezier(0.7, 0, 0.3, 1)",
         5: "cubic-bezier(0.9, 0, 0.1, 1)",
     },
-    // Custom eases
-    easeElastic: {
+    // easesElastic
+    easeElasticIn: {
+        1: "cubic-bezier(0.5, 0.25, 0.75, -0.25)",
+        2: "cubic-bezier(0.5, 0, 0.75, -0.25)",
+        3: "cubic-bezier(0.5, -0.25, 0.75, -0.25)",
+        4: "cubic-bezier(0.5, -0.5, 0.75, -0.25)",
+        5: "cubic-bezier(0.5, -0.75, 0.75, -0.25)",
+    },
+    easeElasticOut: {
         1: "cubic-bezier(0.5, 0.75, 0.75, 1.25)",
         2: "cubic-bezier(0.5, 1, 0.75, 1.25)",
         3: "cubic-bezier(0.5, 1.25, 0.75, 1.25)",
         4: "cubic-bezier(0.5, 1.5, 0.75, 1.25)",
         5: "cubic-bezier(0.5, 1.75, 0.75, 1.25)",
     },
-    easeSquish: {
+    easeElasticInOut: {
         1: "cubic-bezier(0.5, -0.1, 0.1, 1.5)",
         2: "cubic-bezier(0.5, -0.3, 0.1, 1.5)",
         3: "cubic-bezier(0.5, -0.5, 0.1, 1.5)",

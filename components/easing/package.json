@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/easing",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "The Fylgja easing Design Tokens (CSS props) component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -25,6 +25,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "file:../props-builder"
+    "@fylgja/props-builder": "^1.0.0"
   }
 }
