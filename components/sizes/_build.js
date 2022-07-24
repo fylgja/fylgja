@@ -6,5 +6,5 @@ import props from "./index.js";
 
 propsBuilder({ props, filename: "_index.scss" });
 propsBuilder({ props, filename: "sizes.css" });
-propsBuilder({ props, filename: "sizes.shadow.css", selector: ":host" });
+propsBuilder({ props, filename: "shadowdom.css", selector: ":host" });
 propsBuilder({ props, filename: "_props.scss", generationSyntax: "css" });
