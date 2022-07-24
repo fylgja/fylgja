@@ -67,7 +67,7 @@ $utilpack-padding: $utilpack-spacers !default;
 $utilpack-space: $utilpack-spacers !default;
 
 // stylelint-disable-next-line max-line-length
-$utilpack-space-class-nested: "> :not([hidden]):not(template) ~ :not([hidden]):not(template)" !default;
+$utilpack-space-class-nested: "> :not([hidden], template) ~ :not([hidden], template)" !default;
 
 $utilpack-defaults-spacers: (
     "margin": (

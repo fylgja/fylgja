@@ -10,56 +10,59 @@ $enable-utilpack-divider-print: false !default;
 $enable-utilpack-border-important: false !default;
 $enable-utilpack-divider-important: false !default;
 
-$utilpack-border-style: var(--border-style, solid) !default;
-$utilpack-border-color: var(--border-color, currentcolor) !default;
 $utilpack-border-sizes: (
-    "default": 1px $utilpack-border-style $utilpack-border-color,
+    "default": 1px,
     "0": 0,
-    "2": 2px $utilpack-border-style $utilpack-border-color,
-    "3": 3px $utilpack-border-style $utilpack-border-color,
+    "2": 2px,
+    "3": 3px,
 ) !default;
 
 $utilpack-divider-sizes: (
-    "default": 1px $utilpack-border-style $utilpack-border-color,
+    "default": 1px,
     "none": 0,
 ) !default;
 
 // stylelint-disable-next-line max-line-length
-$utilpack-divider-class-nested: "> :not([hidden]):not(template) ~ :not([hidden]):not(template)" !default;
+$utilpack-divider-class-nested: "> :not([hidden], template) ~ :not([hidden], template)" !default;
 
 $utilpack-defaults-border: (
     "border": (
+        "property": border-width,
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
         "important": $enable-utilpack-border-important,
     ),
     "border-block-start": (
+        "property": border-block-start-width,
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
         "important": $enable-utilpack-border-important,
     ),
     "border-block-end": (
+        "property": border-block-end-width,
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
         "important": $enable-utilpack-border-important,
     ),
     "border-inline-end": (
+        "property": border-inline-end-width,
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
         "important": $enable-utilpack-border-important,
     ),
     "border-inline-start": (
+        "property": border-inline-start-width,
         "values": $utilpack-border-sizes,
         "responsive": $enable-utilpack-border-responsive,
         "print": $enable-utilpack-border-print,
         "important": $enable-utilpack-border-important,
     ),
     "divider-block": (
-        "property": border-block-start,
+        "property": border-block-start-width,
         "class": "divide-y",
         "class-nested": $utilpack-divider-class-nested,
         "values": $utilpack-divider-sizes,
@@ -68,7 +71,7 @@ $utilpack-defaults-border: (
         "important": $enable-utilpack-divider-important,
     ),
     "divider-inline": (
-        "property": border-inline-start,
+        "property": border-inline-start-width,
         "class": "divide-x",
         "class-nested": $utilpack-divider-class-nested,
         "values": $utilpack-divider-sizes,

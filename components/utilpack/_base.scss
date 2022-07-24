@@ -1,9 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "./defaults/border" as *;
+
 // Helper to set common defaults needed for utilpack
 
-[class*="border-"],
-[class*="divider-"] {
+[class*="border"],
+[class*="divide-"] #{$utilpack-divider-class-nested} {
     border: 0 var(--border-style, solid) var(--border-color, currentColor);
 }

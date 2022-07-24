@@ -9,7 +9,7 @@
 @use "base";
 @use "defaults" as *;
 
-$utilpack: map.merge($utilpack-defaults, $utilpack) !default;
+$utilpack: map.merge($utilpack-defaults, $utilpack);
 
 // Build each util class
 @each $key, $util in $utilpack {

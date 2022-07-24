@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Moved api logic from index to `_api.scss`
+- Moved border default to top import to slim down the utilpack size
 
 ### Fixed
+- Unable to use defaults next to the utilpack import ([#96](https://github.com/fylgja/fylgja/pull/96))
 - **[Possible Breaking Change]** Separator key typo in api build and build-item (was sepparator)
 
 ## [1.1.1] - 2021-10-13
