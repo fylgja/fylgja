@@ -30,9 +30,10 @@
     "dev:playground": "npx http-server -s -o",
     "dev:components": "npx sass components:components -w --no-source-map -s compressed -I node_modules",
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
+    "build:pkg:tokens": "npx sass bundles/tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
     "build:pkg:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
     "build:pkg:main": "npx sass bundles/main.scss fylgja.css --no-source-map -s compressed -I node_modules",
-    "build:pkg": "npm run build:pkg:slim & npm run build:pkg:main",
+    "build:pkg": "npm run build:pkg:tokens && npm run build:pkg:slim & npm run build:pkg:main",
     "prebuild": "npm test",
     "build": "npm run build:components && npm run build:pkg"
   },
@@ -42,15 +43,17 @@
     "@fylgja/auto-grid": "^1.0.4",
     "@fylgja/avatar": "^1.0.1",
     "@fylgja/badge": "^1.0.1",
-    "@fylgja/base": "^1.1.0",
+    "@fylgja/base": "^1.1.1",
     "@fylgja/breadcrumbs": "^1.0.1",
     "@fylgja/button": "^1.1.0",
     "@fylgja/card": "^1.1.0",
     "@fylgja/code": "^1.0.2",
+    "@fylgja/colors": "^1.0.0",
     "@fylgja/container": "^1.0.1",
     "@fylgja/control": "^1.1.0",
     "@fylgja/details": "^1.0.3",
-    "@fylgja/dialog": "^1.2.1",
+    "@fylgja/dialog": "^1.2.2",
+    "@fylgja/easing": "^1.0.0",
     "@fylgja/elevation": "^1.0.1",
     "@fylgja/form": "^1.0.7",
     "@fylgja/gradient": "^1.0.2",
@@ -65,16 +68,19 @@
     "@fylgja/scroll-slider": "^1.0.2",
     "@fylgja/scrollbar": "^1.0.0",
     "@fylgja/section": "^1.0.1",
+    "@fylgja/shadow": "^1.0.0",
+    "@fylgja/sizes": "^1.0.0",
     "@fylgja/stretched-link": "^1.0.2",
     "@fylgja/table": "^1.0.1",
     "@fylgja/theme": "^1.0.0",
     "@fylgja/transform": "^1.1.1",
     "@fylgja/transition": "^1.0.1",
-    "@fylgja/utilpack": "^1.1.1"
+    "@fylgja/utilpack": "^1.1.1",
+    "@fylgja/z-layer": "^1.0.0"
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^4.1.1",
-    "sass": "^1.53.0",
-    "stylelint": "^14.9.0"
+    "sass": "^1.54.0",
+    "stylelint": "^14.9.1"
   }
 }
