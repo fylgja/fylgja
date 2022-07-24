@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "sass:meta";
+@use "../helper" as *;
+@use "border" as *;
+@use "box-alignment" as *;
+@use "color" as *;
+@use "flex" as *;
+@use "layout" as *;
+@use "sizing" as *;
+@use "spacers" as *;
+@use "typography" as *;
+
+$utilpack-defaults: map.merge($utilpack-defaults-border, $utilpack-defaults);
+$utilpack-defaults: map.merge(
+    $utilpack-defaults-box-alignment,
+    $utilpack-defaults
+);
+$utilpack-defaults: map.merge($utilpack-defaults-color, $utilpack-defaults);
+$utilpack-defaults: map.merge($utilpack-defaults-flex, $utilpack-defaults);
+$utilpack-defaults: map.merge($utilpack-defaults-layout, $utilpack-defaults);
+$utilpack-defaults: map.merge($utilpack-defaults-sizing, $utilpack-defaults);
+$utilpack-defaults: map.merge($utilpack-defaults-spacers, $utilpack-defaults);
+$utilpack-defaults: map.merge(
+    $utilpack-defaults-typography,
+    $utilpack-defaults
+);
