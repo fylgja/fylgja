@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-07-24
+### Fixed
+- Lint warning
+
 ## [1.1.0] - 2022-06-05
 ### Added
 - block and inline SCSS vars for v2,
