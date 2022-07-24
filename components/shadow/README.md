@@ -76,6 +76,15 @@ this include the values directly on the shadow values.
 
 If you want to add the color base and weight base your self import the default map using `import props from "@fylgja/shadow"`.
 
+### Using safe import options
+
+If for some reason you can not use the CSS version with the `--shadow-color` and `--shadow-weight` variables,
+there is a import option that has these values merged in to the shadow it self.
+
+```css
+@import "@fylgja/shadow/safe";
+```
+
 ## Config
 
 The following variables are available.
