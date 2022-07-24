@@ -1,0 +1,18 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+@layer base {
+    :root {
+        --container-size: #{$container-size};
+        --container-padding-y: #{$container-padding-y};
+        --container-padding-x: #{$container-padding-x};
+    }
+}
+
+@layer components {
+    .container {
+        @include container;
+    }
+}
