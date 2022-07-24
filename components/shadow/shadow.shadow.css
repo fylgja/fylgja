@@ -1,4 +1,4 @@
-:root {
+:host {
     --shadow-color: 0 0% 50%;
     --shadow-weight: 1%;
     --shadow-1: 0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%)), 0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%)), 0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%));

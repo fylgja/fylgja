@@ -1,0 +1,6 @@
+@use "./index" as root;
+
+:root {
+    --shadow-color: #{root.$shadow-color};
+    --shadow-weight: #{root.$shadow-weight};
+}
