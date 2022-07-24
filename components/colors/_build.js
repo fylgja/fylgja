@@ -3,21 +3,21 @@
 
 import { propsBuilder } from "@fylgja/props-builder";
 import props from "./index.js";
-import propsHSL from "./index-hsl.js";
+import propsHSL from "./hsl.js";
 
 // All colors
 propsBuilder({ filename: "_index.scss", props });
 propsBuilder({ filename: "_props.scss", props, generationSyntax: "css" });
 propsBuilder({
-    filename: "_props.hsl.scss",
+    filename: "_hsl.scss",
     props: propsHSL,
     generationSyntax: "css",
 });
 propsBuilder({ filename: "colors.css", props });
-propsBuilder({ filename: "colors.shadow.css", props, selector: ":host" });
-propsBuilder({ filename: "colors.hsl.css", props: propsHSL });
+propsBuilder({ filename: "shadowdom.css", props, selector: ":host" });
+propsBuilder({ filename: "hsl.css", props: propsHSL });
 propsBuilder({
-    filename: "colors.hsl.shadow.css",
+    filename: "hsl/shadowdom.css",
     props: propsHSL,
     selector: ":host",
 });

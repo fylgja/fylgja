@@ -76,9 +76,9 @@ const style = {
 Instead of importing the default version you can import the hsl version using;
 
 ```scss
-@use "@fylgja/colors/props.hsl";
+@use "@fylgja/colors/hsl";
 // Or via PostCSS and other options as plain CSS
-@import "@fylgja/colors/colors.hsl"; // *
+@import "@fylgja/colors/hsl"; // *
 
 .silver-card {
     background-color: hsl(var(--blue-gray-400) / 10%);
