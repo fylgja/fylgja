@@ -63,6 +63,7 @@
     "@fylgja/pagination": "^1.0.2",
     "@fylgja/print": "^1.0.2",
     "@fylgja/progress": "^1.0.1",
+    "@fylgja/range": "^1.0.1",
     "@fylgja/scroll-slider": "^1.0.2",
     "@fylgja/scrollbar": "^1.0.0",
     "@fylgja/section": "^1.0.1",

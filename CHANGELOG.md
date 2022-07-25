@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Range component to main and slim bundle
+
 ## [1.2.0] - 2022-07-24
 ### Added
-- New components for Design Tokens (CSS props)
+- New components for Design Tokens (CSS props);
   - aspect-ratio
   - colors
   - easing
