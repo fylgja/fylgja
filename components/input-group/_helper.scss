@@ -34,7 +34,10 @@ $input-group-styles: (
 ) !default;
 $input-group-styles: map.merge($input-group-styles, $form-styles);
 
-$input-group-border-width: $form-border-width !default;
+$input-group-border-width: var(
+    --form-border-width,
+    #{$form-border-width}
+) !default;
 $input-group-border-style: $form-border-style !default;
 $input-group-border-color: var(--form-stroke, #{$form-border-color}) !default;
 $input-group-radius: var(--form-radius, #{$form-radius}) !default;

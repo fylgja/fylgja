@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-07-26
+### Fixed
+- Double CSS variables
+
 ## [1.1.0] - 2022-06-06
 ### Added
 - The same CSS variables from the `@fylgja/form` to the `input-group` options

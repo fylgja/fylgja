@@ -12,12 +12,11 @@
     display: flex;
     width: 100%;
     min-height: var(--input-group-height);
-    border: var(--form-border-width, #{$input-group-border-width})
-        $input-group-border-style
-        var(--form-stroke, #{$input-group-border-color});
-    border-radius: var(--form-radius, #{$input-group-radius});
-    background-color: var(--form-bg, #{$input-group-bg});
-    color: var(--form-color, #{$input-group-color});
+    border: $input-group-border-width $input-group-border-style
+        $input-group-border-color;
+    border-radius: $input-group-radius;
+    background-color: $input-group-bg;
+    color: $input-group-color;
     overflow: hidden;
 
     &::after {
