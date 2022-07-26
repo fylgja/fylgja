@@ -56,7 +56,7 @@
     "@fylgja/form": "^1.0.7",
     "@fylgja/gradient": "^1.0.2",
     "@fylgja/hashlink": "^1.0.1",
-    "@fylgja/input-group": "^1.1.0",
+    "@fylgja/input-group": "^1.1.1",
     "@fylgja/list": "^1.0.2",
     "@fylgja/menu": "^1.1.2",
     "@fylgja/mq": "^1.1.0",
