@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Updated _Input Group_ to v1.1.1
+- Updated _Input Group_ to v1.1.2
 
 ## [1.2.1] - 2022-07-25
 ### Added
