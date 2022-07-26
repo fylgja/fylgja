@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-07-26
+### Fixed
+- Missing border radius inheritance for focus ring
+
 ## [1.1.1] - 2022-07-26
 ### Fixed
 - Double CSS variables
