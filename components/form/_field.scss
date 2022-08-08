@@ -11,8 +11,8 @@
     display: flex; // *1
     width: 100%;
     padding: var(--form-padding, #{$form-padding});
-    border: var(--form-border-width, #{$form-border-width}) $form-border-style
-        var(--form-stroke, #{$form-border-color});
+    border: var(--form-border-width, #{$form-border-width}) $form-border-style;
+    border-color: var(--form-stroke, #{$form-border-color});
     border-radius: var(--form-radius, #{$form-radius});
     background-color: var(--form-bg, #{$form-bg});
     color: var(--form-color, #{$form-color});

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- border color getting merged with main border, with v2 setup changes
+
 ## [1.0.7] - 2022-06-12
 ### Fixed
 - syntax for `$form-fields` using the newer v2 version already,
