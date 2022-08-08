@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Updated _Input Group_ to v1.1.2
+- Updated _Form_ to v1.0.8
+- Updated _Input Group_ to v1.1.3
+
+### Fixes
+- form bugs see the form and input group components, for what
 
 ## [1.2.1] - 2022-07-25
 ### Added
