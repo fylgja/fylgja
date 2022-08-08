@@ -12,8 +12,8 @@
     display: flex;
     width: 100%;
     min-height: var(--input-group-height);
-    border: $input-group-border-width $input-group-border-style
-        $input-group-border-color;
+    border: $input-group-border-width $input-group-border-style;
+    border-color: $input-group-border-color;
     border-radius: $input-group-radius;
     background-color: $input-group-bg;
     color: $input-group-color;
