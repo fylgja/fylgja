@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added support for both CommonJS and ESM import syntax's
+
 ## [1.0.1] - 2022-07-24
 ### Changed
 - Drop prefixed name from alternative import options

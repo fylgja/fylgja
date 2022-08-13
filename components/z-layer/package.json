@@ -6,9 +6,17 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "index.cjs",
   "unpkg": "z-layer.css",
   "style": "z-layer.css",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
