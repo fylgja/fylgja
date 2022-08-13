@@ -1,14 +1,22 @@
 {
   "name": "@fylgja/shadow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Fylgja shadow offers Design Tokens (CSS props) for consistent and semantic shadows",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "index.cjs",
   "unpkg": "shadow.css",
   "style": "shadow.css",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
