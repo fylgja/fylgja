@@ -1,14 +1,22 @@
 {
   "name": "@fylgja/easing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Fylgja easing Design Tokens (CSS props) component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "index.cjs",
   "unpkg": "easing.css",
   "style": "easing.css",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
