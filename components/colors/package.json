@@ -1,14 +1,22 @@
 {
   "name": "@fylgja/colors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Add a collection of prebuild colors to any project with ease, using Fylgja Colors",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "_index.css",
+  "main": "index.js",
   "unpkg": "colors.css",
   "style": "colors.css",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
