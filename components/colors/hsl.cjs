@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-export default {
+module.exports = {
     gray: {
         "0-hsl": "210 17% 98%",
         "1-hsl": "210 17% 95%",
