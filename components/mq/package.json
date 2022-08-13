@@ -5,7 +5,18 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
+  "type": "module",
+  "main": "index.cjs",
+  "unpkg": "mq.css",
+  "style": "mq.css",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
