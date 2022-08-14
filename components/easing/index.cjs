@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-export default {
+module.exports = {
     // ease = cubic-bezier(0.25,0.1,0.25,1)
     ease: {
         1: "cubic-bezier(0.25, 0.1, 0.1, 1)",
