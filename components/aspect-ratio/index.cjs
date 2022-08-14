@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-export default {
+module.exports = {
     ratio: {
         box: 1, // Its a box
         landscape: "4/3", // The older default video ratio

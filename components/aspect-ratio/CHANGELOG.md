@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-08-14
+### Added
+- Added support for both CommonJS and ESM import syntax's
+
 ## [1.1.0] - 2022-06-05
 ### Added
 - Support for CSS design tokens,
