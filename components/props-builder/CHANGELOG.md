@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2022-08-15
 ### Fixed
 - use case where the scss escape for `/` is not needed,
   by adding an option to disable it,
