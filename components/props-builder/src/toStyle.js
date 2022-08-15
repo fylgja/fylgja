@@ -6,9 +6,15 @@ import kebabCase from "./kebabCase.js";
  * @param {Object} props
  * @param {string} prefix
  * @param {string} varSyntax
+ * @param {boolean} safeMode - if true it will keep scss values in quotes for `/`
  * @returns {{ styles: string[], appendedMeta: string[] }}
  */
-const toStyleTokens = (props, prefix = "", varSyntax = "--") => {
+const toStyleTokens = (
+    props,
+    prefix = "",
+    varSyntax = "--",
+    safeMode = true
+) => {
     const styles = [];
     const indent = varSyntax !== "--" ? "" : "    ";
     let appendedMeta = "";
@@ -33,7 +39,7 @@ const toStyleTokens = (props, prefix = "", varSyntax = "--") => {
 
         // * TEMP: save mode for SCSS / values that need to be quoted,
         // * until SCSS version 2.0, which drops native / calc support
-        if (varSyntax === "$") {
+        if (varSyntax === "$" && safeMode) {
             if (typeof value === "string") {
                 value.includes("/") && (value = `"${value}"`);
             }

@@ -19,6 +19,7 @@ import toTokens from "./src/toTokens.js";
  * @param {string} options.prefix
  * @param {string} options.generationSyntax default: if empty the default is based on the file extension
  * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
+ * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
  */
 export const propsBuilder = ({
     props,
@@ -27,6 +28,7 @@ export const propsBuilder = ({
     prefix = "",
     generationSyntax,
     jsonColorKeys,
+    safeMode = true,
 }) => {
     const mode = generationSyntax || fileType(filename);
     const file = fs.createWriteStream(filename);
@@ -51,7 +53,8 @@ export const propsBuilder = ({
             const { styles: scss, appendedMeta: scssKey } = toStyleTokens(
                 flatProps,
                 prefix,
-                "$"
+                "$",
+                safeMode
             );
             const hasScssValues = scss.length;
             const hasScssFrames = scssKey.length;
