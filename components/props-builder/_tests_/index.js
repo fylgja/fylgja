@@ -2,6 +2,12 @@ import { propsBuilder } from "../index.js";
 
 const prefix = "ftz-";
 const selector = ".fylgja-test-zone";
+const shadowUmbra =
+    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))";
+const shadowPenumbra =
+    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%))";
+const shadowAmbient =
+    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))";
 
 const red = {
     0: "#fff5f5",
@@ -31,6 +37,7 @@ const props = {
     red,
     green,
     blue,
+    shadow: `0 2px 1px -1px ${shadowUmbra}, 0 1px 1px ${shadowPenumbra}, 0 1px 3px ${shadowAmbient}`,
 };
 
 const propsKeys = {
@@ -52,9 +59,13 @@ const propsBoth = {
 // file types for just props
 propsBuilder({ props, filename: "_tests_/_tokens.json" });
 propsBuilder({ props, filename: "_tests_/_tokens.figma-tokens.json" });
-propsBuilder({ props, filename: "_tests_/_tokens.scss" });
+propsBuilder({ props, filename: "_tests_/_tokens.scss", safeMode: false });
 propsBuilder({ props, filename: "_tests_/_tokens.css" });
-propsBuilder({ props, filename: "_tests_/_tokens-prefix.scss", prefix }); // Only works with on props, not keyframes/animations
+propsBuilder({
+    props,
+    filename: "_tests_/_tokens-prefix.scss",
+    prefix,
+}); // Only works with on props, not keyframes/animations
 propsBuilder({ props, filename: "_tests_/_tokens-prefix.css", prefix }); // Only works with on props, not keyframes/animations
 propsBuilder({ props, filename: "_tests_/_tokens-selector.css", selector }); // only works for CSS
 
