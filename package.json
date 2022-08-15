@@ -1,6 +1,6 @@
 {
   "name": "fylgja",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "The modular CSS framework. Powered via CSS components",
   "homepage": "https://fylgja.dev/",
   "repository": "https://github.com/fylgja/fylgja",
@@ -67,7 +67,7 @@
     "@fylgja/scroll-slider": "^1.0.2",
     "@fylgja/scrollbar": "^1.0.0",
     "@fylgja/section": "^1.0.1",
-    "@fylgja/shadow": "^1.0.2",
+    "@fylgja/shadow": "^1.0.3",
     "@fylgja/sizes": "^1.0.2",
     "@fylgja/stretched-link": "^1.1.0",
     "@fylgja/table": "^1.0.1",
