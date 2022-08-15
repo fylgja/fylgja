@@ -33,6 +33,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.0"
+    "@fylgja/props-builder": "^1.0.1"
   }
 }

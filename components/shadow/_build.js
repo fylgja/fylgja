@@ -4,7 +4,7 @@
 import { propsBuilder } from "@fylgja/props-builder";
 import props, { staticShadows } from "./index.js";
 
-propsBuilder({ props, filename: "_index.scss" });
+propsBuilder({ props, filename: "_index.scss", safeMode: false }); // the `/` is not part of a calc so we don't need to escape it
 propsBuilder({ props, filename: "_props.scss", generationSyntax: "css" });
 propsBuilder({ props, filename: "shadowdom.css", selector: ":host" });
 propsBuilder({ props: staticShadows, filename: "safe.css" });
