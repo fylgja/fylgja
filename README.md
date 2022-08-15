@@ -1,12 +1,15 @@
-<h1 align="center">
+<div align="center">
+<h1>
   <a href="https://fylgja.dev/">
     <img src="https://github.com/fylgja/fylgja/blob/main/assets/logo.svg" alt="Fylgja" width="300" height="130">
   </a>
 </h1>
 
 [![NPM version](https://img.shields.io/npm/v/fylgja?logo=npm&style=flat-square)](https://www.npmjs.com/package/fylgja)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fylgja/fylgja/Test?color=%2343a047)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fylgja/fylgja/Test?color=%2343a047&style=flat-square)
 ![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234&style=flat-square)
+
+</div>
 
 Fylgja is a component based CSS framework.
 Allowing you to use only what you need.
