@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added support for both CommonJS and ESM import syntax's
+
+### Changed
+- Updated _Aspect Ratio_ to v1.1.1
+- Updated _Colors_ to v1.0.5
+- Updated _Easing_ to v1.0.3
+- Updated _Mq_ to v1.1.2
+- Updated _Shadow_ to v1.0.2
+- Updated _Sizes_ to v1.0.2
+- Updated _Z-Layer_ to v1.0.2
+
 ## [1.2.2] - 2022-08-09
 ### Changed
 - Updated _Form_ to v1.0.8
