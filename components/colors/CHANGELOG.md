@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 2022-08-16
+### Fixed
+- missing import option for JS hsl syntax
+
 ## [1.0.5] - 2022-08-13
 ### Added
 - Added support for both CommonJS and ESM import syntax's

@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/colors",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Add a collection of prebuild colors to any project with ease, using Fylgja Colors",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -15,6 +15,11 @@
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
+    },
+    "./hsl": {
+      "import": "./hsl.js",
+      "require": "./hsl.cjs",
+      "default": "./hsl.cjs"
     }
   },
   "repository": {
