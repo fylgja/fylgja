@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.5] - 2022-08-16
+### Fixed
+- Missing import option for JS hsl syntax in colors
+
+### Changed
+- Updated _Colors_ to v1.0.6
+
 ## [1.2.4] - 2022-08-15
 ### Fixed
 - Quotes on scss variables for shadow

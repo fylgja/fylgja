@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.6] - 2022-08-16
 ### Fixed
-- missing import option for JS hsl syntax
+- Missing import option for JS hsl syntax
 
 ## [1.0.5] - 2022-08-13
 ### Added
