@@ -5,6 +5,7 @@ import kebabCase from "./kebabCase.js";
  *
  * @param {Object} props
  * @param {string} prefix
+ * @param {string} suffix
  * @param {string} varSyntax
  * @param {boolean} safeMode - if true it will keep scss values in quotes for `/`
  * @returns {{ styles: string[], appendedMeta: string[] }}
@@ -12,6 +13,7 @@ import kebabCase from "./kebabCase.js";
 const toStyleTokens = (
     props,
     prefix = "",
+    suffix = "",
     varSyntax = "--",
     safeMode = true
 ) => {
@@ -33,9 +35,7 @@ const toStyleTokens = (
         }
 
         name = kebabCase(name);
-        const varName = prefix
-            ? `${varSyntax}${prefix}${name}`
-            : `${varSyntax}${name}`;
+        const varName = `${varSyntax}${prefix}${name}${suffix}`;
 
         // * TEMP: save mode for SCSS / values that need to be quoted,
         // * until SCSS version 2.0, which drops native / calc support

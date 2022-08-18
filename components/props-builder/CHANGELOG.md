@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- suffix support
+
 ## [1.0.1] - 2022-08-15
 ### Fixed
 - use case where the scss escape for `/` is not needed,

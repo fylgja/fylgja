@@ -17,6 +17,7 @@ import toTokens from "./src/toTokens.js";
  * @param {string} options.filename
  * @param {string} options.selector default: `:root`
  * @param {string} options.prefix
+ * @param {string} options.suffix
  * @param {string} options.generationSyntax default: if empty the default is based on the file extension
  * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
  * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
@@ -26,6 +27,7 @@ export const propsBuilder = ({
     filename = "tokens.css",
     selector = ":root",
     prefix = "",
+    suffix = "",
     generationSyntax,
     jsonColorKeys,
     safeMode = true,
@@ -53,6 +55,7 @@ export const propsBuilder = ({
             const { styles: scss, appendedMeta: scssKey } = toStyleTokens(
                 flatProps,
                 prefix,
+                suffix,
                 "$",
                 safeMode
             );
@@ -73,7 +76,8 @@ export const propsBuilder = ({
         case "css":
             const { styles: css, appendedMeta: cssKey } = toStyleTokens(
                 flatProps,
-                prefix
+                prefix,
+                suffix
             );
             const hasCssValues = css.length;
             const hasCssFrames = cssKey.length;
