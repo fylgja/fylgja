@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Dropped hsl suffix in JS map
+
 ## [1.0.6] - 2022-08-16
 ### Fixed
 - Missing import option for JS hsl syntax

@@ -12,14 +12,16 @@ propsBuilder({
     filename: "_hsl.scss",
     props: propsHSL,
     generationSyntax: "css",
+    suffix: "-hsl",
 });
 propsBuilder({ filename: "colors.css", props });
 propsBuilder({ filename: "shadowdom.css", props, selector: ":host" });
-propsBuilder({ filename: "hsl.css", props: propsHSL });
+propsBuilder({ filename: "hsl.css", props: propsHSL, suffix: "-hsl" });
 propsBuilder({
     filename: "hsl/shadowdom.css",
     props: propsHSL,
     selector: ":host",
+    suffix: "-hsl",
 });
 
 // Only 1 color set for each color group
@@ -39,10 +41,12 @@ Object.entries(propsHSL).map(([key, value]) => {
     propsBuilder({
         filename: `hsl/${key}.css`,
         props: { [key]: value },
+        suffix: "-hsl",
     });
     propsBuilder({
         filename: `hsl/${key}.shadow.css`,
         props: { [key]: value },
         selector: ":host",
+        suffix: "-hsl",
     });
 });
