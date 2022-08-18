@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/props-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build your own Design Tokens (CSS props) with ease",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
