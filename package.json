@@ -1,6 +1,6 @@
 {
   "name": "fylgja",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "The modular CSS framework. Powered via CSS components",
   "homepage": "https://fylgja.dev/",
   "repository": "https://github.com/fylgja/fylgja",
@@ -46,7 +46,7 @@
     "@fylgja/button": "^1.2.0",
     "@fylgja/card": "^1.1.0",
     "@fylgja/code": "^1.0.2",
-    "@fylgja/colors": "^1.0.6",
+    "@fylgja/colors": "^1.0.7",
     "@fylgja/container": "^1.1.0",
     "@fylgja/control": "^1.1.0",
     "@fylgja/details": "^1.0.3",
@@ -78,8 +78,8 @@
     "@fylgja/z-layer": "^1.0.2"
   },
   "devDependencies": {
-    "@fylgja/stylelint-config": "^4.1.1",
+    "@fylgja/stylelint-config": "^4.2.0",
     "sass": "^1.54.0",
-    "stylelint": "^14.9.1"
+    "stylelint": "^14.10.0"
   }
 }

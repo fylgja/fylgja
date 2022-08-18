@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.6] - 2022-08-18
+### Changed
+- Updated _Colors_ to v1.0.7
+
 ## [1.2.5] - 2022-08-16
 ### Fixed
 - Missing import option for JS hsl syntax in colors
