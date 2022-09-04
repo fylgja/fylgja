@@ -1,0 +1,41 @@
+{
+  "name": "@fylgja/tokens",
+  "version": "0.1.0",
+  "description": "A collection of all Fylgja tokens offered for specific design tools or frameworks.",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "type": "module",
+  "main": "fylgja.tokens.json",
+  "unpkg": "fylgja.tokens.json",
+  "exports": {
+    "./json": "./fylgja.tokens.json",
+    "./tokens": "./fylgja.tokens.json",
+    "./design-tokens": "./fylgja.tokens.json",
+    "./tailwind": "./fylgja.tailwind.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/tokens"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "props"
+  ],
+  "scripts": {
+    "build": "node _build.js"
+  },
+  "devDependencies": {
+    "@fylgja/aspect-ratio": "^1.1.1",
+    "@fylgja/colors": "^1.0.7",
+    "@fylgja/easing": "^1.0.3",
+    "@fylgja/mq": "^1.1.2",
+    "@fylgja/props-builder": "^1.0.2",
+    "@fylgja/shadow": "^1.0.3",
+    "@fylgja/sizes": "^1.0.2",
+    "@fylgja/z-layer": "^1.0.2"
+  }
+}
