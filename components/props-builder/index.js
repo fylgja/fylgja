@@ -21,6 +21,7 @@ import toTokens from "./src/toTokens.js";
  * @param {string} options.generationSyntax default: if empty the default is based on the file extension
  * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
  * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
+ * @param {string} options.wrapperName - if set it will be used as wrapper for json tokens
  */
 export const propsBuilder = ({
     props,
@@ -31,6 +32,7 @@ export const propsBuilder = ({
     generationSyntax,
     jsonColorKeys,
     safeMode = true,
+    wrapperName = "",
 }) => {
     const mode = generationSyntax || fileType(filename);
     const file = fs.createWriteStream(filename);
@@ -40,7 +42,10 @@ export const propsBuilder = ({
     switch (mode) {
         case "figma":
             const figmaMode = true;
-            const figmaTokens = toTokens(jsonProps, jsonColorKeys, figmaMode);
+            const figmaSrc = toTokens(jsonProps, jsonColorKeys, figmaMode);
+            const figmaTokens = wrapperName
+                ? { [wrapperName]: figmaSrc }
+                : figmaSrc;
             file.write(JSON.stringify(figmaTokens, null, 2));
             file.write("\n");
             break;
