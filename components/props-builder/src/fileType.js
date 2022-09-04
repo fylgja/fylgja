@@ -6,12 +6,15 @@
  */
 function fileType(filename) {
     const figmaMode = filename.endsWith(".figma-tokens.json");
+    const tokensMode = filename.endsWith(".tokens.json");
     const jsonMode = filename.endsWith(".json");
     const scssMode = filename.endsWith(".scss");
     const cssMode = filename.endsWith(".css");
 
     return figmaMode
         ? "figma"
+        : tokensMode
+        ? "tokens"
         : jsonMode
         ? "json"
         : scssMode

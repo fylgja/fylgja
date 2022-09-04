@@ -45,9 +45,14 @@ export const propsBuilder = ({
             file.write("\n");
             break;
 
-        case "json":
+        case "tokens":
             const jsonTokens = toTokens(jsonProps, jsonColorKeys);
             file.write(JSON.stringify(Object.fromEntries(jsonTokens), null, 2));
+            file.write("\n");
+            break;
+
+        case "json":
+            file.write(JSON.stringify(props, null, 2));
             file.write("\n");
             break;
 
