@@ -1,8 +1,9 @@
 const defaultColorKeys = [
     "gray",
+    "blueGray",
     "red",
     "pink",
-    "grape",
+    "purple",
     "violet",
     "indigo",
     "blue",
