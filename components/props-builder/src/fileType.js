@@ -6,9 +6,9 @@
  */
 function fileType(filename) {
     const figmaMode =
-        filename.endsWith(".figma-tokens.json") ||
-        filename.endsWith(".figma-tokens.sync.json");
-    const tokensMode = filename.endsWith(".tokens.json");
+        filename.endsWith("figma-tokens.json") ||
+        filename.endsWith("figma-tokens.sync.json");
+    const tokensMode = filename.endsWith("tokens.json");
     const jsonMode = filename.endsWith(".json");
     const scssMode = filename.endsWith(".scss");
     const cssMode = filename.endsWith(".css");
