@@ -18,14 +18,14 @@ or download the tokens trough the github repo.
 These tokens can be used with any design tool that follows the new [design tokens specification](https://design-tokens.github.io/community-group/format/).
 
 ```
-https://unpkg.com/@fylgja/tokens/fylgja.tokens.json
+https://unpkg.com/@fylgja/tokens/tokens.json
 ```
 
 These tokens are specific for [Figma compatibility](https://github.com/six7/figma-tokens);
 
 ```
-https://unpkg.com/@fylgja/tokens/fylgja.figma-tokens.json
-https://unpkg.com/@fylgja/tokens/fylgja.figma-tokens.sync.json
+https://unpkg.com/@fylgja/tokens/figma-tokens.json
+https://unpkg.com/@fylgja/tokens/figma-tokens.sync.json
 ```
 
 ### Javascript token based systems like Tailwind
@@ -37,17 +37,17 @@ npm install @fylgja/tokens
 Afterward, include the tokens into your code using;
 
 ```js
-const props = require("@fylgja/fylgja.tokens.json"); // cjs
+const props = require("@fylgja/tokens/tokens.json"); // cjs
 // Or
-import props from "@fylgja/fylgja.tokens.json"; // mjs
+import props from "@fylgja/tokens/tokens.json"; // mjs
 ```
 
 These tokens are specific for Tailwind compatibility:
 
 ```js
-const props = require("@fylgja/fylgja.tailwind.json"); // cjs
+const props = require("@fylgja/tokens/tailwind"); // cjs
 // Or
-import props from "@fylgja/fylgja.tailwind.json"; // mjs
+import props from "@fylgja/tokens/tailwind"; // mjs
 ```
 
 ## How to use

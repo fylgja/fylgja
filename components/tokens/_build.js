@@ -24,11 +24,11 @@ const props = {
     ...colors,
 };
 
-propsBuilder({ props, filename: "fylgja.tokens.json" });
-propsBuilder({ props, filename: "fylgja.figma-tokens.json" });
+propsBuilder({ props, filename: "tokens.json" });
+propsBuilder({ props, filename: "figma-tokens.json" });
 propsBuilder({
     props,
-    filename: "fylgja.figma-tokens.sync.json",
+    filename: "figma-tokens.sync.json",
     wrapperName: "fylgja",
 });
 
@@ -76,5 +76,5 @@ propsBuilder({
             orange: renameKeys(newColorKeys, colors.orange),
         },
     },
-    filename: "fylgja.tailwind.json",
+    filename: "tailwind.json",
 });
