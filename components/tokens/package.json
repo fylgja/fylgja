@@ -1,18 +1,19 @@
 {
   "name": "@fylgja/tokens",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A collection of all Fylgja tokens offered for specific design tools or frameworks.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "fylgja.tokens.json",
-  "unpkg": "fylgja.tokens.json",
+  "main": "tokens.json",
+  "unpkg": "tokens.json",
   "exports": {
-    "./json": "./fylgja.tokens.json",
-    "./tokens": "./fylgja.tokens.json",
-    "./design-tokens": "./fylgja.tokens.json",
-    "./tailwind": "./fylgja.tailwind.json"
+    "./json": "./tokens.json",
+    "./tokens": "./tokens.json",
+    "./design-tokens": "./tokens.json",
+    "./figma": "./figma-tokens.json",
+    "./tailwind": "./tailwind.json"
   },
   "repository": {
     "type": "git",

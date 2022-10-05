@@ -37,10 +37,12 @@ npm install @fylgja/tokens
 Afterward, include the tokens into your code using;
 
 ```js
-const props = require("@fylgja/tokens/tokens.json"); // cjs
+const props = require("@fylgja/tokens/tokens"); // cjs
 // Or
-import props from "@fylgja/tokens/tokens.json"; // mjs
+import props from "@fylgja/tokens/tokens"; // mjs
 ```
+
+_Aliases: `json` or `design-tokens`_
 
 These tokens are specific for Tailwind compatibility:
 
