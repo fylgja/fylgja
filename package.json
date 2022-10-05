@@ -7,7 +7,7 @@
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
+  "main": "index.scss",
   "unpkg": "fylgja.css",
   "style": "fylgja.css",
   "keywords": [
@@ -18,7 +18,8 @@
     "modular"
   ],
   "files": [
-    "*.{css,scss}"
+    "*.{css,scss}",
+    "bundles/*.{css,scss}"
   ],
   "scripts": {
     "start": "npm run dev",
@@ -30,7 +31,7 @@
     "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
     "build:pkg:tokens": "npx sass bundles/tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
     "build:pkg:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
-    "build:pkg:main": "npx sass bundles/main.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build:pkg:main": "npx sass index.scss fylgja.css --no-source-map -s compressed -I node_modules",
     "build:pkg": "npm run build:pkg:tokens && npm run build:pkg:slim & npm run build:pkg:main",
     "prebuild": "npm test",
     "build": "npm run build:components && npm run build:pkg"

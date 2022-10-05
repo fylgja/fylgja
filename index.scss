@@ -2,10 +2,10 @@
 // Licensed under MIT Open Source
 
 // Design Tokens
-@forward "props";
+@forward "./bundles/props";
 
 // Components
-@forward "components";
+@forward "./bundles/components";
 
 // Utilities
-@forward "utils";
+@forward "./bundles/utils";
