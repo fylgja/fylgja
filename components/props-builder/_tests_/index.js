@@ -57,8 +57,9 @@ const propsBoth = {
 };
 
 // file types for just props
-propsBuilder({ props, filename: "_tests_/_tokens.json" });
-propsBuilder({ props, filename: "_tests_/_tokens.figma-tokens.json" });
+propsBuilder({ props, filename: "_tests_/_fylgja.props.json" });
+propsBuilder({ props, filename: "_tests_/_fylgja.tokens.json" });
+propsBuilder({ props, filename: "_tests_/_fylgja.tokens.figma-tokens.json" });
 propsBuilder({ props, filename: "_tests_/_tokens.scss", safeMode: false });
 propsBuilder({ props, filename: "_tests_/_tokens.css" });
 propsBuilder({
