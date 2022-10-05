@@ -114,14 +114,18 @@ $dialog-offcanvas-radius: 0 !default;
 /// @param {String} $position - inline position where it opens from
 /// @return {Mixed} - Dialog offcanvas styles
 @mixin dialog-offcanvas($position: start) {
+    $isStart: $position == start;
     @if (length($position) > 1) {
         @error "$position can only accept 1 value";
     }
-    $offset: if($position == start, -100%, 100%);
-    $offset-rtl: if($position == start, 100%, -100%);
+    $offset: if($isStart, -100%, 100%);
+    $offset-rtl: if($isStart, 100%, -100%);
+    $radius: 0 #{$dialog-radius} #{$dialog-radius} 0;
+    $radius-rtl: #{$dialog-radius} 0 0 #{$dialog-radius};
     --dialog-height: 100%;
     --dialog-max-height: 100%;
     --dialog-translate: translateX(#{$offset});
+    --dialog-radius: #{if($isStart, $radius, $radius-rtl)};
     --dialog-border: #{$dialog-offcanvas-radius};
     margin-inline-#{$position}: 0;
     top: 0; // *1
@@ -130,6 +134,7 @@ $dialog-offcanvas-radius: 0 !default;
 
     [dir="rtl"] &,
     &[dir="rtl"] {
+        --dialog-radius: #{if($isStart, $radius-rtl, $radius)};
         --dialog-translate: translateX(#{$offset-rtl});
     }
 }

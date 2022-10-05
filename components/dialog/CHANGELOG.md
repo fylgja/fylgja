@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Border radius in offcanvas alway on all sides
+
 ## [1.2.2] - 2022-06-27
 ### Fixed
 - Border radius in offcanvas being static instead a CSS variable
