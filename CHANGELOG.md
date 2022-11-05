@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Updated _Dialog_ to v1.2.3
-- Updated _aria-only_ to v1.2.0
+- Updated _Aria-only_ to v1.2.1
+- Updated _button_ to v1.2.2
 
 ## [1.2.6] - 2022-08-18
 ### Changed
