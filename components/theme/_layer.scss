@@ -1,0 +1,15 @@
+/// Helper for setting `@layer` to any component if the var is true
+/// Mainly used to build the `@layer` variant for each Fylgja component
+///
+/// @param {Boolean} $use - if to use `@layer` or just return
+/// @param {String} $name - the name of the `@layer`
+/// @return {Mixed} - inner styles
+@mixin atLayer($use: false, $name: components) {
+    @if $enable-container-layer {
+        @layer #{$container-layer-name} {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

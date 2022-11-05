@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `$base-spacing` for v2 that will replace `$item-spacer`
 - `$action-[padding/border-width]` for global variables for buttons and forms in SCSS
+- `atLayer` mixin for easier adding the `@layer` variant to Fylgja
 
 ## [1.0.0] - 2021-06-22
 Initial Release 🎉
