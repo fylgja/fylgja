@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/aria-only",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The aria-only (a.k.a. sr-only) visually hides elements. But keeps it accessible to screen-readers and other aria tools",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
