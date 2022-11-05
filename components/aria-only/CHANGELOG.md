@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- aria-only-focusable now also visible if it has focus within
 ## [1.1.1] - 2022-06-05
 ### Changed
 - Import path for CSS mq version,

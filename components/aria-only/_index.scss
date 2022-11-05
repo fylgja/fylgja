@@ -9,7 +9,7 @@
 @use "helper" as *;
 
 .aria-only,
-.aria-only-focusable:not(:focus) {
+.aria-only-focusable:not(:focus, :focus-within) {
     @include aria-only($enable-aria-only-important);
 }
 
