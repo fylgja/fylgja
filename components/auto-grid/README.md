@@ -88,6 +88,10 @@ Do you want more control over the Auto Grid CSS variables,
 modify the following SCSS variables.
 
 ```scss
+$enable-auto-grid-layer: false !default;
+
+$auto-grid-layer-name: components !default;
+
 $auto-grid-cols: 250px !default;
 $auto-grid-gap: 1em !default;
 ```
