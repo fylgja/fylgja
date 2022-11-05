@@ -20,6 +20,17 @@ Then include the component in to your code via;
 @import "@fylgja/container";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/container" with ($enable-container-layer: true);
+// Or via PostCSS import
+@import "@fylgja/container/layer";
+```
+
 ## How to use
 
 To use the container create element with the class `.container`.
