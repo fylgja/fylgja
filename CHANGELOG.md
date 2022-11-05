@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Missing import option for bundles and root index.scss
 
+### Changed
+- Updated _Dialog_ to v1.2.3
+
 ## [1.2.6] - 2022-08-18
 ### Changed
 - Updated _Colors_ to v1.0.7
