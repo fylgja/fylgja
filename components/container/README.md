@@ -61,6 +61,10 @@ Want direct control on the base styles,
 Here are the following SCSS variables can you modify.
 
 ```scss
+$enable-container-layer: false !default;
+
+$container-layer-name: components !default;
+
 $container-size: 1280px !default;
 $container-padding-y: 0 !default;
 $container-padding-x: 1.25rem !default;
