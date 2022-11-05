@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.1.2] - 2022-11-05
+### Added
+- `@layer` support
+
 ### Fixed
 - aria-only-focusable now also visible if it has focus within
 - imports for PostCSS import [#121](https://github.com/fylgja/fylgja/issues/121)

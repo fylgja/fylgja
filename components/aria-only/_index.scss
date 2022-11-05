@@ -8,25 +8,37 @@
 @forward "helper";
 @use "helper" as *;
 
-.aria-only,
-.aria-only-focusable:not(:focus, :focus-within) {
-    @include aria-only($enable-aria-only-important);
+/// Helper for setting @layer or any wrappers to the aria-only
+@mixin aria-only-wrapper {
+    @if $enable-aria-only-layer {
+        @layer #{$aria-only-layer-name} {
+            @content;
+        }
+    } @else {
+        @content;
+    }
 }
 
-@if $enable-aria-only-mq {
-    // Build each util class in a specific min-width mq
-    @each $mq-name, $mq in $aria-only-breakpoints {
-        @media (min-width: $mq) {
-            .#{$mq-name}#{$aria-only-separator} {
-                &aria-only {
-                    @include aria-only($enable-aria-only-important);
-                }
+@include aria-only-wrapper {
+    .aria-only,
+    .aria-only-focusable:not(:focus, :focus-within) {
+        @include aria-only($enable-aria-only-important);
+    }
 
-                &not-aria-only {
-                    @include aria-only(
-                        $enable-aria-only-important,
-                        $unset: true
-                    );
+    @if $enable-aria-only-mq {
+        @each $mq-name, $mq in $aria-only-breakpoints {
+            @media (min-width: $mq) {
+                .#{$mq-name}#{$aria-only-separator} {
+                    &aria-only {
+                        @include aria-only($enable-aria-only-important);
+                    }
+
+                    &not-aria-only {
+                        @include aria-only(
+                            $enable-aria-only-important,
+                            $unset: true
+                        );
+                    }
                 }
             }
         }
