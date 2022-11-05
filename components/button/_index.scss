@@ -4,17 +4,30 @@
 @forward "helper";
 @use "helper" as *;
 
-@if $enable-native-btn {
-    :is(.btn, button) {
-        @include btn;
+/// Helper for setting @layer or any wrappers to the btn
+@mixin btn-wrapper {
+    @if $enable-btn-layer {
+        @layer #{$btn-layer-name} {
+            @content;
+        }
+    } @else {
+        @content;
     }
+}
 
-    .btn {
-        @include btn-variants;
-    }
-} @else {
-    .btn {
-        @include btn;
-        @include btn-variants;
+@include btn-wrapper {
+    @if $enable-native-btn {
+        :is(.btn, button) {
+            @include btn;
+        }
+
+        .btn {
+            @include btn-variants;
+        }
+    } @else {
+        .btn {
+            @include btn;
+            @include btn-variants;
+        }
     }
 }
