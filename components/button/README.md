@@ -25,6 +25,17 @@ Then include the component in to your code via;
 @import "@fylgja/button";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/button" with ($enable-aria-only-layer: true);
+// Or via PostCSS import
+@import "@fylgja/button/layer";
+```
+
 ## How to use
 
 In your html you only need the `.btn` class to use the button style.
