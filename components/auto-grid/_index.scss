@@ -4,6 +4,19 @@
 @forward "helper";
 @use "helper" as *;
 
-.auto-grid {
-    @include build-auto-grid;
+/// Helper for setting @layer or any wrappers to the auto-grid
+@mixin auto-grid-wrapper {
+    @if $enable-auto-grid-layer {
+        @layer #{$auto-grid-layer-name} {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@include auto-grid-wrapper {
+    .auto-grid {
+        @include build-auto-grid;
+    }
 }

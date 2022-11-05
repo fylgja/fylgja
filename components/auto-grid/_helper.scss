@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$enable-auto-grid-layer: false !default;
+
+$auto-grid-layer-name: components !default;
+
 $auto-grid-cols: 250px !default;
 $auto-grid-gap: 1em !default;
 
