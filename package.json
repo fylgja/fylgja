@@ -24,17 +24,15 @@
   "scripts": {
     "start": "npm run dev",
     "test:css": "npx stylelint components/**/*.scss",
-    "test": "npm run test:css",
-    "dev": "npm run dev:playground | npm run dev:components",
+    "test:postcss": "npx postcss -u postcss-import -d _tests/temp/ _tests/*.css --no-map",
+    "test": "npm run test:css && npm run test:postcss",
     "dev:playground": "npx http-server -s -o",
-    "dev:components": "npx sass components:components -w --no-source-map -s compressed -I node_modules",
-    "build:components": "npx sass components:components --no-source-map -s compressed -I node_modules",
-    "build:pkg:tokens": "npx sass bundles/tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
-    "build:pkg:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
-    "build:pkg:main": "npx sass index.scss fylgja.css --no-source-map -s compressed -I node_modules",
-    "build:pkg": "npm run build:pkg:tokens && npm run build:pkg:slim & npm run build:pkg:main",
-    "prebuild": "npm test",
-    "build": "npm run build:components && npm run build:pkg"
+    "dev": "npm run dev:playground",
+    "build:tokens": "npx sass bundles/tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
+    "build:slim": "npx sass bundles/slim.scss fylgja-slim.css --no-source-map -s compressed -I node_modules",
+    "build:main": "npx sass index.scss fylgja.css --no-source-map -s compressed -I node_modules",
+    "build": "npm run build:tokens && npm run build:slim & npm run build:main",
+    "prebuild": "npm test"
   },
   "dependencies": {
     "@fylgja/aria-only": "^1.1.1",
