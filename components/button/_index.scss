@@ -1,21 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "@fylgja/theme/layer" as theme;
 @forward "helper";
 @use "helper" as *;
 
-/// Helper for setting @layer or any wrappers to the btn
-@mixin btn-wrapper {
-    @if $enable-btn-layer {
-        @layer #{$btn-layer-name} {
-            @content;
-        }
-    } @else {
-        @content;
-    }
-}
-
-@include btn-wrapper {
+@include theme.atLayer($enable-btn-layer, $btn-layer-name) {
     @if $enable-native-btn {
         :is(.btn, button) {
             @include btn;
