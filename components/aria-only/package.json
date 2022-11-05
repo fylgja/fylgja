@@ -23,9 +23,10 @@
     "visually-hidden"
   ],
   "scripts": {
-    "build:mq": "npx sass mq.scss mq.css --no-source-map -s compressed -I node_modules && npm run build:mq:legacy",
+    "build:mq:new": "npx sass src/mq.scss mq.css --no-source-map -s compressed -I node_modules",
     "build:mq:legacy": "cp mq.css aria-only-mq.css",
-    "build:main": "npx sass aria-only.scss aria-only.css --no-source-map -s compressed -I node_modules",
+    "build:mq": "npm run build:mq:new && npm run build:mq:legacy",
+    "build:main": "npx sass src/main.scss aria-only.css --no-source-map -s compressed -I node_modules",
     "build": "npm run build:mq && npm run build:main"
   },
   "dependencies": {
