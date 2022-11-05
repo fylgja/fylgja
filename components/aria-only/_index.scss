@@ -5,21 +5,11 @@
 // See: http://a11yproject.com/posts/how-to-hide-content
 // See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
 
+@use "@fylgja/theme/layer" as theme;
 @forward "helper";
 @use "helper" as *;
 
-/// Helper for setting @layer or any wrappers to the aria-only
-@mixin aria-only-wrapper {
-    @if $enable-aria-only-layer {
-        @layer #{$aria-only-layer-name} {
-            @content;
-        }
-    } @else {
-        @content;
-    }
-}
-
-@include aria-only-wrapper {
+@include theme.atLayer($enable-aria-only-layer, $aria-only-layer-name) {
     .aria-only,
     .aria-only-focusable:not(:focus, :focus-within) {
         @include aria-only($enable-aria-only-important);
