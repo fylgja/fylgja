@@ -24,8 +24,7 @@
   "scripts": {
     "start": "npm run dev",
     "test:css": "npx stylelint components/**/*.scss",
-    "test:postcss": "npx postcss -u postcss-import -d _tests/temp/ _tests/*.css --no-map",
-    "test": "npm run test:css && npm run test:postcss",
+    "test": "npm run test:css",
     "dev:playground": "npx http-server -s -o",
     "dev": "npm run dev:playground",
     "build:tokens": "npx sass bundles/tokens.scss fylgja-tokens.css --no-source-map -s compressed -I node_modules",
