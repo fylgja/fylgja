@@ -35,7 +35,7 @@
     "prebuild": "npm test"
   },
   "dependencies": {
-    "@fylgja/aria-only": "^1.1.1",
+    "@fylgja/aria-only": "^1.2.0",
     "@fylgja/aspect-ratio": "^1.1.1",
     "@fylgja/auto-grid": "^1.1.0",
     "@fylgja/avatar": "^1.0.1",
