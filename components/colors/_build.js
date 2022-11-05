@@ -5,7 +5,9 @@ import { propsBuilder } from "@fylgja/props-builder";
 import props from "./index.js";
 import propsHSL from "./hsl.js";
 
-// All colors
+const hslSuffix = "-hsl";
+
+// All colors, scss
 propsBuilder({ filename: "_index.scss", props });
 propsBuilder({ filename: "_props.scss", props, generationSyntax: "css" });
 propsBuilder({
@@ -14,14 +16,18 @@ propsBuilder({
     generationSyntax: "css",
     suffix: "-hsl",
 });
+
+// All colors, css
 propsBuilder({ filename: "colors.css", props });
-propsBuilder({ filename: "shadowdom.css", props, selector: ":host" });
-propsBuilder({ filename: "hsl.css", props: propsHSL, suffix: "-hsl" });
+propsBuilder({ filename: "hsl.css", props: propsHSL, suffix: hslSuffix });
+
+// All colors, Shadow dom
+propsBuilder({ filename: "hex.host.css", props, selector: ":host" });
 propsBuilder({
-    filename: "hsl/shadowdom.css",
+    filename: "hsl.host.css",
     props: propsHSL,
     selector: ":host",
-    suffix: "-hsl",
+    suffix: hslSuffix,
 });
 
 // Only 1 color set for each color group
@@ -31,7 +37,7 @@ Object.entries(props).map(([key, value]) => {
         props: { [key]: value },
     });
     propsBuilder({
-        filename: `hex/${key}.shadow.css`,
+        filename: `hex/${key}.host.css`,
         props: { [key]: value },
         selector: ":host",
     });
@@ -41,12 +47,12 @@ Object.entries(propsHSL).map(([key, value]) => {
     propsBuilder({
         filename: `hsl/${key}.css`,
         props: { [key]: value },
-        suffix: "-hsl",
+        suffix: hslSuffix,
     });
     propsBuilder({
-        filename: `hsl/${key}.shadow.css`,
+        filename: `hsl/${key}.host.css`,
         props: { [key]: value },
         selector: ":host",
-        suffix: "-hsl",
+        suffix: hslSuffix,
     });
 });

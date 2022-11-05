@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.8] - 2022-11-05
+### Changed
+- shadow dom naming from shadow to host, use now as `blue.host.css`
+
 ## [1.0.7] - 2022-08-18
 ### Fixed
 - Dropped hsl suffix in JS map
