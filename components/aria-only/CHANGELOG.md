@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-11-05
+### Fixed
 - aria-only-focusable now also visible if it has focus within
+- imports for PostCSS import [#121](https://github.com/fylgja/fylgja/issues/121)
+
 ## [1.1.1] - 2022-06-05
 ### Changed
 - Import path for CSS mq version,
