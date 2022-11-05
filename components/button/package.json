@@ -17,8 +17,7 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "button",
-    "cascade-layer"
+    "button"
   ],
   "scripts": {
     "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
