@@ -2,14 +2,18 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-:root {
-    --container-size: #{$container-size};
-    --container-padding-y: #{$container-padding-y};
-    --container-padding-x: #{$container-padding-x};
-}
+@include theme.atLayer($enable-container-layer, $container-layer-name) {
+    :root {
+        --container-size: #{$container-size};
+        --container-padding-y: #{$container-padding-y};
+        --container-padding-x: #{$container-padding-x};
+    }
 
-.container {
-    @include container;
+    .container {
+        @include container;
+    }
 }

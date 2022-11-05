@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/container",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Fylgja container component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "container.css",
   "style": "container.css",
+  "sass": "_index.scss",
+  "unpkg": "container.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -18,12 +18,12 @@
     "fylgja",
     "fylgja component",
     "container",
-    "wrapper",
-    "cascade-layer"
+    "wrapper"
   ],
   "scripts": {
-    "build:layer": "npx sass layer.scss layer.css --no-source-map -s compressed -I node_modules",
-    "build:main": "npx sass container.scss container.css --no-source-map -s compressed -I node_modules",
-    "build": "npm run build:layer && npm run build:main"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.1.0"
   }
 }

@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$enable-container-layer: false !default;
+
+$container-layer-name: components !default;
+
 $container-size: 1280px !default;
 $container-padding-y: 0 !default;
 $container-padding-x: 1.25rem !default;
