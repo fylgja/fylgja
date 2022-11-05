@@ -31,7 +31,7 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/button" with ($enable-aria-only-layer: true);
+@use "@fylgja/button" with ($enable-btn-layer: true);
 // Or via PostCSS import
 @import "@fylgja/button/layer";
 ```
@@ -88,6 +88,10 @@ Want direct control on the base styles, here are the following SCSS variables ca
 $enable-btn-theme: true !default;
 $enable-btn-outline: true !default;
 $enable-btn-icon: true !default;
+$enable-native-btn: false !default; // will be removed in v2, as it is default
+$enable-btn-layer: false !default;
+
+$btn-layer-name: components !default;
 
 $btn-icon-size: 2.125em !default;
 
@@ -98,7 +102,8 @@ $btn-radius: 4px !default;
 $btn-font-size: inherit !default;
 $btn-line-height: inherit !default;
 $btn-font-weight: 500 !default;
-$btn-transition: 0.2s linear;
+$btn-transition: 0.2s linear !default;
+// ADD outline-offset for v2
 $btn-transition-property: (
     color,
     background-color,
@@ -110,9 +115,14 @@ $btn-stroke: transparent !default;
 $btn-bg: transparent !default;
 $btn-color: inherit !default;
 
-$btn-focus-stroke: transparent !default;
-$btn-focus-bg: color.change($root-fg, $alpha: 0.05) !default;
-$btn-focus-color: inherit !default;
+$btn-hover-stroke: transparent !default;
+$btn-hover-bg: color.change($root-fg, $alpha: 0.05) !default;
+$btn-hover-color: inherit !default;
+
+// Being replaced for `$btn-hover` in v2 for consistency
+$btn-focus-stroke: $btn-hover-stroke !default; // will be removed in v2
+$btn-focus-bg: $btn-hover-bg !default; // will be removed in v2
+$btn-focus-color: $btn-hover-color !default; // will be removed in v2
 
 $btn-active-stroke: transparent !default;
 $btn-active-bg: color.change($root-fg, $alpha: 0.2) !default;
