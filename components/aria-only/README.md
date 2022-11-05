@@ -58,7 +58,7 @@ or can be imported as CSS.
 // SCSS
 @use "@fylgja/aria-only" with ($enable-aria-only-mq: true);
 // PostCSS and other options as plain CSS
-@import "@fylgja/aria-only/aria-only-mq.css";
+@import "@fylgja/aria-only/mq";
 ```
 
 When enabled you can use the `aria-only` with the mq prefix
