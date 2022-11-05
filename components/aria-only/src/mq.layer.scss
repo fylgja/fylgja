@@ -1,0 +1,7 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "../index" with (
+    $enable-aria-only-layer: true,
+    $enable-aria-only-mq: true
+);
