@@ -5,8 +5,8 @@
 /// @param {String} $name - the name of the `@layer`
 /// @return {Mixed} - inner styles
 @mixin atLayer($use: false, $name: components) {
-    @if $enable-container-layer {
-        @layer #{$container-layer-name} {
+    @if $use {
+        @layer #{$name} {
             @content;
         }
     } @else {
