@@ -53,6 +53,25 @@ by importing the `@fylgja/theme` or use it directly in your styles via;
 
 _You can also use it without the prefix if you want via * selector_
 
+### atLayer
+
+This mixin is specific for Fylgja's build progress,
+and is used to create the layer variant for each component
+
+You can use this if you need something with the same logic,
+or for a Fylgja Add-On component.
+
+```scss
+@use "@fylgja/theme/layer";
+
+@include atLayer(
+  $use, // if to use `@layer`
+  $name // The `@layer` name, e.g. base, components, utilities
+) {
+  // Your CSS here
+}
+```
+
 ## Config
 
 The following variables are available.
@@ -76,5 +95,12 @@ $color-error: #b00020 !default;
 $color-warning: #ffab40 !default;
 $color-success: #00e676 !default;
 
-$item-spacer: 0 0 1em !default;
+$base-spacing: 1em !default; // For v2
+$item-spacer: 0 0 $base-spacing !default;
+
+// For any thing like forms and buttons, for v2
+$action-padding-block: 0.375em !default;
+$action-padding-inline: 0.625em !default;
+$action-padding: $action-padding-block $action-padding-inline;
+$action-border-width: 1px !default;
 ```

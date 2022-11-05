@@ -1,11 +1,11 @@
 {
   "name": "@fylgja/theme",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Helper component for adding theme specific variables to multiple components",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
+  "sass": "_index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -15,7 +15,8 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "theme"
+    "theme",
+    "helper"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
