@@ -5,9 +5,9 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "aria-only.css",
   "style": "aria-only.css",
+  "sass": "_index.scss",
+  "unpkg": "aria-only.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
