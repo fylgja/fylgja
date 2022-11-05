@@ -21,6 +21,38 @@ Then include the component in to your code via;
 @import "@fylgja/aria-only";
 ```
 
+### Media Query support
+
+If you need support for media queries,
+use the following import;
+
+```scss
+@use "@fylgja/aria-only" with ($enable-aria-only-mq: true);
+// Or via PostCSS import
+@import "@fylgja/aria-only/mq";
+```
+
+When enabled/used, the aria-only style can be used with the mq prefix,
+for example: `md-aria-only`.
+
+The `not-aria-only` option is exclusive to the mq option and unsets the aria-only styles.
+
+For what mq options are available [see the mq package](https://fylgja.dev/components/mq/).
+
+All mq values used by the `$aria-only-breakpoints` variable
+take the values directly from the Fylgja Mq component.
+
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/aria-only/layer";
+// Or via PostCSS import
+@import "@fylgja/aria-only/layer";
+```
+
 ## How to use
 
 Add the class `.aria-only` to any element to visually hide it.
@@ -47,28 +79,6 @@ The aria-only component is by default not set to render it's styles as important
 If you do prefer this, you can enable this via the variable
 
 `$enable-aria-only-important`, and set the value to `true`.
-
-### Use as media query version
-
-This feature is disabled by default
-and can be enabled via the variable `$enable-aria-only-mq`,
-or can be imported as CSS.
-
-```scss
-// SCSS
-@use "@fylgja/aria-only" with ($enable-aria-only-mq: true);
-// PostCSS and other options as plain CSS
-@import "@fylgja/aria-only/mq";
-```
-
-When enabled you can use the `aria-only` with the mq prefix
-and exclusive to the mq option the `not-aria-only`,
-which unset's the aria-only styles.
-
-For what mq options are available [see the mq package](https://fylgja.dev/components/mq/).
-
-All mq values used by the `$aria-only-breakpoints` variable
-take the values directly from the Fylgja Mq component.
 
 ### Mixin (SCSS only)
 
