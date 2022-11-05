@@ -49,7 +49,7 @@
     "@fylgja/container": "^1.1.0",
     "@fylgja/control": "^1.1.0",
     "@fylgja/details": "^1.0.3",
-    "@fylgja/dialog": "^1.2.2",
+    "@fylgja/dialog": "^1.2.3",
     "@fylgja/easing": "^1.0.3",
     "@fylgja/elevation": "^1.0.1",
     "@fylgja/form": "^1.0.8",
