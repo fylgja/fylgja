@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$enable-avatar-layer: false !default;
+
+$avatar-layer-name: components !default;
+
 $avatar-size: 3em !default;
 $avatar-radius: 50% !default;
 $avatar-bg: #eee !default;
