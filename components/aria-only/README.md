@@ -104,10 +104,14 @@ Want direct control on the base styles,
 here are the following SCSS variables can you modify.
 
 ```scss
-$enable-aria-only-important: false !default;
-$enable-aria-only-mq: false !default;
 $aria-only-separator: "-" !default;
-$aria-only-breakpoints: $mq-breakpoints !default;
+
+$enable-aria-only-mq: false !default;
+$enable-aria-only-layer: false !default;
+$enable-aria-only-important: false !default;
+
+$aria-only-layer-name: utilities !default;
+$aria-only-breakpoints: mq.$breakpoints !default;
 ```
 
 ## Tips
