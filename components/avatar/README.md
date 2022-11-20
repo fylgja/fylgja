@@ -49,6 +49,10 @@ As with almost all of our components, CSS variables can be configured to add you
 Want direct control on the base styles, here are the following SCSS variables can you modify.
 
 ```scss
+$enable-avatar-layer: false !default;
+
+$avatar-layer-name: components !default;
+
 $avatar-size: 3em !default;
 $avatar-radius: 50% !default;
 $avatar-bg: #eee !default;
