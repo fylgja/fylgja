@@ -76,7 +76,7 @@
     "@fylgja/z-layer": "^1.0.2"
   },
   "devDependencies": {
-    "@fylgja/stylelint-config": "^4.2.0",
+    "@fylgja/stylelint-config": "^5.0.0",
     "sass": "^1.56.0",
     "stylelint": "^14.14.1"
   }
