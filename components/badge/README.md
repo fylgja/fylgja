@@ -25,9 +25,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/avatar" with ($enable-avatar-layer: true);
+@use "@fylgja/badge" with ($enable-badge-layer: true);
 // Or via PostCSS import
-@import "@fylgja/avatar/layer";
+@import "@fylgja/badge/layer";
 ```
 
 ## How to use
