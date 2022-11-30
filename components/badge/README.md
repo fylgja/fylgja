@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/badge";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/avatar" with ($enable-avatar-layer: true);
+// Or via PostCSS import
+@import "@fylgja/avatar/layer";
+```
+
 ## How to use
 
 To use the badge, create element with the class `.badge`.
@@ -61,6 +72,12 @@ As with almost all of our components, CSS variables can be configured to add you
 Want direct control on the base styles, here are the following SCSS variables can you modify.
 
 ```scss
+$enable-badge-addon: true !default;
+$enable-badge-theme: true !default;
+$enable-badge-layer: false !default;
+
+$badge-layer-name: components !default;
+
 $badge-padding: 0.125em 0.75em !default;
 $badge-radius: 0.375em !default;
 $badge-bg: if($root-fg == #000, #eee, #222) !default;

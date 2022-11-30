@@ -2,13 +2,17 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.badge {
-    @include badge;
-    @include badge-variants;
-}
+@include theme.atLayer($enable-badge-layer, $badge-layer-name) {
+    .badge {
+        @include badge;
+        @include badge-variants;
+    }
 
-.badge-addon {
-    @include badge-addon;
+    .badge-addon {
+        @include badge-addon;
+    }
 }
