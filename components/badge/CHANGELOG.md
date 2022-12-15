@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+- Nowrap to allow normal text flow
+
 ## [1.0.1] - 2022-06-05
 ### Added
 - Option to disable the badge-addon wrapper
