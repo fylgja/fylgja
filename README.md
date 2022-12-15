@@ -6,7 +6,7 @@
 </h1>
 
 [![NPM version](https://img.shields.io/npm/v/fylgja?logo=npm&style=flat-square)](https://www.npmjs.com/package/fylgja)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fylgja/fylgja/Test?color=%2343a047&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja/test.yml?branch=main&color=%2343a047&style=flat-square)
 ![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234&style=flat-square)
 
 </div>
