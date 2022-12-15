@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - support for `@layer` in components scope
+- shadow dom support for props
 
 ## [1.1.1] - 2022-08-14
 ### Added
