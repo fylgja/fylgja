@@ -42,26 +42,6 @@ Want direct control on the base styles, here are the following SCSS variables ca
 
 ```scss
 $aspect-ratio: "16/9" !default;
+
+
 ```
-
-## PostCSS Calc & CSSNano issue
-
-At the moment PostCSS Calc, which is also part of CSSNano,
-has an open issue where is removes the parentheses around a nested calc,
-this breaks the CSS aspect ratio calc.
-
-You can at the moment work around this issue by;
-
-- Wrapping the value from the CSS variable in parentheses.
-- Using a multiplier instead
-- CSSNano: disabling the calc minification
-
-```js
-cssnano: {
-    preset: ['default', {
-        calc: false
-    }]
-}
-```
-
-[Find more about the postcss/postcss-calc issue on the github issue#91](https://github.com/postcss/postcss-calc/issues/91)
