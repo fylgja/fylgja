@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-12-15
 ### Added
-- support for `@layer` in components scope
+- Support for `@layer` in components scope
+  This is the last version as an CSS component,
+  in the next release this will become a CSS Tokens pkg,
+  dropping `@layer` and the legacy aspect-ratio CSS hack, for just tokens
 - shadow dom support for props
 
 ## [1.1.1] - 2022-08-14
