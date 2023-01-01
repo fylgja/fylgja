@@ -57,7 +57,6 @@ const propsBoth = {
 };
 
 // file types for just props
-propsBuilder({ props, filename: "_tests_/_fylgja.props.json" });
 propsBuilder({ props, filename: "_tests_/_fylgja.tokens.json" });
 propsBuilder({ props, filename: "_tests_/_fylgja.tokens.figma-tokens.json" });
 propsBuilder({ props, filename: "_tests_/_tokens.scss", safeMode: false });
@@ -72,6 +71,17 @@ propsBuilder({
     filename: "_tests_/_tokens-prefix.css",
     prefix,
 }); // Only works with on props, not keyframes/animations
+propsBuilder({
+    props,
+    filename: "_tests_/_tokens-prefix.js",
+    prefix,
+}); // Only works with on props, not keyframes/animations
+propsBuilder({
+    props,
+    filename: "_tests_/_tokens-prefix.json",
+    prefix,
+}); // Only works with on props, not keyframes/animations
+
 propsBuilder({ props, filename: "_tests_/_tokens-selector.css", selector }); // only works for CSS
 
 // file types for just keys
@@ -80,7 +90,23 @@ propsBuilder({
     filename: "_tests_/_tokens-key.scss",
 });
 propsBuilder({ props: propsKeys, filename: "_tests_/_tokens-key.css" });
+propsBuilder({ props: propsKeys, filename: "_tests_/_tokens-key.json" });
+propsBuilder({ props: propsKeys, filename: "_tests_/_tokens-key.js" });
 
 // file types for props and keys
 propsBuilder({ props: propsBoth, filename: "_tests_/_tokens-full.scss" });
 propsBuilder({ props: propsBoth, filename: "_tests_/_tokens-full.css" });
+propsBuilder({ props: propsBoth, filename: "_tests_/_tokens-full.json" });
+propsBuilder({ props: propsBoth, filename: "_tests_/_tokens-full.js" });
+
+// Js types without variable prefix, just to create cjs or json files
+propsBuilder({
+    props: propsBoth,
+    filename: "_tests_/_props.json",
+    varPrefix: "",
+});
+propsBuilder({
+    props: propsBoth,
+    filename: "_tests_/_props.cjs",
+    varPrefix: "",
+});

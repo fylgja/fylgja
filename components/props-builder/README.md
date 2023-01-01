@@ -74,3 +74,16 @@ just in case if you don't have an editor with those super powers.
 > **Note** 1 If empty the default is based on the file extension
 
 > **Note** 2 If empty default color map is used
+
+### Jit-props syntax support
+
+Our tokens files are one way that Fylgja differs from [Open Props](https://open-props.style/).
+
+Because the props in Fylgja are not hard coded in a specific variable syntax,
+they are compatible with other CSS preprocessor like Sass or Javascript frameworks like TailwindCSS and WindiCSS.
+
+Because of this, the Fylgja Props-builder also offers additional export options for CommonJS and ECMAScript.
+
+This enables you to use not just the JSON version from [@fylgja/tokens](https://fylgja.dev/components/tokens/),
+but also each individual Fylgja component with a javascript export in the Open Props syntax,
+which is supported by [PostCSS JIT Props](https://github.com/GoogleChromeLabs/postcss-jit-props).
