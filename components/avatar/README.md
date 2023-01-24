@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/avatar";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/avatar" with ($enable-avatar-layer: true);
+// Or via PostCSS import
+@import "@fylgja/avatar/layer";
+```
+
 ## How to use
 
 To use the avatar create element with the class `.avatar`.
@@ -38,6 +49,10 @@ As with almost all of our components, CSS variables can be configured to add you
 Want direct control on the base styles, here are the following SCSS variables can you modify.
 
 ```scss
+$enable-avatar-layer: false !default;
+
+$avatar-layer-name: components !default;
+
 $avatar-size: 3em !default;
 $avatar-radius: 50% !default;
 $avatar-bg: #eee !default;
