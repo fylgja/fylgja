@@ -5,6 +5,9 @@
 
 $enable-badge-addon: true !default;
 $enable-badge-theme: true !default;
+$enable-badge-layer: false !default;
+
+$badge-layer-name: components !default;
 
 $badge-padding: 0.125em 0.75em !default;
 $badge-radius: 0.375em !default;
