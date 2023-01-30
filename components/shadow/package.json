@@ -15,6 +15,11 @@
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
+    },
+    "./props": {
+      "import": "./shadow.js",
+      "require": "./shadow.cjs",
+      "default": "./shadow.cjs"
     }
   },
   "repository": {
@@ -33,6 +38,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.1"
+    "@fylgja/props-builder": "^1.0.5"
   }
 }
