@@ -1,0 +1,7 @@
+@use "helper" as *;
+
+@keyframes marquee {
+    to {
+        translate: var(--marquee-tx, 0) var(--marquee-ty, 0);
+    }
+}

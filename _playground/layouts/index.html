@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../../components/card/card.css">
   <link rel="stylesheet" href="../../components/scroll-slider/scroll-slider.css">
   <link rel="stylesheet" href="../../components/dialog/dialog.css">
+  <link rel="stylesheet" href="../../components/marquee/marquee.css">
 
   <!-- Other styles -->
   <link rel="stylesheet" href="../../components/aria-only/mq.css">
@@ -38,6 +39,8 @@
       --card-color: #fff;
     }
   </style>
+
+  <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body>
   <header class="container flex items-center py-4 border-block-end">
@@ -222,6 +225,32 @@
           <p>slide 22</p>
         </li>
       </ul>
+    </section>
+    <section id="marquee">
+      <div class="marquee overflow-mask mb-4" x-data>
+        <div class="marquee-item">
+          <template x-for="i in 5">
+            <img :src="`https://picsum.photos/id/${i}0/520/360`" alt="">
+          </template>
+        </div>
+        <div class="marquee-item">
+          <template x-for="i in 5">
+            <img :src="`https://picsum.photos/id/${i}0/520/360`" alt="">
+          </template>
+        </div>
+      </div>
+      <div class="marquee -reverse overflow-mask" x-data>
+        <div class="marquee-item">
+          <template x-for="i in 5">
+            <img :src="`https://picsum.photos/id/${i}00/520/360`" alt="">
+          </template>
+        </div>
+        <div class="marquee-item">
+          <template x-for="i in 5">
+            <img :src="`https://picsum.photos/id/${i}00/520/360`" alt="">
+          </template>
+        </div>
+      </div>
     </section>
   </main>
 </body>

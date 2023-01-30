@@ -1,0 +1,26 @@
+$marquee-animation-name: marquee !default;
+$marquee-animation-speed: var(--marquee-speed, 30s) !default;
+$marquee-gap: 1rem !default;
+
+@mixin marquee {
+    --_gap: #{$marquee-gap};
+    --_dir: row;
+    --marquee-tx: calc(-100% - var(--_gap));
+    display: flex;
+    flex-direction: var(--_dir);
+    gap: var(--_gap);
+    overflow: hidden;
+}
+
+@mixin marquee-item {
+    display: flex;
+    flex-direction: var(--_dir);
+    align-items: center;
+    gap: var(--_gap);
+    flex-shrink: 0;
+    animation: $marquee-animation-name $marquee-animation-speed linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation-play-state: paused;
+    }
+}
