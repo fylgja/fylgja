@@ -20,6 +20,18 @@ Then include the component in to your code via;
 @import "@fylgja/breadcrumbs";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/breadcrumbs" with ($enable-breadcrumbs-layer: true);
+// Or via PostCSS import
+@import "@fylgja/breadcrumbs/layer";
+```
+
+
 ## How to use
 
 In your html for the breadcrumb class, you also need some html for the items.
@@ -55,6 +67,10 @@ Want direct control on the base styles,
 here are the following SCSS variables can you modify.
 
 ```scss
+$enable-breadcrumbs-layer: false !default;
+
+$breadcrumbs-layer-name: components !default;
+
 $breadcrumbs-divider: "  /  " !default;
 $breadcrumbs-flow: row wrap !default;
 $breadcrumbs-margin: 10px 0 !default;

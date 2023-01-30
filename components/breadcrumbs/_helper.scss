@@ -4,6 +4,10 @@
 @use "sass:color";
 @use "@fylgja/theme" as *;
 
+$enable-breadcrumbs-layer: false !default;
+
+$breadcrumbs-layer-name: components !default;
+
 $breadcrumbs-divider: "  /  " !default;
 $breadcrumbs-flow: row wrap !default;
 $breadcrumbs-margin: 10px 0 !default;

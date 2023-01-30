@@ -5,9 +5,9 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "breadcrumbs.css",
   "style": "breadcrumbs.css",
+  "sass": "_index.scss",
+  "unpkg": "breadcrumbs.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,9 +20,9 @@
     "breadcrumbs"
   ],
   "scripts": {
-    "build": "npx sass breadcrumbs.scss breadcrumbs.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }
