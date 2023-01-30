@@ -5,6 +5,9 @@
 @use "@fylgja/theme" as *;
 
 $enable-card-link: true !default;
+$enable-card-layer: false !default;
+
+$card-layer-name: components !default;
 
 $card-padding: 1rem !default;
 $card-radius: 6px !default;

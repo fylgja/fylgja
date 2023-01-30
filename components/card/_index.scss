@@ -2,36 +2,40 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.card {
-    @include card;
-}
-
-.card-media,
-.card-content,
-.card-action {
-    @include card-item;
-}
-
-.card-media {
-    --card-padding: 0;
-}
-
-.card-content {
-    --card-flex: 1 1 auto;
-}
-
-:is(.card-media, .card-content, .card-action) {
-    > :first-child {
-        margin-top: 0;
+@include theme.atLayer($enable-card-layer, $card-layer-name) {
+    .card {
+        @include card;
     }
 
-    > :last-child {
-        margin-bottom: 0;
+    .card-media,
+    .card-content,
+    .card-action {
+        @include card-item;
     }
-}
 
-a:is(.card, .card.-has-link, .card-media, .card-content, .card-action) {
-    @include card-is-link;
+    .card-media {
+        --card-padding: 0;
+    }
+
+    .card-content {
+        --card-flex: 1 1 auto;
+    }
+
+    :is(.card-media, .card-content, .card-action) {
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a:is(.card, .card.-has-link, .card-media, .card-content, .card-action) {
+        @include card-is-link;
+    }
 }

@@ -22,6 +22,17 @@ Then include the component in to your code via;
 @import "@fylgja/card";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/card" with ($enable-card-layer: true);
+// Or via PostCSS import
+@import "@fylgja/card/layer";
+```
+
 ## How to use
 
 The card is one of the few CSS components that requires a little bit more
@@ -78,6 +89,9 @@ Here are the following SCSS variables can you modify.
 
 ```scss
 $enable-card-link: true !default;
+$enable-card-layer: false !default;
+
+$card-layer-name: components !default;
 
 $card-padding: 1rem !default;
 $card-radius: 6px !default;
