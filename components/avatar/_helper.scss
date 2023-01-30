@@ -15,6 +15,7 @@ $avatar-color: null !default;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
+    // TODO: for v2 replace width and height for aspect-ratio
     width: var(--avatar-size, #{$avatar-size});
     height: var(--avatar-size, #{$avatar-size});
     background-color: var(--avatar-bg, #{$avatar-bg});
