@@ -33,7 +33,6 @@ $badge-font-weight: 500 !default;
     font-size: var(--badge-font-size, #{$badge-font-size});
     font-weight: var(--badge-font-weight, #{$badge-font-weight});
     font-variant-numeric: tabular-nums;
-    white-space: nowrap;
 }
 
 @mixin badge-variants {

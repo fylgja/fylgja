@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2023-01-02
+### Added
+- Support for mjs & cjs exports,
+  to make this easier to maintain cjs export options in the Fylgja tokens pkg's,
+  also adds the option for creating exports for [postcss-jit-props](https://github.com/GoogleChromeLabs/postcss-jit-props)
+
+### Changed
+- FileType return checker syntax, for readability
+- Simplified the build steps in the main file for readability
+
 ## [1.0.4] - 2022-10-05
 ### Fixed
 - json types

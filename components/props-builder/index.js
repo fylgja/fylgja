@@ -5,6 +5,7 @@ import fs from "fs";
 import fileType from "./src/fileType.js";
 import flattenObj from "./src/flattenObj.js";
 import jsonObj from "./src/jsonObj.js";
+import toJsStyleTokens from "./src/toJsStyle.js";
 import toStyleTokens from "./src/toStyle.js";
 import toTokens from "./src/toTokens.js";
 
@@ -19,6 +20,7 @@ import toTokens from "./src/toTokens.js";
  * @param {string} options.prefix
  * @param {string} options.suffix
  * @param {string} options.generationSyntax default: if empty the default is based on the file extension
+ * @param {string} options.varPrefix the variable syntax prefix, e.g `--`, `$` or other
  * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
  * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
  * @param {string} options.wrapperName - if set it will be used as wrapper for json tokens
@@ -30,6 +32,7 @@ export const propsBuilder = ({
     prefix = "",
     suffix = "",
     generationSyntax,
+    varPrefix = "--",
     jsonColorKeys,
     safeMode = true,
     wrapperName = "",
@@ -57,51 +60,63 @@ export const propsBuilder = ({
             break;
 
         case "json":
-            file.write(JSON.stringify(props, null, 2));
+            const jsonStyles = toJsStyleTokens(
+                flatProps,
+                prefix,
+                suffix,
+                varPrefix
+            );
+            file.write(jsonStyles);
+            file.write("\n");
+            break;
+
+        case "cjs":
+        case "mjs":
+            const exportSyntax =
+                mode === "mjs" ? "export default " : "module.exports = ";
+            const jsStyles = toJsStyleTokens(
+                flatProps,
+                prefix,
+                suffix,
+                varPrefix
+            );
+            file.write(exportSyntax + jsStyles);
             file.write("\n");
             break;
 
         case "scss":
-            const { styles: scss, appendedMeta: scssKey } = toStyleTokens(
-                flatProps,
-                prefix,
-                suffix,
-                "$",
-                safeMode
-            );
-            const hasScssValues = scss.length;
-            const hasScssFrames = scssKey.length;
-            if (hasScssValues) {
-                scss.map((style) => file.write(style));
-            }
-            if (hasScssValues && hasScssFrames) {
-                file.write("\n");
-            }
-            if (hasScssFrames) {
-                file.write(scssKey);
-                file.write("\n");
-            }
-            break;
-
         case "css":
-            const { styles: css, appendedMeta: cssKey } = toStyleTokens(
-                flatProps,
-                prefix,
-                suffix
-            );
-            const hasCssValues = css.length;
-            const hasCssFrames = cssKey.length;
-            if (hasCssValues) {
-                file.write(`${selector} {\n`);
-                css.map((style) => file.write(style));
-                file.write("}\n");
-            }
-            if (hasCssValues && hasCssFrames) {
-                file.write("\n");
-            }
-            if (hasCssFrames) {
-                file.write(cssKey);
-                file.write("\n");
+            const { styles, appendedMeta } =
+                mode === "scss"
+                    ? toStyleTokens(flatProps, prefix, suffix, "$", safeMode)
+                    : toStyleTokens(flatProps, prefix, suffix, varPrefix);
+            const hasCssValues = styles.length;
+            const hasCssFrames = appendedMeta.length;
+
+            if (mode === "scss") {
+                if (hasCssValues) {
+                    styles.map((style) => file.write(style));
+                }
+                if (hasCssValues && hasCssFrames) {
+                    file.write("\n");
+                }
+                if (hasCssFrames) {
+                    file.write(appendedMeta);
+                    file.write("\n");
+                }
+            } else {
+                if (hasCssValues) {
+                    file.write(`${selector} {\n`);
+                    styles.map((style) => file.write(style));
+                    file.write("}\n");
+                }
+                if (hasCssValues && hasCssFrames) {
+                    file.write("\n");
+                }
+                if (hasCssFrames) {
+                    file.write(appendedMeta);
+                    file.write("\n");
+                }
             }
             break;
 

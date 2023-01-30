@@ -34,14 +34,14 @@ This component comes in 3 syntaxes.
 @use "@fylgja/easing" as *;
 
 .style {
-    z-index: $layer-1;
+    z-index: $ease-1;
 }
 
 // CSS Syntax
 @use "@fylgja/easing/props";
 
 .style {
-    z-index: var(--layer-1);
+    z-index: var(--ease-1);
 }
 ```
 
@@ -51,7 +51,7 @@ This component comes in 3 syntaxes.
 @import "@fylgja/easing";
 
 .style {
-    z-index: var(--layer-1);
+    z-index: var(--ease-1);
 }
 ```
 
@@ -61,7 +61,7 @@ This component comes in 3 syntaxes.
 import props from "@fylgja/easing"
 
 const style = {
-    zIndex: props.layer[1]
+    zIndex: props.ease[1]
 }
 ```
 
