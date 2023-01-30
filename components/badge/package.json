@@ -5,9 +5,9 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "badge.css",
   "style": "badge.css",
+  "sass": "_index.scss",
+  "unpkg": "badge.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
