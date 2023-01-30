@@ -1,0 +1,5 @@
+@use "helper" as *;
+
+.overflow-mask {
+    @include overflow-mask;
+}
