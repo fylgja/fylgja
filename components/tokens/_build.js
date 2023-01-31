@@ -1,27 +1,24 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+import fs from "fs";
 import { propsBuilder } from "@fylgja/props-builder";
-import ratio from "@fylgja/aspect-ratio";
+
 import colors from "@fylgja/colors";
 import easing from "@fylgja/easing";
 import mq from "@fylgja/mq";
+import ratio from "@fylgja/aspect-ratio";
 import { staticShadows as shadow } from "@fylgja/shadow";
 import sizes from "@fylgja/sizes";
 import zLayer from "@fylgja/z-layer";
 
-// Default for easy reuse
-const baseProps = {
-    ...ratio,
+const props = {
+    ...colors,
     ...easing,
+    ...ratio,
     ...shadow,
     ...sizes,
     ...zLayer,
-};
-
-const props = {
-    ...baseProps,
-    ...colors,
 };
 
 propsBuilder({ props, filename: "tokens.json" });
@@ -55,26 +52,40 @@ const newColorKeys = {
     9: 900,
 };
 
-propsBuilder({
-    props: {
-        ...baseProps,
-        mq,
-        colors: {
-            gray: renameKeys(newColorKeys, colors.gray),
-            blueGray: renameKeys(newColorKeys, colors.blueGray),
-            red: renameKeys(newColorKeys, colors.red),
-            pink: renameKeys(newColorKeys, colors.pink),
-            purple: renameKeys(newColorKeys, colors.purple),
-            violet: renameKeys(newColorKeys, colors.violet),
-            indigo: renameKeys(newColorKeys, colors.indigo),
-            blue: renameKeys(newColorKeys, colors.blue),
-            cyan: renameKeys(newColorKeys, colors.cyan),
-            teal: renameKeys(newColorKeys, colors.teal),
-            green: renameKeys(newColorKeys, colors.green),
-            lime: renameKeys(newColorKeys, colors.lime),
-            yellow: renameKeys(newColorKeys, colors.yellow),
-            orange: renameKeys(newColorKeys, colors.orange),
-        },
+const twColors = {
+    gray: renameKeys(newColorKeys, colors.gray),
+    blueGray: renameKeys(newColorKeys, colors.blueGray),
+    red: renameKeys(newColorKeys, colors.red),
+    pink: renameKeys(newColorKeys, colors.pink),
+    purple: renameKeys(newColorKeys, colors.purple),
+    violet: renameKeys(newColorKeys, colors.violet),
+    indigo: renameKeys(newColorKeys, colors.indigo),
+    blue: renameKeys(newColorKeys, colors.blue),
+    cyan: renameKeys(newColorKeys, colors.cyan),
+    teal: renameKeys(newColorKeys, colors.teal),
+    green: renameKeys(newColorKeys, colors.green),
+    lime: renameKeys(newColorKeys, colors.lime),
+    yellow: renameKeys(newColorKeys, colors.yellow),
+    orange: renameKeys(newColorKeys, colors.orange),
+};
+
+const tailwindProps = {
+    aspectRatio: {
+        auto: "auto",
+        square: props.ratio.box,
+        video: props.ratio.widescreen,
+        ...props.ratio,
     },
-    filename: "tailwind.json",
-});
+    boxShadow: { ...props.shadow, inset: { ...props.insetShadow } },
+    colors: twColors,
+    screens: mq,
+    spacing: { ...sizes },
+    transitionTimingFunction: { ...easing },
+    zIndex: props.layer,
+};
+delete tailwindProps.aspectRatio.box;
+
+const file = fs.createWriteStream("tailwind.json");
+file.write(JSON.stringify(tailwindProps, null, 2));
+file.write("\n");
+file.end();
