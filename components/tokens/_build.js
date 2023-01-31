@@ -29,6 +29,11 @@ propsBuilder({
     wrapperName: "fylgja",
 });
 
+// Support for jit-props, e.g. the open-props syntax
+propsBuilder({ props, filename: "jit-props.mjs" });
+propsBuilder({ props, filename: "jit-props.cjs" });
+propsBuilder({ props, filename: "jit-props.json" });
+
 // Tailwind specific tokens for easily replacing the Tailwind tokens with Fylgja
 const renameKeys = (keysMap, obj) =>
     Object.keys(obj).reduce(
