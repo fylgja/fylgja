@@ -34,7 +34,7 @@
     "@fylgja/colors": "^1.0.7",
     "@fylgja/easing": "^1.0.3",
     "@fylgja/mq": "^1.1.2",
-    "@fylgja/props-builder": "^1.0.4",
+    "@fylgja/props-builder": "^1.0.5",
     "@fylgja/shadow": "^1.0.3",
     "@fylgja/sizes": "^1.0.2",
     "@fylgja/z-layer": "^1.0.2"
