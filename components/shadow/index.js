@@ -1,67 +1,76 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-/**
- * Converts any dynamic shadow to a static shadow.
- *
- * @param {{ [key: string | number]: string }} map - Array of shadow maps
- * @param {String} color - Color of shadow
- * @param {String} weight - Shadow weight
- * @returns {{ [key: string | number]: string }} - Array of shadow maps
- */
-function replaceShadowVars(map, color, weight) {
-    return Object.fromEntries(
-        Object.entries(map).map(([key, value]) => {
-            value = value.replaceAll("var(--shadow-color)", color);
-            value = value.replaceAll("var(--shadow-weight)", weight);
-            return [key, value];
-        })
-    );
-}
+const umbra = "calc(var(--shadow-weight) + 18%)";
+const penumbra = "calc(var(--shadow-weight) + 12%)";
+const ambient = "calc(var(--shadow-weight) + 10%)";
+const shadowInset = "calc(var(--shadow-weight) + 9%)";
 
-const shadowUmbra =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))";
-const shadowPenumbra =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%))";
-const shadowAmbient =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))";
-const shadowInset =
-    "hsl(var(--shadow-color) / calc(var(--shadow-weight) + 9%))";
+const hslVar = (color) => `hsl(var(--shadow-color) / ${color})`;
+
+const shadow = {
+    1: `0 2px 1px -1px ${hslVar(umbra)}, 0 1px 1px ${hslVar(
+        penumbra
+    )}, 0 1px 3px ${hslVar(ambient)}`,
+    2: `0 3px 1px -2px ${hslVar(umbra)}, 0 2px 2px ${hslVar(
+        penumbra
+    )}, 0 1px 5px ${hslVar(ambient)}`,
+    3: `0 2px 4px -1px ${hslVar(umbra)}, 0 4px 5px ${hslVar(
+        penumbra
+    )}, 0 1px 10px ${hslVar(ambient)}`,
+    4: `0 3px 5px -1px ${hslVar(umbra)}, 0 6px 10px ${hslVar(
+        penumbra
+    )}, 0 1px 18px ${hslVar(ambient)}`,
+    5: `0 5px 5px -3px ${hslVar(umbra)}, 0 8px 10px 1px ${hslVar(
+        penumbra
+    )}, 0 3px 14px 2px ${hslVar(ambient)}`,
+    6: `0 7px 8px -4px ${hslVar(umbra)}, 0 12px 17px 2px ${hslVar(
+        penumbra
+    )}, 0 5px 22px 4px ${hslVar(ambient)}`,
+};
+
+const insetShadow = {
+    0: `inset 0 0 0 1px ${hslVar(shadowInset)}`,
+    1: `inset 0 1px 2px 0 ${hslVar(shadowInset)}`,
+    2: `inset 0 1px 4px 0 ${hslVar(shadowInset)}`,
+    3: `inset 0 2px 8px 0 ${hslVar(shadowInset)}`,
+    4: `inset 0 2px 14px 0 ${hslVar(shadowInset)}`,
+};
+
 const shadows = {
     "shadow-color": "0 0% 50%",
     "shadow-weight": "1%",
-    shadow: {
-        1: `0 2px 1px -1px ${shadowUmbra}, 0 1px 1px ${shadowPenumbra}, 0 1px 3px ${shadowAmbient}`,
-        2: `0 3px 1px -2px ${shadowUmbra}, 0 2px 2px ${shadowPenumbra}, 0 1px 5px ${shadowAmbient}`,
-        3: `0 2px 4px -1px ${shadowUmbra}, 0 4px 5px ${shadowPenumbra}, 0 1px 10px ${shadowAmbient}`,
-        4: `0 3px 5px -1px ${shadowUmbra}, 0 6px 10px ${shadowPenumbra}, 0 1px 18px ${shadowAmbient}`,
-        5: `0 5px 5px -3px ${shadowUmbra}, 0 8px 10px 1px ${shadowPenumbra}, 0 3px 14px 2px ${shadowAmbient}`,
-        6: `0 7px 8px -4px ${shadowUmbra}, 0 12px 17px 2px ${shadowPenumbra}, 0 5px 22px 4px ${shadowAmbient}`,
-    },
-    insetShadow: {
-        0: `inset 0 0 0 1px ${shadowInset}`,
-        1: `inset 0 1px 2px 0 ${shadowInset}`,
-        2: `inset 0 1px 4px 0 ${shadowInset}`,
-        3: `inset 0 2px 8px 0 ${shadowInset}`,
-        4: `inset 0 2px 14px 0 ${shadowInset}`,
-    },
+    shadow,
+    insetShadow,
 };
 
 export default shadows;
 
+const staticShadow = Object.fromEntries(
+    Object.entries(shadow).map(([key, value]) => {
+        value = value.replaceAll(
+            "var(--shadow-color)",
+            shadows["shadow-color"]
+        );
+        value = value.replaceAll(umbra, "19%");
+        value = value.replaceAll(penumbra, "13%");
+        value = value.replaceAll(ambient, "11%");
+        return [key, value];
+    })
+);
+
+const staticInsetShadow = Object.fromEntries(
+    Object.entries(insetShadow).map(([key, value]) => {
+        value = value.replaceAll(
+            "var(--shadow-color)",
+            shadows["shadow-color"]
+        );
+        value = value.replaceAll(shadowInset, "10%");
+        return [key, value];
+    })
+);
+
 export const staticShadows = {
-    shadow: {
-        ...replaceShadowVars(
-            shadows.shadow,
-            shadows["shadow-color"],
-            shadows["shadow-weight"]
-        ),
-    },
-    insetShadow: {
-        ...replaceShadowVars(
-            shadows.insetShadow,
-            shadows["shadow-color"],
-            shadows["shadow-weight"]
-        ),
-    },
+    shadow: staticShadow,
+    insetShadow: staticInsetShadow,
 };
