@@ -6,14 +6,29 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "tokens.json",
-  "unpkg": "tokens.json",
+  "main": "design-tokens.json",
+  "unpkg": "design-tokens.json",
   "exports": {
-    "./json": "./tokens.json",
-    "./tokens": "./tokens.json",
-    "./design-tokens": "./tokens.json",
-    "./figma": "./figma-tokens.json",
-    "./tailwind": "./tailwind.json"
+    ".": {
+      "import": "./design-tokens.json",
+      "require": "./design-tokens.json",
+      "default": "./design-tokens.json"
+    },
+    "./props": {
+      "import": "./props.js",
+      "require": "./props.cjs",
+      "default": "./props.cjs"
+    },
+    "./jit": {
+      "import": "./jit-props.js",
+      "require": "./jit-props.cjs",
+      "default": "./jit-props.cjs"
+    },
+    "./tailwind": {
+      "import": "./tailwind-props.js",
+      "require": "./tailwind-props.cjs",
+      "default": "./tailwind-props.cjs"
+    }
   },
   "repository": {
     "type": "git",

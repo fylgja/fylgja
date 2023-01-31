@@ -1,4 +1,4 @@
-{
+module.exports = {
   "aspectRatio": {
     "auto": "auto",
     "square": 1,

@@ -21,18 +21,24 @@ const props = {
     ...zLayer,
 };
 
-propsBuilder({ props, filename: "tokens.json" });
+// Base full props
+propsBuilder({ props, filename: "props.js", varPrefix: "" });
+propsBuilder({ props, filename: "props.cjs", varPrefix: "" });
+
+// Support for jit-props, e.g. the open-props syntax
+propsBuilder({ props, filename: "jit-props.js" });
+propsBuilder({ props, filename: "jit-props.cjs" });
+
+// Default design tokens e.g. Sketch
+propsBuilder({ props, filename: "design-tokens.json" });
+
+// Figma specific design tokens
 propsBuilder({ props, filename: "figma-tokens.json" });
 propsBuilder({
     props,
     filename: "figma-tokens.sync.json",
     wrapperName: "fylgja",
 });
-
-// Support for jit-props, e.g. the open-props syntax
-propsBuilder({ props, filename: "jit-props.mjs" });
-propsBuilder({ props, filename: "jit-props.cjs" });
-propsBuilder({ props, filename: "jit-props.json" });
 
 // Tailwind specific tokens for easily replacing the Tailwind tokens with Fylgja
 const renameKeys = (keysMap, obj) =>
@@ -90,7 +96,10 @@ const tailwindProps = {
 };
 delete tailwindProps.aspectRatio.box;
 
-const file = fs.createWriteStream("tailwind.json");
-file.write(JSON.stringify(tailwindProps, null, 2));
-file.write("\n");
-file.end();
+// Support for the props in the Tailwind-config
+fs.createWriteStream("tailwind-props.js").write(
+    "export default " + JSON.stringify(tailwindProps, null, 2) + "\n"
+);
+fs.createWriteStream("tailwind-props.cjs").write(
+    "module.exports = " + JSON.stringify(tailwindProps, null, 2) + "\n"
+);
