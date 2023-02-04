@@ -22,9 +22,20 @@ Then include the component in to your code via;
 @import "@fylgja/form";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/form" with ($enable-form-layer: true);
+// Or via PostCSS import
+@import "@fylgja/form/layer";
+```
+
 ### Styles
 
-By default all form styles are set to the fylgja default style. 
+By default all form styles are set to the fylgja default style.
 
 If you want to use the field or box style,
 change the variable `$form-style` to one of the other options.
@@ -53,11 +64,11 @@ here are the following SCSS variables can you modify.
 
 ```scss
 $enable-webkit-autofill-dark-mode: true !default;
+$enable-form-layer: false !default;
 
-$form-focus-color: var(
-    --form-focus-color,
-    var(--color-theme, #{$color-theme})
-) !default;
+$form-layer-name: base !default;
+
+$form-focus-color: var(--color-theme, #{$color-theme}) !default;
 $form-placeholder-opacity: 0.5 !default;
 $form-disabled-opacity: 0.7 !default;
 $form-not-editable-border-style: dotted !default;
@@ -81,42 +92,32 @@ $form-style: default !default;
 $form-styles: (
     field: (
         padding: 0.375em 1px,
-        border-width: 0 0 1px,
+        border-width: 1px,
         border-style: solid,
-        border-color: currentcolor,
+        border-color: transparent transparent currentcolor,
         radius: 0,
         shadow: inset 0 -1px 0 $form-focus-color,
         bg: transparent,
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 3px 3px 0 0
+        file-btn-radius: 3px 3px 0 0,
     ),
     box: (
         padding: 0.375em 0.625em,
-        border-width: 0 0 1px,
+        border-width: 1px,
         border-style: solid,
-        border-color: currentcolor,
+        border-color: transparent transparent currentcolor,
         radius: 4px 4px 0 0,
         shadow: inset 0 -1px 0 $form-focus-color,
         bg: if($root-fg == #000, #eee, #222),
         color: inherit,
         file-btn-padding: 0.375em 0.625em,
-        file-btn-radius: 4px 4px 0 0
-    )
+        file-btn-radius: 4px 4px 0 0,
+    ),
 ) !default;
 
 // Set styles var's
 $form-padding: form-style-get(padding) !default;
-$form-padding-y: if(
-    list.length($form-padding) == 2,
-    list.nth($form-padding, 1),
-    $form-padding
-);
-$form-padding-x: if(
-    list.length($form-padding) == 2,
-    list.nth($form-padding, 2),
-    $form-padding
-);
 $form-border-width: form-style-get(border-width) !default;
 $form-border-style: form-style-get(border-style) !default;
 $form-border-color: form-style-get(border-color) !default;
@@ -135,8 +136,9 @@ $form-fields: (
     search,
     url,
     date,
-    textarea,
-    select,
+    time,
+    month,
+    week,
     color,
     file
 ) !default;
@@ -144,28 +146,16 @@ $form-fields: (
 // Form select
 $form-icon-size: 1.25em !default;
 $form-icon-color: $color-text !default;
-$form-select-icon: url("data:image/svg+xml,<svg .. /></svg>") !default;
-
-// Form color
-$form-color-radius: null !default;
-$form-color-size: 2.375rem !default;
-$form-color-padding: ($form-padding-y / 2) !default;
-
-// Form file
-$form-file-gap-y: $form-padding-y !default;
-$form-file-gap-x: $form-padding-x !default;
-$form-file-btn-gap: 1ch !default;
-$form-file-btn-padding: form-style-get(file-btn-padding) !default;
-$form-file-btn-radius: form-style-get(file-btn-radius) !default;
-$form-file-btn-bg: var(--color-theme, #{$color-theme}) !default;
-$form-file-btn-color: var(--color-on-theme, #{$color-on-theme}) !default;
+// This a static svg turned to to a dataUri,
+// you can also use the `@fylgja/sass` package to generate this
+$form-select-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#{$form-icon-color}"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>') !default;
 ```
 
 > `form-style-get()` is the `map-get()` function.
-> 
+>
 > It gets the values from the `$form-styles` variable
 > that contains the predefined form styles.
-> 
+>
 > Inspect the `helper.scss` file tot see what is in the default styles.
 
 </details>

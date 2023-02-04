@@ -8,6 +8,9 @@
 @use "@fylgja/theme" as *;
 
 $enable-webkit-autofill-dark-mode: true !default;
+$enable-form-layer: false !default;
+
+$form-layer-name: base !default;
 
 $form-focus-color: var(--color-theme, #{$color-theme}) !default;
 $form-placeholder-opacity: 0.5 !default;

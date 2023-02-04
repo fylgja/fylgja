@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- support for `@layer` in components scope
+
 ## [1.0.8] - 2022-08-09
 ### Fixed
 - border color getting merged with main border, with v2 setup changes

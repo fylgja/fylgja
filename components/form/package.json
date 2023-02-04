@@ -5,9 +5,9 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "form.css",
   "style": "form.css",
+  "sass": "_index.scss",
+  "unpkg": "form.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,12 +20,9 @@
     "form"
   ],
   "scripts": {
-    "build:field": "npx sass style-field.scss style-field.css --no-source-map -s compressed -I node_modules",
-    "build:box": "npx sass style-box.scss style-box.css --no-source-map -s compressed -I node_modules",
-    "build:default": "npx sass form.scss form.css --no-source-map -s compressed -I node_modules",
-    "build": "npm run build:field && npm run build:box && npm run build:default"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }

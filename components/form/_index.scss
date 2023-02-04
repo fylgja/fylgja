@@ -6,26 +6,32 @@
 @forward "select";
 @forward "color";
 @forward "file";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
-@use "base";
+@use "base" as *;
 @use "field" as *;
 @use "select" as *;
 @use "color" as *;
 @use "file" as *;
 
-input:not([type]),
-:is(#{$form-field-selectors}, textarea, select) {
-    @include form-field;
-}
+@include theme.atLayer($enable-form-layer, $form-layer-name) {
+    @include form-base;
 
-textarea {
-    overflow: auto;
-    resize: vertical;
-}
+    input:not([type]),
+    :is(#{$form-field-selectors}, textarea, select) {
+        @include form-field;
+    }
 
-select {
-    @include select;
-}
+    textarea {
+        overflow: auto;
+        resize: vertical;
+    }
 
-@include form-input-color;
-@include form-input-file;
+    select {
+        @include select;
+    }
+
+    @include form-input-color;
+    @include form-input-file;
+}
