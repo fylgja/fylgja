@@ -8,6 +8,9 @@
 // stylelint-disable property-no-vendor-prefix
 
 $enable-control-switch: true !default;
+$enable-control-layer: false !default;
+
+$control-layer-name: base !default;
 
 $control-fields: if(
     $enable-control-switch,

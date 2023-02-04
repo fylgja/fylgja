@@ -2,60 +2,64 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-:is(#{$control-fields}) {
-    @include control;
-
-    &:is(:checked, .is-active) {
-        @include control-checked;
-    }
-
-    &:is(:disabled, .is-disabled) {
-        @include control-disabled;
-    }
-}
-
-// The controls
-[type="checkbox"],
-.control-checkbox {
-    --control-icon: #{$control-checkbox-icon};
-    --control-checked-icon: #{$control-checked-checkbox-icon};
-}
-
-[type="checkbox"]:indeterminate {
-    --control-icon: #{$control-indeterminate-checkbox-icon};
-    border-color: var(--control-checked-stroke, #{$control-checked-stroke});
-    background-color: var(--control-checked-bg, #{$control-checked-bg});
-    color: var(--control-checked-color, #{$control-checked-color});
-}
-
-[type="radio"],
-.control-radio {
-    --control-radius: 50%;
-    --control-icon: #{$control-radio-icon};
-    --control-checked-icon: #{$control-checked-radio-icon};
-}
-
-@if $enable-control-switch {
-    .control-switch {
-        --control-icon: #{$control-switch-icon};
-        --control-width: #{$control-switch-width};
-        --control-height: #{$control-switch-height};
-        --control-radius: #{$control-switch-radius};
-        --control-icon-position: left center;
-        --control-checked-icon: #{$control-checked-switch-icon};
+@include theme.atLayer($enable-control-layer, $control-layer-name) {
+    :is(#{$control-fields}) {
+        @include control;
 
         &:is(:checked, .is-active) {
-            --control-icon-position: right center;
+            @include control-checked;
         }
 
-        [dir="rtl"] &,
-        &[dir="rtl"] {
-            --control-icon-position: right center;
+        &:is(:disabled, .is-disabled) {
+            @include control-disabled;
+        }
+    }
+
+    // The controls
+    [type="checkbox"],
+    .control-checkbox {
+        --control-icon: #{$control-checkbox-icon};
+        --control-checked-icon: #{$control-checked-checkbox-icon};
+    }
+
+    [type="checkbox"]:indeterminate {
+        --control-icon: #{$control-indeterminate-checkbox-icon};
+        border-color: var(--control-checked-stroke, #{$control-checked-stroke});
+        background-color: var(--control-checked-bg, #{$control-checked-bg});
+        color: var(--control-checked-color, #{$control-checked-color});
+    }
+
+    [type="radio"],
+    .control-radio {
+        --control-radius: 50%;
+        --control-icon: #{$control-radio-icon};
+        --control-checked-icon: #{$control-checked-radio-icon};
+    }
+
+    @if $enable-control-switch {
+        .control-switch {
+            --control-icon: #{$control-switch-icon};
+            --control-width: #{$control-switch-width};
+            --control-height: #{$control-switch-height};
+            --control-radius: #{$control-switch-radius};
+            --control-icon-position: left center;
+            --control-checked-icon: #{$control-checked-switch-icon};
 
             &:is(:checked, .is-active) {
-                --control-icon-position: left center;
+                --control-icon-position: right center;
+            }
+
+            [dir="rtl"] &,
+            &[dir="rtl"] {
+                --control-icon-position: right center;
+
+                &:is(:checked, .is-active) {
+                    --control-icon-position: left center;
+                }
             }
         }
     }
