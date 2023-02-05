@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/transform",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Add transforms with ease, with the power of CSS variables.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "transform.css",
   "style": "transform.css",
+  "sass": "_index.scss",
+  "unpkg": "transform.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,10 +20,10 @@
     "transform"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx sass transform.scss transform.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/mq": "^1.0.0"
+    "@fylgja/mq": "^1.1.2",
+    "@fylgja/theme": "^1.1.0"
   }
 }

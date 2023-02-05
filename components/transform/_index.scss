@@ -2,27 +2,31 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.transform {
-    @include transform;
-}
-
-@if $enable-3d-transform {
-    .transform3d {
-        @include transform($enable-3d: true);
+@include theme.atLayer($enable-transform-layer, $transform-layer-name) {
+    .transform {
+        @include transform;
     }
-}
 
-@if $transform-utils {
-    @include build-transform-utils;
+    @if $enable-3d-transform {
+        .transform3d {
+            @include transform($enable-3d: true);
+        }
+    }
 
-    @each $mq-name, $mq in $transform-utils-breakpoints {
-        @media (min-width: $mq) {
-            @include build-transform-utils(
-                $prefix: $mq-name,
-                $separator: $transform-utils-separator
-            );
+    @if $transform-utils {
+        @include build-transform-utils;
+
+        @each $mq-name, $mq in $transform-utils-breakpoints {
+            @media (min-width: $mq) {
+                @include build-transform-utils(
+                    $prefix: $mq-name,
+                    $separator: $transform-utils-separator
+                );
+            }
         }
     }
 }

@@ -94,12 +94,16 @@
     }
 }
 
+$enable-transform-layer: false !default;
+
+$transform-layer-name: utilities !default;
+
 // * The separator style can be a safe css separator, the "-" (hyphen)
 // * Or the unsafe css "\\:" (TailwindCSS separator)
 // * Or use a underscore "_".
 // * If you want something different that is still a safe separator
 $transform-utils-separator: "-" !default;
-$transform-utils-breakpoints: $mq-breakpoints !default;
+$transform-utils-breakpoints: $breakpoints !default;
 
 $enable-3d-transform: true !default;
 

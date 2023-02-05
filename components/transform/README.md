@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/transform";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/transform" with ($enable-transform-layer: true);
+// Or via PostCSS import
+@import "@fylgja/transform/layer";
+```
+
 ## How to use
 
 The transform component is a helper and it can be used 2 ways.
@@ -212,17 +223,17 @@ You can also change it with the following variables;
 
 ```scss
 $transform-utils-separator: "-" !default;
-$transform-utils-breakpoints: $mq-breakpoints !default;
+$transform-utils-breakpoints: $breakpoints !default;
 ```
 
-_`$mq-breakpoints` is a variable from the `@fylgja/mq` component._
+_`$breakpoints` is a variable from the `@fylgja/mq` component._
 
 #### Config options
 
 The map that is loaded is very simple to use.
 The only  requirement is that the key is also used in the CSS variable options.
 
-You can extend the defautls via the variable `$transform-utils`.
+You can extend the defaults via the variable `$transform-utils`.
 Or directly change the the defaults or unset theme via the `$transform-utils-defaults`.
 
 To unset any Class Variables;
@@ -267,10 +278,51 @@ $transform-translates: (
     "nfull": -100%,
 ) !default;
 
+$transform-angles: (
+    "45": 45deg,
+    "90": 90deg,
+    "180": 180deg,
+) !default;
+
 $transform-scales: (
     "50": 0.5,
     "90": 0.9,
     "100": 1,
     "120": 1.2,
 ) !default;
+
+$transform-utils: () !default;
+$transform-utils-defaults: (
+    "t": $transform-translates,
+    "tx": $transform-translates,
+    "ty": $transform-translates,
+    "ta": $transform-angles,
+    "s": $transform-scales,
+    "sx": $transform-scales,
+    "sy": $transform-scales,
+    "origin": (
+        "center": center,
+        "top": top,
+        "top-right": top right,
+        "right": right,
+        "bottom-right": bottom right,
+        "bottom": bottom,
+        "bottom-left": bottom left,
+        "left": left,
+        "top-left": top left,
+    ),
+) !default;
+```
+
+for the other option use;
+
+```scss
+$enable-transform-layer: false !default;
+
+$transform-layer-name: utilities !default;
+
+$transform-utils-separator: "-" !default;
+$transform-utils-breakpoints: $breakpoints !default;
+
+$enable-3d-transform: true !default;
 ```
