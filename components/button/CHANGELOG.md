@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.4] - 2023-02-05
+### Changed
+- color syntax with new linter rules
+
 ## [1.2.3] - 2022-11-05
 ### Changed
 - use Fylgja Theme atLayer for building the `@layer` variant

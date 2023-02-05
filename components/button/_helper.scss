@@ -69,7 +69,7 @@ $btn-disabled-opacity: 0.7 !default;
     transition-property: $btn-transition-property;
     user-select: none;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(black, 0); // unset iOS tap color
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%); // unset iOS tap color
     -webkit-appearance: none; // unset iOS styles on <button>
 
     // For v2
