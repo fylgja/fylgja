@@ -2,12 +2,16 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.hide-scrollbar {
-    @include scrollbar($width: none);
-}
+@include theme.atLayer($enable-scrollbar-layer, $scrollbar-layer-name) {
+    .hide-scrollbar {
+        @include scrollbar($width: none);
+    }
 
-.thin-scrollbar {
-    @include scrollbar($width: thin);
+    .thin-scrollbar {
+        @include scrollbar($width: thin);
+    }
 }

@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/scrollbar",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Customize or hide the scrollbar with ease",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "scrollbar.css",
   "style": "scrollbar.css",
+  "sass": "_index.scss",
+  "unpkg": "scrollbar.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,10 +20,9 @@
     "scrollbar"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx sass scrollbar.scss scrollbar.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }

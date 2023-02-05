@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/scrollbar";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/scrollbar" with ($enable-scrollbar-layer: true);
+// Or via PostCSS import
+@import "@fylgja/scrollbar/layer";
+```
+
 ## How to use
 
 By default `@fylgja/scrollbar` offers 2 scrollbar styles.
@@ -77,6 +88,10 @@ Want more control on the base styles, than the CSS variables,
 Here are the following SCSS variables you can modify.
 
 ```scss
+$enable-scrollbar-layer: false !default;
+
+$scrollbar-layer-name: utilities !default;
+
 $scrollbar-thumb-color: rgba($root-fg, 25%) !default;
 $scrollbar-track-color: rgba($root-fg, 0%) !default;
 ```
