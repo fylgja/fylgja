@@ -2,61 +2,65 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.menu {
-    list-style: none;
-    display: var(--menu-display, flex);
-    flex-direction: var(--menu-dir, column);
-    margin: var(--menu-margin, 0);
-    padding: var(--menu-padding, 0);
-    padding-inline-start: var(--menu-nested-indent);
+@include theme.atLayer($enable-menu-layer, $menu-layer-name) {
+    .menu {
+        list-style: none;
+        display: var(--menu-display, flex);
+        flex-direction: var(--menu-dir, column);
+        margin: var(--menu-margin, 0);
+        padding: var(--menu-padding, 0);
+        padding-inline-start: var(--menu-nested-indent);
 
-    @if $enable-menu-nested {
-        :is(ul, ol) {
-            --menu-nested-indent: #{$menu-nested-indent};
+        @if $enable-menu-nested {
+            :is(ul, ol) {
+                --menu-nested-indent: #{$menu-nested-indent};
+            }
         }
-    }
 
-    @if $enable-menu-row {
-        &.-row {
-            --menu-display: inline-flex;
-            --menu-dir: row;
-            --menu-items: center;
+        @if $enable-menu-row {
+            &.-row {
+                --menu-display: inline-flex;
+                --menu-dir: row;
+                --menu-items: center;
 
-            @if $enable-menu-nested {
-                :is(ul, ol) {
-                    --menu-dir: column;
-                    --menu-nested-indent: 0;
+                @if $enable-menu-nested {
+                    :is(ul, ol) {
+                        --menu-dir: column;
+                        --menu-nested-indent: 0;
+                    }
                 }
             }
         }
     }
-}
 
-@if $menu-item-auto-selector {
-    $item: $menu-item-auto-selector;
+    @if $menu-item-auto-selector {
+        $item: $menu-item-auto-selector;
 
-    :is(.menu-item, .menu-label, .menu > #{$item}, .menu li > #{$item}) {
-        @include menu-item;
+        :is(.menu-item, .menu-label, .menu > #{$item}, .menu li > #{$item}) {
+            @include menu-item;
+        }
+
+        :is(.menu-item, .menu > #{$item}, .menu li > #{$item}) {
+            @include menu-item-states;
+        }
+    } @else {
+        .menu-item,
+        .menu-label {
+            @include menu-item;
+        }
+
+        .menu-item {
+            @include menu-item-states;
+        }
     }
 
-    :is(.menu-item, .menu > #{$item}, .menu li > #{$item}) {
-        @include menu-item-states;
-    }
-} @else {
-    .menu-item,
     .menu-label {
-        @include menu-item;
+        font-weight: $menu-label-weight;
     }
-
-    .menu-item {
-        @include menu-item-states;
-    }
-}
-
-.menu-label {
-    font-weight: $menu-label-weight;
 }
 
 // Only backwards compatibility, will be dropped in v2

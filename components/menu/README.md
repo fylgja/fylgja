@@ -20,6 +20,17 @@ Then include the component in to your code via;
 @import "@fylgja/menu";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/menu" with ($enable-menu-layer: true);
+// Or via PostCSS import
+@import "@fylgja/menu/layer";
+```
+
 ## How to use
 
 The most simple usecase is just using the `.menu` class as wrapper, around a set of links.
@@ -52,7 +63,7 @@ The menu class will style all links automatically,
 
 but only if links are a child of the menu class or a direct child of list item.
 
-If you want to use a wrapper, then use the class `.menu-item`, 
+If you want to use a wrapper, then use the class `.menu-item`,
 to add the same logic and styles as the auto menu item version.
 
 ```html
@@ -114,6 +125,9 @@ Want direct control on the base styles, here are the following SCSS variables ca
 ```scss
 $enable-menu-row: true !default;
 $enable-menu-nested: true !default;
+$enable-menu-layer: false !default;
+
+$menu-layer-name: components !default;
 
 $menu-nested-indent: 1em !default;
 
