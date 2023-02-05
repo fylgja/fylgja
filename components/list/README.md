@@ -21,6 +21,17 @@ Then include the component in to your code via;
 @import "@fylgja/list";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/list" with ($enable-list-layer: true);
+// Or via PostCSS import
+@import "@fylgja/list/layer";
+```
+
 ## How to use
 
 Out of the box this will work by just adding the class `.list-style` to any `ul` or `ol` tag.
@@ -90,6 +101,9 @@ Want direct control on the base styles, here are the following SCSS variables ca
 
 ```scss
 $enable-list-style-none: true !default;
+$enable-list-layer: false !default;
+
+$list-layer-name: components !default;
 
 $list-marker-gap: 1ch !default;
 $list-marker-icon: "•" !default;
@@ -104,7 +118,7 @@ $list-marker-icon-height: 1.5em !default; // Same as line-height default
 
 <details class="faq-panel" open><summary><span>Do I still needs this with the pseudo <code>:marker</code></span></summary>
 
-No if you plan to just set an icon and the color, 
+No if you plan to just set an icon and the color,
 
 then native solution via the `:marker` pseudo selector, is all you need.
 

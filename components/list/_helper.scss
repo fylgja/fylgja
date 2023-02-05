@@ -4,6 +4,9 @@
 @use "sass:list";
 
 $enable-list-style-none: true !default;
+$enable-list-layer: false !default;
+
+$list-layer-name: components !default;
 
 $list-marker-gap: 1ch !default;
 $list-marker-icon: "•" !default;
