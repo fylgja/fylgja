@@ -54,9 +54,9 @@ you only need something like this;
 ```
 
 Or make it more fancy via some extra fylgja components.
-Like the `@fylgja/base`, `@fylgja/container` and `@fylgja/utilpack`.
+Like the `@fylgja/container` and `@fylgja/utilpack`.
 
-Example: make a hero component that is realy easily build.
+Example: make a hero component that is really easily build.
 
 ```html
 <style>
@@ -67,12 +67,23 @@ Example: make a hero component that is realy easily build.
         --color: var(--color-on-theme);
     }
 </style>
-<section id="page-hero" class="flex iteme-center justify-center py-8">
+<section id="page-hero" class="flex items-center justify-center py-8">
     <div class="container">
         <h1 class="mb-0">Heading</h1>
         <p class="h5 mt-0">Slogan text</p>
     </div>
 </section>
+```
+
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/section" with ($enable-section-layer: true);
+// Or via PostCSS import
+@import "@fylgja/section/layer";
 ```
 
 ## Config
@@ -82,6 +93,9 @@ And has no mayor config options, except for the theme default version.
 
 ```scss
 $enable-section-theme: true !default;
+$enable-section-layer: false !default;
+
+$section-layer-name: components !default;
 ```
 
 When enabled it allows you to use the section with the theme color variable class.

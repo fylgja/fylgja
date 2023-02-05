@@ -1,0 +1,1 @@
+@layer components{:is(section,.section){min-height:var(--height);background:var(--img, none) var(--bg) var(--img-layout, center/cover) var(--img-repeat, no-repeat);color:var(--color)}:is(section,.section).-theme{--bg: var(--color-theme, #1565c1);--color: var(--color-on-theme, #fff)}}
