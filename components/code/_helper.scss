@@ -11,14 +11,14 @@ $family-code: (
 
 $code-padding: 0 0.15em !default;
 $code-radius: 0.2rem !default;
-$code-border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.05)) !default;
+$code-border: 1px solid var(--code-stroke, rgb(0 0 0 / 5%)) !default;
 $code-bg: #eee !default;
 $code-color: #111 !default;
 
 $pre-margin: 1em 0 !default;
 $pre-padding: 1rem !default;
 $pre-radius: 0.2rem !default;
-$pre-border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.05)) !default;
+$pre-border: 1px solid var(--code-stroke, rgb(0 0 0 / 5%)) !default;
 $pre-bg: #f2f2f2 !default;
 $pre-color: #111 !default;
 $pre-font-size: 0.875em !default;
