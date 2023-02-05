@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/progress",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "The progress component show a progression of a form or somethings else",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "progress.css",
   "style": "progress.css",
+  "sass": "_index.scss",
+  "unpkg": "progress.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,9 +20,9 @@
     "progress"
   ],
   "scripts": {
-    "build": "npx sass progress.scss progress.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }

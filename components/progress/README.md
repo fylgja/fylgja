@@ -21,6 +21,17 @@ Then include the component in to your code via;
 @import "@fylgja/progress";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/progress" with ($enable-progress-layer: true);
+// Or via PostCSS import
+@import "@fylgja/progress/layer";
+```
+
 ## How to use
 
 No instructions are really needed.
@@ -44,6 +55,10 @@ Want more control on the base styles, than the CSS variable.
 Down here are the following SCSS variables you can modify.
 
 ```scss
+$enable-progress-layer: false !default;
+
+$progress-layer-name: components !default;
+
 $progress-height: 0.8em !default;
 $progress-margin: 1em 0 !default;
 $progress-radius: 0.5em !default;

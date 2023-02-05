@@ -1,0 +1,48 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+$enable-progress-layer: false !default;
+
+$progress-layer-name: components !default;
+
+$progress-height: 0.8em !default;
+$progress-margin: 1em 0 !default;
+$progress-radius: 0.5em !default;
+$progress-border: 0 !default;
+$progress-bg: rgba(#ddd, 0.3) !default;
+$progress-color: var(--color-theme, #{$color-theme}) !default;
+$progress-animation-timing: 1s linear infinite !default;
+$progress-transition: width 0.6s ease !default;
+$progress-loader-bg: rgba($color-on-theme, 0.2) !default;
+
+@mixin progress {
+    display: block;
+    width: 100%;
+    height: $progress-height;
+    border-radius: $progress-radius;
+    border: $progress-border;
+    background-color: $progress-bg;
+    color: $progress-color;
+    vertical-align: baseline;
+    overflow: hidden;
+}
+
+@mixin progress-loading {
+    background-image: linear-gradient(
+        45deg,
+        rgba(white, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(white, 0.15) 50%,
+        rgba(white, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1em 1em;
+
+    @media (prefers-reduced-motion: no-preference) {
+        animation: progress-loading 1s linear infinite;
+    }
+}
