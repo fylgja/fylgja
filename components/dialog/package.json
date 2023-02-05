@@ -20,9 +20,9 @@
     "dialog"
   ],
   "scripts": {
-    "build": "npx sass dialog.scss dialog.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }

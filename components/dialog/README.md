@@ -26,6 +26,17 @@ Then include the component in to your code via;
 @import "@fylgja/dialog";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/dialog" with ($enable-dialog-layer: true);
+// Or via PostCSS import
+@import "@fylgja/dialog/layer";
+```
+
 ## How to use
 
 To use the dialog simply create a html dialog element and a button,
@@ -46,12 +57,12 @@ that can open the dialog.
 <!-- Or use 'offcanvas-end' -->
 ```
 
-Use the `.dialog-inner` 
+Use the `.dialog-inner`
 if your content will be to big for specific screen sizes.
 
 This will allow scrolling the content inside the dialog-inner.
 
-You can combine this with a header and/or footer, 
+You can combine this with a header and/or footer,
 that always will be visible when you are scrolling.
 
 ```html
@@ -74,11 +85,14 @@ You will need the polyfill until the html dialog is supported fully
 As with almost all of our components.
 CSS variables can be configured to add your own look/style.
 
-For direct control of the base styles, 
+For direct control of the base styles,
 use the following SCSS variables can you modify.
 
 ```scss
 $enable-dialog-polyfill: true !default;
+$enable-dialog-layer: false !default;
+
+$dialog-layer-name: components !default;
 
 // Modal (default)
 $dialog-index: 9 !default;

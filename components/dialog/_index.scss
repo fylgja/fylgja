@@ -2,42 +2,48 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
-@use "keyframes";
+@use "keyframes" as *;
 
-:is(dialog, .dialog) {
-    @include dialog;
+@include theme.atLayer($enable-dialog-layer, $dialog-layer-name) {
+    @include dialog-keyframes;
 
-    &:is([open], .is-open) {
-        @include dialog-open;
+    :is(dialog, .dialog) {
+        @include dialog;
+
+        &:is([open], .is-open) {
+            @include dialog-open;
+        }
+
+        // Notification
+        &.snackbar {
+            @include dialog-snackbar($dialog-snackbar-from);
+        }
+
+        // Offcanvas style
+        &.offcanvas {
+            @include dialog-offcanvas(start);
+        }
+
+        &.offcanvas-end {
+            @include dialog-offcanvas(end);
+        }
     }
 
-    // Notification
-    &.snackbar {
-        @include dialog-snackbar($dialog-snackbar-from);
+    .dialog-inner {
+        overflow: auto;
+        overscroll-behavior: contain;
     }
 
-    // Offcanvas style
-    &.offcanvas {
-        @include dialog-offcanvas(start);
+    dialog::backdrop {
+        background-color: $dialog-backdrop;
     }
 
-    &.offcanvas-end {
-        @include dialog-offcanvas(end);
-    }
-}
-
-.dialog-inner {
-    overflow: auto;
-    overscroll-behavior: contain;
-}
-
-dialog::backdrop {
-    background-color: $dialog-backdrop;
-}
-
-@if $enable-dialog-polyfill {
-    .backdrop {
-        @include backdrop;
+    @if $enable-dialog-polyfill {
+        .backdrop {
+            @include backdrop;
+        }
     }
 }
