@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$enable-transition-layer: false !default;
+
+$transition-layer-name: utilities !default;
+
 // * Better than using the all keyword
 $transition-properties: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform, filter, backdrop-filter !default;

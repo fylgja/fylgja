@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/transition";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/transition" with ($enable-transition-layer: true);
+// Or via PostCSS import
+@import "@fylgja/transition/layer";
+```
+
 ## How to use
 
 The transition component can be used 2 ways.
@@ -71,6 +82,20 @@ First call the helper and then use the mixin `transition`;
         $delay, // Delay in ms or s
     );
 }
+```
+
+## Config
+
+```scss
+$enable-transition-layer: false !default;
+
+$transition-layer-name: utilities !default;
+
+$transition-properties: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter !default;
+$transition-duration: 0.2s !default;
+$transition-easing: ease-in !default;
+$transition-delay: 0s !default;
 ```
 
 ## Tip
