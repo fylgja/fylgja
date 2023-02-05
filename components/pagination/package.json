@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/pagination",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Pagination component makes it easy to build many pagination patterns",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "pagination.css",
   "style": "pagination.css",
+  "sass": "_index.scss",
+  "unpkg": "pagination.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,9 +20,9 @@
     "pagination"
   ],
   "scripts": {
-    "build": "npx sass pagination.scss pagination.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }

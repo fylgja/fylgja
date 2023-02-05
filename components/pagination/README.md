@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/pagination)](https://www.npmjs.org/package/@fylgja/pagination)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The pagination component makes it easy to build many pagination patterns, 
+The pagination component makes it easy to build many pagination patterns,
 like button only next previous nav or dots nav.
 
 ## Installation
@@ -19,6 +19,18 @@ Then include the component in to your code via;
 // Or via PostCSS import
 @import "@fylgja/pagination";
 ```
+
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/pagination" with ($enable-pagination-layer: true);
+// Or via PostCSS import
+@import "@fylgja/pagination/layer";
+```
+
 
 ## How to use
 
@@ -42,7 +54,7 @@ And it is also used to give it the active item style.
 
 ### Pagination with buttons and ellipsis.
 
-If you need a more complex pagination with buttons and ellipsis, 
+If you need a more complex pagination with buttons and ellipsis,
 
 you can nest the pagination with buttons and there is a class
 
@@ -99,6 +111,9 @@ Want direct control on the base styles, here are the following SCSS variables ca
 ```scss
 $enable-pagination-old-gap: true !default;
 $enable-pagination-dots-style: true !default;
+$enable-pagination-layer: false !default;
+
+$pagination-layer-name: components !default;
 
 $pagination-size: 2em !default;
 $pagination-gap: 2px !default;

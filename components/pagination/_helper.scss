@@ -5,6 +5,9 @@
 
 $enable-pagination-old-gap: true !default;
 $enable-pagination-dots-style: true !default;
+$enable-pagination-layer: false !default;
+
+$pagination-layer-name: components !default;
 
 $pagination-size: 2em !default;
 $pagination-gap: 2px !default;
@@ -36,6 +39,10 @@ $pagination-disabled-opacity: 0.8 !default;
 
 $pagination-dots-size: 0.625em !default;
 $pagination-dots-gap: 0.35em !default;
+
+$pagination-dots-stroke: currentcolor !default;
+$pagination-dots-active-stroke: var(--color-theme, #{$color-theme}) !default;
+$pagination-dots-active-bg: var(--color-theme, #{$color-theme}) !default;
 
 @mixin pagination {
     list-style: none;
