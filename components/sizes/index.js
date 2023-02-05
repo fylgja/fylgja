@@ -37,18 +37,6 @@ export default {
         xl: "1440px",
         xxl: "2200px",
     },
-    sizeFluid: {
-        1: "clamp(0.875rem, 1vw, 1rem)", // 14 - 16
-        2: "clamp(1rem, 2vw, 1.5rem)", // 16 - 24
-        3: "clamp(1.5rem, 3vw, 2rem)", // 24 - 32
-        4: "clamp(2rem, 4vw, 3rem)", // 32 - 48
-        5: "clamp(4rem, 5vw, 5rem)", // 48 - 64
-        6: "clamp(5rem, 7vw, 7.5rem)", // 64 - 120
-        7: "clamp(7.5rem, 10vw, 10rem)", // 120 - 160
-        8: "clamp(10rem, 20vw, 15rem)", // 160 - 240
-        9: "clamp(15rem, 30vw, 20rem)", // 240 - 320
-        10: "clamp(20rem, 40vw, 30rem)", // 320 - 480
-    },
     sizeContent: {
         1: "25ch",
         2: "45ch",
