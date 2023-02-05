@@ -94,9 +94,6 @@ Example:
 
 ## Config
 
-Want more control on the base styles, than the CSS variables,
-Here are the following SCSS variables you can modify.
-
 ```scss
 $enable-stretched-link-layer: false !default;
 
