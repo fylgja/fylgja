@@ -63,9 +63,8 @@ $progress-height: 0.8em !default;
 $progress-margin: 1em 0 !default;
 $progress-radius: 0.5em !default;
 $progress-border: 0 !default;
-$progress-bg: rgba(#ddd, 0.3) !default;
+$progress-bg: color.change(#ddd, $alpha: 0.3) !default;
 $progress-color: var(--color-theme, #{$color-theme}) !default;
 $progress-animation-timing: 1s linear infinite !default;
 $progress-transition: width 0.6s ease !default;
-$progress-loader-bg: rgba($color-on-theme, 0.2) !default;
 ```
