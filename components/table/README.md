@@ -22,6 +22,17 @@ Then include the component in to your code via;
 @import "@fylgja/table";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/table" with ($enable-table-layer: true);
+// Or via PostCSS import
+@import "@fylgja/table/layer";
+```
+
 ## How to use
 
 No instruction are really needed,
@@ -78,6 +89,10 @@ Want direct control on the base styles.
 Here are the following SCSS variables can you modify.
 
 ```scss
+$enable-table-layer: false !default;
+
+$table-layer-name: base !default;
+
 $table-margin: 1rem 0 !default;
 $table-padding: 5px 8px !default;
 

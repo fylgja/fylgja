@@ -1,62 +1,59 @@
-$table-margin: 1rem 0 !default;
-$table-padding: 5px 8px !default;
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
 
-$table-border-collapse: collapse !default;
-$table-border-gap: 2px !default;
-$table-border-width: 0 0 1px !default;
-$table-border-style: solid !default;
-$table-border-color: #ccc !default;
+@forward "helper";
 
-$table-bg: transparent !default;
-$table-color: inherit !default;
+@use "@fylgja/theme/layer" as theme;
+@use "helper" as *;
 
-$table-head-border-width: 0 0 2px !default;
+// TODO for v2 add where selector
+@include theme.atLayer($enable-table-layer, $table-layer-name) {
+    table {
+        margin: var(--table-margin, #{$table-margin});
+        border-collapse: var(--table-collapse, #{$table-border-collapse});
+        border-spacing: var(--table-gap, #{$table-border-gap});
+        border-color: var(--table-border-color, #{$table-border-color});
+    }
 
-table {
-    margin: var(--table-margin, #{$table-margin});
-    border-collapse: var(--table-collapse, #{$table-border-collapse});
-    border-spacing: var(--table-gap, #{$table-border-gap});
-    border-color: var(--table-border-color, #{$table-border-color});
-}
+    thead,
+    tbody,
+    tfoot,
+    tr,
+    th,
+    td {
+        border: 0 var(--table-border-style, #{$table-border-style});
+        border-color: var(--table-border-color, inherit);
+    }
 
-thead,
-tbody,
-tfoot,
-tr,
-th,
-td {
-    border: 0 var(--table-border-style, #{$table-border-style});
-    border-color: var(--table-border-color, inherit);
-}
+    caption {
+        text-align: var(--table-align, center);
+        caption-side: var(--caption-side);
+    }
 
-caption {
-    text-align: var(--table-align, center);
-    caption-side: var(--caption-side);
-}
+    thead,
+    tfoot {
+        vertical-align: var(--table-valign, middle);
+    }
 
-thead,
-tfoot {
-    vertical-align: var(--table-valign, middle);
-}
+    thead {
+        border-width: var(--table-border-width, #{$table-head-border-width});
+    }
 
-thead {
-    border-width: var(--table-border-width, #{$table-head-border-width});
-}
+    th,
+    td {
+        border-width: var(--table-border-width, #{$table-border-width});
+        padding: var(--table-padding, #{$table-padding});
+        background-color: var(--table-bg, #{$table-bg});
+        color: var(--table-color, #{$table-color});
+        text-align: var(--table-align, start);
+        vertical-align: var(--table-valign, inherit);
+    }
 
-th,
-td {
-    border-width: var(--table-border-width, #{$table-border-width});
-    padding: var(--table-padding, #{$table-padding});
-    background-color: var(--table-bg, #{$table-bg});
-    color: var(--table-color, #{$table-color});
-    text-align: var(--table-align, start);
-    vertical-align: var(--table-valign, inherit);
-}
+    th {
+        font-weight: var(--table-weight, bolder);
+    }
 
-th {
-    font-weight: var(--table-weight, bolder);
-}
-
-td {
-    font-weight: var(--table-weight);
+    td {
+        font-weight: var(--table-weight);
+    }
 }
