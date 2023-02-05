@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/stretched-link",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Fylgja stretched-link component, make any component fully clickable via a nested link",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "stretched-link.css",
   "style": "stretched-link.css",
+  "sass": "_index.scss",
+  "unpkg": "stretched-link.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -21,8 +21,9 @@
     "cascade-layer"
   ],
   "scripts": {
-    "build:layer": "npx sass layer.scss layer.css --no-source-map -s compressed -I node_modules",
-    "build:main": "npx sass stretched-link.scss stretched-link.css --no-source-map -s compressed -I node_modules",
-    "build": "npm run build:layer && npm run build:main"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.1.0"
   }
 }

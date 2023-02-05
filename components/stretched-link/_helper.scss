@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$enable-stretched-link-layer: false !default;
+
+$stretched-link-layer-name: utilities !default;
+
 @mixin stretched-link($position: after) {
     &::#{$position} {
         content: "";

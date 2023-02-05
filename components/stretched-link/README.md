@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/stretched-link";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/stretched-link" with ($enable-stretched-link-layer: true);
+// Or via PostCSS import
+@import "@fylgja/stretched-link/layer";
+```
+
 ## How to use
 
 To use the stretched-link make sure you component is relative positioned,
@@ -79,4 +90,15 @@ Example:
         <a href="#" class="stretched-link">Read more about this cool link</a>
     </div>
 </div>
+```
+
+## Config
+
+Want more control on the base styles, than the CSS variables,
+Here are the following SCSS variables you can modify.
+
+```scss
+$enable-stretched-link-layer: false !default;
+
+$stretched-link-layer-name: utilities !default;
 ```
