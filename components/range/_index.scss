@@ -2,8 +2,12 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-[type="range"] {
-    @include range;
+@include theme.atLayer($enable-range-layer, $range-layer-name) {
+    [type="range"] {
+        @include range;
+    }
 }

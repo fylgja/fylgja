@@ -19,6 +19,17 @@ Then include the component in to your code via;
 @import "@fylgja/range";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/range" with ($enable-range-layer: true);
+// Or via PostCSS import
+@import "@fylgja/range/layer";
+```
+
 ## How to use
 
 Out of the box all the styling is done directly,
@@ -97,6 +108,10 @@ Want direct control on the base styles,
 here are the following SCSS variables can you modify.
 
 ```scss
+$enable-range-layer: false !default;
+
+$range-layer-name: components !default;
+
 $range-track-height: 0.5rem;
 $range-track-radius: 1rem;
 $range-track-bg: track-fill(var(--color-theme, #{$color-theme}));

@@ -13,6 +13,10 @@
     );
 }
 
+$enable-range-layer: false !default;
+
+$range-layer-name: components !default;
+
 $range-track-height: 0.5rem;
 $range-track-radius: 1rem;
 $range-track-bg: track-fill(var(--color-theme, #{$color-theme}));
