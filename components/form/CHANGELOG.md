@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2023-02-05
+### Added
+- support for `@layer` for style version
+
+### Changed
+- import syntax for field and box to just the name, no style prefix needed,
+  older import syntax will be dropped in v2
+
 ## [1.1.0] - 2023-02-05
 ### Added
 - support for `@layer` in components scope

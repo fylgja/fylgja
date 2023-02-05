@@ -43,8 +43,25 @@ change the variable `$form-style` to one of the other options.
 Or if you are importing this as plain CSS or in PostCSS use;
 
 ```css
-@import "@fylgja/form/style-field.css";
-@import "@fylgja/form/style-box.css";
+@import "@fylgja/form/field.css";
+@import "@fylgja/form/box.css";
+```
+
+_For versions older than v1.2 use `style-{field|box}.css`_
+
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/form" with ($enable-form-layer: true);
+// Or via PostCSS import
+@import "@fylgja/form/layer";
+
+// Style options
+@import "@fylgja/form/field.layer.css";
+@import "@fylgja/form/box.layer.css";
 ```
 
 ## How to use
