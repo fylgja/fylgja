@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/scroll-slider",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The Fylgja scroll-slider component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "scroll-slider.css",
   "style": "scroll-slider.css",
+  "sass": "_index.scss",
+  "unpkg": "scroll-slider.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,6 +20,9 @@
     "scroll-slider"
   ],
   "scripts": {
-    "build": "npx sass scroll-slider.scss scroll-slider.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.1.0"
   }
 }

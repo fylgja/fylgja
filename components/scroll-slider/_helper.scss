@@ -3,6 +3,9 @@
 
 // * Fixed in chrome 91 and Firefox v89 - waiting for Safari to fix it
 $enable-scroll-overflow-fix: true !default;
+$enable-scroll-layer: false !default;
+
+$scroll-layer-name: components !default;
 
 $scroll-padding: 1.25em !default;
 $scroll-gap: 0.5em !default;

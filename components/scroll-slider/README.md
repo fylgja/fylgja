@@ -25,6 +25,17 @@ Then include the component in to your code via;
 @import "@fylgja/scroll-slider";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/range" with ($enable-range-layer: true);
+// Or via PostCSS import
+@import "@fylgja/range/layer";
+```
+
 ## How to use
 
 To create a slider, you will need a wrapper element with the class `.scroll-slider`.
@@ -40,7 +51,7 @@ Any direct children of the slider will become scroll items.
 
 The scroll items will by default have the size from the content.
 
-If you want your slides to have a specific size, 
+If you want your slides to have a specific size,
 you can use the CSS variables provided by this CSS component.
 
 A full width slider can be made by setting the scroll-size to 100%
@@ -68,6 +79,9 @@ here are the following SCSS variables you can modify.
 
 ```scss
 $enable-scroll-overflow-fix: true !default;
+$enable-scroll-layer: false !default;
+
+$scroll-layer-name: components !default;
 
 $scroll-gap: 0.5em !default;
 $scroll-padding-y: 1rem !default;

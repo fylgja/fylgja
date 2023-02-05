@@ -2,8 +2,12 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
-.scroll-slider {
-    @include scroll-slider;
+@include theme.atLayer($enable-scroll-layer, $scroll-layer-name) {
+    .scroll-slider {
+        @include scroll-slider;
+    }
 }
