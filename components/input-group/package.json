@@ -25,7 +25,7 @@
     "postbuild": "npm run build:legacy"
   },
   "dependencies": {
-    "@fylgja/form": "^1.0.8",
+    "@fylgja/form": "^1.1.0",
     "@fylgja/theme": "^1.1.0"
   }
 }
