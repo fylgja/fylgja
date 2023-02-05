@@ -5,6 +5,10 @@
 @use "@fylgja/theme" as *;
 @use "@fylgja/form/helper" as *;
 
+$enable-input-group-layer: false !default;
+
+$input-group-layer-name: components !default;
+
 $input-group-style: default !default;
 $input-group-styles: (
     field: (

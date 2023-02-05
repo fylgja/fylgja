@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/input-group)](https://www.npmjs.org/package/@fylgja/input-group)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The input group extends upon the `@fylgja/form`, 
+The input group extends upon the `@fylgja/form`,
 
 by providing a wrapper that allows for more complex form field styles,
 
@@ -39,9 +39,26 @@ Or if you are a importing this as plain CSS in PostCSS or any other option.
 Import the style directly via;
 
 ```css
-@import "@fylgja/input-group/style-field.css";
+@import "@fylgja/input-group/field.css";
 /* Or */
-@import "@fylgja/input-group/style-box.css";
+@import "@fylgja/input-group/box.css";
+```
+
+_For versions older than v1.2 use `style-{field|box}.css`_
+
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/input-group" with ($enable-input-group-layer: true);
+// Or via PostCSS import
+@import "@fylgja/input-group/layer";
+
+// Style options
+@import "@fylgja/input-group/field.layer.css";
+@import "@fylgja/input-group/box.layer.css";
 ```
 
 ## How to use
@@ -81,7 +98,7 @@ The `@fylgja/input-group` inherits all of its variable values,
 from the `@fylgja/form` component.
 
 So for what each variable you can do.
-See the the doc from the `@fylgja/form` component.
+See the the docs from the `@fylgja/form` component.
 
 Or override it directly.
 Via the variables found down here;
@@ -89,6 +106,10 @@ Via the variables found down here;
 <details class="faq-panel"><summary>View SCSS variables</summary>
 
 ```scss
+$enable-input-group-layer: false !default;
+
+$input-group-layer-name: components !default;
+
 $input-group-style: default !default;
 $input-group-styles: (
     field: (

@@ -2,57 +2,64 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "helper" as *;
 
 // ? consider updating this to a grid layout for multi layout input group
 // Something for v2 maybe?
 
-.input-group {
-    position: relative;
-    display: flex;
-    width: 100%;
-    min-height: var(--input-group-height);
-    border: $input-group-border-width $input-group-border-style;
-    border-color: $input-group-border-color;
-    border-radius: $input-group-radius;
-    background-color: $input-group-bg;
-    color: $input-group-color;
-    overflow: hidden;
+@include theme.atLayer($enable-input-group-layer, $input-group-layer-name) {
+    .input-group {
+        position: relative;
+        display: flex;
+        width: 100%;
+        min-height: var(--input-group-height);
+        border: $input-group-border-width $input-group-border-style;
+        border-color: $input-group-border-color;
+        border-radius: $input-group-radius;
+        background-color: $input-group-bg;
+        color: $input-group-color;
+        overflow: hidden;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: inherit;
-        transition: box-shadow 0.15s linear;
-        pointer-events: none;
-    }
-
-    &:focus-within {
-        --form-stroke: #{$input-group-focus-color};
-        outline: 0;
-
-        // Needed as after pseudo element,
-        // to prevent autocomplete styles from breaking the focus
         &::after {
-            box-shadow: var(--form-focus-style, #{$input-group-focus-style});
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: inherit;
+            transition: box-shadow 0.15s linear;
+            pointer-events: none;
+        }
+
+        &:focus-within {
+            --form-stroke: #{$input-group-focus-color};
+            outline: 0;
+
+            // Needed as after pseudo element,
+            // to prevent autocomplete styles from breaking the focus
+            &::after {
+                box-shadow: var(
+                    --form-focus-style,
+                    #{$input-group-focus-style}
+                );
+            }
+        }
+
+        > * {
+            border-radius: 0;
+        }
+
+        > :is(input, select, textarea) {
+            border: 0;
+            background-color: transparent;
         }
     }
 
-    > * {
-        border-radius: 0;
+    .input-icon,
+    .input-group > svg {
+        color: $input-group-icon-color;
     }
-
-    > :is(input, select, textarea) {
-        border: 0;
-        background-color: transparent;
-    }
-}
-
-.input-icon,
-.input-group > svg {
-    color: $input-group-icon-color;
 }

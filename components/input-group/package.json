@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/input-group",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "The input group extends upon the `@fylgja/form`. By providing a wrapper that allows for more complex form field styles",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "input-group.css",
   "style": "input-group.css",
+  "sass": "_index.scss",
+  "unpkg": "input-group.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,13 +20,12 @@
     "input-group"
   ],
   "scripts": {
-    "build:field": "npx sass style-field.scss style-field.css --no-source-map -s compressed -I node_modules",
-    "build:box": "npx sass style-box.scss style-box.css --no-source-map -s compressed -I node_modules",
-    "build:default": "npx sass input-group.scss input-group.css --no-source-map -s compressed -I node_modules",
-    "build": "npm run build:field && npm run build:box && npm run build:default"
+    "build:legacy": "cp box.css style-box.css && cp field.css style-field.css",
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./",
+    "postbuild": "npm run build:legacy"
   },
   "dependencies": {
     "@fylgja/form": "^1.0.8",
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.1.0"
   }
 }
