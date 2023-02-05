@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/hashlink",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "The Fylgja hashlink component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "hashlink.css",
   "style": "hashlink.css",
+  "sass": "_index.scss",
+  "unpkg": "hashlink.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,6 +20,9 @@
     "hashlink"
   ],
   "scripts": {
-    "build": "npx sass hashlink.scss hashlink.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
+  },
+  "dependencies": {
+    "@fylgja/theme": "^1.1.0"
   }
 }

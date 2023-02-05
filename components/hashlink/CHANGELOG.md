@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-02-05
+### Added
+- support for `@layer` in utilities scope
+
 ## [1.0.1] - 2022-06-06
 _Nothing besides docs_
 

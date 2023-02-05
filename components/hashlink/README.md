@@ -25,9 +25,20 @@ Then include the component in to your code via;
 @import "@fylgja/hashlink";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/hashlink" with ($enable-hashlink-layer: true);
+// Or via PostCSS import
+@import "@fylgja/hashlink/layer";
+```
+
 ## How to use
 
-The styles require no additional html markup, 
+The styles require no additional html markup,
 
 but will only take affect if a hashlink points to the correct id and can receive focus.
 
@@ -51,5 +62,9 @@ Want direct control on the base styles, here are the following SCSS variables ca
 $enable-hashlink-scroll-behavior: true !default;
 $enable-hashlink-scroll-behavior-focus-only: true !default;
 $enable-hashlink-id-offset: true !default;
+$enable-hashlink-layer: false !default;
+
+$hashlink-layer-name: utilities !default;
+
 $hashlink-scroll-offset: 1rem !default;
 ```

@@ -1,31 +1,23 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// *1: Requires the use of an [tabindex="-1"] on headings with an id
-// * But prevents scroll-behavior on none focus scroll events like page search
-// * Or JS scroll to
+@forward "helper";
 
-$enable-hashlink-scroll-behavior: true !default;
-$enable-hashlink-scroll-behavior-focus-only: true !default; // *1
-$enable-hashlink-id-offset: true !default;
-$hashlink-scroll-offset: 1rem !default;
+@use "@fylgja/theme/layer" as theme;
+@use "helper" as *;
 
-$hashlink-scroll-selector: if(
-    $enable-hashlink-scroll-behavior-focus-only,
-    "html:focus-within",
-    "html"
-);
-
-@if $enable-hashlink-scroll-behavior {
-    #{$hashlink-scroll-selector} {
-        @media (prefers-reduced-motion: no-preference) {
-            scroll-behavior: smooth;
+@include theme.atLayer($enable-hashlink-layer, $hashlink-layer-name) {
+    @if $enable-hashlink-scroll-behavior {
+        #{$hashlink-scroll-selector} {
+            @media (prefers-reduced-motion: no-preference) {
+                scroll-behavior: smooth;
+            }
         }
     }
-}
 
-@if $enable-hashlink-id-offset {
-    [id] {
-        scroll-margin-top: var(--scroll-offset, #{$hashlink-scroll-offset});
+    @if $enable-hashlink-id-offset {
+        [id] {
+            scroll-margin-top: var(--scroll-offset, #{$hashlink-scroll-offset});
+        }
     }
 }
