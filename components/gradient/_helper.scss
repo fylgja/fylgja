@@ -1,0 +1,31 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/theme" as *;
+
+// *1 Has no effect, Will be dropped in v2
+$enable-gradient-border: true !default;
+$enable-gradient-bg: true !default; // *1
+$enable-gradient-text: true !default;
+$enable-gradient-layer: false !default;
+
+$gradient-layer-name: utilities !default;
+
+$gradient-colors: (
+    "theme": var(--color-theme, #{$color-theme}),
+    "bg": var(--color-bg, #{$root-bg}),
+    "color": currentcolor,
+) !default;
+
+// prettier-ignore
+$gradient-angles: (
+    "top-right": "to top right",
+    "top-left": "to top left",
+    "right": "90deg", // Same as `to right`
+    "left": "270deg", // Same as `to left`
+    "bottom": "180deg", // Same as `to bottom`
+    "bottom-right": "to bottom right",
+    "bottom-left": "to bottom left"
+) !default;
+
+$gradient-transparent: rgb(0 0 0 / 0);

@@ -22,6 +22,17 @@ Then include the component in to your code via;
 @import "@fylgja/gradient";
 ```
 
+### `@layer` support
+
+If you need support for `@layer`,
+use the following import;
+
+```scss
+@use "@fylgja/gradient" with ($enable-gradient-layer: true);
+// Or via PostCSS import
+@import "@fylgja/gradient/layer";
+```
+
 ## How to use
 
 To use the `.bg-gradient`, `.border-gradient` or `.text-gradient` simply add them to any element,
@@ -108,6 +119,9 @@ Want direct control on the base styles, here are the following scss variables ca
 $enable-gradient-border: true !default;
 $enable-gradient-bg: true !default;
 $enable-gradient-text: true !default;
+$enable-gradient-layer: false !default;
+
+$gradient-layer-name: utilities !default;
 
 $gradient-colors: (
     "theme": var(--color-theme, #{$color-theme}),
