@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/dialog",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "The Fylgja dialog component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "dialog.css",
   "style": "dialog.css",
+  "sass": "_index.scss",
+  "unpkg": "dialog.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
