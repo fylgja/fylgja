@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-02-05
+### Changed
+- color syntax with new linter rules
+
 ## [1.3.0] - 2023-02-05
 ### Added
 - support for `@layer` in components scope
