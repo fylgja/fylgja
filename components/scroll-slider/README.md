@@ -31,7 +31,7 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/scroll-slider" with ($enable-scroll-slider-layer: true);
+@use "@fylgja/scroll-slider" with ($enable-scroll-layer: true);
 // Or via PostCSS import
 @import "@fylgja/scroll-slider/layer";
 ```
