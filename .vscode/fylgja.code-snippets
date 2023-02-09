@@ -20,6 +20,16 @@
       "</details>"
     ]
   },
+  "Fylgja Readmore": {
+    "scope": "markdown",
+    "prefix": "!more",
+    "description": "Create how to more link to site docs",
+    "body": [
+      "## How to use",
+      "",
+      "For more information see the [${TM_DIRECTORY/^.+\\/(.*)$/$1/} docs on the Fylgja.dev](https://fylgja.dev/components/${TM_DIRECTORY/^.+\\/(.*)$/$1/}/)."
+    ]
+  },
   "Fylgja Package": {
     "scope": "json",
     "prefix": "!fylgja-pkg",
