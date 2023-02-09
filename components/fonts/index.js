@@ -26,13 +26,5 @@ export default {
         3: "1.375",
         4: "1.5",
         5: "1.8",
-        // TODO: consider this option
-        // relative: {
-        //     1: "calc(1rem + 1.1ch)",
-        //     2: "calc(1rem + 1.25ch)",
-        //     3: "calc(1rem + 1.375ch)",
-        //     4: "calc(1rem + 1.5ch)",
-        //     5: "calc(1rem + 1.8ch)",
-        // },
     },
 };
