@@ -34,27 +34,4 @@ use the following import;
 
 ## How to use
 
-To use the aspect-ratio, create element with the class `.aspect-ratio`,
-any child of the aspect-ratio will now always be show in the ratio set by the class.
-
-_16/9 is the default ratio._
-
-To edit the ratio use the css variable with the same name.
-
-```html
-<div class="aspect-ratio" style="--aspect-ratio: 21/9;">..</div>
-```
-
-## Config
-
-As with almost all of our components, CSS variables can be configured to add your own look/style.
-
-Want direct control on the base styles, here are the following SCSS variables can you modify.
-
-```scss
-$enable-aspect-ratio-layer: false !default;
-
-$aspect-ratio-layer-name: components !default;
-
-$aspect-ratio: "16/9" !default;
-```
+For more information see the [aspect-ratio docs on the Fylgja.dev](https://fylgja.dev/components/aspect-ratio/).

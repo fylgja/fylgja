@@ -32,29 +32,4 @@ use the following import;
 
 ## How to use
 
-To use the avatar create element with the class `.avatar`.
-
-```html
-<img class="avatar" src="..">
-```
-
-Avatars are by default round and are `3em` big, allowing to scale with your text.
-
-You can change this via the CSS variables or via the SCSS variables, if it is your default style.
-
-## Config
-
-As with almost all of our components, CSS variables can be configured to add your own look/style.
-
-Want direct control on the base styles, here are the following SCSS variables can you modify.
-
-```scss
-$enable-avatar-layer: false !default;
-
-$avatar-layer-name: components !default;
-
-$avatar-size: 3em !default;
-$avatar-radius: 50% !default;
-$avatar-bg: #eee !default;
-$avatar-color: null !default;
-```
+For more information see the [avatar docs on the Fylgja.dev](https://fylgja.dev/components/avatar/).
