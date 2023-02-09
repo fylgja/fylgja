@@ -30,11 +30,11 @@ const shadow = {
 };
 
 const insetShadow = {
-    0: `inset 0 0 0 1px ${hslVar(shadowInset)}`,
-    1: `inset 0 1px 2px 0 ${hslVar(shadowInset)}`,
-    2: `inset 0 1px 4px 0 ${hslVar(shadowInset)}`,
-    3: `inset 0 2px 8px 0 ${hslVar(shadowInset)}`,
-    4: `inset 0 2px 14px 0 ${hslVar(shadowInset)}`,
+    1: `inset 0 0 0 1px ${hslVar(shadowInset)}`,
+    2: `inset 0 1px 2px 0 ${hslVar(shadowInset)}`,
+    3: `inset 0 1px 4px 0 ${hslVar(shadowInset)}`,
+    4: `inset 0 2px 8px 0 ${hslVar(shadowInset)}`,
+    5: `inset 0 2px 14px 0 ${hslVar(shadowInset)}`,
 };
 
 const shadows = {
