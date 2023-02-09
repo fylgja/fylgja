@@ -1,0 +1,24 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
+@use "keyframes" as *;
+@use "helper" as *;
+
+@include theme.atLayer($enable-marquee-layer, $marquee-layer-name) {
+    @include marquee-keyframes;
+
+    .marquee {
+        @include marquee;
+
+        &.-reverse .marquee-item {
+            animation-direction: reverse;
+        }
+    }
+
+    .marquee-item {
+        @include marquee-item;
+    }
+}
