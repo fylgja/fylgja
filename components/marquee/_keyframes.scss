@@ -1,7 +1,10 @@
-@use "helper" as *;
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
 
-@keyframes marquee {
-    to {
-        translate: var(--marquee-tx, 0) var(--marquee-ty, 0);
+@mixin marquee-keyframes() {
+    @keyframes marquee {
+        to {
+            translate: var(--marquee-tx, 0) var(--marquee-ty, 0);
+        }
     }
 }

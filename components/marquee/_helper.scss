@@ -1,3 +1,10 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$enable-marquee-layer: false !default;
+
+$marquee-layer-name: components !default;
+
 $marquee-animation-name: marquee !default;
 $marquee-animation-speed: var(--marquee-speed, 30s) !default;
 $marquee-gap: 1rem !default;

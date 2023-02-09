@@ -1,27 +1,24 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@forward "helper";
+
+@use "@fylgja/theme/layer" as theme;
 @use "keyframes" as *;
 @use "helper" as *;
 
-.marquee {
-    @include marquee;
+@include theme.atLayer($enable-marquee-layer, $marquee-layer-name) {
+    @include marquee-keyframes;
 
-    &.-reverse .marquee-item {
-        animation-direction: reverse;
+    .marquee {
+        @include marquee;
+
+        &.-reverse .marquee-item {
+            animation-direction: reverse;
+        }
     }
-}
 
-.marquee-item {
-    @include marquee-item;
-}
-
-// TODO: move to it's own logic
-.overflow-mask {
-    $mask: linear-gradient(
-        var(--overflow-mask-dir, to right),
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) 20%,
-        hsl(0 0% 0% / 1) 80%,
-        hsl(0 0% 0% / 0)
-    ) !default;
-    -webkit-mask-image: $mask;
-    mask-image: $mask;
+    .marquee-item {
+        @include marquee-item;
+    }
 }
