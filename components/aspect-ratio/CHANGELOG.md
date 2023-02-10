@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add jit props support
+
 ## [1.2.0] - 2022-12-15
 ### Added
 - Support for `@layer` in components scope
