@@ -37,6 +37,6 @@
     "@fylgja/theme": "^1.1.0"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.4"
+    "@fylgja/props-builder": "^1.0.5"
   }
 }
