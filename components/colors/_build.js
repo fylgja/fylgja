@@ -30,7 +30,7 @@ propsBuilder({ filename: "hsl.css", ...hslOptions });
 propsBuilder({ filename: "hex.host.css", props, selector: ":host" });
 propsBuilder({ filename: "hsl.host.css", ...hslOptions, selector: ":host" });
 
-// All colors, Jit props
+// All colors, jit-props, e.g. the open-props syntax
 propsBuilder({ filename: "jit-props.js", props });
 propsBuilder({ filename: "jit-props.hsl.js", ...hslOptions });
 propsBuilder({ filename: "jit-props.cjs", props });
