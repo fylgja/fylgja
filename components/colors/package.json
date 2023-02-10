@@ -7,8 +7,9 @@
   "license": "MIT",
   "type": "module",
   "main": "index.cjs",
-  "unpkg": "colors.css",
   "style": "colors.css",
+  "sass": "_index.css",
+  "unpkg": "colors.css",
   "module": "index.js",
   "exports": {
     ".": {
@@ -20,6 +21,16 @@
       "import": "./hsl.js",
       "require": "./hsl.cjs",
       "default": "./hsl.cjs"
+    },
+    "./jit": {
+      "import": "./jit-props.js",
+      "require": "./jit-props.cjs",
+      "default": "./jit-props.cjs"
+    },
+    "./jit-hsl": {
+      "import": "./jit-props.hsl.js",
+      "require": "./jit-props.hsl.cjs",
+      "default": "./jit-props.hsl.cjs"
     }
   },
   "repository": {
@@ -40,6 +51,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.2"
+    "@fylgja/props-builder": "^1.0.5"
   }
 }

@@ -1,36 +1,42 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+import fs from "fs";
 import { propsBuilder } from "@fylgja/props-builder";
 import props from "./index.js";
 import propsHSL from "./hsl.js";
 
-const hslSuffix = "-hsl";
+const hslOptions = {
+    props: propsHSL,
+    suffix: "-hsl",
+};
+
+// For CommonJs export support
+const file = fs.createWriteStream("index.cjs");
+file.write(`// Fylgja (https://fylgja.dev)\n// Licensed under MIT Open Source\n
+module.exports = ${JSON.stringify(props, null, 4)};\n`);
+file.end();
 
 // All colors, scss
 propsBuilder({ filename: "_index.scss", props });
 propsBuilder({ filename: "_props.scss", props, generationSyntax: "css" });
-propsBuilder({
-    filename: "_hsl.scss",
-    props: propsHSL,
-    generationSyntax: "css",
-    suffix: "-hsl",
-});
+propsBuilder({ filename: "_hsl.scss", ...hslOptions, generationSyntax: "css" });
 
 // All colors, css
 propsBuilder({ filename: "colors.css", props });
-propsBuilder({ filename: "hsl.css", props: propsHSL, suffix: hslSuffix });
+propsBuilder({ filename: "hsl.css", ...hslOptions });
 
 // All colors, Shadow dom
 propsBuilder({ filename: "hex.host.css", props, selector: ":host" });
-propsBuilder({
-    filename: "hsl.host.css",
-    props: propsHSL,
-    selector: ":host",
-    suffix: hslSuffix,
-});
+propsBuilder({ filename: "hsl.host.css", ...hslOptions, selector: ":host" });
 
-// Only 1 color set for each color group
+// All colors, Jit props
+propsBuilder({ filename: "jit-props.js", props });
+propsBuilder({ filename: "jit-props.hsl.js", ...hslOptions });
+propsBuilder({ filename: "jit-props.cjs", props });
+propsBuilder({ filename: "jit-props.hsl.cjs", ...hslOptions });
+
+// Only one color set, hex syntax
 Object.entries(props).map(([key, value]) => {
     propsBuilder({
         filename: `hex/${key}.css`,
@@ -43,16 +49,17 @@ Object.entries(props).map(([key, value]) => {
     });
 });
 
+// Only one color set, hsl syntax
 Object.entries(propsHSL).map(([key, value]) => {
     propsBuilder({
         filename: `hsl/${key}.css`,
         props: { [key]: value },
-        suffix: hslSuffix,
+        suffix: hslOptions.suffix,
     });
     propsBuilder({
         filename: `hsl/${key}.host.css`,
         props: { [key]: value },
         selector: ":host",
-        suffix: hslSuffix,
+        suffix: hslOptions.suffix,
     });
 });

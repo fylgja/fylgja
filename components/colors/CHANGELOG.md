@@ -6,9 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Officially add shadow dom support with host import
+- Add jit props support
+
+### Removed
+- **Possible Breaking Change** dropped older `shadowdom.css` import,
+  use `hex.host.css` instead
+
 ## [1.0.8] - 2022-11-05
 ### Changed
-- shadow dom naming from shadow to host, use now as `blue.host.css`
+- shadow dom naming from shadow to host
 
 ## [1.0.7] - 2022-08-18
 ### Fixed
