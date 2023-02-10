@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-02-10
 ### Changed
 - Officially add shadow dom support with host import
 - Add jit props support
