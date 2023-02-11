@@ -25,7 +25,6 @@
             &.-row {
                 --menu-display: inline-flex;
                 --menu-dir: row;
-                --menu-items: center;
 
                 @if $enable-menu-nested {
                     :is(ul, ol) {
