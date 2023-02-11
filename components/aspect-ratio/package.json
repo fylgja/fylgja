@@ -7,8 +7,9 @@
   "license": "MIT",
   "type": "module",
   "main": "index.cjs",
-  "unpkg": "aspect-ratio.css",
   "style": "aspect-ratio.css",
+  "sass": "_index.scss",
+  "unpkg": "aspect-ratio.css",
   "module": "index.js",
   "exports": {
     ".": {
