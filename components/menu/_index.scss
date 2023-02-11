@@ -33,6 +33,11 @@
                     }
                 }
             }
+
+            &.-column {
+                --menu-display: flex;
+                --menu-dir: column;
+            }
         }
     }
 
