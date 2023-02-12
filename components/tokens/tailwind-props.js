@@ -1,3 +1,6 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 export default {
   "aspectRatio": {
     "auto": "auto",
@@ -38,7 +41,7 @@ export default {
       "800": "#343a40",
       "900": "#212529"
     },
-    "blueGray": {
+    "slate": {
       "50": "#eceff1",
       "100": "#cfd8dc",
       "200": "#b0bec5",
@@ -315,4 +318,4 @@ export default {
     "4": 6,
     "5": 8
   }
-}
+};

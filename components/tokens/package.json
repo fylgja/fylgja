@@ -6,18 +6,14 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "main": "design-tokens.json",
-  "unpkg": "design-tokens.json",
+  "main": "index.cjs",
+  "unpkg": "tokens.json",
+  "module": "index.js",
   "exports": {
     ".": {
-      "import": "./design-tokens.json",
-      "require": "./design-tokens.json",
-      "default": "./design-tokens.json"
-    },
-    "./props": {
-      "import": "./props.js",
-      "require": "./props.cjs",
-      "default": "./props.cjs"
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
     },
     "./jit": {
       "import": "./jit-props.js",
@@ -28,7 +24,12 @@
       "import": "./tailwind-props.js",
       "require": "./tailwind-props.cjs",
       "default": "./tailwind-props.cjs"
-    }
+    },
+    "./json": "./tokens.json",
+    "./tokens": "./tokens.json",
+    "./figma": "./figma-tokens.json",
+    "./figma-sync": "./figma-tokens.sync.json",
+    "./*": "./*"
   },
   "repository": {
     "type": "git",
@@ -45,8 +46,8 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/aspect-ratio": "^1.1.1",
-    "@fylgja/colors": "^1.0.7",
+    "@fylgja/aspect-ratio": "^1.2.1",
+    "@fylgja/colors": "^1.1.0",
     "@fylgja/easing": "^1.0.3",
     "@fylgja/mq": "^1.1.2",
     "@fylgja/props-builder": "^1.0.5",
