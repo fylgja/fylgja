@@ -1,0 +1,7 @@
+export default {
+  "--layer-1": 1,
+  "--layer-2": 2,
+  "--layer-3": 4,
+  "--layer-4": 6,
+  "--layer-5": 8
+}

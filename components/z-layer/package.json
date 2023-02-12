@@ -1,20 +1,26 @@
 {
   "name": "@fylgja/z-layer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The Fylgja z-layer offers Design Tokens (CSS props) for consistent and semantic z-indexing",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
   "main": "index.cjs",
-  "unpkg": "z-layer.css",
   "style": "z-layer.css",
+  "sass": "_index.scss",
+  "unpkg": "z-layer.css",
   "module": "index.js",
   "exports": {
     ".": {
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
+    },
+    "./jit": {
+      "import": "./jit-props.js",
+      "require": "./jit-props.cjs",
+      "default": "./jit-props.cjs"
     }
   },
   "repository": {
@@ -33,6 +39,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.0"
+    "@fylgja/props-builder": "^1.0.5"
   }
 }
