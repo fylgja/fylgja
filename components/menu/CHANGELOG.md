@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2023-02-11
 ### Added
 - Force columns modifier class,
   incase the list is not part of the direct flow of rows modifier class
