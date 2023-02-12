@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- missing text alignment
+
 ## [1.2.4] - 2023-02-05
 ### Changed
 - color syntax with new linter rules
