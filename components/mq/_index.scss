@@ -1,21 +1,33 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "sass:map";
+@use "helper" as *;
 
-/// @group media-queries
-///
-/// @param {String} $name - name of the media query to from the map
-/// @param {Map} - map of media query values, default is `$breakpoints`
-/// @return {String} - media query string
-@function getMq($name, $map: $breakpoints) {
-    @if not(map.has-key($map, $name)) {
-        @debug "MQ breakpoint '#{$name}' is not found in #{$map}";
-        @return "";
-    }
+// Sizing mq's
+$xs: "min-width: #{getMq(xs)}" !default;
+$xs-max: "max-width: #{(getMq(xs) - 1px)}" !default;
 
-    @return map.get($map, $name);
-}
+$sm: "min-width: #{getMq(sm)}" !default;
+$sm-max: "max-width: #{(getMq(sm) - 1px)}" !default;
+
+$md: "min-width: #{getMq(md)}" !default;
+$md-max: "max-width: #{(getMq(md) - 1px)}" !default;
+
+$lg: "min-width: #{getMq(lg)}" !default;
+$lg-max: "max-width: #{(getMq(lg) - 1px)}" !default;
+
+$xl: "min-width: #{getMq(xl)}" !default;
+$xl-max: "max-width: #{(getMq(xl) - 1px)}" !default;
+
+$xxl: "min-width: #{getMq(xxl)}" !default;
+$xxl-max: "max-width: #{(getMq(xxl) - 1px)}" !default;
+
+// Device input
+$hd-color: "dynamic-range: high";
+$touch: "(hover: none) and (pointer: coarse)";
+$stylus: "(hover: none) and (pointer: fine)";
+$pointer: "(hover) and (pointer: coarse)";
+$mouse: "(hover) and (pointer: fine)";
 
 // prefers mq's
 $scheme-dark: "prefers-color-scheme: dark";
@@ -33,31 +45,5 @@ $data-reduce: "prefers-reduced-data: reduce";
 $contrast-more: "prefers-contrast: more";
 $contrast-less: "prefers-contrast: less";
 
-$hd-color: "dynamic-range: high";
 $portrait: "orientation: portrait";
 $landscape: "orientation: landscape";
-
-// Sizing mq's
-$breakpoints: (
-    "xs": 420px,
-    "sm": 640px,
-    "md": 768px,
-    "lg": 1024px,
-    "xl": 1440px,
-    "xxl": 2200px,
-) !default;
-$mq-breakpoints: $breakpoints; // fallback alias
-
-$xs: "min-width: #{getMq(xs)}" !default;
-$sm: "min-width: #{getMq(sm)}" !default;
-$md: "min-width: #{getMq(md)}" !default;
-$lg: "min-width: #{getMq(lg)}" !default;
-$xl: "min-width: #{getMq(xl)}" !default;
-$xxl: "min-width: #{getMq(xxl)}" !default;
-
-$xs-max: "max-width: #{(getMq(xs) - 1px)}" !default;
-$sm-max: "max-width: #{(getMq(sm) - 1px)}" !default;
-$md-max: "max-width: #{(getMq(md) - 1px)}" !default;
-$lg-max: "max-width: #{(getMq(lg) - 1px)}" !default;
-$xl-max: "max-width: #{(getMq(xl) - 1px)}" !default;
-$xxl-max: "max-width: #{(getMq(xxl) - 1px)}" !default;

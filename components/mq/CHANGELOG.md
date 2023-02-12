@@ -6,9 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-02-13
+### Added
+- device input options, like touch
+- min and max width query keys to both JS and custom queries in CSS
+
 ## [1.1.2] - 2022-08-13
 ### Added
-- Added support for both CommonJS and ESM import syntax's
+- support for both CommonJS and ESM import syntax's
 
 ## [1.1.1] - 2022-08-11
 ### Added
