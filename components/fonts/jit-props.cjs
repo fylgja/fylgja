@@ -17,10 +17,5 @@ module.exports = {
   "--line-height-2": "1.25",
   "--line-height-3": "1.375",
   "--line-height-4": "1.5",
-  "--line-height-5": "1.8",
-  "--line-height-relative-1": "calc(1rem + 1.1ch)",
-  "--line-height-relative-2": "calc(1rem + 1.25ch)",
-  "--line-height-relative-3": "calc(1rem + 1.375ch)",
-  "--line-height-relative-4": "calc(1rem + 1.5ch)",
-  "--line-height-relative-5": "calc(1rem + 1.8ch)"
+  "--line-height-5": "1.8"
 }
