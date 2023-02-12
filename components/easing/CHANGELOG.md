@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-02-10
+### Added
+- Add jit props support
+
+### Changed
+- Officially add shadow dom support with host import
+
+### Removed
+- **Possible Breaking Change** dropped older `shadowdom.css` import,
+  use `easing.host.css` instead
+
 ## [1.0.3] - 2022-08-13
 ### Added
 - Added support for both CommonJS and ESM import syntax's
