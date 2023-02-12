@@ -41,6 +41,18 @@ propsBuilder({ props, filename: "figma-tokens.sync.json", wrapperName });
 // Tailwind specific tokens,
 // for easily replacing the Tailwind tokens with Fylgja tokens
 const tailwindProps = {
+    screens: {
+        xs: mq.xs,
+        sm: mq.sm,
+        md: mq.md,
+        lg: mq.lg,
+        xl: mq.xl,
+        "2xl": mq.xxl,
+        touch: { raw: mq.touch },
+        stylus: { raw: mq.stylus },
+        pointer: { raw: mq.pointer },
+        mouse: { raw: mq.mouse },
+    },
     aspectRatio: {
         auto: "auto",
         square: props.ratio.box,
@@ -63,14 +75,6 @@ const tailwindProps = {
         lime: renameKeys(twColorKeysMap, colors.lime),
         yellow: renameKeys(twColorKeysMap, colors.yellow),
         orange: renameKeys(twColorKeysMap, colors.orange),
-    },
-    screens: {
-        xs: mq.xs,
-        sm: mq.sm,
-        md: mq.md,
-        lg: mq.lg,
-        xl: mq.xl,
-        "2xl": mq.xxl,
     },
     spacing: { ...sizes },
     transitionTimingFunction: { ...easing },

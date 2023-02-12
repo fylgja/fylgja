@@ -49,7 +49,7 @@
     "@fylgja/aspect-ratio": "^1.2.1",
     "@fylgja/colors": "^1.1.0",
     "@fylgja/easing": "^1.0.3",
-    "@fylgja/mq": "^1.1.2",
+    "@fylgja/mq": "^1.2.0",
     "@fylgja/props-builder": "^1.0.5",
     "@fylgja/shadow": "^1.0.3",
     "@fylgja/sizes": "^1.0.2",

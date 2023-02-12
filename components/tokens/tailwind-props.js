@@ -2,6 +2,26 @@
 // Licensed under MIT Open Source
 
 export default {
+  "screens": {
+    "xs": "420px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1440px",
+    "2xl": "2200px",
+    "touch": {
+      "raw": "(hover: none) and (pointer: coarse)"
+    },
+    "stylus": {
+      "raw": "(hover: none) and (pointer: fine)"
+    },
+    "pointer": {
+      "raw": "(hover) and (pointer: coarse)"
+    },
+    "mouse": {
+      "raw": "(hover) and (pointer: fine)"
+    }
+  },
   "aspectRatio": {
     "auto": "auto",
     "square": 1,
@@ -197,14 +217,6 @@ export default {
       "800": "#e8590c",
       "900": "#d9480f"
     }
-  },
-  "screens": {
-    "xs": "420px",
-    "sm": "640px",
-    "md": "768px",
-    "lg": "1024px",
-    "xl": "1440px",
-    "xxl": "2200px"
   },
   "spacing": {
     "size": {
