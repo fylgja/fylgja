@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/fonts",
   "version": "1.0.0",
-  "description": "The Fylgja Fonts offers Design Tokens (CSS props) for consistent and semantic fonts, in typography, spacing and general fonts",
+  "description": "The Fylgja fonts offers Design Tokens (CSS props) for consistent and semantic typography.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
