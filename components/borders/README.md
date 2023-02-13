@@ -3,8 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@fylgja/borders)](https://www.npmjs.org/package/@fylgja/borders)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The Fylgja Borders offers Design Tokens (CSS props) for consistent and semantic borders,
-in typography, spacing and general borders.
+The Fylgja borders offers Design Tokens (CSS props) for consistent and semantic borders.
 
 ## Installation
 
@@ -22,3 +21,4 @@ Then include the component in to your code via;
 
 ## How to use
 
+For more information see the [borders docs on the Fylgja.dev](https://fylgja.dev/components/borders/).

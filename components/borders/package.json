@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/borders",
   "version": "1.0.0",
-  "description": "The Fylgja Borders offers Design Tokens (CSS props) for consistent and semantic borders, in typography, spacing and general borders",
+  "description": "The Fylgja borders offers Design Tokens (CSS props) for consistent and semantic borders",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
