@@ -1,8 +1,0 @@
-*.css
-
-# CSS Tokens
-# These files will always cause file length warning
-components/props/*.css
-components/props/*.scss
-components/shadow/*.css
-components/shadow/*.scss

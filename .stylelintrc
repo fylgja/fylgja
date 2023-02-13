@@ -1,3 +1,4 @@
 {
-  "extends": "@fylgja/stylelint-config/scss"
+  "extends": "@fylgja/stylelint-config/scss",
+  "ignoreFiles": ["components/mq/*", "components/shadow/*"]
 }

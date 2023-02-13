@@ -12,13 +12,13 @@
 
     .marquee {
         @include marquee;
-
-        &.-reverse .marquee-item {
-            animation-direction: reverse;
-        }
     }
 
     .marquee-item {
         @include marquee-item;
+    }
+
+    .marquee.-reverse .marquee-item {
+        animation-direction: reverse;
     }
 }
