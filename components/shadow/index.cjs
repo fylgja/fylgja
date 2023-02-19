@@ -4,6 +4,8 @@
 const shadows = {
     "shadow-color": "0 0% 50%",
     "shadow-weight": "1%",
+    "shadow-color-@media:dark": "220 40% 2%",
+    "shadow-weight-@media:dark": "25%",
     "shadow": {
         "1": "0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%)), 0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%)), 0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))",
         "2": "0 3px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%)), 0 2px 2px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%)), 0 1px 5px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))",

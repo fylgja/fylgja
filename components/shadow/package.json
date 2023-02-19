@@ -35,9 +35,10 @@
     "shadow"
   ],
   "scripts": {
-    "build": "node _build.js"
+    "build": "node _build.js",
+    "postbuild": "cp shadow.static.css safe.css"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.5"
+    "@fylgja/props-builder": "^1.0.7"
   }
 }

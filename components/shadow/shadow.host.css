@@ -13,3 +13,10 @@
     --inset-shadow-3: inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-weight) + 9%));
     --inset-shadow-4: inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-weight) + 9%));
 }
+
+@media (prefers-color-scheme: dark) {
+    :host {
+        --shadow-color: 220 40% 2%;
+        --shadow-weight: 25%;
+    }
+}
