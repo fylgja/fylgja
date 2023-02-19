@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-scroll-layer, $scroll-layer-name) {
+@include theme.atLayer($scroll-layer) {
     .scroll-slider {
         @include scroll-slider;
     }
