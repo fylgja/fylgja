@@ -8,9 +8,12 @@
 // stylelint-disable property-no-vendor-prefix
 
 $enable-control-switch: true !default;
-$enable-control-layer: false !default;
 
-$control-layer-name: base !default;
+// Drop in v2
+$enable-control-layer: false !default;
+$control-layer-name: if($enable-control-layer, "base", null) !default;
+
+$control-layer: $control-layer-name !default;
 
 $control-fields: if(
     $enable-control-switch,

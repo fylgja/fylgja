@@ -23,6 +23,6 @@
     "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.1.0"
+    "@fylgja/theme": "^1.2.0"
   }
 }
