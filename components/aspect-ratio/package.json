@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/aspect-ratio",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "The aspect ratio component allows you to make not just videos. But anything you want to a certain responsive aspect ratio",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -40,7 +40,7 @@
     "build": "npm run build:props && npm run build:legacy"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.1.0"
+    "@fylgja/theme": "^1.2.0"
   },
   "devDependencies": {
     "@fylgja/props-builder": "^1.0.5"

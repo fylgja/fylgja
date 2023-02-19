@@ -1,16 +1,20 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 
 $enable-aspect-ratio-layer: false !default;
-
-$aspect-ratio-layer-name: components !default;
+$aspect-ratio-layer-name: if(
+    $enable-aspect-ratio-layer,
+    "components",
+    null
+) !default;
 
 $default-ratio: "16/9" !default;
+$aspect-ratio-layer: $aspect-ratio-layer-name !default;
 $aspect-ratio: $default-ratio !default;
 
-@include theme.atLayer($enable-aspect-ratio-layer, $aspect-ratio-layer-name) {
+@include theme.atLayer($aspect-ratio-layer) {
     .aspect-ratio {
         position: relative;
         overflow: hidden;

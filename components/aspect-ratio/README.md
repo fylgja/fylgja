@@ -27,9 +27,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/aspect-ratio" with ($enable-aspect-ratio-layer: true);
-// Or via PostCSS import
-@import "@fylgja/aspect-ratio/layer";
+@use "@fylgja/aspect-ratio" with ($aspect-ratio-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/aspect-ratio" layer("components");
 ```
 
 ## How to use
