@@ -20,6 +20,7 @@ const toStyleTokens = (
     const styles = [];
     const indent = varSyntax !== "--" ? "" : "    ";
     let appendedMeta = "";
+    let stylesDark = [];
 
     Object.entries(props).forEach(([name, value]) => {
         if (typeof value === "string" || typeof value === "number") {
@@ -35,7 +36,14 @@ const toStyleTokens = (
         }
 
         name = kebabCase(name);
-        const varName = `${varSyntax}${prefix}${name}${suffix}`;
+        let varName = `${varSyntax}${prefix}${name}${suffix}`;
+
+        if (name.includes("-@media:dark")) {
+            varName = varName.replace(
+                "-@media:dark",
+                varSyntax === "$" ? "-dark" : ""
+            );
+        }
 
         // * TEMP: save mode for SCSS / values that need to be quoted,
         // * until SCSS version 2.0, which drops native / calc support
@@ -45,11 +53,17 @@ const toStyleTokens = (
             }
         }
 
+        if (name.includes("-@media:dark") && varSyntax !== "$") {
+            stylesDark.push(`${indent}${varName}: ${value};\n`);
+            return;
+        }
+
         styles.push(`${indent}${varName}: ${value};\n`);
     });
 
     return {
         styles,
+        stylesDark,
         appendedMeta,
     };
 };

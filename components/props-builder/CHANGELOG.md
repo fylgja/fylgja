@@ -6,9 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.6] - 2023-02-19
-### Changed
-- Small docs improvement
+## [1.0.7] - 2023-02-19
+### Added
+- support for dark mode
 
 ## [1.0.5] - 2023-01-02
 ### Added
