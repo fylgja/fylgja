@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@forward "layer";
+
 @use "sass:color";
 
 // This works as global variables for Fylgja
@@ -8,6 +10,8 @@
 
 $color-scheme: light !default;
 $root-font-size: null !default;
+
+// TODO for v2 convert this to hsl syntax for easier opacity setting with 1 variable
 $root-bg: if($color-scheme == dark, #000, #fff) !default;
 $root-fg: if($color-scheme == dark, #fff, #000) !default;
 

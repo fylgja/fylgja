@@ -1,11 +1,13 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
 /// Helper for setting `@layer` to any component if the var is true
-/// Mainly used to build the `@layer` variant for each Fylgja component
+/// Mainly used to build the `@layer` variant for each Fylgja component, with Sass
 ///
-/// @param {Boolean} $use - if to use `@layer` or just return
-/// @param {String} $name - the name of the `@layer`
+/// @param {String} $name - the name of the `@layer`, if set `@layer` is used
 /// @return {Mixed} - inner styles
-@mixin atLayer($use: false, $name: components) {
-    @if $use {
+@mixin atLayer($name: null) {
+    @if $name {
         @layer #{$name} {
             @content;
         }
