@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-breadcrumbs-layer, $breadcrumbs-layer-name) {
+@include theme.atLayer($breadcrumbs-layer) {
     .breadcrumbs {
         @include breadcrumbs;
     }

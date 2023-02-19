@@ -4,10 +4,15 @@
 @use "sass:color";
 @use "@fylgja/theme" as *;
 
+// Drop in v2
 $enable-breadcrumbs-layer: false !default;
+$breadcrumbs-layer-name: if(
+    $enable-breadcrumbs-layer,
+    "components",
+    null
+) !default;
 
-$breadcrumbs-layer-name: components !default;
-
+$breadcrumbs-layer: $breadcrumbs-layer-name !default;
 $breadcrumbs-divider: "  /  " !default;
 $breadcrumbs-flow: row wrap !default;
 $breadcrumbs-margin: 10px 0 !default;
