@@ -5,9 +5,15 @@
 @use "@fylgja/theme" as *;
 @use "@fylgja/form/helper" as *;
 
+// Drop in v2
 $enable-input-group-layer: false !default;
+$input-group-layer-name: if(
+    $enable-input-group-layer,
+    "components",
+    null
+) !default;
 
-$input-group-layer-name: components !default;
+$input-group-layer: $input-group-layer-name !default;
 
 $input-group-style: default !default;
 $input-group-styles: (

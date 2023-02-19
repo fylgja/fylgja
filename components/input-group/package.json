@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/input-group",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The input group extends upon the `@fylgja/form`. By providing a wrapper that allows for more complex form field styles",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",

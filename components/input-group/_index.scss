@@ -3,13 +3,13 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
 // ? consider updating this to a grid layout for multi layout input group
 // Something for v2 maybe?
 
-@include theme.atLayer($enable-input-group-layer, $input-group-layer-name) {
+@include theme.atLayer($input-group-layer) {
     .input-group {
         position: relative;
         display: flex;
