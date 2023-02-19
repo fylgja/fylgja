@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-btn-layer, $btn-layer-name) {
+@include theme.atLayer($btn-layer) {
     @if $enable-native-btn {
         :is(.btn, button) {
             @include btn;

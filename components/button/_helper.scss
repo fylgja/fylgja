@@ -8,9 +8,12 @@ $enable-btn-theme: true !default;
 $enable-btn-outline: true !default;
 $enable-btn-icon: true !default;
 $enable-native-btn: false !default; // will be removed in v2, as it is default
-$enable-btn-layer: false !default;
 
-$btn-layer-name: components !default;
+// Drop in v2
+$enable-btn-layer: false !default;
+$btn-layer-name: if($enable-btn-layer, "components", null) !default;
+
+$btn-layer: $btn-layer-name !default;
 
 $btn-icon-size: 2.125em !default;
 

@@ -31,9 +31,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/button" with ($enable-btn-layer: true);
-// Or via PostCSS import
-@import "@fylgja/button/layer";
+@use "@fylgja/button" with ($button-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/button" layer("components");
 ```
 
 ## How to use
