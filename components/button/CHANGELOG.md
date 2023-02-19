@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.6] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
-  CSS can use native, for SCSS use the new variable `$button-layer`,
+  CSS can use native, for SCSS use the new variable `$btn-layer`,
   the options from v1.2 are deprecated
 
 ## [1.2.5] - 2023-02-12
