@@ -32,9 +32,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/dialog" with ($enable-dialog-layer: true);
-// Or via PostCSS import
-@import "@fylgja/dialog/layer";
+@use "@fylgja/dialog" with ($dialog-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/dialog" layer("components");
 ```
 
 ## How to use

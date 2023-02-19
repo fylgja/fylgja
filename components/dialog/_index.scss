@@ -3,11 +3,11 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 @use "keyframes" as *;
 
-@include theme.atLayer($enable-dialog-layer, $dialog-layer-name) {
+@include theme.atLayer($dialog-layer) {
     @include dialog-keyframes;
 
     :is(dialog, .dialog) {

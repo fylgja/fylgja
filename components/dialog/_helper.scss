@@ -5,9 +5,12 @@
 @use "@fylgja/theme" as *;
 
 $enable-dialog-polyfill: true !default;
-$enable-dialog-layer: false !default;
 
-$dialog-layer-name: components !default;
+// Drop in v2
+$enable-dialog-layer: false !default;
+$dialog-layer-name: if($enable-dialog-layer, "components", null) !default;
+
+$dialog-layer: $dialog-layer-name !default;
 
 // Modal (default)
 $dialog-index: 9 !default;
