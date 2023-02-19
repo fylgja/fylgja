@@ -3,13 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer(
-    $enable-stretched-link-layer,
-    $stretched-link-layer-name
-) {
+@include theme.atLayer($stretched-link-layer) {
     .stretched-link {
         @include stretched-link;
     }
