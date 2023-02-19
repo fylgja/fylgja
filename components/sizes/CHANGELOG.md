@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-02-20
+### Added
+- Add jit props support
+
+### Changed
+- Officially add shadow dom support with host import
+
+### Removed
+- **[Possible Breaking Change]** removed the fluid sizes,
+  they have been moved to the fonts and borders components
+
 ## [1.0.2] - 2022-08-13
 ### Added
 - Added support for both CommonJS and ESM import syntax's
