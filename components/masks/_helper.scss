@@ -1,11 +1,11 @@
 @mixin overflow-mask {
-    $mask: linear-gradient(
-        var(--overflow-mask-dir, to right),
+    --overflow-mask: linear-gradient(
+        var(--mask-dir, to right),
         hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) 20%,
-        hsl(0 0% 0% / 1) 80%,
+        hsl(0 0% 0% / 1) var(--mask-size, 20%),
+        hsl(0 0% 0% / 1) calc(100% - var(--mask-size, 20%)),
         hsl(0 0% 0% / 0)
-    ) !default;
-    -webkit-mask-image: $mask;
-    mask-image: $mask;
+    );
+    -webkit-mask-image: var(--overflow-mask);
+    mask-image: var(--overflow-mask);
 }
