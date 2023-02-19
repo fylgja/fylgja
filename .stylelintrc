@@ -1,4 +1,17 @@
 {
   "extends": "@fylgja/stylelint-config/scss",
-  "ignoreFiles": ["components/mq/*", "components/shadow/*"]
+  "ignoreFiles": ["components/mq/*", "components/shadow/*"],
+  "rules": {
+    "max-line-length": [
+      80,
+      {
+        "ignorePattern": [
+          "/^///",
+          "/^// stylelint-ignore/",
+          "/https?://[0-9,a-z]*.*/"
+        ],
+        "severity": "warning"
+      }
+    ]
+  }
 }
