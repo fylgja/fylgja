@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-badge-layer, $badge-layer-name) {
+@include theme.atLayer($badge-layer) {
     .badge {
         @include badge;
         @include badge-variants;

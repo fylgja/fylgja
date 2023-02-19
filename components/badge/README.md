@@ -25,9 +25,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/badge" with ($enable-badge-layer: true);
-// Or via PostCSS import
-@import "@fylgja/badge/layer";
+@use "@fylgja/badge" with ($badge-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/badge" layer("components");
 ```
 
 ## How to use
