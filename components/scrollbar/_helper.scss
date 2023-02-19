@@ -5,9 +5,11 @@
 @use "sass:meta";
 @use "@fylgja/theme" as *;
 
+// Drop in v2
 $enable-scrollbar-layer: false !default;
+$scrollbar-layer-name: if($enable-scrollbar-layer, "utilities", null) !default;
 
-$scrollbar-layer-name: utilities !default;
+$scrollbar-layer: $scrollbar-layer-name !default;
 
 $scrollbar-thumb-color: color.change($root-fg, $alpha: 0.2) !default;
 $scrollbar-track-color: color.change($root-fg, $alpha: 0) !default;

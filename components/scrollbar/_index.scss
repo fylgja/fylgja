@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-scrollbar-layer, $scrollbar-layer-name) {
+@include theme.atLayer($scrollbar-layer) {
     .hide-scrollbar {
         @include scrollbar($width: none);
     }

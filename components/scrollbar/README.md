@@ -25,9 +25,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/scrollbar" with ($enable-scrollbar-layer: true);
-// Or via PostCSS import
-@import "@fylgja/scrollbar/layer";
+@use "@fylgja/scrollbar" with ($scrollbar-layer: "utilities");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/scrollbar" layer("utilities");
 ```
 
 ## How to use
