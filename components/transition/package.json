@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/transition",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Add transitions with ease, with the power of CSS variables.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -23,6 +23,6 @@
     "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.1.0"
+    "@fylgja/theme": "^1.2.0"
   }
 }

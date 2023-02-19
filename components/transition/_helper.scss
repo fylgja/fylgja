@@ -1,9 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Drop in v2
 $enable-transition-layer: false !default;
+$transition-layer-name: if(
+    $enable-transition-layer,
+    "utilities",
+    null
+) !default;
 
-$transition-layer-name: utilities !default;
+$transition-layer: $transition-layer-name !default;
 
 // * Better than using the all keyword
 $transition-properties: background-color, border-color, color, fill, stroke,

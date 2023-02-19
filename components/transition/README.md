@@ -25,9 +25,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/transition" with ($enable-transition-layer: true);
-// Or via PostCSS import
-@import "@fylgja/transition/layer";
+@use "@fylgja/transition" with ($transition-layer: "utilities");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/transition" layer("utilities");
 ```
 
 ## How to use
