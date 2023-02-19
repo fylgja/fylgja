@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/mq",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The Fylgja MQ offers Design Tokens (CSS props) for consistent use of media queries",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
