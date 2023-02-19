@@ -1,10 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Drop in v2
 $enable-auto-grid-layer: false !default;
+$auto-grid-layer-name: if($enable-auto-grid-layer, "components", null) !default;
 
-$auto-grid-layer-name: components !default;
-
+$auto-grid-layer: $auto-grid-layer-name !default;
 $auto-grid-cols: 250px !default;
 $auto-grid-gap: 1em !default;
 
