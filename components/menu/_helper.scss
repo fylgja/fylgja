@@ -6,9 +6,12 @@
 
 $enable-menu-row: true !default;
 $enable-menu-nested: true !default;
-$enable-menu-layer: false !default;
 
-$menu-layer-name: components !default;
+// Drop in v2
+$enable-menu-layer: false !default;
+$menu-layer-name: if($enable-menu-layer, "components", null) !default;
+
+$menu-layer: $menu-layer-name !default;
 
 $menu-nested-indent: 1em !default;
 

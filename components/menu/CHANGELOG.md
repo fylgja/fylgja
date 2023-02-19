@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-02-19
+### Changed
+- Simplified `@layer` support,
+  CSS can use native, for SCSS use the new variable `$menu-layer`,
+  the options from v1.3 are deprecated
+
 ## [1.3.0] - 2023-02-11
 ### Added
 - Force columns modifier class,

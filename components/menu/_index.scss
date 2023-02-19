@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-menu-layer, $menu-layer-name) {
+@include theme.atLayer($menu-layer) {
     .menu {
         list-style: none;
         display: var(--menu-display, flex);

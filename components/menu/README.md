@@ -26,9 +26,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/menu" with ($enable-menu-layer: true);
-// Or via PostCSS import
-@import "@fylgja/menu/layer";
+@use "@fylgja/menu" with ($menu-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/menu" layer("components");
 ```
 
 ## How to use
