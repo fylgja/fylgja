@@ -1,10 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Drop in v2
 $enable-container-layer: false !default;
+$container-layer-name: if($enable-container-layer, "components", null) !default;
 
-$container-layer-name: components !default;
-
+$container-layer: $container-layer-name !default;
 $container-size: 1280px !default;
 $container-padding-y: 0 !default;
 $container-padding-x: 1.25rem !default;

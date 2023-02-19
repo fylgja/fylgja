@@ -26,9 +26,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/container" with ($enable-container-layer: true);
-// Or via PostCSS import
-@import "@fylgja/container/layer";
+@use "@fylgja/container" with ($container-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/container" layer("components");
 ```
 
 ## How to use
