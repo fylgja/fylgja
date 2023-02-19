@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.1] - 2023-02-19
+## [1.1.2] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
   CSS can use native, for SCSS use the new variable `$gradient-layer`,
