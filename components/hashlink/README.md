@@ -31,40 +31,11 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/hashlink" with ($enable-hashlink-layer: true);
-// Or via PostCSS import
-@import "@fylgja/hashlink/layer";
+@use "@fylgja/hashlink" with ($hashlink-layer: "utilities");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/hashlink" layer("components");
 ```
 
 ## How to use
 
-The styles require no additional html markup,
-
-but will only take affect if a hashlink points to the correct id and can receive focus.
-
-```html
-<a href="#heading">Go to Heading</a>
-..
-<h2 id="heading" tabindex="-1">..</h2>
-```
-
-Now the page will smooth scroll to the target id and with a specific offset.
-
-_Which is also be super handy with sticky headers._
-
-## Config
-
-As with almost all of our components, CSS variables can be configured to add your own look/style.
-
-Want direct control on the base styles, here are the following SCSS variables can you modify.
-
-```scss
-$enable-hashlink-scroll-behavior: true !default;
-$enable-hashlink-scroll-behavior-focus-only: true !default;
-$enable-hashlink-id-offset: true !default;
-$enable-hashlink-layer: false !default;
-
-$hashlink-layer-name: utilities !default;
-
-$hashlink-scroll-offset: 1rem !default;
-```
+For more information see the [hashlink docs on the Fylgja.dev](https://fylgja.dev/components/hashlink/).

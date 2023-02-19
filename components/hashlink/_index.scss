@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-hashlink-layer, $hashlink-layer-name) {
+@include theme.atLayer($hashlink-layer) {
     @if $enable-hashlink-scroll-behavior {
         #{$hashlink-scroll-selector} {
             @media (prefers-reduced-motion: no-preference) {

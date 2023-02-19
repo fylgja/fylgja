@@ -7,9 +7,12 @@
 $enable-hashlink-scroll-behavior: true !default;
 $enable-hashlink-scroll-behavior-focus-only: true !default; // *1
 $enable-hashlink-id-offset: true !default;
-$enable-hashlink-layer: false !default;
 
-$hashlink-layer-name: utilities !default;
+// Drop in v2
+$enable-hashlink-layer: false !default;
+$hashlink-layer-name: if($enable-hashlink-layer, "utilities", null) !default;
+
+$hashlink-layer: $hashlink-layer-name !default;
 
 $hashlink-scroll-offset: 1rem !default;
 
