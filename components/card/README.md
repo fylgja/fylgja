@@ -28,9 +28,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/card" with ($enable-card-layer: true);
-// Or via PostCSS import
-@import "@fylgja/card/layer";
+@use "@fylgja/card" with ($card-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/card" layer("components");
 ```
 
 ## How to use

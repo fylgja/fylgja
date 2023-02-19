@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-card-layer, $card-layer-name) {
+@include theme.atLayer($card-layer) {
     .card {
         @include card;
     }

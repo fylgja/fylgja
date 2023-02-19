@@ -5,13 +5,16 @@
 @use "@fylgja/theme" as *;
 
 $enable-card-link: true !default;
+
+// Drop in v2
 $enable-card-layer: false !default;
+$card-layer-name: if($enable-card-layer, "components", null) !default;
 
-$card-layer-name: components !default;
-
+$card-layer: $card-layer-name !default;
 $card-padding: 1rem !default;
 $card-radius: 6px !default;
 $card-border: 0 !default;
+// TODO: replace elevation for shadow pkg
 $card-elevation: var(
     --elevation-z2,
     0 3px 1px -2px rgb(0 0 0 / 20%),
