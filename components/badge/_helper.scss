@@ -5,10 +5,11 @@
 
 $enable-badge-addon: true !default;
 $enable-badge-theme: true !default;
+// Drop in v2
 $enable-badge-layer: false !default;
+$badge-layer-name: if($enable-badge-layer, "components", null) !default;
 
-$badge-layer-name: components !default;
-
+$badge-layer: $badge-layer-name !default;
 $badge-padding: 0.125em 0.75em !default;
 $badge-radius: 0.375em !default;
 $badge-bg: if($root-fg == #000, #eee, #222) !default;
