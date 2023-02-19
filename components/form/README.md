@@ -22,17 +22,6 @@ Then include the component in to your code via;
 @import "@fylgja/form";
 ```
 
-### `@layer` support
-
-If you need support for `@layer`,
-use the following import;
-
-```scss
-@use "@fylgja/form" with ($enable-form-layer: true);
-// Or via PostCSS import
-@import "@fylgja/form/layer";
-```
-
 ### Styles
 
 By default all form styles are set to the fylgja default style.
@@ -55,13 +44,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/form" with ($enable-form-layer: true);
-// Or via PostCSS import
-@import "@fylgja/form/layer";
-
-// Style options
-@import "@fylgja/form/field.layer.css";
-@import "@fylgja/form/box.layer.css";
+@use "@fylgja/form" with ($form-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/form" layer("components");
 ```
 
 ## How to use

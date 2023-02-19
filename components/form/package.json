@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/form",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The form component is super easy to use. Since it is a zero config module that styles the form elements directly",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -25,6 +25,6 @@
     "postbuild": "npm run build:legacy"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.1.0"
+    "@fylgja/theme": "^1.2.0"
   }
 }

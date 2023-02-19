@@ -7,7 +7,7 @@
 @forward "color";
 @forward "file";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 @use "base" as *;
 @use "field" as *;
@@ -15,7 +15,7 @@
 @use "color" as *;
 @use "file" as *;
 
-@include theme.atLayer($enable-form-layer, $form-layer-name) {
+@include theme.atLayer($form-layer) {
     @include form-base;
 
     input:not([type]),
