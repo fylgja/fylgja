@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.3] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
-  CSS can use native, for SCSS use the new variable `$aria-only-layer`,
+  CSS can use native, for SCSS use the new variable `$aspect-ratio-layer`,
   the options from v1.2 are deprecated
 
 ## [1.2.2] - 2023-02-10
