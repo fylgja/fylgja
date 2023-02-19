@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-range-layer, $range-layer-name) {
+@include theme.atLayer($range-layer) {
     [type="range"] {
         @include range;
     }

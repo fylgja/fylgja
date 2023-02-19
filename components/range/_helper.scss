@@ -13,24 +13,26 @@
     );
 }
 
+// Drop in v2
 $enable-range-layer: false !default;
+$range-layer-name: if($enable-range-layer, "components", null) !default;
 
-$range-layer-name: components !default;
+$range-layer: $range-layer-name !default;
 
-$range-track-height: 0.5rem;
-$range-track-radius: 1rem;
-$range-track-bg: track-fill(var(--color-theme, #{$color-theme}));
-$range-track-color: #ccc;
-$range-track-disabled-bg: currentcolor;
-$range-track-disabled-color: #ddd;
+$range-track-height: 0.5rem !default;
+$range-track-radius: 1rem !default;
+$range-track-bg: track-fill(var(--color-theme, #{$color-theme})) !default;
+$range-track-color: #ccc !default;
+$range-track-disabled-bg: currentcolor !default;
+$range-track-disabled-color: #ddd !default;
 
-$range-thumb-size: 1rem;
-$range-thumb-radius: 100%;
-$range-thumb-border-size: 0;
-$range-thumb-border-color: var(--color-theme, #{$color-theme});
-$range-thumb-color: var(--color-theme, #{$color-theme});
-$range-thumb-disabled-color: #aaa;
-$range-thumb-shadow: 0 1px 2px rgb(0 0 0 / 50%);
+$range-thumb-size: 1rem !default;
+$range-thumb-radius: 100% !default;
+$range-thumb-border-size: 0 !default;
+$range-thumb-border-color: var(--color-theme, #{$color-theme}) !default;
+$range-thumb-color: var(--color-theme, #{$color-theme}) !default;
+$range-thumb-disabled-color: #aaa !default;
+$range-thumb-shadow: 0 1px 2px rgb(0 0 0 / 50%) !default;
 
 $range-focus-color: var(--color-theme-fade, #{$color-theme-fade}) !default;
 $range-focus-shadow: 0 0 0 0.4rem
