@@ -10,53 +10,22 @@ A collection of all Fylgja tokens offered for specific design tools or framework
 You can add Fylgja Tokens in a variety of ways.
 However, the two choices are typically through a CDN or with NPM.
 
-### Design tools (e.g. Sketch or Figma)
+### Javascript token based systems
 
-For design tools use the CDN link as entry,
-or download the tokens trough the github repo.
-
-These tokens can be used with any design tool that follows the new [design tokens specification](https://design-tokens.github.io/community-group/format/).
-
-```
-https://unpkg.com/@fylgja/tokens/tokens.json
-```
-
-These tokens are specific for [Figma compatibility](https://github.com/six7/figma-tokens);
-
-```
-https://unpkg.com/@fylgja/tokens/figma-tokens.json
-https://unpkg.com/@fylgja/tokens/figma-tokens.sync.json
-```
-
-### Javascript token based systems like Tailwind
+If you using PostCSS, Tailwind or another JS based framework that support CSS Props (design tokens), then this your option;
 
 ```bash
 npm install @fylgja/tokens
 ```
 
-Afterward, include the tokens into your code using;
+The following import options are available;
 
-```js
-const props = require("@fylgja/tokens/tokens"); // cjs
-// Or
-import props from "@fylgja/tokens/tokens"; // mjs
-```
+- `@fylgja/tokens`: full bundle of a all CSS props
+- `@fylgja/tokens/jit`: full bundle of a all CSS props in PostCSS jit props syntax
+- `@fylgja/tokens/tailwind`: full bundle of a all CSS props in Tailwind syntax syntax
 
-_Aliases: `json` or `design-tokens`_
-
-These tokens are specific for Tailwind compatibility:
-
-```js
-const props = require("@fylgja/tokens/tailwind"); // cjs
-// Or
-import props from "@fylgja/tokens/tailwind"; // mjs
-```
+see the section [How to use](https://fylgja.dev/components/tokens/#how-to-use) for more information on each option
 
 ## How to use
 
-This depends on your tool of choice.
-
-But each token that is offered by Fylgja can be found here as 1 file.
-
-See the [Fylgja Components](https://fylgja.dev/components/) for all CSS Props (Design Tokens),
-to see what is includes here.
+For more information see the [tokens docs on the Fylgja.dev](https://fylgja.dev/components/tokens/).

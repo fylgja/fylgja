@@ -1,7 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// TODO: Drop in v2
 @use "../index" with (
-    $enable-aria-only-layer: true,
-    $enable-aria-only-mq: true
+    $enable-aria-only-mq: true,
+    $aria-only-layer: "utilities"
 );

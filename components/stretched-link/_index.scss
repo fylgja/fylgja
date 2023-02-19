@@ -2,8 +2,12 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme";
 @use "helper" as *;
 
-.stretched-link {
-    @include stretched-link;
+@include theme.atLayer($stretched-link-layer) {
+    .stretched-link {
+        @include stretched-link;
+    }
 }

@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-auto-grid-layer, $auto-grid-layer-name) {
+@include theme.atLayer($auto-grid-layer) {
     .auto-grid {
         @include build-auto-grid;
     }

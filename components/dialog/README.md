@@ -26,93 +26,17 @@ Then include the component in to your code via;
 @import "@fylgja/dialog";
 ```
 
-## How to use
+### `@layer` support
 
-To use the dialog simply create a html dialog element and a button,
-that can open the dialog.
-
-```html
-<!-- Modal -->
-<button onclick="document.querySelector('#dialog-modal').showModal()">Open</button>
-<dialog id="dialog-modal">..</dialog>
-
-<!-- Snackbar -->
-<button onclick="document.querySelector('#dialog-snackbar').show()">Open</button>
-<dialog id="dialog-snackbar" class="snackbar">..</dialog>
-
-<!-- Offcanvas -->
-<button onclick="document.querySelector('#dialog-offcanvas').showModal()">Open</button>
-<dialog id="dialog-offcanvas" class="offcanvas">..</dialog>
-<!-- Or use 'offcanvas-end' -->
-```
-
-Use the `.dialog-inner` 
-if your content will be to big for specific screen sizes.
-
-This will allow scrolling the content inside the dialog-inner.
-
-You can combine this with a header and/or footer, 
-that always will be visible when you are scrolling.
-
-```html
-<dialog id="dialog-modal">
-    <div>Modal Title</div>
-    <div class="dialog-inner"></div>
-    <div><button>Sumbit</button></div>
-</dialog>
-```
-
-### Support
-
-You will need the polyfill until the html dialog is supported fully
--> [github.com/GoogleChrome/dialog-polyfill](https://github.com/GoogleChrome/dialog-polyfill).
-
-[![Data on support for the dialog feature across the major browsers from caniuse.com](https://caniuse.bitsofco.de/image/dialog.webp)](https://caniuse.com/dialog)
-
-## Config
-
-As with almost all of our components.
-CSS variables can be configured to add your own look/style.
-
-For direct control of the base styles, 
-use the following SCSS variables can you modify.
+If you need support for `@layer`,
+use the following import;
 
 ```scss
-$enable-dialog-polyfill: true !default;
-
-// Modal (default)
-$dialog-index: 9 !default;
-$dialog-offset: 2em !default;
-$dialog-max-width: calc(100% - #{$dialog-offset}) !default;
-$dialog-max-height: $dialog-max-width !default;
-$dialog-radius: 0.3em !default;
-$dialog-padding: 2em !default;
-
-$dialog-elevation: var(--elevation-z6) !default;
-$dialog-bg: var(--color-bg, #{$root-bg}) !default;
-$dialog-color: inherit !default;
-
-$dialog-backdrop: rgba(black, 0.2) !default;
-
-// Snackbar
-$dialog-snackbar-from: end !default;
-$dialog-snackbar-offset: 1em !default;
-
-// Offcanvas
-$dialog-offcanvas-radius: 0 !default;
+@use "@fylgja/dialog" with ($dialog-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/dialog" layer("components");
 ```
 
-## Tips
+## How to use
 
-If you need to use the older solutions, that doesn't use the HTML Dialog.
-But you do like to use the Fylgja Dialog styles.
-
-You can use the class `.dialog`.
-
-```html
-<button class="backdrop"></button>
-<div class="dialog offcanvas"></div>
-```
-
-_You do still have to make your own logic for the open and closed styles._
-_As seen above._
+For more information see the [dialog docs on the Fylgja.dev](https://fylgja.dev/components/dialog/).

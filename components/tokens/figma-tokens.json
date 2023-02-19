@@ -1,33 +1,5 @@
 {
   "other": {
-    "ratio-box": {
-      "value": 1,
-      "type": "other"
-    },
-    "ratio-landscape": {
-      "value": "4/3",
-      "type": "other"
-    },
-    "ratio-portrait": {
-      "value": "3/4",
-      "type": "other"
-    },
-    "ratio-widescreen": {
-      "value": "16/9",
-      "type": "other"
-    },
-    "ratio-superwide": {
-      "value": "21/9",
-      "type": "other"
-    },
-    "ratio-ultrawide": {
-      "value": "18/5",
-      "type": "other"
-    },
-    "ratio-golden": {
-      "value": "1.618/1",
-      "type": "other"
-    },
     "ease-1": {
       "value": "cubic-bezier(0.25, 0.1, 0.1, 1)",
       "type": "other"
@@ -166,6 +138,34 @@
     },
     "easeElasticInOut-5": {
       "value": "cubic-bezier(0.5, -0.9, 0.1, 1.5)",
+      "type": "other"
+    },
+    "ratio-box": {
+      "value": 1,
+      "type": "other"
+    },
+    "ratio-landscape": {
+      "value": "4/3",
+      "type": "other"
+    },
+    "ratio-portrait": {
+      "value": "3/4",
+      "type": "other"
+    },
+    "ratio-widescreen": {
+      "value": "16/9",
+      "type": "other"
+    },
+    "ratio-superwide": {
+      "value": "21/9",
+      "type": "other"
+    },
+    "ratio-ultrawide": {
+      "value": "18/5",
+      "type": "other"
+    },
+    "ratio-golden": {
+      "value": "1.618/1",
       "type": "other"
     },
     "insetShadow-0": {

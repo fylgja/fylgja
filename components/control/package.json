@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/control",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "The control component styles the default input radio's and checkbox's",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "control.css",
   "style": "control.css",
+  "sass": "_index.scss",
+  "unpkg": "control.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,9 +20,9 @@
     "control"
   ],
   "scripts": {
-    "build": "npx sass control.scss control.css --no-source-map -s compressed -I node_modules"
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.2.0"
   }
 }

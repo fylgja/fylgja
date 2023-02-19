@@ -2,8 +2,12 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme";
 @use "helper" as *;
 
-.transition {
-    @include transition;
+@include theme.atLayer($transition-layer) {
+    .transition {
+        @include transition;
+    }
 }

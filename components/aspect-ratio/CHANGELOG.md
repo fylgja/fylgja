@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.3] - 2023-02-19
+### Changed
+- Simplified `@layer` support,
+  CSS can use native, for SCSS use the new variable `$aspect-ratio-layer`,
+  the options from v1.2 are deprecated
+
+## [1.2.2] - 2023-02-10
+### Fixed
+- Missing jit props export in `package.json`
+
+## [1.2.1] - 2023-02-10
+### Added
+- Add jit props support
+
 ## [1.2.0] - 2022-12-15
 ### Added
 - Support for `@layer` in components scope

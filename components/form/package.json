@@ -1,13 +1,13 @@
 {
   "name": "@fylgja/form",
-  "version": "1.0.8",
+  "version": "1.1.3",
   "description": "The form component is super easy to use. Since it is a zero config module that styles the form elements directly",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "form.css",
   "style": "form.css",
+  "sass": "_index.scss",
+  "unpkg": "form.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -20,12 +20,11 @@
     "form"
   ],
   "scripts": {
-    "build:field": "npx sass style-field.scss style-field.css --no-source-map -s compressed -I node_modules",
-    "build:box": "npx sass style-box.scss style-box.css --no-source-map -s compressed -I node_modules",
-    "build:default": "npx sass form.scss form.css --no-source-map -s compressed -I node_modules",
-    "build": "npm run build:field && npm run build:box && npm run build:default"
+    "build:legacy": "cp box.css style-box.css && cp field.css style-field.css",
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./",
+    "postbuild": "npm run build:legacy"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.0.0"
+    "@fylgja/theme": "^1.2.0"
   }
 }

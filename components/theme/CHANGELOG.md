@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-02-19
+### Changed
+- `atLayer` now available trough the default `@use`
+- **[Possible Breaking Change]** `atLayer` now only requires the name,
+  the enable variable has been dropped
+
 ## [1.1.0] - 2022-11-05
 ### Added
 - `$base-spacing` for v2 that will replace `$item-spacer`

@@ -1,20 +1,26 @@
 {
   "name": "@fylgja/aspect-ratio",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "The aspect ratio component allows you to make not just videos. But anything you want to a certain responsive aspect ratio",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
   "main": "index.cjs",
-  "unpkg": "aspect-ratio.css",
   "style": "aspect-ratio.css",
+  "sass": "_index.scss",
+  "unpkg": "aspect-ratio.css",
   "module": "index.js",
   "exports": {
     ".": {
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
+    },
+    "./jit": {
+      "import": "./jit-props.js",
+      "require": "./jit-props.cjs",
+      "default": "./jit-props.cjs"
     }
   },
   "repository": {
@@ -34,9 +40,9 @@
     "build": "npm run build:props && npm run build:legacy"
   },
   "dependencies": {
-    "@fylgja/theme": "^1.1.0"
+    "@fylgja/theme": "^1.2.0"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.4"
+    "@fylgja/props-builder": "^1.0.5"
   }
 }

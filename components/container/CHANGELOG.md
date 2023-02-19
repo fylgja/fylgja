@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.4] - 2023-02-19
+### Changed
+- Simplified `@layer` support,
+  CSS can use native, for SCSS use the new variable `$container-layer`,
+  the options from v1.1 are deprecated
+
 ## [1.1.3] - 2022-11-05
 ### Changed
 - use Fylgja Theme atLayer for building the `@layer` variant

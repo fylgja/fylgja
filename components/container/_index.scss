@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-container-layer, $container-layer-name) {
+@include theme.atLayer($container-layer) {
     :root {
         --container-size: #{$container-size};
         --container-padding-y: #{$container-padding-y};

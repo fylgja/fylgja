@@ -86,11 +86,12 @@ export const propsBuilder = ({
 
         case "scss":
         case "css":
-            const { styles, appendedMeta } =
+            const { styles, stylesDark, appendedMeta } =
                 mode === "scss"
                     ? toStyleTokens(flatProps, prefix, suffix, "$", safeMode)
                     : toStyleTokens(flatProps, prefix, suffix, varPrefix);
             const hasCssValues = styles.length;
+            const hasCssDarkValues = stylesDark.length;
             const hasCssFrames = appendedMeta.length;
 
             if (mode === "scss") {
@@ -109,6 +110,16 @@ export const propsBuilder = ({
                     file.write(`${selector} {\n`);
                     styles.map((style) => file.write(style));
                     file.write("}\n");
+                }
+                if (hasCssValues && hasCssDarkValues) {
+                    file.write("\n");
+                }
+                if (hasCssDarkValues) {
+                    file.write(
+                        `@media (prefers-color-scheme: dark) {\n    ${selector} {\n`
+                    );
+                    stylesDark.map((style) => file.write(`    ${style}`));
+                    file.write("    }\n}\n");
                 }
                 if (hasCssValues && hasCssFrames) {
                     file.write("\n");

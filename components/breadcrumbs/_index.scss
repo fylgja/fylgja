@@ -2,8 +2,12 @@
 // Licensed under MIT Open Source
 
 @forward "helper";
+
+@use "@fylgja/theme";
 @use "helper" as *;
 
-.breadcrumbs {
-    @include breadcrumbs;
+@include theme.atLayer($breadcrumbs-layer) {
+    .breadcrumbs {
+        @include breadcrumbs;
+    }
 }

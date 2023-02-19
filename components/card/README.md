@@ -22,76 +22,17 @@ Then include the component in to your code via;
 @import "@fylgja/card";
 ```
 
-## How to use
+### `@layer` support
 
-The card is one of the few CSS components that requires a little bit more
-classes or/and elements.
-
-A simple card can be just be 1 element,
-and so you can collapse the child card classes to the parent,
-
-```html
-<div class="card card-content">..</div>
-```
-
-and a more complex card requires nesting.
-
-```html
-<div class="card">
-    <img class="card-media" src="">
-    <div class="card-content">..</div>
-</div>
-```
-
-We kept the card child classes to 3 use cases;
-
-| Class           | Description                     |
-| --------------- | ------------------------------- |
-| `.card-content` | For content, that may also grow |
-| `.card-media`   | For media (e.g. img or video)   |
-| `.card-action`  | For links and buttons           |
-
-Besides that the card is also extremely flexible in style, via CSS variables.
-
-The card style is by default elevated,
-but can be made flat via 2 variables.
-
-```html
-<style>
-    .card.-flat {
-        --card-border: 1px solid #aaa;
-        --card-elevation: none;
-    }
-</style>
-<div class="card -flat">
-    <div class="card-content">..</div>
-</div>
-```
-
-## Config
-
-As with almost all of our components,
-CSS variables can be configured to add your own look/style.
-
-Want direct control on the base styles.
-Here are the following SCSS variables can you modify.
+If you need support for `@layer`,
+use the following import;
 
 ```scss
-$enable-card-link: true !default;
-
-$card-padding: 1rem !default;
-$card-radius: 6px !default;
-$card-border: 0 !default;
-$card-elevation: var(
-    --elevation-z2,
-    0 3px 1px -2px rgba(black, 0.2),
-    0 2px 2px rgba(black, 0.14),
-    0 1px 5px rgba(black, 0.12)
-) !default;
-$card-bg: color.adjust($root-bg, $lightness: 10%) !default;
-$card-color: $color-text !default;
-
-// Only with enable-card-link
-$card-link-opacity: 0.1 !default;
-$card-link-color: currentcolor !default;
+@use "@fylgja/card" with ($card-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/card" layer("components");
 ```
+
+## How to use
+
+For more information see the [card docs on the Fylgja.dev](https://fylgja.dev/components/card/).
