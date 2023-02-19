@@ -28,9 +28,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/table" with ($enable-table-layer: true);
-// Or via PostCSS import
-@import "@fylgja/table/layer";
+@use "@fylgja/table" with ($table-layer: "base");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/table" layer("base");
 ```
 
 ## How to use

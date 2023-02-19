@@ -3,11 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-// TODO for v2 add where selector
-@include theme.atLayer($enable-table-layer, $table-layer-name) {
+@include theme.atLayer($table-layer) {
     table {
         margin: var(--table-margin, #{$table-margin});
         border-collapse: var(--table-collapse, #{$table-border-collapse});

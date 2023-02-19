@@ -1,9 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Drop in v2
 $enable-table-layer: false !default;
+$table-layer-name: if($enable-table-layer, "base", null) !default;
 
-$table-layer-name: base !default;
+$table-layer: $table-layer-name !default;
 
 $table-margin: 1rem 0 !default;
 $table-padding: 5px 8px !default;
