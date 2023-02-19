@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "./helper" as *;
 
-@include theme.atLayer($enable-pagination-layer, $pagination-layer-name) {
+@include theme.atLayer($pagination-layer) {
     .pagination {
         @include pagination;
     }

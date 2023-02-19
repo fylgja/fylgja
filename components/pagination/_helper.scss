@@ -5,9 +5,16 @@
 
 $enable-pagination-old-gap: true !default;
 $enable-pagination-dots-style: true !default;
-$enable-pagination-layer: false !default;
 
-$pagination-layer-name: components !default;
+// Drop in v2
+$enable-pagination-layer: false !default;
+$pagination-layer-name: if(
+    $enable-pagination-layer,
+    "components",
+    null
+) !default;
+
+$pagination-layer: $pagination-layer-name !default;
 
 $pagination-size: 2em !default;
 $pagination-gap: 2px !default;
