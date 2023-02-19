@@ -94,9 +94,11 @@
     }
 }
 
+// Drop in v2
 $enable-transform-layer: false !default;
+$transform-layer-name: if($enable-transform-layer, "utilities", null) !default;
 
-$transform-layer-name: utilities !default;
+$transform-layer: $transform-layer-name !default;
 
 // * The separator style can be a safe css separator, the "-" (hyphen)
 // * Or the unsafe css "\\:" (TailwindCSS separator)
