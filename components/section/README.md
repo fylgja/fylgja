@@ -21,88 +21,17 @@ Then include the component in to your code via;
 @import "@fylgja/section";
 ```
 
-## How to use
-
-To use the section component create element with the class `.section`,
-or use the native html element `<section>`
-
-```html
-<div class="section"></div>
-```
-
-This will create a element with CSS variables, easily customizable, the min-height, background and colors.
-
-So the real power lies in its strength to be customized via CSS variables.
-
-So if you want to build something like a hero,
-you only need something like this;
-
-```html
-<style>
-    #page-hero {
-        --height: 500px;
-        --img: url(https://placeimg.com/1024/500/nature);
-        --bg: var(--color-theme);
-        --color: var(--color-on-theme);
-        padding: 2em 1em;
-    }
-</style>
-<section id="page-hero">
-    <h1>Heading</h1>
-    <p>Slogan text</p>
-</section>
-```
-
-Or make it more fancy via some extra fylgja components.
-Like the `@fylgja/container` and `@fylgja/utilpack`.
-
-Example: make a hero component that is really easily build.
-
-```html
-<style>
-    #page-hero {
-        --height: 500px;
-        --img: url(https://placeimg.com/1024/500/nature);
-        --bg: var(--color-theme);
-        --color: var(--color-on-theme);
-    }
-</style>
-<section id="page-hero" class="flex items-center justify-center py-8">
-    <div class="container">
-        <h1 class="mb-0">Heading</h1>
-        <p class="h5 mt-0">Slogan text</p>
-    </div>
-</section>
-```
-
 ### `@layer` support
 
 If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/section" with ($enable-section-layer: true);
-// Or via PostCSS import
-@import "@fylgja/section/layer";
+@use "@fylgja/section" with ($section-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/section" layer("components");
 ```
 
-## Config
+## How to use
 
-Unlike other components, this component fully runs on the power of CSS.
-And has no mayor config options, except for the theme default version.
-
-```scss
-$enable-section-theme: true !default;
-$enable-section-layer: false !default;
-
-$section-layer-name: components !default;
-```
-
-When enabled it allows you to use the section with the theme color variable class.
-
-```html
-<div class="section -theme"></div>
-```
-
-It sets the background color to the `$color-theme` value,
-and sets the color to the `$color-on-theme` value.
+For more information see the [section docs on the Fylgja.dev](https://fylgja.dev/components/section/).

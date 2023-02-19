@@ -2,16 +2,19 @@
 // Licensed under MIT Open Source
 
 @use "@fylgja/theme" as *;
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 
 $enable-section-theme: true !default;
-$enable-section-layer: false !default;
 
-$section-layer-name: components !default;
+// Drop in v2
+$enable-section-layer: false !default;
+$section-layer-name: if($enable-section-layer, "components", null) !default;
+
+$section-layer: $section-layer-name !default;
 
 // Replace with `:where()` selector when creating v2
 // Consider dropping this package for more util approach in v2
-@include theme.atLayer($enable-section-layer, $section-layer-name) {
+@include theme.atLayer($section-layer) {
     :is(section, .section) {
         min-height: var(--height);
         background: var(--img, none) var(--bg) var(--img-layout, center/cover)
