@@ -3,6 +3,10 @@
 
 @use "@fylgja/mq";
 
+// Drop in v2
+$enable-aria-only-layer: false !default;
+$aria-only-layer-name: if($enable-aria-only-layer, "utilities", null) !default;
+
 // * The separator style can be a safe css separator, the "-" (hyphen)
 // * Or the unsafe css "\\:" (TailwindCSS separator)
 // * Or use a underscore "_".
@@ -10,10 +14,9 @@
 $aria-only-separator: "-" !default;
 
 $enable-aria-only-mq: false !default;
-$enable-aria-only-layer: false !default;
 $enable-aria-only-important: false !default;
 
-$aria-only-layer-name: utilities !default;
+$aria-only-layer: $aria-only-layer-name !default;
 $aria-only-breakpoints: mq.$breakpoints !default;
 
 // *1: preventing text to be condensed

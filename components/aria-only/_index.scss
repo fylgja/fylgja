@@ -7,10 +7,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-aria-only-layer, $aria-only-layer-name) {
+@include theme.atLayer($aria-only-layer) {
     .aria-only,
     .aria-only-focusable:not(:focus, :focus-within) {
         @include aria-only($enable-aria-only-important);

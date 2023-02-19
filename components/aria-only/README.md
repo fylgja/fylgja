@@ -48,9 +48,9 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/aria-only" with ($enable-aria-only-layer: true);
-// Or via PostCSS import
-@import "@fylgja/aria-only/layer";
+@use "@fylgja/aria-only" with ($aria-only-layer: "utilities");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/aria-only" layer("utilities");
 ```
 
 ## How to use
