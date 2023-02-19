@@ -1,9 +1,9 @@
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-list-layer, $list-layer-name) {
+@include theme.atLayer($list-layer) {
     .list-style {
         --marker-icon: "#{$list-marker-icon}";
         list-style-type: none;

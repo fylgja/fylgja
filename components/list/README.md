@@ -27,107 +27,11 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/list" with ($enable-list-layer: true);
-// Or via PostCSS import
-@import "@fylgja/list/layer";
+@use "@fylgja/list" with ($list-layer: "components");
+// Or via native CSS import, also supported by PostCSS import
+@import "@fylgja/list" layer("components");
 ```
 
 ## How to use
 
-Out of the box this will work by just adding the class `.list-style` to any `ul` or `ol` tag.
-
-The `.list-style` will replace the default list style
-with a `::before` with editable content inside.
-
-This way you have the same list but now can edit the style of the marker.
-
-Here is a sample with a custom check mark style.
-
-```html
-<style>
-.list-style.-checkmark {
-    --marker-icon: "✓";
-    --marker-gap: 1ch;
-    --marker-color: #4caf50;
-}
-</style>
-<ul class="list-style -checkmark">..</ul>
-```
-
-### Unset list style
-
-The list style also comes with a CSS variable class, none, this will unset the list style.
-
-```html
-<ul class="list-style -none">..</ul>
-```
-
-### Build new lists (SCSS only)
-
-The list component also comes with a build in mixin, that will create the marker style.
-
-Call the mixin `list-style()` and pass the props as seen down here.
-
-This allows creation of a custom lists in CSS, without writing any sub classes that are needed.
-
-```scss
-.list-style.-custom {
-    // Prop names with defaults
-    @include list-style(
-        $symbol, // list marker to use
-        $style: string, // list style to generate (string, image, counter)
-        $gap: false, // extra space after the list marker
-        $color: false,
-        $prefix: false, // only works for the counter style
-        $suffix: false // only works for the counter style
-    );
-    // Just an icon
-    @include list-style("✓");
-    // Icon with a custom gap
-    @include list-style("✓", $gap: 2ch);
-    // Icon as numbered list (<ol> style)
-    @include list-style(decimal, counter);
-    @include list-style(decimal, counter, $suffix: "."); // with suffix
-    // Icon as image, via background-image
-    @include list-style(url("data:image/svg+xml,..."), image);
-}
-```
-
-## Config
-
-As with almost all of our components, CSS variables can be configured to add your own look/style.
-
-Want direct control on the base styles, here are the following SCSS variables can you modify.
-
-```scss
-$enable-list-style-none: true !default;
-$enable-list-layer: false !default;
-
-$list-layer-name: components !default;
-
-$list-marker-gap: 1ch !default;
-$list-marker-icon: "•" !default;
-$list-marker-color: null !default;
-
-// Only for the image style
-$list-marker-icon-width: 1em !default;
-$list-marker-icon-height: 1.5em !default; // Same as line-height default
-```
-
-## FAQ
-
-<details class="faq-panel" open><summary><span>Do I still needs this with the pseudo <code>:marker</code></span></summary>
-
-No if you plan to just set an icon and the color,
-
-then native solution via the `:marker` pseudo selector, is all you need.
-
-But if you plan to do more like animation or need better browser support,
-
-You should use this.
-
-We are planing to update the logic for the list-style to the pseudo `:marker`,
-
-when browser support is better and more stable.
-
-</details>
+For more information see the [list docs on the Fylgja.dev](https://fylgja.dev/components/list/).

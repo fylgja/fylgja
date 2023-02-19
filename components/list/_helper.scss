@@ -4,9 +4,12 @@
 @use "sass:list";
 
 $enable-list-style-none: true !default;
-$enable-list-layer: false !default;
 
-$list-layer-name: components !default;
+// Drop in v2
+$enable-list-layer: false !default;
+$list-layer-name: if($enable-list-layer, "components", null) !default;
+
+$list-layer: $list-layer-name !default;
 
 $list-marker-gap: 1ch !default;
 $list-marker-icon: "•" !default;
