@@ -20,6 +20,23 @@
       "</details>"
     ]
   },
+  "Fylgja layer Import": {
+    "scope": "markdown",
+    "prefix": "!layer",
+    "description": "Create layer import for docs",
+    "body": [
+      "### `@layer` support",
+      "",
+      "If you need support for `@layer`,",
+      "use the following import;",
+      "",
+      "```scss",
+      "@use \"@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\" with (\\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer: \"components\");",
+      "// Or via native CSS import, also supported by PostCSS import",
+      "@import \"@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\" layer(\"components\");",
+      "```"
+    ]
+  },
   "Fylgja Readmore": {
     "scope": "markdown",
     "prefix": "!more",
