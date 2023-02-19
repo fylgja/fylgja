@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-avatar-layer, $avatar-layer-name) {
+@include theme.atLayer($avatar-layer) {
     .avatar {
         @include avatar;
     }

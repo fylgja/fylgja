@@ -1,10 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Drop in v2
 $enable-avatar-layer: false !default;
+$avatar-layer-name: if($enable-avatar-layer, "components", null) !default;
 
-$avatar-layer-name: components !default;
-
+$avatar-layer: $avatar-layer-name !default;
 $avatar-size: 3em !default;
 $avatar-radius: 50% !default;
 $avatar-bg: #eee !default;
