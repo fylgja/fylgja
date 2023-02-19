@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/table",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The table component is super easy to use. Since it is a zero config module that styles the table directly. Allowing you to focus on the table it self",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
