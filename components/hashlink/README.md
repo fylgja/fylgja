@@ -33,7 +33,7 @@ use the following import;
 ```scss
 @use "@fylgja/hashlink" with ($hashlink-layer: "utilities");
 // Or via native CSS import, also supported by PostCSS import
-@import "@fylgja/hashlink" layer("components");
+@import "@fylgja/hashlink" layer("utilities");
 ```
 
 ## How to use
