@@ -1,18 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$enable-marquee-layer: false !default;
-
-$marquee-layer-name: components !default;
-
+$marquee-layer: null !default;
 $marquee-animation-name: marquee !default;
-$marquee-animation-speed: var(--marquee-speed, 30s) !default;
+$marquee-animation-speed: 60s !default;
 $marquee-gap: 1rem !default;
 
 @mixin marquee {
     --_gap: #{$marquee-gap};
     --_dir: row;
-    --marquee-tx: calc(-100% - var(--_gap));
+    --_speed: #{$marquee-animation-speed};
     display: flex;
     flex-direction: var(--_dir);
     gap: var(--_gap);
@@ -25,9 +22,17 @@ $marquee-gap: 1rem !default;
     align-items: center;
     gap: var(--_gap);
     flex-shrink: 0;
-    animation: $marquee-animation-name $marquee-animation-speed linear infinite;
+    animation: $marquee-animation-name var(--_speed) linear infinite;
 
     @media (prefers-reduced-motion: reduce) {
         animation-play-state: paused;
+    }
+}
+
+@mixin marquee-keyframes {
+    @keyframes marquee {
+        to {
+            translate: calc(-100% - var(--_gap));
+        }
     }
 }

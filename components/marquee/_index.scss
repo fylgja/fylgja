@@ -3,11 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
-@use "keyframes" as *;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-marquee-layer, $marquee-layer-name) {
+@include theme.atLayer($marquee-layer) {
     @include marquee-keyframes;
 
     .marquee {
