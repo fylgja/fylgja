@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-progress-layer, $progress-layer-name) {
+@include theme.atLayer($progress-layer) {
     @keyframes progress-loading {
         from {
             background-position: 0 0;

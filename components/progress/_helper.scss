@@ -4,10 +4,11 @@
 @use "sass:color";
 @use "@fylgja/theme" as *;
 
+// Drop in v2
 $enable-progress-layer: false !default;
+$progress-layer-name: if($enable-progress-layer, "components", null) !default;
 
-$progress-layer-name: components !default;
-
+$progress-layer: $progress-layer-name !default;
 $progress-height: 0.8em !default;
 $progress-margin: 1em 0 !default;
 $progress-radius: 0.5em !default;
