@@ -3,10 +3,10 @@
 
 @forward "helper";
 
-@use "@fylgja/theme/layer" as theme;
+@use "@fylgja/theme";
 @use "helper" as *;
 
-@include theme.atLayer($enable-gradient-layer, $gradient-layer-name) {
+@include theme.atLayer($gradient-layer) {
     :is(.bg-gradient, .border-gradient, .text-gradient) {
         --gradient-from: currentcolor;
         --gradient-stops: var(--gradient-from),

@@ -7,9 +7,12 @@
 $enable-gradient-border: true !default;
 $enable-gradient-bg: true !default; // *1
 $enable-gradient-text: true !default;
-$enable-gradient-layer: false !default;
 
-$gradient-layer-name: utilities !default;
+// Drop in v2
+$enable-gradient-layer: false !default;
+$gradient-layer-name: if($enable-gradient-layer, "utilities", null) !default;
+
+$gradient-layer: $gradient-layer-name !default;
 
 $gradient-colors: (
     "theme": var(--color-theme, #{$color-theme}),
