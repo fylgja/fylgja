@@ -2,6 +2,48 @@
 // Licensed under MIT Open Source
 
 export default {
+  "border": {
+    "size": {
+      "1": "0.125rem",
+      "2": "0.25rem",
+      "3": "0.375rem",
+      "4": "0.5rem",
+      "5": "0.75rem",
+      "6": "1rem"
+    }
+  },
+  "radius": {
+    "1": "0.125rem",
+    "2": "0.25rem",
+    "3": "0.375rem",
+    "4": "0.5rem",
+    "5": "0.75rem",
+    "6": "1rem",
+    "full": "1e5px",
+    "fluid": {
+      "1": "clamp(0.125rem, 0.5rem, 0.5rem)",
+      "2": "clamp(0.25rem, 0.75rem, 0.75rem)",
+      "3": "clamp(0.375rem, 1rem, 1rem)",
+      "4": "clamp(2rem, 4vw, 4rem)",
+      "5": "clamp(3rem, 6vw, 5rem)",
+      "6": "clamp(4rem, 6vw, 6rem)"
+    },
+    "blob": {
+      "1": "30% 70% 70% 30% / 53% 30% 70% 47%",
+      "2": "53% 47% 34% 66% / 63% 46% 54% 37%",
+      "3": "37% 63% 56% 44% / 49% 56% 44% 51%",
+      "4": "63% 37% 37% 63% / 43% 37% 63% 57%",
+      "5": "49% 51% 48% 52% / 57% 44% 56% 43%"
+    },
+    "conditional": {
+      "1": "clamp(0px, calc(100vw - 100%) * 1e5, 0.125rem)",
+      "2": "clamp(0px, calc(100vw - 100%) * 1e5, 0.25rem)",
+      "3": "clamp(0px, calc(100vw - 100%) * 1e5, 0.375rem)",
+      "4": "clamp(0px, calc(100vw - 100%) * 1e5, 0.5rem)",
+      "5": "clamp(0px, calc(100vw - 100%) * 1e5, 0.75rem)",
+      "6": "clamp(0px, calc(100vw - 100%) * 1e5, 1rem)"
+    }
+  },
   "ease": {
     "1": "cubic-bezier(0.25, 0.1, 0.1, 1)",
     "2": "cubic-bezier(0.25, 0.1, 0.2, 1)",
@@ -51,6 +93,31 @@ export default {
     "4": "cubic-bezier(0.5, -0.7, 0.1, 1.5)",
     "5": "cubic-bezier(0.5, -0.9, 0.1, 1.5)"
   },
+  "fontSize": {
+    "1": "0.875rem",
+    "2": "1rem",
+    "3": "1.125rem",
+    "4": "1.25rem",
+    "5": "1.5rem",
+    "6": "1.875rem",
+    "7": "2rem",
+    "8": "2.25rem",
+    "9": "3rem",
+    "fluid": {
+      "1": "clamp(0.875rem, 1.5vw, 1rem)",
+      "2": "clamp(1rem, 2vw, 1.125rem)",
+      "3": "clamp(1.25rem, 2vw, 1.5rem)",
+      "4": "clamp(1.5rem, 3vw, 1.875rem)",
+      "5": "clamp(2rem, 4vw, 3rem)"
+    }
+  },
+  "lineHeight": {
+    "1": "1.1",
+    "2": "1.25",
+    "3": "1.375",
+    "4": "1.5",
+    "5": "1.8"
+  },
   "ratio": {
     "box": 1,
     "landscape": "4/3",
@@ -61,19 +128,19 @@ export default {
     "golden": "1.618/1"
   },
   "shadow": {
-    "1": "0 2px 1px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 1px 1px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 3px hsl(0 0% 50% / calc(1% + 10%))",
-    "2": "0 3px 1px -2px hsl(0 0% 50% / calc(1% + 18%)), 0 2px 2px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 5px hsl(0 0% 50% / calc(1% + 10%))",
-    "3": "0 2px 4px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 4px 5px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 10px hsl(0 0% 50% / calc(1% + 10%))",
-    "4": "0 3px 5px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 6px 10px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 18px hsl(0 0% 50% / calc(1% + 10%))",
-    "5": "0 5px 5px -3px hsl(0 0% 50% / calc(1% + 18%)), 0 8px 10px 1px hsl(0 0% 50% / calc(1% + 12%)), 0 3px 14px 2px hsl(0 0% 50% / calc(1% + 10%))",
-    "6": "0 7px 8px -4px hsl(0 0% 50% / calc(1% + 18%)), 0 12px 17px 2px hsl(0 0% 50% / calc(1% + 12%)), 0 5px 22px 4px hsl(0 0% 50% / calc(1% + 10%))"
+    "1": "0 2px 1px -1px hsl(0 0% 50% / 19%), 0 1px 1px hsl(0 0% 50% / 13%), 0 1px 3px hsl(0 0% 50% / 11%)",
+    "2": "0 3px 1px -2px hsl(0 0% 50% / 19%), 0 2px 2px hsl(0 0% 50% / 13%), 0 1px 5px hsl(0 0% 50% / 11%)",
+    "3": "0 2px 4px -1px hsl(0 0% 50% / 19%), 0 4px 5px hsl(0 0% 50% / 13%), 0 1px 10px hsl(0 0% 50% / 11%)",
+    "4": "0 3px 5px -1px hsl(0 0% 50% / 19%), 0 6px 10px hsl(0 0% 50% / 13%), 0 1px 18px hsl(0 0% 50% / 11%)",
+    "5": "0 5px 5px -3px hsl(0 0% 50% / 19%), 0 8px 10px 1px hsl(0 0% 50% / 13%), 0 3px 14px 2px hsl(0 0% 50% / 11%)",
+    "6": "0 7px 8px -4px hsl(0 0% 50% / 19%), 0 12px 17px 2px hsl(0 0% 50% / 13%), 0 5px 22px 4px hsl(0 0% 50% / 11%)"
   },
   "insetShadow": {
-    "0": "inset 0 0 0 1px hsl(0 0% 50% / calc(1% + 9%))",
-    "1": "inset 0 1px 2px 0 hsl(0 0% 50% / calc(1% + 9%))",
-    "2": "inset 0 1px 4px 0 hsl(0 0% 50% / calc(1% + 9%))",
-    "3": "inset 0 2px 8px 0 hsl(0 0% 50% / calc(1% + 9%))",
-    "4": "inset 0 2px 14px 0 hsl(0 0% 50% / calc(1% + 9%))"
+    "0": "inset 0 0 0 1px hsl(0 0% 50% / 10%)",
+    "1": "inset 0 1px 2px 0 hsl(0 0% 50% / 10%)",
+    "2": "inset 0 1px 4px 0 hsl(0 0% 50% / 10%)",
+    "3": "inset 0 2px 8px 0 hsl(0 0% 50% / 10%)",
+    "4": "inset 0 2px 14px 0 hsl(0 0% 50% / 10%)"
   },
   "size": {
     "1": "0.25rem",
@@ -104,18 +171,6 @@ export default {
     "lg": "1024px",
     "xl": "1440px",
     "xxl": "2200px"
-  },
-  "sizeFluid": {
-    "1": "clamp(0.875rem, 1vw, 1rem)",
-    "2": "clamp(1rem, 2vw, 1.5rem)",
-    "3": "clamp(1.5rem, 3vw, 2rem)",
-    "4": "clamp(2rem, 4vw, 3rem)",
-    "5": "clamp(4rem, 5vw, 5rem)",
-    "6": "clamp(5rem, 7vw, 7.5rem)",
-    "7": "clamp(7.5rem, 10vw, 10rem)",
-    "8": "clamp(10rem, 20vw, 15rem)",
-    "9": "clamp(15rem, 30vw, 20rem)",
-    "10": "clamp(20rem, 40vw, 30rem)"
   },
   "sizeContent": {
     "1": "25ch",

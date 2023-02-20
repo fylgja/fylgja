@@ -1,5 +1,129 @@
 {
   "fylgja": {
+    "borderWidth": {
+      "border-size-1": {
+        "value": "0.125rem",
+        "type": "borderWidth"
+      },
+      "border-size-2": {
+        "value": "0.25rem",
+        "type": "borderWidth"
+      },
+      "border-size-3": {
+        "value": "0.375rem",
+        "type": "borderWidth"
+      },
+      "border-size-4": {
+        "value": "0.5rem",
+        "type": "borderWidth"
+      },
+      "border-size-5": {
+        "value": "0.75rem",
+        "type": "borderWidth"
+      },
+      "border-size-6": {
+        "value": "1rem",
+        "type": "borderWidth"
+      }
+    },
+    "borderRadius": {
+      "radius-1": {
+        "value": "0.125rem",
+        "type": "borderRadius"
+      },
+      "radius-2": {
+        "value": "0.25rem",
+        "type": "borderRadius"
+      },
+      "radius-3": {
+        "value": "0.375rem",
+        "type": "borderRadius"
+      },
+      "radius-4": {
+        "value": "0.5rem",
+        "type": "borderRadius"
+      },
+      "radius-5": {
+        "value": "0.75rem",
+        "type": "borderRadius"
+      },
+      "radius-6": {
+        "value": "1rem",
+        "type": "borderRadius"
+      },
+      "radius-full": {
+        "value": "1e5px",
+        "type": "borderRadius"
+      },
+      "radius-fluid-1": {
+        "value": "clamp(0.125rem, 0.5rem, 0.5rem)",
+        "type": "borderRadius"
+      },
+      "radius-fluid-2": {
+        "value": "clamp(0.25rem, 0.75rem, 0.75rem)",
+        "type": "borderRadius"
+      },
+      "radius-fluid-3": {
+        "value": "clamp(0.375rem, 1rem, 1rem)",
+        "type": "borderRadius"
+      },
+      "radius-fluid-4": {
+        "value": "clamp(2rem, 4vw, 4rem)",
+        "type": "borderRadius"
+      },
+      "radius-fluid-5": {
+        "value": "clamp(3rem, 6vw, 5rem)",
+        "type": "borderRadius"
+      },
+      "radius-fluid-6": {
+        "value": "clamp(4rem, 6vw, 6rem)",
+        "type": "borderRadius"
+      },
+      "radius-blob-1": {
+        "value": "30% 70% 70% 30% / 53% 30% 70% 47%",
+        "type": "borderRadius"
+      },
+      "radius-blob-2": {
+        "value": "53% 47% 34% 66% / 63% 46% 54% 37%",
+        "type": "borderRadius"
+      },
+      "radius-blob-3": {
+        "value": "37% 63% 56% 44% / 49% 56% 44% 51%",
+        "type": "borderRadius"
+      },
+      "radius-blob-4": {
+        "value": "63% 37% 37% 63% / 43% 37% 63% 57%",
+        "type": "borderRadius"
+      },
+      "radius-blob-5": {
+        "value": "49% 51% 48% 52% / 57% 44% 56% 43%",
+        "type": "borderRadius"
+      },
+      "radius-conditional-1": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 0.125rem)",
+        "type": "borderRadius"
+      },
+      "radius-conditional-2": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 0.25rem)",
+        "type": "borderRadius"
+      },
+      "radius-conditional-3": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 0.375rem)",
+        "type": "borderRadius"
+      },
+      "radius-conditional-4": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 0.5rem)",
+        "type": "borderRadius"
+      },
+      "radius-conditional-5": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 0.75rem)",
+        "type": "borderRadius"
+      },
+      "radius-conditional-6": {
+        "value": "clamp(0px, calc(100vw - 100%) * 1e5, 1rem)",
+        "type": "borderRadius"
+      }
+    },
     "other": {
       "ease-1": {
         "value": "cubic-bezier(0.25, 0.1, 0.1, 1)",
@@ -141,6 +265,82 @@
         "value": "cubic-bezier(0.5, -0.9, 0.1, 1.5)",
         "type": "other"
       },
+      "fontSize-1": {
+        "value": "0.875rem",
+        "type": "other"
+      },
+      "fontSize-2": {
+        "value": "1rem",
+        "type": "other"
+      },
+      "fontSize-3": {
+        "value": "1.125rem",
+        "type": "other"
+      },
+      "fontSize-4": {
+        "value": "1.25rem",
+        "type": "other"
+      },
+      "fontSize-5": {
+        "value": "1.5rem",
+        "type": "other"
+      },
+      "fontSize-6": {
+        "value": "1.875rem",
+        "type": "other"
+      },
+      "fontSize-7": {
+        "value": "2rem",
+        "type": "other"
+      },
+      "fontSize-8": {
+        "value": "2.25rem",
+        "type": "other"
+      },
+      "fontSize-9": {
+        "value": "3rem",
+        "type": "other"
+      },
+      "fontSize-fluid-1": {
+        "value": "clamp(0.875rem, 1.5vw, 1rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-2": {
+        "value": "clamp(1rem, 2vw, 1.125rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-3": {
+        "value": "clamp(1.25rem, 2vw, 1.5rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-4": {
+        "value": "clamp(1.5rem, 3vw, 1.875rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-5": {
+        "value": "clamp(2rem, 4vw, 3rem)",
+        "type": "other"
+      },
+      "lineHeight-1": {
+        "value": "1.1",
+        "type": "other"
+      },
+      "lineHeight-2": {
+        "value": "1.25",
+        "type": "other"
+      },
+      "lineHeight-3": {
+        "value": "1.375",
+        "type": "other"
+      },
+      "lineHeight-4": {
+        "value": "1.5",
+        "type": "other"
+      },
+      "lineHeight-5": {
+        "value": "1.8",
+        "type": "other"
+      },
       "ratio-box": {
         "value": 1,
         "type": "other"
@@ -170,23 +370,23 @@
         "type": "other"
       },
       "insetShadow-0": {
-        "value": "inset 0 0 0 1px hsl(0 0% 50% / calc(1% + 9%))",
+        "value": "inset 0 0 0 1px hsl(0 0% 50% / 10%)",
         "type": "other"
       },
       "insetShadow-1": {
-        "value": "inset 0 1px 2px 0 hsl(0 0% 50% / calc(1% + 9%))",
+        "value": "inset 0 1px 2px 0 hsl(0 0% 50% / 10%)",
         "type": "other"
       },
       "insetShadow-2": {
-        "value": "inset 0 1px 4px 0 hsl(0 0% 50% / calc(1% + 9%))",
+        "value": "inset 0 1px 4px 0 hsl(0 0% 50% / 10%)",
         "type": "other"
       },
       "insetShadow-3": {
-        "value": "inset 0 2px 8px 0 hsl(0 0% 50% / calc(1% + 9%))",
+        "value": "inset 0 2px 8px 0 hsl(0 0% 50% / 10%)",
         "type": "other"
       },
       "insetShadow-4": {
-        "value": "inset 0 2px 14px 0 hsl(0 0% 50% / calc(1% + 9%))",
+        "value": "inset 0 2px 14px 0 hsl(0 0% 50% / 10%)",
         "type": "other"
       },
       "layer-1": {
@@ -212,27 +412,27 @@
     },
     "boxShadow": {
       "shadow-1": {
-        "value": "0 2px 1px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 1px 1px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 3px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 2px 1px -1px hsl(0 0% 50% / 19%), 0 1px 1px hsl(0 0% 50% / 13%), 0 1px 3px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       },
       "shadow-2": {
-        "value": "0 3px 1px -2px hsl(0 0% 50% / calc(1% + 18%)), 0 2px 2px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 5px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 3px 1px -2px hsl(0 0% 50% / 19%), 0 2px 2px hsl(0 0% 50% / 13%), 0 1px 5px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       },
       "shadow-3": {
-        "value": "0 2px 4px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 4px 5px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 10px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 2px 4px -1px hsl(0 0% 50% / 19%), 0 4px 5px hsl(0 0% 50% / 13%), 0 1px 10px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       },
       "shadow-4": {
-        "value": "0 3px 5px -1px hsl(0 0% 50% / calc(1% + 18%)), 0 6px 10px hsl(0 0% 50% / calc(1% + 12%)), 0 1px 18px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 3px 5px -1px hsl(0 0% 50% / 19%), 0 6px 10px hsl(0 0% 50% / 13%), 0 1px 18px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       },
       "shadow-5": {
-        "value": "0 5px 5px -3px hsl(0 0% 50% / calc(1% + 18%)), 0 8px 10px 1px hsl(0 0% 50% / calc(1% + 12%)), 0 3px 14px 2px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 5px 5px -3px hsl(0 0% 50% / 19%), 0 8px 10px 1px hsl(0 0% 50% / 13%), 0 3px 14px 2px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       },
       "shadow-6": {
-        "value": "0 7px 8px -4px hsl(0 0% 50% / calc(1% + 18%)), 0 12px 17px 2px hsl(0 0% 50% / calc(1% + 12%)), 0 5px 22px 4px hsl(0 0% 50% / calc(1% + 10%))",
+        "value": "0 7px 8px -4px hsl(0 0% 50% / 19%), 0 12px 17px 2px hsl(0 0% 50% / 13%), 0 5px 22px 4px hsl(0 0% 50% / 11%)",
         "type": "boxShadow"
       }
     },
@@ -347,46 +547,6 @@
       },
       "size-xxl": {
         "value": "2200px",
-        "type": "sizing"
-      },
-      "sizeFluid-1": {
-        "value": "clamp(0.875rem, 1vw, 1rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-2": {
-        "value": "clamp(1rem, 2vw, 1.5rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-3": {
-        "value": "clamp(1.5rem, 3vw, 2rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-4": {
-        "value": "clamp(2rem, 4vw, 3rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-5": {
-        "value": "clamp(4rem, 5vw, 5rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-6": {
-        "value": "clamp(5rem, 7vw, 7.5rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-7": {
-        "value": "clamp(7.5rem, 10vw, 10rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-8": {
-        "value": "clamp(10rem, 20vw, 15rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-9": {
-        "value": "clamp(15rem, 30vw, 20rem)",
-        "type": "sizing"
-      },
-      "sizeFluid-10": {
-        "value": "clamp(20rem, 40vw, 30rem)",
         "type": "sizing"
       },
       "sizeContent-1": {
