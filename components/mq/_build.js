@@ -15,8 +15,6 @@ function createMqProps(props, filename) {
     const mqList = ["xs", "sm", "md", "lg", "xl", "xxl"];
     const file = fs.createWriteStream(filename);
 
-    file.write(`${copy}\n`);
-
     for (const key in props) {
         if (mqList.includes(key)) continue;
         const mqKey = key.endsWith("Min") ? key.replace("Min", "") : key;
