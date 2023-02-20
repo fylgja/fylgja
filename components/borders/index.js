@@ -16,7 +16,9 @@ function toVW(value) {
 }
 
 export default {
-    borderSize: baseSizes,
+    border: {
+        size: baseSizes,
+    },
     radius: {
         ...baseSizes,
         full: "1e5px",

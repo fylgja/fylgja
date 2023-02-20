@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/borders",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Fylgja borders offers Design Tokens (CSS props) for consistent and semantic borders",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -39,6 +39,6 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.5"
+    "@fylgja/props-builder": "^1.0.7"
   }
 }
