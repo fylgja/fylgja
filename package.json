@@ -7,9 +7,9 @@
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "index.scss",
-  "unpkg": "fylgja.css",
   "style": "fylgja.css",
+  "sass": "index.scss",
+  "unpkg": "fylgja.css",
   "keywords": [
     "fylgja",
     "css",
