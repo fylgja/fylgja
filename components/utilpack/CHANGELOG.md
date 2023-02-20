@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2023-02-20
+### Changed
+- update `@fylgja/mq`
+
 ## [1.2.0] - 2022-07-24
 ### Changed
 - Moved api logic from index to `_api.scss`

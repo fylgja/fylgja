@@ -2,13 +2,15 @@
 // Licensed under MIT Open Source
 
 module.exports = {
-  "borderSize": {
-    "1": "0.125rem",
-    "2": "0.25rem",
-    "3": "0.375rem",
-    "4": "0.5rem",
-    "5": "0.75rem",
-    "6": "1rem"
+  "border": {
+    "size": {
+      "1": "0.125rem",
+      "2": "0.25rem",
+      "3": "0.375rem",
+      "4": "0.5rem",
+      "5": "0.75rem",
+      "6": "1rem"
+    }
   },
   "radius": {
     "1": "0.125rem",

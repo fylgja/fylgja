@@ -3,7 +3,9 @@
 
 import { propsBuilder } from "@fylgja/props-builder";
 import colors from "@fylgja/colors";
+import borders from "@fylgja/borders";
 import easing from "@fylgja/easing";
+import fonts from "@fylgja/fonts";
 import mq from "@fylgja/mq";
 import ratio from "@fylgja/aspect-ratio";
 import { staticShadows as shadow } from "@fylgja/shadow";
@@ -14,7 +16,9 @@ import { buildJsFile, renameKeys, twColorKeysMap } from "./src/helper.js";
 
 const wrapperName = "fylgja";
 const propsBundle = {
+    ...borders,
     ...easing,
+    ...fonts,
     ...ratio,
     ...shadow,
     ...sizes,

@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "@fylgja/mq";
+@use "@fylgja/mq/helper" as mq;
 
 // Drop in v2
 $enable-aria-only-layer: false !default;

@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/tokens",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A collection of all Fylgja tokens offered for specific design tools or frameworks.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -46,13 +46,15 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/aspect-ratio": "^1.2.1",
+    "@fylgja/aspect-ratio": "^1.2.3",
+    "@fylgja/borders": "^1.0.1",
     "@fylgja/colors": "^1.1.0",
-    "@fylgja/easing": "^1.0.3",
-    "@fylgja/mq": "^1.2.0",
-    "@fylgja/props-builder": "^1.0.5",
-    "@fylgja/shadow": "^1.0.3",
-    "@fylgja/sizes": "^1.0.2",
-    "@fylgja/z-layer": "^1.0.2"
+    "@fylgja/easing": "^1.1.1",
+    "@fylgja/fonts": "^1.0.0",
+    "@fylgja/mq": "^1.2.2",
+    "@fylgja/props-builder": "^1.0.7",
+    "@fylgja/shadow": "^1.1.0",
+    "@fylgja/sizes": "^1.1.0",
+    "@fylgja/z-layer": "^1.1.0"
   }
 }

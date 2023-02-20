@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/aria-only",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "The aria-only (a.k.a. sr-only) visually hides elements. But keeps it accessible to screen-readers and other aria tools",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -27,7 +27,7 @@
     "postbuild": "cp mq.css aria-only-mq.css"
   },
   "dependencies": {
-    "@fylgja/mq": "^1.1.2",
+    "@fylgja/mq": "^1.2.2",
     "@fylgja/theme": "^1.2.0"
   }
 }
