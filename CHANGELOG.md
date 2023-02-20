@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bundle for native elements, use with: `fylgja/fylgja-html.css`
 - CSS props for border
 - CSS props for fonts
+- Marquee component (not part of the core install)
+- Tokens component (not part of the core install), for design systems
 
 ### Changed
 - Full update of all core Fylgja components
