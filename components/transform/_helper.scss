@@ -3,7 +3,7 @@
 
 @use "sass:map";
 @use "sass:meta";
-@use "@fylgja/mq" as *;
+@use "@fylgja/mq/helper" as mq;
 
 // stylelint-disable custom-property-empty-line-before
 
@@ -105,7 +105,7 @@ $transform-layer: $transform-layer-name !default;
 // * Or use a underscore "_".
 // * If you want something different that is still a safe separator
 $transform-utils-separator: "-" !default;
-$transform-utils-breakpoints: $breakpoints !default;
+$transform-utils-breakpoints: mq.$breakpoints !default;
 
 $enable-3d-transform: true !default;
 
