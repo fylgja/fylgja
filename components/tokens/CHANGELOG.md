@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2023-02-20
+### Fixed
+- Missing border tokens in TW syntax
+- Missing font-size tokens in TW syntax
+- Missing line-height tokens in TW syntax
+
 ## [1.0.0] - 2023-02-20
 Initial Release 🎉
 

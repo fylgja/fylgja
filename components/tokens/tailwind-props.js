@@ -33,6 +33,49 @@ export default {
     "ultrawide": "18/5",
     "golden": "1.618/1"
   },
+  "borderWidth": {
+    "0": "0",
+    "2": "0.125rem",
+    "4": "0.25rem",
+    "6": "0.375rem",
+    "8": "0.5rem",
+    "10": "0.75rem",
+    "12": "1rem",
+    "DEFAULT": "1px"
+  },
+  "borderRadius": {
+    "none": 0,
+    "sm": "0.125rem",
+    "DEFAULT": "0.25rem",
+    "md": "0.375rem",
+    "lg": "0.5rem",
+    "xl": "0.75rem",
+    "2xl": "1rem",
+    "full": "1e5px",
+    "fluid": {
+      "sm": "clamp(0.125rem, 0.5rem, 0.5rem)",
+      "DEFAULT": "clamp(0.25rem, 0.75rem, 0.75rem)",
+      "md": "clamp(0.375rem, 1rem, 1rem)",
+      "lg": "clamp(2rem, 4vw, 4rem)",
+      "xl": "clamp(3rem, 6vw, 5rem)",
+      "2xl": "clamp(4rem, 6vw, 6rem)"
+    },
+    "blob": {
+      "1": "30% 70% 70% 30% / 53% 30% 70% 47%",
+      "2": "53% 47% 34% 66% / 63% 46% 54% 37%",
+      "3": "37% 63% 56% 44% / 49% 56% 44% 51%",
+      "4": "63% 37% 37% 63% / 43% 37% 63% 57%",
+      "5": "49% 51% 48% 52% / 57% 44% 56% 43%"
+    },
+    "conditional": {
+      "sm": "clamp(0px, calc(100vw - 100%) * 1e5, 0.125rem)",
+      "DEFAULT": "clamp(0px, calc(100vw - 100%) * 1e5, 0.25rem)",
+      "md": "clamp(0px, calc(100vw - 100%) * 1e5, 0.375rem)",
+      "lg": "clamp(0px, calc(100vw - 100%) * 1e5, 0.5rem)",
+      "xl": "clamp(0px, calc(100vw - 100%) * 1e5, 0.75rem)",
+      "2xl": "clamp(0px, calc(100vw - 100%) * 1e5, 1rem)"
+    }
+  },
   "boxShadow": {
     "1": "0 2px 1px -1px hsl(0 0% 50% / 19%), 0 1px 1px hsl(0 0% 50% / 13%), 0 1px 3px hsl(0 0% 50% / 11%)",
     "2": "0 3px 1px -2px hsl(0 0% 50% / 19%), 0 2px 2px hsl(0 0% 50% / 13%), 0 1px 5px hsl(0 0% 50% / 11%)",
@@ -259,6 +302,73 @@ export default {
       "2": "28ch",
       "3": "36ch"
     }
+  },
+  "fontSize": {
+    "sm": [
+      "0.875rem",
+      "1.25"
+    ],
+    "base": [
+      "1rem",
+      "1.25"
+    ],
+    "md": [
+      "1.125rem",
+      "1.25"
+    ],
+    "lg": [
+      "1.25rem",
+      "1.25"
+    ],
+    "xl": [
+      "1.5rem",
+      "1.25"
+    ],
+    "2xl": [
+      "1.875rem",
+      "1.1"
+    ],
+    "3xl": [
+      "2rem",
+      "1.1"
+    ],
+    "4xl": [
+      "2.25rem",
+      "1.1"
+    ],
+    "5xl": [
+      "3rem",
+      "1.1"
+    ],
+    "fluid": {
+      "sm": [
+        "clamp(0.875rem, 1.5vw, 1rem)",
+        "1.25"
+      ],
+      "base": [
+        "clamp(1rem, 2vw, 1.125rem)",
+        "1.25"
+      ],
+      "md": [
+        "clamp(1.25rem, 2vw, 1.5rem)",
+        "1.25"
+      ],
+      "lg": [
+        "clamp(1.5rem, 3vw, 1.875rem)",
+        "1.25"
+      ],
+      "xl": [
+        "clamp(2rem, 4vw, 3rem)",
+        "1.25"
+      ]
+    }
+  },
+  "lineHeight": {
+    "none": "1.1",
+    "tight": "1.25",
+    "snug": "1.375",
+    "normal": "1.5",
+    "relaxed": "1.8"
   },
   "transitionTimingFunction": {
     "ease": {
