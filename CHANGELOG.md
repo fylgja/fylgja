@@ -6,17 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-- Missing import option for bundles and root index.scss
+## [1.3.0] - 2023-02-20
+### Added
+- bundle for native elements, use with: `fylgja/fylgja-html.css`
+- CSS props for border
+- CSS props for fonts
 
 ### Changed
-- Updated _Aria-only_ to v1.2.2
-- Updated _Auto-grid_ to v1.1.2
-- Updated _Button_ to v1.2.3
-- Updated _Colors_ to v1.0.8
-- Updated _Container_ to v1.1.3
-- Updated _Dialog_ to v1.2.3
-- Updated _Theme_ to v1.1.0
+- Full update of all core Fylgja components
+- All components (except CSS props) now support `@layer` with SCSS
+- All CSS props components now support `:host` as import option
+
+### Fixed
+- Missing import option for bundles and root index.scss
 
 ## [1.2.6] - 2022-08-18
 ### Changed
