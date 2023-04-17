@@ -12,7 +12,13 @@ import { staticShadows as shadow } from "@fylgja/shadow";
 import sizes from "@fylgja/sizes";
 import zLayer from "@fylgja/z-layer";
 
-import { buildJsFile, renameKeys, twColorKeysMap } from "./src/helper.js";
+import {
+    buildJsFile,
+    renameKeys,
+    twColorKeysMap,
+    flattenObj,
+    kebabCase,
+} from "./src/helper.js";
 
 const wrapperName = "fylgja";
 const propsBundle = {
@@ -42,9 +48,12 @@ propsBuilder({ props, filename: "tokens.json" });
 propsBuilder({ props, filename: "figma-tokens.json" });
 propsBuilder({ props, filename: "figma-tokens.sync.json", wrapperName });
 
-// Tailwind specific tokens,
-// for easily replacing the Tailwind tokens with Fylgja tokens
-const tailwindProps = {
+// CSS Utillty specific tokens,
+// for easily replacing the Tailwind/UnoCSS tokens with Fylgja tokens
+// This version is made with TailwindCSS in mind, so is easy to replace all config options with Fylgja Tokens
+// TODO: split Tailwind logic, to be used in the preset instead
+const flatEasing = flattenObj(easing, { formating: kebabCase });
+const utilityProps = {
     screens: {
         xs: mq.xs,
         sm: mq.sm,
@@ -82,25 +91,38 @@ const tailwindProps = {
         xl: props.radius[5],
         "2xl": props.radius[6],
         full: props.radius.full,
-        fluid: {
-            sm: props.radius.fluid[1],
-            DEFAULT: props.radius.fluid[2],
-            md: props.radius.fluid[3],
-            lg: props.radius.fluid[4],
-            xl: props.radius.fluid[5],
-            "2xl": props.radius.fluid[6],
-        },
-        blob: props.radius.blob,
-        conditional: {
-            sm: props.radius.conditional[1],
-            DEFAULT: props.radius.conditional[2],
-            md: props.radius.conditional[3],
-            lg: props.radius.conditional[4],
-            xl: props.radius.conditional[5],
-            "2xl": props.radius.conditional[6],
-        },
+        "fluid-sm": props.radius.fluid[1],
+        fluid: props.radius.fluid[2],
+        "fluid-md": props.radius.fluid[3],
+        "fluid-lg": props.radius.fluid[4],
+        "fluid-xl": props.radius.fluid[5],
+        "fluid-2xl": props.radius.fluid[6],
+        "blob-1": props.radius.blob[1],
+        "blob-2": props.radius.blob[2],
+        "blob-3": props.radius.blob[3],
+        "blob-4": props.radius.blob[4],
+        "blob-5": props.radius.blob[5],
+        "conditional-sm": props.radius.conditional[1],
+        conditional: props.radius.conditional[2],
+        "conditional-md": props.radius.conditional[3],
+        "conditional-lg": props.radius.conditional[4],
+        "conditional-xl": props.radius.conditional[5],
+        "conditional-2xl": props.radius.conditional[6],
     },
-    boxShadow: { ...props.shadow, inset: { ...props.insetShadow } },
+    boxShadow: {
+        none: 0,
+        sm: props.shadow[1],
+        DEFAULT: props.shadow[2],
+        md: props.shadow[3],
+        lg: props.shadow[4],
+        xl: props.shadow[5],
+        "2xl": props.shadow[6],
+        inset: props.insetShadow[0],
+        "inset-1": props.insetShadow[1],
+        "inset-2": props.insetShadow[2],
+        "inset-3": props.insetShadow[3],
+        "inset-4": props.insetShadow[4],
+    },
     colors: {
         gray: renameKeys(twColorKeysMap, colors.gray),
         slate: renameKeys(twColorKeysMap, colors.blueGray),
@@ -117,7 +139,15 @@ const tailwindProps = {
         yellow: renameKeys(twColorKeysMap, colors.yellow),
         orange: renameKeys(twColorKeysMap, colors.orange),
     },
-    spacing: { ...sizes },
+    spacing: {
+        ...sizes.size,
+        "prose-xs": sizes.sizeContent[1],
+        "prose-sm": sizes.sizeContent[2],
+        prose: sizes.sizeContent[3],
+        "heading-xs": sizes.sizeHeading[1],
+        "heading-sm": sizes.sizeHeading[2],
+        heading: sizes.sizeHeading[3],
+    },
     fontSize: {
         sm: [props.fontSize[1], props.lineHeight[2]],
         base: [props.fontSize[2], props.lineHeight[2]],
@@ -128,13 +158,11 @@ const tailwindProps = {
         "3xl": [props.fontSize[7], props.lineHeight[1]],
         "4xl": [props.fontSize[8], props.lineHeight[1]],
         "5xl": [props.fontSize[9], props.lineHeight[1]],
-        fluid: {
-            sm: [props.fontSize.fluid[1], props.lineHeight[2]],
-            base: [props.fontSize.fluid[2], props.lineHeight[2]],
-            md: [props.fontSize.fluid[3], props.lineHeight[2]],
-            lg: [props.fontSize.fluid[4], props.lineHeight[2]],
-            xl: [props.fontSize.fluid[5], props.lineHeight[2]],
-        },
+        "fluid-sm": [props.fontSize.fluid[1], props.lineHeight[2]],
+        "fluid-base": [props.fontSize.fluid[2], props.lineHeight[2]],
+        "fluid-md": [props.fontSize.fluid[3], props.lineHeight[2]],
+        "fluid-lg": [props.fontSize.fluid[4], props.lineHeight[2]],
+        "fluid-xl": [props.fontSize.fluid[5], props.lineHeight[2]],
     },
     lineHeight: {
         none: props.lineHeight[1],
@@ -143,10 +171,23 @@ const tailwindProps = {
         normal: props.lineHeight[4],
         relaxed: props.lineHeight[5],
     },
-    transitionTimingFunction: { ...easing },
-    zIndex: props.layer,
+    transitionTimingFunction: {
+        "ease-linear": "linear",
+        "ease-in": "cubic-bezier(0.4, 0, 1, 1)",
+        "ease-out": "cubic-bezier(0, 0, 0.2, 1)",
+        "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+        ...flatEasing,
+    },
+    zIndex: {
+        0: 0,
+        10: props.layer[1],
+        20: props.layer[2],
+        30: props.layer[3],
+        40: props.layer[4],
+        50: props.layer[5],
+    },
 };
-delete tailwindProps.aspectRatio.box; // we only need square
+delete utilityProps.aspectRatio.box; // we only need square
 
-buildJsFile("tailwind-props.js", tailwindProps);
-buildJsFile("tailwind-props.cjs", tailwindProps);
+buildJsFile("utility-props.js", utilityProps);
+buildJsFile("utility-props.cjs", utilityProps);
