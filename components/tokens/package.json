@@ -57,8 +57,8 @@
     "@fylgja/easing": "^1.1.1",
     "@fylgja/fonts": "^1.0.0",
     "@fylgja/mq": "^1.2.2",
-    "@fylgja/props-builder": "^1.0.7",
-    "@fylgja/shadow": "^1.1.0",
+    "@fylgja/props-builder": "^1.0.8",
+    "@fylgja/shadow": "^1.1.1",
     "@fylgja/sizes": "^1.1.0",
     "@fylgja/z-layer": "^1.1.0"
   }

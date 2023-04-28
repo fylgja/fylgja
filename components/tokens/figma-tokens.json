@@ -411,27 +411,27 @@
   },
   "boxShadow": {
     "shadow-1": {
-      "value": "0 2px 1px -1px hsl(0 0% 50% / 19%), 0 1px 1px hsl(0 0% 50% / 13%), 0 1px 3px hsl(0 0% 50% / 11%)",
+      "value": "0 2px 1px -1px hsl(0 0% 50% / 19%),0 1px 1px hsl(0 0% 50% / 13%),0 1px 3px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     },
     "shadow-2": {
-      "value": "0 3px 1px -2px hsl(0 0% 50% / 19%), 0 2px 2px hsl(0 0% 50% / 13%), 0 1px 5px hsl(0 0% 50% / 11%)",
+      "value": "0 3px 1px -2px hsl(0 0% 50% / 19%),0 2px 2px hsl(0 0% 50% / 13%),0 1px 5px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     },
     "shadow-3": {
-      "value": "0 2px 4px -1px hsl(0 0% 50% / 19%), 0 4px 5px hsl(0 0% 50% / 13%), 0 1px 10px hsl(0 0% 50% / 11%)",
+      "value": "0 2px 4px -1px hsl(0 0% 50% / 19%),0 4px 5px hsl(0 0% 50% / 13%),0 1px 10px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     },
     "shadow-4": {
-      "value": "0 3px 5px -1px hsl(0 0% 50% / 19%), 0 6px 10px hsl(0 0% 50% / 13%), 0 1px 18px hsl(0 0% 50% / 11%)",
+      "value": "0 3px 5px -1px hsl(0 0% 50% / 19%),0 6px 10px hsl(0 0% 50% / 13%),0 1px 18px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     },
     "shadow-5": {
-      "value": "0 5px 5px -3px hsl(0 0% 50% / 19%), 0 8px 10px 1px hsl(0 0% 50% / 13%), 0 3px 14px 2px hsl(0 0% 50% / 11%)",
+      "value": "0 5px 5px -3px hsl(0 0% 50% / 19%),0 8px 10px 1px hsl(0 0% 50% / 13%),0 3px 14px 2px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     },
     "shadow-6": {
-      "value": "0 7px 8px -4px hsl(0 0% 50% / 19%), 0 12px 17px 2px hsl(0 0% 50% / 13%), 0 5px 22px 4px hsl(0 0% 50% / 11%)",
+      "value": "0 7px 8px -4px hsl(0 0% 50% / 19%),0 12px 17px 2px hsl(0 0% 50% / 13%),0 5px 22px 4px hsl(0 0% 50% / 11%)",
       "type": "boxShadow"
     }
   },
