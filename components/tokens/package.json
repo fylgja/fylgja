@@ -21,9 +21,14 @@
       "default": "./jit-props.cjs"
     },
     "./tailwind": {
-      "import": "./tailwind-props.js",
-      "require": "./tailwind-props.cjs",
-      "default": "./tailwind-props.cjs"
+      "import": "./utility-props.js",
+      "require": "./utility-props.cjs",
+      "default": "./utility-props.cjs"
+    },
+    "./unocss": {
+      "import": "./utility-props.js",
+      "require": "./utility-props.cjs",
+      "default": "./utility-props.cjs"
     },
     "./json": "./tokens.json",
     "./tokens": "./tokens.json",
