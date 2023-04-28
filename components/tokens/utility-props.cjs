@@ -71,7 +71,7 @@ module.exports = {
     "conditional-2xl": "clamp(0px, calc(100vw - 100%) * 1e5, 1rem)"
   },
   "boxShadow": {
-    "none": 0,
+    "none": "0",
     "sm": "0 2px 1px -1px hsl(0 0% 50% / 19%),0 1px 1px hsl(0 0% 50% / 13%),0 1px 3px hsl(0 0% 50% / 11%)",
     "DEFAULT": "0 3px 1px -2px hsl(0 0% 50% / 19%),0 2px 2px hsl(0 0% 50% / 13%),0 1px 5px hsl(0 0% 50% / 11%)",
     "md": "0 2px 4px -1px hsl(0 0% 50% / 19%),0 4px 5px hsl(0 0% 50% / 13%),0 1px 10px hsl(0 0% 50% / 11%)",

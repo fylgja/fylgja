@@ -110,7 +110,7 @@ const utilityProps = {
         "conditional-2xl": props.radius.conditional[6],
     },
     boxShadow: {
-        none: 0,
+        none: "0",
         sm: props.shadow[1],
         DEFAULT: props.shadow[2],
         md: props.shadow[3],

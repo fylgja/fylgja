@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2023-04-28
+### Fixed
+- Syntax for shadow none in utility tokens
+
 ## [1.0.2] - 2023-04-28
 ### Added
 - import for [unocss](https://unocss.dev/)
