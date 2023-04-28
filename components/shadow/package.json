@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/shadow",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Fylgja shadow offers Design Tokens (CSS props) for consistent and semantic shadows",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
