@@ -6,11 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2023-04-28
+### Added
+- import for [unocss](https://unocss.dev/)
+
+### Fixed
+- Missing nested tokens in Tailwind syntax
+
 ## [1.0.1] - 2023-02-20
 ### Fixed
-- Missing border tokens in TW syntax
-- Missing font-size tokens in TW syntax
-- Missing line-height tokens in TW syntax
+- Missing border tokens in Tailwind syntax
+- Missing font-size tokens in Tailwind syntax
+- Missing line-height tokens in Tailwind syntax
 
 ## [1.0.0] - 2023-02-20
 Initial Release 🎉
