@@ -5,6 +5,9 @@ name: Test
 on:
   push:
     branches: ["main"]
+    paths:
+      - "bundles/**/*.{css,scss}"
+      - "components/**/*.{css,scss}"
   pull_request:
     branches: [opened, synchronize, reopened, edited]
 
