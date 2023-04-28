@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Support for array values
+
 ## [1.0.7] - 2023-02-20
 ### Added
-- support for dark mode
+- Support for dark mode
 
 ## [1.0.5] - 2023-01-02
 ### Added
@@ -26,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2] - 2022-08-18
 ### Added
-- suffix support
+- Suffix support
 
 ## [1.0.1] - 2022-08-15
 ### Fixed

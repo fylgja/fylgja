@@ -16,6 +16,8 @@ const toJsStyleTokens = (props, prefix = "", suffix = "", varSyntax = "--") => {
 
     Object.entries(props).forEach(([name, value]) => {
         if (typeof value === "string" || typeof value === "number") {
+        } else if (Array.isArray(value)) {
+            value = value.toString();
         } else {
             return console.warn(`Value of ${name} is not a string or number.`);
         }
