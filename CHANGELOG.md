@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-04-28
 ### Fixed
 - Missing fonts CSS props in tokens bundle
 - Missing border CSS props in tokens bundle
