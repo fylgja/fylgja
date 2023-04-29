@@ -24,6 +24,7 @@ import toTokens from "./src/toTokens.js";
  * @param {string[]} options.jsonColorKeys default: {defaultColorKeys}
  * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
  * @param {string} options.wrapperName - if set it will be used as wrapper for json tokens
+ * @param {boolean} options.removeDefaultFromName - if set the default key name will be removed
  */
 export const propsBuilder = ({
     props,
@@ -36,6 +37,7 @@ export const propsBuilder = ({
     jsonColorKeys,
     safeMode = true,
     wrapperName = "",
+    removeDefaultFromName = true,
 }) => {
     const mode = generationSyntax || fileType(filename);
     const file = fs.createWriteStream(filename);
@@ -74,22 +76,29 @@ export const propsBuilder = ({
         case "mjs":
             const exportSyntax =
                 mode === "mjs" ? "export default " : "module.exports = ";
-            const jsStyles = toJsStyleTokens(
-                flatProps,
+            const jsStyles = toJsStyleTokens(flatProps, {
                 prefix,
                 suffix,
-                varPrefix
-            );
+                varPrefix,
+                removeDefaultFromName,
+            });
             file.write(exportSyntax + jsStyles);
             file.write("\n");
             break;
 
         case "scss":
         case "css":
-            const { styles, stylesDark, appendedMeta } =
-                mode === "scss"
-                    ? toStyleTokens(flatProps, prefix, suffix, "$", safeMode)
-                    : toStyleTokens(flatProps, prefix, suffix, varPrefix);
+            const styleOptions = {
+                prefix,
+                suffix,
+                varSyntax: mode === "scss" ? "$" : varPrefix,
+                safeMode: mode === "scss" ? true : safeMode,
+                removeDefaultFromName,
+            };
+            const { styles, stylesDark, appendedMeta } = toStyleTokens(
+                flatProps,
+                styleOptions
+            );
             const hasCssValues = styles.length;
             const hasCssDarkValues = stylesDark.length;
             const hasCssFrames = appendedMeta.length;

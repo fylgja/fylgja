@@ -4,18 +4,23 @@ import kebabCase from "./kebabCase.js";
  * Creates array of tokens from a javascript object with CSS props.
  *
  * @param {Object} props
- * @param {string} prefix
- * @param {string} suffix
- * @param {string} varSyntax
- * @param {boolean} safeMode - if true it will keep scss values in quotes for `/`
+ * @param {Object} options
+ * @param {string} options.prefix
+ * @param {string} options.suffix
+ * @param {string} options.varSyntax
+ * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
+ * @param {boolean} options.removeDefaultFromName
  * @returns {{ styles: string[], appendedMeta: string[] }}
  */
 const toStyleTokens = (
     props,
-    prefix = "",
-    suffix = "",
-    varSyntax = "--",
-    safeMode = true
+    {
+        prefix = "",
+        suffix = "",
+        varSyntax = "--",
+        safeMode = true,
+        removeDefaultFromName = true,
+    } = {}
 ) => {
     const styles = [];
     const indent = varSyntax !== "--" ? "" : "    ";
@@ -38,6 +43,11 @@ const toStyleTokens = (
         }
 
         name = kebabCase(name);
+
+        if (removeDefaultFromName && name.endsWith("-default")) {
+            name = name.replace("-default", "");
+        }
+
         let varName = `${varSyntax}${prefix}${name}${suffix}`;
 
         if (name.includes("-@media:dark")) {

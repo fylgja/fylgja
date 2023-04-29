@@ -5,13 +5,22 @@ import kebabCase from "./kebabCase.js";
  * This used to create new javascript objects
  *
  * @param {Object} props
- * @param {string} prefix
- * @param {string} suffix
- * @param {string} varSyntax
- * @param {boolean} safeMode - if true it will keep scss values in quotes for `/`
+ * @param {Object} options
+ * @param {string} options.prefix
+ * @param {string} options.suffix
+ * @param {string} options.varSyntax
+ * @param {boolean} options.removeDefaultFromName
  * @returns {string}
  */
-const toJsStyleTokens = (props, prefix = "", suffix = "", varSyntax = "--") => {
+const toJsStyleTokens = (
+    props,
+    {
+        prefix = "",
+        suffix = "",
+        varSyntax = "--",
+        removeDefaultFromName = true,
+    } = {}
+) => {
     let styles = {};
 
     Object.entries(props).forEach(([name, value]) => {
@@ -27,6 +36,11 @@ const toJsStyleTokens = (props, prefix = "", suffix = "", varSyntax = "--") => {
         }
 
         name = kebabCase(name);
+
+        if (removeDefaultFromName && name.endsWith("-default")) {
+            name = name.replace("-default", "");
+        }
+
         const varName = `${varSyntax}${prefix}${name}${suffix}`;
 
         styles = { ...styles, [varName]: value };
