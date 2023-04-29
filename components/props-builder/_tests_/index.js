@@ -37,7 +37,16 @@ const props = {
     red,
     green,
     blue,
-    shadow: `0 2px 1px -1px ${shadowUmbra}, 0 1px 1px ${shadowPenumbra}, 0 1px 3px ${shadowAmbient}`,
+    shadow: [
+        `0 2px 1px -1px ${shadowUmbra}`,
+        `0 1px 1px ${shadowPenumbra}`,
+        `0 1px 3px ${shadowAmbient}`,
+    ],
+    primary: {
+        DEFAULT: "yellow",
+        darker: "hsl(60 100% 30%)",
+        lighter: "hsl(60 100% 70%)",
+    },
 };
 
 const propsKeys = {
