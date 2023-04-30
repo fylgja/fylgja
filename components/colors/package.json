@@ -47,10 +47,11 @@
     "color-tokens"
   ],
   "scripts": {
-    "build:hsl:map": "mkdir -p temp && node src/create-hsl-json.js",
+    "prebuild": "node src/create-hsl.js",
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.5"
+    "@fylgja/props-builder": "^1.0.5",
+    "colorjs.io": "^0.4.3"
   }
 }

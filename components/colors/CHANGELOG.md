@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Swapped out the old hsl builder for the new one powered by [colorjs.io](https://colorjs.io/)
+
 ## [1.1.0] - 2023-02-10
 ### Added
 - Add jit props support
