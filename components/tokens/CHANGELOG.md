@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2023-04-29
 ### Fixed
 - Utility tokens output value for typography `lg`, and dropped `md` which does not exist
 
