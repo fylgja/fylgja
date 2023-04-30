@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2023-04-30
 ### Changed
 - Swapped out the old hsl builder for the new one powered by [colorjs.io](https://colorjs.io/)
 
