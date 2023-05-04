@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2023-04-29
 ### Added
-- Support for removing the default key from the name output, this enable by default
+- Support for removing the default key from the name output, this is enable by default
 
 ## [1.0.8] - 2023-04-28
 ### Added
