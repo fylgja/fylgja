@@ -16,7 +16,7 @@ Object.keys(props).forEach((color) => {
 });
 
 /**
- * Builjs JS file base in the Design Tokens with the Fylgaj Copyright
+ * Builjs JS file base in the Design Tokens with the Fylgja Copyright
  *
  * @param {string} file - name of output file
  * @param {Object} props
