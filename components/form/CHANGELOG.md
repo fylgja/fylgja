@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Alignment for calendar icon in chrome
+
 ## [1.1.3] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,

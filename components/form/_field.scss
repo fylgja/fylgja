@@ -3,12 +3,8 @@
 
 @use "helper" as *;
 
-// *1 Force default display for all browsers
-// Fun fact Chromium browser use this as default display value for date fields
-
 // Form field templates
 @mixin form-field {
-    display: flex; // *1
     width: 100%;
     padding: var(--form-padding, #{$form-padding});
     border: var(--form-border-width, #{$form-border-width}) $form-border-style;
