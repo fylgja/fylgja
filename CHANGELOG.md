@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.3.2] - 2023-05-10
-- Updated _Form_ to v1.1.4
-  Updated _Colors_ to v1.1.1
+### Changed
+- Updated _Form_ to v1.1.4, for small bug fix
+- Updated _Colors_ to v1.1.1
 
 ## [1.3.1] - 2023-04-28
 ### Fixed
