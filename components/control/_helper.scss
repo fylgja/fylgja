@@ -18,16 +18,16 @@ $control-layer: $control-layer-name !default;
 $control-fields: if(
     $enable-control-switch,
     (
-        "[type=" checkbox "]",
+        '[type="checkbox"]',
         ".control-checkbox",
-        "[type=" radio "]",
+        '[type="radio"]',
         ".control-radio",
         ".control-switch"
     ),
     (
-        "[type=" checkbox "]",
+        '[type="checkbox"]',
         ".control-checkbox",
-        "[type=" radio "]",
+        '[type="radio"]',
         ".control-radio"
     )
 );
@@ -72,6 +72,7 @@ $control-checked-switch-icon: var(--control-icon) !default;
     display: inline-flex;
     justify-content: flex-end;
     align-items: center;
+    flex-shrink: 0;
     width: var(--control-width, #{$control-size});
     height: var(--control-height, #{$control-size});
     margin: var(--form-margin, 0);

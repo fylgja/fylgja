@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Made prevent controll from shrinking by default when used in flex containers
+
 ## [1.2.1] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
