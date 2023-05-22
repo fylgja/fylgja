@@ -53,8 +53,10 @@
         }
 
         > :is(input, select, textarea) {
-            border: 0;
-            background-color: transparent;
+            --form-border-width: 0;
+            --form-radius: 0;
+            --form-bg: transparent;
+            --form-color: currentcolor;
         }
     }
 
