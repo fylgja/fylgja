@@ -1,12 +1,15 @@
 :root {
-    --cyan-0: #d8ffff;
-    --cyan-1: #8deeff;
-    --cyan-2: #00d8ff;
-    --cyan-3: #00c0ff;
-    --cyan-4: #00b1ff;
-    --cyan-5: #0077ca;
-    --cyan-6: #004691;
-    --cyan-7: #002862;
-    --cyan-8: #00003e;
-    --cyan-9: #00000e;
+    --cyan-0: #eff;
+    --cyan-1: #cff2fe;
+    --cyan-2: #6feaff;
+    --cyan-3: #00d6ff;
+    --cyan-4: #00c4ff;
+    --cyan-5: #00aef1;
+    --cyan-6: #0093d2;
+    --cyan-7: #007cb7;
+    --cyan-8: #006395;
+    --cyan-9: #00496f;
+    --cyan-10: #002745;
+    --cyan-11: #001729;
+    --cyan-12: #00050b;
 }

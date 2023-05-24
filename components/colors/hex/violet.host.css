@@ -1,12 +1,15 @@
 :host {
-    --violet-0: #fff3ff;
-    --violet-1: #f2ccff;
-    --violet-2: #e594ff;
-    --violet-3: #d469ff;
-    --violet-4: #ce33ff;
-    --violet-5: #9100d1;
-    --violet-6: #610097;
-    --violet-7: #3e0065;
-    --violet-8: #1f0041;
-    --violet-9: #04000f;
+    --violet-0: #fff8ff;
+    --violet-1: #f3e4ff;
+    --violet-2: #f0c1ff;
+    --violet-3: #e199ff;
+    --violet-4: #d181ff;
+    --violet-5: #be63f8;
+    --violet-6: #a34dd8;
+    --violet-7: #8c39bc;
+    --violet-8: #70279a;
+    --violet-9: #531e72;
+    --violet-10: #300148;
+    --violet-11: #1c032b;
+    --violet-12: #06010c;
 }
