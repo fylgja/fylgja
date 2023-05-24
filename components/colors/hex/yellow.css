@@ -1,15 +1,15 @@
 :root {
-    --yellow-0: #fefded;
-    --yellow-1: #f0edce;
-    --yellow-2: #e7db79;
-    --yellow-3: #d6c000;
-    --yellow-4: #c5ac00;
-    --yellow-5: #b29500;
-    --yellow-6: #987c00;
-    --yellow-7: #826800;
-    --yellow-8: #685100;
-    --yellow-9: #4d3c00;
-    --yellow-10: #2c1d00;
-    --yellow-11: #191100;
-    --yellow-12: #050300;
+    --yellow-0: #fffced;
+    --yellow-1: #f1ecce;
+    --yellow-2: #eada78;
+    --yellow-3: #d9be00;
+    --yellow-4: #c9aa00;
+    --yellow-5: #b69300;
+    --yellow-6: #9c7b00;
+    --yellow-7: #866600;
+    --yellow-8: #6b4f00;
+    --yellow-9: #4f3b00;
+    --yellow-10: #2e1c00;
+    --yellow-11: #1a1000;
+    --yellow-12: #060300;
 }

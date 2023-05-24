@@ -11,7 +11,7 @@ module.exports = {
   "--teal": 170,
   "--green": 140,
   "--lime": 125,
-  "--yellow": 102,
+  "--yellow": 100,
   "--orange": 70,
   "--red": 30
 }
