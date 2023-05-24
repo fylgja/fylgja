@@ -4,7 +4,7 @@
 import buildJsFile from "./buildJsFile.js";
 
 const contrast = [0.05, 0.1, 0.2, 0.25, 0.31, 0.27, 0.25, 0.2, 0.2, 0.1];
-const contrastGray = 0.03;
+const contrastSoft = 0.03;
 const lightMap = [
     "99%",
     "90%",
@@ -22,7 +22,6 @@ const hue = {
     redGray: 18,
     greenGray: 152,
     blueGray: 258,
-    gray: 240,
     pink: 350,
     purple: 330,
     violet: 310,
@@ -32,7 +31,7 @@ const hue = {
     teal: 170,
     green: 140,
     lime: 125,
-    yellow: 110,
+    yellow: 100,
     orange: 70,
     red: 30,
 };
@@ -40,16 +39,16 @@ const hue = {
 // The default is now using the more flexible syntax from oklch
 const props = {
     redGray: {
-        ...lightMap.map((light) => `${light} ${contrastGray} ${hue.redGray}`),
+        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.redGray}`),
     },
     greenGray: {
-        ...lightMap.map((light) => `${light} ${contrastGray} ${hue.greenGray}`),
+        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.greenGray}`),
     },
     blueGray: {
-        ...lightMap.map((light) => `${light} ${contrastGray} ${hue.blueGray}`),
+        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.blueGray}`),
     },
     gray: {
-        ...lightMap.map((light) => `${light} ${contrastGray} ${hue.gray}`),
+        ...lightMap.map((light) => `${light} 0 0`),
     },
     pink: {
         ...lightMap.map(
@@ -119,10 +118,13 @@ const propsTemplate = {
             (light, index) => `${light} ${contrast[index]} var(--color-hue, 0)`
         ),
     },
-    gray: {
+    soft: {
         ...lightMap.map(
-            (light) => `${light} ${contrastGray} var(--gray-hue, 0)`
+            (light) => `${light} ${contrastSoft} var(--soft-hue, 0)`
         ),
+    },
+    gray: {
+        ...lightMap.map((light) => `${light} 0 var(--gray-hue, 0)`),
     },
 };
 

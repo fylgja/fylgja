@@ -1,12 +1,12 @@
 :host {
-    --gray-0: #eaffff;
-    --gray-1: #cde1f0;
-    --gray-2: #adc1cf;
-    --gray-3: #94a8b6;
-    --gray-4: #8598a6;
-    --gray-5: #546673;
-    --gray-6: #2c3d49;
-    --gray-7: #14242f;
-    --gray-8: #000812;
-    --gray-9: #000003;
+    --gray-0: #fcfcfc;
+    --gray-1: #dedede;
+    --gray-2: #bebebe;
+    --gray-3: #a4a4a4;
+    --gray-4: #959595;
+    --gray-5: #636363;
+    --gray-6: #3a3a3a;
+    --gray-7: #222;
+    --gray-8: #070707;
+    --gray-9: #000;
 }

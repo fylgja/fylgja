@@ -2,7 +2,6 @@ export default {
   "--red-gray": 18,
   "--green-gray": 152,
   "--blue-gray": 258,
-  "--gray": 240,
   "--pink": 350,
   "--purple": 330,
   "--violet": 310,
@@ -12,7 +11,7 @@ export default {
   "--teal": 170,
   "--green": 140,
   "--lime": 125,
-  "--yellow": 110,
+  "--yellow": 100,
   "--orange": 70,
   "--red": 30
 }
