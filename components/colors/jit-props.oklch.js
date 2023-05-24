@@ -1,0 +1,22 @@
+export default {
+  "--color-0": "99% 0.05 var(--color-hue, 0)",
+  "--color-1": "90% 0.1 var(--color-hue, 0)",
+  "--color-2": "80% 0.2 var(--color-hue, 0)",
+  "--color-3": "72% 0.25 var(--color-hue, 0)",
+  "--color-4": "67% 0.31 var(--color-hue, 0)",
+  "--color-5": "50% 0.27 var(--color-hue, 0)",
+  "--color-6": "35% 0.25 var(--color-hue, 0)",
+  "--color-7": "25% 0.2 var(--color-hue, 0)",
+  "--color-8": "13% 0.2 var(--color-hue, 0)",
+  "--color-9": "5% 0.1 var(--color-hue, 0)",
+  "--gray-0": "99% 0.03 var(--gray-hue, 0)",
+  "--gray-1": "90% 0.03 var(--gray-hue, 0)",
+  "--gray-2": "80% 0.03 var(--gray-hue, 0)",
+  "--gray-3": "72% 0.03 var(--gray-hue, 0)",
+  "--gray-4": "67% 0.03 var(--gray-hue, 0)",
+  "--gray-5": "50% 0.03 var(--gray-hue, 0)",
+  "--gray-6": "35% 0.03 var(--gray-hue, 0)",
+  "--gray-7": "25% 0.03 var(--gray-hue, 0)",
+  "--gray-8": "13% 0.03 var(--gray-hue, 0)",
+  "--gray-9": "5% 0.03 var(--gray-hue, 0)"
+}

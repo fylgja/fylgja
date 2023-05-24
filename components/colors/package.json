@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/colors",
-  "version": "1.1.1",
+  "version": "2.0.0-beta.1",
   "description": "Add a collection of prebuild colors to any project with ease, using Fylgja Colors",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -22,6 +22,21 @@
       "require": "./hsl.cjs",
       "default": "./hsl.cjs"
     },
+    "./oklch": {
+      "import": "./oklch.js",
+      "require": "./oklch.cjs",
+      "default": "./oklch.cjs"
+    },
+    "./oklch-hues": {
+      "import": "./oklch-hues.js",
+      "require": "./oklch-hues.cjs",
+      "default": "./oklch-hues.cjs"
+    },
+    "./oklch-static": {
+      "import": "./oklch-static.js",
+      "require": "./oklch-static.cjs",
+      "default": "./oklch-static.cjs"
+    },
     "./jit": {
       "import": "./jit-props.js",
       "require": "./jit-props.cjs",
@@ -31,6 +46,16 @@
       "import": "./jit-props.hsl.js",
       "require": "./jit-props.hsl.cjs",
       "default": "./jit-props.hsl.cjs"
+    },
+    "./jit-oklch": {
+      "import": "./jit-props.oklch.js",
+      "require": "./jit-props.oklch.cjs",
+      "default": "./jit-props.oklch.cjs"
+    },
+    "./jit-oklch-hues": {
+      "import": "./jit-props.oklch-hues.js",
+      "require": "./jit-props.oklch-hues.cjs",
+      "default": "./jit-props.oklch-hues.cjs"
     }
   },
   "repository": {
@@ -44,14 +69,19 @@
     "fylgja component",
     "props",
     "colors",
-    "color-tokens"
+    "color-tokens",
+    "hex",
+    "hsl",
+    "oklch"
   ],
   "scripts": {
-    "prebuild": "node src/create-hsl.js",
+    "create:oklch": "node src/create-oklch.js",
+    "create:srgb": "node src/create-srgb.js",
+    "prebuild": "npm run create:oklch && npm run create:srgb",
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/props-builder": "^1.0.5",
+    "@fylgja/props-builder": "^1.1.0",
     "colorjs.io": "^0.4.3"
   }
 }
