@@ -16,5 +16,5 @@ export default {
   "lime": 125,
   "yellow": 100,
   "orange": 70,
-  "red": 30
+  "red": 25
 };

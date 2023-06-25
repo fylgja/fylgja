@@ -3,37 +3,25 @@
 
 import buildJsFile from "./buildJsFile.js";
 
-const contrast = [
-    ".02",
-    ".04",
-    ".12",
-    ".18",
-    ".2",
-    ".22",
-    ".21",
-    ".2",
-    ".18",
-    ".14",
-    ".12",
-    ".08",
-    ".04",
+const oklchMap = [
+    ["99%", ".03"],
+    ["95%", ".06"],
+    ["88%", ".12"],
+    ["80%", ".14"],
+    ["74%", ".16"],
+    ["68%", ".19"],
+    ["63%", ".20"],
+    ["58%", ".21"],
+    ["53%", ".20"],
+    ["49%", ".19"],
+    ["40%", ".17"],
+    ["34%", ".15"],
+    ["23%", ".12"],
+    ["16%", ".08"],
+    ["10%", ".05"],
 ];
+
 const contrastSoft = ".03";
-const lightMap = [
-    "99%",
-    "94%",
-    "88%",
-    "80%",
-    "74%",
-    "67%",
-    "59%",
-    "52%",
-    "44%",
-    "36%",
-    "24%",
-    "18%",
-    "10%",
-];
 
 const hue = {
     redGray: 18,
@@ -50,98 +38,102 @@ const hue = {
     lime: 125,
     yellow: 100,
     orange: 70,
-    red: 30,
+    red: 25,
 };
 
 // The default is now using the more flexible syntax from oklch
 const props = {
     redGray: {
-        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.redGray}`),
+        ...oklchMap.map(([light]) => `${light} ${contrastSoft} ${hue.redGray}`),
     },
     greenGray: {
-        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.greenGray}`),
+        ...oklchMap.map(
+            ([light]) => `${light} ${contrastSoft} ${hue.greenGray}`
+        ),
     },
     blueGray: {
-        ...lightMap.map((light) => `${light} ${contrastSoft} ${hue.blueGray}`),
+        ...oklchMap.map(
+            ([light]) => `${light} ${contrastSoft} ${hue.blueGray}`
+        ),
     },
     gray: {
-        ...lightMap.map((light) => `${light} 0 0`),
+        ...oklchMap.map(([light, contrast]) => `${light} 0 0`),
     },
     pink: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.pink}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.pink}`
         ),
     },
     purple: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.purple}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.purple}`
         ),
     },
     violet: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.violet}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.violet}`
         ),
     },
     indigo: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.indigo}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.indigo}`
         ),
     },
     blue: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.blue}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.blue}`
         ),
     },
     cyan: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.cyan}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.cyan}`
         ),
     },
     teal: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.teal}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.teal}`
         ),
     },
     green: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.green}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.green}`
         ),
     },
     lime: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.lime}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.lime}`
         ),
     },
     yellow: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.yellow}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.yellow}`
         ),
     },
     orange: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.orange}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.orange}`
         ),
     },
     red: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} ${hue.red}`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} ${hue.red}`
         ),
     },
 };
 
 const propsTemplate = {
     color: {
-        ...lightMap.map(
-            (light, index) => `${light} ${contrast[index]} var(--color-hue, 0)`
+        ...oklchMap.map(
+            ([light, contrast]) => `${light} ${contrast} var(--color-hue, 0)`
         ),
     },
     soft: {
-        ...lightMap.map(
-            (light) => `${light} ${contrastSoft} var(--soft-hue, 0)`
+        ...oklchMap.map(
+            ([light]) => `${light} ${contrastSoft} var(--soft-hue, 0)`
         ),
     },
     gray: {
-        ...lightMap.map((light) => `${light} 0 var(--gray-hue, 0)`),
+        ...oklchMap.map(([light]) => `${light} 0 var(--gray-hue, 0)`),
     },
 };
 

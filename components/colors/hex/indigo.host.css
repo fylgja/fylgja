@@ -1,15 +1,17 @@
 :host {
-    --indigo-0: #fbfaff;
-    --indigo-1: #eae7ff;
+    --indigo-0: #fbf9ff;
+    --indigo-1: #ede8ff;
     --indigo-2: #d6caff;
-    --indigo-3: #bea6ff;
-    --indigo-4: #ac8fff;
-    --indigo-5: #9873ff;
-    --indigo-6: #815cee;
-    --indigo-7: #6d48d1;
-    --indigo-8: #5634ac;
-    --indigo-9: #402880;
-    --indigo-10: #220852;
-    --indigo-11: #130631;
-    --indigo-12: #04010f;
+    --indigo-3: #bdadff;
+    --indigo-4: #ab97ff;
+    --indigo-5: #9a7eff;
+    --indigo-6: #8b6bf7;
+    --indigo-7: #7e58eb;
+    --indigo-8: #6f4bd4;
+    --indigo-9: #6441c2;
+    --indigo-10: #4b2a9a;
+    --indigo-11: #3b1e7e;
+    --indigo-12: #20054f;
+    --indigo-13: #0f022c;
+    --indigo-14: #040112;
 }
