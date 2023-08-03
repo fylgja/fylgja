@@ -11,66 +11,15 @@
 
 </div>
 
-Fylgja is a component based CSS framework.
-Allowing you to use only what you need.
+Fylgja is a component-based CSS framework that allows you to pick and choose the components you need. Each component is built as a foundation for a specific component, so you can style it to your own look without having to build the base styles from scratch every time.
 
-Each component is build as foundation for a specific component.
-So you can style it to your own look.
-Without having to build the base styles every time.
+Fylgja is powered by SCSS, but can also be used with PostCSS or as plain CSS. This makes it easy to include Fylgja in your projects, regardless of your preferred setup.
 
-Fylgja is powered via SCSS.
-But can also be used via PostCSS or just as plain CSS.
-Making it easy to include it in your exciting project,
-or in your preferred setup.
+## Learn more
 
-Want to learn more?
-Check out our site, [https://fylgja.dev](https://fylgja.dev/)
-
-## Installation
-
-See each component on how to install them separately.
-
-Or download Fylgja as one package.
-
-```bash
-npm install fylgja
-```
-
-Include fylgja as one package in to your code via;
-
-```scss
-@use "fylgja";
-// Or via PostCSS import
-@import "fylgja";
-```
-
-For on how to configure each component via this one import,
-[See our Guides](https://fylgja.dev/guides/), or each component.
-
-## Support
-
-Do you want to support Fylgja?
-
-You can that in many ways.
-
-Start with starring the repro.
-Or share us on your favorite social network with the hashtag #FylgjaCode.
-Making it easier for others to find Fylgja.
-
-But you also contribute directly to fylgja by;
-
-- Adding a issue or feature.
-- Adding a pull request to our github repo.
-- Helping out with the Site doc and guides, via the github repo.
-
-We appreciate any contribution, no matter if it is small or big.
-
-## Testing/Playground
-
-We have a very simple testing ground for a our CSS Components.
-
-The entry file is found in the root (`index.html`) and all sub pages are found in `_playground`,
-and each file is a basis html file.
-
-We have a option to start the playground with a localhost port,
-run `npm run dev:playground` or `npm run dev`
+* [Website](https://fylgja.dev/)
+* [Installation](https://fylgja.dev/getting-started/)
+* [Guides](https://fylgja.dev/guides/)
+* [Support](https://fylgja.dev/support/)
+* [Testing/Playground](https://stackblitz.com/edit/fylgja-playground)
+* [Documentation Github Repo](https://github.com/fylgja/site)
