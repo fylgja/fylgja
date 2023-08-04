@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   "--red-gray": 18,
   "--green-gray": 152,
   "--blue-gray": 258,
@@ -11,7 +11,7 @@ export default {
   "--teal": 170,
   "--green": 140,
   "--lime": 125,
-  "--yellow": 100,
+  "--yellow": 96,
   "--orange": 70,
   "--red": 25
 }

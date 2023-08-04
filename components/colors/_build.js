@@ -63,14 +63,14 @@ propsBuilder({
 });
 
 // All colors, jit-props, e.g. the open-props syntax
-propsBuilder({ filename: "jit-props.js", props });
-propsBuilder({ filename: "jit-props.cjs", props });
-propsBuilder({ filename: "jit-props.hsl.js", ...hslOptions });
-propsBuilder({ filename: "jit-props.hsl.cjs", ...hslOptions });
-propsBuilder({ filename: "jit-props.oklch.js", props: propsOklch });
-propsBuilder({ filename: "jit-props.oklch.cjs", props: propsOklch });
-propsBuilder({ filename: "jit-props.oklch-hues.js", props: propsOklchHues });
-propsBuilder({ filename: "jit-props.oklch-hues.cjs", props: propsOklchHues });
+propsBuilder({ filename: "jit/props.js", props });
+propsBuilder({ filename: "jit/props.cjs", props });
+propsBuilder({ filename: "jit/props.hsl.js", ...hslOptions });
+propsBuilder({ filename: "jit/props.hsl.cjs", ...hslOptions });
+propsBuilder({ filename: "jit/props.oklch.js", props: propsOklch });
+propsBuilder({ filename: "jit/props.oklch.cjs", props: propsOklch });
+propsBuilder({ filename: "jit/props.oklch-hues.js", props: propsOklchHues });
+propsBuilder({ filename: "jit/props.oklch-hues.cjs", props: propsOklchHues });
 
 // Only one color set, hex syntax
 Object.entries(props).map(([key, value]) => {

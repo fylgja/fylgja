@@ -38,24 +38,24 @@
       "default": "./oklch-static.cjs"
     },
     "./jit": {
-      "import": "./jit-props.js",
-      "require": "./jit-props.cjs",
-      "default": "./jit-props.cjs"
+      "import": "./jit/props.js",
+      "require": "./jit/props.cjs",
+      "default": "./jit/props.cjs"
     },
     "./jit-hsl": {
-      "import": "./jit-props.hsl.js",
-      "require": "./jit-props.hsl.cjs",
-      "default": "./jit-props.hsl.cjs"
+      "import": "./jit/props.hsl.js",
+      "require": "./jit/props.hsl.cjs",
+      "default": "./jit/props.hsl.cjs"
     },
     "./jit-oklch": {
-      "import": "./jit-props.oklch.js",
-      "require": "./jit-props.oklch.cjs",
-      "default": "./jit-props.oklch.cjs"
+      "import": "./jit/props.oklch.js",
+      "require": "./jit/props.oklch.cjs",
+      "default": "./jit/props.oklch.cjs"
     },
     "./jit-oklch-hues": {
-      "import": "./jit-props.oklch-hues.js",
-      "require": "./jit-props.oklch-hues.cjs",
-      "default": "./jit-props.oklch-hues.cjs"
+      "import": "./jit/props.oklch-hues.js",
+      "require": "./jit/props.oklch-hues.cjs",
+      "default": "./jit/props.oklch-hues.cjs"
     }
   },
   "repository": {
