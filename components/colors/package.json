@@ -17,6 +17,11 @@
       "require": "./index.cjs",
       "default": "./index.cjs"
     },
+    "./hex": {
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    },
     "./hsl": {
       "import": "./hsl.js",
       "require": "./hsl.cjs",
@@ -38,6 +43,11 @@
       "default": "./oklch-static.cjs"
     },
     "./jit": {
+      "import": "./jit/props.js",
+      "require": "./jit/props.cjs",
+      "default": "./jit/props.cjs"
+    },
+    "./jit/hex": {
       "import": "./jit/props.js",
       "require": "./jit/props.cjs",
       "default": "./jit/props.cjs"
