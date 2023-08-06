@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2023-08-06
+### Fixed
+- Missing inheritance for Theme component settings, closes #184
+
 ## [1.1.1] - 2022-07-24
 ### Fixed
 - Lint warning

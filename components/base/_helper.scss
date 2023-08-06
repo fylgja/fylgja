@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@forward "@fylgja/theme";
+
 @use "sass:color";
 @use "@fylgja/theme" as *;
 
