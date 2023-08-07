@@ -1,6 +1,10 @@
 @use "helper" as *;
 
+/// @deprecated This mixin will be dropped in v2 of Fylgja and is not uses in the Dialog component since v1.4
+/// @output keyframes for the dialog animation
 @mixin dialog-keyframes {
+    @warn "This mixin will be dropped in v2 of Fylgja and is not uses in the Dialog component since v1.4";
+
     @keyframes dialog-show {
         from {
             opacity: 0;

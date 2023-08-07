@@ -19,7 +19,11 @@ $dialog-max-width: calc(100% - #{$dialog-offset}) !default;
 $dialog-max-height: $dialog-max-width !default;
 $dialog-radius: 0.3em !default;
 $dialog-padding: 2em !default;
+
+/// @deprecated This variable will be dropped in v2 of Fylgja and is not uses in the Dialog component since v1.4
 $dialog-show: dialog-show 300ms !default;
+
+/// @deprecated This variable will be dropped in v2 of Fylgja and is not uses in the Dialog component since v1.4
 $dialog-hide: dialog-hide 200ms !default;
 
 $dialog-elevation: var(
