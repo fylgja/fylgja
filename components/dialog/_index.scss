@@ -5,17 +5,10 @@
 
 @use "@fylgja/theme";
 @use "helper" as *;
-@use "keyframes" as *;
 
 @include theme.atLayer($dialog-layer) {
-    @include dialog-keyframes;
-
     :is(dialog, .dialog) {
         @include dialog;
-
-        &:is([open], .is-open) {
-            @include dialog-open;
-        }
 
         // Notification
         &.snackbar {
@@ -29,6 +22,11 @@
 
         &.offcanvas-end {
             @include dialog-offcanvas(end);
+        }
+
+        // State
+        &:is([open], .is-open) {
+            @include dialog-open;
         }
     }
 

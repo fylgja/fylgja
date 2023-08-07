@@ -68,16 +68,26 @@ $dialog-offcanvas-radius: 0 !default;
     padding: var(--dialog-padding, #{$dialog-padding});
     background: var(--dialog-bg, #{$dialog-bg});
     color: var(--dialog-color, #{$dialog-color});
-    transition: visibility 0s 200ms;
-    transform: translateY(-50%); // *1
-    animation: $dialog-hide;
+    transform: var(--dialog-translate, translateY(#{$dialog-offset}));
+    transition:
+        // display var(--dialog-speed), // for v2
+        // translate var(--dialog-speed), // for v2
+        opacity var(--dialog-speed), transform var(--dialog-speed),
+        visibility 0s var(--dialog-speed);
+    opacity: 0;
     visibility: hidden;
     content-visibility: auto;
 }
 
 @mixin dialog-open {
-    transition: none;
-    animation: $dialog-show;
+    --dialog-speed: #{$dialog-open-speed};
+    transform: translate(0px, 0px);
+    transition:
+    // display var(--dialog-speed), // for v2
+    // translate var(--dialog-speed), // for v2
+        opacity var(--dialog-speed), transform var(--dialog-speed),
+        visibility 0s;
+    opacity: 1;
     visibility: visible;
 }
 

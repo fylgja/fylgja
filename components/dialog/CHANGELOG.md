@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Fixed a rare edge case in Firefox where the dialog would stay open if the animation was triggered many times.
+  - We dropped the CSS animation for a transition.
+  - This could be considered a breaking change.
+  - Closes #182.
+
 ## [1.3.2] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
