@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - This could be considered a breaking change.
   - Closes #182.
 
+### Removed
+- Dropped old Firefox and Safari fix styles for when the support for the native dialog was still bad
+
 ## [1.3.2] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,

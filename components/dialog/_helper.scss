@@ -19,6 +19,8 @@ $dialog-max-width: calc(100% - #{$dialog-offset}) !default;
 $dialog-max-height: $dialog-max-width !default;
 $dialog-radius: 0.3em !default;
 $dialog-padding: 2em !default;
+$dialog-open-speed: 300ms !default;
+$dialog-close-speed: 200ms !default;
 
 /// @deprecated This variable will be dropped in v2 of Fylgja and is not uses in the Dialog component since v1.4
 $dialog-show: dialog-show 300ms !default;
@@ -44,22 +46,19 @@ $dialog-snackbar-offset: 1em !default;
 // Offcanvas
 $dialog-offcanvas-radius: 0 !default;
 
-// *1: Needed until fit-content is better supported by Firefox and Safari
-// * The top/bottom is now calculated via a transform instead
-// * The fit-content does not work in Firefox
-// * And Safari adds weird extra space below it
 @mixin dialog {
-    z-index: $dialog-index; // Not needed for the native version
+    --dialog-speed: #{$dialog-close-speed};
+    z-index: 9;
     position: fixed;
-    top: 50%; // *1
+    top: 0;
     right: 0;
-    bottom: auto; // *1
+    bottom: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    width: var(--dialog-width, max-content); // *1
+    width: var(--dialog-width, fit-content);
     max-width: var(--dialog-max-width, #{$dialog-max-width});
-    height: var(--dialog-height, auto); // *1
+    height: var(--dialog-height, fit-content);
     max-height: var(--dialog-max-height, #{$dialog-max-height});
     box-shadow: var(--dialog-elevation, #{$dialog-elevation});
     border: var(--dialog-border, 0);
@@ -100,7 +99,6 @@ $dialog-offcanvas-radius: 0 !default;
     background-color: $dialog-backdrop;
 }
 
-// *1: Needed until fit-content is better supported by Firefox and Safari
 /// Adds the dialog snackbar styles based on position
 /// @param {String} $position - (inline)|block position where it opens from
 /// @param {Number} $offset - Position offset
@@ -122,14 +120,10 @@ $dialog-offcanvas-radius: 0 !default;
     @if $position-block == start {
         --dialog-translate: translateY(-#{$offset});
     }
-    top: if($position-block == start, 0, auto); // *1
-    bottom: if($position-block == start, auto, 0); // *1
     margin-block-#{$position-block}: $offset;
     margin-inline-#{$position-inline}: if($position-inline, $offset, null);
-    transform: initial; // *1
 }
 
-// *1: Needed until fit-content is better supported by Firefox and Safari
 /// Add dialog offcanvas styles based on position
 /// @param {String} $position - inline position where it opens from
 /// @return {Mixed} - Dialog offcanvas styles
@@ -148,9 +142,6 @@ $dialog-offcanvas-radius: 0 !default;
     --dialog-radius: #{if($isStart, $radius, $radius-rtl)};
     --dialog-border: #{$dialog-offcanvas-radius};
     margin-inline-#{$position}: 0;
-    top: 0; // *1
-    bottom: 0; // *1
-    transform: initial;
 
     [dir="rtl"] &,
     &[dir="rtl"] {
