@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Updated _Base_ to v1.1.2, for small Sass bug fix
+- Updated _Control_ to v1.2.2, for small bug fix
+- Updated _Dialog_ to v1.4.0, for issue #182, animation bug in firefox
+- Updated _Form_ to v1.1.5, for small bug fix
+- Updated _Input Group_ to v1.2.2, for small bug fix
+
 ## [1.3.2] - 2023-05-10
 ### Changed
 - Updated _Form_ to v1.1.4, for small bug fix
