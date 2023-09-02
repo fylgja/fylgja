@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.3] - 2023-09-02
+### Fixed
+- Missing precentage in color for linter
+
 ## [1.1.2] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
