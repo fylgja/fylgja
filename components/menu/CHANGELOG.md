@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2023-09-02
+### Fixed
+- SCSS new function syntax missing
+
 ## [1.3.1] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,

@@ -27,7 +27,7 @@ $menu-item-bg: transparent !default;
 $menu-item-color: inherit !default;
 
 $menu-item-hover-stroke: 0 !default;
-$menu-item-hover-bg: change-color($root-fg, $alpha: 0.05) !default;
+$menu-item-hover-bg: color.change($root-fg, $alpha: 0.05) !default;
 $menu-item-hover-color: inherit !default;
 
 // *1: Will be dropped in v2 in favor of $menu-item-hover
