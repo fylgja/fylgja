@@ -95,6 +95,7 @@
                 #{$key},
                 if($key == "default", "#{$class}", "#{$class}-#{$key}")
             );
+
             @include build-item(
                 $class: $classname,
                 $property: $props,
@@ -118,6 +119,7 @@
                 #{$value},
                 if($value == "default", "#{$class}", "#{$class}-#{$value}")
             );
+
             @include build-item(
                 $class: $classname,
                 $property: $props,

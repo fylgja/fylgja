@@ -7,5 +7,5 @@
 
 [class*="border"],
 [class*="divide-"] #{$utilpack-divider-class-nested} {
-    border: 0 var(--border-style, solid) var(--border-color, currentColor);
+    border: 0 var(--border-style, solid) var(--border-color, currentcolor);
 }

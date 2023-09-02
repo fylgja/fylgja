@@ -5,6 +5,7 @@
 
 $enable-badge-addon: true !default;
 $enable-badge-theme: true !default;
+
 // Drop in v2
 $enable-badge-layer: false !default;
 $badge-layer-name: if($enable-badge-layer, "components", null) !default;

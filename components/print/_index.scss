@@ -4,11 +4,12 @@
 // stylelint-disable declaration-no-important
 
 @forward "helper";
+
 @use "helper" as print;
 
 $enable-print-mq: true !default;
 
-@if ($enable-print-mq) {
+@if $enable-print-mq {
     @media print {
         @include print.boilerplate;
     }

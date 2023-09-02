@@ -40,11 +40,11 @@ $list-marker-icon-height: 1.5em !default; // Same as line-height default
         --marker-gap: #{$gap};
     }
 
-    @if ($style == counter) {
+    @if $style == counter {
         @if $prefix and $suffix {
-            --marker-icon: "#{$prefix}"#{counter(li, $symbol)}"#{$suffix}";
+            --marker-icon: "#{$prefix}" #{counter(li, $symbol)}"#{$suffix}";
         } @else if $prefix {
-            --marker-icon: "#{$prefix}"#{counter(li, $symbol)};
+            --marker-icon: "#{$prefix}" #{counter(li, $symbol)};
         } @else if $suffix {
             --marker-icon: #{counter(li, $symbol)} "#{$suffix}";
         } @else {
@@ -55,7 +55,7 @@ $list-marker-icon-height: 1.5em !default; // Same as line-height default
         > li {
             counter-increment: li 1;
         }
-    } @else if ($style == image) {
+    } @else if $style == image {
         --marker-icon: #{if($length > 1, list.nth($symbol, 1), $symbol)};
 
         > li::before {
@@ -65,7 +65,7 @@ $list-marker-icon-height: 1.5em !default; // Same as line-height default
             background: var(--marker-icon) center/contain no-repeat;
         }
 
-        @if ($length > 1) {
+        @if $length > 1 {
             @for $i from 2 through $length {
                 > li:nth-child(#{$i}) {
                     --marker-icon: #{list.nth($symbol, $i)};
@@ -75,7 +75,7 @@ $list-marker-icon-height: 1.5em !default; // Same as line-height default
     } @else {
         --marker-icon: "#{if($length > 1, list.nth($symbol, 1), $symbol)}";
 
-        @if ($length > 1) {
+        @if $length > 1 {
             @for $i from 2 through $length {
                 > li:nth-child(#{$i}) {
                     --marker-icon: "#{list.nth($symbol, $i)}";

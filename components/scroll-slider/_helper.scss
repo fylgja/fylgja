@@ -16,6 +16,7 @@ $scroll-align: start !default;
 @mixin scroll-slider {
     --gap-inline: #{$scroll-padding};
     --gap-block: calc(var(--gap-inline) / 2);
+
     // *1 For v2, this adds the option for slider with rows
     // This will force a slider item inline-size to be set,
     // So considered breaking the current style,
