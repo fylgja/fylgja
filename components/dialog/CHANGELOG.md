@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2023-09-02
+### Changed
+- Replace positions properties with inset
+
 ## [1.4.0] - 2023-08-07
 ### Fixed
 - Fixed a rare edge case in Firefox where the dialog would stay open if the animation was triggered many times.

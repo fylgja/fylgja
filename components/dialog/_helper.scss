@@ -50,10 +50,7 @@ $dialog-offcanvas-radius: 0 !default;
     --dialog-speed: #{$dialog-close-speed};
     z-index: 9;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     display: flex;
     flex-direction: column;
     width: var(--dialog-width, fit-content);
@@ -80,7 +77,7 @@ $dialog-offcanvas-radius: 0 !default;
 
 @mixin dialog-open {
     --dialog-speed: #{$dialog-open-speed};
-    transform: translate(0px, 0px);
+    transform: translate(0, 0);
     transition:
     // display var(--dialog-speed), // for v2
     // translate var(--dialog-speed), // for v2
@@ -92,10 +89,7 @@ $dialog-offcanvas-radius: 0 !default;
 
 @mixin backdrop {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     background-color: $dialog-backdrop;
 }
 
@@ -128,24 +122,25 @@ $dialog-offcanvas-radius: 0 !default;
 /// @param {String} $position - inline position where it opens from
 /// @return {Mixed} - Dialog offcanvas styles
 @mixin dialog-offcanvas($position: start) {
-    $isStart: $position == start;
-    @if (length($position) > 1) {
+    $is-start: $position == start;
+    @if length($position) > 1 {
         @error "$position can only accept 1 value";
     }
-    $offset: if($isStart, -100%, 100%);
-    $offset-rtl: if($isStart, 100%, -100%);
+
+    $offset: if($is-start, -100%, 100%);
+    $offset-rtl: if($is-start, 100%, -100%);
     $radius: 0 #{$dialog-radius} #{$dialog-radius} 0;
     $radius-rtl: #{$dialog-radius} 0 0 #{$dialog-radius};
     --dialog-height: 100%;
     --dialog-max-height: 100%;
     --dialog-translate: translateX(#{$offset});
-    --dialog-radius: #{if($isStart, $radius, $radius-rtl)};
+    --dialog-radius: #{if($is-start, $radius, $radius-rtl)};
     --dialog-border: #{$dialog-offcanvas-radius};
     margin-inline-#{$position}: 0;
 
     [dir="rtl"] &,
     &[dir="rtl"] {
-        --dialog-radius: #{if($isStart, $radius-rtl, $radius)};
+        --dialog-radius: #{if($is-start, $radius-rtl, $radius)};
         --dialog-translate: translateX(#{$offset-rtl});
     }
 }
