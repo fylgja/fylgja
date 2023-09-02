@@ -14,6 +14,7 @@ $card-layer: $card-layer-name !default;
 $card-padding: 1rem !default;
 $card-radius: 6px !default;
 $card-border: 0 !default;
+
 // TODO: replace elevation for shadow pkg
 $card-elevation: var(
     --elevation-z2,
@@ -52,10 +53,7 @@ $card-link-color: currentcolor !default;
     &::after {
         content: "";
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        inset: 0;
         background-color: var(--card-link-color, #{$card-link-color});
         opacity: 0;
         pointer-events: none;
