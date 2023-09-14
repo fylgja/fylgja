@@ -1,11 +1,14 @@
-@mixin overflow-mask {
-    --overflow-mask: linear-gradient(
-        var(--mask-dir, to right),
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) var(--mask-size, 20%),
-        hsl(0 0% 0% / 1) calc(100% - var(--mask-size, 20%)),
-        hsl(0 0% 0% / 0)
+@mixin mask-overflow {
+    --mask-size: 20%;
+    --mask-dir: to right;
+    --mask-color: 0 0% 0%;
+    --_mask: linear-gradient(
+        var(--mask-dir),
+        hsl(var(--mask-color) / 0%),
+        hsl(var(--mask-color)) var(--mask-size),
+        hsl(var(--mask-color)) calc(100% - var(--mask-size)),
+        hsl(var(--mask-color) / 0%)
     );
-    -webkit-mask-image: var(--overflow-mask);
-    mask-image: var(--overflow-mask);
+    -webkit-mask-image: var(--_mask);
+    mask-image: var(--_mask);
 }
