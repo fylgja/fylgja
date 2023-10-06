@@ -20,7 +20,7 @@ Fylgja is powered by SCSS, but can also be used with PostCSS or as plain CSS. Th
 * [Website](https://fylgja.dev/)
 * [Installation](https://fylgja.dev/getting-started/)
 * [Guides/Docs](https://fylgja.dev/guides/)
-* [Fylgja features](https://fylgja.dev/features/)
+* [Features](https://fylgja.dev/features/)
   * [Accessibility](https://fylgja.dev/features/accessibility/)
   * [Darkmode](https://fylgja.dev/features/darkmode/)
   * [Design Tokens](https://fylgja.dev/features/design-tokens/)
