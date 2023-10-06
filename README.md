@@ -24,7 +24,7 @@ Fylgja is powered by SCSS, but can also be used with PostCSS or as plain CSS. Th
   * [Accessibility](https://fylgja.dev/features/accessibility/)
   * [Darkmode](https://fylgja.dev/features/darkmode/)
   * [Design Tokens](https://fylgja.dev/features/design-tokens/)
-  * [Native Elements (a.k.a. classless](https://fylgja.dev/features/native-styles/)
+  * [Native Elements (a.k.a. classless)](https://fylgja.dev/features/native-styles/)
   * [RTL (Right to Left)](https://fylgja.dev/features/rtl/)
 * [Support](https://fylgja.dev/support/)
 * [Testing/Playground](https://stackblitz.com/edit/fylgja-playground)
