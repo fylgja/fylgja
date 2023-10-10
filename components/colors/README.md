@@ -1,6 +1,6 @@
 # Fylgja - Colors
 
-[![NPM version](https://img.shields.io/badge/npm-v1.1.1-blue)](https://www.npmjs.com/package/@fylgja/colors/v/1.1.1)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/colors)](https://www.npmjs.org/package/@fylgja/colors)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
 Add a collection of prebuild colors to any project with ease, using Fylgja Colors.
