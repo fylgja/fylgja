@@ -6,13 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.3] - 2023-10-10
-### Fixed
-- Missing exports for host css
+### Added
+- Add oklch props support
+- Add new colors Green Gray and Red Gray
 
-## [1.1.2] - 2023-10-10
+### Changed
+- Replaced [Open color](https://yeun.github.io/open-color/) with our own build colors, power by oklch color syntax 🙌
+- Rebuild the generation tools for the building the colors
+
 ### Fixed
 - Import error for PostCSS, closes #191
+- Incorrect render of the color Indigo
 
 ## [1.1.1] - 2023-04-30
 ### Changed
