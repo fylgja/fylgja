@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/borders",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Fylgja borders offers Design Tokens (CSS props) for consistent and semantic borders",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -13,6 +13,7 @@
   "module": "index.js",
   "exports": {
     ".": {
+      "style": "./border.css",
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
@@ -21,7 +22,9 @@
       "import": "./jit-props.js",
       "require": "./jit-props.cjs",
       "default": "./jit-props.cjs"
-    }
+    },
+    "./host": "./borders.host.css",
+    "./*": "./*"
   },
   "repository": {
     "type": "git",
