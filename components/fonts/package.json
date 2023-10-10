@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/fonts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Fylgja fonts offers Design Tokens (CSS props) for consistent and semantic typography.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -12,10 +12,18 @@
   "module": "index.js",
   "exports": {
     ".": {
+      "style": "./fonts.css",
       "import": "./index.js",
       "require": "./index.cjs",
       "default": "./index.cjs"
-    }
+    },
+    "./jit": {
+      "import": "./jit-props.js",
+      "require": "./jit-props.cjs",
+      "default": "./jit-props.cjs"
+    },
+    "./host": "./fonts.host.css",
+    "./*": "./*"
   },
   "repository": {
     "type": "git",
