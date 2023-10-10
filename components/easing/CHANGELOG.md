@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.2] - 2023-10-10
 ### Fixed
-- Import error for postCSS, closes #191
+- Import error for PostCSS, closes #191
 
 ## [1.1.1] - 2023-02-19
 ### Changed
