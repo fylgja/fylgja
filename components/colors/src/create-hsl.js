@@ -2,6 +2,18 @@
 // Licensed under MIT Open Source
 
 import fs from "fs";
+import hexToHsl from "./hexToHsl.js";
+import props from "../index.js";
+
+// Loop trough each color from props and convert it to hsl and add it to propsHsl
+const propsHsl = {};
+Object.keys(props).forEach((color) => {
+    propsHsl[color] = {};
+
+    Object.keys(props[color]).forEach((key) => {
+        propsHsl[color][key] = hexToHsl(props[color][key]);
+    });
+});
 
 /**
  * Builjs JS file base in the Design Tokens with the Fylgja Copyright
@@ -10,7 +22,7 @@ import fs from "fs";
  * @param {Object} props
  * @returns {void}
  */
-export default function buildJsFile(file, props) {
+function buildJsFile(file, props) {
     const syntax = file.endsWith(".cjs")
         ? "module.exports = "
         : "export default ";
@@ -21,3 +33,6 @@ export default function buildJsFile(file, props) {
         `${copyright}\n${syntax}${JSON.stringify(props, null, 2)};\n`
     );
 }
+
+buildJsFile("hsl.js", propsHsl);
+buildJsFile("hsl.cjs", propsHsl);

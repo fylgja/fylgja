@@ -1,17 +1,12 @@
 :host {
-    --blue-gray-0-hsl: 187.81 100% 96.982%;
-    --blue-gray-1-hsl: 212.23 100% 94.387%;
-    --blue-gray-2-hsl: 215.77 56.216% 88.713%;
-    --blue-gray-3-hsl: 215.77 45.518% 86.139%;
-    --blue-gray-4-hsl: 215.77 28.83% 78.505%;
-    --blue-gray-5-hsl: 215.77 23.082% 73.49%;
-    --blue-gray-6-hsl: 215.76 15.243% 61.231%;
-    --blue-gray-7-hsl: 215.76 11.488% 49.404%;
-    --blue-gray-8-hsl: 215.76 12.978% 42.536%;
-    --blue-gray-9-hsl: 215.76 15.715% 33.674%;
-    --blue-gray-10-hsl: 215.77 20.682% 24.156%;
-    --blue-gray-11-hsl: 215.78 27.586% 17.134%;
-    --blue-gray-12-hsl: 215.79 45.465% 9.5893%;
-    --blue-gray-13-hsl: 218.48 69.651% 5.4618%;
-    --blue-gray-14-hsl: 225.18 88.569% 3.0147%;
+    --blue-gray-0-hsl: 204 15% 94%;
+    --blue-gray-1-hsl: 198 16% 84%;
+    --blue-gray-2-hsl: 200 15% 73%;
+    --blue-gray-3-hsl: 200 16% 62%;
+    --blue-gray-4-hsl: 200 15% 54%;
+    --blue-gray-5-hsl: 200 18% 46%;
+    --blue-gray-6-hsl: 199 18% 40%;
+    --blue-gray-7-hsl: 199 18% 33%;
+    --blue-gray-8-hsl: 200 18% 26%;
+    --blue-gray-9-hsl: 200 19% 18%;
 }

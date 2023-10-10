@@ -1,17 +1,12 @@
 :root {
-    --red-0: #fff5f2;
-    --red-1: #ffe0da;
-    --red-2: #ffbeb6;
-    --red-3: #ffb2a8;
-    --red-4: #ff978f;
-    --red-5: #ff877f;
-    --red-6: #f75d59;
-    --red-7: #db2b33;
-    --red-8: #c21725;
-    --red-9: #9e0016;
-    --red-10: #760009;
-    --red-11: #560005;
-    --red-12: #370000;
-    --red-13: #210000;
-    --red-14: #120000;
+    --red-0: #fff5f5;
+    --red-1: #ffe3e3;
+    --red-2: #ffc9c9;
+    --red-3: #ffa8a8;
+    --red-4: #ff8787;
+    --red-5: #ff6b6b;
+    --red-6: #fa5252;
+    --red-7: #f03e3e;
+    --red-8: #e03131;
+    --red-9: #c92a2a;
 }
