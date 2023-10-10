@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2023-10-10
+### Fixed
+- Import error for PostCSS, closes #191
+
 ## [1.1.1] - 2023-04-28
 ### Added
 - support array values in Js file for external packages
