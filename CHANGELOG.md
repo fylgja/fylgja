@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.4] - 2023-10-10
 ### Fixed
 - Import error for CSS Props packages with PostCSS, closes #191
+- Missing PostCSS export for Native Element for Button Component
 
 ## [1.3.3] - 2023-09-02
 ### Changed
