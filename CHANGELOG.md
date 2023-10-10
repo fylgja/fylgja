@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Import error for CSS Props packages with PostCSS, closes #191
+
 ## [1.3.3] - 2023-09-02
 ### Changed
 - Updated _Base_ to v1.1.2, for small Sass bug fix
