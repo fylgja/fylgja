@@ -51,15 +51,15 @@
     "build": "node _build.js"
   },
   "devDependencies": {
-    "@fylgja/aspect-ratio": "^1.2.3",
-    "@fylgja/borders": "^1.0.1",
-    "@fylgja/colors": "^1.1.0",
-    "@fylgja/easing": "^1.1.1",
-    "@fylgja/fonts": "^1.0.0",
-    "@fylgja/mq": "^1.2.2",
+    "@fylgja/aspect-ratio": "^1.2.4",
+    "@fylgja/borders": "^1.0.2",
+    "@fylgja/colors": "^1.1.1",
+    "@fylgja/easing": "^1.1.2",
+    "@fylgja/fonts": "^1.0.1",
+    "@fylgja/mq": "^1.2.3",
     "@fylgja/props-builder": "^1.0.8",
-    "@fylgja/shadow": "^1.1.1",
-    "@fylgja/sizes": "^1.1.0",
-    "@fylgja/z-layer": "^1.1.0"
+    "@fylgja/shadow": "^1.1.2",
+    "@fylgja/sizes": "^1.1.1",
+    "@fylgja/z-layer": "^1.1.1"
   }
 }
