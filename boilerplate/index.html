@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fylgja Boilerplate</title>
+		<link rel="stylesheet" href="main.css" />
+		<style>
+			:root {
+				--anchor-offset: calc(75px + 5ex);
+			}
+
+			.wrapper {
+				inline-size: min(100% - 2rem, var(--max-size, 75ch));
+				padding-block: 1rem;
+				margin-inline: auto;
+			}
+
+			.sticky-header {
+				--max-size: 100ch;
+				z-index: 9;
+				position: sticky;
+				inset-block-start: 0;
+				background-color: var(--root-bg);
+				border-block-end: 1px solid color-mix(in oklab, var(--root-bg) 75%, var(--root-fg));
+
+				& nav a {
+					--btn-stroke: transparent;
+				}
+			}
+
+			[data-theme="light"] {
+				--root-bg: hsl(0 0% 100%);
+				--root-fg: hsl(0 0% 8%);
+				--select-icon: var(--chevron-light-scheme);
+				color-scheme: light;
+			}
+
+			[data-theme="dark"] {
+				--root-bg: color-mix(in oklab, black 82%, var(--brand));
+				--root-fg: #fff;
+				--select-icon: var(--chevron-dark-scheme);
+				color-scheme: dark;
+			}
+		</style>
+		<script>
+			const storageKey = "theme-preference";
+			const mqIsDark = window.matchMedia("(prefers-color-scheme: dark)");
+			const btnTogglePreference = "[data-color-preference]";
+
+			const getColorPreference = () => {
+				const preference = localStorage.getItem(storageKey);
+				return preference ? preference : mqIsDark.matches ? "dark" : "light";
+			};
+
+			const theme = {
+				value: getColorPreference(),
+			};
+
+			const saveColorPreference = () => {
+				localStorage.setItem(storageKey, theme.value);
+			};
+
+			const updateBtnTogglePreference = () => {
+				document.querySelectorAll(btnTogglePreference).forEach((el) => {
+					el.setAttribute(
+						"aria-label",
+						theme.value === "dark"
+							? "Activate light mode"
+							: "Activate dark mode"
+					);
+				});
+			};
+
+			const applyColorPreference = () => {
+				document.documentElement.setAttribute("data-theme", theme.value);
+				updateBtnTogglePreference();
+			};
+
+			applyColorPreference();
+
+			document.addEventListener("DOMContentLoaded", updateBtnTogglePreference, false);
+
+			document.addEventListener("click", (e) => {
+				if (!e.target.closest(btnTogglePreference)) return;
+				theme.value = theme.value === "light" ? "dark" : "light";
+				saveColorPreference();
+				applyColorPreference();
+			});
+
+			mqIsDark.addEventListener("change", ({ matches: isDark }) => {
+				theme.value = isDark ? "dark" : "light";
+				saveColorPreference();
+				applyColorPreference();
+			});
+		</script>
+		<script>
+			document.addEventListener("click", (e) => {
+				const target = e.target.closest("[role=switch]");
+				if (!target) return;
+				target.setAttribute(
+					"aria-checked",
+					target.getAttribute("aria-checked") === "true" ? "false" : "true"
+				);
+			}, false);
+		</script>
+	</head>
+	<body>
+		<header class="sticky-header">
+			<div
+				class="wrapper"
+				style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;"
+			>
+				<img
+					src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
+					width="100"
+					height="32"
+					alt="Fylgja"
+				>
+				<nav>
+					<a class="btn" href="#text">Text</a>
+					<a class="btn" href="#lists">Lists</a>
+					<a class="btn" href="#table">Table</a>
+					<a class="btn" href="#code">Code</a>
+					<a class="btn" href="#forms">Forms</a>
+					<a class="btn" href="#dialogs">Dialogs</a>
+					<a class="btn" href="#media">Media</a>
+					<button role="switch" aria-checked="false" data-color-preference id="theme-toggle">
+						<span>Light</span>
+						<span>Dark</span>
+					</button>
+				</nav>
+			</div>
+		</header>
+		<main class="wrapper">
+			<section id="intro">
+				<p>
+					A showcase of Fylgja using only our Native Element CSS Commponents<br />
+					Build a full page without using any CSS classes.<br />
+					Interested? Checkout each component used here at
+					<a href="https://fylgja.dev/">Fylgja</a>
+				</p>
+			</section>
+			<section id="text">
+				<h1>Heading 1</h1>
+				<h2>Heading 2</h2>
+				<h3>Heading 3</h3>
+				<h4>Heading 4</h4>
+				<h5>Heading 5</h5>
+				<h6>Heading 6</h6>
+				<p>
+					A paragraph (from the Greek paragraphos, “to write beside” or “written beside”)
+					is a self-contained unit of a discourse in writing dealing with a particular
+					point or idea. A paragraph consists of one or more sentences. Though not
+					required by the syntax of any language, paragraphs are usually an expected part
+					of formal writing, used to organize longer prose.
+				</p>
+				<hr>
+				<blockquote>
+					<p>
+						A block quotation (also known as a long quotation or extract) is a quotation
+						in a written document, that is set off from the main text as a paragraph, or
+						block of text.
+					</p>
+					<p>
+						It is typically distinguished visually using indentation and a different
+						typeface or smaller size quotation. It may or may not include a citation,
+						usually placed at the bottom.
+					</p>
+					<cite><a href="#!">Said no one, ever.</a></cite>
+				</blockquote>
+				<p><a href="#!">This is a text link</a>.</p>
+				<p><strong>Strong is used to indicate strong importance.</strong></p>
+				<p><em>This text has added emphasis.</em></p>
+				<p>
+					The <b>b element</b> is stylistically different text from normal
+					text, without any special importance.
+				</p>
+				<p>The <i>i element</i> is text that is offset from the normal text.</p>
+				<p>
+					The <u>u element</u> is text with an unarticulated, though
+					explicitly rendered, non-textual annotation.
+				</p>
+				<p>
+					<del>This text is deleted</del> and
+					<ins>This text is inserted</ins>.
+				</p>
+				<p><s>This text has a strikethrough</s>.</p>
+				<p>Superscript<sup>®</sup>.</p>
+				<p>Subscript for things like H<sub>2</sub>O.</p>
+				<p><small>This small text is small for for fine print, etc.</small></p>
+				<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+				<p>
+					<q cite="./index_files/q">This text is a short inline quotation.</q>
+				</p>
+				<p><cite>This is a citation.</cite></p>
+				<p>The <dfn>dfn element</dfn> indicates a definition.</p>
+				<p>The <mark>mark element</mark> indicates a highlight.</p>
+				<p>
+					The <var>variable element</var>, such as <var>x</var> =
+					<var>y</var>.
+				</p>
+				<p>
+					The time element:
+					<time datetime="2013-04-06T12:32+00:00">2 weeks ago</time>
+				</p>
+			</section>
+			<section id="lists">
+				<h2>Lists</h2>
+				<dl>
+					<dt>Definition List Title</dt>
+					<dd>This is a definition list division.</dd>
+
+					<dt>Definition List Title 2</dt>
+					<dd>
+						This is a definition list division item with a lot more to say.
+					</dd>
+				</dl>
+				<details name="details" open>
+					<summary>Details and summary element</summary>
+					<p>Example paragraph text.</p>
+				</details>
+				<details name="details">
+					<summary>Details and summary element</summary>
+					<p>Example paragraph text.</p>
+				</details>
+				<h3>Ordered List</h3>
+				<ol>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ol>
+				<h3>Unordered List</h3>
+				<ul>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ul>
+				<h3>List with role=list</h3>
+				<ul role="list">
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ul>
+			</section>
+			<section id="table">
+				<h2>Table</h2>
+				<table>
+					<caption>
+						Table Caption
+					</caption>
+					<thead>
+						<tr>
+							<th>Table Heading 1</th>
+							<th>Table Heading 2</th>
+							<th>Table Heading 3</th>
+							<th>Table Heading 4</th>
+							<th>Table Heading 5</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Table Footer 1</th>
+							<th>Table Footer 2</th>
+							<th>Table Footer 3</th>
+							<th>Table Footer 4</th>
+							<th>Table Footer 5</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section id="code">
+				<h2>Code</h2>
+				<p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+				<p>
+					<strong>Inline code:</strong>
+					<code>&lt;div&gt;code&lt;/div&gt;</code>
+				</p>
+				<p>
+					<strong>Sample output:</strong>
+					<samp>This is sample output from a computer program.</samp>
+				</p>
+				<h2>Pre-formatted text</h2>
+				<pre>
+P R E F O R M A T T E D T E X T
+! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre
+				>
+			</section>
+			<section id="forms">
+				<form>
+					<div id="form-fields">
+						<h2>Form Fields</h2>
+						<label for="text">text</label>
+						<input id="text" type="text" placeholder="text">
+						<label for="number">number</label>
+						<input id="number" type="number" placeholder="number">
+						<label for="email">email</label>
+						<input id="email" type="email" placeholder="email">
+						<label for="tel">tel</label>
+						<input id="tel" type="tel" placeholder="tel">
+						<label for="password">password</label>
+						<input id="password" type="password" placeholder="password">
+						<label for="search">search</label>
+						<input id="search" type="search" placeholder="search">
+						<label for="url">url</label>
+						<input id="url" type="url" placeholder="url">
+						<label for="date">date</label>
+						<input id="date" type="date" placeholder="data">
+						<label for="datetime">datetime</label>
+						<input id="datetime" type="datetime-local" placeholder="datetime-local">
+						<label for="time">time</label>
+						<input id="time" type="time" placeholder="time">
+						<label for="month">month</label>
+						<input id="month" type="month" placeholder="month">
+						<label for="week">week</label>
+						<input id="week" type="week" placeholder="week">
+						<label for="color">color</label>
+						<input id="color" type="color" placeholder="color" value="#e91e63">
+						<br>
+						<label for="file">file</label>
+						<input id="file" type="file" placeholder="file">
+						<label for="select">select</label>
+						<select id="select">
+							<option value="option 1">option 1</option>
+							<option value="option 2">option 2</option>
+							<option value="option 3">option 3</option>
+						</select>
+						<label for="datalist">datalist</label>
+						<input id="datalist" type="text" placeholder="Enter a country" list="countries">
+						<datalist id="countries">
+							<option>Netherlands</option>
+							<option>Germany</option>
+							<option>Belgium</option>
+							<option>United Kingdom</option>
+							<option>United States</option>
+						</datalist>
+						<label for="textarea">file</label>
+						<textarea id="textarea" placeholder="textarea" rows="3"></textarea>
+					</div>
+					<fieldset id="form-checkboxes">
+						<legend>Checkboxes</legend>
+						<label for="checkbox-blue">
+							<input id="checkbox-blue" name="checkbox" type="checkbox" />
+							<span>Take Blue pill</span>
+						</label>
+						<label for="checkbox-red">
+							<input id="checkbox-red" name="checkbox" type="checkbox" />
+							<span>Take Red pill</span>
+						</label>
+					</fieldset>
+					<fieldset id="form-radios">
+						<legend>Radio boxes</legend>
+						<label for="radio-blue">
+							<input id="radio-blue" name="radio" type="radio" />
+							<span>Take Blue pill</span>
+						</label>
+						<label for="radio-red">
+							<input id="radio-red" name="radio" type="radio" />
+							<span>Take Red pill</span>
+						</label>
+					</fieldset>
+					<fieldset id="form-switches">
+						<legend>Switches</legend>
+						<label for="switch-blue">
+							<input id="switch-blue" name="switch" type="checkbox" role="switch" />
+							<span>Switch with role</span>
+						</label>
+						<label for="switch-red">
+							<input id="switch-red" name="switch" type="checkbox" switch />
+							<span>Switch with new attribute</span>
+						</label>
+					</fieldset>
+					<div id="form-actions">
+						<h2>Action buttons</h2>
+						<div>
+							<input type="submit" value="input[type=submit]" />
+							<input type="button" value="input[type=button]" />
+							<input type="reset" value="input[type=reset]" />
+							<input type="submit" value="input:disabled" disabled />
+						</div>
+						<div>
+							<button type="submit">Submit</button>
+							<button type="button">Button</button>
+							<button type="reset">Reset</button>
+							<button type="button" disabled>Disabled</button>
+						</div>
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" hidden>
+								<symbol
+									id="btn-icon"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M13 16a3 3 0 0 1 2.24 5" />
+									<path d="M18 12h.01" />
+									<path
+										d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3"
+									/>
+									<path d="M20 8.54V4a2 2 0 1 0-4 0v3" />
+									<path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
+								</symbol>
+							</svg>
+							<button type="submit">
+								<svg width="24" height="24">
+									<use href="#btn-icon"></use>
+								</svg>
+							</button>
+							<button type="button">
+								<svg width="24" height="24">
+									<use href="#btn-icon"></use>
+								</svg>
+							</button>
+							<button type="button">
+								<svg width="24" height="24">
+									<use href="#btn-icon"></use>
+								</svg>
+								<span>Go Fast</span>
+							</button>
+							<button type="button" disabled>
+								<svg width="24" height="24">
+									<use href="#btn-icon"></use>
+								</svg>
+								<span>Go Fast</span>
+							</button>
+						</div>
+					</div>
+					<div id="form-meter">
+						<h2>Meter</h2>
+						<meter value="2" min="0" max="10">2 out of 10</meter>
+					</div>
+					<div id="form-progress">
+						<h2>Progress</h2>
+						<progress indeterminate>progress</progress>
+						<br />
+						<progress value=".5">progress</progress>
+					</div>
+				</form>
+			</section>
+			<section id="dialogs">
+				<h2>Dialogs</h2>
+				<button onclick="document.querySelector('#dialog-modal').showModal()">
+					Open Modal
+				</button>
+				<dialog id="dialog-modal">
+					<p>Hello There! Hello World! Welcome!</p>
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written
+						beside”) is a self-contained unit of a discourse in writing dealing with
+						a particular point or idea. A paragraph consists of one or more
+						sentences. Though not required by the syntax of any language, paragraphs
+						are usually an expected part of formal writing, used to organize longer
+						prose.
+					</p>
+					<hr />
+					<button onclick="document.querySelector('#dialog-modal-inner').showModal()">
+						Open Modal inner
+					</button>
+					<button onclick="document.querySelector('#dialog-modal').close()">
+						Close
+					</button>
+				</dialog>
+				<dialog id="dialog-modal-inner">
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written
+						beside”) is a self-contained unit of a discourse in writing dealing with
+						a particular point or idea. A paragraph consists of one or more
+						sentences. Though not required by the syntax of any language, paragraphs
+						are usually an expected part of formal writing, used to organize longer
+						prose.
+					</p>
+					<button onclick="document.querySelector('#dialog-modal-inner').close()">
+						Close
+					</button>
+				</dialog>
+				<button onclick="document.querySelector('#dialog-offcanvas').showModal()">
+					Open Offcanvas
+				</button>
+				<dialog id="dialog-offcanvas" class="offcanvas">
+					<p>Hello There! Hello World! Welcome!</p>
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written
+						beside”) is a self-contained unit of a discourse in writing dealing with
+						a particular point or idea. A paragraph consists of one or more
+						sentences. Though not required by the syntax of any language, paragraphs
+						are usually an expected part of formal writing, used to organize longer
+						prose.
+					</p>
+					<button onclick="document.querySelector('#dialog-offcanvas').close()">
+						Close
+					</button>
+				</dialog>
+				<button popovertarget="my-popover">Open Popover</button>
+				<dialog popover id="my-popover" class="offcanvas-end">
+					<p>Hello There! Hello World! Welcome!</p>
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written
+						beside”) is a self-contained unit of a discourse in writing dealing with
+						a particular point or idea. A paragraph consists of one or more
+						sentences. Though not required by the syntax of any language, paragraphs
+						are usually an expected part of formal writing, used to organize longer
+						prose.
+					</p>
+					<button popovertarget="my-popover" popovertargetaction="hide">Close</button>
+				</dialog>
+			</section>
+			<section id="media">
+				<h2>Images</h2>
+				<div>
+					<p>No <code>&lt;figure&gt;</code> element</p>
+					<p>
+						<img
+							src="https://doodleipsum.com/700?i=1176f4ffe82e1314ef9a71b9599bc1fa"
+							alt="Image alt text"
+						/>
+					</p>
+					<p>
+						Wrapped in a <code>&lt;figure&gt;</code> element, no
+						<code>&lt;figcaption&gt;</code>
+					</p>
+					<figure>
+						<img
+							src="https://doodleipsum.com/700?i=1176f4ffe82e1314ef9a71b9599bc1fa"
+						/>
+					</figure>
+					<p>
+						Wrapped in a <code>&lt;figure&gt;</code> element, with a
+						<code>&lt;figcaption&gt;</code>
+					</p>
+					<figure>
+						<img
+							src="https://doodleipsum.com/700?i=1176f4ffe82e1314ef9a71b9599bc1fa"
+						/>
+						<figcaption>Here is a caption for this image.</figcaption>
+					</figure>
+				</div>
+				<h2>Audio</h2>
+				<div><audio controls="">audio</audio></div>
+				<h2>Video</h2>
+				<div><video controls="">video</video></div>
+				<h2>Canvas</h2>
+				<div><canvas>canvas</canvas></div>
+				<h2>Iframe</h2>
+				<div><iframe src="https://fylgja.dev/about" height="300"></iframe></div>
+			</section>
+		</main>
+	</body>
+</html>
