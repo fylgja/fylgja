@@ -11,7 +11,7 @@
 
 </div>
 
-Fylgja is a component-based CSS framework that allows you to pick and choose the components you need. Each component is built as a foundation for a specific component, so you can style it to your own look without having to build the base styles from scratch every time.
+Fylgja is a component-based CSS Library that allows you to pick and choose the components you need. Each component is built as a foundation for a specific component, so you can style it to your own look without having to build the base styles from scratch every time.
 
 Fylgja is powered by SCSS, but can also be used with PostCSS or as plain CSS. This makes it easy to include Fylgja in your projects, regardless of your preferred setup.
 
