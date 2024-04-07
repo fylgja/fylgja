@@ -1,0 +1,45 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as btn;
+
+:where(
+		button,
+		input:is([type="button"], [type="submit"], [type="reset"]),
+		.btn
+	),
+:where(input[type="file"])::file-selector-button {
+	@include btn.base;
+}
+
+:where(
+		button,
+		input:is([type="button"], [type="submit"], [type="reset"]),
+		.btn
+	) {
+	&:disabled {
+		@include btn.disabled;
+	}
+
+	&:not(:disabled):hover {
+		@include btn.hover;
+	}
+
+	&:not(:disabled):active {
+		@include btn.active;
+	}
+}
+
+:where(input[type="file"]) {
+	&:disabled::file-selector-button {
+		@include btn.disabled;
+	}
+
+	&:not(:disabled):hover::file-selector-button {
+		@include btn.hover;
+	}
+
+	&:not(:disabled):active::file-selector-button {
+		@include btn.active;
+	}
+}

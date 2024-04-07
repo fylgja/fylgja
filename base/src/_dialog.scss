@@ -1,0 +1,79 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$motion-safe: "prefers-reduced-motion: no-preference";
+
+$enable-opinionated: true !default;
+
+$radius: 1rem !default;
+$padding: 1.5rem !default;
+$shadow: 0 3px 5px hsl(0 0% 0% / 18%) !default;
+
+$close-speed: 200ms !default;
+$open-speed: 300ms !default;
+
+$backdrop-color: hsl(0 0% 0% / 20%) !default;
+
+::backdrop {
+	background-color: var(--backdrop-color, #{$backdrop-color});
+	opacity: 0;
+
+	@media ($motion-safe) {
+		transition: opacity var(--speed) ease-out,
+			display var(--speed) ease-out allow-discrete,
+			overlay var(--speed) ease-out;
+	}
+}
+
+:where(dialog) {
+	--ty: var(--dialog-translate-y, 2rem);
+	--tx: var(--dialog-translate-x, 0);
+	--speed: var(--dialog-close-speed, #{$close-speed});
+	position: fixed; // prevents weird overflow, if moveing offscreen on Android
+	max-block-size: calc(100% - 2em);
+	max-inline-size: calc(100% - 2em);
+	background-color: var(
+		--dialog-bg,
+		color-mix(in oklab, var(--root-bg) 96%, white)
+	);
+	color: var(--dialog-color, var(--root-fg));
+	border-radius: $radius;
+	padding: $padding;
+	box-shadow: var(--dialog-shadow, #{$shadow});
+	opacity: 0;
+	translate: var(--tx) var(--ty);
+
+	@media ($motion-safe) {
+		transition: translate var(--speed) ease-out,
+			opacity var(--speed) ease-out,
+			display var(--speed) ease-out allow-discrete,
+			overlay var(--speed) ease-out;
+	}
+}
+
+@if $enable-opinionated {
+	::backdrop {
+		opacity: 1;
+
+		@starting-style {
+			opacity: 0;
+		}
+	}
+
+	// Add soft open animation
+	:where(dialog:is([open], :popover-open)) {
+		--speed: var(--dialog-open-speed, #{$open-speed});
+		translate: 0 0;
+		opacity: 1;
+
+		@starting-style {
+			translate: var(--tx) var(--ty);
+			opacity: 0;
+		}
+	}
+
+	// Add page scroll-lock by default to modals
+	:where(:root:has(dialog:is([open]:modal, :popover-open))) {
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,126 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$motion-safe: "prefers-reduced-motion: no-preference";
+$opacity-safe: "prefers-reduced-transparency: no-preference";
+
+$enable-opinionated: true !default;
+
+$root-bg: hsl(0 0% 100%) !default;
+$root-fg: hsl(0 0% 8%) !default;
+
+$font-family: (
+	ui-sans-serif,
+	system-ui,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol",
+	"Noto Color Emoji"
+) !default;
+$font-size: 1rem !default;
+$line-height: 1.5 !default;
+
+$chevron-base-props: 'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+$chevron-light-scheme: url('data:image/svg+xml,<svg #{$chevron-base-props} stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>') !default;
+$chevron-dark-scheme: url('data:image/svg+xml,<svg #{$chevron-base-props} stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>') !default;
+
+$anchor-offset: max(2rem, 5svb) !default;
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+
+	// 1: Allow adding a border to an element by just adding a border-width
+	// 2: Backgrounds do not repeat by default
+	@if $enable-opinionated {
+		border: 0 solid currentcolor; // 1
+		background-repeat: no-repeat; // 2
+	}
+}
+
+:where(:root) {
+	--root-bg: #{$root-bg};
+	--root-fg: #{$root-fg};
+	--family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	--family-sans: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		Helvetica, Arial, "Helvetica Neue", sans-serif, var(--family-emoji);
+	--family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+		"Liberation Mono", monospace, var(--family-emoji);
+	--chevron-light-scheme: #{$chevron-light-scheme};
+	--chevron-dark-scheme: #{$chevron-dark-scheme};
+	--outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
+	color-scheme: light dark;
+	block-size: 100%;
+	font-family: var(--family-sans);
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	scrollbar-gutter: stable;
+
+	@if $enable-opinionated {
+		// 1: Use a more readable tab size
+		tab-size: 4;
+
+		// Better aligned text with punctuation
+		hanging-punctuation: first allow-end last;
+	}
+}
+
+:where(:focus-visible) {
+	outline: 2px solid;
+	outline-offset: 0;
+	transition: var(--outline-transition);
+}
+
+:where(:not(:active):focus-visible) {
+	outline-offset: 2px;
+}
+
+:target {
+	scroll-margin-block: var(--anchor-offset, #{$anchor-offset});
+}
+
+@media ($motion-safe) {
+	:where(:has(:target)) {
+		scroll-behavior: smooth;
+	}
+}
+
+:where(body) {
+	min-block-size: 100%;
+	margin: 0;
+	background-color: var(--root-bg);
+	color: var(--root-fg);
+	font-size: var(--font-size, #{$font-size});
+	line-height: var(--line-height, #{$line-height});
+}
+
+// Prevent touch delay on touch devices
+:where(
+		:any-link,
+		button,
+		input,
+		label[for],
+		select,
+		summary,
+		textarea,
+		[tabindex]:not([tabindex^="-"])
+	) {
+	touch-action: manipulation;
+}
+
+// Correct default display for all browsers
+:where(summary) {
+	display: list-item;
+}
+
+// Makes sure any child element is inline, useful for headings
+:where(summary > *) {
+	display: inline;
+}
+
+[hidden] {
+	display: none;
+}

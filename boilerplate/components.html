@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fylgja Boilerplate</title>
+		<link rel="stylesheet" href="main.css" />
+		<meta name="view-transition" content="same-origin" />
+		<style>
+			:root {
+				--anchor-offset: calc(75px + 5ex);
+			}
+
+			.wrapper {
+				inline-size: min(100% - 2rem, var(--max-size, 75ch));
+				padding-block: 1rem;
+				margin-inline: auto;
+			}
+
+			.sticky-header {
+				--max-size: 100ch;
+				z-index: 9;
+				position: sticky;
+				inset-block-start: 0;
+				background-color: var(--root-bg);
+				border-block-end: 1px solid color-mix(in oklab, var(--root-bg) 75%, var(--root-fg));
+
+				& nav a {
+					--btn-stroke: transparent;
+				}
+			}
+
+			[data-theme="light"] {
+				--root-bg: hsl(0 0% 100%);
+				--root-fg: hsl(0 0% 8%);
+				--select-icon: var(--chevron-light-scheme);
+				color-scheme: light;
+			}
+
+			[data-theme="dark"] {
+				--root-bg: color-mix(in oklab, black 82%, var(--brand));
+				--root-fg: #fff;
+				--select-icon: var(--chevron-dark-scheme);
+				color-scheme: dark;
+			}
+		</style>
+		<script>
+			const storageKey = "theme-preference";
+			const mqIsDark = window.matchMedia("(prefers-color-scheme: dark)");
+			const btnTogglePreference = "[data-color-preference]";
+
+			const getColorPreference = () => {
+				const preference = localStorage.getItem(storageKey);
+				return preference ? preference : mqIsDark.matches ? "dark" : "light";
+			};
+
+			const theme = {
+				value: getColorPreference(),
+			};
+
+			const saveColorPreference = () => {
+				localStorage.setItem(storageKey, theme.value);
+			};
+
+			const updateBtnTogglePreference = () => {
+				document.querySelectorAll(btnTogglePreference).forEach((el) => {
+					el.setAttribute(
+						"aria-label",
+						theme.value === "dark"
+							? "Activate light mode"
+							: "Activate dark mode"
+					);
+				});
+			};
+
+			const applyColorPreference = () => {
+				document.documentElement.setAttribute("data-theme", theme.value);
+				updateBtnTogglePreference();
+			};
+
+			applyColorPreference();
+
+			document.addEventListener("DOMContentLoaded", updateBtnTogglePreference, false);
+
+			document.addEventListener("click", (e) => {
+				if (!e.target.closest(btnTogglePreference)) return;
+				theme.value = theme.value === "light" ? "dark" : "light";
+				saveColorPreference();
+				applyColorPreference();
+			});
+
+			mqIsDark.addEventListener("change", ({ matches: isDark }) => {
+				theme.value = isDark ? "dark" : "light";
+				saveColorPreference();
+				applyColorPreference();
+			});
+		</script>
+		<script>
+			document.addEventListener("click", (e) => {
+				const target = e.target.closest("[role=switch]");
+				if (!target) return;
+				target.setAttribute(
+					"aria-checked",
+					target.getAttribute("aria-checked") === "true" ? "false" : "true"
+				);
+			}, false);
+		</script>
+	</head>
+	<body>
+		<header class="sticky-header">
+			<div
+				class="wrapper"
+				style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;"
+			>
+				<img
+					src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
+					width="100"
+					height="32"
+					alt="Fylgja"
+				>
+				<nav>
+					<a class="btn" href="/">Back</a>
+					<button role="switch" aria-checked="false" data-color-preference id="theme-toggle">
+						<span>Light</span>
+						<span>Dark</span>
+					</button>
+				</nav>
+			</div>
+		</header>
+		<main class="wrapper" style="--max-size: 80ch;">
+			<section>
+				todo
+			</section>
+		</main>
+	</body>
+</html>

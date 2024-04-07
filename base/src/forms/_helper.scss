@@ -1,0 +1,264 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$padding-block: 0.375rem !default;
+$padding-inline: 0.8rem !default;
+$border-size: 1px !default;
+$border-style: solid !default;
+$radius: 0.35rem !default;
+$font-size: inherit !default;
+$line-height: inherit !default;
+$font-weight: 500 !default;
+
+$stroke: currentcolor !default;
+$bg: var(--root-bg) !default;
+$color: inherit !default;
+
+$disabled-opacity: 0.6 !default;
+
+$icon-size: 1.25em !default;
+
+@mixin base {
+	appearance: none;
+	inline-size: 100%;
+	margin: 0;
+	padding-block: var(--form-py, #{$padding-block});
+	padding-inline: var(--form-px, #{$padding-inline});
+	border: var(--form-border-width, #{$border-size}) $border-style
+		var(--form-stroke, #{$stroke});
+	border-radius: var(--form-radius, #{$radius});
+	background: var(--form-bg, #{$bg});
+	color: var(--form-color, #{$color});
+	transition: color 250ms linear, background-color 250ms linear,
+		border-color 250ms linear, box-shadow 250ms linear,
+		var(--outline-transition);
+}
+
+@mixin focus {
+	border-color: var(--form-focus-color, var(--form-stroke, #{$stroke}));
+	outline: 1px solid var(--form-focus-color, var(--form-stroke, #{$stroke}));
+	outline-offset: 0;
+}
+
+@mixin disabled {
+	box-shadow: none;
+	opacity: var(--form-disabled-opacity, #{$disabled-opacity});
+	cursor: not-allowed;
+}
+
+@mixin select-icon {
+	--icon: var(--select-icon, var(--icon-chevron-light-scheme));
+	--icon-size: var(--select-icon-size, #{$icon-size});
+	--icon-offset: var(--select-icon-offset, #{$padding-inline});
+	padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
+	background: var(--icon) var(--form-bg, #{$bg}) var(--icon-position, right)
+		var(--icon-offset) center / var(--icon-size) no-repeat;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+
+	&:where(:dir(rtl)) {
+		--icon-position: left;
+	}
+}
+
+@mixin file {
+	--form-py: 0;
+	--form-px: 0 #{$padding-inline};
+	--btn-radius: 0;
+	--btn-border-width: var(--form-border-width, #{$border-size});
+	overflow: clip;
+
+	&::file-selector-button {
+		margin-block: calc(var(--btn-border-width) / -1);
+		margin-inline: calc(var(--btn-border-width) / -1) 1em;
+	}
+}
+
+$color-padding: 3px !default;
+$color-size: 2.5em !default;
+
+@mixin color {
+	--form-py: #{$color-padding};
+	--form-px: #{$color-padding};
+	block-size: var(--block-size, #{$color-size});
+	inline-size: var(--inline-size, #{$color-size});
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+		border-radius: inherit;
+	}
+
+	&::-moz-color-swatch {
+		border: 0;
+		border-radius: inherit;
+	}
+
+	&::-webkit-color-swatch {
+		border: 0;
+		border-radius: inherit;
+	}
+}
+
+$checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E %3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E ") !default;
+$indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") !default;
+
+@mixin control {
+	--form-border-width: 2px;
+	--_gap: var(--icon-gap, 3px);
+	block-size: 1.25em;
+	inline-size: 1.25em;
+	flex-shrink: 0;
+	padding: var(--_gap);
+	background-clip: content-box;
+	user-select: none;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&:checked {
+		border-color: var(--form-focus-color, var(--form-stroke, #{$stroke}));
+		background-color: var(
+			--form-focus-color,
+			var(--form-stroke, #{$stroke})
+		);
+	}
+}
+
+@mixin checkbox {
+	--icon: #{$checkbox-icon};
+	--icon-gap: 0px;
+	--icon-bg: var(--form-bg, #{$bg});
+	--icon-color: var(--form-focus-color, var(--form-stroke, #{$stroke}));
+
+	&:indeterminate {
+		--icon: #{$indeterminate-icon};
+	}
+
+	&:checked {
+		background-color: var(--icon-bg);
+
+		&::after {
+			content: "";
+			display: block;
+			aspect-ratio: 1;
+			border-radius: inherit;
+			background-color: var(--icon-color);
+			mask: var(--icon) var(--icon-position, center) /
+				var(--icon-size, contain) no-repeat;
+		}
+	}
+}
+
+@mixin switch {
+	--icon-gap: 1px;
+	--form-radius: 1.25em;
+	inline-size: 2.25em;
+	background-clip: border-box;
+
+	&::after {
+		content: "";
+		display: block;
+		block-size: calc(1em - (var(--_gap) * 2));
+		inline-size: calc(1em - (var(--_gap) * 2));
+		border-radius: inherit;
+		background-color: var(--checked-color, currentcolor);
+		transition: translate 0.15s ease;
+	}
+
+	&:checked::after {
+		translate: 1em 0;
+	}
+
+	&:dir(rtl):checked::after {
+		translate: -1em 0;
+	}
+}
+
+$range-track-color: color-mix(in oklab, var(--root-fg) 30%, var(--root-bg));
+$range-track-height: 0.5ex;
+
+$range-thumb-size: 3ex;
+$range-thumb-radius: 50%;
+$range-thumb-stroke: var(--root-bg);
+
+@mixin range-track {
+	$track-path: linear-gradient(
+		to var(--fill-direction, right),
+		transparent calc(100% * var(--fill) / var(--fill-max)),
+		var(--track-color, #{$range-track-color}) 0%
+	);
+	block-size: var(--track-height, #{$range-track-height});
+	border-radius: var(--form-radius, #{$radius});
+	background: $track-path, var(--fill-color);
+}
+
+@mixin range-thumb() {
+	appearance: none;
+	block-size: var(--size);
+	inline-size: var(--size);
+	margin-block-start: var(
+		--thumb-offset,
+		calc(
+			0.5 *
+				calc(var(--track-height, #{$range-track-height}) - var(--size))
+		)
+	);
+	border-radius: var(--thumb-radius, #{$range-thumb-radius});
+	border: var(--thumb-border-width, 2px) solid
+		var(--thumb-stroke, #{$range-thumb-stroke});
+	background: var(--thumb-bg, var(--fill-color));
+	outline: 2px solid var(--outline);
+	outline-offset: var(--outline-offset, -2px);
+	scale: var(--thumb-scale, 1);
+	transition: outline 150ms ease-out, scale 150ms ease-in-out;
+}
+
+@mixin range {
+	--fill-color: var(--form-focus-color, var(--root-fg));
+	--fill-max: 100;
+	--fill: 0;
+	--size: var(--thumb-size, #{$range-thumb-size});
+	block-size: var(--size);
+	padding: 0;
+	border: 0;
+	background: transparent;
+	outline: none;
+	cursor: grab;
+
+	&:where(:dir(rtl)) {
+		--fill-direction: left;
+	}
+
+	&:where(:active) {
+		cursor: grabbing;
+	}
+
+	&:where(:not(:disabled):hover, :not(:disabled):active) {
+		--thumb-scale: 1.125;
+	}
+
+	&:where(:not(:active):focus-visible) {
+		--outline: var(--fill-color);
+		--outline-offset: 0px;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include range-track;
+	}
+
+	&::-moz-range-track {
+		@include range-track;
+	}
+
+	&::-webkit-slider-thumb {
+		@include range-thumb;
+	}
+
+	&::-moz-range-thumb {
+		@include range-thumb;
+		box-sizing: border-box;
+	}
+}

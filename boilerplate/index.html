@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Fylgja Boilerplate</title>
 		<link rel="stylesheet" href="main.css" />
+		<meta name="view-transition" content="same-origin" />
 		<style>
 			:root {
 				--anchor-offset: calc(75px + 5ex);
@@ -14,6 +15,10 @@
 				inline-size: min(100% - 2rem, var(--max-size, 75ch));
 				padding-block: 1rem;
 				margin-inline: auto;
+			}
+
+			.flow > * + * {
+				margin-block-start: 1em;
 			}
 
 			.sticky-header {
@@ -29,6 +34,12 @@
 				}
 			}
 
+			@media print {
+				.sticky-header {
+					display: none;
+				}
+			}
+
 			[data-theme="light"] {
 				--root-bg: hsl(0 0% 100%);
 				--root-fg: hsl(0 0% 8%);
@@ -41,6 +52,27 @@
 				--root-fg: #fff;
 				--select-icon: var(--chevron-dark-scheme);
 				color-scheme: dark;
+			}
+
+			/* TODO create offcanvas pkg */
+			.offcanvas {
+				--dialog-translate-y: 0;
+				--dialog-translate-x: -100%;
+				margin-inline-start: 0;
+				block-size: 100%;
+				max-block-size: 100%;
+				border-start-start-radius: 0;
+				border-end-start-radius: 0;
+			}
+
+			.offcanvas-end {
+				--dialog-translate-y: 0;
+				--dialog-translate-x: 100%;
+				margin-inline-end: 0;
+				block-size: 100%;
+				max-block-size: 100%;
+				border-start-end-radius: 0;
+				border-end-end-radius: 0;
 			}
 		</style>
 		<script>
@@ -125,6 +157,7 @@
 					<a class="btn" href="#forms">Forms</a>
 					<a class="btn" href="#dialogs">Dialogs</a>
 					<a class="btn" href="#media">Media</a>
+					<a class="btn" href="./components.html">Components</a>
 					<button role="switch" aria-checked="false" data-color-preference id="theme-toggle">
 						<span>Light</span>
 						<span>Dark</span>
@@ -132,7 +165,7 @@
 				</nav>
 			</div>
 		</header>
-		<main class="wrapper">
+		<main class="wrapper" style="--max-size: 80ch;">
 			<section id="intro">
 				<p>
 					A showcase of Fylgja using only our Native Element CSS Commponents<br />
@@ -210,6 +243,7 @@
 				<dl>
 					<dt>Definition List Title</dt>
 					<dd>This is a definition list division.</dd>
+					<dd>This is a second definition list division.</dd>
 
 					<dt>Definition List Title 2</dt>
 					<dd>
@@ -312,92 +346,137 @@
 				</p>
 				<h2>Pre-formatted text</h2>
 				<pre>
-P R E F O R M A T T E D T E X T
+<code>P R E F O R M A T T E D T E X T
 ! " # $ % &amp; ' ( ) * + , - . /
 0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
 @ A B C D E F G H I J K L M N O
 P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
-p q r s t u v w x y z { | } ~ </pre
-				>
+p q r s t u v w x y z { | } ~ </code>
+</pre>
 			</section>
 			<section id="forms">
-				<form>
-					<div id="form-fields">
+				<form class="flow">
+					<div id="form-fields" class="flow">
 						<h2>Form Fields</h2>
-						<label for="text">text</label>
-						<input id="text" type="text" placeholder="text">
-						<label for="number">number</label>
-						<input id="number" type="number" placeholder="number">
-						<label for="email">email</label>
-						<input id="email" type="email" placeholder="email">
-						<label for="tel">tel</label>
-						<input id="tel" type="tel" placeholder="tel">
-						<label for="password">password</label>
-						<input id="password" type="password" placeholder="password">
-						<label for="search">search</label>
-						<input id="search" type="search" placeholder="search">
-						<label for="url">url</label>
-						<input id="url" type="url" placeholder="url">
-						<label for="date">date</label>
-						<input id="date" type="date" placeholder="data">
-						<label for="datetime">datetime</label>
-						<input id="datetime" type="datetime-local" placeholder="datetime-local">
-						<label for="time">time</label>
-						<input id="time" type="time" placeholder="time">
-						<label for="month">month</label>
-						<input id="month" type="month" placeholder="month">
-						<label for="week">week</label>
-						<input id="week" type="week" placeholder="week">
-						<label for="color">color</label>
-						<input id="color" type="color" placeholder="color" value="#e91e63">
-						<br>
-						<label for="file">file</label>
-						<input id="file" type="file" placeholder="file">
-						<label for="select">select</label>
-						<select id="select">
-							<option value="option 1">option 1</option>
-							<option value="option 2">option 2</option>
-							<option value="option 3">option 3</option>
-						</select>
-						<label for="datalist">datalist</label>
-						<input id="datalist" type="text" placeholder="Enter a country" list="countries">
-						<datalist id="countries">
-							<option>Netherlands</option>
-							<option>Germany</option>
-							<option>Belgium</option>
-							<option>United Kingdom</option>
-							<option>United States</option>
-						</datalist>
-						<label for="textarea">file</label>
-						<textarea id="textarea" placeholder="textarea" rows="3"></textarea>
+						<div>
+							<label for="text">text</label>
+							<input id="text" type="text" placeholder="text">
+						</div>
+						<div>
+							<label for="number">number</label>
+							<input id="number" type="number" placeholder="number">
+						</div>
+						<div>
+							<label for="email">email</label>
+							<input id="email" type="email" placeholder="email">
+						</div>
+						<div>
+							<label for="tel">tel</label>
+							<input id="tel" type="tel" placeholder="tel">
+						</div>
+						<div>
+							<label for="password">password</label>
+							<input id="password" type="password" placeholder="password">
+						</div>
+						<div>
+							<label for="search">search</label>
+							<input id="search" type="search" placeholder="search">
+						</div>
+						<div>
+							<label for="url">url</label>
+							<input id="url" type="url" placeholder="url">
+						</div>
+						<div>
+							<label for="date">date</label>
+							<input id="date" type="date" placeholder="data">
+						</div>
+						<div>
+							<label for="datetime">datetime</label>
+							<input id="datetime" type="datetime-local" placeholder="datetime-local">
+						</div>
+						<div>
+							<label for="time">time</label>
+							<input id="time" type="time" placeholder="time">
+						</div>
+						<div>
+							<label for="month">month</label>
+							<input id="month" type="month" placeholder="month">
+						</div>
+						<div>
+							<label for="week">week</label>
+							<input id="week" type="week" placeholder="week">
+						</div>
+						<div>
+							<label for="file">file</label>
+							<input id="file" type="file" placeholder="file">
+						</div>
+						<div>
+							<label for="color">color</label>
+							<input id="color" type="color" placeholder="color" value="#e91e63">
+						</div>
+						<div>
+							<label for="range">range</label>
+							<input id="range" type="range" placeholder="range" value="40" max="100">
+						</div>
+						<div>
+							<label for="select">select</label>
+							<select id="select">
+								<option value="option 1">option 1</option>
+								<option value="option 2">option 2</option>
+								<option value="option 3">option 3</option>
+							</select>
+						</div>
+						<div>
+							<label for="datalist">datalist</label>
+							<input id="datalist" type="text" placeholder="Enter a country" list="countries">
+							<datalist id="countries">
+								<option>Netherlands</option>
+								<option>Germany</option>
+								<option>Belgium</option>
+								<option>United Kingdom</option>
+								<option>United States</option>
+							</datalist>
+						</div>
+						<div>
+							<label for="textarea">Textarea</label>
+							<textarea id="textarea" placeholder="textarea" rows="3"></textarea>
+						</div>
 					</div>
 					<fieldset id="form-checkboxes">
 						<legend>Checkboxes</legend>
 						<label for="checkbox-blue">
-							<input id="checkbox-blue" name="checkbox" type="checkbox" />
+							<input id="checkbox-blue" name="checkbox" type="checkbox" checked />
 							<span>Take Blue pill</span>
 						</label>
 						<label for="checkbox-red">
 							<input id="checkbox-red" name="checkbox" type="checkbox" />
 							<span>Take Red pill</span>
 						</label>
+						<label for="checkbox-disabled">
+							<input id="checkbox-disabled" name="checkbox" type="checkbox" disabled />
+							<span>Disabled</span>
+						</label>
 					</fieldset>
 					<fieldset id="form-radios">
 						<legend>Radio boxes</legend>
 						<label for="radio-blue">
-							<input id="radio-blue" name="radio" type="radio" />
+							<input id="radio-blue" name="radio" type="radio" checked />
 							<span>Take Blue pill</span>
 						</label>
 						<label for="radio-red">
 							<input id="radio-red" name="radio" type="radio" />
 							<span>Take Red pill</span>
 						</label>
+						<label for="radio-disabled">
+							<input id="radio-disabled" name="radio" type="radio" disabled />
+							<span>Disabled</span>
+						</label>
 					</fieldset>
 					<fieldset id="form-switches">
 						<legend>Switches</legend>
 						<label for="switch-blue">
-							<input id="switch-blue" name="switch" type="checkbox" role="switch" />
+							<input id="switch-blue" name="switch" type="checkbox" role="switch" checked />
 							<span>Switch with role</span>
 						</label>
 						<label for="switch-red">
@@ -514,7 +593,7 @@ p q r s t u v w x y z { | } ~ </pre
 				<button onclick="document.querySelector('#dialog-offcanvas').showModal()">
 					Open Offcanvas
 				</button>
-				<dialog id="dialog-offcanvas" class="offcanvas">
+				<dialog id="dialog-offcanvas" class="offcanvas-end">
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
 						A paragraph (from the Greek paragraphos, “to write beside” or “written
@@ -529,7 +608,7 @@ p q r s t u v w x y z { | } ~ </pre
 					</button>
 				</dialog>
 				<button popovertarget="my-popover">Open Popover</button>
-				<dialog popover id="my-popover" class="offcanvas-end">
+				<dialog popover id="my-popover">
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
 						A paragraph (from the Greek paragraphos, “to write beside” or “written
@@ -579,7 +658,7 @@ p q r s t u v w x y z { | } ~ </pre
 				<h2>Canvas</h2>
 				<div><canvas>canvas</canvas></div>
 				<h2>Iframe</h2>
-				<div><iframe src="https://fylgja.dev/about" height="300"></iframe></div>
+				<div><iframe src="https://fylgja.dev/about" width="1024" height="576"></iframe></div>
 			</section>
 		</main>
 	</body>

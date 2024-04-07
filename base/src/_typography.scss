@@ -1,0 +1,116 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$enable-opinionated: true !default;
+
+$hr-my: 1.5em !default;
+
+// Set a general default for text block margin
+:where(h1, h2, h3, h4, h5, h6, p, blockquote, dl, ul, ol, pre) {
+	margin-block: var(--text-my, 1em 1rem);
+}
+
+// Improved heading text wrapping
+:where(h1, h2, h3, h4, h5, h6) {
+	font-size: 1.1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	text-wrap: balance;
+}
+
+:where(h1) {
+	font-size: 3.5rem;
+}
+
+:where(h2) {
+	font-size: 2.5rem;
+}
+
+:where(h3) {
+	font-size: 2rem;
+}
+
+:where(h4) {
+	font-size: 1.5rem;
+}
+
+:where(h5) {
+	font-size: 1.25rem;
+}
+
+// Improve readability with max-width on paragraphs and lists
+// Prevent orphans in supported browsers
+:where(p, li) {
+	max-inline-size: 65ch;
+	text-wrap: pretty;
+}
+
+// Let links be part of the text by default and inherit the color where needed
+@if $enable-opinionated {
+	:where(:any-link) {
+		color: currentcolor;
+		font-weight: 500;
+	}
+}
+
+// Inherit fonts for inputs and buttons
+:where(input, button, textarea, select) {
+	font: inherit;
+}
+
+// Remove list styles on ul, ol elements with a list role or inside a nav element,
+// The list role presevers the list A11Y: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
+:where(ul[role="list"], ol[role="list"], nav ol, nav ul) {
+	list-style: none;
+	margin-block: 0;
+	padding-inline-start: 0;
+}
+
+// Remove margin on nested lists
+:where(dl, ol, ul) :where(dl, ol, ul) {
+	margin-block: 0;
+}
+
+:where(dt) {
+	font-weight: 500;
+}
+
+:where(dd + dt) {
+	margin-block-start: 0.5em;
+}
+
+:where(dd) {
+	margin-inline-start: 0;
+}
+
+// Correct the inheritance of color in Firefox
+:where(hr) {
+	margin-block: var(--hr-my, $hr-my);
+	border-block-end-width: 1px;
+	color: inherit;
+}
+
+:where(mark) {
+	padding-inline: 0.125em;
+}
+
+// Add the correct font size in all browsers
+:where(small) {
+	font-size: 0.8em;
+}
+
+// Prevent sub and sup elements from affecting the line height in all browsers
+:where(sub, sup) {
+	position: relative;
+	font-size: 0.75em;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+:where(sub) {
+	bottom: -0.25em;
+}
+
+:where(sup) {
+	top: -0.5em;
+}

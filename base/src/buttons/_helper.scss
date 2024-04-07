@@ -1,0 +1,90 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$gap: 0.5em;
+$padding-block: 0.375rem !default;
+$padding-inline: 0.8rem !default;
+$border-size: 2px !default;
+$border-style: solid !default;
+$radius: 0.35rem !default;
+$font-weight: 500 !default;
+
+$stroke: currentcolor !default;
+$bg: transparent !default;
+$color: currentcolor !default;
+
+$hover-stroke: $stroke !default;
+$hover-bg: color-mix(in oklab, currentcolor, transparent 86%) !default;
+$hover-color: currentcolor !default;
+
+$active-stroke: $stroke !default;
+$active-bg: color-mix(in oklab, currentcolor, transparent 78%) !default;
+$active-color: currentcolor !default;
+
+$disabled-stroke: currentcolor !default;
+$disabled-bg: hsl(0 0% 90%) !default;
+$disabled-color: hsl(0 0% 40%) !default;
+
+@mixin base {
+	appearance: button; // Correct the inability to style the border radius in iOS Safari
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--btn-gap, #{$gap});
+	padding-block: var(--btn-py, #{$padding-block});
+	padding-inline: var(--btn-px, #{$padding-inline});
+	border: var(--btn-border-width, #{$border-size}) $border-style
+		var(--btn-stroke, #{$stroke});
+	border-radius: var(--btn-radius, #{$radius});
+	background: var(--btn-bg, #{$bg});
+	color: var(--btn-color, #{$color});
+	font-size: 1em;
+	font-weight: var(--btn-font-weight, #{$font-weight});
+	line-height: inherit;
+	text-align: center;
+	text-decoration: none;
+	transition: color 0.2s linear, background-color 0.2s linear,
+		border-color 0.2s linear, box-shadow 0.2s linear,
+		outline-offset 250ms linear;
+	user-select: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent; // unset iOS tap color
+	-webkit-touch-callout: none;
+}
+
+@mixin disabled {
+	box-shadow: none;
+	border-color: var(--btn-disabled-stroke, #{$disabled-stroke});
+	background-color: var(--btn-disabled-bg, #{$disabled-bg});
+	color: var(--btn-disabled-color, #{$disabled-color});
+	cursor: not-allowed;
+}
+
+@mixin hover {
+	border-color: var(--btn-hover-stroke, var(--btn-stroke, #{$hover-stroke}));
+	background-color: var(--btn-hover-bg, var(--btn-bg, #{$hover-bg}));
+	color: var(--btn-hover-color, var(--btn-color, #{$hover-color}));
+}
+
+@mixin active {
+	border-color: var(
+		--btn-active-stroke,
+		var(--btn-stroke, #{$active-stroke})
+	);
+	background-color: var(--btn-active-bg, var(--btn-bg, #{$active-bg}));
+	color: var(--btn-active-color, var(--btn-color, #{$active-color}));
+}
+
+@mixin style-brand {
+	--btn-stroke: transparent;
+	--btn-bg: var(--brand);
+	--btn-color: var(--on-brand);
+	--btn-hover-bg: color-mix(in oklab, var(--brand) 80%, black);
+	--btn-active-bg: color-mix(in oklab, var(--brand) 72%, black);
+}
+
+@mixin style-only-icon {
+	&:has(svg:only-child, img:only-child) {
+		--btn-px: var(--btn-py, #{$padding-block});
+	}
+}

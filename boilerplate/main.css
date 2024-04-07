@@ -1,2 +1,12 @@
-@import url("../base/preflight.css");
-@import url("../base/theme.css");
+/* stylelint-disable */
+
+/* All */
+@import url("../base/base.css");
+
+/* Split for theme styles */
+/* @import url("../base/preflight.css"); */
+/* @import url("../base/theme.css"); */
+
+/* Individual testing versions */
+/* @import url("../base/form.css"); */
+/* @import url("../base/btn.css"); */

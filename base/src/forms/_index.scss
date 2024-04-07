@@ -1,0 +1,143 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as form;
+
+:where(
+		input:not(
+				[type="button"],
+				[type="reset"],
+				[type="submit"],
+				[type="image"]
+			),
+		textarea,
+		select
+	) {
+	@include form.base;
+
+	&:is(:disabled, [readonly]) {
+		@include form.disabled;
+	}
+}
+
+:where(
+		input:not(
+				[type="range"],
+				[type="checkbox"],
+				[type="radio"],
+				[type="button"],
+				[type="reset"],
+				[type="submit"],
+				[type="image"]
+			),
+		textarea,
+		select
+	):focus {
+	@include form.focus;
+}
+
+:where(input[type="color"]) {
+	@include form.color;
+}
+
+:where(input[type="file"]) {
+	@include form.file;
+}
+
+:where(input[type="range"]) {
+	@include form.range;
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+	@include form.control;
+}
+
+:where(input[type="radio"]) {
+	--form-radius: 50%;
+}
+
+:where(input[type="checkbox"]:not([role="switch"])) {
+	@include form.checkbox;
+}
+
+:where(input[type="checkbox"][role="switch"]) {
+	@include form.switch;
+}
+
+// Remove the inheritance of word-wrap in Safari.
+:where(select) {
+	word-wrap: normal;
+}
+
+:where(select:not([multiple], [size]:not([size="1"]))) {
+	@include form.select-icon;
+}
+
+// Remove the dropdown arrow only from text type inputs built with datalists in webkit browsers
+// Chrome = calendar-picker-indicator
+// iOS Safari= list-button
+[list]:not([type*="date"], [type="month"], [type="week"], [type="time"]) {
+	&::-webkit-calendar-picker-indicator,
+	&::-webkit-list-button {
+		// stylelint-disable-next-line declaration-no-important
+		all: unset !important;
+	}
+}
+
+// Change the resize direction in all browsers
+:where(textarea) {
+	resize: vertical;
+	min-height: calc(
+		1lh + (var(--form-py, #{form.$padding-block}) * 2) +
+			(var(--form-border-width, #{form.$border-size}) * 2)
+	);
+}
+
+// Reset the default opacity in Firefox,
+// and apply a default placeholder color to a semi-transparent version of the current text color
+::placeholder {
+	opacity: 1;
+	color: color-mix(in srgb, currentcolor 54%, transparent);
+}
+
+// Nuke the default styles for the fieldset and legend,
+// and let authors determine what styles it needs to be, or just blank
+:where(fieldset) {
+	margin: 0;
+	padding: 0;
+}
+
+:where(legend) {
+	padding: 0;
+}
+
+// Removes the extra space in older webkit browsers
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+// Fix extra space on date inputs, for Safari
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+	display: inline;
+	padding-block: 0;
+}
+
+::-webkit-date-and-time-value {
+	min-height: 1lh; // Prevent collapse of date field on iOS Safari, if the value is empty
+	text-align: inherit; // Correct text alignment in iOS Safari
+}
+
+// A few input types should stay LTR
+// See https://rtlstyling.com/posts/rtl-styling#form-inputs
+input:is([type="tel"], [type="url"], [type="email"], [type="number"]) {
+	direction: ltr;
+}

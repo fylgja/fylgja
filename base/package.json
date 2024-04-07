@@ -1,0 +1,22 @@
+{
+  "name": "@fylgja/base-next",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "main": "_index.scss",
+  "unpkg": "base.css",
+  "style": "base.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "base"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [],
+  "scripts": {
+    "start": "npx sass --no-source-map -w src:./",
+    "build": "npx sass --no-source-map -s compressed src:./"
+  }
+}

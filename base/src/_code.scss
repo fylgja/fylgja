@@ -1,0 +1,32 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+:where(code, kbd, samp, pre) {
+	font-family: var(--family-mono);
+}
+
+:where(code, pre) {
+	background-color: color-mix(in oklab, var(--root-bg) 90%, var(--root-fg));
+	writing-mode: lr;
+	direction: ltr;
+}
+
+:where(:not(pre) > code, kbd) {
+	white-space: nowrap;
+	padding-inline: 0.25em;
+	border-radius: 0.5rem;
+}
+
+:where(pre) {
+	white-space: pre;
+	min-inline-size: 0;
+	max-inline-size: max-content;
+	padding-block: var(--pre-py, 0.875em);
+	padding-inline: var(--pre-px, 1em);
+	border-radius: 0.5em;
+	overflow: auto;
+}
+
+:where(kbd) {
+	border-width: 1px;
+}
