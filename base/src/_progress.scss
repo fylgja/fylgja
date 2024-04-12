@@ -1,0 +1,32 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+progress {
+	--_color: color-mix(in oklab, currentcolor 20%, var(--root-bg));
+	--_value-color: var(--form-active-color, currentcolor);
+	appearance: none;
+	display: inline-block;
+	width: 100%;
+	height: 0.675rem;
+	overflow: hidden;
+	border-radius: 0.5em;
+	background-color: currentcolor;
+	color: var(--_color);
+
+	&::-webkit-progress-bar {
+		border-radius: inherit;
+		background: none;
+	}
+
+	&[value]::-webkit-progress-value {
+		background-color: var(--_value-color);
+	}
+
+	&::-moz-progress-bar {
+		background-color: var(--_value-color);
+	}
+
+	&:indeterminate {
+		background-color: var(--_value-color);
+	}
+}
