@@ -5,7 +5,6 @@
 
 // Opinionated styles that give the base HTML more color and style
 
-@use "forms/helper" as form;
 @use "buttons/helper" as btn;
 
 :root {
@@ -58,13 +57,17 @@
 
 :where(.btn.-primary, [type="submit"], form button:not([type])),
 :where(input[type="file"])::file-selector-button {
-	@include btn.style-brand;
+	--btn-stroke: transparent;
+	--btn-bg: var(--brand);
+	--btn-color: var(--on-brand);
+	--btn-hover-bg: color-mix(in oklab, var(--brand) 80%, black);
+	--btn-active-bg: color-mix(in oklab, var(--brand) 72%, black);
 }
 
 :where(
 		.btn,
 		button,
 		input:is([type="button"], [type="submit"], [type="reset"])
-	) {
-	@include btn.style-only-icon;
+	):has(svg:only-child, img:only-child) {
+	--btn-px: var(--btn-py, #{btn.$padding-block});
 }
