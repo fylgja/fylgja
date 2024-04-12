@@ -101,6 +101,7 @@
 							? "Activate light mode"
 							: "Activate dark mode"
 					);
+					el.innerText = theme.value === "dark"? 'Switch to light' : 'Switch to dark';
 				});
 			};
 
@@ -126,16 +127,6 @@
 				applyColorPreference();
 			});
 		</script>
-		<script>
-			document.addEventListener("click", (e) => {
-				const target = e.target.closest("[role=switch]");
-				if (!target) return;
-				target.setAttribute(
-					"aria-checked",
-					target.getAttribute("aria-checked") === "true" ? "false" : "true"
-				);
-			}, false);
-		</script>
 	</head>
 	<body>
 		<header class="sticky-header">
@@ -158,10 +149,7 @@
 					<a class="btn" href="#dialogs">Dialogs</a>
 					<a class="btn" href="#media">Media</a>
 					<a class="btn" href="./components.html">Components</a>
-					<button role="switch" aria-checked="false" data-color-preference id="theme-toggle">
-						<span>Light</span>
-						<span>Dark</span>
-					</button>
+					<button role="switch" data-color-preference>Switch to dark</button>
 				</nav>
 			</div>
 		</header>
@@ -359,77 +347,77 @@ p q r s t u v w x y z { | } ~ </code>
 				<form class="flow">
 					<div id="form-fields" class="flow">
 						<h2>Form Fields</h2>
-						<div>
-							<label for="text">text</label>
-							<input id="text" type="text" placeholder="text">
-						</div>
-						<div>
+						<label>
+							text
+							<input type="text" placeholder="text">
+						</label>
+						<label>
 							<label for="number">number</label>
-							<input id="number" type="number" placeholder="number">
-						</div>
-						<div>
-							<label for="email">email</label>
-							<input id="email" type="email" placeholder="email">
-						</div>
-						<div>
-							<label for="tel">tel</label>
-							<input id="tel" type="tel" placeholder="tel">
-						</div>
-						<div>
-							<label for="password">password</label>
-							<input id="password" type="password" placeholder="password">
-						</div>
-						<div>
-							<label for="search">search</label>
-							<input id="search" type="search" placeholder="search">
-						</div>
-						<div>
-							<label for="url">url</label>
-							<input id="url" type="url" placeholder="url">
-						</div>
-						<div>
-							<label for="date">date</label>
-							<input id="date" type="date" placeholder="data">
-						</div>
-						<div>
-							<label for="datetime">datetime</label>
-							<input id="datetime" type="datetime-local" placeholder="datetime-local">
-						</div>
-						<div>
-							<label for="time">time</label>
-							<input id="time" type="time" placeholder="time">
-						</div>
-						<div>
-							<label for="month">month</label>
-							<input id="month" type="month" placeholder="month">
-						</div>
-						<div>
-							<label for="week">week</label>
-							<input id="week" type="week" placeholder="week">
-						</div>
-						<div>
-							<label for="file">file</label>
-							<input id="file" type="file" placeholder="file">
-						</div>
-						<div>
-							<label for="color">color</label>
-							<input id="color" type="color" placeholder="color" value="#e91e63">
-						</div>
-						<div>
-							<label for="range">range</label>
-							<input id="range" type="range" placeholder="range" value="40" max="100">
-						</div>
-						<div>
-							<label for="select">select</label>
-							<select id="select">
+							<input type="number" placeholder="number">
+						</label>
+						<label>
+							email
+							<input type="email" placeholder="email">
+						</label>
+						<label>
+							tel
+							<input type="tel" placeholder="tel">
+						</label>
+						<label>
+							password
+							<input type="password" placeholder="password">
+						</label>
+						<label>
+							search
+							<input type="search" placeholder="search">
+						</label>
+						<label>
+							url
+							<input type="url" placeholder="url">
+						</label>
+						<label>
+							date
+							<input type="date" placeholder="data">
+						</label>
+						<label>
+							datetime
+							<input type="datetime-local" placeholder="datetime-local">
+						</label>
+						<label>
+							time
+							<input type="time" placeholder="time">
+						</label>
+						<label>
+							month
+							<input type="month" placeholder="month">
+						</label>
+						<label>
+							week
+							<input type="week" placeholder="week">
+						</label>
+						<label>
+							file
+							<input type="file" placeholder="file">
+						</label>
+						<label>
+							color
+							<input type="color" placeholder="color" value="#e91e63">
+						</label>
+						<label>
+							range
+							<input type="range" placeholder="range" value="40" max="100">
+						</label>
+						<label>
+							select
+							<select>
 								<option value="option 1">option 1</option>
 								<option value="option 2">option 2</option>
 								<option value="option 3">option 3</option>
 							</select>
-						</div>
-						<div>
-							<label for="datalist">datalist</label>
-							<input id="datalist" type="text" placeholder="Enter a country" list="countries">
+						</label>
+						<label>
+							datalist
+							<input type="text" placeholder="Enter a country" list="countries">
 							<datalist id="countries">
 								<option>Netherlands</option>
 								<option>Germany</option>
@@ -437,51 +425,55 @@ p q r s t u v w x y z { | } ~ </code>
 								<option>United Kingdom</option>
 								<option>United States</option>
 							</datalist>
-						</div>
-						<div>
-							<label for="textarea">Textarea</label>
+						</label>
+						<label>
+							Textarea
 							<textarea id="textarea" placeholder="textarea" rows="3"></textarea>
-						</div>
+						</label>
 					</div>
-					<fieldset id="form-checkboxes">
+					<fieldset id="form-checkboxes" class="flow">
 						<legend>Checkboxes</legend>
-						<label for="checkbox-blue">
-							<input id="checkbox-blue" name="checkbox" type="checkbox" checked />
-							<span>Take Blue pill</span>
+						<label>
+							<input type="checkbox" name="checkbox" checked />
+							Take Blue pill
 						</label>
-						<label for="checkbox-red">
-							<input id="checkbox-red" name="checkbox" type="checkbox" />
-							<span>Take Red pill</span>
+						<label>
+							<input type="checkbox" name="checkbox" />
+							Take Red pill
 						</label>
-						<label for="checkbox-disabled">
-							<input id="checkbox-disabled" name="checkbox" type="checkbox" disabled />
-							<span>Disabled</span>
+						<label>
+							<input type="checkbox" name="checkbox" indeterminate />
+							Indeterminate
+						</label>
+						<label>
+							<input type="checkbox" name="checkbox" disabled />
+							Disabled
 						</label>
 					</fieldset>
-					<fieldset id="form-radios">
+					<fieldset id="form-radios" class="flow">
 						<legend>Radio boxes</legend>
-						<label for="radio-blue">
-							<input id="radio-blue" name="radio" type="radio" checked />
-							<span>Take Blue pill</span>
+						<label>
+							<input type="radio" name="radio" checked />
+							Take Blue pill
 						</label>
-						<label for="radio-red">
-							<input id="radio-red" name="radio" type="radio" />
-							<span>Take Red pill</span>
+						<label>
+							<input type="radio" name="radio" />
+							Take Red pill
 						</label>
-						<label for="radio-disabled">
-							<input id="radio-disabled" name="radio" type="radio" disabled />
-							<span>Disabled</span>
+						<label>
+							<input type="radio" name="radio" disabled />
+							Disabled
 						</label>
 					</fieldset>
-					<fieldset id="form-switches">
+					<fieldset id="form-switches" class="flow">
 						<legend>Switches</legend>
-						<label for="switch-blue">
-							<input id="switch-blue" name="switch" type="checkbox" role="switch" checked />
-							<span>Switch with role</span>
+						<label>
+							<input type="checkbox" name="switch" role="switch">
+							Switch
 						</label>
-						<label for="switch-red">
-							<input id="switch-red" name="switch" type="checkbox" switch />
-							<span>Switch with new attribute</span>
+						<label>
+							<input type="checkbox" name="switch" role="switch" checked>
+							Switch Checked
 						</label>
 					</fieldset>
 					<div id="form-actions">
@@ -658,8 +650,14 @@ p q r s t u v w x y z { | } ~ </code>
 				<h2>Canvas</h2>
 				<div><canvas>canvas</canvas></div>
 				<h2>Iframe</h2>
-				<div><iframe src="https://fylgja.dev/about" width="1024" height="576"></iframe></div>
+				<div><iframe src="https://fylgja.dev" width="1024" height="576"></iframe></div>
 			</section>
 		</main>
+		<script>
+			const indeterminates = document.querySelectorAll("[indeterminate]");
+			[].forEach.call(indeterminates, item => {
+				item.indeterminate = true;
+			});
+		</script>
 	</body>
 </html>

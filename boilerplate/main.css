@@ -10,3 +10,9 @@
 /* Individual testing versions */
 /* @import url("../base/form.css"); */
 /* @import url("../base/btn.css"); */
+
+/* input:is([type="checkbox"], [type="radio"]):checked {
+	border-color: var(--brand);
+	background: var(--brand);
+	color: var(--on-brand);
+} */
