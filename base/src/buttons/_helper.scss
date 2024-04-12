@@ -6,7 +6,7 @@ $padding-block: 0.375rem !default;
 $padding-inline: 0.8rem !default;
 $border-size: 2px !default;
 $border-style: solid !default;
-$radius: 0.35rem !default;
+$radius: 0.5rem !default;
 $font-weight: 500 !default;
 
 $stroke: currentcolor !default;
@@ -43,9 +43,8 @@ $disabled-color: hsl(0 0% 40%) !default;
 	line-height: inherit;
 	text-align: center;
 	text-decoration: none;
-	transition: color 0.2s linear, background-color 0.2s linear,
-		border-color 0.2s linear, box-shadow 0.2s linear,
-		outline-offset 250ms linear;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s,
+		box-shadow 0.2s, var(--outline-transition);
 	user-select: none;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent; // unset iOS tap color
