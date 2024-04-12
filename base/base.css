@@ -57,7 +57,7 @@
   background-color: var(--root-bg);
   color: var(--root-fg);
   font-size: var(--font-size, 1rem);
-  line-height: var(--line-height, 1.5);
+  line-height: var(--line-height, 1.6);
 }
 
 :where(:any-link,
