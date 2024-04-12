@@ -1,0 +1,76 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
+:where(input[type=checkbox], input[type=radio]) {
+  --_gap: var(--icon-gap, 3px);
+  appearance: none;
+  block-size: var(--size-y, 1.25em);
+  inline-size: var(--size-x, 1.25em);
+  border: var(--control-border-width, 2px) solid currentcolor;
+  background: var(--control-bg, none);
+  color: var(--control-color, currentcolor);
+  border-radius: var(--control-radius, 0.35rem);
+  margin: 0;
+  padding: var(--_gap);
+  user-select: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+:where(input[type=checkbox], input[type=radio]):not(:disabled) {
+  cursor: pointer;
+}
+:where(input[type=checkbox], input[type=radio])::after {
+  content: "";
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  border-radius: inherit;
+  background-color: var(--icon-color, currentcolor);
+  scale: var(--_show-icon, 0);
+  opacity: var(--_show-icon, 0);
+  transition: translate 0.15s, scale 0.15s, opacity 0.15s;
+  forced-color-adjust: none;
+}
+:where(input[type=checkbox], input[type=radio]):checked {
+  --_show-icon: 1;
+  color: var(--form-active-color, var(--control-color, currentcolor));
+}
+
+:where(input[type=radio]) {
+  --control-radius: 50%;
+}
+
+:where(input[type=checkbox]:not([role=switch])) {
+  --_icon: var(--icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E"));
+  --icon-gap: 1px;
+  --indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+}
+:where(input[type=checkbox]:not([role=switch])):indeterminate {
+  --_show-icon: 1;
+  --_icon: var(--indeterminate-icon);
+}
+:where(input[type=checkbox]:not([role=switch]))::after {
+  -webkit-mask: var(--_icon, url("#")) center/contain no-repeat;
+  mask: var(--_icon, url("#")) center/contain no-repeat;
+}
+
+:where(input[type=checkbox][role=switch]) {
+  --_show-icon: 1;
+  --control-radius: 1.25em;
+  --size-x: 2em;
+  --icon-color: color-mix(in oklab, currentcolor 60%, transparent);
+}
+:where(input[type=checkbox][role=switch])::after {
+  inline-size: auto;
+  aspect-ratio: 1;
+}
+:where(input[type=checkbox][role=switch]):checked {
+  --icon-color: currentcolor;
+}
+:where(input[type=checkbox][role=switch]):checked::after {
+  translate: calc(var(--size-x) - var(--size-y, 1.25em)) 0%;
+}
+:where(input[type=checkbox][role=switch]):checked:dir(rtl)::after {
+  translate: calc((var(--size-x) - var(--size-y, 1.25em)) / -1) 0%;
+}

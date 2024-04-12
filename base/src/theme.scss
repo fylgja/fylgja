@@ -11,6 +11,7 @@
 :root {
 	--brand: hsl(265 100% 56%);
 	--on-brand: hsl(265 0% 100%);
+	--form-active-color: var(--brand);
 	scrollbar-color: var(--scrollthumb-color, var(--brand))
 		var(--scrolltrack-color, transparent);
 	accent-color: var(--brand);
@@ -44,12 +45,6 @@
 
 :focus-visible {
 	outline-color: var(--brand);
-}
-
-:where(input, textarea, select) {
-	--form-focus-color: var(--brand);
-	--checked-bg: var(--brand);
-	--checked-color: var(--on-brand);
 }
 
 ::-webkit-calendar-picker-indicator {

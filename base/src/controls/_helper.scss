@@ -1,0 +1,78 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$size: 1.25em !default;
+$border-size: 2px !default;
+$radius: 0.35rem !default;
+
+$bg: none !default;
+$color: currentcolor !default;
+
+$checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E") !default;
+$indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") !default;
+
+@mixin base {
+	--_gap: var(--icon-gap, 3px);
+	appearance: none;
+	block-size: var(--size-y, #{$size});
+	inline-size: var(--size-x, #{$size});
+	border: var(--control-border-width, #{$border-size}) solid currentcolor;
+	background: var(--control-bg, #{$bg});
+	color: var(--control-color, #{$color});
+	border-radius: var(--control-radius, #{$radius});
+	margin: 0;
+	padding: var(--_gap);
+	user-select: none;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		block-size: 100%;
+		inline-size: 100%;
+		border-radius: inherit;
+		background-color: var(--icon-color, currentcolor);
+		scale: var(--_show-icon, 0);
+		opacity: var(--_show-icon, 0);
+		transition: translate 0.15s, scale 0.15s, opacity 0.15s;
+		forced-color-adjust: none;
+	}
+
+	&:checked {
+		--_show-icon: 1;
+		color: var(--form-active-color, var(--control-color, #{$color}));
+	}
+}
+
+$enable-switch: true !default;
+$switch-size: ($size + 0.75) !default;
+
+@mixin switch {
+	--_show-icon: 1;
+	--control-radius: 1.25em;
+	--size-x: #{$switch-size};
+	--icon-color: color-mix(in oklab, currentcolor 60%, transparent);
+
+	&::after {
+		inline-size: auto;
+		aspect-ratio: 1;
+	}
+
+	&:checked {
+		$offset-x: calc(var(--size-x) - var(--size-y, #{$size}));
+		--icon-color: currentcolor;
+
+		&::after {
+			translate: $offset-x 0%;
+		}
+
+		&:dir(rtl)::after {
+			translate: calc($offset-x / -1) 0%;
+		}
+	}
+}

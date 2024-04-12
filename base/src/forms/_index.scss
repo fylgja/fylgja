@@ -5,10 +5,11 @@
 
 :where(
 		input:not(
+				[type="checkbox"],
+				[type="radio"],
 				[type="button"],
 				[type="reset"],
-				[type="submit"],
-				[type="image"]
+				[type="submit"]
 			),
 		textarea,
 		select
@@ -27,8 +28,7 @@
 				[type="radio"],
 				[type="button"],
 				[type="reset"],
-				[type="submit"],
-				[type="image"]
+				[type="submit"]
 			),
 		textarea,
 		select
@@ -46,22 +46,6 @@
 
 :where(input[type="range"]) {
 	@include form.range;
-}
-
-:where(input[type="checkbox"], input[type="radio"]) {
-	@include form.control;
-}
-
-:where(input[type="radio"]) {
-	--form-radius: 50%;
-}
-
-:where(input[type="checkbox"]:not([role="switch"])) {
-	@include form.checkbox;
-}
-
-:where(input[type="checkbox"][role="switch"]) {
-	@include form.switch;
 }
 
 // Remove the inheritance of word-wrap in Safari.
@@ -91,6 +75,10 @@
 		1lh + (var(--form-py, #{form.$padding-block}) * 2) +
 			(var(--form-border-width, #{form.$border-size}) * 2)
 	);
+}
+
+:where(label:has(input)) {
+	display: block;
 }
 
 // Reset the default opacity in Firefox,

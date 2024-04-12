@@ -1,0 +1,35 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "./helper" as control;
+
+:where(input[type="checkbox"], input[type="radio"]) {
+	@include control.base;
+}
+
+:where(input[type="radio"]) {
+	--control-radius: 50%;
+}
+
+:where(input[type="checkbox"]:not([role="switch"])) {
+	--_icon: var(--icon, #{control.$checkbox-icon});
+	--icon-gap: 1px;
+	--indeterminate-icon: #{control.$indeterminate-icon};
+
+	&:indeterminate {
+		--_show-icon: 1;
+		--_icon: var(--indeterminate-icon);
+	}
+
+	&::after {
+		// stylelint-disable-next-line property-no-vendor-prefix
+		-webkit-mask: var(--_icon, url("#")) center / contain no-repeat;
+		mask: var(--_icon, url("#")) center / contain no-repeat;
+	}
+}
+
+@if control.$enable-switch {
+	:where(input[type="checkbox"][role="switch"]) {
+		@include control.switch;
+	}
+}
