@@ -634,6 +634,14 @@ input:is([type=tel], [type=url], [type=email], [type=number]) {
   translate: calc((var(--size-x) - var(--size-y, 1.25em)) / -1) 0%;
 }
 
+@keyframes progress-indeterminate {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
 progress {
   --_color: color-mix(in oklab, currentcolor 20%, var(--root-bg));
   --_value-color: var(--form-active-color, currentcolor);
@@ -657,7 +665,12 @@ progress::-moz-progress-bar {
   background-color: var(--_value-color);
 }
 progress:indeterminate {
-  background-color: var(--_value-color);
+  background: currentcolor linear-gradient(to right, var(--_value-color) 30%, currentcolor 30%) top left/150% 150% no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  progress:indeterminate {
+    animation: progress-indeterminate 2s linear infinite;
+  }
 }
 
 @media print {
@@ -681,10 +694,6 @@ progress:indeterminate {
     display: table-header-group;
   }
 }
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
 :root {
   --brand: hsl(265 100% 56%);
   --on-brand: hsl(265 0% 100%);

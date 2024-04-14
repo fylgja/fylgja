@@ -17,6 +17,9 @@
   "keywords": [],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
-    "build": "npx sass --no-source-map -s compressed src:./"
+    "build": "lightningcss --minify --bundle base.css -o base.min.css"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.24.1"
   }
 }
