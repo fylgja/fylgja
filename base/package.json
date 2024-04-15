@@ -17,9 +17,9 @@
   "keywords": [],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
-    "build": "lightningcss --minify --bundle base.css -o base.min.css"
-  },
-  "devDependencies": {
-    "lightningcss-cli": "^1.24.1"
+    "build:preflight": "npx lightningcss --minify --bundle preflight.css -o preflight.min.css",
+    "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
+    "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
+    "build": "npm run build:preflight && npm run build:btn && npm run build:form"
   }
 }
