@@ -4,7 +4,7 @@
 @use "buttons/helper" as btn;
 
 :root {
-	--brand: hsl(265 100% 56%);
+	--brand: hsl(259 84% 56%);
 	--on-brand: hsl(265 0% 100%);
 	--form-active-color: var(--brand);
 	scrollbar-color: var(--scrollthumb-color, var(--brand))
@@ -40,6 +40,10 @@
 
 :focus-visible {
 	outline-color: var(--brand);
+}
+
+:where(blockquote, hr) {
+	border-color: var(--brand);
 }
 
 ::-webkit-calendar-picker-indicator {

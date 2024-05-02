@@ -3,39 +3,54 @@
 
 $enable-opinionated: true !default;
 
-$hr-my: 1.5em !default;
+$text-my: 1em 1rem !default;
+$separator-text-my: 2.5em !default;
+
+$h1-font-size: 3.5rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h-font-size: 1.1rem;
+$h-font-weight: 700;
+$h-line-height: 1.25;
 
 // Set a general default for text block margin
-:where(h1, h2, h3, h4, h5, h6, p, blockquote, dl, ul, ol, pre) {
-	margin-block: var(--text-my, 1em 1rem);
+:where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
+	margin-block: var(--text-my, #{$text-my});
+}
+
+:where(blockquote, hr) {
+	margin-block: var(--separator-text-my, #{$separator-text-my});
+	margin-inline: 0;
 }
 
 // Improved heading text wrapping
 :where(h1, h2, h3, h4, h5, h6) {
-	font-size: 1.1rem;
-	font-weight: 700;
-	line-height: 1.25;
+	font-size: $h-font-size;
+	font-weight: $h-font-weight;
+	line-height: $h-line-height;
 	text-wrap: balance;
 }
 
 :where(h1) {
-	font-size: 3.5rem;
+	font-size: $h1-font-size;
 }
 
 :where(h2) {
-	font-size: 2.5rem;
+	font-size: $h2-font-size;
 }
 
 :where(h3) {
-	font-size: 2rem;
+	font-size: $h3-font-size;
 }
 
 :where(h4) {
-	font-size: 1.5rem;
+	font-size: $h4-font-size;
 }
 
 :where(h5) {
-	font-size: 1.25rem;
+	font-size: $h5-font-size;
 }
 
 // Improve readability with max-width on paragraphs and lists
@@ -53,8 +68,14 @@ $hr-my: 1.5em !default;
 	}
 }
 
+:where(blockquote) {
+	padding-inline-start: 1.5em;
+	border-inline-start: 4px solid;
+}
+
 // Inherit fonts for inputs and buttons
-:where(input, button, textarea, select) {
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
 	font: inherit;
 }
 
@@ -85,8 +106,7 @@ $hr-my: 1.5em !default;
 
 // Correct the inheritance of color in Firefox
 :where(hr) {
-	margin-block: var(--hr-my, $hr-my);
-	border-block-end-width: 1px;
+	border-block-end-width: 2px;
 	color: inherit;
 }
 

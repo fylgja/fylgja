@@ -2,9 +2,9 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(button,
-input:is([type=button], [type=submit], [type=reset]),
-.btn),
+:where(.btn,
+button,
+input:is([type=button], [type=submit], [type=reset])),
 :where(input[type=file])::file-selector-button {
   appearance: button;
   display: inline-flex;
@@ -17,9 +17,7 @@ input:is([type=button], [type=submit], [type=reset]),
   border-radius: var(--btn-radius, 0.5rem);
   background: var(--btn-bg, transparent);
   color: var(--btn-color, currentcolor);
-  font-size: 1em;
   font-weight: var(--btn-font-weight, 500);
-  line-height: inherit;
   text-align: center;
   text-decoration: none;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
@@ -29,25 +27,25 @@ input:is([type=button], [type=submit], [type=reset]),
   -webkit-touch-callout: none;
 }
 
-:where(button,
-input:is([type=button], [type=submit], [type=reset]),
-.btn):disabled {
+:where(.btn,
+button,
+input:is([type=button], [type=submit], [type=reset])):disabled {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
   background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
   color: var(--btn-disabled-color, hsl(0, 0%, 40%));
   cursor: not-allowed;
 }
-:where(button,
-input:is([type=button], [type=submit], [type=reset]),
-.btn):not(:disabled):hover {
+:where(.btn,
+button,
+input:is([type=button], [type=submit], [type=reset])):not(:disabled):hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(button,
-input:is([type=button], [type=submit], [type=reset]),
-.btn):not(:disabled):active {
+:where(.btn,
+button,
+input:is([type=button], [type=submit], [type=reset])):not(:disabled):active {
   border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));

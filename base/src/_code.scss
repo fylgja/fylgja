@@ -14,7 +14,7 @@
 :where(:not(pre) > code, kbd) {
 	white-space: nowrap;
 	padding-inline: 0.25em;
-	border-radius: 0.5rem;
+	border-radius: 0.25em;
 }
 
 :where(pre) {
@@ -23,7 +23,7 @@
 	max-inline-size: max-content;
 	padding-block: var(--pre-py, 0.875em);
 	padding-inline: var(--pre-px, 1em);
-	border-radius: 0.5em;
+	border-radius: 0.4em;
 	overflow: auto;
 }
 

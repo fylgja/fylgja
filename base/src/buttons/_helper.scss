@@ -38,9 +38,7 @@ $disabled-color: hsl(0 0% 40%) !default;
 	border-radius: var(--btn-radius, #{$radius});
 	background: var(--btn-bg, #{$bg});
 	color: var(--btn-color, #{$color});
-	font-size: 1em;
 	font-weight: var(--btn-font-weight, #{$font-weight});
-	line-height: inherit;
 	text-align: center;
 	text-decoration: none;
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s,

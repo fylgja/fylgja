@@ -23,7 +23,6 @@
   --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
   color-scheme: light dark;
-  block-size: 100%;
   font-family: var(--family-sans);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -51,6 +50,10 @@
     scroll-behavior: smooth;
   }
 }
+:where(html) {
+  block-size: 100%;
+}
+
 :where(body) {
   min-block-size: 100%;
   margin: 0;
@@ -83,8 +86,13 @@ textarea,
   display: none;
 }
 
-:where(h1, h2, h3, h4, h5, h6, p, blockquote, dl, ul, ol, pre) {
+:where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
   margin-block: var(--text-my, 1em 1rem);
+}
+
+:where(blockquote, hr) {
+  margin-block: var(--separator-text-my, 2.5em);
+  margin-inline: 0;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -124,7 +132,13 @@ textarea,
   font-weight: 500;
 }
 
-:where(input, button, textarea, select) {
+:where(blockquote) {
+  padding-inline-start: 1.5em;
+  border-inline-start: 4px solid;
+}
+
+:where(input, button, textarea, select),
+:where(input[type=file])::-webkit-file-upload-button {
   font: inherit;
 }
 
@@ -151,8 +165,7 @@ textarea,
 }
 
 :where(hr) {
-  margin-block: var(--hr-my, 1.5em);
-  border-block-end-width: 1px;
+  border-block-end-width: 2px;
   color: inherit;
 }
 
@@ -192,7 +205,7 @@ textarea,
 :where(:not(pre) > code, kbd) {
   white-space: nowrap;
   padding-inline: 0.25em;
-  border-radius: 0.5rem;
+  border-radius: 0.25em;
 }
 
 :where(pre) {
@@ -201,7 +214,7 @@ textarea,
   max-inline-size: max-content;
   padding-block: var(--pre-py, 0.875em);
   padding-inline: var(--pre-px, 1em);
-  border-radius: 0.5em;
+  border-radius: 0.4em;
   overflow: auto;
 }
 

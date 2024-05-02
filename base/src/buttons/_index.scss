@@ -4,18 +4,18 @@
 @use "helper" as btn;
 
 :where(
+		.btn,
 		button,
-		input:is([type="button"], [type="submit"], [type="reset"]),
-		.btn
+		input:is([type="button"], [type="submit"], [type="reset"])
 	),
 :where(input[type="file"])::file-selector-button {
 	@include btn.base;
 }
 
 :where(
+		.btn,
 		button,
-		input:is([type="button"], [type="submit"], [type="reset"]),
-		.btn
+		input:is([type="button"], [type="submit"], [type="reset"])
 	) {
 	&:disabled {
 		@include btn.disabled;

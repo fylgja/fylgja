@@ -106,14 +106,14 @@ select):focus {
   block-size: var(--track-height, 0.85ex);
   border: 1px solid transparent;
   border-radius: var(--form-radius, 0.35rem);
-  background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) var(--_progression));
+  background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
   block-size: var(--track-height, 0.85ex);
   border: 1px solid transparent;
   border-radius: var(--form-radius, 0.35rem);
-  background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) var(--_progression));
+  background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
 }
 :where(input[type=range])::-webkit-slider-thumb {
   appearance: none;

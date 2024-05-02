@@ -2,7 +2,6 @@
 // Licensed under MIT Open Source
 
 $motion-safe: "prefers-reduced-motion: no-preference";
-$opacity-safe: "prefers-reduced-transparency: no-preference";
 
 $enable-opinionated: true !default;
 
@@ -53,7 +52,6 @@ $anchor-offset: max(2rem, 5svb) !default;
 	--chevron-dark-scheme: #{$chevron-dark-scheme};
 	--outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
 	color-scheme: light dark;
-	block-size: 100%;
 	font-family: var(--family-sans);
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
@@ -86,6 +84,10 @@ $anchor-offset: max(2rem, 5svb) !default;
 	:where(:has(:target)) {
 		scroll-behavior: smooth;
 	}
+}
+
+:where(html) {
+	block-size: 100%;
 }
 
 :where(body) {

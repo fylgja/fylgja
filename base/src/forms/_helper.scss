@@ -112,11 +112,12 @@ $range-thumb-stroke: var(--root-bg);
 	block-size: var(--track-height, #{$range-track-height});
 	border: 1px solid transparent;
 	border-radius: var(--form-radius, #{$radius});
-	background: linear-gradient(
-		to var(--fill-direction, right),
-		var(--fill-color) var(--_progression),
-		var(--track-color, #{$range-track-color}) var(--_progression)
-	);
+	background: var(--track-color, #{$range-track-color})
+		linear-gradient(
+			to var(--fill-direction, right),
+			var(--fill-color) var(--_progression),
+			transparent var(--_progression)
+		);
 }
 
 @mixin range-thumb() {

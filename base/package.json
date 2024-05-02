@@ -1,5 +1,5 @@
 {
-  "name": "@fylgja/base-next",
+  "name": "@fylgja/base",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://fylgja.dev/",
@@ -17,9 +17,20 @@
   "keywords": [],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
+    "build:scss": "npx sass --no-source-map src:./",
     "build:preflight": "npx lightningcss --minify --bundle preflight.css -o preflight.min.css",
     "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
-    "build": "npm run build:preflight && npm run build:btn && npm run build:form"
+    "build:min": "npm run build:preflight && npm run build:btn && npm run build:form",
+    "prerelease": "npm run build:scss && npm run build:min && npm run test",
+    "release": ""
+  },
+  "devDependencies": {
+    "@fylgja/stylelint-config": "^7.0.0",
+    "lightningcss-cli": "^1.24.1",
+    "sass": "^1.75.0"
+  },
+  "stylelint": {
+    "extends": "@fylgja/stylelint-config"
   }
 }
