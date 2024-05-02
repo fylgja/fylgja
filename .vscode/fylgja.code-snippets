@@ -1,6 +1,6 @@
 {
-  "Fylgja Copyright": {
-    "scope": "php,css,less,scss,javascript,typescript",
+  "Fylgja Copyright Sass": {
+    "scope": "scss",
     "prefix": "!fylgja-copy",
     "description": "Adds the fylgja copyright",
     "body": [
@@ -8,67 +8,15 @@
       "$LINE_COMMENT Licensed under MIT Open Source"
     ]
   },
-  "Fylgja FAQ panel": {
-    "scope": "markdown",
-    "prefix": "!fylgja-faq-panel",
-    "description": "Adds the fylgja faq",
+  "Fylgja Copyright": {
+    "scope": "css,javascript",
+    "prefix": "!fylgja-copy",
+    "description": "Adds the fylgja copyright",
     "body": [
-      "<details class=\"faq-panel\"><summary>${1:View SCSS variables}</summary>",
-      "",
-      "$TM_SELECTED_TEXT",
-      "",
-      "</details>"
-    ]
-  },
-  "Fylgja layer import replace in v1.3": {
-    "scope": "scss",
-    "prefix": "!layer",
-    "description": "replaces the old code for the new layer syntax",
-    "body": [
-      "// Drop in v2",
-      "\\$enable-${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer: false !default;",
-      "\\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer-name: if(\\$enable-${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer, \"components\", null) !default;",
-      "",
-      "\\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer: \\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer-name !default;"
-    ]
-  },
-  "Fylgja layer import replace in v1.3 log": {
-    "scope": "markdown",
-    "prefix": "!layer-log",
-    "description": "replaces the old code for the new layer syntax",
-    "body": [
-      "## [$0] - 2023-02-19",
-      "### Changed",
-      "- Simplified `@layer` support,",
-      "  CSS can use native, for SCSS use the new variable `\\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer`,",
-      "  the options from v1.2 are deprecated"
-    ]
-  },
-  "Fylgja layer Import": {
-    "scope": "markdown",
-    "prefix": "!layer",
-    "description": "Create layer import for docs",
-    "body": [
-      "### `@layer` support",
-      "",
-      "If you need support for `@layer`,",
-      "use the following import;",
-      "",
-      "```scss",
-      "@use \"@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\" with (\\$${TM_DIRECTORY/^.+\\/(.*)$/$1/}-layer: \"components\");",
-      "// Or via native CSS import, also supported by PostCSS import",
-      "@import \"@fylgja/${TM_DIRECTORY/^.+\\/(.*)$/$1/}\" layer(\"components\");",
-      "```"
-    ]
-  },
-  "Fylgja Readmore": {
-    "scope": "markdown",
-    "prefix": "!more",
-    "description": "Create how to more link to site docs",
-    "body": [
-      "## How to use",
-      "",
-      "For more information see the [${TM_DIRECTORY/^.+\\/(.*)$/$1/} docs on the Fylgja.dev](https://fylgja.dev/components/${TM_DIRECTORY/^.+\\/(.*)$/$1/}/)."
+      "/**",
+      " * Fylgja (https://fylgja.dev)",
+      " * Licensed under MIT Open Source",
+      " */"
     ]
   },
   "Fylgja Package": {
