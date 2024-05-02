@@ -1,8 +1,10 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: weekly
-    day: "sunday"
-  versioning-strategy: increase
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "05:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 20
