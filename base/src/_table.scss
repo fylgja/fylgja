@@ -1,8 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$enable-opinionated: true !default;
-
 $py: 0.875em !default;
 $px: 0.625em !default;
 $stroke: #777 !default;
@@ -43,10 +41,8 @@ $striped-bg: color-mix(in oklab, var(--root-bg) 94%, currentcolor) !default;
 	border-block-start-width: 2px;
 }
 
-@if $enable-opinionated {
-	:where(tbody tr:nth-child(even) :is(th, td)) {
-		background: var(--table-striped-bg, #{$striped-bg});
-	}
+:where(tbody tr:nth-child(even) :is(th, td)) {
+	background: var(--table-striped-bg, #{$striped-bg});
 }
 
 :where(table caption) {

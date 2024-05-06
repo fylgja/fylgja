@@ -1,8 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$enable-opinionated: true !default;
-
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
 	display: block;
 }
@@ -14,10 +12,6 @@ $enable-opinionated: true !default;
 
 :where(iframe) {
 	max-inline-size: 100%;
-
-	// Set commen default for iframe's
-	@if $enable-opinionated {
-		block-size: auto;
-		aspect-ratio: var(--aspect-ratio, 16 / 9);
-	}
+	block-size: auto;
+	aspect-ratio: var(--aspect-ratio, 16 / 9);
 }

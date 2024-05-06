@@ -1,8 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$enable-opinionated: true !default;
-
 $text-my: 1em 1rem !default;
 $separator-text-my: 2.5em !default;
 
@@ -61,11 +59,9 @@ $h-line-height: 1.1;
 }
 
 // Let links be part of the text by default and inherit the color where needed
-@if $enable-opinionated {
-	:where(:any-link) {
-		color: currentcolor;
-		font-weight: 500;
-	}
+:where(:any-link) {
+	color: currentcolor;
+	font-weight: 500;
 }
 
 :where(blockquote) {

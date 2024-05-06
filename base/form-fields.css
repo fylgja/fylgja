@@ -162,7 +162,7 @@ select):focus {
   min-height: calc(1lh + var(--form-py, 0.375rem) * 2 + var(--form-border-width, 1px) * 2);
 }
 
-:where(label:has(input)) {
+:where(label:has(input, select, textarea, progress, meter)) {
   display: block;
 }
 

@@ -76,7 +76,7 @@
 	);
 }
 
-:where(label:has(input)) {
+:where(label:has(input, select, textarea, progress, meter)) {
 	display: block;
 }
 

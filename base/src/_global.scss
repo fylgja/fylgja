@@ -3,8 +3,6 @@
 
 $motion-safe: "prefers-reduced-motion: no-preference";
 
-$enable-opinionated: true !default;
-
 $root-bg: hsl(0 0% 100%) !default;
 $root-fg: hsl(0 0% 8%) !default;
 
@@ -26,17 +24,14 @@ $chevron-dark-scheme: url('data:image/svg+xml,<svg #{$chevron-base-props} stroke
 
 $anchor-offset: max(2rem, 5svb) !default;
 
+// 1: Allow adding a border to an element by just adding a border-width
+// 2: Backgrounds do not repeat by default
 *,
 ::before,
 ::after {
 	box-sizing: border-box;
-
-	// 1: Allow adding a border to an element by just adding a border-width
-	// 2: Backgrounds do not repeat by default
-	@if $enable-opinionated {
-		border: 0 solid currentcolor; // 1
-		background-repeat: no-repeat; // 2
-	}
+	border: 0 solid currentcolor; // 1
+	background-repeat: no-repeat; // 2
 }
 
 :where(:root) {
@@ -53,17 +48,10 @@ $anchor-offset: max(2rem, 5svb) !default;
 	--outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
 	color-scheme: light dark;
 	font-family: var(--family-sans);
+	tab-size: 4;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 	scrollbar-gutter: stable;
-
-	@if $enable-opinionated {
-		// 1: Use a more readable tab size
-		tab-size: 4;
-
-		// Better aligned text with punctuation
-		hanging-punctuation: first allow-end last;
-	}
 }
 
 :where(:focus-visible) {

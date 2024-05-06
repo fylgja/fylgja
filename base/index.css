@@ -24,11 +24,10 @@
   --outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
   color-scheme: light dark;
   font-family: var(--family-sans);
+  tab-size: 4;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scrollbar-gutter: stable;
-  tab-size: 4;
-  hanging-punctuation: first allow-end last;
 }
 
 :where(:focus-visible) {
@@ -278,7 +277,12 @@ textarea,
 
 ::backdrop {
   background-color: var(--backdrop-color, hsla(0, 0%, 0%, 0.2));
-  opacity: 0;
+  opacity: 1;
+}
+@starting-style {
+  ::backdrop {
+    opacity: 0;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   ::backdrop {
@@ -307,28 +311,19 @@ textarea,
   }
 }
 
-::backdrop {
-  opacity: 1;
-}
-@starting-style {
-  ::backdrop {
-    opacity: 0;
-  }
-}
-
-:where(dialog:is([open], :popover-open)) {
+:where(dialog:is([open], dialog:popover-open)) {
   --speed: var(--dialog-open-speed, 300ms);
   translate: 0 0;
   opacity: 1;
 }
 @starting-style {
-  :where(dialog:is([open], :popover-open)) {
+  :where(dialog:is([open], dialog:popover-open)) {
     translate: var(--tx) var(--ty);
     opacity: 0;
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, :popover-open))) {
+:where(:root:has(dialog:is([open]:modal, dialog:popover-open))) {
   overflow: hidden;
 }
 
@@ -559,7 +554,7 @@ select):focus {
   min-height: calc(1lh + var(--form-py, 0.375rem) * 2 + var(--form-border-width, 1px) * 2);
 }
 
-:where(label:has(input)) {
+:where(label:has(input, select, textarea, progress, meter)) {
   display: block;
 }
 
