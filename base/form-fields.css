@@ -95,23 +95,18 @@ select):focus {
 :where(input[type=range]):where(:active) {
   cursor: grabbing;
 }
-:where(input[type=range]):where(:not(:disabled):hover, :not(:disabled):active) {
-  --thumb-scale: 1.125;
-}
 :where(input[type=range]):where(:not(:active):focus-visible) {
   --outline: var(--fill-color);
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
   block-size: var(--track-height, 0.85ex);
-  border: 1px solid transparent;
   border-radius: var(--form-radius, 0.35rem);
   background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
   block-size: var(--track-height, 0.85ex);
-  border: 1px solid transparent;
   border-radius: var(--form-radius, 0.35rem);
   background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
 }
@@ -125,7 +120,6 @@ select):focus {
   border: var(--thumb-border-width, 2px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
   outline: 2px solid var(--outline);
-  scale: var(--thumb-scale, 1);
   transition: outline 150ms, scale 150ms, box-shadow 150ms;
 }
 :where(input[type=range])::-moz-range-thumb {
@@ -138,7 +132,6 @@ select):focus {
   border: var(--thumb-border-width, 2px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
   outline: 2px solid var(--outline);
-  scale: var(--thumb-scale, 1);
   transition: outline 150ms, scale 150ms, box-shadow 150ms;
   box-sizing: border-box;
 }

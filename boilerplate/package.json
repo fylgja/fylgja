@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "author": "Fylgja",
-  "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "vite --host",
     "dev": "npm start",

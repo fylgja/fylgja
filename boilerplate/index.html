@@ -9,6 +9,7 @@
 		<style>
 			:root {
 				--anchor-offset: calc(75px + 5ex);
+				--table-offset: 75px;
 			}
 
 			.wrapper {
@@ -48,7 +49,7 @@
 			}
 
 			[data-theme="dark"] {
-				--root-bg: color-mix(in oklab, black 82%, var(--brand));
+				--root-bg: color-mix(in oklab, black 80%, var(--brand, currentcolor));
 				--root-fg: #fff;
 				--select-icon: var(--chevron-dark-scheme);
 				color-scheme: dark;
@@ -169,10 +170,15 @@
 			</section>
 			<section id="text">
 				<h1>Heading 1</h1>
+				<p>After heading</p>
 				<h2>Heading 2</h2>
+				<p>After heading</p>
 				<h3>Heading 3</h3>
+				<p>After heading</p>
 				<h4>Heading 4</h4>
+				<p>After heading</p>
 				<h5>Heading 5</h5>
+				<p>After heading</p>
 				<h6>Heading 6</h6>
 				<p>
 					A paragraph (from the Greek paragraphos, “to write beside” or “written beside”)
@@ -562,13 +568,21 @@ p q r s t u v w x y z { | } ~ </code>
 					</div>
 					<div id="form-meter">
 						<h2>Meter</h2>
-						<meter value="2" min="0" max="10">2 out of 10</meter>
+						<label for="fuel">Fuel level:</label>
+						<meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
 					</div>
 					<div id="form-progress">
 						<h2>Progress</h2>
-						<progress indeterminate>progress</progress>
-						<br />
-						<progress value=".5">progress</progress>
+						<div class="flow">
+							<label>
+								Loading...
+								<progress indeterminate>progress</progress>
+							</label>
+							<label>
+								Half way there
+								<progress value=".5">progress</progress>
+							</label>
+						</div>
 					</div>
 				</form>
 			</section>

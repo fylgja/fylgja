@@ -1,11 +1,11 @@
 /* stylelint-disable */
 
 /* All */
-@import url("../base/base.css");
+@import url("../base/index.css");
+@import url("../base/theme.css");
 
 /* Split for theme styles */
 /* @import url("../base/preflight.css"); */
-/* @import url("../base/theme.css"); */
 
 /* Individual testing versions */
 /* @import url("../base/form.css"); */

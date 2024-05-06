@@ -13,7 +13,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --root-bg: color-mix(in oklab, black 82%, var(--brand));
+    --root-bg: color-mix(in oklab, black 80%, var(--brand));
     --root-fg: white;
     --select-icon: var(--chevron-dark-scheme);
   }

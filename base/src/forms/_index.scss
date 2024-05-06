@@ -48,7 +48,7 @@
 	@include form.range;
 }
 
-// Remove the inheritance of word-wrap in Safari.
+// Remove the inheritance of word-wrap in Safari
 :where(select) {
 	word-wrap: normal;
 }
@@ -68,7 +68,6 @@
 	}
 }
 
-// Change the resize direction in all browsers
 :where(textarea) {
 	resize: vertical;
 	min-height: calc(

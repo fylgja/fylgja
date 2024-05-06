@@ -29,7 +29,7 @@ $backdrop-color: hsl(0 0% 0% / 20%) !default;
 	--ty: var(--dialog-translate-y, 2rem);
 	--tx: var(--dialog-translate-x, 0);
 	--speed: var(--dialog-close-speed, #{$close-speed});
-	position: fixed; // prevents weird overflow, if moveing offscreen on Android
+	position: fixed; // Prevents weird overflow, if moving offscreen on Android
 	max-block-size: calc(100% - 2em);
 	max-inline-size: calc(100% - 2em);
 	background-color: var(

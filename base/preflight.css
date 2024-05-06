@@ -82,10 +82,6 @@ textarea,
   display: inline;
 }
 
-[hidden] {
-  display: none;
-}
-
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
   margin-block: var(--text-my, 1em 1rem);
 }
@@ -98,7 +94,7 @@ textarea,
 :where(h1, h2, h3, h4, h5, h6) {
   font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -192,12 +188,55 @@ textarea,
   top: -0.5em;
 }
 
+:where(table) {
+  border-spacing: 0;
+  border-color: var(--table-stroke, #777);
+}
+
+:where(thead, tbody, tfoot, tr, th, td) {
+  border-color: inherit;
+}
+
+:where(thead) {
+  position: sticky;
+  top: var(--table-offset, 0);
+}
+
+:where(th, td) {
+  padding-block: var(--table-py, 0.875em);
+  padding-inline: var(--table-px, 0.625em);
+  background: var(--root-bg);
+  color: var(--root-fg);
+  text-align: start;
+}
+
+:where(tr + tr :is(th, td)) {
+  border-block-start-width: 1px;
+}
+
+:where(thead tr:last-child :is(th, td)) {
+  border-block-end-width: 2px;
+}
+
+:where(tfoot tr:first-child :is(th, td)) {
+  border-block-start-width: 2px;
+}
+
+:where(tbody tr:nth-child(even) :is(th, td)) {
+  background: var(--table-striped-bg, color-mix(in oklab, var(--root-bg) 94%, currentcolor));
+}
+
+:where(table caption) {
+  margin-block: 0.5em;
+  font-style: italic;
+}
+
 :where(code, kbd, samp, pre) {
   font-family: var(--family-mono);
 }
 
 :where(code, pre) {
-  background-color: color-mix(in oklab, var(--root-bg) 90%, var(--root-fg));
+  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
   writing-mode: lr;
   direction: ltr;
 }
@@ -212,8 +251,8 @@ textarea,
   white-space: pre;
   min-inline-size: 0;
   max-inline-size: max-content;
-  padding-block: var(--pre-py, 0.875em);
-  padding-inline: var(--pre-px, 1em);
+  padding-block: 0.875em;
+  padding-inline: 1em;
   border-radius: 0.4em;
   overflow: auto;
 }

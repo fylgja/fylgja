@@ -6,7 +6,7 @@
 }
 
 :where(code, pre) {
-	background-color: color-mix(in oklab, var(--root-bg) 90%, var(--root-fg));
+	background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
 	writing-mode: lr;
 	direction: ltr;
 }
@@ -21,8 +21,8 @@
 	white-space: pre;
 	min-inline-size: 0;
 	max-inline-size: max-content;
-	padding-block: var(--pre-py, 0.875em);
-	padding-inline: var(--pre-px, 1em);
+	padding-block: 0.875em;
+	padding-inline: 1em;
 	border-radius: 0.4em;
 	overflow: auto;
 }
