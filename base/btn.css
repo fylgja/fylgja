@@ -29,6 +29,20 @@ input:is([type=button], [type=submit], [type=reset])),
 
 :where(.btn,
 button,
+input:is([type=button], [type=submit], [type=reset])):hover {
+  border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
+  background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
+  color: var(--btn-hover-color, var(--btn-color, currentcolor));
+}
+:where(.btn,
+button,
+input:is([type=button], [type=submit], [type=reset])):active {
+  border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
+  background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
+  color: var(--btn-active-color, var(--btn-color, currentcolor));
+}
+:where(.btn,
+button,
 input:is([type=button], [type=submit], [type=reset])):disabled {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
@@ -36,35 +50,21 @@ input:is([type=button], [type=submit], [type=reset])):disabled {
   color: var(--btn-disabled-color, hsl(0, 0%, 40%));
   cursor: not-allowed;
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):not(:disabled):hover {
+
+:where(input[type=file]):hover::file-selector-button {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):not(:disabled):active {
+:where(input[type=file]):active::file-selector-button {
   border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
   background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
   color: var(--btn-disabled-color, hsl(0, 0%, 40%));
   cursor: not-allowed;
-}
-:where(input[type=file]):not(:disabled):hover::file-selector-button {
-  border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
-  background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
-  color: var(--btn-hover-color, var(--btn-color, currentcolor));
-}
-:where(input[type=file]):not(:disabled):active::file-selector-button {
-  border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
-  background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
-  color: var(--btn-active-color, var(--btn-color, currentcolor));
 }

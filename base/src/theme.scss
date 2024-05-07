@@ -40,7 +40,7 @@
 	color: var(--on-brand);
 }
 
-:focus-visible {
+:where(:focus-visible) {
 	outline-color: var(--brand);
 }
 

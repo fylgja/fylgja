@@ -11,6 +11,8 @@ $color: currentcolor !default;
 $checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E") !default;
 $indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") !default;
 
+$disabled-opacity: 0.6 !default;
+
 @mixin base {
 	--_gap: var(--icon-gap, 3px);
 	appearance: none;

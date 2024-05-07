@@ -16,11 +16,6 @@ $striped-bg: color-mix(in oklab, var(--root-bg) 94%, currentcolor) !default;
 	border-color: inherit;
 }
 
-:where(thead) {
-	position: sticky;
-	top: var(--table-offset, 0);
-}
-
 :where(th, td) {
 	padding-block: var(--table-py, #{$py});
 	padding-inline: var(--table-px, #{$px});

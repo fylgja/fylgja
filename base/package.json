@@ -16,7 +16,6 @@
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [],
   "scripts": {
-    "test": "npx stylelint src/*.scss",
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
     "build:main": "npx lightningcss --minify --bundle index.css -o index.min.css",
@@ -24,14 +23,6 @@
     "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
     "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form",
-    "prebuild": "npm run build:scss && npm run test"
-  },
-  "devDependencies": {
-    "@fylgja/stylelint-config": "^7.0.0",
-    "lightningcss-cli": "^1.24.1",
-    "sass": "^1.75.0"
-  },
-  "stylelint": {
-    "extends": "@fylgja/stylelint-config"
+    "prebuild": "npm run build:scss"
   }
 }

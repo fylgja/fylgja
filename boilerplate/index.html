@@ -22,6 +22,10 @@
 				margin-block-start: 1em;
 			}
 
+			.overflow-auto {
+				overflow: auto;
+			}
+
 			.sticky-header {
 				--max-size: 100ch;
 				z-index: 9;
@@ -278,80 +282,82 @@
 			</section>
 			<section id="table">
 				<h2>Table</h2>
-				<table>
-					<caption>
-						Table Caption
-					</caption>
-					<thead>
-						<tr>
-							<th>Table Heading 1</th>
-							<th>Table Heading 2</th>
-							<th>Table Heading 3</th>
-							<th>Table Heading 4</th>
-							<th>Table Heading 5</th>
-						</tr>
-					</thead>
-					<tfoot>
-						<tr>
-							<th>Table Footer 1</th>
-							<th>Table Footer 2</th>
-							<th>Table Footer 3</th>
-							<th>Table Footer 4</th>
-							<th>Table Footer 5</th>
-						</tr>
-					</tfoot>
-					<tbody>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="overflow-auto">
+					<table>
+						<caption>
+							Table Caption
+						</caption>
+						<thead>
+							<tr>
+								<th>Table Heading 1</th>
+								<th>Table Heading 2</th>
+								<th>Table Heading 3</th>
+								<th>Table Heading 4</th>
+								<th>Table Heading 5</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Table Footer 1</th>
+								<th>Table Footer 2</th>
+								<th>Table Footer 3</th>
+								<th>Table Footer 4</th>
+								<th>Table Footer 5</th>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+							<tr>
+								<td>Table Cell 1</td>
+								<td>Table Cell 2</td>
+								<td>Table Cell 3</td>
+								<td>Table Cell 4</td>
+								<td>Table Cell 5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</section>
 			<section id="code">
 				<h2>Code</h2>
@@ -437,7 +443,14 @@ p q r s t u v w x y z { | } ~ </code>
 						</label>
 						<label>
 							range
-							<input type="range" placeholder="range" value="40" max="100">
+							<input
+								type="range"
+								placeholder="range"
+								value="40"
+								max="100"
+								style="--fill: 40"
+								oninput="event.target.style.setProperty('--fill', event.target.value)"
+							>
 						</label>
 						<label>
 							select
@@ -448,7 +461,7 @@ p q r s t u v w x y z { | } ~ </code>
 							</select>
 						</label>
 						<label>
-							datalist
+							Datalist Countries
 							<input type="text" placeholder="Enter a country" list="countries">
 							<datalist id="countries">
 								<option>Netherlands</option>
@@ -456,6 +469,15 @@ p q r s t u v w x y z { | } ~ </code>
 								<option>Belgium</option>
 								<option>United Kingdom</option>
 								<option>United States</option>
+							</datalist>
+						</label>
+						<label>
+							Datalist Time
+							<input type="time" list="popularHours">
+							<datalist id="popularHours">
+								<option value="12:00"></option>
+								<option value="13:00"></option>
+								<option value="14:00"></option>
 							</datalist>
 						</label>
 						<label>

@@ -36,6 +36,9 @@
   --_show-icon: 1;
   color: var(--form-active-color, var(--control-color, currentcolor));
 }
+:where(input[type=checkbox], input[type=radio]):disabled {
+  opacity: var(--control-disabled-opacity, 0.6);
+}
 
 :where(input[type=radio]) {
   --control-radius: 50%;

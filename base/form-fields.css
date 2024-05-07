@@ -14,7 +14,7 @@ select) {
   margin: 0;
   padding-block: var(--form-py, 0.375rem);
   padding-inline: var(--form-px, 0.8rem);
-  border: var(--form-border-width, 1px) solid var(--form-stroke, currentcolor);
+  border: 1px solid;
   border-radius: var(--form-radius, 0.35rem);
   background: var(--form-bg, var(--root-bg));
   color: var(--form-color, inherit);
@@ -27,10 +27,17 @@ select) {
 [type=submit]),
 textarea,
 select):is(:disabled, [readonly]) {
-  box-shadow: none;
   border-style: var(--form-disabled-border-style, dashed);
+}
+:where(input:not([type=checkbox],
+[type=radio],
+[type=button],
+[type=reset],
+[type=submit]),
+textarea,
+select):disabled {
+  box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
-  cursor: not-allowed;
 }
 
 :where(input:not([type=range],
@@ -41,8 +48,8 @@ select):is(:disabled, [readonly]) {
 [type=submit]),
 textarea,
 select):focus {
-  border-color: var(--form-active-color, var(--form-stroke, currentcolor));
-  outline: 1px solid var(--form-active-color, var(--form-stroke, currentcolor));
+  border-color: var(--form-active-color, currentcolor);
+  outline: 1px solid var(--form-active-color, currentcolor);
   outline-offset: 0;
 }
 
@@ -86,7 +93,6 @@ select):focus {
   padding: 0;
   border: 0;
   background: transparent;
-  outline: none;
   cursor: grab;
 }
 :where(input[type=range]):where(:dir(rtl)) {
@@ -95,20 +101,19 @@ select):focus {
 :where(input[type=range]):where(:active) {
   cursor: grabbing;
 }
-:where(input[type=range]):where(:not(:active):focus-visible) {
-  --outline: var(--fill-color);
-}
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
+  --_track: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent));
   block-size: var(--track-height, 0.85ex);
   border-radius: var(--form-radius, 0.35rem);
-  background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
+  background: var(--_track) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--_track) var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
+  --_track: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent));
   block-size: var(--track-height, 0.85ex);
   border-radius: var(--form-radius, 0.35rem);
-  background: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent)) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), transparent var(--_progression));
+  background: var(--_track) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--_track) var(--_progression));
 }
 :where(input[type=range])::-webkit-slider-thumb {
   appearance: none;
@@ -117,10 +122,8 @@ select):focus {
   box-shadow: var(--thumb-shadow);
   margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 0.85ex) - var(--size))));
   border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 2px) solid var(--thumb-stroke, var(--root-bg));
+  border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
-  outline: 2px solid var(--outline);
-  transition: outline 150ms, scale 150ms, box-shadow 150ms;
 }
 :where(input[type=range])::-moz-range-thumb {
   appearance: none;
@@ -129,10 +132,8 @@ select):focus {
   box-shadow: var(--thumb-shadow);
   margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 0.85ex) - var(--size))));
   border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 2px) solid var(--thumb-stroke, var(--root-bg));
+  border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
-  outline: 2px solid var(--outline);
-  transition: outline 150ms, scale 150ms, box-shadow 150ms;
   box-sizing: border-box;
 }
 
@@ -154,7 +155,11 @@ select):focus {
 }
 
 [list]:not([type*=date], [type=month], [type=week], [type=time])::-webkit-calendar-picker-indicator, [list]:not([type*=date], [type=month], [type=week], [type=time])::-webkit-list-button {
-  all: unset !important;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
 }
 
 :where(textarea) {

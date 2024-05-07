@@ -17,7 +17,15 @@
 	@include form.base;
 
 	&:is(:disabled, [readonly]) {
-		@include form.disabled;
+		border-style: var(
+			--form-disabled-border-style,
+			#{form.$disabled-border-style}
+		);
+	}
+
+	&:disabled {
+		box-shadow: none;
+		opacity: var(--form-disabled-opacity, #{form.$disabled-opacity});
 	}
 }
 
@@ -33,7 +41,9 @@
 		textarea,
 		select
 	):focus {
-	@include form.focus;
+	border-color: var(--form-active-color, currentcolor);
+	outline: 1px solid var(--form-active-color, currentcolor);
+	outline-offset: 0;
 }
 
 :where(input[type="color"]) {
@@ -59,12 +69,15 @@
 
 // Remove the dropdown arrow only from text type inputs built with datalists in webkit browsers
 // Chrome = calendar-picker-indicator
-// iOS Safari= list-button
+// iOS Safari = list-button
 [list]:not([type*="date"], [type="month"], [type="week"], [type="time"]) {
 	&::-webkit-calendar-picker-indicator,
 	&::-webkit-list-button {
-		// stylelint-disable-next-line declaration-no-important
-		all: unset !important;
+		width: 0;
+		height: 0;
+		margin: 0;
+		padding: 0;
+		visibility: hidden;
 	}
 }
 

@@ -21,7 +21,7 @@
   	"Liberation Mono", monospace, var(--family-emoji);
   --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
   --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
-  --outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
+  --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
   color-scheme: light dark;
   font-family: var(--family-sans);
   tab-size: 4;
@@ -32,12 +32,12 @@
 
 :where(:focus-visible) {
   outline: 2px solid;
-  outline-offset: 0;
-  transition: var(--outline-transition);
+  outline-offset: 3px;
 }
 
-:where(:not(:active):focus-visible) {
-  outline-offset: 2px;
+:where(:active:focus-visible) {
+  outline-offset: 0;
+  transition: var(--outline-transition);
 }
 
 :target {
@@ -79,6 +79,10 @@ textarea,
 
 :where(summary > *) {
   display: inline;
+}
+
+:disabled {
+  cursor: not-allowed;
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
@@ -194,11 +198,6 @@ textarea,
 
 :where(thead, tbody, tfoot, tr, th, td) {
   border-color: inherit;
-}
-
-:where(thead) {
-  position: sticky;
-  top: var(--table-offset, 0);
 }
 
 :where(th, td) {

@@ -45,7 +45,7 @@ $anchor-offset: max(2rem, 5svb) !default;
 		"Liberation Mono", monospace, var(--family-emoji);
 	--chevron-light-scheme: #{$chevron-light-scheme};
 	--chevron-dark-scheme: #{$chevron-dark-scheme};
-	--outline-transition: outline 150ms cubic-bezier(0.25, 0, 0.4, 1);
+	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
 	color-scheme: light dark;
 	font-family: var(--family-sans);
 	tab-size: 4;
@@ -56,12 +56,12 @@ $anchor-offset: max(2rem, 5svb) !default;
 
 :where(:focus-visible) {
 	outline: 2px solid;
-	outline-offset: 0;
-	transition: var(--outline-transition);
+	outline-offset: 3px;
 }
 
-:where(:not(:active):focus-visible) {
-	outline-offset: 2px;
+:where(:active:focus-visible) {
+	outline-offset: 0;
+	transition: var(--outline-transition);
 }
 
 :target {
@@ -109,4 +109,9 @@ $anchor-offset: max(2rem, 5svb) !default;
 // Makes sure any child element is inline, useful for headings
 :where(summary > *) {
 	display: inline;
+}
+
+// Show a diffrent cursor for any disabled element
+:disabled {
+	cursor: not-allowed;
 }

@@ -17,29 +17,29 @@
 		button,
 		input:is([type="button"], [type="submit"], [type="reset"])
 	) {
-	&:disabled {
-		@include btn.disabled;
-	}
-
-	&:not(:disabled):hover {
+	&:hover {
 		@include btn.hover;
 	}
 
-	&:not(:disabled):active {
+	&:active {
 		@include btn.active;
+	}
+
+	&:disabled {
+		@include btn.disabled;
 	}
 }
 
 :where(input[type="file"]) {
-	&:disabled::file-selector-button {
-		@include btn.disabled;
-	}
-
-	&:not(:disabled):hover::file-selector-button {
+	&:hover::file-selector-button {
 		@include btn.hover;
 	}
 
-	&:not(:disabled):active::file-selector-button {
+	&:active::file-selector-button {
 		@include btn.active;
+	}
+
+	&:disabled::file-selector-button {
+		@include btn.disabled;
 	}
 }
