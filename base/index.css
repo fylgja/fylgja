@@ -293,7 +293,6 @@ textarea,
   --ty: var(--dialog-translate-y, 2rem);
   --tx: var(--dialog-translate-x, 0);
   --speed: var(--dialog-close-speed, 200ms);
-  position: fixed;
   max-block-size: calc(100% - 2em);
   max-inline-size: calc(100% - 2em);
   background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 96%, white));
@@ -310,19 +309,19 @@ textarea,
   }
 }
 
-:where(dialog:is([open], dialog:popover-open)) {
+:where(dialog:is([open], :popover-open)) {
   --speed: var(--dialog-open-speed, 300ms);
   translate: 0 0;
   opacity: 1;
 }
 @starting-style {
-  :where(dialog:is([open], dialog:popover-open)) {
+  :where(dialog:is([open], :popover-open)) {
     translate: var(--tx) var(--ty);
     opacity: 0;
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, dialog:popover-open))) {
+:where(:root:has(dialog:is([open]:modal, :popover-open))) {
   overflow: hidden;
 }
 
@@ -476,6 +475,7 @@ select):focus {
 }
 
 :where(input[type=range]) {
+  --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
   --fill-color: var(--form-active-color, currentcolor);
   --fill-max: 100;
   --fill: 0;
@@ -494,17 +494,15 @@ select):focus {
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  --_track: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent));
   block-size: var(--track-height, 0.85ex);
   border-radius: var(--form-radius, 0.35rem);
-  background: var(--_track) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--_track) var(--_progression));
+  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  --_track: var(--track-color, color-mix(in srgb, currentcolor 24%, transparent));
   block-size: var(--track-height, 0.85ex);
   border-radius: var(--form-radius, 0.35rem);
-  background: var(--_track) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--_track) var(--_progression));
+  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-webkit-slider-thumb {
   appearance: none;

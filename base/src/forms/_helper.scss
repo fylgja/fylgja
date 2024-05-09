@@ -84,7 +84,7 @@ $color-size: 2.5em !default;
 	}
 }
 
-$range-track-color: color-mix(in srgb, currentcolor 24%, transparent);
+$range-track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
 $range-track-height: 0.85ex;
 
 $range-thumb-size: 3ex;
@@ -93,14 +93,13 @@ $range-thumb-stroke: var(--root-bg);
 
 @mixin range-track {
 	--_progression: calc(100% * var(--fill) / var(--fill-max));
-	--_track: var(--track-color, #{$range-track-color});
 	block-size: var(--track-height, #{$range-track-height});
 	border-radius: var(--form-radius, #{$radius});
-	background: var(--_track)
+	background: var(--track-color)
 		linear-gradient(
 			to var(--fill-direction, right),
 			var(--fill-color) var(--_progression),
-			var(--_track) var(--_progression)
+			var(--track-color) var(--_progression)
 		);
 }
 
@@ -120,6 +119,7 @@ $range-thumb-stroke: var(--root-bg);
 }
 
 @mixin range {
+	--track-color: #{$range-track-color};
 	--fill-color: var(--form-active-color, currentcolor);
 	--fill-max: 100;
 	--fill: 0;

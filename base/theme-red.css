@@ -3,7 +3,7 @@
  * Licensed under MIT Open Source
  */
 :root {
-  --brand: hsl(260, 84%, 56%);
+  --brand: hsl(0, 100%, 35%);
   --on-brand: hsl(260, 0%, 100%);
   --form-active-color: var(--brand);
   scrollbar-color: var(--scrollthumb-color, var(--brand)) var(--scrolltrack-color, transparent);

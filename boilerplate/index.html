@@ -53,7 +53,7 @@
 			}
 
 			[data-theme="dark"] {
-				--root-bg: color-mix(in oklab, black 80%, var(--brand, currentcolor));
+				--root-bg: color-mix(in oklab, black 82%, var(--brand, currentcolor));
 				--root-fg: #fff;
 				--select-icon: var(--chevron-dark-scheme);
 				color-scheme: dark;
@@ -65,9 +65,12 @@
 			}
 
 			/* TODO create offcanvas pkg */
+
+			/* Pos fixed, Prevents weird overflow, if moving offscreen on Android */
 			.offcanvas {
 				--dialog-translate-y: 0;
 				--dialog-translate-x: -100%;
+				position: fixed;
 				margin-inline-start: 0;
 				block-size: 100%;
 				max-block-size: 100%;
@@ -78,6 +81,7 @@
 			.offcanvas-end {
 				--dialog-translate-y: 0;
 				--dialog-translate-x: 100%;
+				position: fixed;
 				margin-inline-end: 0;
 				block-size: 100%;
 				max-block-size: 100%;

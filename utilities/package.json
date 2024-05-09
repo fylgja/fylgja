@@ -1,0 +1,16 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss-utlities.js",
+  "scripts": {
+    "test": "postcss utilities.css --output output.css --no-map"
+  },
+  "keywords": [],
+  "author": "grimlink",
+  "license": "MIT",
+  "devDependencies": {
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  }
+}

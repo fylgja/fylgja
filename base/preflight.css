@@ -293,7 +293,6 @@ textarea,
   --ty: var(--dialog-translate-y, 2rem);
   --tx: var(--dialog-translate-x, 0);
   --speed: var(--dialog-close-speed, 200ms);
-  position: fixed;
   max-block-size: calc(100% - 2em);
   max-inline-size: calc(100% - 2em);
   background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 96%, white));
@@ -310,19 +309,19 @@ textarea,
   }
 }
 
-:where(dialog:is([open], dialog:popover-open)) {
+:where(dialog:is([open], :popover-open)) {
   --speed: var(--dialog-open-speed, 300ms);
   translate: 0 0;
   opacity: 1;
 }
 @starting-style {
-  :where(dialog:is([open], dialog:popover-open)) {
+  :where(dialog:is([open], :popover-open)) {
     translate: var(--tx) var(--ty);
     opacity: 0;
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, dialog:popover-open))) {
+:where(:root:has(dialog:is([open]:modal, :popover-open))) {
   overflow: hidden;
 }
 

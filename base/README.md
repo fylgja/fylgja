@@ -1,8 +1,10 @@
 # Fylgja Base
 
+Is the
+
 ## Inspirations
 
-THhe Fylgja Base is not made just on our knowledge,
+The Fylgja Base is not made just on our knowledge,
 there many great CSS Developers and Frameworks out there that are all ready doing a great job,
 for providing commen defaults.
 

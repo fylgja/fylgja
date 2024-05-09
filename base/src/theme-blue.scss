@@ -3,4 +3,6 @@
  * Licensed under MIT Open Source
  */
 
-@use "./brand";
+@use "./brand" with (
+	$brand: hsl(213 73% 35%)
+);

@@ -1,0 +1,13 @@
+.flow > * + * {
+	margin-block-start: var(--flow-size, 1em);
+}
+
+.flex,
+.flex-row {
+	display: flex;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
