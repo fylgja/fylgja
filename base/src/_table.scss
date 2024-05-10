@@ -40,7 +40,6 @@ $striped-bg: color-mix(in oklab, var(--root-bg) 94%, currentcolor) !default;
 	background: var(--table-striped-bg, #{$striped-bg});
 }
 
-:where(table caption) {
+:where(caption) {
 	margin-block: 0.5em;
-	font-style: italic;
 }

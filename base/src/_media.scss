@@ -15,3 +15,14 @@
 	block-size: auto;
 	aspect-ratio: var(--aspect-ratio, 16 / 9);
 }
+
+:where(figure) {
+	display: inline-grid;
+	gap: 0.5em;
+	margin: 0;
+}
+
+:where(figcaption, caption) {
+	text-align: center;
+	font-style: italic;
+}
