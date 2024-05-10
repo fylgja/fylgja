@@ -21,7 +21,7 @@
 		@include btn.hover;
 	}
 
-	&:active {
+	&:is(:active, [aria-current="page"], [aria-checked="true"]) {
 		@include btn.active;
 	}
 

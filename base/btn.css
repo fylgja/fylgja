@@ -36,7 +36,7 @@ input:is([type=button], [type=submit], [type=reset])):hover {
 }
 :where(.btn,
 button,
-input:is([type=button], [type=submit], [type=reset])):active {
+input:is([type=button], [type=submit], [type=reset])):is(:active, [aria-current=page], [aria-checked=true]) {
   border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
