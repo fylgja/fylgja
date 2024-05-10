@@ -87,6 +87,10 @@ $anchor-offset: max(2rem, 5svb) !default;
 	line-height: var(--line-height, #{$line-height});
 }
 
+:where(article, section) {
+	display: flow-root;
+}
+
 // Prevent touch delay on touch devices
 :where(
 		:any-link,
