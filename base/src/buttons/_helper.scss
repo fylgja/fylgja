@@ -4,8 +4,7 @@
 $gap: 0.5em;
 $padding-block: 0.375rem !default;
 $padding-inline: 0.8rem !default;
-$border-size: 2px !default;
-$border-style: solid !default;
+$border-width: 2px !default;
 $radius: 0.5rem !default;
 $font-weight: 500 !default;
 
@@ -33,7 +32,7 @@ $disabled-color: hsl(0 0% 40%) !default;
 	gap: var(--btn-gap, #{$gap});
 	padding-block: var(--btn-py, #{$padding-block});
 	padding-inline: var(--btn-px, #{$padding-inline});
-	border: var(--btn-border-width, #{$border-size}) $border-style
+	border: var(--btn-border-width, #{$border-width}) solid
 		var(--btn-stroke, #{$stroke});
 	border-radius: var(--btn-radius, #{$radius});
 	background: var(--btn-bg, #{$bg});

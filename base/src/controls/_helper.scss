@@ -2,7 +2,7 @@
 // Licensed under MIT Open Source
 
 $size: 1.25em !default;
-$border-size: 2px !default;
+$border-width: 2px !default;
 $radius: 0.35rem !default;
 
 $bg: none !default;
@@ -18,7 +18,7 @@ $disabled-opacity: 0.6 !default;
 	appearance: none;
 	block-size: var(--size-y, #{$size});
 	inline-size: var(--size-x, #{$size});
-	border: var(--control-border-width, #{$border-size}) solid currentcolor;
+	border: var(--control-border-width, #{$border-width}) solid currentcolor;
 	background: var(--control-bg, #{$bg});
 	color: var(--control-color, #{$color});
 	border-radius: var(--control-radius, #{$radius});
