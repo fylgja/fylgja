@@ -10,6 +10,9 @@ $on-brand: hsl(260 0% 100%) !default;
 	--brand: #{$brand};
 	--on-brand: #{$on-brand};
 	--form-active-color: var(--brand);
+	--control-checked-stroke: var(--brand);
+	--control-checked-bg: var(--brand);
+	--control-checked-color: var(--on-brand);
 	scrollbar-color: var(--scrollthumb-color, var(--brand))
 		var(--scrolltrack-color, transparent);
 	accent-color: var(--brand);
@@ -21,13 +24,6 @@ $on-brand: hsl(260 0% 100%) !default;
 		--root-bg: color-mix(in oklab, black 82%, var(--brand));
 		--root-fg: white;
 		--select-icon: var(--chevron-dark-scheme);
-	}
-}
-
-@media print {
-	:root {
-		--brand: hsl(0 0% 0%);
-		--on-brand: hsl(0 0% 100%);
 	}
 }
 
@@ -50,6 +46,10 @@ $on-brand: hsl(260 0% 100%) !default;
 	border-color: var(--brand);
 }
 
+:where(tbody tr:nth-child(even) :is(th, td)) {
+	background: color-mix(in oklab, var(--root-bg) 94%, currentcolor);
+}
+
 ::-webkit-calendar-picker-indicator {
 	outline-color: var(--brand);
 }
@@ -68,10 +68,8 @@ $on-brand: hsl(260 0% 100%) !default;
 	--btn-active-bg: color-mix(in oklab, var(--brand) 72%, black);
 }
 
-:where(
-		.btn,
-		button,
-		input:is([type="button"], [type="submit"], [type="reset"])
-	):has(svg:only-child, img:only-child) {
+:where(.btn, button, [type="button"], [type="submit"], [type="reset"]):has(
+		:where(svg:only-child, img:only-child)
+	) {
 	--btn-px: var(--btn-py, #{btn.$padding-block});
 }
