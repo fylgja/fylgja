@@ -18,10 +18,6 @@
 				margin-inline: auto;
 			}
 
-			.flow > * + * {
-				margin-block-start: 1em;
-			}
-
 			.overflow-auto {
 				overflow: auto;
 			}
@@ -177,8 +173,11 @@
 				</p>
 			</section>
 			<section id="text">
-				<h1>Heading 1</h1>
-				<p>After heading</p>
+				<hgroup>
+					<p><small>Sup heading</small></p>
+					<h1>Heading 1</h1>
+					<p><small>Sub heading</small></p>
+				</hgroup>
 				<h2>Heading 2</h2>
 				<p>After heading</p>
 				<h3>Heading 3</h3>
@@ -459,9 +458,16 @@ p q r s t u v w x y z { | } ~ </code>
 						<label>
 							select
 							<select>
-								<option value="option 1">option 1</option>
-								<option value="option 2">option 2</option>
-								<option value="option 3">option 3</option>
+								<option value="1">Level 1</option>
+								<option value="2">Level 2</option>
+								<optgroup label="Hard mode">
+									<option value="3">Level 3</option>
+									<option value="4">Level 4</option>
+								</optgroup>
+								<optgroup label="Expert mode">
+									<option value="5">Level 5</option>
+									<option value="6">Level 6</option>
+								</optgroup>
 							</select>
 						</label>
 						<label>

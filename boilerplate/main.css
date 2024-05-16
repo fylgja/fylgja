@@ -1,18 +1,12 @@
-/* stylelint-disable */
-
-/* All */
-@import url("../base/index.css");
+/* Base */
+@import url("../base");
 @import url("../base/theme.css");
 
-/* Split for theme styles */
-/* @import url("../base/preflight.css"); */
+/* Tokens */
 
-/* Individual testing versions */
-/* @import url("../base/form.css"); */
-/* @import url("../base/btn.css"); */
+/* Components */
+@import url("../components/container");
 
-/* input:is([type="checkbox"], [type="radio"]):checked {
-	border-color: var(--brand);
-	background: var(--brand);
-	color: var(--on-brand);
-} */
+/* Utilities */
+@import url("../utilities/spacing.css");
+@import url("../utilities/auto-grid.css");
