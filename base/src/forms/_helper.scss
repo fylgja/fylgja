@@ -10,7 +10,7 @@ $line-height: inherit !default;
 $font-weight: 500 !default;
 
 $bg: var(--root-bg) !default;
-$color: inherit !default;
+$color: var(--root-fg) !default;
 
 $disabled-border-style: dashed !default;
 $disabled-opacity: 0.6 !default;
@@ -23,8 +23,8 @@ $icon-size: 1.25em !default;
 	margin: 0;
 	padding-block: var(--form-py, #{$padding-block});
 	padding-inline: var(--form-px, #{$padding-inline});
-	border: var(--form-border-width, #{$border-width}) solid
-		var(--form-stroke, currentcolor);
+	border-width: var(--form-border-width, #{$border-width});
+	border-color: var(--form-stroke, currentcolor);
 	border-radius: var(--form-radius, #{$radius});
 	background: var(--form-bg, #{$bg});
 	color: var(--form-color, #{$color});
@@ -42,7 +42,7 @@ $icon-size: 1.25em !default;
 	-webkit-print-color-adjust: exact;
 	print-color-adjust: exact;
 
-	&:where(:dir(rtl)) {
+	&:dir(rtl) {
 		--icon-position: left;
 	}
 }
@@ -117,6 +117,7 @@ $range-thumb-stroke: var(--root-bg);
 	border: var(--thumb-border-width, 3px) solid
 		var(--thumb-stroke, #{$range-thumb-stroke});
 	background: var(--thumb-bg, var(--fill-color));
+	outline: var(--outline-width) solid var(--form-active-color, currentcolor);
 }
 
 @mixin range {
@@ -129,13 +130,18 @@ $range-thumb-stroke: var(--root-bg);
 	padding: 0;
 	border: 0;
 	background: transparent;
+	outline: 0;
 	cursor: grab;
 
-	&:where(:dir(rtl)) {
+	&:dir(rtl) {
 		--fill-direction: left;
 	}
 
-	&:where(:active) {
+	&:focus-visible {
+		--outline-width: 2px;
+	}
+
+	&:active {
 		cursor: grabbing;
 	}
 
