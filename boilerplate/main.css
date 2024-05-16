@@ -10,3 +10,51 @@
 /* Utilities */
 @import url("../utilities/spacing.css");
 @import url("../utilities/auto-grid.css");
+
+/* Boilerplate code */
+:root {
+	--anchor-offset: calc(75px + 5ex);
+}
+
+.wrapper {
+	inline-size: min(100% - 2rem, var(--max-size, 75ch));
+	padding-block: 1rem;
+	margin-inline: auto;
+}
+
+.sticky-header {
+	--max-size: 100ch;
+	z-index: 9;
+	position: sticky;
+	inset-block-start: 0;
+	background-color: var(--root-bg);
+	border-block-end: 1px solid
+		color-mix(in oklab, var(--root-bg) 75%, var(--root-fg));
+
+	& nav a {
+		--btn-stroke: transparent;
+	}
+
+	@media print {
+		display: none;
+	}
+}
+
+[data-theme="light"] {
+	--root-bg: hsl(0 0% 100%);
+	--root-fg: hsl(0 0% 8%);
+	--select-icon: var(--chevron-light-scheme);
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	--root-bg: color-mix(in oklab, black 82%, var(--brand));
+	--root-fg: #fff;
+	--select-icon: var(--chevron-dark-scheme);
+	color-scheme: dark;
+}
+
+[data-theme="arc"] {
+	--brand: var(--arc-palette-foregroundSecondary);
+	--on-brand: var(--arc-palette-background);
+}
