@@ -17,6 +17,7 @@
   color: var(--btn-color, currentcolor);
   font-weight: var(--btn-font-weight, 500);
   text-decoration: none;
+  vertical-align: middle;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;

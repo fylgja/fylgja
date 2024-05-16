@@ -54,6 +54,10 @@ select):focus {
   outline-offset: 0;
 }
 
+:where(textarea) {
+  field-sizing: content;
+}
+
 :where(input[type=color]) {
   --form-py: 3px;
   --form-px: 3px;

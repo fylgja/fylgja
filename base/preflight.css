@@ -22,7 +22,6 @@
   --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
   --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
-  color-scheme: light dark;
   font-family: var(--family-sans);
   tab-size: 4;
   -webkit-text-size-adjust: none;
@@ -94,7 +93,7 @@ textarea,
 }
 
 :where(blockquote, hr) {
-  margin-block: var(--separator-text-my, 2.5em);
+  margin-block: var(--separator-my, 2.5em);
   margin-inline: 0;
 }
 
@@ -297,13 +296,13 @@ textarea,
   }
 }
 
-:where(dialog) {
+:where(dialog, [popover]) {
   --ty: var(--dialog-translate-y, 2rem);
   --tx: var(--dialog-translate-x, 0);
   --speed: var(--dialog-close-speed, 200ms);
   max-block-size: calc(100% - 2em);
   max-inline-size: calc(100% - 2em);
-  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 96%, white));
+  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, white));
   color: var(--dialog-color, var(--root-fg));
   border-radius: 1rem;
   padding: 1.5rem;
@@ -312,18 +311,18 @@ textarea,
   translate: var(--tx) var(--ty);
 }
 @media (prefers-reduced-motion: no-preference) {
-  :where(dialog) {
+  :where(dialog, [popover]) {
     transition: translate var(--speed) ease-out, opacity var(--speed) ease-out, display var(--speed) ease-out allow-discrete, overlay var(--speed) ease-out;
   }
 }
 
-:where(dialog:is([open], :popover-open)) {
+:where(dialog[open], :popover-open) {
   --speed: var(--dialog-open-speed, 300ms);
   translate: 0 0;
   opacity: 1;
 }
 @starting-style {
-  :where(dialog:is([open], :popover-open)) {
+  :where(dialog[open], :popover-open) {
     translate: var(--tx) var(--ty);
     opacity: 0;
   }
