@@ -12,12 +12,14 @@
 }
 
 :where(input[type="radio"]) {
+	--_gap: 3px;
 	--control-radius: 50%;
 }
 
 :where(input[type="checkbox"]:not([role="switch"])) {
-	--_icon: var(--icon, #{control.$checkbox-icon});
-	--icon-gap: 1px;
+	--_gap: 1px;
+	--_icon: url("#");
+	--checked-icon: #{control.$checkbox-icon};
 	--indeterminate-icon: #{control.$indeterminate-icon};
 
 	&:indeterminate {
@@ -25,10 +27,8 @@
 		--_icon: var(--indeterminate-icon);
 	}
 
-	&::after {
-		// stylelint-disable-next-line property-no-vendor-prefix
-		-webkit-mask: var(--_icon, url("#")) center / contain no-repeat;
-		mask: var(--_icon, url("#")) center / contain no-repeat;
+	&:checked {
+		--_icon: var(--checked-icon);
 	}
 }
 

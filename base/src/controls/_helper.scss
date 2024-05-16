@@ -14,22 +14,25 @@ $indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/200
 $disabled-opacity: 0.6 !default;
 
 @mixin base {
-	--_gap: var(--icon-gap, 3px);
+	--_gap: var(--icon-gap, 2px);
 	appearance: none;
 	block-size: var(--size-y, #{$size});
 	inline-size: var(--size-x, #{$size});
-	border: var(--control-border-width, #{$border-width}) solid currentcolor;
+	border: var(--control-border-width, #{$border-width}) solid
+		var(--control-stroke, currentcolor);
 	background: var(--control-bg, #{$bg});
 	color: var(--control-color, #{$color});
 	border-radius: var(--control-radius, #{$radius});
 	margin: 0;
 	padding: var(--_gap);
 	user-select: none;
-	-webkit-print-color-adjust: exact;
-	print-color-adjust: exact;
 
 	&:not(:disabled) {
 		cursor: pointer;
+	}
+
+	&:focus-visible {
+		outline-color: var(--control-stroke, currentcolor);
 	}
 
 	&::after {
@@ -43,11 +46,17 @@ $disabled-opacity: 0.6 !default;
 		opacity: var(--_show-icon, 0);
 		transition: translate 0.15s, scale 0.15s, opacity 0.15s;
 		forced-color-adjust: none;
+		// stylelint-disable-next-line property-no-vendor-prefix
+		-webkit-mask: var(--_icon) center / contain no-repeat;
+		mask: var(--_icon) center / contain no-repeat;
 	}
 
 	&:checked {
 		--_show-icon: 1;
-		color: var(--form-active-color, var(--control-color, #{$color}));
+		outline-color: var(--control-checked-stroke, var(--root-fg));
+		border-color: var(--control-checked-stroke, var(--root-fg));
+		background-color: var(--control-checked-bg, var(--root-fg));
+		color: var(--control-checked-color, var(--root-bg));
 	}
 }
 
@@ -58,7 +67,6 @@ $switch-size: ($size + 0.75) !default;
 	--_show-icon: 1;
 	--control-radius: 1.25em;
 	--size-x: #{$switch-size};
-	--icon-color: color-mix(in oklab, currentcolor 60%, transparent);
 
 	&::after {
 		inline-size: auto;
@@ -66,15 +74,14 @@ $switch-size: ($size + 0.75) !default;
 	}
 
 	&:checked {
-		$offset-x: calc(var(--size-x) - var(--size-y, #{$size}));
-		--icon-color: currentcolor;
+		--_offset-x: calc(var(--size-x) - var(--size-y, #{$size}));
 
 		&::after {
-			translate: $offset-x 0%;
+			translate: var(--_offset-x) 0%;
 		}
 
 		&:dir(rtl)::after {
-			translate: calc($offset-x / -1) 0%;
+			translate: calc(var(--_offset-x) / -1) 0%;
 		}
 	}
 }
