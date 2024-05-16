@@ -46,6 +46,10 @@
 	outline-offset: 0;
 }
 
+:where(textarea) {
+	field-sizing: content;
+}
+
 :where(input[type="color"]) {
 	@include form.color;
 }
