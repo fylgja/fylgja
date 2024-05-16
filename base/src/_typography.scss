@@ -2,7 +2,7 @@
 // Licensed under MIT Open Source
 
 $text-my: 1em 1rem !default;
-$separator-text-my: 2.5em !default;
+$separator-my: 2.5em !default;
 
 $h1-font-size: 3.5rem;
 $h2-font-size: 2.5rem;
@@ -19,7 +19,7 @@ $h-line-height: 1.1;
 }
 
 :where(blockquote, hr) {
-	margin-block: var(--separator-text-my, #{$separator-text-my});
+	margin-block: var(--separator-my, #{$separator-my});
 	margin-inline: 0;
 }
 

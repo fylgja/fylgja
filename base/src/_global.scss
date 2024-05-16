@@ -46,7 +46,6 @@ $anchor-offset: max(2rem, 5svb) !default;
 	--chevron-light-scheme: #{$chevron-light-scheme};
 	--chevron-dark-scheme: #{$chevron-dark-scheme};
 	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
-	color-scheme: light dark;
 	font-family: var(--family-sans);
 	tab-size: 4;
 	-webkit-text-size-adjust: none;
