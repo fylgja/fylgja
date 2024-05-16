@@ -4,7 +4,6 @@
 $py: 0.875em !default;
 $px: 0.625em !default;
 $stroke: #777 !default;
-$striped-bg: color-mix(in oklab, var(--root-bg) 94%, currentcolor) !default;
 
 :where(table) {
 	border-spacing: 0;
@@ -34,12 +33,4 @@ $striped-bg: color-mix(in oklab, var(--root-bg) 94%, currentcolor) !default;
 
 :where(tfoot tr:first-child :is(th, td)) {
 	border-block-start-width: 2px;
-}
-
-:where(tbody tr:nth-child(even) :is(th, td)) {
-	background: var(--table-striped-bg, #{$striped-bg});
-}
-
-:where(caption) {
-	margin-block: 0.5em;
 }
