@@ -2,9 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])),
+:where(.btn, button, [type=button], [type=submit], [type=reset]),
 :where(input[type=file])::file-selector-button {
   appearance: button;
   display: inline-flex;
@@ -22,27 +20,19 @@ input:is([type=button], [type=submit], [type=reset])),
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
 }
 
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):hover {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):is(:active, [aria-current=page], [aria-checked=true]) {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):is(:active, [aria-current=page], [aria-checked=true]) {
   border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):disabled {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):disabled {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
   background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));

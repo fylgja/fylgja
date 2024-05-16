@@ -151,6 +151,7 @@ textarea,
   padding-inline-start: 0;
 }
 
+:where(hgroup > :is(h1, h2, h3, h4, h5, h6, p)),
 :where(dl, ol, ul) :where(dl, ol, ul) {
   margin-block: 0;
 }
@@ -177,7 +178,7 @@ textarea,
 }
 
 :where(small) {
-  font-size: 0.8em;
+  font-size: 0.875em;
 }
 
 :where(sub, sup) {
@@ -222,14 +223,6 @@ textarea,
 
 :where(tfoot tr:first-child :is(th, td)) {
   border-block-start-width: 2px;
-}
-
-:where(tbody tr:nth-child(even) :is(th, td)) {
-  background: var(--table-striped-bg, color-mix(in oklab, var(--root-bg) 94%, currentcolor));
-}
-
-:where(caption) {
-  margin-block: 0.5em;
 }
 
 :where(code, kbd, samp, pre) {
@@ -340,9 +333,7 @@ textarea,
   overflow: hidden;
 }
 
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])),
+:where(.btn, button, [type=button], [type=submit], [type=reset]),
 :where(input[type=file])::file-selector-button {
   appearance: button;
   display: inline-flex;
@@ -360,27 +351,19 @@ input:is([type=button], [type=submit], [type=reset])),
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
 }
 
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):hover {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):is(:active, [aria-current=page], [aria-checked=true]) {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):is(:active, [aria-current=page], [aria-checked=true]) {
   border-color: var(--btn-active-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn,
-button,
-input:is([type=button], [type=submit], [type=reset])):disabled {
+:where(.btn, button, [type=button], [type=submit], [type=reset]):disabled {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
   background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
@@ -418,10 +401,11 @@ select) {
   margin: 0;
   padding-block: var(--form-py, 0.375rem);
   padding-inline: var(--form-px, 0.8rem);
-  border: var(--form-border-width, 1px) solid var(--form-stroke, currentcolor);
+  border-width: var(--form-border-width, 1px);
+  border-color: var(--form-stroke, currentcolor);
   border-radius: var(--form-radius, 0.35rem);
   background: var(--form-bg, var(--root-bg));
-  color: var(--form-color, inherit);
+  color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
 :where(input:not([type=checkbox],
@@ -498,12 +482,16 @@ select):focus {
   padding: 0;
   border: 0;
   background: transparent;
+  outline: 0;
   cursor: grab;
 }
-:where(input[type=range]):where(:dir(rtl)) {
+:where(input[type=range]):dir(rtl) {
   --fill-direction: left;
 }
-:where(input[type=range]):where(:active) {
+:where(input[type=range]):focus-visible {
+  --outline-width: 2px;
+}
+:where(input[type=range]):active {
   cursor: grabbing;
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
@@ -527,6 +515,7 @@ select):focus {
   border-radius: var(--thumb-radius, 50%);
   border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
+  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
 }
 :where(input[type=range])::-moz-range-thumb {
   appearance: none;
@@ -537,6 +526,7 @@ select):focus {
   border-radius: var(--thumb-radius, 50%);
   border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
+  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
   box-sizing: border-box;
 }
 
@@ -553,7 +543,7 @@ select):focus {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-:where(select:not([multiple], [size]:not([size="1"]))):where(:dir(rtl)) {
+:where(select:not([multiple], [size]:not([size="1"]))):dir(rtl) {
   --icon-position: left;
 }
 
@@ -616,22 +606,23 @@ input:is([type=tel], [type=url], [type=email], [type=number]) {
 }
 
 :where(input[type=checkbox], input[type=radio]) {
-  --_gap: var(--icon-gap, 3px);
+  --_gap: var(--icon-gap, 2px);
   appearance: none;
   block-size: var(--size-y, 1.25em);
   inline-size: var(--size-x, 1.25em);
-  border: var(--control-border-width, 2px) solid currentcolor;
+  border: var(--control-border-width, 2px) solid var(--control-stroke, currentcolor);
   background: var(--control-bg, none);
   color: var(--control-color, currentcolor);
   border-radius: var(--control-radius, 0.35rem);
   margin: 0;
   padding: var(--_gap);
   user-select: none;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 :where(input[type=checkbox], input[type=radio]):not(:disabled) {
   cursor: pointer;
+}
+:where(input[type=checkbox], input[type=radio]):focus-visible {
+  outline-color: var(--control-stroke, currentcolor);
 }
 :where(input[type=checkbox], input[type=radio])::after {
   content: "";
@@ -644,54 +635,63 @@ input:is([type=tel], [type=url], [type=email], [type=number]) {
   opacity: var(--_show-icon, 0);
   transition: translate 0.15s, scale 0.15s, opacity 0.15s;
   forced-color-adjust: none;
+  -webkit-mask: var(--_icon) center/contain no-repeat;
+  mask: var(--_icon) center/contain no-repeat;
 }
 :where(input[type=checkbox], input[type=radio]):checked {
   --_show-icon: 1;
-  color: var(--form-active-color, var(--control-color, currentcolor));
+  outline-color: var(--control-checked-stroke, var(--root-fg));
+  border-color: var(--control-checked-stroke, var(--root-fg));
+  background-color: var(--control-checked-bg, var(--root-fg));
+  color: var(--control-checked-color, var(--root-bg));
 }
 :where(input[type=checkbox], input[type=radio]):disabled {
   opacity: var(--control-disabled-opacity, 0.6);
 }
 
 :where(input[type=radio]) {
+  --_gap: 3px;
   --control-radius: 50%;
 }
 
 :where(input[type=checkbox]:not([role=switch])) {
-  --_icon: var(--icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E"));
-  --icon-gap: 1px;
+  --_gap: 1px;
+  --_icon: url("#");
+  --checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E");
   --indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
 }
 :where(input[type=checkbox]:not([role=switch])):indeterminate {
   --_show-icon: 1;
   --_icon: var(--indeterminate-icon);
 }
-:where(input[type=checkbox]:not([role=switch]))::after {
-  -webkit-mask: var(--_icon, url("#")) center/contain no-repeat;
-  mask: var(--_icon, url("#")) center/contain no-repeat;
+:where(input[type=checkbox]:not([role=switch])):checked {
+  --_icon: var(--checked-icon);
 }
 
 :where(input[type=checkbox][role=switch]) {
   --_show-icon: 1;
   --control-radius: 1.25em;
   --size-x: 2em;
-  --icon-color: color-mix(in oklab, currentcolor 60%, transparent);
 }
 :where(input[type=checkbox][role=switch])::after {
   inline-size: auto;
   aspect-ratio: 1;
 }
 :where(input[type=checkbox][role=switch]):checked {
-  --icon-color: currentcolor;
+  --_offset-x: calc(var(--size-x) - var(--size-y, 1.25em));
 }
 :where(input[type=checkbox][role=switch]):checked::after {
-  translate: calc(var(--size-x) - var(--size-y, 1.25em)) 0%;
+  translate: var(--_offset-x) 0%;
 }
 :where(input[type=checkbox][role=switch]):checked:dir(rtl)::after {
-  translate: calc((var(--size-x) - var(--size-y, 1.25em)) / -1) 0%;
+  translate: calc(var(--_offset-x) / -1) 0%;
 }
 
 @media print {
+  :root {
+    --root-bg: white;
+    --root-fg: black;
+  }
   :is(h1, h2, h3, h4, h5, h6) {
     page-break-after: avoid;
   }
@@ -710,5 +710,9 @@ input:is([type=tel], [type=url], [type=email], [type=number]) {
   }
   :is(thead) {
     display: table-header-group;
+  }
+  :is(input, select, textarea, button, .btn) {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }

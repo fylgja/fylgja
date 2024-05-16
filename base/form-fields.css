@@ -14,10 +14,11 @@ select) {
   margin: 0;
   padding-block: var(--form-py, 0.375rem);
   padding-inline: var(--form-px, 0.8rem);
-  border: var(--form-border-width, 1px) solid var(--form-stroke, currentcolor);
+  border-width: var(--form-border-width, 1px);
+  border-color: var(--form-stroke, currentcolor);
   border-radius: var(--form-radius, 0.35rem);
   background: var(--form-bg, var(--root-bg));
-  color: var(--form-color, inherit);
+  color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
 :where(input:not([type=checkbox],
@@ -94,12 +95,16 @@ select):focus {
   padding: 0;
   border: 0;
   background: transparent;
+  outline: 0;
   cursor: grab;
 }
-:where(input[type=range]):where(:dir(rtl)) {
+:where(input[type=range]):dir(rtl) {
   --fill-direction: left;
 }
-:where(input[type=range]):where(:active) {
+:where(input[type=range]):focus-visible {
+  --outline-width: 2px;
+}
+:where(input[type=range]):active {
   cursor: grabbing;
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
@@ -123,6 +128,7 @@ select):focus {
   border-radius: var(--thumb-radius, 50%);
   border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
+  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
 }
 :where(input[type=range])::-moz-range-thumb {
   appearance: none;
@@ -133,6 +139,7 @@ select):focus {
   border-radius: var(--thumb-radius, 50%);
   border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
+  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
   box-sizing: border-box;
 }
 
@@ -149,7 +156,7 @@ select):focus {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-:where(select:not([multiple], [size]:not([size="1"]))):where(:dir(rtl)) {
+:where(select:not([multiple], [size]:not([size="1"]))):dir(rtl) {
   --icon-position: left;
 }
 

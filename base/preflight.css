@@ -151,6 +151,7 @@ textarea,
   padding-inline-start: 0;
 }
 
+:where(hgroup > :is(h1, h2, h3, h4, h5, h6, p)),
 :where(dl, ol, ul) :where(dl, ol, ul) {
   margin-block: 0;
 }
@@ -177,7 +178,7 @@ textarea,
 }
 
 :where(small) {
-  font-size: 0.8em;
+  font-size: 0.875em;
 }
 
 :where(sub, sup) {
@@ -222,14 +223,6 @@ textarea,
 
 :where(tfoot tr:first-child :is(th, td)) {
   border-block-start-width: 2px;
-}
-
-:where(tbody tr:nth-child(even) :is(th, td)) {
-  background: var(--table-striped-bg, color-mix(in oklab, var(--root-bg) 94%, currentcolor));
-}
-
-:where(caption) {
-  margin-block: 0.5em;
 }
 
 :where(code, kbd, samp, pre) {
@@ -341,6 +334,10 @@ textarea,
 }
 
 @media print {
+  :root {
+    --root-bg: white;
+    --root-fg: black;
+  }
   :is(h1, h2, h3, h4, h5, h6) {
     page-break-after: avoid;
   }
@@ -359,5 +356,9 @@ textarea,
   }
   :is(thead) {
     display: table-header-group;
+  }
+  :is(input, select, textarea, button, .btn) {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
