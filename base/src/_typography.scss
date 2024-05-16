@@ -83,7 +83,8 @@ $h-line-height: 1.1;
 	padding-inline-start: 0;
 }
 
-// Remove margin on nested lists
+// Remove margin on nested lists and nested items inside a hgroup
+:where(hgroup > :is(h1, h2, h3, h4, h5, h6, p)),
 :where(dl, ol, ul) :where(dl, ol, ul) {
 	margin-block: 0;
 }
@@ -112,7 +113,7 @@ $h-line-height: 1.1;
 
 // Add the correct font size in all browsers
 :where(small) {
-	font-size: 0.8em;
+	font-size: 0.875em;
 }
 
 // Prevent sub and sup elements from affecting the line height in all browsers
