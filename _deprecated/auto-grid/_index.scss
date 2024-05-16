@@ -1,0 +1,13 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@forward "helper";
+
+@use "@fylgja/theme";
+@use "helper" as *;
+
+@include theme.atLayer($auto-grid-layer) {
+    .auto-grid {
+        @include build-auto-grid;
+    }
+}

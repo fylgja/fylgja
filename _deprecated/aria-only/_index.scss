@@ -1,0 +1,37 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+
+@forward "helper";
+
+@use "@fylgja/theme";
+@use "helper" as *;
+
+@include theme.atLayer($aria-only-layer) {
+    .aria-only,
+    .aria-only-focusable:not(:focus, :focus-within) {
+        @include aria-only($enable-aria-only-important);
+    }
+
+    @if $enable-aria-only-mq {
+        @each $mq-name, $mq in $aria-only-breakpoints {
+            @media (min-width: $mq) {
+                .#{$mq-name}#{$aria-only-separator} {
+                    &aria-only {
+                        @include aria-only($enable-aria-only-important);
+                    }
+
+                    &not-aria-only {
+                        @include aria-only(
+                            $enable-aria-only-important,
+                            $unset: true
+                        );
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "@fylgja/mq/helper" as mq;
+
+// Drop in v2
+$enable-aria-only-layer: false !default;
+$aria-only-layer-name: if($enable-aria-only-layer, "utilities", null) !default;
+
+// * The separator style can be a safe css separator, the "-" (hyphen)
+// * Or the unsafe css "\\:" (TailwindCSS separator)
+// * Or use a underscore "_".
+// * If you want something different that is still a safe separator
+$aria-only-separator: "-" !default;
+
+$enable-aria-only-mq: false !default;
+$enable-aria-only-important: false !default;
+
+$aria-only-layer: $aria-only-layer-name !default;
+$aria-only-breakpoints: mq.$breakpoints !default;
+
+// *1: preventing text to be condensed
+// See https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+
+/// Sets aria-only to hide content but keep it available to screen readers
+///
+/// @param {Boolean} $enforce - set all values to important
+/// @param {Boolean} $unset - unset all values to default
+/// @return {Mixed} - aria-only (sr-only) styles
+@mixin aria-only($enforce: false, $unset: false) {
+    $important: if($enforce, "!important", null);
+    position: if($unset, unset, absolute) #{$important};
+    width: if($unset, unset, 1px) #{$important};
+    height: if($unset, unset, 1px) #{$important};
+    margin: if($unset, unset, -1px) #{$important};
+    white-space: if($unset, unset, nowrap) #{$important}; // *1
+    overflow: if($unset, unset, hidden) #{$important};
+    clip-path: if($unset, unset, inset(50%)) #{$important};
+}
+
+/// Sets aria-only to hide content but keep it available to screen readers,
+/// if not focused
+///
+/// @require {Mixin} aria-only
+/// @param {Boolean} $enforce - set all values to important
+/// @param {Boolean} $unset - unset all values to default
+/// @return {Mixed} - aria-only (sr-only) styles for none focus
+@mixin aria-only-focusable($enforce: false, $unset: false) {
+    &:not(:focus) {
+        @include aria-only($enforce, $unset);
+    }
+}

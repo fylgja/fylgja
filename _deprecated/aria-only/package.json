@@ -1,0 +1,33 @@
+{
+  "name": "@fylgja/aria-only",
+  "version": "1.2.4",
+  "description": "The aria-only (a.k.a. sr-only) visually hides elements. But keeps it accessible to screen-readers and other aria tools",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "aria-only.css",
+  "sass": "_index.scss",
+  "unpkg": "aria-only.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/aria-only"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "a11y",
+    "aria-only",
+    "sr-only",
+    "visually-hidden"
+  ],
+  "scripts": {
+    "build": "npx sass --no-source-map -s compressed -I node_modules src:./",
+    "postbuild": "cp mq.css aria-only-mq.css"
+  },
+  "dependencies": {
+    "@fylgja/mq": "^1.2.2",
+    "@fylgja/theme": "^1.2.0"
+  }
+}
