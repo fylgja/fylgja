@@ -3,6 +3,7 @@
 @import url("../base/theme.css");
 
 /* Tokens */
+@import url("../tokens/shadow/shadow.css");
 
 /* Components */
 @import url("../components/container");
@@ -12,6 +13,16 @@
 @import url("../utilities/auto-grid.css");
 
 /* Boilerplate code */
+@view-transition {
+	navigation: auto;
+}
+
+@media (prefers-reduced-motion) {
+	@view-transition {
+		navigation: none;
+	}
+}
+
 :root {
 	--anchor-offset: calc(75px + 5ex);
 }
@@ -22,16 +33,25 @@
 	margin-inline: auto;
 }
 
+@keyframes add-shadow {
+	to {
+		box-shadow: var(--shadow-2);
+		background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
+	}
+}
+
 .sticky-header {
 	--max-size: 100ch;
 	z-index: 9;
 	position: sticky;
 	inset-block-start: 0;
 	background-color: var(--root-bg);
-	border-block-end: 1px solid
-		color-mix(in oklab, var(--root-bg) 75%, var(--root-fg));
+	backdrop-filter: blur(3px);
+	animation: add-shadow linear both;
+	animation-timeline: scroll();
+	animation-range: 0 4rem;
 
-	& nav a {
+	& nav :is(.btn, button) {
 		--btn-stroke: transparent;
 	}
 
@@ -44,6 +64,8 @@
 	--root-bg: hsl(0 0% 100%);
 	--root-fg: hsl(0 0% 8%);
 	--select-icon: var(--chevron-light-scheme);
+	--shadow-color: 0 0% 50%;
+	--shadow-weight: 1%;
 	color-scheme: light;
 }
 
@@ -51,10 +73,85 @@
 	--root-bg: color-mix(in oklab, black 82%, var(--brand));
 	--root-fg: #fff;
 	--select-icon: var(--chevron-dark-scheme);
+	--shadow-color: 220 40% 2%;
+	--shadow-weight: 25%;
 	color-scheme: dark;
 }
 
 [data-theme="arc"] {
-	--brand: var(--arc-palette-foregroundSecondary);
-	--on-brand: var(--arc-palette-background);
+	--brand: var(--arc-palette-foregroundSecondary, darkseagreen);
+	--on-brand: var(--arc-palette-background, black);
+}
+
+/* Pos fixed, Prevents weird overflow, if moving offscreen on Android */
+:is(.offcanvas, .offcanvas-end) {
+	position: fixed;
+	block-size: 100%;
+	max-block-size: 100%;
+}
+
+.offcanvas {
+	--dialog-translate-y: 0;
+	--dialog-translate-x: -100%;
+	margin-inline-start: 0;
+	border-start-start-radius: 0;
+	border-end-start-radius: 0;
+}
+
+.offcanvas-end {
+	--dialog-translate-y: 0;
+	--dialog-translate-x: 100%;
+	margin-inline-end: 0;
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
+}
+
+.toast {
+	--dialog-translate-y: -100%;
+	--dialog-translate-x: 0;
+	position: fixed;
+	margin-block-start: 1em;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.hidden {
+	display: none;
+}
+
+.overflow-auto {
+	overflow: auto;
+}
+
+@media (width > 480px) {
+	.sm\:flex {
+		display: flex;
+	}
+
+	.sm\:inline-flex {
+		display: inline-flex;
+	}
+}
+
+@media (width > 768px) {
+	.md\:flex {
+		display: flex;
+	}
+
+	.md\:inline-flex {
+		display: inline-flex;
+	}
+}
+
+@media (width > 1024px) {
+	.lg\:flex {
+		display: flex;
+	}
+
+	.lg\:inline-flex {
+		display: inline-flex;
+	}
 }

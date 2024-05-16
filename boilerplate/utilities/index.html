@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fylgja Boilerplate</title>
+		<link rel="stylesheet" href="../main.css" />
+		<script src="../index.js"></script>
+	</head>
+	<body>
+		<header class="sticky-header">
+			<div
+				class="wrapper"
+				style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;"
+			>
+				<a href="/">
+					<img
+						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
+						width="100"
+						height="32"
+						alt="Fylgja"
+					>
+				</a>
+				<nav style="align-items: center;">
+					<a class="btn" href="/">Back</a>
+					<button popovertarget="menuTheme" aria-label="Pick Theme">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
+					</button>
+					<dialog id="menuTheme" popover class="offcanvas-end">
+						<div class="flex-col">
+							<button data-set-theme="dark">Use dark theme</button>
+							<button data-set-theme="light">Use light theme</button>
+							<button data-set-theme="arc">Use Arc theme</button>
+							<hr style="--separator-my: 0.5rem;">
+							<button popovertarget="menuTheme" popovertargetaction="hide">Close theme Options</button>
+						</div>
+					</dialog>
+				</nav>
+			</div>
+		</header>
+		<main class="container">
+			<section>
+				<h2>Auto grid</h2>
+				<div class="auto-grid">
+					<img src="https://picsum.photos/id/425/480/480" alt="coffee beans" />
+					<img src="https://picsum.photos/id/426/480/480" alt="coffee beans" />
+					<img src="https://picsum.photos/id/427/480/480" alt="coffee beans" />
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
