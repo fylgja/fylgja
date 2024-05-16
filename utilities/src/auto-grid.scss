@@ -1,0 +1,21 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$col-size: 14rem !default;
+$gap: 1em !default;
+
+.auto-grid {
+	--max-cols: 4;
+	--cols: repeat(
+		auto-fill,
+		minmax(
+			clamp(100% / var(--max-cols) - var(--gap), var(--col-size), 100%),
+			1fr
+		)
+	);
+	--col-size: #{$col-size};
+	--gap: #{$gap};
+	display: grid;
+	gap: var(--gap);
+	grid-template-columns: var(--cols);
+}

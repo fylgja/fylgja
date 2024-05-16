@@ -1,0 +1,50 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+// stylelint-disable declaration-no-important
+
+:where(.unset-flow, .flow > :first-child) {
+	margin-block: 0;
+}
+
+:where(.flow > * + *) {
+	margin-block: var(--flow, 1em) 0;
+}
+
+.margin {
+	--my: initial;
+	--mx: initial;
+	margin-block: var(
+		--xl_my,
+		var(--lg_my, var(--md_my, var(--sm_my, var(--my))))
+	);
+	margin-inline: var(
+		--xl_mx,
+		var(--lg_mx, var(--md_mx, var(--sm_mx, var(--mx))))
+	);
+
+	@include for-mq($max: true) using ($name) {
+		--#{$name}_my: initial !important;
+		--#{$name}_mx: initial !important;
+	}
+}
+
+.padding {
+	--py: initial;
+	--px: initial;
+	padding-block: var(
+		--xl_my,
+		var(--lg_py, var(--md_py, var(--sm_py, var(--py))))
+	);
+	padding-inline: var(
+		--xl_mx,
+		var(--lg_px, var(--md_px, var(--sm_px, var(--px))))
+	);
+
+	@include for-mq($max: true) using ($name) {
+		--#{$name}_py: initial !important;
+		--#{$name}_px: initial !important;
+	}
+}

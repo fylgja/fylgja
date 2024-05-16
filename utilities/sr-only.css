@@ -1,0 +1,53 @@
+.sr-only,
+.not-sr-only {
+  position: var(--_use, absolute);
+  block-size: var(--_use, 1px);
+  inline-size: var(--_use, 1px);
+  overflow: var(--_use, hidden);
+  clip-path: var(--_use, inset(50%));
+}
+
+.not-sr-only {
+  --_use: /* */ ;
+}
+
+@media (width > 480px) {
+  .sm\:sr-only {
+    --_use: initial;
+  }
+  .sm\:not-sr-only {
+    --_use: /* */ ;
+  }
+}
+@media (width > 768px) {
+  .md\:sr-only {
+    --_use: initial;
+  }
+  .md\:not-sr-only {
+    --_use: /* */ ;
+  }
+}
+@media (width > 1024px) {
+  .lg\:sr-only {
+    --_use: initial;
+  }
+  .lg\:not-sr-only {
+    --_use: /* */ ;
+  }
+}
+@media (width > 1440px) {
+  .xl\:sr-only {
+    --_use: initial;
+  }
+  .xl\:not-sr-only {
+    --_use: /* */ ;
+  }
+}
+@media (width > 2200px) {
+  .xxl\:sr-only {
+    --_use: initial;
+  }
+  .xxl\:not-sr-only {
+    --_use: /* */ ;
+  }
+}

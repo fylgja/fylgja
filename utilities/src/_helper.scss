@@ -1,0 +1,20 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$breakpoints: (
+	"sm": 480px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1440px,
+	"xxl": 2200px,
+) !default;
+
+@mixin for-mq($max: false) {
+	@each $name, $mg in $breakpoints {
+		$bp: if($max, "width =< #{$mg}", "width > #{$mg}");
+
+		@media ($bp) {
+			@content ($name);
+		}
+	}
+}

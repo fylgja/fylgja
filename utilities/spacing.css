@@ -1,0 +1,81 @@
+:where(.unset-flow, .flow > :first-child) {
+  margin-block: 0;
+}
+
+:where(.flow > * + *) {
+  margin-block: var(--flow, 1em) 0;
+}
+
+.margin {
+  --my: initial;
+  --mx: initial;
+  margin-block: var(--xl_my, var(--lg_my, var(--md_my, var(--sm_my, var(--my)))));
+  margin-inline: var(--xl_mx, var(--lg_mx, var(--md_mx, var(--sm_mx, var(--mx)))));
+}
+@media (width =< 480px) {
+  .margin {
+    --sm_my: initial !important;
+    --sm_mx: initial !important;
+  }
+}
+@media (width =< 768px) {
+  .margin {
+    --md_my: initial !important;
+    --md_mx: initial !important;
+  }
+}
+@media (width =< 1024px) {
+  .margin {
+    --lg_my: initial !important;
+    --lg_mx: initial !important;
+  }
+}
+@media (width =< 1440px) {
+  .margin {
+    --xl_my: initial !important;
+    --xl_mx: initial !important;
+  }
+}
+@media (width =< 2200px) {
+  .margin {
+    --xxl_my: initial !important;
+    --xxl_mx: initial !important;
+  }
+}
+
+.padding {
+  --py: initial;
+  --px: initial;
+  padding-block: var(--xl_my, var(--lg_py, var(--md_py, var(--sm_py, var(--py)))));
+  padding-inline: var(--xl_mx, var(--lg_px, var(--md_px, var(--sm_px, var(--px)))));
+}
+@media (width =< 480px) {
+  .padding {
+    --sm_py: initial !important;
+    --sm_px: initial !important;
+  }
+}
+@media (width =< 768px) {
+  .padding {
+    --md_py: initial !important;
+    --md_px: initial !important;
+  }
+}
+@media (width =< 1024px) {
+  .padding {
+    --lg_py: initial !important;
+    --lg_px: initial !important;
+  }
+}
+@media (width =< 1440px) {
+  .padding {
+    --xl_py: initial !important;
+    --xl_px: initial !important;
+  }
+}
+@media (width =< 2200px) {
+  .padding {
+    --xxl_py: initial !important;
+    --xxl_px: initial !important;
+  }
+}

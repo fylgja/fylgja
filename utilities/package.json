@@ -1,16 +1,28 @@
 {
-  "name": "utilities",
-  "version": "1.0.0",
+  "name": "@fylgja/utilities",
+  "version": "0.1.0",
   "description": "",
-  "main": "postcss-utlities.js",
-  "scripts": {
-    "test": "postcss utilities.css --output output.css --no-map"
-  },
-  "keywords": [],
-  "author": "grimlink",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
   "license": "MIT",
-  "devDependencies": {
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0"
+  "main": "_index.scss",
+  "unpkg": "base.css",
+  "style": "base.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "base"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [],
+  "scripts": {
+    "start": "npx sass --no-source-map -w src:./",
+    "build:scss": "npx sass --no-source-map src:./",
+    "build:main": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "build:preflight": "npx lightningcss --minify --bundle preflight.css -o preflight.min.css",
+    "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
+    "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
+    "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form",
+    "prebuild": "npm run build:scss"
   }
 }

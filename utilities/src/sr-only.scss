@@ -1,0 +1,27 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+.sr-only,
+.not-sr-only {
+	position: var(--_use, absolute);
+	block-size: var(--_use, 1px);
+	inline-size: var(--_use, 1px);
+	overflow: var(--_use, hidden);
+	clip-path: var(--_use, inset(50%));
+}
+
+.not-sr-only {
+	--_use: /* */ ;
+}
+
+@include for-mq using ($name) {
+	.#{$name}\:sr-only {
+		--_use: initial;
+	}
+
+	.#{$name}\:not-sr-only {
+		--_use: /* */ ;
+	}
+}

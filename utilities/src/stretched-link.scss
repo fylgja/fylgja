@@ -1,0 +1,5 @@
+.stretched-link::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
