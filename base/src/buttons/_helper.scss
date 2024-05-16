@@ -39,6 +39,7 @@ $disabled-color: hsl(0 0% 40%) !default;
 	color: var(--btn-color, #{$color});
 	font-weight: var(--btn-font-weight, #{$font-weight});
 	text-decoration: none;
+	vertical-align: middle;
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s,
 		box-shadow 0.2s, var(--outline-transition);
 	user-select: none;
