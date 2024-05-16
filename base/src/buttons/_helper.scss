@@ -43,8 +43,6 @@ $disabled-color: hsl(0 0% 40%) !default;
 		box-shadow 0.2s, var(--outline-transition);
 	user-select: none;
 	cursor: pointer;
-	-webkit-tap-highlight-color: transparent; // unset iOS tap color
-	-webkit-touch-callout: none;
 }
 
 @mixin disabled {
