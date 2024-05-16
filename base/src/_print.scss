@@ -2,6 +2,11 @@
 // Licensed under MIT Open Source
 
 @media print {
+	:root {
+		--root-bg: white;
+		--root-fg: black;
+	}
+
 	:is(h1, h2, h3, h4, h5, h6) {
 		page-break-after: avoid;
 	}
@@ -26,5 +31,11 @@
 	// Repeat the table header per page
 	:is(thead) {
 		display: table-header-group;
+	}
+
+	// Keep bg colors for interactive elements
+	:is(input, select, textarea, button, .btn) {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 }
