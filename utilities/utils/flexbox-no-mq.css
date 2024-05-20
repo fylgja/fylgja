@@ -1,0 +1,10 @@
+.flexbox {
+  --flex-dir: row;
+  --flex-wrap: nowrap;
+  --flex: 0 1 auto;
+  display: flex;
+  flex-flow: var(--flex-dir) var(--flex-wrap);
+}
+.flexbox > * {
+  flex: var(--flex);
+}

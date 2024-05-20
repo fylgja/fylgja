@@ -1,0 +1,71 @@
+.flexbox {
+  --flex-dir: row;
+  --flex-wrap: nowrap;
+  --flex: 0 1 auto;
+  --sm_flex-dir: initial;
+  --sm_flex-wrap: initial;
+  --md_flex-dir: initial;
+  --md_flex-wrap: initial;
+  --lg_flex-dir: initial;
+  --lg_flex-wrap: initial;
+  --xl_flex-dir: initial;
+  --xl_flex-wrap: initial;
+  --xxl_flex-dir: initial;
+  --xxl_flex-wrap: initial;
+  display: flex;
+  flex-flow: var(--xxl_flex-dir, var(--xl_flex-dir, var(--lg_flex-dir, var(--md_flex-dir, var(--sm_flex-dir, var(--flex-dir)))))) var(--xxl_flex-wrap, var(--xl_flex-wrap, var(--lg_flex-wrap, var(--md_flex-wrap, var(--sm_flex-wrap, var(--flex-wrap))))));
+}
+.flexbox > * {
+  --sm_flex: initial;
+  --md_flex: initial;
+  --lg_flex: initial;
+  --xl_flex: initial;
+  --xxl_flex: initial;
+  flex: var(--xxl_flex, var(--xl_flex, var(--lg_flex, var(--md_flex, var(--sm_flex, var(--flex))))));
+}
+
+@media (width <= 480px) {
+  .flexbox {
+    --sm_flex-dir: initial !important;
+    --sm_flex-wrap: initial !important;
+  }
+  .flexbox > * {
+    --sm_flex: initial !important;
+  }
+}
+@media (width <= 768px) {
+  .flexbox {
+    --md_flex-dir: initial !important;
+    --md_flex-wrap: initial !important;
+  }
+  .flexbox > * {
+    --md_flex: initial !important;
+  }
+}
+@media (width <= 1024px) {
+  .flexbox {
+    --lg_flex-dir: initial !important;
+    --lg_flex-wrap: initial !important;
+  }
+  .flexbox > * {
+    --lg_flex: initial !important;
+  }
+}
+@media (width <= 1440px) {
+  .flexbox {
+    --xl_flex-dir: initial !important;
+    --xl_flex-wrap: initial !important;
+  }
+  .flexbox > * {
+    --xl_flex: initial !important;
+  }
+}
+@media (width <= 2200px) {
+  .flexbox {
+    --xxl_flex-dir: initial !important;
+    --xxl_flex-wrap: initial !important;
+  }
+  .flexbox > * {
+    --xxl_flex: initial !important;
+  }
+}

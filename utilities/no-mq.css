@@ -1,0 +1,134 @@
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.sr-only,
+.not-sr-only {
+  position: var(--_use, absolute);
+  block-size: var(--_use, 1px);
+  inline-size: var(--_use, 1px);
+  overflow: var(--_use, hidden);
+  clip-path: var(--_use, inset(50%));
+}
+
+.not-sr-only {
+  --_use: /* */ ;
+}
+
+.auto-grid {
+  --grid-cols: 4;
+  --grid-col-size: 14rem;
+  --gap: 1em;
+  --cols: repeat(
+  	auto-fill,
+  	minmax(
+  		clamp(
+  			100% / var(--grid-cols) - var(--gap),
+  			var(--grid-col-size),
+  			100%
+  		),
+  		1fr
+  	)
+  );
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--cols);
+}
+
+.snap {
+  --snap-dir: x mandatory;
+  --snap-stop: normal;
+  --snap-align: start;
+  scroll-snap-type: var(--snap-dir);
+  scroll-snap-stop: var(--snap-stop);
+  scroll-behavior: smooth;
+}
+.snap > * {
+  scroll-snap-align: var(--snap-align);
+}
+
+.scroll {
+  --scroll-x: auto;
+  --scroll-y: auto;
+  overflow: var(--scroll-x) var(--scroll-y);
+  overscroll-behavior: contain;
+}
+
+:where(.unset-flow, .flow > :first-child) {
+  margin-block: 0;
+}
+
+:where(.flow > * + *) {
+  margin-block: var(--flow, 1em) 0;
+}
+
+.line-clamp {
+  --line-count: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line-count);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.flexbox {
+  --flex-dir: row;
+  --flex-wrap: nowrap;
+  --flex: 0 1 auto;
+  display: flex;
+  flex-flow: var(--flex-dir) var(--flex-wrap);
+}
+.flexbox > * {
+  flex: var(--flex);
+}
+
+.m-var {
+  --my: 0;
+  --mx: auto;
+  margin-block: var(--my);
+  margin-inline: var(--mx);
+}
+
+.p-var {
+  --py: 0;
+  --px: 0;
+  padding-block: var(--py);
+  padding-inline: var(--px);
+}
+
+.gap-var {
+  --gap: 1em;
+  gap: var(--gap);
+}

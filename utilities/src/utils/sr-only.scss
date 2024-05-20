@@ -1,7 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as *;
+@use "../helper" as *;
+
+$use-mq: true !default;
+$include-mq-loop: $use-mq !default;
 
 .sr-only,
 .not-sr-only {
@@ -16,12 +19,18 @@
 	--_use: /* */ ;
 }
 
-@include for-mq using ($name) {
+@mixin mq-utils($name) {
 	.#{$name}\:sr-only {
 		--_use: initial;
 	}
 
 	.#{$name}\:not-sr-only {
 		--_use: /* */ ;
+	}
+}
+
+@if $include-mq-loop {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
 	}
 }

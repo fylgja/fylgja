@@ -1,0 +1,51 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// stylelint-disable declaration-no-important
+
+@use "sass:map";
+@use "../helper" as *;
+
+$use-mq: true !default;
+$include-mq-loop: $use-mq !default;
+
+.flexbox {
+	--flex-dir: row;
+	--flex-wrap: nowrap;
+	--flex: 0 1 auto;
+	@if $use-mq {
+		@each $name in map.keys($breakpoints) {
+			--#{$name}_flex-dir: initial;
+			--#{$name}_flex-wrap: initial;
+		}
+	}
+	display: flex;
+	flex-flow: for-mq-prop("flex-dir", $use-mq)
+		for-mq-prop("flex-wrap", $use-mq);
+
+	> * {
+		@if $use-mq {
+			@each $name in map.keys($breakpoints) {
+				--#{$name}_flex: initial;
+			}
+		}
+		flex: for-mq-prop("flex", $use-mq);
+	}
+}
+
+@mixin mq-utils($name) {
+	.flexbox {
+		--#{$name}_flex-dir: initial !important;
+		--#{$name}_flex-wrap: initial !important;
+
+		> * {
+			--#{$name}_flex: initial !important;
+		}
+	}
+}
+
+@if $include-mq-loop {
+	@include for-mq(max) using ($name) {
+		@include mq-utils($name);
+	}
+}

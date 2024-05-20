@@ -1,0 +1,13 @@
+.m-var {
+  --my: 0;
+  --mx: auto;
+  margin-block: var(--my);
+  margin-inline: var(--mx);
+}
+
+.p-var {
+  --py: 0;
+  --px: 0;
+  padding-block: var(--py);
+  padding-inline: var(--px);
+}

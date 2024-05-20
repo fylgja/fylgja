@@ -1,0 +1,45 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+// Classic
+@use "utils/display" with (
+	$include-mq-loop: false
+);
+@use "utils/sr-only" with (
+	$include-mq-loop: false
+);
+
+// Dynamic
+@use "utils/auto-grid";
+@use "utils/snap";
+@use "utils/scroll";
+@use "utils/flow";
+@use "utils/line-clamp";
+@use "utils/scrollbar";
+@use "utils/stretched-link";
+
+// Mq props
+@use "utils/flexbox" with (
+	$include-mq-loop: false
+);
+@use "utils/spacing" with (
+	$include-mq-loop: false
+);
+@use "utils/gap" with (
+	$include-mq-loop: false
+);
+
+// Bundle of each Classic util
+@include for-mq(min) using ($name) {
+	@include display.mq-utils($name);
+	@include sr-only.mq-utils($name);
+}
+
+// Bundle of each MQ prop
+@include for-mq(max) using ($name) {
+	@include flexbox.mq-utils($name);
+	@include spacing.mq-utils($name);
+	@include gap.mq-utils($name);
+}

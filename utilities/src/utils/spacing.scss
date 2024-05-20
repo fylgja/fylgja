@@ -1,0 +1,54 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// stylelint-disable declaration-no-important
+
+@use "sass:map";
+@use "../helper" as *;
+
+$use-mq: true !default;
+$include-mq-loop: $use-mq !default;
+
+.m-var {
+	--my: 0;
+	--mx: auto;
+	@if $use-mq {
+		@each $name in map.keys($breakpoints) {
+			--#{$name}_my: initial;
+			--#{$name}_mx: initial;
+		}
+	}
+	margin-block: for-mq-prop("my", $use-mq);
+	margin-inline: for-mq-prop("mx", $use-mq);
+}
+
+.p-var {
+	--py: 0;
+	--px: 0;
+	@if $use-mq {
+		@each $name in map.keys($breakpoints) {
+			--#{$name}_py: initial;
+			--#{$name}_px: initial;
+		}
+	}
+	padding-block: for-mq-prop("py", $use-mq);
+	padding-inline: for-mq-prop("px", $use-mq);
+}
+
+@mixin mq-utils($name) {
+	.m-var {
+		--#{$name}_my: initial !important;
+		--#{$name}_mx: initial !important;
+	}
+
+	.p-var {
+		--#{$name}_py: initial !important;
+		--#{$name}_px: initial !important;
+	}
+}
+
+@if $include-mq-loop {
+	@include for-mq(max) using ($name) {
+		@include mq-utils($name);
+	}
+}

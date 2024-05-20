@@ -1,0 +1,19 @@
+.auto-grid {
+  --grid-cols: 4;
+  --grid-col-size: 14rem;
+  --gap: 1em;
+  --cols: repeat(
+  	auto-fill,
+  	minmax(
+  		clamp(
+  			100% / var(--grid-cols) - var(--gap),
+  			var(--grid-col-size),
+  			100%
+  		),
+  		1fr
+  	)
+  );
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--cols);
+}

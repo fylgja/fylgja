@@ -1,6 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+
 $breakpoints: (
 	"sm": 480px,
 	"md": 768px,
@@ -9,11 +13,35 @@ $breakpoints: (
 	"xxl": 2200px,
 ) !default;
 
-@mixin for-mq($max: false) {
-	@each $name, $mg in $breakpoints {
-		$bp: if($max, "width =< #{$mg}", "width > #{$mg}");
+/// @param {string} $prop-name - name used with each breakpoint name
+/// @return {string} - stacked list of CSS variables
+@function for-mq-prop($prop-name, $use-mq: true) {
+	@if not $use-mq {
+		@return var(--#{$prop-name});
+	}
 
-		@media ($bp) {
+	$value: "";
+	$close: ")";
+	$names: map.keys($breakpoints);
+
+	@each $name in $names {
+		$value: "var(--#{$name}_#{$prop-name}, " + $value;
+		$close: $close + ")";
+	}
+
+	$value: $value + "var(--#{$prop-name}#{$close}";
+
+	@return string.unquote($value);
+}
+
+/// @param {"min"|"max"} $range [min] - direction of the media query
+/// @content any value inside will be wrapped in the mq, for classes use it with `for-mq() using ($name)`
+/// @output {Mixed} CSS wrapped with each value of the breakpoints
+@mixin for-mq($range: min) {
+	$range: if($range == "max", "width <=", "width >");
+
+	@each $name, $mq in $breakpoints {
+		@media ($range $mq) {
 			@content ($name);
 		}
 	}

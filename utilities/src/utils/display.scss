@@ -1,0 +1,47 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "../helper" as *;
+
+$use-mq: true !default;
+$include-mq-loop: $use-mq !default;
+
+.hidden {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
+
+@mixin mq-utils($name) {
+	.#{$name}\:hidden {
+		display: none;
+	}
+
+	.#{$name}\:block {
+		display: block;
+	}
+
+	.#{$name}\:inline-block {
+		display: inline-block;
+	}
+
+	.#{$name}\:inline-flex {
+		display: inline-flex;
+	}
+}
+
+@if $include-mq-loop {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}

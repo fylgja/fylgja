@@ -1,0 +1,84 @@
+.m-var {
+  --my: 0;
+  --mx: auto;
+  --sm_my: initial;
+  --sm_mx: initial;
+  --md_my: initial;
+  --md_mx: initial;
+  --lg_my: initial;
+  --lg_mx: initial;
+  --xl_my: initial;
+  --xl_mx: initial;
+  --xxl_my: initial;
+  --xxl_mx: initial;
+  margin-block: var(--xxl_my, var(--xl_my, var(--lg_my, var(--md_my, var(--sm_my, var(--my))))));
+  margin-inline: var(--xxl_mx, var(--xl_mx, var(--lg_mx, var(--md_mx, var(--sm_mx, var(--mx))))));
+}
+
+.p-var {
+  --py: 0;
+  --px: 0;
+  --sm_py: initial;
+  --sm_px: initial;
+  --md_py: initial;
+  --md_px: initial;
+  --lg_py: initial;
+  --lg_px: initial;
+  --xl_py: initial;
+  --xl_px: initial;
+  --xxl_py: initial;
+  --xxl_px: initial;
+  padding-block: var(--xxl_py, var(--xl_py, var(--lg_py, var(--md_py, var(--sm_py, var(--py))))));
+  padding-inline: var(--xxl_px, var(--xl_px, var(--lg_px, var(--md_px, var(--sm_px, var(--px))))));
+}
+
+@media (width <= 480px) {
+  .m-var {
+    --sm_my: initial !important;
+    --sm_mx: initial !important;
+  }
+  .p-var {
+    --sm_py: initial !important;
+    --sm_px: initial !important;
+  }
+}
+@media (width <= 768px) {
+  .m-var {
+    --md_my: initial !important;
+    --md_mx: initial !important;
+  }
+  .p-var {
+    --md_py: initial !important;
+    --md_px: initial !important;
+  }
+}
+@media (width <= 1024px) {
+  .m-var {
+    --lg_my: initial !important;
+    --lg_mx: initial !important;
+  }
+  .p-var {
+    --lg_py: initial !important;
+    --lg_px: initial !important;
+  }
+}
+@media (width <= 1440px) {
+  .m-var {
+    --xl_my: initial !important;
+    --xl_mx: initial !important;
+  }
+  .p-var {
+    --xl_py: initial !important;
+    --xl_px: initial !important;
+  }
+}
+@media (width <= 2200px) {
+  .m-var {
+    --xxl_my: initial !important;
+    --xxl_mx: initial !important;
+  }
+  .p-var {
+    --xxl_py: initial !important;
+    --xxl_px: initial !important;
+  }
+}
