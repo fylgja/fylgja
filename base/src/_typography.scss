@@ -24,7 +24,7 @@ $h-line-height: 1.1;
 }
 
 // Improved heading text wrapping
-:where(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6, legend) {
 	font-size: $h-font-size;
 	font-weight: $h-font-weight;
 	line-height: $h-line-height;
@@ -53,7 +53,7 @@ $h-line-height: 1.1;
 
 // Improve readability with max-width on paragraphs and lists
 // Prevent orphans in supported browsers
-:where(p, li) {
+:where(p, li, dd) {
 	max-inline-size: 65ch;
 	text-wrap: pretty;
 }
@@ -67,6 +67,10 @@ $h-line-height: 1.1;
 :where(blockquote) {
 	padding-inline-start: 1.5em;
 	border-inline-start: 4px solid;
+}
+
+:where(address) {
+	font-style: inherit;
 }
 
 // Inherit fonts for inputs and buttons

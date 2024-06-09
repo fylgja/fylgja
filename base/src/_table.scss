@@ -13,6 +13,7 @@ $stroke: #777 !default;
 // Make border color inheritance the same between browsers
 :where(thead, tbody, tfoot, tr, th, td) {
 	border-color: inherit;
+	text-align: inherit;
 }
 
 :where(th, td) {
@@ -20,7 +21,6 @@ $stroke: #777 !default;
 	padding-inline: var(--table-px, #{$px});
 	background: var(--root-bg);
 	color: var(--root-fg);
-	text-align: start;
 }
 
 :where(tr + tr :is(th, td)) {

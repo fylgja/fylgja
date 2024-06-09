@@ -54,10 +54,6 @@ select):focus {
   outline-offset: 0;
 }
 
-:where(textarea) {
-  field-sizing: content;
-}
-
 :where(input[type=color]) {
   --form-py: 3px;
   --form-px: 3px;
@@ -173,6 +169,7 @@ select):focus {
 }
 
 :where(textarea) {
+  field-sizing: content;
   resize: vertical;
   min-height: calc(1lh + var(--form-py, 0.375rem) * 2 + var(--form-border-width, 1px) * 2);
 }
@@ -193,6 +190,10 @@ select):focus {
 
 :where(legend) {
   padding: 0;
+}
+
+:where(fieldset + fieldset) {
+  margin-block-start: 1em;
 }
 
 ::-webkit-search-decoration {

@@ -7,7 +7,7 @@
 ::after {
   box-sizing: border-box;
   border: 0 solid currentcolor;
-  background-repeat: no-repeat;
+  background: center no-repeat;
 }
 
 :where(:root) {
@@ -97,7 +97,7 @@ textarea,
   margin-inline: 0;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6, legend) {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
@@ -124,7 +124,7 @@ textarea,
   font-size: 1.25rem;
 }
 
-:where(p, li) {
+:where(p, li, dd) {
   max-inline-size: 65ch;
   text-wrap: pretty;
 }
@@ -137,6 +137,10 @@ textarea,
 :where(blockquote) {
   padding-inline-start: 1.5em;
   border-inline-start: 4px solid;
+}
+
+:where(address) {
+  font-style: inherit;
 }
 
 :where(input, button, textarea, select),
@@ -202,6 +206,7 @@ textarea,
 
 :where(thead, tbody, tfoot, tr, th, td) {
   border-color: inherit;
+  text-align: inherit;
 }
 
 :where(th, td) {
@@ -209,7 +214,6 @@ textarea,
   padding-inline: var(--table-px, 0.625em);
   background: var(--root-bg);
   color: var(--root-fg);
-  text-align: start;
 }
 
 :where(tr + tr :is(th, td)) {

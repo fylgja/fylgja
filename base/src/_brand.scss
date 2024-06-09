@@ -74,3 +74,11 @@ $on-brand: hsl(260 0% 100%) !default;
 	) {
 	--btn-px: var(--btn-py, #{btn.$padding-block});
 }
+
+:where(
+		form .field,
+		:is(form, fieldset)
+			> label:has(input, select, textarea, progress, meter)
+	) {
+	margin-block-start: 0.875rem;
+}

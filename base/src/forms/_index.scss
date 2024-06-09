@@ -46,10 +46,6 @@
 	outline-offset: 0;
 }
 
-:where(textarea) {
-	field-sizing: content;
-}
-
 :where(input[type="color"]) {
 	@include form.color;
 }
@@ -86,6 +82,7 @@
 }
 
 :where(textarea) {
+	field-sizing: content;
 	resize: vertical;
 	min-height: calc(
 		1lh + (var(--form-py, #{form.$padding-block}) * 2) +
@@ -113,6 +110,10 @@
 
 :where(legend) {
 	padding: 0;
+}
+
+:where(fieldset + fieldset) {
+	margin-block-start: 1em;
 }
 
 // Removes the extra space in older webkit browsers
