@@ -8,6 +8,17 @@
 
 $use-mq: true !default;
 $include-mq-loop: $use-mq !default;
+$default-gap: 1em !default;
+
+.gap-var {
+	--gap: #{$default-gap};
+	@if $use-mq {
+		@each $name in map.keys($breakpoints) {
+			--#{$name}_gap: initial;
+		}
+	}
+	gap: for-mq-prop("gap", $use-mq);
+}
 
 .m-var {
 	--my: 0;
@@ -23,8 +34,8 @@ $include-mq-loop: $use-mq !default;
 }
 
 .p-var {
-	--py: 0;
-	--px: 0;
+	--py: 1em;
+	--px: 1em;
 	@if $use-mq {
 		@each $name in map.keys($breakpoints) {
 			--#{$name}_py: initial;
@@ -36,6 +47,10 @@ $include-mq-loop: $use-mq !default;
 }
 
 @mixin mq-utils($name) {
+	.gap-var {
+		--#{$name}_gap: initial !important;
+	}
+
 	.m-var {
 		--#{$name}_my: initial !important;
 		--#{$name}_mx: initial !important;

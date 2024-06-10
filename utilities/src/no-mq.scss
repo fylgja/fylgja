@@ -13,10 +13,13 @@
 
 // Dynamic
 @use "utils/auto-grid";
+@use "utils/stack";
+@use "utils/overlay";
 @use "utils/snap";
 @use "utils/scroll";
 @use "utils/flow";
 @use "utils/line-clamp";
+@use "utils/truncate";
 @use "utils/scrollbar";
 @use "utils/stretched-link";
 
@@ -27,6 +30,6 @@
 @use "utils/spacing" with (
 	$use-mq: false
 );
-@use "utils/gap" with (
+@use "utils/align" with (
 	$use-mq: false
 );

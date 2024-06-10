@@ -13,10 +13,13 @@
 
 // Dynamic
 @use "utils/auto-grid";
+@use "utils/stack";
+@use "utils/overlay";
 @use "utils/snap";
 @use "utils/scroll";
 @use "utils/flow";
 @use "utils/line-clamp";
+@use "utils/truncate";
 @use "utils/scrollbar";
 @use "utils/stretched-link";
 
@@ -27,7 +30,7 @@
 @use "utils/spacing" with (
 	$include-mq-loop: false
 );
-@use "utils/gap" with (
+@use "utils/align" with (
 	$include-mq-loop: false
 );
 
@@ -41,5 +44,5 @@
 @include for-mq(max) using ($name) {
 	@include flexbox.mq-utils($name);
 	@include spacing.mq-utils($name);
-	@include gap.mq-utils($name);
+	@include align.mq-utils($name);
 }

@@ -1,3 +1,13 @@
+.gap-var {
+  --gap: 1em;
+  --sm_gap: initial;
+  --md_gap: initial;
+  --lg_gap: initial;
+  --xl_gap: initial;
+  --xxl_gap: initial;
+  gap: var(--xxl_gap, var(--xl_gap, var(--lg_gap, var(--md_gap, var(--sm_gap, var(--gap))))));
+}
+
 .m-var {
   --my: 0;
   --mx: auto;
@@ -16,8 +26,8 @@
 }
 
 .p-var {
-  --py: 0;
-  --px: 0;
+  --py: 1em;
+  --px: 1em;
   --sm_py: initial;
   --sm_px: initial;
   --md_py: initial;
@@ -33,6 +43,9 @@
 }
 
 @media (width <= 480px) {
+  .gap-var {
+    --sm_gap: initial !important;
+  }
   .m-var {
     --sm_my: initial !important;
     --sm_mx: initial !important;
@@ -43,6 +56,9 @@
   }
 }
 @media (width <= 768px) {
+  .gap-var {
+    --md_gap: initial !important;
+  }
   .m-var {
     --md_my: initial !important;
     --md_mx: initial !important;
@@ -53,6 +69,9 @@
   }
 }
 @media (width <= 1024px) {
+  .gap-var {
+    --lg_gap: initial !important;
+  }
   .m-var {
     --lg_my: initial !important;
     --lg_mx: initial !important;
@@ -63,6 +82,9 @@
   }
 }
 @media (width <= 1440px) {
+  .gap-var {
+    --xl_gap: initial !important;
+  }
   .m-var {
     --xl_my: initial !important;
     --xl_mx: initial !important;
@@ -73,6 +95,9 @@
   }
 }
 @media (width <= 2200px) {
+  .gap-var {
+    --xxl_gap: initial !important;
+  }
   .m-var {
     --xxl_my: initial !important;
     --xxl_mx: initial !important;

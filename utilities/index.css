@@ -28,23 +28,23 @@
 }
 
 .auto-grid {
-  --grid-cols: 4;
+  --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
-  --cols: repeat(
-  	auto-fill,
-  	minmax(
-  		clamp(
-  			100% / var(--grid-cols) - var(--gap),
-  			var(--grid-col-size),
-  			100%
-  		),
-  		1fr
-  	)
-  );
   display: grid;
   gap: var(--gap);
-  grid-template-columns: var(--cols);
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--gap), var(--grid-col-size), 100%), 1fr));
+}
+
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-area: 1/1;
+}
+
+.overlay {
+  border-image: 0 fill linear-gradient(0deg, hsla(0, 0%, 0%, 0.6), transparent);
 }
 
 .snap {
@@ -59,14 +59,71 @@
   scroll-snap-align: var(--snap-align);
 }
 
-.scroll {
+.snap-cols {
+  --snap-cols: 4;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--snap-gap, 1em)) / var(--snap-cols));
+  gap: var(--snap-gap, 1em);
+  padding-block-end: var(--scroll-gutter, 1rem);
+}
+
+:is(.scroll, .scroll-mask-x, .scroll-mask-y) {
   --scroll-x: auto;
   --scroll-y: auto;
   overflow: var(--scroll-x) var(--scroll-y);
   overscroll-behavior: contain;
 }
 
-:where(.unset-flow, .flow > :first-child) {
+@property --scroll-mask-start-opacity {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --scroll-mask-end-opacity {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@keyframes scroll-mask {
+  0% {
+    --mask-start-opacity: 100%;
+    --mask-end-opacity: 0%;
+  }
+  1%, 99% {
+    --mask-start-opacity: 0%;
+    --mask-end-opacity: 0%;
+  }
+  100% {
+    --mask-start-opacity: 0%;
+    --mask-end-opacity: 100%;
+  }
+}
+:is(.scroll-mask-x, .scroll-mask-y) {
+  --mask-dir: to right;
+  --mask-size: 2rem;
+  --mask: linear-gradient(
+  	var(--mask-dir),
+  	hsl(0 0% 0% / var(--mask-start-opacity, 0%)),
+  	hsl(0 0% 0% / 100%) var(--mask-size),
+  	hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
+  	hsl(0 0% 0% / var(--mask-end-opacity, 0%))
+  );
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  animation: scroll-mask linear;
+}
+
+.scroll-mask-x {
+  animation-timeline: scroll(self inline);
+}
+
+.scroll-mask-y {
+  --mask-dir: to bottom;
+  animation-timeline: scroll(self block);
+}
+
+:where(.unset-flow > *, .flow > :first-child) {
   margin-block: 0;
 }
 
@@ -80,6 +137,12 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--line-count);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .scrollbar-none {
@@ -129,6 +192,16 @@
   flex: var(--xxl_flex, var(--xl_flex, var(--lg_flex, var(--md_flex, var(--sm_flex, var(--flex))))));
 }
 
+.gap-var {
+  --gap: 1em;
+  --sm_gap: initial;
+  --md_gap: initial;
+  --lg_gap: initial;
+  --xl_gap: initial;
+  --xxl_gap: initial;
+  gap: var(--xxl_gap, var(--xl_gap, var(--lg_gap, var(--md_gap, var(--sm_gap, var(--gap))))));
+}
+
 .m-var {
   --my: 0;
   --mx: auto;
@@ -147,8 +220,8 @@
 }
 
 .p-var {
-  --py: 0;
-  --px: 0;
+  --py: 1em;
+  --px: 1em;
   --sm_py: initial;
   --sm_px: initial;
   --md_py: initial;
@@ -163,14 +236,35 @@
   padding-inline: var(--xxl_px, var(--xl_px, var(--lg_px, var(--md_px, var(--sm_px, var(--px))))));
 }
 
-.gap-var {
-  --gap: 1em;
-  --sm_gap: initial;
-  --md_gap: initial;
-  --lg_gap: initial;
-  --xl_gap: initial;
-  --xxl_gap: initial;
-  gap: var(--xxl_gap, var(--xl_gap, var(--lg_gap, var(--md_gap, var(--sm_gap, var(--gap))))));
+.align {
+  --align: normal space-between;
+  --align-items: center legacy;
+  --align-self: auto;
+  --sm_align: initial;
+  --sm_align-items: initial;
+  --sm_align-self: initial;
+  --md_align: initial;
+  --md_align-items: initial;
+  --md_align-self: initial;
+  --lg_align: initial;
+  --lg_align-items: initial;
+  --lg_align-self: initial;
+  --xl_align: initial;
+  --xl_align-items: initial;
+  --xl_align-self: initial;
+  --xxl_align: initial;
+  --xxl_align-items: initial;
+  --xxl_align-self: initial;
+  place-content: var(--xxl_align, var(--xl_align, var(--lg_align, var(--md_align, var(--sm_align, var(--align))))));
+  place-items: var(--xxl_align-items, var(--xl_align-items, var(--lg_align-items, var(--md_align-items, var(--sm_align-items, var(--align-items))))));
+}
+.align > * {
+  --sm_align-self: initial;
+  --md_align-self: initial;
+  --lg_align-self: initial;
+  --xl_align-self: initial;
+  --xxl_align-self: initial;
+  place-self: var(--xxl_align-self, var(--xl_align-self, var(--lg_align-self, var(--md_align-self, var(--sm_align-self, var(--align-self))))));
 }
 
 @media (width > 480px) {
@@ -281,6 +375,9 @@
   .flexbox > * {
     --sm_flex: initial !important;
   }
+  .gap-var {
+    --sm_gap: initial !important;
+  }
   .m-var {
     --sm_my: initial !important;
     --sm_mx: initial !important;
@@ -289,8 +386,12 @@
     --sm_py: initial !important;
     --sm_px: initial !important;
   }
-  .gap-var {
-    --sm_gap: initial !important;
+  .align {
+    --sm_align: initial !important;
+    --sm_align-items: initial !important;
+  }
+  .align > * {
+    --sm_align-self: initial !important;
   }
 }
 @media (width <= 768px) {
@@ -301,6 +402,9 @@
   .flexbox > * {
     --md_flex: initial !important;
   }
+  .gap-var {
+    --md_gap: initial !important;
+  }
   .m-var {
     --md_my: initial !important;
     --md_mx: initial !important;
@@ -309,8 +413,12 @@
     --md_py: initial !important;
     --md_px: initial !important;
   }
-  .gap-var {
-    --md_gap: initial !important;
+  .align {
+    --md_align: initial !important;
+    --md_align-items: initial !important;
+  }
+  .align > * {
+    --md_align-self: initial !important;
   }
 }
 @media (width <= 1024px) {
@@ -321,6 +429,9 @@
   .flexbox > * {
     --lg_flex: initial !important;
   }
+  .gap-var {
+    --lg_gap: initial !important;
+  }
   .m-var {
     --lg_my: initial !important;
     --lg_mx: initial !important;
@@ -329,8 +440,12 @@
     --lg_py: initial !important;
     --lg_px: initial !important;
   }
-  .gap-var {
-    --lg_gap: initial !important;
+  .align {
+    --lg_align: initial !important;
+    --lg_align-items: initial !important;
+  }
+  .align > * {
+    --lg_align-self: initial !important;
   }
 }
 @media (width <= 1440px) {
@@ -341,6 +456,9 @@
   .flexbox > * {
     --xl_flex: initial !important;
   }
+  .gap-var {
+    --xl_gap: initial !important;
+  }
   .m-var {
     --xl_my: initial !important;
     --xl_mx: initial !important;
@@ -349,8 +467,12 @@
     --xl_py: initial !important;
     --xl_px: initial !important;
   }
-  .gap-var {
-    --xl_gap: initial !important;
+  .align {
+    --xl_align: initial !important;
+    --xl_align-items: initial !important;
+  }
+  .align > * {
+    --xl_align-self: initial !important;
   }
 }
 @media (width <= 2200px) {
@@ -361,6 +483,9 @@
   .flexbox > * {
     --xxl_flex: initial !important;
   }
+  .gap-var {
+    --xxl_gap: initial !important;
+  }
   .m-var {
     --xxl_my: initial !important;
     --xxl_mx: initial !important;
@@ -369,7 +494,11 @@
     --xxl_py: initial !important;
     --xxl_px: initial !important;
   }
-  .gap-var {
-    --xxl_gap: initial !important;
+  .align {
+    --xxl_align: initial !important;
+    --xxl_align-items: initial !important;
+  }
+  .align > * {
+    --xxl_align-self: initial !important;
   }
 }

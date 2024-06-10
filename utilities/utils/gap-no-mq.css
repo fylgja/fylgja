@@ -1,4 +1,0 @@
-.gap-var {
-  --gap: 1em;
-  gap: var(--gap);
-}

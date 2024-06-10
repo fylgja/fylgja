@@ -1,0 +1,10 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.stack {
+	display: grid;
+
+	> * {
+		grid-area: 1/1;
+	}
+}

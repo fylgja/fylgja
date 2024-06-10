@@ -1,9 +1,61 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.scroll {
+:is(.scroll, .scroll-mask-x, .scroll-mask-y) {
 	--scroll-x: auto;
 	--scroll-y: auto;
 	overflow: var(--scroll-x) var(--scroll-y);
 	overscroll-behavior: contain;
+}
+
+@property --scroll-mask-start-opacity {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --scroll-mask-end-opacity {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
+}
+
+@keyframes scroll-mask {
+	0% {
+		--mask-start-opacity: 100%;
+		--mask-end-opacity: 0%;
+	}
+	1%,
+	99% {
+		--mask-start-opacity: 0%;
+		--mask-end-opacity: 0%;
+	}
+	100% {
+		--mask-start-opacity: 0%;
+		--mask-end-opacity: 100%;
+	}
+}
+
+:is(.scroll-mask-x, .scroll-mask-y) {
+	--mask-dir: to right;
+	--mask-size: 2rem;
+	--mask: linear-gradient(
+		var(--mask-dir),
+		hsl(0 0% 0% / var(--mask-start-opacity, 0%)),
+		hsl(0 0% 0% / 100%) var(--mask-size),
+		hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
+		hsl(0 0% 0% / var(--mask-end-opacity, 0%))
+	);
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
+	animation: scroll-mask linear;
+}
+
+.scroll-mask-x {
+	animation-timeline: scroll(self inline);
+}
+
+.scroll-mask-y {
+	--mask-dir: to bottom;
+	animation-timeline: scroll(self block);
 }

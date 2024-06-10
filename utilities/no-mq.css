@@ -28,23 +28,23 @@
 }
 
 .auto-grid {
-  --grid-cols: 4;
+  --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
-  --cols: repeat(
-  	auto-fill,
-  	minmax(
-  		clamp(
-  			100% / var(--grid-cols) - var(--gap),
-  			var(--grid-col-size),
-  			100%
-  		),
-  		1fr
-  	)
-  );
   display: grid;
   gap: var(--gap);
-  grid-template-columns: var(--cols);
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--gap), var(--grid-col-size), 100%), 1fr));
+}
+
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-area: 1/1;
+}
+
+.overlay {
+  border-image: 0 fill linear-gradient(0deg, hsla(0, 0%, 0%, 0.6), transparent);
 }
 
 .snap {
@@ -59,14 +59,71 @@
   scroll-snap-align: var(--snap-align);
 }
 
-.scroll {
+.snap-cols {
+  --snap-cols: 4;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--snap-gap, 1em)) / var(--snap-cols));
+  gap: var(--snap-gap, 1em);
+  padding-block-end: var(--scroll-gutter, 1rem);
+}
+
+:is(.scroll, .scroll-mask-x, .scroll-mask-y) {
   --scroll-x: auto;
   --scroll-y: auto;
   overflow: var(--scroll-x) var(--scroll-y);
   overscroll-behavior: contain;
 }
 
-:where(.unset-flow, .flow > :first-child) {
+@property --scroll-mask-start-opacity {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --scroll-mask-end-opacity {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@keyframes scroll-mask {
+  0% {
+    --mask-start-opacity: 100%;
+    --mask-end-opacity: 0%;
+  }
+  1%, 99% {
+    --mask-start-opacity: 0%;
+    --mask-end-opacity: 0%;
+  }
+  100% {
+    --mask-start-opacity: 0%;
+    --mask-end-opacity: 100%;
+  }
+}
+:is(.scroll-mask-x, .scroll-mask-y) {
+  --mask-dir: to right;
+  --mask-size: 2rem;
+  --mask: linear-gradient(
+  	var(--mask-dir),
+  	hsl(0 0% 0% / var(--mask-start-opacity, 0%)),
+  	hsl(0 0% 0% / 100%) var(--mask-size),
+  	hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
+  	hsl(0 0% 0% / var(--mask-end-opacity, 0%))
+  );
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  animation: scroll-mask linear;
+}
+
+.scroll-mask-x {
+  animation-timeline: scroll(self inline);
+}
+
+.scroll-mask-y {
+  --mask-dir: to bottom;
+  animation-timeline: scroll(self block);
+}
+
+:where(.unset-flow > *, .flow > :first-child) {
   margin-block: 0;
 }
 
@@ -80,6 +137,12 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--line-count);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .scrollbar-none {
@@ -114,6 +177,11 @@
   flex: var(--flex);
 }
 
+.gap-var {
+  --gap: 1em;
+  gap: var(--gap);
+}
+
 .m-var {
   --my: 0;
   --mx: auto;
@@ -122,13 +190,19 @@
 }
 
 .p-var {
-  --py: 0;
-  --px: 0;
+  --py: 1em;
+  --px: 1em;
   padding-block: var(--py);
   padding-inline: var(--px);
 }
 
-.gap-var {
-  --gap: 1em;
-  gap: var(--gap);
+.align {
+  --align: normal space-between;
+  --align-items: center legacy;
+  --align-self: auto;
+  place-content: var(--align);
+  place-items: var(--align-items);
+}
+.align > * {
+  place-self: var(--align-self);
 }

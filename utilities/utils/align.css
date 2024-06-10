@@ -1,0 +1,76 @@
+.align {
+  --align: normal space-between;
+  --align-items: center legacy;
+  --align-self: auto;
+  --sm_align: initial;
+  --sm_align-items: initial;
+  --sm_align-self: initial;
+  --md_align: initial;
+  --md_align-items: initial;
+  --md_align-self: initial;
+  --lg_align: initial;
+  --lg_align-items: initial;
+  --lg_align-self: initial;
+  --xl_align: initial;
+  --xl_align-items: initial;
+  --xl_align-self: initial;
+  --xxl_align: initial;
+  --xxl_align-items: initial;
+  --xxl_align-self: initial;
+  place-content: var(--xxl_align, var(--xl_align, var(--lg_align, var(--md_align, var(--sm_align, var(--align))))));
+  place-items: var(--xxl_align-items, var(--xl_align-items, var(--lg_align-items, var(--md_align-items, var(--sm_align-items, var(--align-items))))));
+}
+.align > * {
+  --sm_align-self: initial;
+  --md_align-self: initial;
+  --lg_align-self: initial;
+  --xl_align-self: initial;
+  --xxl_align-self: initial;
+  place-self: var(--xxl_align-self, var(--xl_align-self, var(--lg_align-self, var(--md_align-self, var(--sm_align-self, var(--align-self))))));
+}
+
+@media (width <= 480px) {
+  .align {
+    --sm_align: initial !important;
+    --sm_align-items: initial !important;
+  }
+  .align > * {
+    --sm_align-self: initial !important;
+  }
+}
+@media (width <= 768px) {
+  .align {
+    --md_align: initial !important;
+    --md_align-items: initial !important;
+  }
+  .align > * {
+    --md_align-self: initial !important;
+  }
+}
+@media (width <= 1024px) {
+  .align {
+    --lg_align: initial !important;
+    --lg_align-items: initial !important;
+  }
+  .align > * {
+    --lg_align-self: initial !important;
+  }
+}
+@media (width <= 1440px) {
+  .align {
+    --xl_align: initial !important;
+    --xl_align-items: initial !important;
+  }
+  .align > * {
+    --xl_align-self: initial !important;
+  }
+}
+@media (width <= 2200px) {
+  .align {
+    --xxl_align: initial !important;
+    --xxl_align-items: initial !important;
+  }
+  .align > * {
+    --xxl_align-self: initial !important;
+  }
+}
