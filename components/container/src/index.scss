@@ -1,0 +1,12 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+:root {
+	--container-size: 1280px;
+	--container-gap: 2rem;
+}
+
+.container {
+	inline-size: min((100% - var(--container-gap)), var(--container-size));
+	margin-inline: auto;
+}
