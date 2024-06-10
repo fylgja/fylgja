@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-:where(.unset-flow, .flow > :first-child) {
+:where(.unset-flow > *, .flow > :first-child) {
 	margin-block: 0;
 }
 

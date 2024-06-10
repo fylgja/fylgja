@@ -285,57 +285,6 @@ textarea,
   font-style: italic;
 }
 
-::backdrop {
-  background-color: var(--backdrop-color, hsla(0, 0%, 0%, 0.2));
-  opacity: 1;
-}
-@starting-style {
-  ::backdrop {
-    opacity: 0;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  ::backdrop {
-    transition: opacity var(--speed) ease-out, display var(--speed) ease-out allow-discrete, overlay var(--speed) ease-out;
-  }
-}
-
-:where(dialog, [popover]) {
-  --ty: var(--dialog-translate-y, 2rem);
-  --tx: var(--dialog-translate-x, 0);
-  --speed: var(--dialog-close-speed, 200ms);
-  max-block-size: calc(100% - 2em);
-  max-inline-size: calc(100% - 2em);
-  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, white));
-  color: var(--dialog-color, var(--root-fg));
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
-  opacity: 0;
-  translate: var(--tx) var(--ty);
-}
-@media (prefers-reduced-motion: no-preference) {
-  :where(dialog, [popover]) {
-    transition: translate var(--speed) ease-out, opacity var(--speed) ease-out, display var(--speed) ease-out allow-discrete, overlay var(--speed) ease-out;
-  }
-}
-
-:where(dialog[open], :popover-open) {
-  --speed: var(--dialog-open-speed, 300ms);
-  translate: 0 0;
-  opacity: 1;
-}
-@starting-style {
-  :where(dialog[open], :popover-open) {
-    translate: var(--tx) var(--ty);
-    opacity: 0;
-  }
-}
-
-:where(:root:has(dialog:is([open]:modal, :popover-open))) {
-  overflow: hidden;
-}
-
 :where(.btn, button, [type=button], [type=submit], [type=reset]),
 :where(input[type=file])::file-selector-button {
   appearance: button;
@@ -612,6 +561,59 @@ select):focus {
 
 input:is([type=tel], [type=url], [type=email], [type=number]) {
   direction: ltr;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(dialog, [popover]),
+  ::backdrop {
+    transition-property: translate, opacity, display, overlay;
+    transition-duration: var(--speed);
+    transition-behavior: allow-discrete;
+  }
+}
+
+::backdrop {
+  background-color: var(--backdrop-color, hsla(0, 0%, 0%, 0.2));
+}
+
+:where(dialog, [popover]) {
+  --ty: var(--dialog-translate-y, 2rem);
+  --tx: var(--dialog-translate-x, 0);
+  --speed: var(--dialog-close-speed, 300ms);
+  max-block-size: calc(100% - 2em);
+  max-inline-size: calc(100% - 2em);
+  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, white));
+  color: var(--dialog-color, var(--root-fg));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
+  opacity: 0;
+  translate: var(--tx) var(--ty);
+}
+
+:where(dialog[open], :popover-open),
+:where(dialog[open], :popover-open)::backdrop {
+  opacity: 1;
+}
+@starting-style {
+  :where(dialog[open], :popover-open),
+  :where(dialog[open], :popover-open)::backdrop {
+    opacity: 0;
+  }
+}
+
+:where(dialog[open], :popover-open) {
+  --speed: var(--dialog-open-speed, 400ms);
+  translate: 0 0;
+}
+@starting-style {
+  :where(dialog[open], :popover-open) {
+    translate: var(--tx) var(--ty);
+  }
+}
+
+:where(:root:has(dialog:is([open]:modal, :popover-open))) {
+  overflow: hidden;
 }
 
 :where(input[type=checkbox], input[type=radio]) {

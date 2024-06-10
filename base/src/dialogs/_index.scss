@@ -7,24 +7,22 @@ $radius: 1rem !default;
 $padding: 1.5rem !default;
 $shadow: 0 3px 5px hsl(0 0% 0% / 18%) !default;
 
-$close-speed: 200ms !default;
-$open-speed: 300ms !default;
+$close-speed: 300ms !default;
+$open-speed: 400ms !default;
 
 $backdrop-color: hsl(0 0% 0% / 20%) !default;
 
+:where(dialog, [popover]),
+::backdrop {
+	@media ($motion-safe) {
+		transition-property: translate, opacity, display, overlay;
+		transition-duration: var(--speed);
+		transition-behavior: allow-discrete;
+	}
+}
+
 ::backdrop {
 	background-color: var(--backdrop-color, #{$backdrop-color});
-	opacity: 1;
-
-	@starting-style {
-		opacity: 0;
-	}
-
-	@media ($motion-safe) {
-		transition: opacity var(--speed) ease-out,
-			display var(--speed) ease-out allow-discrete,
-			overlay var(--speed) ease-out;
-	}
 }
 
 :where(dialog, [popover]) {
@@ -43,24 +41,23 @@ $backdrop-color: hsl(0 0% 0% / 20%) !default;
 	box-shadow: var(--dialog-shadow, #{$shadow});
 	opacity: 0;
 	translate: var(--tx) var(--ty);
-
-	@media ($motion-safe) {
-		transition: translate var(--speed) ease-out,
-			opacity var(--speed) ease-out,
-			display var(--speed) ease-out allow-discrete,
-			overlay var(--speed) ease-out;
-	}
 }
 
-// Add soft open animation
-:where(dialog[open], :popover-open) {
-	--speed: var(--dialog-open-speed, #{$open-speed});
-	translate: 0 0;
+:where(dialog[open], :popover-open),
+:where(dialog[open], :popover-open)::backdrop {
 	opacity: 1;
 
 	@starting-style {
-		translate: var(--tx) var(--ty);
 		opacity: 0;
+	}
+}
+
+:where(dialog[open], :popover-open) {
+	--speed: var(--dialog-open-speed, #{$open-speed});
+	translate: 0 0;
+
+	@starting-style {
+		translate: var(--tx) var(--ty);
 	}
 }
 

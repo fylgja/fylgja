@@ -1,0 +1,10 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.list-none {
+	list-style-type: none;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+}

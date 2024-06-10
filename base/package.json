@@ -22,7 +22,9 @@
     "build:preflight": "npx lightningcss --minify --bundle preflight.css -o preflight.min.css",
     "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
-    "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form",
+    "build:dialog": "npx lightningcss --minify --bundle dialog.css -o dialog.min.css",
+    "build:parts": "npm run build:btn && npm run build:form && npm run build:dialog",
+    "build": "npm run build:main && npm run build:preflight && npm run build:parts",
     "prebuild": "npm run build:scss"
   }
 }

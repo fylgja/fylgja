@@ -6,21 +6,20 @@ $gap: 1em !default;
 $max-cols: 4 !default;
 
 .auto-grid {
-	--grid-cols: 4;
+	--grid-max-cols: 4;
 	--grid-col-size: #{$col-size};
 	--gap: #{$gap};
-	--cols: repeat(
+	display: grid;
+	gap: var(--gap);
+	grid-template-columns: repeat(
 		auto-fill,
 		minmax(
 			clamp(
-				100% / var(--grid-cols) - var(--gap),
+				100% / var(--grid-max-cols) - var(--gap),
 				var(--grid-col-size),
 				100%
 			),
 			1fr
 		)
 	);
-	display: grid;
-	gap: var(--gap);
-	grid-template-columns: var(--cols);
 }
