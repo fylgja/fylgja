@@ -3,14 +3,14 @@
 @import url("../base/theme.css");
 
 /* Tokens */
-@import url("../tokens/shadow/shadow.css");
+@import url("../props/_sort/shadow/shadow.css");
 
 /* Components */
 @import url("../components/container");
+@import url("../components/offcanvas");
 
 /* Utilities */
-@import url("../utilities/spacing.css");
-@import url("../utilities/auto-grid.css");
+@import url("../utilities");
 
 /* Boilerplate code */
 @view-transition {
@@ -27,13 +27,12 @@
 	--anchor-offset: calc(75px + 5ex);
 }
 
-.wrapper {
-	inline-size: min(100% - 2rem, var(--max-size, 75ch));
-	padding-block: 1rem;
-	margin-inline: auto;
-}
-
 @keyframes add-shadow {
+	from {
+		box-shadow: none;
+		background-color: var(--root-bg);
+	}
+
 	to {
 		box-shadow: var(--shadow-2);
 		background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
@@ -41,7 +40,7 @@
 }
 
 .sticky-header {
-	--max-size: 100ch;
+	--btn-stroke: transparent;
 	z-index: 9;
 	position: sticky;
 	inset-block-start: 0;
@@ -51,16 +50,12 @@
 	animation-timeline: scroll();
 	animation-range: 0 4rem;
 
-	& nav :is(.btn, button) {
-		--btn-stroke: transparent;
-	}
-
 	@media print {
 		display: none;
 	}
 }
 
-[data-theme="light"] {
+[data-theme^="light"] {
 	--root-bg: hsl(0 0% 100%);
 	--root-fg: hsl(0 0% 8%);
 	--select-icon: var(--chevron-light-scheme);
@@ -69,7 +64,7 @@
 	color-scheme: light;
 }
 
-[data-theme="dark"] {
+[data-theme^="dark"] {
 	--root-bg: color-mix(in oklab, black 82%, var(--brand));
 	--root-fg: #fff;
 	--select-icon: var(--chevron-dark-scheme);
@@ -78,80 +73,7 @@
 	color-scheme: dark;
 }
 
-[data-theme="arc"] {
+[data-theme$="arc"] {
 	--brand: var(--arc-palette-foregroundSecondary, darkseagreen);
 	--on-brand: var(--arc-palette-background, black);
-}
-
-/* Pos fixed, Prevents weird overflow, if moving offscreen on Android */
-:is(.offcanvas, .offcanvas-end) {
-	position: fixed;
-	block-size: 100%;
-	max-block-size: 100%;
-}
-
-.offcanvas {
-	--dialog-translate-y: 0;
-	--dialog-translate-x: -100%;
-	margin-inline-start: 0;
-	border-start-start-radius: 0;
-	border-end-start-radius: 0;
-}
-
-.offcanvas-end {
-	--dialog-translate-y: 0;
-	--dialog-translate-x: 100%;
-	margin-inline-end: 0;
-	border-start-end-radius: 0;
-	border-end-end-radius: 0;
-}
-
-.toast {
-	--dialog-translate-y: -100%;
-	--dialog-translate-x: 0;
-	position: fixed;
-	margin-block-start: 1em;
-}
-
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.hidden {
-	display: none;
-}
-
-.overflow-auto {
-	overflow: auto;
-}
-
-@media (width > 480px) {
-	.sm\:flex {
-		display: flex;
-	}
-
-	.sm\:inline-flex {
-		display: inline-flex;
-	}
-}
-
-@media (width > 768px) {
-	.md\:flex {
-		display: flex;
-	}
-
-	.md\:inline-flex {
-		display: inline-flex;
-	}
-}
-
-@media (width > 1024px) {
-	.lg\:flex {
-		display: flex;
-	}
-
-	.lg\:inline-flex {
-		display: inline-flex;
-	}
 }

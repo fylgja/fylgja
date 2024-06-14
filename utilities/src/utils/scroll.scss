@@ -1,13 +1,19 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-:is(.scroll, .scroll-mask-x, .scroll-mask-y) {
+.scroll-x {
 	--scroll-x: auto;
-	--scroll-y: auto;
-	overflow: var(--scroll-x) var(--scroll-y);
-	overscroll-behavior: contain;
+	overflow-x: var(--scroll-x);
+	overscroll-behavior-x: contain;
 }
 
+.scroll-y {
+	--scroll-y: auto;
+	overflow-y: var(--scroll-y);
+	overscroll-behavior-y: contain;
+}
+
+// Port to tokens + samples
 @property --scroll-mask-start-opacity {
 	syntax: "<percentage>";
 	inherits: false;
@@ -25,8 +31,8 @@
 		--mask-start-opacity: 100%;
 		--mask-end-opacity: 0%;
 	}
-	1%,
-	99% {
+	2%,
+	98% {
 		--mask-start-opacity: 0%;
 		--mask-end-opacity: 0%;
 	}
@@ -36,7 +42,8 @@
 	}
 }
 
-:is(.scroll-mask-x, .scroll-mask-y) {
+.scroll-mask-x,
+.scroll-mask-y {
 	--mask-dir: to right;
 	--mask-size: 2rem;
 	--mask: linear-gradient(
@@ -48,7 +55,7 @@
 	);
 	-webkit-mask-image: var(--mask);
 	mask-image: var(--mask);
-	animation: scroll-mask linear;
+	animation: scroll-mask;
 }
 
 .scroll-mask-x {
@@ -57,5 +64,7 @@
 
 .scroll-mask-y {
 	--mask-dir: to bottom;
+	--scroll: visible auto;
+	--overscroll: auto contain;
 	animation-timeline: scroll(self block);
 }

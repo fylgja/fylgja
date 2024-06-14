@@ -1,0 +1,37 @@
+.grid-cols {
+  --grid-cols: 4;
+  --_cols: var(--xxl_grid-cols, var(--xl_grid-cols, var(--lg_grid-cols, var(--md_grid-cols, var(--sm_grid-cols, var(--grid-cols))))));
+  --sm_grid-cols: initial;
+  --md_grid-cols: initial;
+  --lg_grid-cols: initial;
+  --xl_grid-cols: initial;
+  --xxl_grid-cols: initial;
+  display: grid;
+  grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
+@media (width <= 480px) {
+  .grid-cols {
+    --sm_grid-cols: initial !important;
+  }
+}
+@media (width <= 768px) {
+  .grid-cols {
+    --md_grid-cols: initial !important;
+  }
+}
+@media (width <= 1024px) {
+  .grid-cols {
+    --lg_grid-cols: initial !important;
+  }
+}
+@media (width <= 1440px) {
+  .grid-cols {
+    --xl_grid-cols: initial !important;
+  }
+}
+@media (width <= 2200px) {
+  .grid-cols {
+    --xxl_grid-cols: initial !important;
+  }
+}

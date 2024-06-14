@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Fylgja Boilerplate</title>
-		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="main.css">
 		<script src="index.js"></script>
 	</head>
 	<body>
 		<header class="sticky-header">
 			<div
-				class="wrapper"
-				style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;"
+				class="container flexbox align gap-var p-var"
+				style="--px: 0rem;"
 			>
 				<a href="/">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
-						width="100"
-						height="32"
+						width="150"
+						height="65"
 						alt="Fylgja"
 					>
 				</a>
 				<nav class="relative">
-					<button popovertarget="menuSkipTo" class="hidden sm:inline-flex">Jump to</button>
+					<button popovertarget="menuSkipTo">Jump to</button>
 					<div id="menuSkipTo" popover class="toast">
 						<a class="btn" onclick="menuSkipTo.hidePopover()" href="#text">Text</a>
 						<a class="btn" onclick="menuSkipTo.hidePopover()" href="#lists">Lists</a>
@@ -38,18 +38,27 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
 					</button>
 					<dialog id="menuTheme" popover class="offcanvas-end">
-						<div class="flex-col">
-							<button data-set-theme="dark">Use dark theme</button>
-							<button data-set-theme="light">Use light theme</button>
-							<button data-set-theme="arc">Use Arc theme</button>
-							<hr style="--separator-my: 0.5rem;">
-							<button popovertarget="menuTheme" popovertargetaction="hide">Close theme Options</button>
+						<div class="flexbox align">
+							<strong>Pick theme</strong>
+							<button
+								popovertarget="menuTheme"
+								popovertargetaction="hide"
+								aria-label="Close theme Options"
+							>X</button>
+						</div>
+						<hr style="--separator-my: 0.5rem;">
+						<div class="flexbox" style="--flex-dir: column;">
+							<button class="align" data-set-theme="auto">Default</button>
+							<button class="align" data-set-theme="dark">Dark theme</button>
+							<button class="align" data-set-theme="light">Light theme</button>
+							<button class="align" data-set-theme="dark arc">Arc Dark theme</button>
+							<button class="align" data-set-theme="light arc">Arc Light theme</button>
 						</div>
 					</dialog>
 				</nav>
 			</div>
 		</header>
-		<main class="wrapper" style="--max-size: 80ch;">
+		<main class="container" style="--container-size: 80ch;">
 			<section id="intro">
 				<p>
 					A showcase of Fylgja using only our Native Element CSS Commponents<br />
@@ -171,7 +180,7 @@
 			</section>
 			<section id="table">
 				<h2>Table</h2>
-				<div class="overflow-auto">
+				<div class="scroll">
 					<table>
 						<caption>
 							Table Caption
@@ -271,79 +280,82 @@ p q r s t u v w x y z { | } ~ </code>
 </pre>
 			</section>
 			<section id="forms">
-				<form class="flow">
-					<div id="form-fields" class="flow">
-						<h2>Form Fields</h2>
+				<h2>Forms</h2>
+				<form>
+					<fieldset id="form-fields">
+						<legend>Fields</legend>
 						<label>
 							text
-							<input type="text" placeholder="text">
+							<input type="text" name="text" placeholder="text">
 						</label>
 						<label>
-							<label for="number">number</label>
-							<input type="number" placeholder="number">
+							number
+							<input type="number" name="number" placeholder="number">
 						</label>
 						<label>
 							email
-							<input type="email" placeholder="email">
+							<input type="email" name="email" placeholder="email" autocomplete="email">
 						</label>
 						<label>
 							tel
-							<input type="tel" placeholder="tel">
+							<input type="tel" name="tel" placeholder="telephone" autocomplete="tel">
 						</label>
 						<label>
 							password
-							<input type="password" placeholder="password">
+							<input type="password" name="password" placeholder="password">
 						</label>
 						<label>
 							search
-							<input type="search" placeholder="search">
+							<input type="search" name="search" placeholder="search">
 						</label>
 						<label>
 							url
-							<input type="url" placeholder="url">
+							<input type="url" name="url" placeholder="url">
 						</label>
 						<label>
 							date
-							<input type="date" placeholder="data">
+							<input type="date" name="date" placeholder="data">
 						</label>
 						<label>
 							datetime
-							<input type="datetime-local" placeholder="datetime-local">
+							<input type="datetime-local" name="datetime-local" placeholder="datetime-local">
 						</label>
 						<label>
 							time
-							<input type="time" placeholder="time">
+							<input type="time" name="time" placeholder="time">
 						</label>
 						<label>
 							month
-							<input type="month" placeholder="month">
+							<input type="month" name="month" placeholder="month">
 						</label>
 						<label>
 							week
-							<input type="week" placeholder="week">
+							<input type="week" name="week" placeholder="week">
 						</label>
 						<label>
 							file
-							<input type="file" placeholder="file">
+							<input type="file" name="file" placeholder="file">
 						</label>
 						<label>
 							color
-							<input type="color" placeholder="color" value="#e91e63">
+							<input type="color" name="color" placeholder="color" value="#e91e63">
 						</label>
 						<label>
 							range
 							<input
 								type="range"
-								placeholder="range"
-								value="40"
+								name="range"
+								value="20"
 								max="100"
-								style="--fill: 40"
+								min="0"
+								step="10"
+								style="--fill: 20"
 								oninput="event.target.style.setProperty('--fill', event.target.value)"
 							>
 						</label>
 						<label>
 							select
-							<select>
+							<select name="select">
 								<option value="1">Level 1</option>
 								<option value="2">Level 2</option>
 								<optgroup label="Hard mode">
@@ -358,7 +370,7 @@ p q r s t u v w x y z { | } ~ </code>
 						</label>
 						<label>
 							Datalist Countries
-							<input type="text" placeholder="Enter a country" list="countries">
+							<input type="text" name="datalist-countries" placeholder="Enter a country" list="countries">
 							<datalist id="countries">
 								<option>Netherlands</option>
 								<option>Germany</option>
@@ -369,7 +381,7 @@ p q r s t u v w x y z { | } ~ </code>
 						</label>
 						<label>
 							Datalist Time
-							<input type="time" list="popularHours">
+							<input type="time" name="datalist-hours" list="popularHours">
 							<datalist id="popularHours">
 								<option value="12:00"></option>
 								<option value="13:00"></option>
@@ -378,10 +390,10 @@ p q r s t u v w x y z { | } ~ </code>
 						</label>
 						<label>
 							Textarea
-							<textarea id="textarea" placeholder="textarea" rows="3"></textarea>
+							<textarea name="textarea" placeholder="textarea" rows="3"></textarea>
 						</label>
-					</div>
-					<fieldset id="form-checkboxes" class="flow">
+					</fieldset>
+					<fieldset id="form-checkboxes">
 						<legend>Checkboxes</legend>
 						<label>
 							<input type="checkbox" name="checkbox" checked />
@@ -400,7 +412,7 @@ p q r s t u v w x y z { | } ~ </code>
 							Disabled
 						</label>
 					</fieldset>
-					<fieldset id="form-radios" class="flow">
+					<fieldset id="form-radios">
 						<legend>Radio boxes</legend>
 						<label>
 							<input type="radio" name="radio" checked />
@@ -415,7 +427,7 @@ p q r s t u v w x y z { | } ~ </code>
 							Disabled
 						</label>
 					</fieldset>
-					<fieldset id="form-switches" class="flow">
+					<fieldset id="form-switches">
 						<legend>Switches</legend>
 						<label>
 							<input type="checkbox" name="switch" role="switch">
@@ -491,7 +503,7 @@ p q r s t u v w x y z { | } ~ </code>
 					</div>
 					<div id="form-progress">
 						<h2>Progress</h2>
-						<div class="flow">
+						<div>
 							<label>
 								Loading...
 								<progress indeterminate>progress</progress>

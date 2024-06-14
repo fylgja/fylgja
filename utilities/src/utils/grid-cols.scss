@@ -1,0 +1,35 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// stylelint-disable declaration-no-important
+
+@use "sass:map";
+@use "../helper" as *;
+
+$use-mq: true !default;
+$include-mq-loop: $use-mq !default;
+$default-gap: 1em !default;
+
+.grid-cols {
+	--grid-cols: 4;
+	--_cols: #{for-mq-prop("grid-cols", $use-mq)};
+	@if $use-mq {
+		@each $name in map.keys($breakpoints) {
+			--#{$name}_grid-cols: initial;
+		}
+	}
+	display: grid;
+	grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
+@mixin mq-utils($name) {
+	.grid-cols {
+		--#{$name}_grid-cols: initial !important;
+	}
+}
+
+@if $include-mq-loop {
+	@include for-mq(max) using ($name) {
+		@include mq-utils($name);
+	}
+}

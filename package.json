@@ -30,6 +30,28 @@
     "sass": "^1.75.0"
   },
   "stylelint": {
-    "extends": "@fylgja/stylelint-config"
+    "extends": "@fylgja/stylelint-config",
+    "rules": {
+      "rule-empty-line-before": null,
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "blockless-after-same-name-blockless",
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ],
+          "ignoreAtRules": [
+            "if",
+            "else",
+            "each",
+            "for",
+            "while"
+          ]
+        }
+      ]
+    }
   }
 }

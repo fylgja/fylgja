@@ -58,21 +58,22 @@
 .snap > * {
   scroll-snap-align: var(--snap-align);
 }
-
-.snap-cols {
-  --snap-cols: 4;
-  display: grid;
+.snap:is(.grid-cols, .auto-grid) {
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - var(--snap-gap, 1em)) / var(--snap-cols));
-  gap: var(--snap-gap, 1em);
-  padding-block-end: var(--scroll-gutter, 1rem);
+  grid-template-columns: none;
+  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
 }
 
-:is(.scroll, .scroll-mask-x, .scroll-mask-y) {
+.scroll-x {
   --scroll-x: auto;
+  overflow-x: var(--scroll-x);
+  overscroll-behavior-x: contain;
+}
+
+.scroll-y {
   --scroll-y: auto;
-  overflow: var(--scroll-x) var(--scroll-y);
-  overscroll-behavior: contain;
+  overflow-y: var(--scroll-y);
+  overscroll-behavior-y: contain;
 }
 
 @property --scroll-mask-start-opacity {
@@ -90,7 +91,7 @@
     --mask-start-opacity: 100%;
     --mask-end-opacity: 0%;
   }
-  1%, 99% {
+  2%, 98% {
     --mask-start-opacity: 0%;
     --mask-end-opacity: 0%;
   }
@@ -99,7 +100,8 @@
     --mask-end-opacity: 100%;
   }
 }
-:is(.scroll-mask-x, .scroll-mask-y) {
+.scroll-mask-x,
+.scroll-mask-y {
   --mask-dir: to right;
   --mask-size: 2rem;
   --mask: linear-gradient(
@@ -111,7 +113,7 @@
   );
   -webkit-mask-image: var(--mask);
   mask-image: var(--mask);
-  animation: scroll-mask linear;
+  animation: scroll-mask;
 }
 
 .scroll-mask-x {
@@ -120,6 +122,8 @@
 
 .scroll-mask-y {
   --mask-dir: to bottom;
+  --scroll: visible auto;
+  --overscroll: auto contain;
   animation-timeline: scroll(self block);
 }
 
@@ -267,6 +271,18 @@
   place-self: var(--xxl_align-self, var(--xl_align-self, var(--lg_align-self, var(--md_align-self, var(--sm_align-self, var(--align-self))))));
 }
 
+.grid-cols {
+  --grid-cols: 4;
+  --_cols: var(--xxl_grid-cols, var(--xl_grid-cols, var(--lg_grid-cols, var(--md_grid-cols, var(--sm_grid-cols, var(--grid-cols))))));
+  --sm_grid-cols: initial;
+  --md_grid-cols: initial;
+  --lg_grid-cols: initial;
+  --xl_grid-cols: initial;
+  --xxl_grid-cols: initial;
+  display: grid;
+  grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
 @media (width > 480px) {
   .sm\:hidden {
     display: none;
@@ -393,6 +409,9 @@
   .align > * {
     --sm_align-self: initial !important;
   }
+  .grid-cols {
+    --sm_grid-cols: initial !important;
+  }
 }
 @media (width <= 768px) {
   .flexbox {
@@ -419,6 +438,9 @@
   }
   .align > * {
     --md_align-self: initial !important;
+  }
+  .grid-cols {
+    --md_grid-cols: initial !important;
   }
 }
 @media (width <= 1024px) {
@@ -447,6 +469,9 @@
   .align > * {
     --lg_align-self: initial !important;
   }
+  .grid-cols {
+    --lg_grid-cols: initial !important;
+  }
 }
 @media (width <= 1440px) {
   .flexbox {
@@ -474,6 +499,9 @@
   .align > * {
     --xl_align-self: initial !important;
   }
+  .grid-cols {
+    --xl_grid-cols: initial !important;
+  }
 }
 @media (width <= 2200px) {
   .flexbox {
@@ -500,5 +528,8 @@
   }
   .align > * {
     --xxl_align-self: initial !important;
+  }
+  .grid-cols {
+    --xxl_grid-cols: initial !important;
   }
 }
