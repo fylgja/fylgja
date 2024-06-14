@@ -85,12 +85,17 @@ $color-size: 2.5em !default;
 	}
 }
 
-$range-track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
-$range-track-height: 0.85ex;
+$range-track-color: color-mix(
+	in srgb,
+	var(--root-fg) 24%,
+	transparent
+) !default;
+$range-track-height: 1ex !default;
 
-$range-thumb-size: 3ex;
-$range-thumb-radius: 50%;
-$range-thumb-stroke: var(--root-bg);
+$range-thumb-size: 4ex !default;
+$range-thumb-radius: 50% !default;
+$range-thumb-stroke: var(--root-bg) !default;
+$range-thumb-border-width: ($range-thumb-size / 8) !default;
 
 @mixin range-track {
 	--_progression: calc(100% * var(--fill) / var(--fill-max));
@@ -114,7 +119,7 @@ $range-thumb-stroke: var(--root-bg);
 	box-shadow: var(--thumb-shadow);
 	margin-block-start: var(--thumb-offset, #{$calc-offset});
 	border-radius: var(--thumb-radius, #{$range-thumb-radius});
-	border: var(--thumb-border-width, 3px) solid
+	border: var(--thumb-border-width, #{$range-thumb-border-width}) solid
 		var(--thumb-stroke, #{$range-thumb-stroke});
 	background: var(--thumb-bg, var(--fill-color));
 	outline: var(--outline-width) solid var(--form-active-color, currentcolor);

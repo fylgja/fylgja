@@ -430,7 +430,7 @@ select):focus {
   --fill-color: var(--form-active-color, currentcolor);
   --fill-max: 100;
   --fill: 0;
-  --size: var(--thumb-size, 3ex);
+  --size: var(--thumb-size, 4ex);
   block-size: var(--size);
   padding: 0;
   border: 0;
@@ -449,13 +449,13 @@ select):focus {
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 0.85ex);
+  block-size: var(--track-height, 1ex);
   border-radius: var(--form-radius, 0.35rem);
   background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 0.85ex);
+  block-size: var(--track-height, 1ex);
   border-radius: var(--form-radius, 0.35rem);
   background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
@@ -464,9 +464,9 @@ select):focus {
   block-size: var(--size);
   inline-size: var(--size);
   box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 0.85ex) - var(--size))));
+  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
   border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
+  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
   outline: var(--outline-width) solid var(--form-active-color, currentcolor);
 }
@@ -475,9 +475,9 @@ select):focus {
   block-size: var(--size);
   inline-size: var(--size);
   box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 0.85ex) - var(--size))));
+  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
   border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 3px) solid var(--thumb-stroke, var(--root-bg));
+  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
   background: var(--thumb-bg, var(--fill-color));
   outline: var(--outline-width) solid var(--form-active-color, currentcolor);
   box-sizing: border-box;
