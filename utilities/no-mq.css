@@ -14,17 +14,12 @@
   display: inline-flex;
 }
 
-.sr-only,
-.not-sr-only {
+.sr-only {
   position: var(--_use, absolute);
   block-size: var(--_use, 1px);
   inline-size: var(--_use, 1px);
   overflow: var(--_use, hidden);
   clip-path: var(--_use, inset(50%));
-}
-
-.not-sr-only {
-  --_use: /* */ ;
 }
 
 .auto-grid {
@@ -39,12 +34,15 @@
 .stack {
   display: grid;
 }
-.stack > * {
+.stack > *,
+.stack > ::before,
+.stack > ::after {
   grid-area: 1/1;
 }
 
 .overlay {
-  border-image: 0 fill linear-gradient(0deg, hsla(0, 0%, 0%, 0.6), transparent);
+  --overlay: hsl(0 0% 0% / 60%);
+  border-image: 0 fill linear-gradient(0deg, var(--overlay), transparent);
 }
 
 .snap {
@@ -58,10 +56,17 @@
 .snap > * {
   scroll-snap-align: var(--snap-align);
 }
-.snap:is(.grid-cols, .auto-grid) {
-  grid-auto-flow: column;
-  grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
+
+.scroll-x {
+  --scroll-x: auto;
+  overflow-x: var(--scroll-x);
+  overscroll-behavior-x: contain;
+}
+
+.scroll-y {
+  --scroll-y: auto;
+  overflow-y: var(--scroll-y);
+  overscroll-behavior-y: contain;
 }
 
 .scroll-x {
@@ -127,12 +132,45 @@
   animation-timeline: scroll(self block);
 }
 
-:where(.unset-flow > *, .flow > :first-child) {
+.unset-flow > *,
+.flow > :first-child {
   margin-block: 0;
 }
 
-:where(.flow > * + *) {
+.flow > * + * {
   margin-block: var(--flow, 1em) 0;
+}
+
+:where(.relative, .sticky, .absolute, .fixed) {
+  --z: auto;
+  --inset-t: auto;
+  --inset-r: auto;
+  --inset-b: auto;
+  --inset-l: auto;
+  --inset: initial;
+  z-index: var(--z);
+  inset: var(--inset, var(--inset-t) var(--inset-r) var(--inset-b) var(--inset-l));
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.rounded {
+  --rounded: 0.25rem;
+  border-radius: var(--rounded);
 }
 
 .line-clamp {
@@ -168,6 +206,32 @@
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.bg-gradient,
+.border-gradient,
+.text-gradient {
+  --gradient-from: currentcolor;
+  --gradient-to: transparent;
+  --gradient-stops: var(--gradient-from), var(--gradient-to);
+  --gradient-angle: 0deg;
+  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+}
+
+.bg-gradient {
+  background-image: var(--gradient);
+}
+
+.border-gradient {
+  border-image-source: var(--gradient);
+  border-image-slice: 1;
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--gradient);
+  color: transparent;
 }
 
 .flexbox {
@@ -209,4 +273,17 @@
 }
 .align > * {
   place-self: var(--align-self);
+}
+
+.grid-cols {
+  --grid-cols: 1;
+  --_cols: var(--grid-cols);
+  display: grid;
+  grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
+.grid-cols-flow {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
 }

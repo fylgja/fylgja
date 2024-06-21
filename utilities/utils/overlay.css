@@ -1,3 +1,4 @@
 .overlay {
-  border-image: 0 fill linear-gradient(0deg, hsla(0, 0%, 0%, 0.6), transparent);
+  --overlay: hsl(0 0% 0% / 60%);
+  border-image: 0 fill linear-gradient(0deg, var(--overlay), transparent);
 }

@@ -1,0 +1,10 @@
+.section {
+	--section-min-h: initial;
+	--section-bg-img: none;
+	--section-bg-color: var(--brand);
+	--section-color: var(--on-brand);
+	min-height: var(--section-min-h);
+	background-image: var(--section-bg-img);
+	background-color: var(--section-bg-color);
+	color: var(--section-color);
+}

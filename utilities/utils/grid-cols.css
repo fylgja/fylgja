@@ -1,5 +1,5 @@
 .grid-cols {
-  --grid-cols: 4;
+  --grid-cols: 1;
   --_cols: var(--xxl_grid-cols, var(--xl_grid-cols, var(--lg_grid-cols, var(--md_grid-cols, var(--sm_grid-cols, var(--grid-cols))))));
   --sm_grid-cols: initial;
   --md_grid-cols: initial;
@@ -8,6 +8,12 @@
   --xxl_grid-cols: initial;
   display: grid;
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
+.grid-cols-flow {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
 }
 
 @media (width <= 480px) {

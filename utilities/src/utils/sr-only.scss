@@ -6,17 +6,27 @@
 $use-mq: true !default;
 $include-mq-loop: $use-mq !default;
 
-.sr-only,
-.not-sr-only {
-	position: var(--_use, absolute);
-	block-size: var(--_use, 1px);
-	inline-size: var(--_use, 1px);
-	overflow: var(--_use, hidden);
-	clip-path: var(--_use, inset(50%));
-}
+@if $use-mq {
+	.sr-only,
+	.not-sr-only {
+		position: var(--_use, absolute);
+		block-size: var(--_use, 1px);
+		inline-size: var(--_use, 1px);
+		overflow: var(--_use, hidden);
+		clip-path: var(--_use, inset(50%));
+	}
 
-.not-sr-only {
-	--_use: /* */ ;
+	.not-sr-only {
+		--_use: /* */ ;
+	}
+} @else {
+	.sr-only {
+		position: var(--_use, absolute);
+		block-size: var(--_use, 1px);
+		inline-size: var(--_use, 1px);
+		overflow: var(--_use, hidden);
+		clip-path: var(--_use, inset(50%));
+	}
 }
 
 @mixin mq-utils($name) {

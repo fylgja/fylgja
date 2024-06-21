@@ -9,8 +9,3 @@
 .snap > * {
   scroll-snap-align: var(--snap-align);
 }
-.snap:is(.grid-cols, .auto-grid) {
-  grid-auto-flow: column;
-  grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
-}

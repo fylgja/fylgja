@@ -1,7 +1,8 @@
-:where(.unset-flow > *, .flow > :first-child) {
+.unset-flow > *,
+.flow > :first-child {
   margin-block: 0;
 }
 
-:where(.flow > * + *) {
+.flow > * + * {
   margin-block: var(--flow, 1em) 0;
 }

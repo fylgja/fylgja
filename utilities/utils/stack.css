@@ -1,6 +1,8 @@
 .stack {
   display: grid;
 }
-.stack > * {
+.stack > *,
+.stack > ::before,
+.stack > ::after {
   grid-area: 1/1;
 }
