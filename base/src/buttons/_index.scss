@@ -13,11 +13,16 @@
 		@include btn.hover;
 	}
 
-	&:is(:active, [aria-current="page"], [aria-checked="true"]) {
+	&:is(
+			:active,
+			:has(:checked),
+			[aria-current="page"],
+			[aria-checked="true"]
+		) {
 		@include btn.active;
 	}
 
-	&:disabled {
+	&:is(.is-disabled, :disabled) {
 		@include btn.disabled;
 	}
 }
