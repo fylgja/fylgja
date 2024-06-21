@@ -104,6 +104,17 @@ $anchor-offset: max(2rem, 5svb) !default;
 	touch-action: manipulation;
 }
 
+:where(
+		:any-link,
+		button,
+		label[for],
+		label:has(input[type="radio"], input[type="checkbox"]),
+		summary,
+		[tabindex]:not([tabindex^="-"])
+	) {
+	cursor: pointer;
+}
+
 // Correct default display for all browsers
 :where(summary) {
 	display: list-item;

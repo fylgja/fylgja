@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:math";
+
 $padding-block: 0.375rem !default;
 $padding-inline: 0.8rem !default;
 $border-width: 1px !default;
@@ -95,7 +97,7 @@ $range-track-height: 1ex !default;
 $range-thumb-size: 4ex !default;
 $range-thumb-radius: 50% !default;
 $range-thumb-stroke: var(--root-bg) !default;
-$range-thumb-border-width: ($range-thumb-size / 8) !default;
+$range-thumb-border-width: math.div($range-thumb-size, 8) !default;
 
 @mixin range-track {
 	--_progression: calc(100% * var(--fill) / var(--fill-max));
