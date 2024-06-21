@@ -1,26 +1,33 @@
 {
   "name": "@fylgja/utils",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "base.css",
-  "style": "base.css",
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "base"
+    "directory": "utilities"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
-  "keywords": [],
+  "keywords": [
+    "fylgja",
+    "utils",
+    "utilities",
+    "css-utilities",
+    "scss-utilities"
+  ],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
     "build:main": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "build:no-mq": "npx lightningcss --minify --bundle no-mq.css -o no-mq.min.css",
-    "build": "npm run build:main && npm run build:no-mq",
+    "build:custom-mq": "npx lightningcss --minify --bundle custom-mq.css -o custom-mq.min.css",
+    "build": "npm run build:main && npm run build:no-mq && npm run build:custom-mq",
     "prebuild": "npm run build:scss"
   }
 }

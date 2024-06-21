@@ -42,13 +42,13 @@
 );
 
 // Bundle of each Classic util
-@include for-mq("min") using ($name) {
+@include for-custom-mq("min") using ($name) {
 	@include display.mq-utils($name);
 	@include sr-only.mq-utils($name);
 }
 
 // Bundle of each MQ prop
-@include for-mq("max") using ($name) {
+@include for-custom-mq("max") using ($name) {
 	@include flexbox.mq-utils($name);
 	@include spacing.mq-utils($name);
 	@include align.mq-utils($name);

@@ -5,6 +5,8 @@
 @use "sass:list";
 @use "sass:string";
 
+$use-custom-mq: false !default;
+
 $breakpoints: (
 	"sm": 480px,
 	"md": 768px,
@@ -34,14 +36,31 @@ $breakpoints: (
 	@return string.unquote($value);
 }
 
+/// @param {"min"|"max"|string} $range [min] - direction of the media query or custom syntax
+/// @content any value inside will be wrapped in the mq, for classes use it with `for-mq() using ($name)`
+/// @output {Mixed} CSS wrapped with each value of the breakpoints
+@mixin for-mq($range: "min", $map: $breakpoints) {
+	$syntax: if(
+		$range == "min",
+		"width >",
+		if($range == "max", "width <=", $range)
+	);
+
+	@each $name, $mq in $map {
+		@media ($syntax $mq) {
+			@content ($name);
+		}
+	}
+}
+
 /// @param {"min"|"max"} $range [min] - direction of the media query
 /// @content any value inside will be wrapped in the mq, for classes use it with `for-mq() using ($name)`
 /// @output {Mixed} CSS wrapped with each value of the breakpoints
-@mixin for-mq($range: min) {
-	$range: if($range == "max", "width <=", "width >");
+@mixin for-custom-mq($range: "min", $map: $breakpoints) {
+	@each $name, $mq in $map {
+		$syntax: if($range == "min", "--#{$name}", "--#{$name}-max");
 
-	@each $name, $mq in $breakpoints {
-		@media ($range $mq) {
+		@media ($syntax) {
 			@content ($name);
 		}
 	}
