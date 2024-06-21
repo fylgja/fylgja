@@ -7,6 +7,10 @@
 
 /* Components */
 @import url("../components/container");
+@import url("../components/join");
+@import url("../components/menu");
+@import url("../components/breadcrumbs");
+@import url("../components/badge");
 @import url("../components/offcanvas");
 
 /* Utilities */
@@ -76,4 +80,9 @@
 [data-theme$="arc"] {
 	--brand: var(--arc-palette-foregroundSecondary, darkseagreen);
 	--on-brand: var(--arc-palette-background, black);
+}
+
+[data-theme$="lava"] {
+	--brand: hsl(0 100% 35%);
+	--on-brand: hsl(260 0% 100%);
 }
