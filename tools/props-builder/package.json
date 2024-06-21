@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "packages/props-builder"
+    "directory": "tools/props-builder"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
@@ -22,9 +22,9 @@
     "design-tokens"
   ],
   "scripts": {
-    "clean:css": "rimraf _tests_/*.css",
-    "clean:scss": "rimraf _tests_/*.scss",
-    "clean:json": "rimraf _tests_/*.json",
+    "clean:css": "rm -r _tests_/*.css",
+    "clean:scss": "rm -r _tests_/*.scss",
+    "clean:json": "rm -r _tests_/*.json",
     "clean": "npm run clean:css && npm run clean:scss && npm run clean:json",
     "test": "npm run clean && node _tests_/index.js"
   }
