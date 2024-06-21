@@ -14,7 +14,7 @@
   display: inline-flex;
 }
 
-@media (width > 480px) {
+@media (width >= 480px) {
   .sm\:hidden {
     display: none;
   }
@@ -28,7 +28,7 @@
     display: inline-flex;
   }
 }
-@media (width > 768px) {
+@media (width >= 768px) {
   .md\:hidden {
     display: none;
   }
@@ -42,7 +42,7 @@
     display: inline-flex;
   }
 }
-@media (width > 1024px) {
+@media (width >= 1024px) {
   .lg\:hidden {
     display: none;
   }
@@ -56,7 +56,7 @@
     display: inline-flex;
   }
 }
-@media (width > 1440px) {
+@media (width >= 1440px) {
   .xl\:hidden {
     display: none;
   }
@@ -70,7 +70,7 @@
     display: inline-flex;
   }
 }
-@media (width > 2200px) {
+@media (width >= 2200px) {
   .xxl\:hidden {
     display: none;
   }

@@ -42,8 +42,8 @@ $breakpoints: (
 @mixin for-mq($range: "min", $map: $breakpoints) {
 	$syntax: if(
 		$range == "min",
-		"width >",
-		if($range == "max", "width <=", $range)
+		"width >=",
+		if($range == "max", "width <", $range)
 	);
 
 	@each $name, $mq in $map {

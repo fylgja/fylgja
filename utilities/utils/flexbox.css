@@ -24,7 +24,7 @@
   flex: var(--xxl_flex, var(--xl_flex, var(--lg_flex, var(--md_flex, var(--sm_flex, var(--flex))))));
 }
 
-@media (width <= 480px) {
+@media (width < 480px) {
   .flexbox {
     --sm_flex-dir: initial !important;
     --sm_flex-wrap: initial !important;
@@ -33,7 +33,7 @@
     --sm_flex: initial !important;
   }
 }
-@media (width <= 768px) {
+@media (width < 768px) {
   .flexbox {
     --md_flex-dir: initial !important;
     --md_flex-wrap: initial !important;
@@ -42,7 +42,7 @@
     --md_flex: initial !important;
   }
 }
-@media (width <= 1024px) {
+@media (width < 1024px) {
   .flexbox {
     --lg_flex-dir: initial !important;
     --lg_flex-wrap: initial !important;
@@ -51,7 +51,7 @@
     --lg_flex: initial !important;
   }
 }
-@media (width <= 1440px) {
+@media (width < 1440px) {
   .flexbox {
     --xl_flex-dir: initial !important;
     --xl_flex-wrap: initial !important;
@@ -60,7 +60,7 @@
     --xl_flex: initial !important;
   }
 }
-@media (width <= 2200px) {
+@media (width < 2200px) {
   .flexbox {
     --xxl_flex-dir: initial !important;
     --xxl_flex-wrap: initial !important;

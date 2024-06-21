@@ -29,7 +29,7 @@
   place-self: var(--xxl_align-self, var(--xl_align-self, var(--lg_align-self, var(--md_align-self, var(--sm_align-self, var(--align-self))))));
 }
 
-@media (width <= 480px) {
+@media (width < 480px) {
   .align {
     --sm_align: initial !important;
     --sm_align-items: initial !important;
@@ -38,7 +38,7 @@
     --sm_align-self: initial !important;
   }
 }
-@media (width <= 768px) {
+@media (width < 768px) {
   .align {
     --md_align: initial !important;
     --md_align-items: initial !important;
@@ -47,7 +47,7 @@
     --md_align-self: initial !important;
   }
 }
-@media (width <= 1024px) {
+@media (width < 1024px) {
   .align {
     --lg_align: initial !important;
     --lg_align-items: initial !important;
@@ -56,7 +56,7 @@
     --lg_align-self: initial !important;
   }
 }
-@media (width <= 1440px) {
+@media (width < 1440px) {
   .align {
     --xl_align: initial !important;
     --xl_align-items: initial !important;
@@ -65,7 +65,7 @@
     --xl_align-self: initial !important;
   }
 }
-@media (width <= 2200px) {
+@media (width < 2200px) {
   .align {
     --xxl_align: initial !important;
     --xxl_align-items: initial !important;

@@ -358,7 +358,7 @@
   grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
 }
 
-@media (width > 480px) {
+@media (width >= 480px) {
   .sm\:hidden {
     display: none;
   }
@@ -378,7 +378,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 768px) {
+@media (width >= 768px) {
   .md\:hidden {
     display: none;
   }
@@ -398,7 +398,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 1024px) {
+@media (width >= 1024px) {
   .lg\:hidden {
     display: none;
   }
@@ -418,7 +418,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 1440px) {
+@media (width >= 1440px) {
   .xl\:hidden {
     display: none;
   }
@@ -438,7 +438,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 2200px) {
+@media (width >= 2200px) {
   .xxl\:hidden {
     display: none;
   }
@@ -458,7 +458,7 @@
     --_use: /* */ ;
   }
 }
-@media (width <= 480px) {
+@media (width < 480px) {
   .flexbox {
     --sm_flex-dir: initial !important;
     --sm_flex-wrap: initial !important;
@@ -488,7 +488,7 @@
     --sm_grid-cols: initial !important;
   }
 }
-@media (width <= 768px) {
+@media (width < 768px) {
   .flexbox {
     --md_flex-dir: initial !important;
     --md_flex-wrap: initial !important;
@@ -518,7 +518,7 @@
     --md_grid-cols: initial !important;
   }
 }
-@media (width <= 1024px) {
+@media (width < 1024px) {
   .flexbox {
     --lg_flex-dir: initial !important;
     --lg_flex-wrap: initial !important;
@@ -548,7 +548,7 @@
     --lg_grid-cols: initial !important;
   }
 }
-@media (width <= 1440px) {
+@media (width < 1440px) {
   .flexbox {
     --xl_flex-dir: initial !important;
     --xl_flex-wrap: initial !important;
@@ -578,7 +578,7 @@
     --xl_grid-cols: initial !important;
   }
 }
-@media (width <= 2200px) {
+@media (width < 2200px) {
   .flexbox {
     --xxl_flex-dir: initial !important;
     --xxl_flex-wrap: initial !important;

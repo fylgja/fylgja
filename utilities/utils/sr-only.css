@@ -11,7 +11,7 @@
   --_use: /* */ ;
 }
 
-@media (width > 480px) {
+@media (width >= 480px) {
   .sm\:sr-only {
     --_use: initial;
   }
@@ -19,7 +19,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 768px) {
+@media (width >= 768px) {
   .md\:sr-only {
     --_use: initial;
   }
@@ -27,7 +27,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 1024px) {
+@media (width >= 1024px) {
   .lg\:sr-only {
     --_use: initial;
   }
@@ -35,7 +35,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 1440px) {
+@media (width >= 1440px) {
   .xl\:sr-only {
     --_use: initial;
   }
@@ -43,7 +43,7 @@
     --_use: /* */ ;
   }
 }
-@media (width > 2200px) {
+@media (width >= 2200px) {
   .xxl\:sr-only {
     --_use: initial;
   }

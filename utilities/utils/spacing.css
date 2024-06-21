@@ -42,7 +42,7 @@
   padding-inline: var(--xxl_px, var(--xl_px, var(--lg_px, var(--md_px, var(--sm_px, var(--px))))));
 }
 
-@media (width <= 480px) {
+@media (width < 480px) {
   .gap-var {
     --sm_gap: initial !important;
   }
@@ -55,7 +55,7 @@
     --sm_px: initial !important;
   }
 }
-@media (width <= 768px) {
+@media (width < 768px) {
   .gap-var {
     --md_gap: initial !important;
   }
@@ -68,7 +68,7 @@
     --md_px: initial !important;
   }
 }
-@media (width <= 1024px) {
+@media (width < 1024px) {
   .gap-var {
     --lg_gap: initial !important;
   }
@@ -81,7 +81,7 @@
     --lg_px: initial !important;
   }
 }
-@media (width <= 1440px) {
+@media (width < 1440px) {
   .gap-var {
     --xl_gap: initial !important;
   }
@@ -94,7 +94,7 @@
     --xl_px: initial !important;
   }
 }
-@media (width <= 2200px) {
+@media (width < 2200px) {
   .gap-var {
     --xxl_gap: initial !important;
   }

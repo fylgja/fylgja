@@ -16,27 +16,27 @@
   grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
 }
 
-@media (width <= 480px) {
+@media (width < 480px) {
   .grid-cols {
     --sm_grid-cols: initial !important;
   }
 }
-@media (width <= 768px) {
+@media (width < 768px) {
   .grid-cols {
     --md_grid-cols: initial !important;
   }
 }
-@media (width <= 1024px) {
+@media (width < 1024px) {
   .grid-cols {
     --lg_grid-cols: initial !important;
   }
 }
-@media (width <= 1440px) {
+@media (width < 1440px) {
   .grid-cols {
     --xl_grid-cols: initial !important;
   }
 }
-@media (width <= 2200px) {
+@media (width < 2200px) {
   .grid-cols {
     --xxl_grid-cols: initial !important;
   }
