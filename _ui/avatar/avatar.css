@@ -1,1 +1,0 @@
-.avatar{display:inline-flex;justify-content:center;align-items:center;flex:0 0 auto;width:var(--avatar-size, 3em);height:var(--avatar-size, 3em);background-color:var(--avatar-bg, #eee);color:var(--avatar-color);border-radius:var(--avatar-radius, 50%);overflow:hidden}
