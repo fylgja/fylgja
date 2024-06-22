@@ -7,7 +7,7 @@ import kebabCase from "./kebabCase.js";
  * @param {Object} options
  * @param {string} options.prefix
  * @param {string} options.suffix
- * @param {string} options.varSyntax
+ * @param {string} options.varPrefix
  * @param {boolean} options.safeMode - if true it will keep scss values in quotes for `/`
  * @param {boolean} options.removeDefaultFromName
  * @returns {{ styles: string[], appendedMeta: string[] }}
@@ -17,13 +17,13 @@ const toStyleTokens = (
     {
         prefix = "",
         suffix = "",
-        varSyntax = "--",
+        varPrefix = "--",
         safeMode = true,
         removeDefaultFromName = true,
     } = {}
 ) => {
     const styles = [];
-    const indent = varSyntax !== "--" ? "" : "    ";
+    const indent = varPrefix !== "--" ? "" : "    ";
     let appendedMeta = "";
     let stylesDark = [];
 
@@ -48,24 +48,24 @@ const toStyleTokens = (
             name = name.replace("-default", "");
         }
 
-        let varName = `${varSyntax}${prefix}${name}${suffix}`;
+        let varName = `${varPrefix}${prefix}${name}${suffix}`;
 
         if (name.includes("-@media:dark")) {
             varName = varName.replace(
                 "-@media:dark",
-                varSyntax === "$" ? "-dark" : ""
+                varPrefix === "$" ? "-dark" : ""
             );
         }
 
         // * TEMP: save mode for SCSS / values that need to be quoted,
         // * until SCSS version 2.0, which drops native / calc support
-        if (varSyntax === "$" && safeMode) {
+        if (varPrefix === "$" && safeMode) {
             if (typeof value === "string") {
                 value.includes("/") && (value = `"${value}"`);
             }
         }
 
-        if (name.includes("-@media:dark") && varSyntax !== "$") {
+        if (name.includes("-@media:dark") && varPrefix !== "$") {
             stylesDark.push(`${indent}${varName}: ${value};\n`);
             return;
         }

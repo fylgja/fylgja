@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-06-22
+### Changed
+- default selector to `:where(:root)`
+
+### Fixed
+- `varPrefix` having no effect on JSON and JS files
+
 ## [1.1.0] - 2023-04-29
 ### Added
 - Support for removing the default key from the name output, this is enabled by default

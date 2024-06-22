@@ -8,7 +8,7 @@ import kebabCase from "./kebabCase.js";
  * @param {Object} options
  * @param {string} options.prefix
  * @param {string} options.suffix
- * @param {string} options.varSyntax
+ * @param {string} options.varPrefix
  * @param {boolean} options.removeDefaultFromName
  * @returns {string}
  */
@@ -17,7 +17,7 @@ const toJsStyleTokens = (
     {
         prefix = "",
         suffix = "",
-        varSyntax = "--",
+        varPrefix = "--",
         removeDefaultFromName = true,
     } = {}
 ) => {
@@ -41,7 +41,7 @@ const toJsStyleTokens = (
             name = name.replace("-default", "");
         }
 
-        const varName = `${varSyntax}${prefix}${name}${suffix}`;
+        const varName = `${varPrefix}${prefix}${name}${suffix}`;
 
         styles = { ...styles, [varName]: value };
     });

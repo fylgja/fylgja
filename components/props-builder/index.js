@@ -16,7 +16,7 @@ import toTokens from "./src/toTokens.js";
  * @param {Object} options
  * @param {Object} options.props
  * @param {string} options.filename
- * @param {string} options.selector default: `:root`
+ * @param {string} options.selector default: `:where(:root)`
  * @param {string} options.prefix
  * @param {string} options.suffix
  * @param {string} options.generationSyntax default: if empty the default is based on the file extension
@@ -29,7 +29,7 @@ import toTokens from "./src/toTokens.js";
 export const propsBuilder = ({
     props,
     filename = "tokens.css",
-    selector = ":root",
+    selector = ":where(:root)",
     prefix = "",
     suffix = "",
     generationSyntax,
@@ -88,16 +88,15 @@ export const propsBuilder = ({
 
         case "scss":
         case "css":
-            const styleOptions = {
-                prefix,
-                suffix,
-                varSyntax: mode === "scss" ? "$" : varPrefix,
-                safeMode: mode === "scss" ? true : safeMode,
-                removeDefaultFromName,
-            };
             const { styles, stylesDark, appendedMeta } = toStyleTokens(
                 flatProps,
-                styleOptions
+                {
+                    prefix,
+                    suffix,
+                    varPrefix: mode === "scss" ? "$" : varPrefix,
+                    safeMode: mode === "scss" ? true : safeMode,
+                    removeDefaultFromName,
+                }
             );
             const hasCssValues = styles.length;
             const hasCssDarkValues = stylesDark.length;
