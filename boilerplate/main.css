@@ -3,7 +3,7 @@
 @import url("../base/theme.css");
 
 /* Tokens */
-@import url("../props/_sort/shadow/shadow.css");
+@import url("../tokens");
 
 /* Components */
 @import url("../components/container");
