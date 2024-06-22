@@ -1,0 +1,39 @@
+{
+  "name": "@fylgja/tokens",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "type": "module",
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "tokens"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "css-tokens",
+    "css-props",
+    "scss-tokens",
+    "scss-props",
+    "design-tokens",
+    "figma-tokens"
+  ],
+  "scripts": {
+    "start": "",
+    "build:tokens": "node scripts/build.js",
+    "build:main": "npx lightningcss --bundle --custom-media css/index.css -o index.css",
+    "build:main:min": "npx lightningcss --minify --bundle --custom-media css/index.css -o index.min.css",
+    "build:darkmode": "npx lightningcss --bundle css/darkmode/index.css -o darkmode.css",
+    "prebuild": "npm run build:tokens",
+    "build": "npm run build:main && npm run build:main:min && npm run build:darkmode"
+  },
+  "devDependencies": {
+    "@fylgja/props-builder": "^1.1.0"
+  }
+}

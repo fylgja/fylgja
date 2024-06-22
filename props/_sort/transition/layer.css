@@ -1,1 +1,0 @@
-@layer utilities{.transition{--property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;--duration: 0.2s;--easing: ease-in;--delay: 0s;transition:var(--duration) var(--easing) var(--delay);transition-property:var(--property)}}

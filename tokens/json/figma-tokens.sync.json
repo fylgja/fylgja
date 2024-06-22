@@ -1,0 +1,586 @@
+{
+  "fylgja": {
+    "other": {
+      "ratio-box": {
+        "value": 1,
+        "type": "other"
+      },
+      "ratio-landscape": {
+        "value": "4/3",
+        "type": "other"
+      },
+      "ratio-portrait": {
+        "value": "3/4",
+        "type": "other"
+      },
+      "ratio-widescreen": {
+        "value": "16/9",
+        "type": "other"
+      },
+      "ratio-superwide": {
+        "value": "21/9",
+        "type": "other"
+      },
+      "ratio-ultrawide": {
+        "value": "18/5",
+        "type": "other"
+      },
+      "ratio-golden": {
+        "value": "1.618/1",
+        "type": "other"
+      },
+      "ease-1": {
+        "value": "cubic-bezier(0.25, 0.1, 0.1, 1)",
+        "type": "other"
+      },
+      "ease-2": {
+        "value": "cubic-bezier(0.25, 0.1, 0.2, 1)",
+        "type": "other"
+      },
+      "ease-3": {
+        "value": "cubic-bezier(0.25, 0.1, 0.3, 1)",
+        "type": "other"
+      },
+      "ease-4": {
+        "value": "cubic-bezier(0.25, 0.1, 0.4, 1)",
+        "type": "other"
+      },
+      "ease-5": {
+        "value": "cubic-bezier(0.25, 0.1, 0.5, 1)",
+        "type": "other"
+      },
+      "easeIn-1": {
+        "value": "cubic-bezier(0.3, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeIn-2": {
+        "value": "cubic-bezier(0.5, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeIn-3": {
+        "value": "cubic-bezier(0.7, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeIn-4": {
+        "value": "cubic-bezier(0.9, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeIn-5": {
+        "value": "cubic-bezier(1, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeOut-1": {
+        "value": "cubic-bezier(0, 0, 0.7, 1)",
+        "type": "other"
+      },
+      "easeOut-2": {
+        "value": "cubic-bezier(0, 0, 0.5, 1)",
+        "type": "other"
+      },
+      "easeOut-3": {
+        "value": "cubic-bezier(0, 0, 0.3, 1)",
+        "type": "other"
+      },
+      "easeOut-4": {
+        "value": "cubic-bezier(0, 0, 0.1, 1)",
+        "type": "other"
+      },
+      "easeOut-5": {
+        "value": "cubic-bezier(0, 0, 0, 1)",
+        "type": "other"
+      },
+      "easeInOut-1": {
+        "value": "cubic-bezier(0.1, 0, 0.9, 1)",
+        "type": "other"
+      },
+      "easeInOut-2": {
+        "value": "cubic-bezier(0.3, 0, 0.7, 1)",
+        "type": "other"
+      },
+      "easeInOut-3": {
+        "value": "cubic-bezier(0.5, 0, 0.5, 1)",
+        "type": "other"
+      },
+      "easeInOut-4": {
+        "value": "cubic-bezier(0.7, 0, 0.3, 1)",
+        "type": "other"
+      },
+      "easeInOut-5": {
+        "value": "cubic-bezier(0.9, 0, 0.1, 1)",
+        "type": "other"
+      },
+      "easeElasticIn-1": {
+        "value": "cubic-bezier(0.5, 0.25, 0.75, -0.25)",
+        "type": "other"
+      },
+      "easeElasticIn-2": {
+        "value": "cubic-bezier(0.5, 0, 0.75, -0.25)",
+        "type": "other"
+      },
+      "easeElasticIn-3": {
+        "value": "cubic-bezier(0.5, -0.25, 0.75, -0.25)",
+        "type": "other"
+      },
+      "easeElasticIn-4": {
+        "value": "cubic-bezier(0.5, -0.5, 0.75, -0.25)",
+        "type": "other"
+      },
+      "easeElasticIn-5": {
+        "value": "cubic-bezier(0.5, -0.75, 0.75, -0.25)",
+        "type": "other"
+      },
+      "easeElasticOut-1": {
+        "value": "cubic-bezier(0.5, 0.75, 0.75, 1.25)",
+        "type": "other"
+      },
+      "easeElasticOut-2": {
+        "value": "cubic-bezier(0.5, 1, 0.75, 1.25)",
+        "type": "other"
+      },
+      "easeElasticOut-3": {
+        "value": "cubic-bezier(0.5, 1.25, 0.75, 1.25)",
+        "type": "other"
+      },
+      "easeElasticOut-4": {
+        "value": "cubic-bezier(0.5, 1.5, 0.75, 1.25)",
+        "type": "other"
+      },
+      "easeElasticOut-5": {
+        "value": "cubic-bezier(0.5, 1.75, 0.75, 1.25)",
+        "type": "other"
+      },
+      "easeElasticInOut-1": {
+        "value": "cubic-bezier(0.5, -0.1, 0.1, 1.5)",
+        "type": "other"
+      },
+      "easeElasticInOut-2": {
+        "value": "cubic-bezier(0.5, -0.3, 0.1, 1.5)",
+        "type": "other"
+      },
+      "easeElasticInOut-3": {
+        "value": "cubic-bezier(0.5, -0.5, 0.1, 1.5)",
+        "type": "other"
+      },
+      "easeElasticInOut-4": {
+        "value": "cubic-bezier(0.5, -0.7, 0.1, 1.5)",
+        "type": "other"
+      },
+      "easeElasticInOut-5": {
+        "value": "cubic-bezier(0.5, -0.9, 0.1, 1.5)",
+        "type": "other"
+      },
+      "fontSize-1": {
+        "value": "0.875rem",
+        "type": "other"
+      },
+      "fontSize-2": {
+        "value": "1rem",
+        "type": "other"
+      },
+      "fontSize-3": {
+        "value": "1.125rem",
+        "type": "other"
+      },
+      "fontSize-4": {
+        "value": "1.25rem",
+        "type": "other"
+      },
+      "fontSize-5": {
+        "value": "1.5rem",
+        "type": "other"
+      },
+      "fontSize-7": {
+        "value": "2rem",
+        "type": "other"
+      },
+      "fontSize-8": {
+        "value": "2.5rem",
+        "type": "other"
+      },
+      "fontSize-9": {
+        "value": "3rem",
+        "type": "other"
+      },
+      "fontSize-10": {
+        "value": "3.5rem",
+        "type": "other"
+      },
+      "fontSize-fluid-1": {
+        "value": "clamp(0.875rem, 1.5cqi, 1rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-2": {
+        "value": "clamp(1rem, 2cqi, 1.125rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-3": {
+        "value": "clamp(1.25rem, 2cqi, 1.5rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-4": {
+        "value": "clamp(1.5rem, 3cqi, 2rem)",
+        "type": "other"
+      },
+      "fontSize-fluid-5": {
+        "value": "clamp(2rem, 5cqi, 3.5rem)",
+        "type": "other"
+      },
+      "lineHeight-1": {
+        "value": "1.1",
+        "type": "other"
+      },
+      "lineHeight-2": {
+        "value": "1.25",
+        "type": "other"
+      },
+      "lineHeight-3": {
+        "value": "1.375",
+        "type": "other"
+      },
+      "lineHeight-4": {
+        "value": "1.5",
+        "type": "other"
+      },
+      "lineHeight-5": {
+        "value": "1.8",
+        "type": "other"
+      },
+      "layer-1": {
+        "value": 1,
+        "type": "other"
+      },
+      "layer-2": {
+        "value": 2,
+        "type": "other"
+      },
+      "layer-3": {
+        "value": 4,
+        "type": "other"
+      },
+      "layer-4": {
+        "value": 6,
+        "type": "other"
+      },
+      "layer-5": {
+        "value": 8,
+        "type": "other"
+      },
+      "insetShadow-1": {
+        "value": "inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + $9%))",
+        "type": "other"
+      },
+      "insetShadow-2": {
+        "value": "inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + $9%))",
+        "type": "other"
+      },
+      "insetShadow-3": {
+        "value": "inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + $9%))",
+        "type": "other"
+      },
+      "insetShadow-4": {
+        "value": "inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + $9%))",
+        "type": "other"
+      },
+      "insetShadow-5": {
+        "value": "inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + $9%))",
+        "type": "other"
+      }
+    },
+    "borderWidth": {
+      "border-size-1": {
+        "value": "0.125rem",
+        "type": "borderWidth"
+      },
+      "border-size-2": {
+        "value": "0.25rem",
+        "type": "borderWidth"
+      },
+      "border-size-3": {
+        "value": "0.375rem",
+        "type": "borderWidth"
+      },
+      "border-size-4": {
+        "value": "0.5rem",
+        "type": "borderWidth"
+      },
+      "border-size-5": {
+        "value": "0.75rem",
+        "type": "borderWidth"
+      },
+      "border-size-6": {
+        "value": "1rem",
+        "type": "borderWidth"
+      }
+    },
+    "borderRadius": {
+      "radius-1": {
+        "value": "0.125rem",
+        "type": "borderRadius"
+      },
+      "radius-2": {
+        "value": "0.25rem",
+        "type": "borderRadius"
+      },
+      "radius-3": {
+        "value": "0.5rem",
+        "type": "borderRadius"
+      },
+      "radius-4": {
+        "value": "1rem",
+        "type": "borderRadius"
+      },
+      "radius-5": {
+        "value": "2rem",
+        "type": "borderRadius"
+      },
+      "radius-6": {
+        "value": "3rem",
+        "type": "borderRadius"
+      },
+      "radius-full": {
+        "value": "1e5px",
+        "type": "borderRadius"
+      },
+      "radius-blob-1": {
+        "value": "30% 70% 70% 30% / 53% 30% 70% 47%",
+        "type": "borderRadius"
+      },
+      "radius-blob-2": {
+        "value": "53% 47% 34% 66% / 63% 46% 54% 37%",
+        "type": "borderRadius"
+      },
+      "radius-blob-3": {
+        "value": "37% 63% 56% 44% / 49% 56% 44% 51%",
+        "type": "borderRadius"
+      },
+      "radius-blob-4": {
+        "value": "63% 37% 37% 63% / 43% 37% 63% 57%",
+        "type": "borderRadius"
+      },
+      "radius-blob-5": {
+        "value": "49% 51% 48% 52% / 57% 44% 56% 43%",
+        "type": "borderRadius"
+      },
+      "radius-conditional-1": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-1))",
+        "type": "borderRadius"
+      },
+      "radius-conditional-2": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-2))",
+        "type": "borderRadius"
+      },
+      "radius-conditional-3": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-3))",
+        "type": "borderRadius"
+      },
+      "radius-conditional-4": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-4))",
+        "type": "borderRadius"
+      },
+      "radius-conditional-5": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-5))",
+        "type": "borderRadius"
+      },
+      "radius-conditional-6": {
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-6))",
+        "type": "borderRadius"
+      }
+    },
+    "sizing": {
+      "size-1": {
+        "value": "0.25rem",
+        "type": "sizing"
+      },
+      "size-2": {
+        "value": "0.5rem",
+        "type": "sizing"
+      },
+      "size-3": {
+        "value": "0.625rem",
+        "type": "sizing"
+      },
+      "size-4": {
+        "value": "0.75rem",
+        "type": "sizing"
+      },
+      "size-5": {
+        "value": "0.875rem",
+        "type": "sizing"
+      },
+      "size-6": {
+        "value": "1rem",
+        "type": "sizing"
+      },
+      "size-7": {
+        "value": "1.25rem",
+        "type": "sizing"
+      },
+      "size-8": {
+        "value": "1.5rem",
+        "type": "sizing"
+      },
+      "size-9": {
+        "value": "1.75rem",
+        "type": "sizing"
+      },
+      "size-10": {
+        "value": "2rem",
+        "type": "sizing"
+      },
+      "size-11": {
+        "value": "2.25rem",
+        "type": "sizing"
+      },
+      "size-12": {
+        "value": "2.5rem",
+        "type": "sizing"
+      },
+      "size-13": {
+        "value": "2.75rem",
+        "type": "sizing"
+      },
+      "size-14": {
+        "value": "3rem",
+        "type": "sizing"
+      },
+      "size-15": {
+        "value": "4rem",
+        "type": "sizing"
+      },
+      "size-16": {
+        "value": "5rem",
+        "type": "sizing"
+      },
+      "size-17": {
+        "value": "7.5rem",
+        "type": "sizing"
+      },
+      "size-19": {
+        "value": "10rem",
+        "type": "sizing"
+      },
+      "size-20": {
+        "value": "15rem",
+        "type": "sizing"
+      },
+      "size-21": {
+        "value": "20rem",
+        "type": "sizing"
+      },
+      "size-22": {
+        "value": "30rem",
+        "type": "sizing"
+      },
+      "size-xxs": {
+        "value": "240px",
+        "type": "sizing"
+      },
+      "size-xs": {
+        "value": "420px",
+        "type": "sizing"
+      },
+      "size-sm": {
+        "value": "640px",
+        "type": "sizing"
+      },
+      "size-md": {
+        "value": "768px",
+        "type": "sizing"
+      },
+      "size-lg": {
+        "value": "1024px",
+        "type": "sizing"
+      },
+      "size-xl": {
+        "value": "1440px",
+        "type": "sizing"
+      },
+      "size-xxl": {
+        "value": "2200px",
+        "type": "sizing"
+      },
+      "sizeContent-1": {
+        "value": "25ch",
+        "type": "sizing"
+      },
+      "sizeContent-2": {
+        "value": "45ch",
+        "type": "sizing"
+      },
+      "sizeContent-3": {
+        "value": "65ch",
+        "type": "sizing"
+      },
+      "sizeHeading-1": {
+        "value": "22ch",
+        "type": "sizing"
+      },
+      "sizeHeading-2": {
+        "value": "28ch",
+        "type": "sizing"
+      },
+      "sizeHeading-3": {
+        "value": "36ch",
+        "type": "sizing"
+      }
+    },
+    "boxShadow": {
+      "shadow-color": {
+        "value": "0 0% 50%",
+        "type": "boxShadow"
+      },
+      "shadow-strength": {
+        "value": "1%",
+        "type": "boxShadow"
+      },
+      "shadow-1": {
+        "value": [
+          "0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      },
+      "shadow-2": {
+        "value": [
+          "0 3px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 2px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 1px 5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      },
+      "shadow-3": {
+        "value": [
+          "0 2px 4px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 4px 5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 1px 10px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      },
+      "shadow-4": {
+        "value": [
+          "0 3px 5px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 6px 10px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 1px 18px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      },
+      "shadow-5": {
+        "value": [
+          "0 5px 5px -3px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 8px 10px 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 3px 14px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      },
+      "shadow-6": {
+        "value": [
+          "0 7px 8px -4px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 18%))",
+          "0 12px 17px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 12%))",
+          "0 5px 22px 4px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 10%))"
+        ],
+        "type": "boxShadow"
+      }
+    }
+  }
+}
