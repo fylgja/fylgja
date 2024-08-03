@@ -2,22 +2,18 @@
 // Licensed under MIT Open Source
 
 :where(.join) {
+	position: relative;
 	display: flex;
 	max-width: max-content;
-	transition: color 250ms, background-color 250ms, border-color 250ms,
-		box-shadow 250ms, var(--outline-transition);
+	border-radius: var(--rounded, 0.5em);
 
-	&:focus-within {
-		border-color: var(--form-active-color, var(--join-stroke));
+	:focus-visible {
+		translate: 0 0; // Push item to top, without using position
 	}
 
 	> * {
 		margin: 0;
 		border-radius: 0;
-	}
-
-	> :not(:last-child) {
-		border-inline-end: 0;
 	}
 
 	> :first-child {
@@ -29,34 +25,38 @@
 		border-start-end-radius: inherit;
 		border-end-end-radius: inherit;
 	}
-
-	> :focus-visible {
-		translate: 0 0;
-		outline-offset: 0;
-	}
-
-	&:has(:focus-visible) :where(label:has(input:checked)) {
-		outline: 2px solid var(--brand, currentcolor);
-	}
 }
 
-:where(.join.-rating) {
-	--join-item-active: initial;
-	color: var(--brand);
+:where(.join.-custom-input, .join.-step) {
+	transition: color 250ms, background-color 250ms, border-color 250ms,
+		box-shadow 250ms, var(--outline-transition);
 
 	label {
 		position: relative;
-		opacity: var(--join-item-active, 0.6);
+
+		:where([type="checkbox"], [type="radio"]) {
+			position: absolute;
+			opacity: 0;
+			block-size: auto;
+			inline-size: auto;
+		}
 	}
 
-	input {
-		opacity: 0;
-		position: absolute;
-		inset: 0;
+	&:has(:focus-visible) {
+		outline: 2px solid var(--brand, currentcolor);
+		outline-offset: 2px;
 	}
+}
 
-	label:has(input:checked),
-	label:has(~ label input:checked) {
-		--join-item-active: /* */ ;
+:where(.join.-step) {
+	color: var(--brand);
+
+	label {
+		--_checked: 1;
+		opacity: var(--_checked);
+
+		&:has(:checked) ~ label {
+			--_checked: 0.6;
+		}
 	}
 }

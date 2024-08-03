@@ -21,6 +21,11 @@
 			--form-disabled-border-style,
 			#{form.$disabled-border-style}
 		);
+		cursor: not-allowed;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	&:disabled {
@@ -42,8 +47,10 @@
 		select
 	):focus {
 	border-color: var(--form-active-color, currentcolor);
-	outline: 1px solid var(--form-active-color, currentcolor);
-	outline-offset: 0;
+	outline-width: 1px;
+	outline-offset: calc(
+		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
+	);
 }
 
 :where(input[type="color"]) {
@@ -104,6 +111,7 @@
 // Nuke the default styles for the fieldset and legend,
 // and let authors determine what styles it needs to be, or just blank
 :where(fieldset) {
+	min-inline-size: 0;
 	margin: 0;
 	padding: 0;
 }

@@ -3,12 +3,16 @@
 
 @use "helper" as btn;
 
-:where(.btn, button, [type="button"], [type="submit"], [type="reset"]),
+$selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
+
+:where(#{$selectors}),
 :where(input[type="file"])::file-selector-button {
 	@include btn.base;
 }
 
-:where(.btn, button, [type="button"], [type="submit"], [type="reset"]) {
+:where(#{$selectors}) {
+	vertical-align: middle;
+
 	&:hover {
 		@include btn.hover;
 	}

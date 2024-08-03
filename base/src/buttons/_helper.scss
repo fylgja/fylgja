@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$gap: 0.5em;
+$gap: 0.5em !default;
 $padding-block: 0.375rem !default;
 $padding-inline: 0.8rem !default;
 $border-width: 2px !default;
@@ -21,8 +21,12 @@ $active-bg: color-mix(in oklab, currentcolor, transparent 78%) !default;
 $active-color: currentcolor !default;
 
 $disabled-stroke: currentcolor !default;
-$disabled-bg: hsl(0 0% 90%) !default;
-$disabled-color: hsl(0 0% 40%) !default;
+$disabled-bg: color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)) !default;
+$disabled-color: color-mix(
+	in oklab,
+	var(--root-fg) 40%,
+	var(--root-bg)
+) !default;
 
 @mixin base {
 	appearance: button; // Correct the inability to style the border radius in iOS Safari
@@ -39,7 +43,6 @@ $disabled-color: hsl(0 0% 40%) !default;
 	color: var(--btn-color, #{$color});
 	font-weight: var(--btn-font-weight, #{$font-weight});
 	text-decoration: none;
-	vertical-align: middle;
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s,
 		box-shadow 0.2s, var(--outline-transition);
 	user-select: none;

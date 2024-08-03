@@ -7,7 +7,8 @@
 ::after {
   box-sizing: border-box;
   border: 0 solid currentcolor;
-  background: center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 :where(:root) {
@@ -31,7 +32,7 @@
 
 :where(:focus-visible) {
   outline: 2px solid;
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 :where(:active:focus-visible) {
@@ -294,7 +295,7 @@ summary,
   font-style: italic;
 }
 
-:where(.btn, button, [type=button], [type=submit], [type=reset]),
+:where(button, [type=button], [type=submit], [type=reset], .btn),
 :where(input[type=file])::file-selector-button {
   appearance: button;
   display: inline-flex;
@@ -309,18 +310,20 @@ summary,
   color: var(--btn-color, currentcolor);
   font-weight: var(--btn-font-weight, 500);
   text-decoration: none;
-  vertical-align: middle;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
 }
 
-:where(.btn, button, [type=button], [type=submit], [type=reset]):hover {
+:where(button, [type=button], [type=submit], [type=reset], .btn) {
+  vertical-align: middle;
+}
+:where(button, [type=button], [type=submit], [type=reset], .btn):hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn, button, [type=button], [type=submit], [type=reset]):is(:active,
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active,
 :has(:checked),
 [aria-current=page],
 [aria-checked=true]) {
@@ -328,11 +331,11 @@ summary,
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn, button, [type=button], [type=submit], [type=reset]):is(.is-disabled, :disabled) {
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-disabled, :disabled) {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
-  background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
-  color: var(--btn-disabled-color, hsl(0, 0%, 40%));
+  background-color: var(--btn-disabled-bg, color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)));
+  color: var(--btn-disabled-color, color-mix(in oklab, var(--root-fg) 40%, var(--root-bg)));
   cursor: not-allowed;
 }
 
@@ -349,8 +352,8 @@ summary,
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
-  background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
-  color: var(--btn-disabled-color, hsl(0, 0%, 40%));
+  background-color: var(--btn-disabled-bg, color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)));
+  color: var(--btn-disabled-color, color-mix(in oklab, var(--root-fg) 40%, var(--root-bg)));
   cursor: not-allowed;
 }
 
@@ -381,6 +384,16 @@ select) {
 textarea,
 select):is(:disabled, [readonly]) {
   border-style: var(--form-disabled-border-style, dashed);
+  cursor: not-allowed;
+}
+:where(input:not([type=checkbox],
+[type=radio],
+[type=button],
+[type=reset],
+[type=submit]),
+textarea,
+select):is(:disabled, [readonly]):focus {
+  outline: none;
 }
 :where(input:not([type=checkbox],
 [type=radio],
@@ -402,8 +415,8 @@ select):disabled {
 textarea,
 select):focus {
   border-color: var(--form-active-color, currentcolor);
-  outline: 1px solid var(--form-active-color, currentcolor);
-  outline-offset: 0;
+  outline-width: 1px;
+  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 
 :where(input[type=color]) {
@@ -536,6 +549,7 @@ select):focus {
 }
 
 :where(fieldset) {
+  min-inline-size: 0;
   margin: 0;
   padding: 0;
 }
@@ -657,56 +671,53 @@ input:is([type=tel], [type=url], [type=email], [type=number]) {
   translate: calc(var(--_offset-x) / -1) 0%;
 }
 
+:where(dialog) {
+  --backdrop: hsla(0, 0%, 0%, 0.3);
+  --ty: var(--dialog-translate-y, 2rem);
+  --tx: var(--dialog-translate-x, 0);
+  --speed: var(--dialog-close-speed, 300ms);
+  --max-size-y: calc(100% - 2em);
+  --max-size-x: calc(100% - 2em);
+  --my: auto;
+  --mx: auto;
+  position: fixed;
+  max-block-size: var(--max-size-y);
+  max-inline-size: var(--max-size-x);
+  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, #fff));
+  color: var(--dialog-color, var(--root-fg));
+  border-radius: 1rem;
+  margin-block: var(--my);
+  margin-inline: var(--mx);
+  padding: 1.5rem;
+  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
+  translate: var(--tx) var(--ty);
+  opacity: 0;
+}
 @media (prefers-reduced-motion: no-preference) {
-  :where(dialog, [popover]),
-  ::backdrop {
+  :where(dialog) {
     transition-property: translate, opacity, display, overlay;
     transition-duration: var(--speed);
     transition-behavior: allow-discrete;
   }
 }
 
-::backdrop {
-  background-color: var(--backdrop-color, hsla(0, 0%, 0%, 0.2));
+:where(dialog)::backdrop {
+  background-color: var(--backdrop);
 }
 
-:where(dialog, [popover]) {
-  --ty: var(--dialog-translate-y, 2rem);
-  --tx: var(--dialog-translate-x, 0);
-  --speed: var(--dialog-close-speed, 300ms);
-  max-block-size: calc(100% - 2em);
-  max-inline-size: calc(100% - 2em);
-  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, white));
-  color: var(--dialog-color, var(--root-fg));
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
-  opacity: 0;
-  translate: var(--tx) var(--ty);
-}
-
-:where(dialog[open], :popover-open),
-:where(dialog[open], :popover-open)::backdrop {
-  opacity: 1;
-}
-@starting-style {
-  :where(dialog[open], :popover-open),
-  :where(dialog[open], :popover-open)::backdrop {
-    opacity: 0;
-  }
-}
-
-:where(dialog[open], :popover-open) {
+:where(dialog:is([open], :popover-open)) {
   --speed: var(--dialog-open-speed, 400ms);
+  opacity: 1;
   translate: 0 0;
 }
 @starting-style {
-  :where(dialog[open], :popover-open) {
+  :where(dialog:is([open], :popover-open)) {
+    opacity: 0;
     translate: var(--tx) var(--ty);
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, :popover-open))) {
+:where(:root:has(dialog:is([open]:modal, .noscroll))) {
   overflow: hidden;
 }
 

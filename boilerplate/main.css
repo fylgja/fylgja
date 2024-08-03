@@ -4,14 +4,15 @@
 
 /* Tokens */
 @import url("../tokens");
+@import url("../tokens/theme.css");
 
 /* Components */
 @import url("../components/container");
+@import url("../components/card");
 @import url("../components/join");
 @import url("../components/menu");
 @import url("../components/breadcrumbs");
 @import url("../components/badge");
-@import url("../components/offcanvas");
 
 /* Utilities */
 @import url("../utilities");
@@ -21,22 +22,11 @@
 	navigation: auto;
 }
 
-@media (prefers-reduced-motion) {
-	@view-transition {
-		navigation: none;
-	}
-}
-
 :root {
 	--anchor-offset: calc(75px + 5ex);
 }
 
 @keyframes add-shadow {
-	from {
-		box-shadow: none;
-		background-color: var(--root-bg);
-	}
-
 	to {
 		box-shadow: var(--shadow-2);
 		background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
@@ -63,8 +53,8 @@
 	--root-bg: hsl(0 0% 100%);
 	--root-fg: hsl(0 0% 8%);
 	--select-icon: var(--chevron-light-scheme);
-	--shadow-color: 0 0% 50%;
-	--shadow-weight: 1%;
+	--shadow-color: gray;
+	--shadow-strength: 1%;
 	color-scheme: light;
 }
 
@@ -72,8 +62,8 @@
 	--root-bg: color-mix(in oklab, black 82%, var(--brand));
 	--root-fg: #fff;
 	--select-icon: var(--chevron-dark-scheme);
-	--shadow-color: 220 40% 2%;
-	--shadow-weight: 25%;
+	--shadow-color: hsl(220 40% 2%);
+	--shadow-strength: 25%;
 	color-scheme: dark;
 }
 

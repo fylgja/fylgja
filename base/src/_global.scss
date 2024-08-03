@@ -31,7 +31,8 @@ $anchor-offset: max(2rem, 5svb) !default;
 ::after {
 	box-sizing: border-box;
 	border: 0 solid currentcolor; // 1
-	background: center no-repeat; // 2
+	background-position: center; // 2
+	background-repeat: no-repeat; // 2
 }
 
 :where(:root) {
@@ -55,7 +56,7 @@ $anchor-offset: max(2rem, 5svb) !default;
 
 :where(:focus-visible) {
 	outline: 2px solid;
-	outline-offset: 3px;
+	outline-offset: 2px;
 }
 
 :where(:active:focus-visible) {

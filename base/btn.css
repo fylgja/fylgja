@@ -2,7 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(.btn, button, [type=button], [type=submit], [type=reset]),
+:where(button, [type=button], [type=submit], [type=reset], .btn),
 :where(input[type=file])::file-selector-button {
   appearance: button;
   display: inline-flex;
@@ -17,18 +17,20 @@
   color: var(--btn-color, currentcolor);
   font-weight: var(--btn-font-weight, 500);
   text-decoration: none;
-  vertical-align: middle;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
 }
 
-:where(.btn, button, [type=button], [type=submit], [type=reset]):hover {
+:where(button, [type=button], [type=submit], [type=reset], .btn) {
+  vertical-align: middle;
+}
+:where(button, [type=button], [type=submit], [type=reset], .btn):hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke, currentcolor));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn, button, [type=button], [type=submit], [type=reset]):is(:active,
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active,
 :has(:checked),
 [aria-current=page],
 [aria-checked=true]) {
@@ -36,11 +38,11 @@
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in oklab, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn, button, [type=button], [type=submit], [type=reset]):is(.is-disabled, :disabled) {
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-disabled, :disabled) {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
-  background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
-  color: var(--btn-disabled-color, hsl(0, 0%, 40%));
+  background-color: var(--btn-disabled-bg, color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)));
+  color: var(--btn-disabled-color, color-mix(in oklab, var(--root-fg) 40%, var(--root-bg)));
   cursor: not-allowed;
 }
 
@@ -57,7 +59,7 @@
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke, currentcolor);
-  background-color: var(--btn-disabled-bg, hsl(0, 0%, 90%));
-  color: var(--btn-disabled-color, hsl(0, 0%, 40%));
+  background-color: var(--btn-disabled-bg, color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)));
+  color: var(--btn-disabled-color, color-mix(in oklab, var(--root-fg) 40%, var(--root-bg)));
   cursor: not-allowed;
 }

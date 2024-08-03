@@ -2,55 +2,52 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
+:where(dialog) {
+  --backdrop: hsla(0, 0%, 0%, 0.3);
+  --ty: var(--dialog-translate-y, 2rem);
+  --tx: var(--dialog-translate-x, 0);
+  --speed: var(--dialog-close-speed, 300ms);
+  --max-size-y: calc(100% - 2em);
+  --max-size-x: calc(100% - 2em);
+  --my: auto;
+  --mx: auto;
+  position: fixed;
+  max-block-size: var(--max-size-y);
+  max-inline-size: var(--max-size-x);
+  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, #fff));
+  color: var(--dialog-color, var(--root-fg));
+  border-radius: 1rem;
+  margin-block: var(--my);
+  margin-inline: var(--mx);
+  padding: 1.5rem;
+  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
+  translate: var(--tx) var(--ty);
+  opacity: 0;
+}
 @media (prefers-reduced-motion: no-preference) {
-  :where(dialog, [popover]),
-  ::backdrop {
+  :where(dialog) {
     transition-property: translate, opacity, display, overlay;
     transition-duration: var(--speed);
     transition-behavior: allow-discrete;
   }
 }
 
-::backdrop {
-  background-color: var(--backdrop-color, hsla(0, 0%, 0%, 0.2));
+:where(dialog)::backdrop {
+  background-color: var(--backdrop);
 }
 
-:where(dialog, [popover]) {
-  --ty: var(--dialog-translate-y, 2rem);
-  --tx: var(--dialog-translate-x, 0);
-  --speed: var(--dialog-close-speed, 300ms);
-  max-block-size: calc(100% - 2em);
-  max-inline-size: calc(100% - 2em);
-  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, white));
-  color: var(--dialog-color, var(--root-fg));
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
-  opacity: 0;
-  translate: var(--tx) var(--ty);
-}
-
-:where(dialog[open], :popover-open),
-:where(dialog[open], :popover-open)::backdrop {
-  opacity: 1;
-}
-@starting-style {
-  :where(dialog[open], :popover-open),
-  :where(dialog[open], :popover-open)::backdrop {
-    opacity: 0;
-  }
-}
-
-:where(dialog[open], :popover-open) {
+:where(dialog:is([open], :popover-open)) {
   --speed: var(--dialog-open-speed, 400ms);
+  opacity: 1;
   translate: 0 0;
 }
 @starting-style {
-  :where(dialog[open], :popover-open) {
+  :where(dialog:is([open], :popover-open)) {
+    opacity: 0;
     translate: var(--tx) var(--ty);
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, :popover-open))) {
+:where(:root:has(dialog:is([open]:modal, .noscroll))) {
   overflow: hidden;
 }

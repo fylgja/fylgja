@@ -10,7 +10,7 @@
 	<body>
 		<header class="sticky-header">
 			<div
-				class="container flexbox align gap-var p-var"
+				class="container flexbox align gap p-var"
 				style="--px: 0rem;"
 			>
 				<a href="/">
@@ -26,7 +26,7 @@
 					<button popovertarget="menuTheme" aria-label="Pick Theme">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
 					</button>
-					<dialog id="menuTheme" popover class="offcanvas-end">
+					<dialog id="menuTheme" popover class="offcanvas from-end">
 						<div class="flexbox align">
 							<strong>Pick theme</strong>
 							<button
@@ -50,7 +50,7 @@
 			</div>
 		</header>
 		<main class="container">
-			<section>
+			<section aria-label="Auto Grid">
 				<h2>Auto grid</h2>
 				<div class="auto-grid">
 					<figure class="stack">
@@ -66,9 +66,9 @@
 					<img src="https://picsum.photos/id/427/480/480" alt="coffee beans">
 				</div>
 			</section>
-			<section>
+			<section aria-label="Grid Cols">
 				<h2>Grid Cols</h2>
-				<div class="grid-cols gap-var" style="--md_grid-cols: 3;">
+				<div class="grid-cols" style="--md_grid-cols: 3;">
 					<figure class="stack">
 						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
 						<figcaption
@@ -82,12 +82,12 @@
 					<img src="https://picsum.photos/id/427/480/480" alt="coffee beans">
 				</div>
 			</section>
-			<section>
+			<section aria-label="Snap">
 				<h2>Snap</h2>
 				<div class="flow">
 					<ul
 						role="list"
-						class="snap grid-cols grid-cols-flow gap-var scroll-x scroll-mask-x p-var"
+						class="snap grid-cols grid-cols-flow scroll-x scroll-mask-x p-var"
 						style="--md_grid-cols: 4; --py: 0 .875em; --px: 0;"
 					>
 						<li>
@@ -134,6 +134,68 @@
 						<img src="https://picsum.photos/id/435/500/300" alt="coffee beans">
 					</div>
 				</div>
+			</section>
+			<section aria-label="Color Tokens">
+				<h2>Color Tokens</h2>
+				<div style="--hue: 270;">
+					<div class="flexbox color-boxes">
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+					</div>
+					<div class="flexbox color-boxes" style="--chroma: 0.3;">
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+						<div class="size"></div>
+					</div>
+				</div>
+				<style>
+					.color-boxes > * {
+						--size: 5rem;
+						background-color: var(--clr);
+
+						&:nth-child(1) { --clr: var(--color-1) }
+						&:nth-child(2) { --clr: var(--color-2) }
+						&:nth-child(3) { --clr: var(--color-3) }
+						&:nth-child(4) { --clr: var(--color-4) }
+						&:nth-child(5) { --clr: var(--color-5) }
+						&:nth-child(6) { --clr: var(--color-6) }
+						&:nth-child(7) { --clr: var(--color-7) }
+						&:nth-child(8) { --clr: var(--color-8) }
+						&:nth-child(9) { --clr: var(--color-9) }
+						&:nth-child(10) { --clr: var(--color-10) }
+						&:nth-child(11) { --clr: var(--color-11) }
+						&:nth-child(12) { --clr: var(--color-12) }
+						&:nth-child(13) { --clr: var(--color-13) }
+						&:nth-child(14) { --clr: var(--color-14) }
+
+						@media (width > 768px) {
+							--size: 6rem;
+						}
+					}
+				</style>
 			</section>
 		</main>
 	</body>

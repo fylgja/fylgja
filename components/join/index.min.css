@@ -1,1 +1,47 @@
-:where(.join){transition:color .25s,background-color .25s,border-color .25s,box-shadow .25s,var(--outline-transition);max-width:max-content;display:flex}:where(.join):focus-within{border-color:var(--form-active-color,var(--join-stroke))}:where(.join)>*{border-radius:0;margin:0}:where(.join)>:not(:last-child){border-inline-end:0}:where(.join)>:first-child{border-start-start-radius:inherit;border-end-start-radius:inherit}:where(.join)>:last-child{border-start-end-radius:inherit;border-end-end-radius:inherit}:where(.join)>:focus-visible{outline-offset:0;translate:0}:where(.join):has(:focus-visible) :where(label:has(input:checked)){outline:2px solid var(--brand,currentcolor)}:where(.join.-rating){--join-item-active:initial;color:var(--brand)}:where(.join.-rating) label{opacity:var(--join-item-active,.6);position:relative}:where(.join.-rating) input{opacity:0;position:absolute;inset:0}:where(.join.-rating) label:has(input:checked),:where(.join.-rating) label:has(~label input:checked){--join-item-active: }
+:where(.join) {
+	transition: color 0.25s, background-color 0.25s, border-color 0.25s,
+		box-shadow 0.25s, var(--outline-transition);
+	max-width: max-content;
+	display: flex;
+}
+:where(.join):focus-within {
+	border-color: var(--form-active-color, var(--join-stroke));
+}
+:where(.join) > * {
+	border-radius: 0;
+	margin: 0;
+}
+:where(.join) > :not(:last-child) {
+	border-inline-end: 0;
+}
+:where(.join) > :first-child {
+	border-start-start-radius: inherit;
+	border-end-start-radius: inherit;
+}
+:where(.join) > :last-child {
+	border-start-end-radius: inherit;
+	border-end-end-radius: inherit;
+}
+:where(.join) > :focus-visible {
+	translate: 0;
+}
+:where(.join):has(:focus-visible) :where(label:has(input:checked)) {
+	outline: 2px solid var(--brand, currentcolor);
+}
+:where(.join.-rating) {
+	--join-item-active: initial;
+	color: var(--brand);
+}
+:where(.join.-rating) label {
+	opacity: var(--join-item-active, 0.6);
+	position: relative;
+}
+:where(.join.-rating) input {
+	opacity: 0;
+	position: absolute;
+	inset: 0;
+}
+:where(.join.-rating) label:has(input:checked),
+:where(.join.-rating) label:has(~ label input:checked) {
+	--join-item-active: ;
+}

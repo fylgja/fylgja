@@ -29,6 +29,16 @@ select) {
 textarea,
 select):is(:disabled, [readonly]) {
   border-style: var(--form-disabled-border-style, dashed);
+  cursor: not-allowed;
+}
+:where(input:not([type=checkbox],
+[type=radio],
+[type=button],
+[type=reset],
+[type=submit]),
+textarea,
+select):is(:disabled, [readonly]):focus {
+  outline: none;
 }
 :where(input:not([type=checkbox],
 [type=radio],
@@ -50,8 +60,8 @@ select):disabled {
 textarea,
 select):focus {
   border-color: var(--form-active-color, currentcolor);
-  outline: 1px solid var(--form-active-color, currentcolor);
-  outline-offset: 0;
+  outline-width: 1px;
+  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 
 :where(input[type=color]) {
@@ -184,6 +194,7 @@ select):focus {
 }
 
 :where(fieldset) {
+  min-inline-size: 0;
   margin: 0;
   padding: 0;
 }
