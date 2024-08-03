@@ -2,18 +2,16 @@
 // Licensed under MIT Open Source
 
 export default {
-	xs: "(width >= 420px)",
-	xsMax: "(width < 420px)",
-	sm: "(width >= 640px)",
-	smMax: "(width < 640px)",
+	sm: "(width >= 480px)",
+	smMax: "(width < 480px)",
 	md: "(width >= 768px)",
 	mdMax: "(width < 768px)",
 	lg: "(width >= 1024px)",
 	lgMax: "(width < 1024px)",
 	xl: "(width >= 1440px)",
 	xlMax: "(width < 1440px)",
-	xxl: "(width >= 2200px)",
-	xxlMax: "(width < 2200px)",
+	xxl: "(width >= 1920px)",
+	xxlMax: "(width < 1920px)",
 
 	// Device input
 	hdColor: "(dynamic-range: high)",

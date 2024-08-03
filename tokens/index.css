@@ -84,11 +84,6 @@
   --line-height-3: 1.375;
   --line-height-4: 1.5;
   --line-height-5: 1.8;
-  --gradient-1: 1;
-  --gradient-2: 2;
-  --gradient-3: 4;
-  --gradient-4: 6;
-  --gradient-5: 8;
   --size-1: .25rem;
   --size-2: .5rem;
   --size-3: .625rem;
@@ -130,18 +125,16 @@
   --layer-5: 8;
 }
 
-* {
-  --shadow-color: 0 0% 50%;
-  --shadow-strength: 1%;
-  --shadow-1: 0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --shadow-2: 0 3px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 2px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 1px 5px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --shadow-3: 0 2px 4px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 4px 5px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 1px 10px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --shadow-4: 0 3px 5px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 6px 10px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 1px 18px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --shadow-5: 0 5px 5px -3px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 8px 10px 1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 3px 14px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --shadow-6: 0 7px 8px -4px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 18%)), 0 12px 17px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 12%)), 0 5px 22px 4px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + 10%));
-  --inset-shadow-1: inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength)  + $ 9%));
-  --inset-shadow-2: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength)  + $ 9%));
-  --inset-shadow-3: inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength)  + $ 9%));
-  --inset-shadow-4: inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength)  + $ 9%));
-  --inset-shadow-5: inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength)  + $ 9%));
+*, :before, :after {
+  --shadow-1: 0 2px 1px -1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 1px 1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 1px 3px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --shadow-2: 0 3px 1px -2px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 2px 2px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 1px 5px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --shadow-3: 0 2px 4px -1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 4px 5px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 1px 10px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --shadow-4: 0 3px 5px -1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 6px 10px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 1px 18px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --shadow-5: 0 5px 5px -3px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 8px 10px 1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 3px 14px 2px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --shadow-6: 0 7px 8px -4px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 18%), transparent), 0 12px 17px 2px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), transparent), 0 5px 22px 4px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 10%), transparent);
+  --inset-shadow-1: inset 0 0 0 1px color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 9%), transparent);
+  --inset-shadow-2: inset 0 1px 2px 0 color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 9%), transparent);
+  --inset-shadow-3: inset 0 1px 4px 0 color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 9%), transparent);
+  --inset-shadow-4: inset 0 2px 8px 0 color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 9%), transparent);
+  --inset-shadow-5: inset 0 2px 14px 0 color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 9%), transparent);
 }

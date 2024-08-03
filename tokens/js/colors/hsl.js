@@ -2,13 +2,21 @@
 // Licensed under MIT Open Source
 
 export default {
-	ratio: {
-		box: 1, // Its a box
-		landscape: "4/3", // The older default video ratio
-		portrait: "3/4",
-		widescreen: "16/9", // Default video ratio
-		superwide: "21/9", // PC monitor
-		ultrawide: "18/5", // PC Gamer monitor
-		golden: "1.618/1", // Golden ratio (Not sure what this is, Google it mate)
+	hsl: {
+		0: "hsl(var(--hsl-hue) 100% 97.85%)",
+		1: "hsl(var(--hsl-hue) 100% 93.683%)",
+		2: "hsl(var(--hsl-hue) 100% 87.051%)",
+		3: "hsl(var(--hsl-hue) 100% 84.521%)",
+		4: "hsl(var(--hsl-hue) 100% 79.392%)",
+		5: "hsl(var(--hsl-hue) 100% 76.162%)",
+		6: "hsl(var(--hsl-hue) 76.667% 64.044%)",
+		7: "hsl(var(--hsl-hue) 63.165% 49.271%)",
+		8: "hsl(var(--hsl-hue) 72.91% 40.989%)",
+		9: "hsl(var(--hsl-hue) 92.277% 30.025%)",
+		10: "hsl(var(--hsl-hue) 100% 21.369%)",
+		11: "hsl(var(--hsl-hue) 100% 15.498%)",
+		12: "hsl(var(--hsl-hue) 100% 9.8873%)",
+		13: "hsl(var(--hsl-hue) 100% 5.8593%)",
+		14: "hsl(var(--hsl-hue) 100% 3.0397%)",
 	},
 };

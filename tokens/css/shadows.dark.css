@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
-    * {
-        --shadow-color: 220 40% 2%;
+    :where(:root) {
+        --shadow-color: hsl(220 40% 2%);
         --shadow-strength: 25%;
     }
 }

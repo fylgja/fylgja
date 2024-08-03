@@ -4,10 +4,12 @@
 import { propsBuilder } from "@fylgja/props-builder";
 import aspectRatio from "../js/aspect-ratio.js";
 import borders from "../js/borders.js";
-// import colors from "../src/colors/borders.js";
-const colors = {};
+import hsl from "../js/colors/hsl.js";
+import oklch from "../js/colors/oklch.js";
+import colorHues from "../js/colors/hues.js";
 import easing from "../js/easing.js";
 import fonts from "../js/fonts.js";
+import mq from "../js/mq.js";
 import gradients from "../js/colors/gradients.js";
 import { shadows, darkModeShadows } from "../js/shadows.js";
 import sizes from "../js/sizes.js";
@@ -19,7 +21,9 @@ import zLayer from "../js/z-layer.js";
 const props = {
 	...aspectRatio,
 	...borders,
-	...colors,
+	...hsl,
+	...oklch,
+	...colorHues,
 	...easing,
 	...fonts,
 	...sizes,
@@ -27,21 +31,22 @@ const props = {
 	...shadows,
 };
 
-const buildMap = {
+const buildRootMap = {
 	"aspect-ratio": aspectRatio,
 	"z-layer": zLayer,
 	borders,
-	colors,
+	"oklch-hues": colorHues,
 	easing,
 	fonts,
-	gradients,
+	// gradients,
 	sizes,
-	transforms,
-	transitions,
-	shadows,
+	// hsl,
+	// hex
+	// transforms,
+	// transitions,
 };
 
-Object.entries(buildMap).forEach(([tokenName, tokens]) => {
+Object.entries(buildRootMap).forEach(([tokenName, tokens]) => {
 	propsBuilder({ props: tokens, filename: `css/${tokenName}.css` });
 	propsBuilder({ props: tokens, filename: `scss/${tokenName}.scss` });
 	propsBuilder({
@@ -51,13 +56,25 @@ Object.entries(buildMap).forEach(([tokenName, tokens]) => {
 	});
 });
 
-// Extras
-propsBuilder({
-	props: darkModeShadows,
-	filename: "css/darkmode/shadows.css",
-	selector: "*",
+const buildElMap = {
+	shadows,
+	oklch,
+};
+
+Object.entries(buildElMap).forEach(([tokenName, tokens]) => {
+	propsBuilder({
+		props: tokens,
+		filename: `css/${tokenName}.css`,
+		selector: "*, ::before, ::after",
+	});
+	propsBuilder({ props: tokens, filename: `scss/${tokenName}.scss` });
 });
 
+// Extras
+propsBuilder({ props: mq, filename: `scss/mq.scss` });
+propsBuilder({ props: darkModeShadows, filename: "css/shadows.dark.css" });
+
+// Full JS version
 propsBuilder({
 	props: { ...props, ...darkModeShadows },
 	filename: "index.js",
