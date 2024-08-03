@@ -14,7 +14,7 @@ $badge-radius: 5rem !default;
 	padding-inline: 0.725em;
 	border-radius: var(--badge-radius, #{$badge-radius});
 	border-color: var(--badge-color, currentcolor);
-	background-color: var(--badge-bg, var(--brand));
+	background-color: var(--badge-bg, var(--brand, #eee));
 	color: var(--badge-color, var(--on-brand));
 	font-weight: bolder;
 	font-variant-numeric: tabular-nums;
