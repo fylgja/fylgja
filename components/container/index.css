@@ -1,6 +1,6 @@
 :root {
   --container-size: 1280px;
-  --container-gap: 2rem;
+  --container-gap: 2.5rem;
 }
 
 .container {
