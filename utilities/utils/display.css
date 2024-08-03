@@ -70,7 +70,7 @@
     display: inline-flex;
   }
 }
-@media (width >= 2200px) {
+@media (width >= 1920px) {
   .xxl\:hidden {
     display: none;
   }

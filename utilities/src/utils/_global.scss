@@ -1,0 +1,57 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$use-mq: true !default;
+$use-custom-mq: false !default;
+
+@use "helper" as *;
+@use "content-lazy";
+@use "display" with (
+	$use-mq: false
+);
+@use "divide";
+@use "flow";
+@use "gradient";
+@use "line-clamp";
+@use "list";
+@use "overlay";
+@use "position";
+@use "rounded";
+@use "scroll-mask";
+@use "scroll";
+@use "scrollbar";
+@use "snap";
+@use "spacing" with (
+	$use-mq: false
+);
+@use "size";
+@use "stretched-link";
+@use "truncate";
+
+// Layout
+@use "auto-grid";
+@use "grid-cols" with (
+	$use-mq: false
+);
+@use "flexbox" with (
+	$use-mq: false
+);
+@use "align" with (
+	$use-mq: false
+);
+@use "stack";
+
+// Aria
+@use "sr-only";
+
+@if $use-mq {
+	@include for-mq("min", $var-syntax: $use-custom-mq) using ($name) {
+		@include display.mq-utils($name);
+		@include spacing.mq-utils($name);
+
+		// Layout
+		@include grid-cols.mq-utils($name);
+		@include flexbox.mq-utils($name);
+		@include align.mq-utils($name);
+	}
+}

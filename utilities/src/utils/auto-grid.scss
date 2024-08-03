@@ -10,12 +10,12 @@ $max-cols: 4 !default;
 	--grid-col-size: #{$col-size};
 	--gap: #{$gap};
 	display: grid;
-	gap: var(--gap);
+	gap: var(--_gp, var(--gap));
 	grid-template-columns: repeat(
 		auto-fill,
 		minmax(
 			clamp(
-				100% / var(--grid-max-cols) - var(--gap),
+				100% / var(--grid-max-cols) - var(--_gp, var(--gap)),
 				var(--grid-col-size),
 				100%
 			),

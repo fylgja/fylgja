@@ -1,42 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as *;
-
-// Classic
-@use "utils/display" with (
-	$use-mq: false
-);
-@use "utils/sr-only" with (
-	$use-mq: false
-);
-
-// Dynamic
-@use "utils/auto-grid";
-@use "utils/stack";
-@use "utils/overlay";
-@use "utils/snap";
-@use "utils/scroll";
-@use "utils/scroll-mask";
-@use "utils/flow";
-@use "utils/position";
-@use "utils/rounded";
-@use "utils/line-clamp";
-@use "utils/truncate";
-@use "utils/scrollbar";
-@use "utils/stretched-link";
-@use "utils/gradient";
-
-// Mq props
-@use "utils/flexbox" with (
-	$use-mq: false
-);
-@use "utils/spacing" with (
-	$use-mq: false
-);
-@use "utils/align" with (
-	$use-mq: false
-);
-@use "utils/grid-cols" with (
+@use "./utils/global" with (
 	$use-mq: false
 );

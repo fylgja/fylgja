@@ -1,109 +1,104 @@
-.gap-var {
+.gap {
   --gap: 1em;
-  --sm_gap: initial;
-  --md_gap: initial;
-  --lg_gap: initial;
-  --xl_gap: initial;
-  --xxl_gap: initial;
-  gap: var(--xxl_gap, var(--xl_gap, var(--lg_gap, var(--md_gap, var(--sm_gap, var(--gap))))));
+  gap: var(--_gp, var(--gap));
 }
 
 .m-var {
   --my: 0;
-  --mx: auto;
-  --sm_my: initial;
-  --sm_mx: initial;
-  --md_my: initial;
-  --md_mx: initial;
-  --lg_my: initial;
-  --lg_mx: initial;
-  --xl_my: initial;
-  --xl_mx: initial;
-  --xxl_my: initial;
-  --xxl_mx: initial;
-  margin-block: var(--xxl_my, var(--xl_my, var(--lg_my, var(--md_my, var(--sm_my, var(--my))))));
-  margin-inline: var(--xxl_mx, var(--xl_mx, var(--lg_mx, var(--md_mx, var(--sm_mx, var(--mx))))));
+  --mx: 0;
+  margin-block: var(--_my, var(--my));
+  margin-inline: var(--_mx, var(--mx));
 }
 
 .p-var {
   --py: 1em;
   --px: 1em;
-  --sm_py: initial;
-  --sm_px: initial;
-  --md_py: initial;
-  --md_px: initial;
-  --lg_py: initial;
-  --lg_px: initial;
-  --xl_py: initial;
-  --xl_px: initial;
-  --xxl_py: initial;
-  --xxl_px: initial;
-  padding-block: var(--xxl_py, var(--xl_py, var(--lg_py, var(--md_py, var(--sm_py, var(--py))))));
-  padding-inline: var(--xxl_px, var(--xl_px, var(--lg_px, var(--md_px, var(--sm_px, var(--px))))));
+  padding-block: var(--_py, var(--py));
+  padding-inline: var(--_px, var(--px));
 }
 
-@media (width < 480px) {
-  .gap-var {
-    --sm_gap: initial !important;
+@media (width >= 480px) {
+  .gap:where([style~="--sm_gap:"]) {
+    --_gp: var(--sm_gap);
   }
-  .m-var {
-    --sm_my: initial !important;
-    --sm_mx: initial !important;
+  .m-var:where([style~="--sm_my:"]) {
+    --_my: var(--sm_my);
   }
-  .p-var {
-    --sm_py: initial !important;
-    --sm_px: initial !important;
+  .m-var:where([style~="--sm_mx:"]) {
+    --_mx: var(--sm_mx);
   }
-}
-@media (width < 768px) {
-  .gap-var {
-    --md_gap: initial !important;
+  .p-var:where([style~="--sm_py:"]) {
+    --_py: var(--sm_py);
   }
-  .m-var {
-    --md_my: initial !important;
-    --md_mx: initial !important;
-  }
-  .p-var {
-    --md_py: initial !important;
-    --md_px: initial !important;
+  .p-var:where([style~="--sm_px:"]) {
+    --_px: var(--sm_px);
   }
 }
-@media (width < 1024px) {
-  .gap-var {
-    --lg_gap: initial !important;
+@media (width >= 768px) {
+  .gap:where([style~="--md_gap:"]) {
+    --_gp: var(--md_gap);
   }
-  .m-var {
-    --lg_my: initial !important;
-    --lg_mx: initial !important;
+  .m-var:where([style~="--md_my:"]) {
+    --_my: var(--md_my);
   }
-  .p-var {
-    --lg_py: initial !important;
-    --lg_px: initial !important;
+  .m-var:where([style~="--md_mx:"]) {
+    --_mx: var(--md_mx);
   }
-}
-@media (width < 1440px) {
-  .gap-var {
-    --xl_gap: initial !important;
+  .p-var:where([style~="--md_py:"]) {
+    --_py: var(--md_py);
   }
-  .m-var {
-    --xl_my: initial !important;
-    --xl_mx: initial !important;
-  }
-  .p-var {
-    --xl_py: initial !important;
-    --xl_px: initial !important;
+  .p-var:where([style~="--md_px:"]) {
+    --_px: var(--md_px);
   }
 }
-@media (width < 2200px) {
-  .gap-var {
-    --xxl_gap: initial !important;
+@media (width >= 1024px) {
+  .gap:where([style~="--lg_gap:"]) {
+    --_gp: var(--lg_gap);
   }
-  .m-var {
-    --xxl_my: initial !important;
-    --xxl_mx: initial !important;
+  .m-var:where([style~="--lg_my:"]) {
+    --_my: var(--lg_my);
   }
-  .p-var {
-    --xxl_py: initial !important;
-    --xxl_px: initial !important;
+  .m-var:where([style~="--lg_mx:"]) {
+    --_mx: var(--lg_mx);
+  }
+  .p-var:where([style~="--lg_py:"]) {
+    --_py: var(--lg_py);
+  }
+  .p-var:where([style~="--lg_px:"]) {
+    --_px: var(--lg_px);
+  }
+}
+@media (width >= 1440px) {
+  .gap:where([style~="--xl_gap:"]) {
+    --_gp: var(--xl_gap);
+  }
+  .m-var:where([style~="--xl_my:"]) {
+    --_my: var(--xl_my);
+  }
+  .m-var:where([style~="--xl_mx:"]) {
+    --_mx: var(--xl_mx);
+  }
+  .p-var:where([style~="--xl_py:"]) {
+    --_py: var(--xl_py);
+  }
+  .p-var:where([style~="--xl_px:"]) {
+    --_px: var(--xl_px);
+  }
+}
+@media (width >= 1920px) {
+  .gap:where([style~="--xxl_gap:"]) {
+    --_gp: var(--xxl_gap);
+  }
+  .m-var:where([style~="--xxl_my:"]) {
+    --_my: var(--xxl_my);
+  }
+  .m-var:where([style~="--xxl_mx:"]) {
+    --_mx: var(--xxl_mx);
+  }
+  .p-var:where([style~="--xxl_py:"]) {
+    --_py: var(--xxl_py);
+  }
+  .p-var:where([style~="--xxl_px:"]) {
+    --_px: var(--xxl_px);
   }
 }

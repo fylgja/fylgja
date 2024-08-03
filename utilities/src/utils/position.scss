@@ -4,14 +4,14 @@
 :where(.relative, .sticky, .absolute, .fixed) {
 	--z: auto;
 	--inset-t: auto;
-	--inset-r: auto;
+	--inset-s: auto;
 	--inset-b: auto;
-	--inset-l: auto;
+	--inset-e: auto;
 	--inset: initial;
 	z-index: var(--z);
 	inset: var(
 		--inset,
-		var(--inset-t) var(--inset-r) var(--inset-b) var(--inset-l)
+		var(--inset-t) var(--inset-s) var(--inset-b) var(--inset-e)
 	);
 }
 

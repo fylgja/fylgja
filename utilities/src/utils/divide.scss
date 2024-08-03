@@ -1,0 +1,12 @@
+.divide-x,
+.divide-y {
+	--divide: 1px;
+}
+
+.divide-y > :not(template, [hidden]) + * {
+	border-block-start: var(--divide);
+}
+
+.divide-x > :not(template, [hidden]) + * {
+	border-inline-start: var(--divide);
+}

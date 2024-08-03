@@ -1,51 +1,40 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// stylelint-disable declaration-no-important
-
-@use "sass:map";
-@use "../helper" as *;
+@use "helper" as *;
 
 $use-mq: true !default;
-$include-mq-loop: $use-mq !default;
 
 .align {
 	--align: normal space-between;
 	--align-items: center legacy;
 	--align-self: auto;
-	@if $use-mq {
-		@each $name in map.keys($breakpoints) {
-			--#{$name}_align: initial;
-			--#{$name}_align-items: initial;
-			--#{$name}_align-self: initial;
-		}
-	}
-	place-content: for-mq-prop("align", $use-mq);
-	place-items: for-mq-prop("align-items", $use-mq);
+	place-content: var(--_alignC, var(--align));
+	place-items: var(--_alignI, var(--align-items));
 
 	> * {
-		@if $use-mq {
-			@each $name in map.keys($breakpoints) {
-				--#{$name}_align-self: initial;
-			}
-		}
-		place-self: for-mq-prop("align-self", $use-mq);
+		place-self: var(--_alignS, var(--align-self));
 	}
 }
 
 @mixin mq-utils($name) {
 	.align {
-		--#{$name}_align: initial !important;
-		--#{$name}_align-items: initial !important;
+		&:where([style~="--#{$name}_align:"]) {
+			--_alignC: var(--#{$name}_align);
+		}
 
-		> * {
-			--#{$name}_align-self: initial !important;
+		&:where([style~="--#{$name}_align-items:"]) {
+			--_alignI: var(--#{$name}_--align-items);
+		}
+
+		> :where([style~="--#{$name}_align-self:"]) {
+			--_alignS: var(--#{$name}_align-self);
 		}
 	}
 }
 
-@if $include-mq-loop {
-	@include for-mq(max) using ($name) {
+@if $use-mq {
+	@include for-mq using ($name) {
 		@include mq-utils($name);
 	}
 }

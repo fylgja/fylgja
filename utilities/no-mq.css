@@ -1,3 +1,9 @@
+.content-lazy {
+  --content-size: 500px;
+  content-visibility: auto;
+  contain-intrinsic-block-size: var(--content-size);
+}
+
 .hidden {
   display: none;
 }
@@ -14,30 +20,67 @@
   display: inline-flex;
 }
 
-.sr-only {
-  position: var(--_use, absolute);
-  block-size: var(--_use, 1px);
-  inline-size: var(--_use, 1px);
-  overflow: var(--_use, hidden);
-  clip-path: var(--_use, inset(50%));
+.divide-x,
+.divide-y {
+  --divide: 1px;
 }
 
-.auto-grid {
-  --grid-max-cols: 4;
-  --grid-col-size: 14rem;
-  --gap: 1em;
-  display: grid;
-  gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--gap), var(--grid-col-size), 100%), 1fr));
+.divide-y > :not(template, [hidden]) + * {
+  border-block-start: var(--divide);
 }
 
-.stack {
-  display: grid;
+.divide-x > :not(template, [hidden]) + * {
+  border-inline-start: var(--divide);
 }
-.stack > *,
-.stack > ::before,
-.stack > ::after {
-  grid-area: 1/1;
+
+.unset-flow > *,
+.flow > :first-child {
+  margin-block: 0;
+}
+
+.flow > * + * {
+  margin-block: var(--flow, 1em) 0;
+}
+
+.bg-gradient,
+.border-gradient,
+.text-gradient {
+  --gradient-from: currentcolor;
+  --gradient-to: transparent;
+  --gradient-stops: var(--gradient-from), var(--gradient-to);
+  --gradient-angle: 0deg;
+  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+}
+
+.bg-gradient {
+  background-image: var(--gradient);
+}
+
+.border-gradient {
+  border-image-source: var(--gradient);
+  border-image-slice: 1;
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--gradient);
+  color: transparent;
+}
+
+.line-clamp {
+  --line-count: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line-count);
+}
+
+.list-none {
+  list-style-type: none;
+}
+.list-none::-webkit-details-marker {
+  display: none;
 }
 
 .overlay {
@@ -45,28 +88,36 @@
   border-image: 0 fill linear-gradient(0deg, var(--overlay), transparent);
 }
 
-.snap {
-  --snap-dir: x mandatory;
-  --snap-stop: normal;
-  --snap-align: start;
-  scroll-snap-type: var(--snap-dir);
-  scroll-snap-stop: var(--snap-stop);
-  scroll-behavior: smooth;
-}
-.snap > * {
-  scroll-snap-align: var(--snap-align);
-}
-
-.scroll-x {
-  --scroll-x: auto;
-  overflow-x: var(--scroll-x);
-  overscroll-behavior-x: contain;
+:where(.relative, .sticky, .absolute, .fixed) {
+  --z: auto;
+  --inset-t: auto;
+  --inset-s: auto;
+  --inset-b: auto;
+  --inset-e: auto;
+  --inset: initial;
+  z-index: var(--z);
+  inset: var(--inset, var(--inset-t) var(--inset-s) var(--inset-b) var(--inset-e));
 }
 
-.scroll-y {
-  --scroll-y: auto;
-  overflow-y: var(--scroll-y);
-  overscroll-behavior-y: contain;
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.rounded {
+  --rounded: 0.25rem;
+  border-radius: var(--rounded);
 }
 
 .scroll-x {
@@ -132,59 +183,16 @@
   animation-timeline: scroll(self block);
 }
 
-.unset-flow > *,
-.flow > :first-child {
-  margin-block: 0;
+.scroll-x {
+  --scroll-x: auto;
+  overflow-x: var(--scroll-x);
+  overscroll-behavior-x: contain;
 }
 
-.flow > * + * {
-  margin-block: var(--flow, 1em) 0;
-}
-
-:where(.relative, .sticky, .absolute, .fixed) {
-  --z: auto;
-  --inset-t: auto;
-  --inset-r: auto;
-  --inset-b: auto;
-  --inset-l: auto;
-  --inset: initial;
-  z-index: var(--z);
-  inset: var(--inset, var(--inset-t) var(--inset-r) var(--inset-b) var(--inset-l));
-}
-
-.relative {
-  position: relative;
-}
-
-.sticky {
-  position: sticky;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.rounded {
-  --rounded: 0.25rem;
-  border-radius: var(--rounded);
-}
-
-.line-clamp {
-  --line-count: 3;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--line-count);
-}
-
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.scroll-y {
+  --scroll-y: auto;
+  overflow-y: var(--scroll-y);
+  overscroll-behavior-y: contain;
 }
 
 .scrollbar-none {
@@ -202,36 +210,79 @@
   height: 0.4rem;
 }
 
+.snap {
+  --snap-dir: x mandatory;
+  --snap-stop: normal;
+  --snap-align: start;
+  scroll-snap-type: var(--snap-dir);
+  scroll-snap-stop: var(--snap-stop);
+  scroll-behavior: smooth;
+}
+.snap > * {
+  scroll-snap-align: var(--snap-align);
+}
+
+.gap {
+  --gap: 1em;
+  gap: var(--_gp, var(--gap));
+}
+
+.m-var {
+  --my: 0;
+  --mx: 0;
+  margin-block: var(--_my, var(--my));
+  margin-inline: var(--_mx, var(--mx));
+}
+
+.p-var {
+  --py: 1em;
+  --px: 1em;
+  padding-block: var(--_py, var(--py));
+  padding-inline: var(--_px, var(--px));
+}
+
+.size {
+  --size: initial;
+  --size-y: auto;
+  --size-x: auto;
+  block-size: var(--size, var(--size-y));
+  inline-size: var(--size, var(--size-x));
+}
+
 .stretched-link::after {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.bg-gradient,
-.border-gradient,
-.text-gradient {
-  --gradient-from: currentcolor;
-  --gradient-to: transparent;
-  --gradient-stops: var(--gradient-from), var(--gradient-to);
-  --gradient-angle: 0deg;
-  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.bg-gradient {
-  background-image: var(--gradient);
+.auto-grid {
+  --grid-max-cols: 4;
+  --grid-col-size: 14rem;
+  --gap: 1em;
+  display: grid;
+  gap: var(--_gp, var(--gap));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gp, var(--gap)), var(--grid-col-size), 100%), 1fr));
 }
 
-.border-gradient {
-  border-image-source: var(--gradient);
-  border-image-slice: 1;
+.grid-cols {
+  --grid-cols: 1;
+  --gap: 1em;
+  --_cols: var(--grid-cols);
+  display: grid;
+  gap: var(--_gp, var(--gap));
+  grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
-.text-gradient {
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: var(--gradient);
-  color: transparent;
+.grid-cols-flow {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: calc((100% - var(--_gp, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
 }
 
 .flexbox {
@@ -239,51 +290,36 @@
   --flex-wrap: nowrap;
   --flex: 0 1 auto;
   display: flex;
-  flex-flow: var(--flex-dir) var(--flex-wrap);
+  flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
 .flexbox > * {
-  flex: var(--flex);
-}
-
-.gap-var {
-  --gap: 1em;
-  gap: var(--gap);
-}
-
-.m-var {
-  --my: 0;
-  --mx: auto;
-  margin-block: var(--my);
-  margin-inline: var(--mx);
-}
-
-.p-var {
-  --py: 1em;
-  --px: 1em;
-  padding-block: var(--py);
-  padding-inline: var(--px);
+  flex: var(--_flexI, var(--flex));
 }
 
 .align {
   --align: normal space-between;
   --align-items: center legacy;
   --align-self: auto;
-  place-content: var(--align);
-  place-items: var(--align-items);
+  place-content: var(--_alignC, var(--align));
+  place-items: var(--_alignI, var(--align-items));
 }
 .align > * {
-  place-self: var(--align-self);
+  place-self: var(--_alignS, var(--align-self));
 }
 
-.grid-cols {
-  --grid-cols: 1;
-  --_cols: var(--grid-cols);
+.stack {
   display: grid;
-  grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+.stack > *,
+.stack > ::before,
+.stack > ::after {
+  grid-area: 1/1;
 }
 
-.grid-cols-flow {
-  grid-auto-flow: column;
-  grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--gap, 0px) * (var(--_cols) - 1)) / var(--_cols));
+.sr-only {
+  position: var(--_use, absolute);
+  block-size: var(--_use, 1px);
+  inline-size: var(--_use, 1px);
+  overflow: var(--_use, hidden);
+  clip-path: var(--_use, inset(50%));
 }

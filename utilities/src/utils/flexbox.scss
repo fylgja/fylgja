@@ -1,51 +1,40 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// stylelint-disable declaration-no-important
-
-@use "sass:map";
-@use "../helper" as *;
+@use "helper" as *;
 
 $use-mq: true !default;
-$include-mq-loop: $use-mq !default;
 
 .flexbox {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	--flex: 0 1 auto;
-	@if $use-mq {
-		@each $name in map.keys($breakpoints) {
-			--#{$name}_flex-dir: initial;
-			--#{$name}_flex-wrap: initial;
-		}
-	}
 	display: flex;
-	flex-flow: for-mq-prop("flex-dir", $use-mq)
-		for-mq-prop("flex-wrap", $use-mq);
+	flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 
 	> * {
-		@if $use-mq {
-			@each $name in map.keys($breakpoints) {
-				--#{$name}_flex: initial;
-			}
-		}
-		flex: for-mq-prop("flex", $use-mq);
+		flex: var(--_flexI, var(--flex));
 	}
 }
 
 @mixin mq-utils($name) {
 	.flexbox {
-		--#{$name}_flex-dir: initial !important;
-		--#{$name}_flex-wrap: initial !important;
+		&:where([style~="--#{$name}_flex-dir:"]) {
+			--_flexD: var(--#{$name}_flex-dir);
+		}
 
-		> * {
-			--#{$name}_flex: initial !important;
+		&:where([style~="--#{$name}_flex-wrap:"]) {
+			--_flexW: var(--#{$name}_--align-items);
+		}
+
+		> :where([style~="--#{$name}_flex:"]) {
+			--_flexI: var(--#{$name}_flex);
 		}
 	}
 }
 
-@if $include-mq-loop {
-	@include for-mq(max) using ($name) {
+@if $use-mq {
+	@include for-mq using ($name) {
 		@include mq-utils($name);
 	}
 }

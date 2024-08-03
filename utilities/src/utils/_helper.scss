@@ -1,0 +1,39 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$breakpoints: (
+	"sm": 480px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1440px,
+	"xxl": 1920px,
+) !default;
+
+/// @param {"min"|"max"|string} $range [min] - direction of the media query or custom syntax
+/// @param {Map} $map [$breakpoints] - map to loop trough
+/// @param {Bool} $var-syntax [false] - opt in to use @custom-media syntax
+/// @content any value inside will be wrapped in the mq, for classes use it with `for-mq using ($name)`
+/// @output {Mixed} CSS wrapped with each value of the breakpoints
+@mixin for-mq($range: "min", $map: $breakpoints, $var-syntax: false) {
+	@if $var-syntax {
+		@each $name, $mq in $map {
+			$syntax: if($range == "min", "--#{$name}", "--#{$name}-max");
+
+			@media ($syntax) {
+				@content ($name);
+			}
+		}
+	} @else {
+		$syntax: if(
+			$range == "min",
+			"width >=",
+			if($range == "max", "width <", $range)
+		);
+
+		@each $name, $mq in $map {
+			@media ($syntax $mq) {
+				@content ($name);
+			}
+		}
+	}
+}

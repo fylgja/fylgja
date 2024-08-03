@@ -1,0 +1,5 @@
+.content-lazy {
+  --content-size: 500px;
+  content-visibility: auto;
+  contain-intrinsic-block-size: var(--content-size);
+}

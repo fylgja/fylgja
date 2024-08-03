@@ -1,18 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.scroll-x {
-	--scroll-x: auto;
-	overflow-x: var(--scroll-x);
-	overscroll-behavior-x: contain;
-}
-
-.scroll-y {
-	--scroll-y: auto;
-	overflow-y: var(--scroll-y);
-	overscroll-behavior-y: contain;
-}
-
 // Port to tokens + samples
 @property --scroll-mask-start-opacity {
 	syntax: "<percentage>";
@@ -48,10 +36,10 @@
 	--mask-size: 2rem;
 	--mask: linear-gradient(
 		var(--mask-dir),
-		hsl(0 0% 0% / var(--mask-start-opacity, 0%)),
+		hsl(0 0% 0% / var(--mask-start-opacity, 100%)),
 		hsl(0 0% 0% / 100%) var(--mask-size),
 		hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
-		hsl(0 0% 0% / var(--mask-end-opacity, 0%))
+		hsl(0 0% 0% / var(--mask-end-opacity, 100%))
 	);
 	-webkit-mask-image: var(--mask);
 	mask-image: var(--mask);
