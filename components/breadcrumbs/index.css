@@ -1,32 +1,30 @@
-.breadcrumbs {
+:where(.breadcrumbs) {
+  --breadcrumbs-separator: "/";
   --breadcrumbs-gap: 0.5rem;
-  --breadcrumbs-wrap: wrap;
   display: flex;
-  flex-wrap: var(--breadcrumbs-wrap);
   gap: var(--breadcrumbs-gap);
-  padding-block: 0.875em;
 }
-.breadcrumbs :where(li) {
+:where(.breadcrumbs) li {
   display: inline-flex;
   align-items: center;
   gap: var(--breadcrumbs-gap);
   white-space: nowrap;
 }
-.breadcrumbs :where(li):last-of-type {
-  position: sticky;
-  background-color: var(--root-bg);
-  inset-inline-end: 0;
+:where(.breadcrumbs) li + li::before {
+  content: var(--breadcrumbs-separator);
 }
-.breadcrumbs :where(a) {
+@supports (content: "a"/"a") {
+  :where(.breadcrumbs) li + li::before {
+    content: var(--breadcrumbs-separator)/"";
+  }
+}
+:where(.breadcrumbs) a {
   text-decoration: none;
 }
-.breadcrumbs :where(a):where(:hover) {
+:where(.breadcrumbs) a:hover {
   text-decoration: underline;
 }
-.breadcrumbs :where(a):where([aria-current=page]) {
+:where(.breadcrumbs) a[aria-current=page] {
   font-weight: bolder;
   text-decoration: none;
-}
-.breadcrumbs:where(.scroll-x, .overflow-x-auto, .overflow-x-scroll) {
-  --breadcrumbs-wrap: nowrap;
 }

@@ -120,18 +120,6 @@
   border-radius: var(--rounded);
 }
 
-.scroll-x {
-  --scroll-x: auto;
-  overflow-x: var(--scroll-x);
-  overscroll-behavior-x: contain;
-}
-
-.scroll-y {
-  --scroll-y: auto;
-  overflow-y: var(--scroll-y);
-  overscroll-behavior-y: contain;
-}
-
 @property --scroll-mask-start-opacity {
   syntax: "<percentage>";
   inherits: false;
@@ -162,10 +150,10 @@
   --mask-size: 2rem;
   --mask: linear-gradient(
   	var(--mask-dir),
-  	hsl(0 0% 0% / var(--mask-start-opacity, 0%)),
+  	hsl(0 0% 0% / var(--mask-start-opacity, 100%)),
   	hsl(0 0% 0% / 100%) var(--mask-size),
   	hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
-  	hsl(0 0% 0% / var(--mask-end-opacity, 0%))
+  	hsl(0 0% 0% / var(--mask-end-opacity, 100%))
   );
   -webkit-mask-image: var(--mask);
   mask-image: var(--mask);
@@ -317,6 +305,7 @@
 }
 
 .sr-only {
+  --_use: initial;
   position: var(--_use, absolute);
   block-size: var(--_use, 1px);
   inline-size: var(--_use, 1px);
@@ -373,6 +362,12 @@
   .align > :where([style~="--sm_align-self:"]) {
     --_alignS: var(--sm_align-self);
   }
+  .sm\:sr-only {
+    --_use: initial;
+  }
+  .sm\:not-sr-only {
+    --_use: /* */ ;
+  }
 }
 @media (--md) {
   .md\:hidden {
@@ -422,6 +417,12 @@
   }
   .align > :where([style~="--md_align-self:"]) {
     --_alignS: var(--md_align-self);
+  }
+  .md\:sr-only {
+    --_use: initial;
+  }
+  .md\:not-sr-only {
+    --_use: /* */ ;
   }
 }
 @media (--lg) {
@@ -473,6 +474,12 @@
   .align > :where([style~="--lg_align-self:"]) {
     --_alignS: var(--lg_align-self);
   }
+  .lg\:sr-only {
+    --_use: initial;
+  }
+  .lg\:not-sr-only {
+    --_use: /* */ ;
+  }
 }
 @media (--xl) {
   .xl\:hidden {
@@ -523,6 +530,12 @@
   .align > :where([style~="--xl_align-self:"]) {
     --_alignS: var(--xl_align-self);
   }
+  .xl\:sr-only {
+    --_use: initial;
+  }
+  .xl\:not-sr-only {
+    --_use: /* */ ;
+  }
 }
 @media (--xxl) {
   .xxl\:hidden {
@@ -572,5 +585,11 @@
   }
   .align > :where([style~="--xxl_align-self:"]) {
     --_alignS: var(--xxl_align-self);
+  }
+  .xxl\:sr-only {
+    --_use: initial;
+  }
+  .xxl\:not-sr-only {
+    --_use: /* */ ;
   }
 }

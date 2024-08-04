@@ -54,51 +54,45 @@
 				<h2>Breadcrumbs</h2>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumbs">
-						<li>
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<span>...</span>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#path">Path</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#path-deeper" aria-current="page">Cool Page</a>
+						<li><a href="/">Home</a></li>
+						<li><a href="/#path">Path</a></li>
+						<li><a href="/#path-deeper" aria-current="page">Cool Page</a></li>
+					</ol>
+				</nav>
+				<nav aria-label="breadcrumb-overflow">
+					<ol class="breadcrumbs scroll-x p-var" style="--px: 0;">
+						<li><a href="/">Home</a></li>
+						<li><a href="/#level-1">Level 1</a></li>
+						<li><a href="/#level-2">Level 2</a></li>
+						<li><a href="/#level-3">Level 3</a></li>
+						<li><a href="/#level-4">Level 4</a></li>
+						<li><a href="/#level-5">Level 5</a></li>
+						<li
+							class="sticky"
+							style="--inset-s: 0; background: var(--root-bg);"
+						>
+							<a href="/#level-6" aria-current="page">Level 6</a>
 						</li>
 					</ol>
 				</nav>
-				<nav aria-label="breadcrumb-long">
-					<ol class="breadcrumbs scroll-x">
-						<li>
-							<a href="/">Home</a>
+				<nav aria-label="breadcrumb-mobile-back-with-schema-data">
+					<ol class="breadcrumbs" style="--breadcrumbs-separator: none;" itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li class="sr-only sm:not-sr-only" itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+							<a href="/" itemprop="item">Home</a>
+							<meta itemprop="position" content="1">
 						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#level-1">Level 1</a>
+						<li itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+							<span aria-hidden="true" class="hidden sm:block">/</span>
+							<a href="/#path" itemprop="item">
+								<span aria-hidden="true" class="sm:hidden">←</span>
+								<span>Path</span>
+							</a>
+							<meta itemprop="position" content="2">
 						</li>
-						<li>
+						<li class="sr-only sm:not-sr-only" itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
 							<span aria-hidden="true">/</span>
-							<a href="/#level-2">Level 2</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#level-3">Level 3</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#level-4">Level 4</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#level-5">Level 5</a>
-						</li>
-						<li>
-							<span aria-hidden="true">/</span>
-							<a href="/#level-6" aria-current="page">Level 6</a>
+							<a href="/#path-deeper" itemprop="item" aria-current="page">Cool Page</a>
+							<meta itemprop="position" content="3">
 						</li>
 					</ol>
 				</nav>

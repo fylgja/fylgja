@@ -42,7 +42,9 @@ $use-custom-mq: false !default;
 @use "stack";
 
 // Aria
-@use "sr-only";
+@use "sr-only" with (
+	$use-mq: false
+);
 
 @if $use-mq {
 	@include for-mq("min", $var-syntax: $use-custom-mq) using ($name) {
@@ -53,5 +55,8 @@ $use-custom-mq: false !default;
 		@include grid-cols.mq-utils($name);
 		@include flexbox.mq-utils($name);
 		@include align.mq-utils($name);
+
+		// Aria
+		@include sr-only.mq-utils($name);
 	}
 }
