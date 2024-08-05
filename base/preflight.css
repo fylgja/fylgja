@@ -99,11 +99,11 @@ summary,
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
-  margin-block: var(--text-my, 1em 1rem);
+  margin-block: var(--text-flow, 1em 1rem);
 }
 
 :where(blockquote, hr) {
-  margin-block: var(--separator-my, 2.5em);
+  margin-block: var(--separator-flow, 2.5em);
   margin-inline: 0;
 }
 
@@ -164,7 +164,7 @@ summary,
   padding-inline-start: 0;
 }
 
-:where(hgroup > :is(h1, h2, h3, h4, h5, h6, p)),
+:where(hgroup > *),
 :where(dl, ol, ul) :where(dl, ol, ul) {
   margin-block: 0;
 }
@@ -284,9 +284,7 @@ summary,
 }
 
 :where(figure) {
-  display: grid;
   max-width: fit-content;
-  gap: 0.5em;
   margin: 0;
 }
 

@@ -1,8 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$text-my: 1em 1rem !default;
-$separator-my: 2.5em !default;
+$text-flow: 1em 1rem !default;
+$separator-flow: 2.5em !default;
 
 $h1-font-size: 3.5rem;
 $h2-font-size: 2.5rem;
@@ -15,11 +15,11 @@ $h-line-height: 1.1;
 
 // Set a general default for text block margin
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
-	margin-block: var(--text-my, #{$text-my});
+	margin-block: var(--text-flow, #{$text-flow});
 }
 
 :where(blockquote, hr) {
-	margin-block: var(--separator-my, #{$separator-my});
+	margin-block: var(--separator-flow, #{$separator-flow});
 	margin-inline: 0;
 }
 
@@ -88,7 +88,7 @@ $h-line-height: 1.1;
 }
 
 // Remove margin on nested lists and nested items inside a hgroup
-:where(hgroup > :is(h1, h2, h3, h4, h5, h6, p)),
+:where(hgroup > *),
 :where(dl, ol, ul) :where(dl, ol, ul) {
 	margin-block: 0;
 }
