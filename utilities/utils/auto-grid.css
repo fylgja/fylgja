@@ -2,7 +2,8 @@
   --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
+  --_gap: var(--gap);
   display: grid;
-  gap: var(--_gp, var(--gap));
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gp, var(--gap)), var(--grid-col-size), 100%), 1fr));
+  gap: var(--_gap);
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gap), var(--grid-col-size), 100%), 1fr));
 }

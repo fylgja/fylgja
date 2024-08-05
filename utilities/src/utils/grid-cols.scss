@@ -24,7 +24,7 @@ $gap: 1em !default;
 }
 
 @mixin mq-utils($name) {
-	.grid-cols:where([style~="--#{$name}_grid-cols:"]) {
+	.grid-cols:where([style*="--#{$name}_grid-cols:"]) {
 		--_cols: var(--#{$name}_grid-cols);
 	}
 }

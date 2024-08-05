@@ -9,10 +9,7 @@
 	</head>
 	<body>
 		<header class="sticky-header">
-			<div
-				class="container flexbox align gap p-var"
-				style="--px: 0rem;"
-			>
+			<div class="container flexbox align gap" style="--py: 1rem;">
 				<a href="/">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
@@ -35,7 +32,7 @@
 								aria-label="Close theme Options"
 							>X</button>
 						</div>
-						<hr style="--separator-my: 0.5rem;">
+						<hr style="--my: 0.5rem;">
 						<div class="menu" style="--btn-px: 0; --btn-radius: 0;">
 							<button data-set-theme="auto">Default</button>
 							<button data-set-theme="dark">Dark theme</button>
@@ -49,7 +46,7 @@
 				</nav>
 			</div>
 		</header>
-		<main class="container p-var" style="--py: 0 2rem; --px: 0;">
+		<main class="container" style="--py: 0 2rem;">
 			<section aria-label="breadcrumbs">
 				<h2>Breadcrumbs</h2>
 				<nav aria-label="breadcrumb">
@@ -60,7 +57,7 @@
 					</ol>
 				</nav>
 				<nav aria-label="breadcrumb-overflow">
-					<ol class="breadcrumbs scroll-x p-var" style="--px: 0;">
+					<ol class="breadcrumbs scroll-x" style="--py: 1rem;">
 						<li><a href="/">Home</a></li>
 						<li><a href="/#level-1">Level 1</a></li>
 						<li><a href="/#level-2">Level 2</a></li>
@@ -150,7 +147,7 @@
 							On
 						</label>
 					</fieldset>
-					<fieldset class="relative m-var max-size" style="--my: 3rem 0; --md_my: 4rem 0;">
+					<fieldset class="relative max-size" style="--my: 3rem 0; --md_my: 4rem 0;">
 						<legend
 							class="absolute badge"
 							style="--inset-t: -1rem; --inset-r: 0.25rem; --z: var(--layer-1); --badge-bg: var(--root-bg); --badge-color: var(--root-fg); border-width: 2px;"
@@ -227,10 +224,90 @@
 			</section>
 			<section aria-label="cards">
 				<h2>Cards</h2>
+				<div class="flow">
+					<div class="auto-grid align" style="--grid-max-cols: 3;">
+						<div class="card">
+							<h2>Card with title</h2>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quas labore id, inventore nihil vero placeat. Reiciendis vero deserunt facere. Repellat praesentium laudantium tempore aperiam quo quas cupiditate saepe possimus.</p>
+						</div>
+						<div class="card">
+							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+						</div>
+						<img src="https://picsum.photos/id/435/500/300" alt="coffee beans" class="card">
+					</div>
+					<div class="auto-grid" style="--grid-max-cols: 2;">
+						<figure class="card">
+							<img src="https://picsum.photos/id/425/800/300" alt="coffee beans">
+							<figcaption>
+								<h2>Card Figure</h2>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quas labore id, inventore nihil vero placeat. Reiciendis vero deserunt facere. Repellat praesentium laudantium tempore aperiam quo quas cupiditate saepe possimus.</p>
+							</figcaption>
+						</figure>
+						<div class="card">
+							<img src="https://picsum.photos/id/435/800/300" alt="coffee beans">
+							<div class="card-content">
+								<h2>Card Content</h2>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quas labore id, inventore nihil vero placeat. Reiciendis vero deserunt facere. Repellat praesentium laudantium tempore aperiam quo quas cupiditate saepe possimus.</p>
+							</div>
+						</div>
+					</div>
+					<div class="auto-grid" style="--grid-max-cols: 3;">
+						<article class="card flexbox" style="--flex-dir: column;">
+							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+							<div class="card-content flexbox" style="--flex-dir: column; --flex: 1 1 auto;">
+								<div class="flow">
+									<h3>Product X</h3>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quas labore id, inventore nihil vero placeat.</p>
+								</div>
+								<p class="line-sm text-lg">
+									<span class="sr-only">Old Price</span>
+									<del class="text-sm">€52.00</del><br>
+									<span class="sr-only">Price</span>
+									<strong>€45.00</strong>
+								</p>
+								<form action="#" style="--my: auto 0">
+									<button class="w-full">Add to Cart</button>
+								</form>
+							</div>
+						</article>
+						<article class="card flexbox" style="--flex-dir: column;">
+							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+							<div class="card-content flexbox" style="--flex-dir: column; --flex: 1 1 auto;">
+								<div class="flow">
+									<h3>Product Y</h3>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+								</div>
+								<p class="line-sm text-lg">
+									<span class="sr-only">Price</span>
+									<strong>€15.00</strong>
+								</p>
+								<form action="#" style="--my: auto 0">
+									<button class="w-full">Add to Cart</button>
+								</form>
+							</div>
+						</article>
+						<article class="card flexbox" style="--flex-dir: column;">
+							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+							<div class="card-content flexbox" style="--flex-dir: column; --flex: 1 1 auto;">
+								<div class="flow">
+									<h3>Product Z</h3>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quas labore id, inventore nihil vero placeat, inventore nihil vero placeat</p>
+								</div>
+								<p class="line-sm text-lg">
+									<span class="sr-only">Price</span>
+									<strong>€125.00</strong>
+								</p>
+								<form action="#" style="--my: auto 0">
+									<button class="w-full">Add to Cart</button>
+								</form>
+							</div>
+						</article>
+					</div>
+				</div>
 			</section>
 			<section aria-label="dropdown">
 				<h2>Menus</h2>
-				<menu class="list-none flexbox gap p-var" style="--px: 0;">
+				<menu class="list-none flexbox gap" style="--px: 0">
 					<li><button>Copy</button></li>
 					<li><button>Cut</button></li>
 					<li><button>Paste</button></li>

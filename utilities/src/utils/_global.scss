@@ -11,21 +11,24 @@ $use-custom-mq: false !default;
 );
 @use "divide";
 @use "flow";
+@use "gap" with (
+	$use-mq: false
+);
 @use "gradient";
 @use "line-clamp";
 @use "list";
 @use "overlay";
 @use "position";
 @use "rounded";
-@use "scroll-mask";
 @use "scroll";
 @use "scrollbar";
 @use "snap";
 @use "spacing" with (
 	$use-mq: false
 );
-@use "size";
+@use "sizes";
 @use "stretched-link";
+@use "text-sizes";
 @use "truncate";
 
 // Layout
@@ -49,6 +52,7 @@ $use-custom-mq: false !default;
 @if $use-mq {
 	@include for-mq("min", $var-syntax: $use-custom-mq) using ($name) {
 		@include display.mq-utils($name);
+		@include gap.mq-utils($name);
 		@include spacing.mq-utils($name);
 
 		// Layout

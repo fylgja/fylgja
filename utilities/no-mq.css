@@ -26,20 +26,25 @@
 }
 
 .divide-y > :not(template, [hidden]) + * {
-  border-block-start: var(--divide);
+  border-block-start-width: var(--divide);
 }
 
 .divide-x > :not(template, [hidden]) + * {
-  border-inline-start: var(--divide);
+  border-inline-start-width: var(--divide);
 }
 
-.unset-flow > *,
+.flow-unset > *,
 .flow > :first-child {
   margin-block: 0;
 }
 
 .flow > * + * {
   margin-block: var(--flow, 1em) 0;
+}
+
+.gap {
+  --gap: 1em;
+  gap: var(--_gap, var(--gap));
 }
 
 .bg-gradient,
@@ -84,8 +89,10 @@
 }
 
 .overlay {
-  --overlay: hsl(0 0% 0% / 60%);
-  border-image: 0 fill linear-gradient(0deg, var(--overlay), transparent);
+  --overlay-bg: hsl(0 0% 0% / 60%);
+  --overlay-fg: #fff;
+  border-image: 0 fill linear-gradient(0deg, var(--overlay-bg), transparent);
+  color: var(--overlay-fg);
 }
 
 :where(.relative, .sticky, .absolute, .fixed) {
@@ -120,55 +127,14 @@
   border-radius: var(--rounded);
 }
 
-@property --scroll-mask-start-opacity {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-@property --scroll-mask-end-opacity {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-@keyframes scroll-mask {
-  0% {
-    --mask-start-opacity: 100%;
-    --mask-end-opacity: 0%;
-  }
-  2%, 98% {
-    --mask-start-opacity: 0%;
-    --mask-end-opacity: 0%;
-  }
-  100% {
-    --mask-start-opacity: 0%;
-    --mask-end-opacity: 100%;
-  }
-}
-.scroll-mask-x,
-.scroll-mask-y {
-  --mask-dir: to right;
-  --mask-size: 2rem;
-  --mask: linear-gradient(
-  	var(--mask-dir),
-  	hsl(0 0% 0% / var(--mask-start-opacity, 100%)),
-  	hsl(0 0% 0% / 100%) var(--mask-size),
-  	hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
-  	hsl(0 0% 0% / var(--mask-end-opacity, 100%))
-  );
-  -webkit-mask-image: var(--mask);
-  mask-image: var(--mask);
-  animation: scroll-mask;
+.rounded-inherit {
+  border-radius: inherit;
 }
 
-.scroll-mask-x {
-  animation-timeline: scroll(self inline);
-}
-
-.scroll-mask-y {
-  --mask-dir: to bottom;
-  --scroll: visible auto;
-  --overscroll: auto contain;
-  animation-timeline: scroll(self block);
+.round {
+  aspect-ratio: 1;
+  border-radius: 100000px;
+  overflow: clip;
 }
 
 .scroll-x {
@@ -210,37 +176,50 @@
   scroll-snap-align: var(--snap-align);
 }
 
-.gap {
-  --gap: 1em;
-  gap: var(--_gp, var(--gap));
+:where([style*="--my:"]) {
+  --my: 1em;
+  margin-block: var(--_my, var(--my));
 }
 
-.m-var {
-  --my: 0;
-  --mx: 0;
-  margin-block: var(--_my, var(--my));
+:where([style*="--mx:"]) {
+  --mx: auto;
   margin-inline: var(--_mx, var(--mx));
 }
 
-.p-var {
+:where([style*="--py:"]) {
   --py: 1em;
-  --px: 1em;
   padding-block: var(--_py, var(--py));
+}
+
+:where([style*="--px:"]) {
+  --px: 1em;
   padding-inline: var(--_px, var(--px));
 }
 
-.size {
-  --size: initial;
-  --size-y: auto;
-  --size-x: auto;
-  block-size: var(--size, var(--size-y));
-  inline-size: var(--size, var(--size-x));
+.w-full {
+  inline-size: 100%;
 }
 
 .stretched-link::after {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.text-sm {
+  font-size: 0.875em;
+}
+
+.text-lg {
+  font-size: 1.25em;
+}
+
+.line-sm {
+  line-height: 1.1;
+}
+
+.line-lg {
+  line-height: 1.8;
 }
 
 .truncate {
@@ -253,9 +232,10 @@
   --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
+  --_gap: var(--gap);
   display: grid;
-  gap: var(--_gp, var(--gap));
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gp, var(--gap)), var(--grid-col-size), 100%), 1fr));
+  gap: var(--_gap);
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gap), var(--grid-col-size), 100%), 1fr));
 }
 
 .grid-cols {
@@ -276,11 +256,11 @@
 .flexbox {
   --flex-dir: row;
   --flex-wrap: nowrap;
-  --flex: 0 1 auto;
   display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
 .flexbox > * {
+  --flex: 0 1 auto;
   flex: var(--_flexI, var(--flex));
 }
 

@@ -9,10 +9,7 @@
 	</head>
 	<body>
 		<header class="sticky-header">
-			<div
-				class="container flexbox align gap p-var"
-				style="--px: 0rem;"
-			>
+			<div class="container flexbox align gap" style="--py: 1rem;">
 				<a href="/">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
@@ -35,7 +32,7 @@
 								aria-label="Close theme Options"
 							>X</button>
 						</div>
-						<hr style="--separator-my: 0.5rem;">
+						<hr style="--my: 0.5rem;">
 						<div class="menu">
 							<button class="menu-item" data-set-theme="auto">Default</button>
 							<button class="menu-item" data-set-theme="dark">Dark theme</button>
@@ -56,8 +53,8 @@
 					<figure class="stack">
 						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
 						<figcaption
-							class="overlay flexbox align p-var"
-							style="--flex-dir: column; --align: end; color: white"
+							class="overlay flexbox align"
+							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
 						>
 							<span>Coffee beans</span>
 						</figcaption>
@@ -72,8 +69,8 @@
 					<figure class="stack">
 						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
 						<figcaption
-							class="overlay flexbox align p-var"
-							style="--flex-dir: column; --align: end;"
+							class="overlay flexbox align"
+							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
 						>
 							<span>Coffee beans</span>
 						</figcaption>
@@ -87,8 +84,8 @@
 				<div class="flow">
 					<ul
 						role="list"
-						class="snap grid-cols grid-cols-flow scroll-x scroll-mask-x p-var"
-						style="--md_grid-cols: 4; --py: 0 .875em; --px: 0;"
+						class="snap grid-cols grid-cols-flow scroll-x scroll-mask-x"
+						style="--md_grid-cols: 4; --py: 0 .875em;"
 					>
 						<li>
 							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
@@ -139,41 +136,42 @@
 				<h2>Color Tokens</h2>
 				<div style="--hue: 270;">
 					<div class="flexbox color-boxes">
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
 					<div class="flexbox color-boxes" style="--chroma: 0.3;">
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
-						<div class="size"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
 				</div>
 				<style>
 					.color-boxes > * {
-						--size: 5rem;
+						aspect-ratio: 1;
+						width: 5rem;
 						background-color: var(--clr);
 
 						&:nth-child(1) { --clr: var(--color-1) }
@@ -192,7 +190,7 @@
 						&:nth-child(14) { --clr: var(--color-14) }
 
 						@media (width > 768px) {
-							--size: 6rem;
+							width: 6rem;
 						}
 					}
 				</style>

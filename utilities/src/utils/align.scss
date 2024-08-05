@@ -19,15 +19,15 @@ $use-mq: true !default;
 
 @mixin mq-utils($name) {
 	.align {
-		&:where([style~="--#{$name}_align:"]) {
+		&:where([style*="--#{$name}_align:"]) {
 			--_alignC: var(--#{$name}_align);
 		}
 
-		&:where([style~="--#{$name}_align-items:"]) {
+		&:where([style*="--#{$name}_align-items:"]) {
 			--_alignI: var(--#{$name}_--align-items);
 		}
 
-		> :where([style~="--#{$name}_align-self:"]) {
+		> :where([style*="--#{$name}_align-self:"]) {
 			--_alignS: var(--#{$name}_align-self);
 		}
 	}

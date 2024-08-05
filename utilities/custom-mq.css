@@ -26,20 +26,25 @@
 }
 
 .divide-y > :not(template, [hidden]) + * {
-  border-block-start: var(--divide);
+  border-block-start-width: var(--divide);
 }
 
 .divide-x > :not(template, [hidden]) + * {
-  border-inline-start: var(--divide);
+  border-inline-start-width: var(--divide);
 }
 
-.unset-flow > *,
+.flow-unset > *,
 .flow > :first-child {
   margin-block: 0;
 }
 
 .flow > * + * {
   margin-block: var(--flow, 1em) 0;
+}
+
+.gap {
+  --gap: 1em;
+  gap: var(--_gap, var(--gap));
 }
 
 .bg-gradient,
@@ -84,8 +89,10 @@
 }
 
 .overlay {
-  --overlay: hsl(0 0% 0% / 60%);
-  border-image: 0 fill linear-gradient(0deg, var(--overlay), transparent);
+  --overlay-bg: hsl(0 0% 0% / 60%);
+  --overlay-fg: #fff;
+  border-image: 0 fill linear-gradient(0deg, var(--overlay-bg), transparent);
+  color: var(--overlay-fg);
 }
 
 :where(.relative, .sticky, .absolute, .fixed) {
@@ -120,55 +127,14 @@
   border-radius: var(--rounded);
 }
 
-@property --scroll-mask-start-opacity {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-@property --scroll-mask-end-opacity {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-@keyframes scroll-mask {
-  0% {
-    --mask-start-opacity: 100%;
-    --mask-end-opacity: 0%;
-  }
-  2%, 98% {
-    --mask-start-opacity: 0%;
-    --mask-end-opacity: 0%;
-  }
-  100% {
-    --mask-start-opacity: 0%;
-    --mask-end-opacity: 100%;
-  }
-}
-.scroll-mask-x,
-.scroll-mask-y {
-  --mask-dir: to right;
-  --mask-size: 2rem;
-  --mask: linear-gradient(
-  	var(--mask-dir),
-  	hsl(0 0% 0% / var(--mask-start-opacity, 100%)),
-  	hsl(0 0% 0% / 100%) var(--mask-size),
-  	hsl(0 0% 0% / 100%) calc(100% - var(--mask-size)),
-  	hsl(0 0% 0% / var(--mask-end-opacity, 100%))
-  );
-  -webkit-mask-image: var(--mask);
-  mask-image: var(--mask);
-  animation: scroll-mask;
+.rounded-inherit {
+  border-radius: inherit;
 }
 
-.scroll-mask-x {
-  animation-timeline: scroll(self inline);
-}
-
-.scroll-mask-y {
-  --mask-dir: to bottom;
-  --scroll: visible auto;
-  --overscroll: auto contain;
-  animation-timeline: scroll(self block);
+.round {
+  aspect-ratio: 1;
+  border-radius: 100000px;
+  overflow: clip;
 }
 
 .scroll-x {
@@ -210,37 +176,50 @@
   scroll-snap-align: var(--snap-align);
 }
 
-.gap {
-  --gap: 1em;
-  gap: var(--_gp, var(--gap));
+:where([style*="--my:"]) {
+  --my: 1em;
+  margin-block: var(--_my, var(--my));
 }
 
-.m-var {
-  --my: 0;
-  --mx: 0;
-  margin-block: var(--_my, var(--my));
+:where([style*="--mx:"]) {
+  --mx: auto;
   margin-inline: var(--_mx, var(--mx));
 }
 
-.p-var {
+:where([style*="--py:"]) {
   --py: 1em;
-  --px: 1em;
   padding-block: var(--_py, var(--py));
+}
+
+:where([style*="--px:"]) {
+  --px: 1em;
   padding-inline: var(--_px, var(--px));
 }
 
-.size {
-  --size: initial;
-  --size-y: auto;
-  --size-x: auto;
-  block-size: var(--size, var(--size-y));
-  inline-size: var(--size, var(--size-x));
+.w-full {
+  inline-size: 100%;
 }
 
 .stretched-link::after {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.text-sm {
+  font-size: 0.875em;
+}
+
+.text-lg {
+  font-size: 1.25em;
+}
+
+.line-sm {
+  line-height: 1.1;
+}
+
+.line-lg {
+  line-height: 1.8;
 }
 
 .truncate {
@@ -253,9 +232,10 @@
   --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
+  --_gap: var(--gap);
   display: grid;
-  gap: var(--_gp, var(--gap));
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gp, var(--gap)), var(--grid-col-size), 100%), 1fr));
+  gap: var(--_gap);
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gap), var(--grid-col-size), 100%), 1fr));
 }
 
 .grid-cols {
@@ -276,11 +256,11 @@
 .flexbox {
   --flex-dir: row;
   --flex-wrap: nowrap;
-  --flex: 0 1 auto;
   display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
 .flexbox > * {
+  --flex: 0 1 auto;
   flex: var(--_flexI, var(--flex));
 }
 
@@ -326,40 +306,40 @@
   .sm\:inline-flex {
     display: inline-flex;
   }
-  .gap:where([style~="--sm_gap:"]) {
-    --_gp: var(--sm_gap);
+  .gap:where([style*="--sm_gap:"]) {
+    --_gap: var(--sm_gap);
   }
-  .m-var:where([style~="--sm_my:"]) {
+  :where([style*="--sm_my:"]) {
     --_my: var(--sm_my);
   }
-  .m-var:where([style~="--sm_mx:"]) {
+  :where([style*="--sm_mx:"]) {
     --_mx: var(--sm_mx);
   }
-  .p-var:where([style~="--sm_py:"]) {
+  :where([style*="--sm_py:"]) {
     --_py: var(--sm_py);
   }
-  .p-var:where([style~="--sm_px:"]) {
+  :where([style*="--sm_px:"]) {
     --_px: var(--sm_px);
   }
-  .grid-cols:where([style~="--sm_grid-cols:"]) {
+  .grid-cols:where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
-  .flexbox:where([style~="--sm_flex-dir:"]) {
+  .flexbox:where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  .flexbox:where([style~="--sm_flex-wrap:"]) {
+  .flexbox:where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_--align-items);
   }
-  .flexbox > :where([style~="--sm_flex:"]) {
+  .flexbox > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
-  .align:where([style~="--sm_align:"]) {
+  .align:where([style*="--sm_align:"]) {
     --_alignC: var(--sm_align);
   }
-  .align:where([style~="--sm_align-items:"]) {
+  .align:where([style*="--sm_align-items:"]) {
     --_alignI: var(--sm_--align-items);
   }
-  .align > :where([style~="--sm_align-self:"]) {
+  .align > :where([style*="--sm_align-self:"]) {
     --_alignS: var(--sm_align-self);
   }
   .sm\:sr-only {
@@ -382,40 +362,40 @@
   .md\:inline-flex {
     display: inline-flex;
   }
-  .gap:where([style~="--md_gap:"]) {
-    --_gp: var(--md_gap);
+  .gap:where([style*="--md_gap:"]) {
+    --_gap: var(--md_gap);
   }
-  .m-var:where([style~="--md_my:"]) {
+  :where([style*="--md_my:"]) {
     --_my: var(--md_my);
   }
-  .m-var:where([style~="--md_mx:"]) {
+  :where([style*="--md_mx:"]) {
     --_mx: var(--md_mx);
   }
-  .p-var:where([style~="--md_py:"]) {
+  :where([style*="--md_py:"]) {
     --_py: var(--md_py);
   }
-  .p-var:where([style~="--md_px:"]) {
+  :where([style*="--md_px:"]) {
     --_px: var(--md_px);
   }
-  .grid-cols:where([style~="--md_grid-cols:"]) {
+  .grid-cols:where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
-  .flexbox:where([style~="--md_flex-dir:"]) {
+  .flexbox:where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  .flexbox:where([style~="--md_flex-wrap:"]) {
+  .flexbox:where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_--align-items);
   }
-  .flexbox > :where([style~="--md_flex:"]) {
+  .flexbox > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
-  .align:where([style~="--md_align:"]) {
+  .align:where([style*="--md_align:"]) {
     --_alignC: var(--md_align);
   }
-  .align:where([style~="--md_align-items:"]) {
+  .align:where([style*="--md_align-items:"]) {
     --_alignI: var(--md_--align-items);
   }
-  .align > :where([style~="--md_align-self:"]) {
+  .align > :where([style*="--md_align-self:"]) {
     --_alignS: var(--md_align-self);
   }
   .md\:sr-only {
@@ -438,40 +418,40 @@
   .lg\:inline-flex {
     display: inline-flex;
   }
-  .gap:where([style~="--lg_gap:"]) {
-    --_gp: var(--lg_gap);
+  .gap:where([style*="--lg_gap:"]) {
+    --_gap: var(--lg_gap);
   }
-  .m-var:where([style~="--lg_my:"]) {
+  :where([style*="--lg_my:"]) {
     --_my: var(--lg_my);
   }
-  .m-var:where([style~="--lg_mx:"]) {
+  :where([style*="--lg_mx:"]) {
     --_mx: var(--lg_mx);
   }
-  .p-var:where([style~="--lg_py:"]) {
+  :where([style*="--lg_py:"]) {
     --_py: var(--lg_py);
   }
-  .p-var:where([style~="--lg_px:"]) {
+  :where([style*="--lg_px:"]) {
     --_px: var(--lg_px);
   }
-  .grid-cols:where([style~="--lg_grid-cols:"]) {
+  .grid-cols:where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
-  .flexbox:where([style~="--lg_flex-dir:"]) {
+  .flexbox:where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  .flexbox:where([style~="--lg_flex-wrap:"]) {
+  .flexbox:where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_--align-items);
   }
-  .flexbox > :where([style~="--lg_flex:"]) {
+  .flexbox > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
-  .align:where([style~="--lg_align:"]) {
+  .align:where([style*="--lg_align:"]) {
     --_alignC: var(--lg_align);
   }
-  .align:where([style~="--lg_align-items:"]) {
+  .align:where([style*="--lg_align-items:"]) {
     --_alignI: var(--lg_--align-items);
   }
-  .align > :where([style~="--lg_align-self:"]) {
+  .align > :where([style*="--lg_align-self:"]) {
     --_alignS: var(--lg_align-self);
   }
   .lg\:sr-only {
@@ -494,40 +474,40 @@
   .xl\:inline-flex {
     display: inline-flex;
   }
-  .gap:where([style~="--xl_gap:"]) {
-    --_gp: var(--xl_gap);
+  .gap:where([style*="--xl_gap:"]) {
+    --_gap: var(--xl_gap);
   }
-  .m-var:where([style~="--xl_my:"]) {
+  :where([style*="--xl_my:"]) {
     --_my: var(--xl_my);
   }
-  .m-var:where([style~="--xl_mx:"]) {
+  :where([style*="--xl_mx:"]) {
     --_mx: var(--xl_mx);
   }
-  .p-var:where([style~="--xl_py:"]) {
+  :where([style*="--xl_py:"]) {
     --_py: var(--xl_py);
   }
-  .p-var:where([style~="--xl_px:"]) {
+  :where([style*="--xl_px:"]) {
     --_px: var(--xl_px);
   }
-  .grid-cols:where([style~="--xl_grid-cols:"]) {
+  .grid-cols:where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
-  .flexbox:where([style~="--xl_flex-dir:"]) {
+  .flexbox:where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  .flexbox:where([style~="--xl_flex-wrap:"]) {
+  .flexbox:where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_--align-items);
   }
-  .flexbox > :where([style~="--xl_flex:"]) {
+  .flexbox > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
-  .align:where([style~="--xl_align:"]) {
+  .align:where([style*="--xl_align:"]) {
     --_alignC: var(--xl_align);
   }
-  .align:where([style~="--xl_align-items:"]) {
+  .align:where([style*="--xl_align-items:"]) {
     --_alignI: var(--xl_--align-items);
   }
-  .align > :where([style~="--xl_align-self:"]) {
+  .align > :where([style*="--xl_align-self:"]) {
     --_alignS: var(--xl_align-self);
   }
   .xl\:sr-only {
@@ -550,40 +530,40 @@
   .xxl\:inline-flex {
     display: inline-flex;
   }
-  .gap:where([style~="--xxl_gap:"]) {
-    --_gp: var(--xxl_gap);
+  .gap:where([style*="--xxl_gap:"]) {
+    --_gap: var(--xxl_gap);
   }
-  .m-var:where([style~="--xxl_my:"]) {
+  :where([style*="--xxl_my:"]) {
     --_my: var(--xxl_my);
   }
-  .m-var:where([style~="--xxl_mx:"]) {
+  :where([style*="--xxl_mx:"]) {
     --_mx: var(--xxl_mx);
   }
-  .p-var:where([style~="--xxl_py:"]) {
+  :where([style*="--xxl_py:"]) {
     --_py: var(--xxl_py);
   }
-  .p-var:where([style~="--xxl_px:"]) {
+  :where([style*="--xxl_px:"]) {
     --_px: var(--xxl_px);
   }
-  .grid-cols:where([style~="--xxl_grid-cols:"]) {
+  .grid-cols:where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
-  .flexbox:where([style~="--xxl_flex-dir:"]) {
+  .flexbox:where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  .flexbox:where([style~="--xxl_flex-wrap:"]) {
+  .flexbox:where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_--align-items);
   }
-  .flexbox > :where([style~="--xxl_flex:"]) {
+  .flexbox > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
-  .align:where([style~="--xxl_align:"]) {
+  .align:where([style*="--xxl_align:"]) {
     --_alignC: var(--xxl_align);
   }
-  .align:where([style~="--xxl_align-items:"]) {
+  .align:where([style*="--xxl_align-items:"]) {
     --_alignI: var(--xxl_--align-items);
   }
-  .align > :where([style~="--xxl_align-self:"]) {
+  .align > :where([style*="--xxl_align-self:"]) {
     --_alignS: var(--xxl_align-self);
   }
   .xxl\:sr-only {

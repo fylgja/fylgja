@@ -1,7 +1,0 @@
-.size {
-  --size: initial;
-  --size-y: auto;
-  --size-x: auto;
-  block-size: var(--size, var(--size-y));
-  inline-size: var(--size, var(--size-x));
-}

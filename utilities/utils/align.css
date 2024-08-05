@@ -10,57 +10,57 @@
 }
 
 @media (width >= 480px) {
-  .align:where([style~="--sm_align:"]) {
+  .align:where([style*="--sm_align:"]) {
     --_alignC: var(--sm_align);
   }
-  .align:where([style~="--sm_align-items:"]) {
+  .align:where([style*="--sm_align-items:"]) {
     --_alignI: var(--sm_--align-items);
   }
-  .align > :where([style~="--sm_align-self:"]) {
+  .align > :where([style*="--sm_align-self:"]) {
     --_alignS: var(--sm_align-self);
   }
 }
 @media (width >= 768px) {
-  .align:where([style~="--md_align:"]) {
+  .align:where([style*="--md_align:"]) {
     --_alignC: var(--md_align);
   }
-  .align:where([style~="--md_align-items:"]) {
+  .align:where([style*="--md_align-items:"]) {
     --_alignI: var(--md_--align-items);
   }
-  .align > :where([style~="--md_align-self:"]) {
+  .align > :where([style*="--md_align-self:"]) {
     --_alignS: var(--md_align-self);
   }
 }
 @media (width >= 1024px) {
-  .align:where([style~="--lg_align:"]) {
+  .align:where([style*="--lg_align:"]) {
     --_alignC: var(--lg_align);
   }
-  .align:where([style~="--lg_align-items:"]) {
+  .align:where([style*="--lg_align-items:"]) {
     --_alignI: var(--lg_--align-items);
   }
-  .align > :where([style~="--lg_align-self:"]) {
+  .align > :where([style*="--lg_align-self:"]) {
     --_alignS: var(--lg_align-self);
   }
 }
 @media (width >= 1440px) {
-  .align:where([style~="--xl_align:"]) {
+  .align:where([style*="--xl_align:"]) {
     --_alignC: var(--xl_align);
   }
-  .align:where([style~="--xl_align-items:"]) {
+  .align:where([style*="--xl_align-items:"]) {
     --_alignI: var(--xl_--align-items);
   }
-  .align > :where([style~="--xl_align-self:"]) {
+  .align > :where([style*="--xl_align-self:"]) {
     --_alignS: var(--xl_align-self);
   }
 }
 @media (width >= 1920px) {
-  .align:where([style~="--xxl_align:"]) {
+  .align:where([style*="--xxl_align:"]) {
     --_alignC: var(--xxl_align);
   }
-  .align:where([style~="--xxl_align-items:"]) {
+  .align:where([style*="--xxl_align-items:"]) {
     --_alignI: var(--xxl_--align-items);
   }
-  .align > :where([style~="--xxl_align-self:"]) {
+  .align > :where([style*="--xxl_align-self:"]) {
     --_alignS: var(--xxl_align-self);
   }
 }

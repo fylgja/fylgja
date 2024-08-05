@@ -4,50 +4,42 @@
 @use "helper" as *;
 
 $use-mq: true !default;
-$gap: 1em !default;
 
-.gap {
-	--gap: #{$gap};
-	gap: var(--_gp, var(--gap));
+:where([style*="--my:"]) {
+	--my: 1em;
+	margin-block: var(--_my, var(--my));
 }
 
-.m-var {
-	--my: 0;
-	--mx: 0;
-	margin-block: var(--_my, var(--my));
+:where([style*="--mx:"]) {
+	--mx: auto;
 	margin-inline: var(--_mx, var(--mx));
 }
 
-.p-var {
+:where([style*="--py:"]) {
 	--py: 1em;
-	--px: 1em;
 	padding-block: var(--_py, var(--py));
+}
+
+:where([style*="--px:"]) {
+	--px: 1em;
 	padding-inline: var(--_px, var(--px));
 }
 
 @mixin mq-utils($name) {
-	.gap:where([style~="--#{$name}_gap:"]) {
-		--_gp: var(--#{$name}_gap);
+	:where([style*="--#{$name}_my:"]) {
+		--_my: var(--#{$name}_my);
 	}
 
-	.m-var {
-		&:where([style~="--#{$name}_my:"]) {
-			--_my: var(--#{$name}_my);
-		}
-
-		&:where([style~="--#{$name}_mx:"]) {
-			--_mx: var(--#{$name}_mx);
-		}
+	:where([style*="--#{$name}_mx:"]) {
+		--_mx: var(--#{$name}_mx);
 	}
 
-	.p-var {
-		&:where([style~="--#{$name}_py:"]) {
-			--_py: var(--#{$name}_py);
-		}
+	:where([style*="--#{$name}_py:"]) {
+		--_py: var(--#{$name}_py);
+	}
 
-		&:where([style~="--#{$name}_px:"]) {
-			--_px: var(--#{$name}_px);
-		}
+	:where([style*="--#{$name}_px:"]) {
+		--_px: var(--#{$name}_px);
 	}
 }
 

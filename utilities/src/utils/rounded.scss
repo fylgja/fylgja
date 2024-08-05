@@ -5,3 +5,13 @@
 	--rounded: 0.25rem;
 	border-radius: var(--rounded);
 }
+
+.rounded-inherit {
+	border-radius: inherit;
+}
+
+.round {
+	aspect-ratio: 1;
+	border-radius: 1e5px;
+	overflow: clip;
+}

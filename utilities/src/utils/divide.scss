@@ -4,9 +4,9 @@
 }
 
 .divide-y > :not(template, [hidden]) + * {
-	border-block-start: var(--divide);
+	border-block-start-width: var(--divide);
 }
 
 .divide-x > :not(template, [hidden]) + * {
-	border-inline-start: var(--divide);
+	border-inline-start-width: var(--divide);
 }

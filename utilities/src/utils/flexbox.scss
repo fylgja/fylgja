@@ -8,26 +8,26 @@ $use-mq: true !default;
 .flexbox {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
-	--flex: 0 1 auto;
 	display: flex;
 	flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 
 	> * {
+		--flex: 0 1 auto;
 		flex: var(--_flexI, var(--flex));
 	}
 }
 
 @mixin mq-utils($name) {
 	.flexbox {
-		&:where([style~="--#{$name}_flex-dir:"]) {
+		&:where([style*="--#{$name}_flex-dir:"]) {
 			--_flexD: var(--#{$name}_flex-dir);
 		}
 
-		&:where([style~="--#{$name}_flex-wrap:"]) {
+		&:where([style*="--#{$name}_flex-wrap:"]) {
 			--_flexW: var(--#{$name}_--align-items);
 		}
 
-		> :where([style~="--#{$name}_flex:"]) {
+		> :where([style*="--#{$name}_flex:"]) {
 			--_flexI: var(--#{$name}_flex);
 		}
 	}
