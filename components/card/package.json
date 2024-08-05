@@ -1,0 +1,28 @@
+{
+  "name": "@fylgja/card",
+  "version": "2.0.0",
+  "description": "The Fylgja card component",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "style": "card.css",
+  "sass": "_index.scss",
+  "unpkg": "card.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/card"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "card",
+    "wrapper"
+  ],
+  "scripts": {
+    "start": "npx sass --no-source-map -w src:./",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "prebuild": "npx sass --no-source-map src:./"
+  }
+}
