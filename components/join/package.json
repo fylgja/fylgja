@@ -1,23 +1,25 @@
 {
-  "name": "@fylgja/container",
+  "name": "@fylgja/join",
   "version": "2.0.0",
-  "description": "The Fylgja container component",
+  "description": "The Fylgja join component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "container.css",
+  "style": "join.css",
   "sass": "_index.scss",
-  "unpkg": "container.css",
+  "unpkg": "join.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "components/container"
+    "directory": "components/join"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
     "fylgja component",
-    "container",
+    "join",
+    "button group",
+    "form group",
     "wrapper"
   ],
   "scripts": {
