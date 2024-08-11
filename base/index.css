@@ -243,15 +243,18 @@ summary,
 }
 
 :where(code, pre) {
-  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
   writing-mode: lr;
   direction: ltr;
 }
 
-:where(:not(pre) > code, kbd) {
+:where(:not(pre) code, kbd) {
   white-space: nowrap;
   padding-inline: 0.25em;
   border-radius: 0.25em;
+}
+
+:where(:not(pre) code) {
+  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
 }
 
 :where(pre) {
@@ -261,6 +264,7 @@ summary,
   padding-block: 0.875em;
   padding-inline: 1em;
   border-radius: 0.4em;
+  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
   overflow: auto;
 }
 
