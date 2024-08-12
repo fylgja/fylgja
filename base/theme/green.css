@@ -48,6 +48,14 @@
   background: color-mix(in oklab, var(--root-bg) 94%, currentcolor);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+body > main {
+  flex-grow: 1;
+}
+
 ::-webkit-calendar-picker-indicator {
   outline-color: var(--brand);
 }

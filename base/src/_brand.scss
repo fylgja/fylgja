@@ -57,6 +57,16 @@ $on-brand: hsl(260 0% 100%) !default;
 	background: color-mix(in oklab, var(--root-bg) 94%, currentcolor);
 }
 
+// Fixed footer
+body {
+	display: flex;
+	flex-direction: column;
+
+	> main {
+		flex-grow: 1;
+	}
+}
+
 // Forms
 ::-webkit-calendar-picker-indicator {
 	outline-color: var(--brand);
