@@ -51,10 +51,8 @@ $h-line: 1.1 !default;
 	--h-size: #{$h5-size};
 }
 
-// Improve readability with max-width on paragraphs and lists
 // Prevent orphans in supported browsers
 :where(p, li, dd) {
-	max-inline-size: 65ch;
 	text-wrap: pretty;
 }
 

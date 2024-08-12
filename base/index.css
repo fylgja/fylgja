@@ -135,7 +135,6 @@ summary,
 }
 
 :where(p, li, dd) {
-  max-inline-size: 65ch;
   text-wrap: pretty;
 }
 
