@@ -1,5 +1,5 @@
 :where(.relative, .sticky, .absolute, .fixed) {
-  --z: auto;
+  --z: 1;
   --inset-t: auto;
   --inset-s: auto;
   --inset-b: auto;
@@ -10,10 +10,12 @@
 }
 
 .relative {
+  --z: auto;
   position: relative;
 }
 
 .sticky {
+  --inset-t: 0;
   position: sticky;
 }
 

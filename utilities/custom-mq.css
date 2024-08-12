@@ -96,7 +96,7 @@
 }
 
 :where(.relative, .sticky, .absolute, .fixed) {
-  --z: auto;
+  --z: 1;
   --inset-t: auto;
   --inset-s: auto;
   --inset-b: auto;
@@ -107,10 +107,12 @@
 }
 
 .relative {
+  --z: auto;
   position: relative;
 }
 
 .sticky {
+  --inset-t: 0;
   position: sticky;
 }
 
@@ -204,22 +206,6 @@
   content: "";
   position: absolute;
   inset: 0;
-}
-
-.text-sm {
-  font-size: 0.875em;
-}
-
-.text-lg {
-  font-size: 1.25em;
-}
-
-.line-sm {
-  line-height: 1.1;
-}
-
-.line-lg {
-  line-height: 1.8;
 }
 
 .truncate {
