@@ -4,14 +4,14 @@
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
 
-$h1-font-size: 3.5rem;
-$h2-font-size: 2.5rem;
-$h3-font-size: 2rem;
-$h4-font-size: 1.5rem;
-$h5-font-size: 1.25rem;
-$h-font-size: 1.1rem;
-$h-font-weight: 700;
-$h-line-height: 1.1;
+$h1-size: 3.5rem !default;
+$h2-size: 2.5rem !default;
+$h3-size: 2rem !default;
+$h4-size: 1.5rem !default;
+$h5-size: 1.25rem !default;
+$h-size: 1.1rem !default;
+$h-weight: 700 !default;
+$h-line: 1.1 !default;
 
 // Set a general default for text block margin
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
@@ -25,30 +25,30 @@ $h-line-height: 1.1;
 
 // Improved heading text wrapping
 :where(h1, h2, h3, h4, h5, h6, legend) {
-	font-size: $h-font-size;
-	font-weight: $h-font-weight;
-	line-height: $h-line-height;
+	font-size: var(--h-size, $h-size);
+	font-weight: var(--h-weight, $h-weight);
+	line-height: var(--h-line, $h-line);
 	text-wrap: balance;
 }
 
 :where(h1) {
-	font-size: $h1-font-size;
+	--h-size: #{$h1-size};
 }
 
 :where(h2) {
-	font-size: $h2-font-size;
+	--h-size: #{$h2-size};
 }
 
 :where(h3) {
-	font-size: $h3-font-size;
+	--h-size: #{$h3-size};
 }
 
 :where(h4) {
-	font-size: $h4-font-size;
+	--h-size: #{$h4-size};
 }
 
 :where(h5) {
-	font-size: $h5-font-size;
+	--h-size: #{$h5-size};
 }
 
 // Improve readability with max-width on paragraphs and lists

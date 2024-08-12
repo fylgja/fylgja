@@ -108,30 +108,30 @@ summary,
 }
 
 :where(h1, h2, h3, h4, h5, h6, legend) {
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: var(--h-size, 1.1rem);
+  font-weight: var(--h-weight, 700);
+  line-height: var(--h-line, 1.1);
   text-wrap: balance;
 }
 
 :where(h1) {
-  font-size: 3.5rem;
+  --h-size: 3.5rem;
 }
 
 :where(h2) {
-  font-size: 2.5rem;
+  --h-size: 2.5rem;
 }
 
 :where(h3) {
-  font-size: 2rem;
+  --h-size: 2rem;
 }
 
 :where(h4) {
-  font-size: 1.5rem;
+  --h-size: 1.5rem;
 }
 
 :where(h5) {
-  font-size: 1.25rem;
+  --h-size: 1.25rem;
 }
 
 :where(p, li, dd) {
