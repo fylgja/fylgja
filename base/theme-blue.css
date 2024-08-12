@@ -22,6 +22,9 @@
     --select-icon: var(--chevron-dark-scheme);
   }
 }
+@view-transition {
+  navigation: auto;
+}
 ::marker {
   color: var(--brand);
   font-weight: bolder;

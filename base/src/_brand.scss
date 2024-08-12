@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// stylelint-disable scss/at-rule-no-unknown, property-no-unknown
+
 @use "buttons/helper" as btn;
 
 $brand: hsl(260 84% 56%) !default;
@@ -26,6 +28,10 @@ $on-brand: hsl(260 0% 100%) !default;
 		--root-fg: #fff;
 		--select-icon: var(--chevron-dark-scheme);
 	}
+}
+
+@view-transition {
+	navigation: auto;
 }
 
 ::marker {
