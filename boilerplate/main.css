@@ -1,6 +1,6 @@
 /* Base */
 @import url("../base");
-@import url("../base/theme.css");
+@import url("../base/theme");
 
 /* Tokens */
 @import url("../tokens");
