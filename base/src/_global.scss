@@ -25,14 +25,11 @@ $chevron-dark-scheme: url('data:image/svg+xml,<svg #{$chevron-base-props} stroke
 $anchor-offset: max(2rem, 5svb) !default;
 
 // 1: Allow adding a border to an element by just adding a border-width
-// 2: Backgrounds are positioned center and do not repeat by default
 *,
 ::before,
 ::after {
 	box-sizing: border-box;
 	border: 0 solid; // 1
-	background-position: center; // 2
-	background-repeat: no-repeat; // 2
 }
 
 :where(:root) {
