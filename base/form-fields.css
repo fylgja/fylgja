@@ -15,7 +15,7 @@ select) {
   padding-block: var(--form-py, 0.375rem);
   padding-inline: var(--form-px, 0.8rem);
   border-width: var(--form-border-width, 1px);
-  border-color: var(--form-stroke, currentcolor);
+  border-color: var(--form-stroke);
   border-radius: var(--form-radius, 0.35rem);
   background: var(--form-bg, var(--root-bg));
   color: var(--form-color, var(--root-fg));
@@ -51,15 +51,15 @@ select):disabled {
   opacity: var(--form-disabled-opacity, 0.6);
 }
 
-:where(input:not([type=range],
-[type=checkbox],
+:where(input:not([type=checkbox],
 [type=radio],
+[type=range],
 [type=button],
 [type=reset],
 [type=submit]),
 textarea,
 select):focus {
-  border-color: var(--form-active-color, currentcolor);
+  border-color: var(--form-active-color);
   outline-width: 1px;
   outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
@@ -181,7 +181,6 @@ select):focus {
 :where(textarea) {
   field-sizing: content;
   resize: vertical;
-  min-height: calc(1lh + var(--form-py, 0.375rem) * 2 + var(--form-border-width, 1px) * 2);
 }
 
 :where(label:has(input, select, textarea, progress, meter)) {

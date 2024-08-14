@@ -17,12 +17,14 @@ $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
 		@include btn.hover;
 	}
 
+	// prettier-ignore
 	&:is(
-			:active,
-			:has(:checked),
-			[aria-current="page"],
-			[aria-checked="true"]
-		) {
+		.is-active,
+		:active,
+		:has(:checked),
+		[aria-current="page"],
+		[aria-current="true"]
+	) {
 		@include btn.active;
 	}
 

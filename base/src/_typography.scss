@@ -58,7 +58,7 @@ $h-line: 1.1 !default;
 
 // Let links be part of the text by default and inherit the color where needed
 :where(:any-link) {
-	color: currentcolor;
+	color: inherit;
 	font-weight: 500;
 }
 
@@ -79,7 +79,7 @@ $h-line: 1.1 !default;
 
 // Remove list styles on ul, ol elements with a list role or inside a nav element,
 // The list role presevers the list A11Y: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
-:where(ul[role="list"], ol[role="list"], nav ol, nav ul) {
+:where(:is(ul, ol)[role="list"], nav :is(ul, ol)) {
 	list-style: none;
 	margin-block: 0;
 	padding-inline-start: 0;

@@ -45,7 +45,7 @@
 }
 
 :where(tbody tr:nth-child(even) :is(th, td)) {
-  background: color-mix(in oklab, var(--root-bg) 94%, currentcolor);
+  background: var(--surface-color);
 }
 
 body {

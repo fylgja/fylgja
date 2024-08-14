@@ -3,17 +3,18 @@
 
 @use "helper" as form;
 
+// prettier-ignore
 :where(
-		input:not(
-				[type="checkbox"],
-				[type="radio"],
-				[type="button"],
-				[type="reset"],
-				[type="submit"]
-			),
-		textarea,
-		select
-	) {
+	input:not(
+		[type="checkbox"],
+		[type="radio"],
+		[type="button"],
+		[type="reset"],
+		[type="submit"]
+	),
+	textarea,
+	select
+) {
 	@include form.base;
 
 	&:is(:disabled, [readonly]) {
@@ -34,19 +35,20 @@
 	}
 }
 
+// prettier-ignore
 :where(
-		input:not(
-				[type="range"],
-				[type="checkbox"],
-				[type="radio"],
-				[type="button"],
-				[type="reset"],
-				[type="submit"]
-			),
-		textarea,
-		select
-	):focus {
-	border-color: var(--form-active-color, currentcolor);
+	input:not(
+		[type="checkbox"],
+		[type="radio"],
+		[type="range"],
+		[type="button"],
+		[type="reset"],
+		[type="submit"]
+	),
+	textarea,
+	select
+):focus {
+	border-color: var(--form-active-color);
 	outline-width: 1px;
 	outline-offset: calc(
 		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
@@ -89,12 +91,8 @@
 }
 
 :where(textarea) {
-	field-sizing: content;
+	field-sizing: content; // Resize by default
 	resize: vertical;
-	min-height: calc(
-		1lh + (var(--form-py, #{form.$padding-block}) * 2) +
-			(var(--form-border-width, #{form.$border-width}) * 2)
-	);
 }
 
 :where(label:has(input, select, textarea, progress, meter)) {
@@ -110,6 +108,7 @@
 
 // Nuke the default styles for the fieldset and legend,
 // and let authors determine what styles it needs to be, or just blank
+// This reset will keep the default style behavior, so adding the border and padding will make the legend float with the box
 :where(fieldset) {
 	min-inline-size: 0;
 	margin: 0;

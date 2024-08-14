@@ -7,10 +7,11 @@
   appearance: none;
   block-size: var(--size-y, 1.25em);
   inline-size: var(--size-x, 1.25em);
-  border: var(--control-border-width, 2px) solid var(--control-stroke, currentcolor);
+  border-radius: var(--control-radius, 0.35rem);
+  border-width: var(--control-border-width, 2px);
+  border-color: var(--control-stroke);
   background: var(--control-bg, none);
   color: var(--control-color, currentcolor);
-  border-radius: var(--control-radius, 0.35rem);
   margin: 0;
   padding: var(--_gap);
   user-select: none;

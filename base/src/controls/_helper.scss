@@ -18,11 +18,11 @@ $disabled-opacity: 0.6 !default;
 	appearance: none;
 	block-size: var(--size-y, #{$size});
 	inline-size: var(--size-x, #{$size});
-	border: var(--control-border-width, #{$border-width}) solid
-		var(--control-stroke, currentcolor);
+	border-radius: var(--control-radius, #{$radius});
+	border-width: var(--control-border-width, #{$border-width});
+	border-color: var(--control-stroke);
 	background: var(--control-bg, #{$bg});
 	color: var(--control-color, #{$color});
-	border-radius: var(--control-radius, #{$radius});
 	margin: 0;
 	padding: var(--_gap);
 	user-select: none;

@@ -8,22 +8,18 @@ $border-width: 2px !default;
 $radius: 0.5rem !default;
 $font-weight: 500 !default;
 
-$stroke: currentcolor !default;
 $bg: transparent !default;
 $color: currentcolor !default;
 
-$hover-stroke: $stroke !default;
-$hover-bg: color-mix(in oklab, currentcolor, transparent 86%) !default;
+$hover-bg: color-mix(in srgb, currentcolor, transparent 86%) !default;
 $hover-color: currentcolor !default;
 
-$active-stroke: $stroke !default;
-$active-bg: color-mix(in oklab, currentcolor, transparent 78%) !default;
+$active-bg: color-mix(in srgb, currentcolor, transparent 78%) !default;
 $active-color: currentcolor !default;
 
-$disabled-stroke: currentcolor !default;
-$disabled-bg: color-mix(in oklab, var(--root-bg) 90%, var(--root-fg)) !default;
+$disabled-bg: color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)) !default;
 $disabled-color: color-mix(
-	in oklab,
+	in srgb,
 	var(--root-fg) 40%,
 	var(--root-bg)
 ) !default;
@@ -36,9 +32,9 @@ $disabled-color: color-mix(
 	gap: var(--btn-gap, #{$gap});
 	padding-block: var(--btn-py, #{$padding-block});
 	padding-inline: var(--btn-px, #{$padding-inline});
-	border: var(--btn-border-width, #{$border-width}) solid
-		var(--btn-stroke, #{$stroke});
 	border-radius: var(--btn-radius, #{$radius});
+	border-width: var(--btn-border-width, #{$border-width});
+	border-color: var(--btn-stroke);
 	background: var(--btn-bg, #{$bg});
 	color: var(--btn-color, #{$color});
 	font-weight: var(--btn-font-weight, #{$font-weight});
@@ -51,23 +47,20 @@ $disabled-color: color-mix(
 
 @mixin disabled {
 	box-shadow: none;
-	border-color: var(--btn-disabled-stroke, #{$disabled-stroke});
+	border-color: var(--btn-disabled-stroke);
 	background-color: var(--btn-disabled-bg, #{$disabled-bg});
 	color: var(--btn-disabled-color, #{$disabled-color});
 	cursor: not-allowed;
 }
 
 @mixin hover {
-	border-color: var(--btn-hover-stroke, var(--btn-stroke, #{$hover-stroke}));
+	border-color: var(--btn-hover-stroke, var(--btn-stroke));
 	background-color: var(--btn-hover-bg, var(--btn-bg, #{$hover-bg}));
 	color: var(--btn-hover-color, var(--btn-color, #{$hover-color}));
 }
 
 @mixin active {
-	border-color: var(
-		--btn-active-stroke,
-		var(--btn-stroke, #{$active-stroke})
-	);
+	border-color: var(--btn-active-stroke, var(--btn-stroke));
 	background-color: var(--btn-active-bg, var(--btn-bg, #{$active-bg}));
 	color: var(--btn-active-color, var(--btn-color, #{$active-color}));
 }

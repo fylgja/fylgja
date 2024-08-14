@@ -6,7 +6,7 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  border: 0 solid currentcolor;
+  border: 0 solid;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -23,6 +23,11 @@
   --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
   --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
+  --surface-color: color-mix(
+  	in srgb,
+  	var(--root-bg) 92%,
+  	var(--brand, var(--root-fg))
+  );
   font-family: var(--family-sans);
   tab-size: 4;
   -webkit-text-size-adjust: none;
@@ -139,7 +144,7 @@ summary,
 }
 
 :where(:any-link) {
-  color: currentcolor;
+  color: inherit;
   font-weight: 500;
 }
 
@@ -157,7 +162,7 @@ summary,
   font: inherit;
 }
 
-:where(ul[role=list], ol[role=list], nav ol, nav ul) {
+:where(:is(ul, ol)[role=list], nav :is(ul, ol)) {
   list-style: none;
   margin-block: 0;
   padding-inline-start: 0;
@@ -237,8 +242,13 @@ summary,
   border-block-start-width: 2px;
 }
 
-:where(code, kbd, samp, pre) {
+:where(code, pre, kbd, samp) {
   font-family: var(--family-mono);
+}
+
+:where(code, pre, kbd, mark) {
+  border-radius: 0.35em;
+  padding: 0.125em 0.25em;
 }
 
 :where(code, pre) {
@@ -246,43 +256,32 @@ summary,
   direction: ltr;
 }
 
-:where(:not(pre) > code, kbd) {
-  white-space: nowrap;
-  padding-inline: 0.25em;
-  border-radius: 0.25em;
-}
-
-:where(:not(pre) > code) {
-  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
-}
-
-:where(pre) {
-  white-space: pre;
-  min-inline-size: 0;
-  max-inline-size: max-content;
-  padding-block: 0.875em;
-  padding-inline: 1em;
-  border-radius: 0.4em;
-  background-color: color-mix(in oklab, var(--root-bg) 92%, var(--root-fg));
-  overflow: auto;
+:where(pre, :not(pre) > code) {
+  background: var(--surface-color);
 }
 
 :where(kbd) {
   border-width: 1px;
 }
 
+:where(pre) {
+  max-inline-size: max-content;
+  padding-block: 0.875em;
+  padding-inline: 1em;
+  white-space: pre;
+  overflow: auto;
+}
+
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
 }
 
-:where(img, svg, video) {
+:where(img, svg, video, iframe) {
   max-inline-size: 100%;
   block-size: auto;
 }
 
 :where(iframe) {
-  max-inline-size: 100%;
-  block-size: auto;
   aspect-ratio: var(--aspect-ratio, 16/9);
 }
 
@@ -308,7 +307,7 @@ summary,
   position: fixed;
   max-block-size: var(--max-size-y);
   max-inline-size: var(--max-size-x);
-  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 90%, #fff));
+  background-color: var(--dialog-bg, var(--surface-color));
   color: var(--dialog-color, var(--root-fg));
   border-radius: 1rem;
   margin-block: var(--my);

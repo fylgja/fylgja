@@ -5,14 +5,12 @@
 	display: block;
 }
 
-:where(img, svg, video) {
+:where(img, svg, video, iframe) {
 	max-inline-size: 100%;
 	block-size: auto;
 }
 
 :where(iframe) {
-	max-inline-size: 100%;
-	block-size: auto;
 	aspect-ratio: var(--aspect-ratio, 16 / 9);
 }
 

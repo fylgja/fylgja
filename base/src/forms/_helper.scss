@@ -26,7 +26,7 @@ $icon-size: 1.25em !default;
 	padding-block: var(--form-py, #{$padding-block});
 	padding-inline: var(--form-px, #{$padding-inline});
 	border-width: var(--form-border-width, #{$border-width});
-	border-color: var(--form-stroke, currentcolor);
+	border-color: var(--form-stroke);
 	border-radius: var(--form-radius, #{$radius});
 	background: var(--form-bg, #{$bg});
 	color: var(--form-color, #{$color});
