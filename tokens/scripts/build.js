@@ -65,7 +65,7 @@ Object.entries(buildElMap).forEach(([tokenName, tokens]) => {
 	propsBuilder({
 		props: tokens,
 		filename: `css/${tokenName}.css`,
-		selector: "*, ::before, ::after",
+		selector: "*",
 	});
 	propsBuilder({ props: tokens, filename: `scss/${tokenName}.scss` });
 });

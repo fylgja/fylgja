@@ -1,4 +1,4 @@
-*, ::before, ::after {
+* {
     --color-0: oklch(99% calc(.03 * var(--chroma, 1)) var(--hue, 0));
     --color-1: oklch(95% calc(.06 * var(--chroma, 1)) var(--hue, 0));
     --color-2: oklch(90% calc(.12 * var(--chroma, 1)) var(--hue, 0));
