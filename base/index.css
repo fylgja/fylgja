@@ -7,8 +7,6 @@
 ::after {
   box-sizing: border-box;
   border: 0 solid;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 :where(:root) {
