@@ -173,7 +173,3 @@ select):disabled {
   min-height: 1lh;
   text-align: inherit;
 }
-
-input:is([type=tel], [type=url], [type=email], [type=number]) {
-  direction: ltr;
-}

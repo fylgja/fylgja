@@ -525,10 +525,6 @@ select):disabled {
   text-align: inherit;
 }
 
-input:is([type=tel], [type=url], [type=email], [type=number]) {
-  direction: ltr;
-}
-
 :where(input[type=checkbox], input[type=radio]) {
   --_gap: var(--icon-gap, 2px);
   appearance: none;
