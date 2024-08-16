@@ -4,6 +4,7 @@
  */
 :where(input:not([type=checkbox],
 [type=radio],
+[type=range],
 [type=button],
 [type=reset],
 [type=submit]),
@@ -23,6 +24,19 @@ select) {
 }
 :where(input:not([type=checkbox],
 [type=radio],
+[type=range],
+[type=button],
+[type=reset],
+[type=submit]),
+textarea,
+select):focus {
+  border-color: var(--form-active-color);
+  outline-width: 1px;
+  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+}
+:where(input:not([type=checkbox],
+[type=radio],
+[type=range],
 [type=button],
 [type=reset],
 [type=submit]),
@@ -33,6 +47,7 @@ select):is(:disabled, [readonly]) {
 }
 :where(input:not([type=checkbox],
 [type=radio],
+[type=range],
 [type=button],
 [type=reset],
 [type=submit]),
@@ -42,6 +57,7 @@ select):is(:disabled, [readonly]):focus {
 }
 :where(input:not([type=checkbox],
 [type=radio],
+[type=range],
 [type=button],
 [type=reset],
 [type=submit]),
@@ -49,19 +65,6 @@ textarea,
 select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
-}
-
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select):focus {
-  border-color: var(--form-active-color);
-  outline-width: 1px;
-  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 
 :where(input[type=color]) {
@@ -93,64 +96,6 @@ select):focus {
 :where(input[type=file])::file-selector-button {
   margin-block: calc(var(--btn-border-width) / -1);
   margin-inline: calc(var(--btn-border-width) / -1) 1em;
-}
-
-:where(input[type=range]) {
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
-  --fill-color: var(--form-active-color, currentcolor);
-  --fill-max: 100;
-  --fill: 0;
-  --size: var(--thumb-size, 4ex);
-  block-size: var(--size);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  outline: 0;
-  cursor: grab;
-}
-:where(input[type=range]):dir(rtl) {
-  --fill-direction: left;
-}
-:where(input[type=range]):focus-visible {
-  --outline-width: 2px;
-}
-:where(input[type=range]):active {
-  cursor: grabbing;
-}
-:where(input[type=range])::-webkit-slider-runnable-track {
-  --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 1ex);
-  border-radius: var(--form-radius, 0.35rem);
-  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
-}
-:where(input[type=range])::-moz-range-track {
-  --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 1ex);
-  border-radius: var(--form-radius, 0.35rem);
-  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
-}
-:where(input[type=range])::-webkit-slider-thumb {
-  appearance: none;
-  block-size: var(--size);
-  inline-size: var(--size);
-  box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
-  border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
-  background: var(--thumb-bg, var(--fill-color));
-  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
-}
-:where(input[type=range])::-moz-range-thumb {
-  appearance: none;
-  block-size: var(--size);
-  inline-size: var(--size);
-  box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
-  border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
-  background: var(--thumb-bg, var(--fill-color));
-  outline: var(--outline-width) solid var(--form-active-color, currentcolor);
-  box-sizing: border-box;
 }
 
 :where(select) {

@@ -20,7 +20,7 @@
 				</a>
 				<nav class="relative">
 					<button popovertarget="menuSkipTo">Jump to</button>
-					<dialog id="menuSkipTo" popover class="from-top" style="--my: 1rem auto;">
+					<dialog id="menuSkipTo" popover style="--ty: -100%; --my: 1rem auto;">
 						<a class="btn" onclick="menuSkipTo.hidePopover()" href="#text">Text</a>
 						<a class="btn" onclick="menuSkipTo.hidePopover()" href="#lists">Lists</a>
 						<a class="btn" onclick="menuSkipTo.hidePopover()" href="#table">Table</a>
@@ -34,7 +34,7 @@
 					<button popovertarget="menuTheme" aria-label="Pick Theme">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
 					</button>
-					<dialog id="menuTheme" popover class="offcanvas from-end">
+					<dialog id="menuTheme" popover class="offcanvas">
 						<div class="flexbox align">
 							<strong>Pick theme</strong>
 							<button
@@ -554,7 +554,7 @@ p q r s t u v w x y z { | } ~ </code>
 				<button onclick="document.querySelector('#dialog-offcanvas').showModal()">
 					Open Offcanvas
 				</button>
-				<dialog id="dialog-offcanvas" class="offcanvas from-end" data-close-backdrop>
+				<dialog id="dialog-offcanvas" class="offcanvas" data-close-backdrop>
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
 						A paragraph (from the Greek paragraphos, “to write beside” or “written

@@ -8,6 +8,7 @@
 	input:not(
 		[type="checkbox"],
 		[type="radio"],
+		[type="range"],
 		[type="button"],
 		[type="reset"],
 		[type="submit"]
@@ -16,6 +17,14 @@
 	select
 ) {
 	@include form.base;
+
+	&:focus {
+		border-color: var(--form-active-color);
+		outline-width: 1px;
+		outline-offset: calc(
+			(var(--form-border-width, #{form.$border-width}) + 1px) * -1
+		);
+	}
 
 	&:is(:disabled, [readonly]) {
 		border-style: var(
@@ -35,36 +44,12 @@
 	}
 }
 
-// prettier-ignore
-:where(
-	input:not(
-		[type="checkbox"],
-		[type="radio"],
-		[type="range"],
-		[type="button"],
-		[type="reset"],
-		[type="submit"]
-	),
-	textarea,
-	select
-):focus {
-	border-color: var(--form-active-color);
-	outline-width: 1px;
-	outline-offset: calc(
-		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
-	);
-}
-
 :where(input[type="color"]) {
 	@include form.color;
 }
 
 :where(input[type="file"]) {
 	@include form.file;
-}
-
-:where(input[type="range"]) {
-	@include form.range;
 }
 
 // Remove the inheritance of word-wrap in Safari
