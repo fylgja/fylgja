@@ -372,6 +372,7 @@ select) {
   background: var(--form-bg, var(--root-bg));
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
+  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 :where(input:not([type=checkbox],
 [type=radio],
@@ -383,7 +384,6 @@ textarea,
 select):focus {
   border-color: var(--form-active-color);
   outline-width: 1px;
-  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 :where(input:not([type=checkbox],
 [type=radio],

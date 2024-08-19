@@ -17,13 +17,13 @@
 	select
 ) {
 	@include form.base;
+	outline-offset: calc(
+		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
+	);
 
 	&:focus {
 		border-color: var(--form-active-color);
 		outline-width: 1px;
-		outline-offset: calc(
-			(var(--form-border-width, #{form.$border-width}) + 1px) * -1
-		);
 	}
 
 	&:is(:disabled, [readonly]) {
