@@ -1,3 +1,18 @@
+:where(input, select, textarea):user-invalid:not(:focus) {
+  --form-stroke: var(--form-invalid-color, #e00);
+  outline: 1px solid var(--form-stroke);
+}
+
+label:has([aria-describedby]) {
+  --show-notice: initial;
+}
+label:has([aria-describedby]) [id]:is(span, small) {
+  visibility: var(--show-notice, hidden);
+}
+label:has([aria-describedby]):has(:user-invalid:not(:focus)) {
+  --show-notice: /* */ ;
+}
+
 :where(input[type=range]) {
   --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
   --fill-color: var(--form-active-color, currentcolor);
@@ -55,4 +70,22 @@
   background: var(--thumb-bg, var(--fill-color));
   outline: var(--outline-width) solid var(--form-active-color, currentcolor);
   box-sizing: border-box;
+}
+
+meter,
+progress {
+  appearance: none;
+  block-size: 0.5rem;
+  inline-size: 100%;
+  border-radius: 0.3rem;
+  background: var(--bg-subtle);
+}
+
+meter {
+  --success: #218003;
+  --error: #e00;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--brand, currentcolor);
 }

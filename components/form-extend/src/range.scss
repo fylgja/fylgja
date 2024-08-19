@@ -1,0 +1,85 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "sass:math";
+
+$track-color: color-mix(in srgb, var(--root-fg) 24%, transparent) !default;
+$track-height: 1ex !default;
+$track-radius: 0.3rem !default;
+
+$thumb-size: 4ex !default;
+$thumb-radius: 50% !default;
+$thumb-stroke: var(--root-bg) !default;
+$thumb-border-width: math.div($thumb-size, 8) !default;
+
+@mixin track {
+	--_progression: calc(100% * var(--fill) / var(--fill-max));
+	block-size: var(--track-height, #{$track-height});
+	border-radius: var(--track-radius, #{$track-radius});
+	background: var(--track-color)
+		linear-gradient(
+			to var(--fill-direction, right),
+			var(--fill-color) var(--_progression),
+			var(--track-color) var(--_progression)
+		);
+}
+
+@mixin thumb {
+	$calc-offset: calc(
+		0.5 * calc(var(--track-height, #{$track-height}) - var(--size))
+	);
+	appearance: none;
+	block-size: var(--size);
+	inline-size: var(--size);
+	box-shadow: var(--thumb-shadow);
+	margin-block-start: var(--thumb-offset, #{$calc-offset});
+	border-radius: var(--thumb-radius, #{$thumb-radius});
+	border: var(--thumb-border-width, #{$thumb-border-width}) solid
+		var(--thumb-stroke, #{$thumb-stroke});
+	background: var(--thumb-bg, var(--fill-color));
+	outline: var(--outline-width) solid var(--form-active-color, currentcolor);
+}
+
+:where(input[type="range"]) {
+	--track-color: #{$track-color};
+	--fill-color: var(--form-active-color, currentcolor);
+	--fill-max: 100;
+	--fill: 0;
+	--size: var(--thumb-size, #{$thumb-size});
+	appearance: none;
+	block-size: var(--size);
+	inline-size: 100%;
+	margin: 0;
+	background: none;
+	outline: 0;
+	cursor: grab;
+
+	&:dir(rtl) {
+		--fill-direction: left;
+	}
+
+	&:focus-visible {
+		--outline-width: 2px;
+	}
+
+	&:active {
+		cursor: grabbing;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track;
+	}
+
+	&::-moz-range-track {
+		@include track;
+	}
+
+	&::-webkit-slider-thumb {
+		@include thumb;
+	}
+
+	&::-moz-range-thumb {
+		@include thumb;
+		box-sizing: border-box;
+	}
+}

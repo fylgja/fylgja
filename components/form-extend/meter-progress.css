@@ -1,0 +1,17 @@
+meter,
+progress {
+  appearance: none;
+  block-size: 0.5rem;
+  inline-size: 100%;
+  border-radius: 0.3rem;
+  background: var(--bg-subtle);
+}
+
+meter {
+  --success: #218003;
+  --error: #e00;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--brand, currentcolor);
+}
