@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header class="sticky-header">
-			<div class="container flexbox align gap" style="--py: 1rem;">
+			<div class="container flex align gap" style="--py: 1rem;">
 				<a href="/">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
@@ -35,7 +35,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
 					</button>
 					<dialog id="menuTheme" popover class="offcanvas">
-						<div class="flexbox align">
+						<div class="flex align">
 							<strong>Pick theme</strong>
 							<button
 								popovertarget="menuTheme"
@@ -292,8 +292,9 @@ p q r s t u v w x y z { | } ~ </code>
 							<input type="number" name="number" placeholder="number">
 						</label>
 						<label>
-							email
-							<input type="email" name="email" placeholder="email" autocomplete="email">
+							email<sup aria-hidden style="color: #e00;">*</sup>
+							<input type="email" name="email" placeholder="email" autocomplete="email" required aria-describedby="email-error-message">
+							<small id="email-error-message">Please enter a valid email</small>
 						</label>
 						<label>
 							tel
@@ -473,11 +474,13 @@ p q r s t u v w x y z { | } ~ </code>
 							</svg>
 							<button type="submit">
 								<svg width="24" height="24">
+									<title>Icon Only Submit</title>
 									<use href="#btn-icon"></use>
 								</svg>
 							</button>
 							<button type="button">
 								<svg width="24" height="24">
+									<title>Icon Only</title>
 									<use href="#btn-icon"></use>
 								</svg>
 							</button>
@@ -663,7 +666,7 @@ p q r s t u v w x y z { | } ~ </code>
 				<h2>Canvas</h2>
 				<div><canvas>canvas</canvas></div>
 				<h2>Iframe</h2>
-				<div><iframe src="https://fylgja.dev" width="1024" height="576"></iframe></div>
+				<div><iframe src="https://fylgja.dev" aria-label="Fylgja CSS" width="1024" height="576"></iframe></div>
 			</section>
 		</main>
 		<script>

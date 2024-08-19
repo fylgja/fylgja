@@ -13,14 +13,10 @@
 @import url("../components/menu");
 @import url("../components/breadcrumbs");
 @import url("../components/badge");
+@import url("../components/form-extend");
 
 /* Utilities */
 @import url("../utilities");
-
-/* Boilerplate code */
-@view-transition {
-	navigation: auto;
-}
 
 :root {
 	--anchor-offset: calc(75px + 5ex);

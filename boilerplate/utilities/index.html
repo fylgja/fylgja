@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header class="sticky-header">
-			<div class="container flexbox align gap" style="--py: 1rem;">
+			<div class="container flex align gap" style="--py: 1rem;">
 				<a href="/">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
@@ -24,7 +24,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
 					</button>
 					<dialog id="menuTheme" popover class="offcanvas">
-						<div class="flexbox align">
+						<div class="flex align">
 							<strong>Pick theme</strong>
 							<button
 								popovertarget="menuTheme"
@@ -53,7 +53,7 @@
 					<figure class="stack">
 						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
 						<figcaption
-							class="overlay flexbox align"
+							class="overlay flex align"
 							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
 						>
 							<span>Coffee beans</span>
@@ -65,11 +65,11 @@
 			</section>
 			<section aria-label="Grid Cols">
 				<h2>Grid Cols</h2>
-				<div class="grid-cols" style="--md_grid-cols: 3;">
+				<div class="grid" style="--md_grid: 3;">
 					<figure class="stack">
 						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
 						<figcaption
-							class="overlay flexbox align"
+							class="overlay flex align"
 							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
 						>
 							<span>Coffee beans</span>
@@ -84,8 +84,8 @@
 				<div class="flow">
 					<ul
 						role="list"
-						class="snap grid-cols grid-cols-flow scroll-x scroll-mask-x"
-						style="--md_grid-cols: 4; --py: 0 .875em;"
+						class="snap grid grid-flow scroll-x scroll-mask-x"
+						style="--md_grid: 4; --py: 0 .875em;"
 					>
 						<li>
 							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
@@ -108,8 +108,8 @@
 					</ul>
 					<div
 						role="list"
-						class="snap grid-cols grid-cols-flow scroll-x"
-						style="--md_grid-cols: 3;"
+						class="snap grid grid-flow scroll-x"
+						style="--md_grid: 3;"
 					>
 						<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
 						<img src="https://picsum.photos/id/431/500/300" alt="coffee beans">
@@ -120,7 +120,7 @@
 					</div>
 					<div
 						role="list"
-						class="snap scroll-x flexbox"
+						class="snap scroll-x flex"
 						style="--snap-align: center;"
 					>
 						<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
@@ -135,7 +135,7 @@
 			<section aria-label="Color Tokens">
 				<h2>Color Tokens</h2>
 				<div style="--hue: 270;">
-					<div class="flexbox color-boxes">
+					<div class="flex color-boxes">
 						<div></div>
 						<div></div>
 						<div></div>
@@ -151,7 +151,7 @@
 						<div></div>
 						<div></div>
 					</div>
-					<div class="flexbox color-boxes" style="--chroma: 0.3;">
+					<div class="flex color-boxes" style="--chroma: 0.3;">
 						<div></div>
 						<div></div>
 						<div></div>
