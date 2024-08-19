@@ -13,12 +13,12 @@ $use-mq: true !default;
 	display: block;
 }
 
-.inline-block {
-	display: inline-block;
-}
+.inline {
+	--inline: inline;
 
-.inline-flex {
-	display: inline-flex;
+	&:not(.block, .flex, .grid) {
+		display: inline;
+	}
 }
 
 @mixin mq-utils($name) {
@@ -27,15 +27,7 @@ $use-mq: true !default;
 	}
 
 	.#{$name}\:block {
-		display: block;
-	}
-
-	.#{$name}\:inline-block {
-		display: inline-block;
-	}
-
-	.#{$name}\:inline-flex {
-		display: inline-flex;
+		display: var(--inline) block;
 	}
 }
 

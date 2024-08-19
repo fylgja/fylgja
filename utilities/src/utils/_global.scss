@@ -32,10 +32,10 @@ $use-custom-mq: false !default;
 
 // Layout
 @use "auto-grid";
-@use "grid-cols" with (
+@use "grid" with (
 	$use-mq: false
 );
-@use "flexbox" with (
+@use "flex" with (
 	$use-mq: false
 );
 @use "align" with (
@@ -55,8 +55,8 @@ $use-custom-mq: false !default;
 		@include spacing.mq-utils($name);
 
 		// Layout
-		@include grid-cols.mq-utils($name);
-		@include flexbox.mq-utils($name);
+		@include grid.mq-utils($name);
+		@include flex.mq-utils($name);
 		@include align.mq-utils($name);
 
 		// Aria
