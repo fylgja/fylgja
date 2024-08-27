@@ -103,7 +103,7 @@ select):disabled {
 }
 
 :where(select:not([multiple], [size]:not([size="1"]))) {
-  --icon: var(--select-icon, var(--icon-chevron-light-scheme));
+  --icon: var(--select-icon, var(--chevron-light-scheme));
   --icon-size: var(--select-icon-size, 1.25em);
   --icon-offset: var(--select-icon-offset, 0.8rem);
   padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
