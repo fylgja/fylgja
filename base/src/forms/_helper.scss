@@ -33,7 +33,7 @@ $icon-size: 1.25em !default;
 }
 
 @mixin select-icon {
-	--icon: var(--select-icon, var(--icon-chevron-light-scheme));
+	--icon: var(--select-icon, var(--chevron-light-scheme));
 	--icon-size: var(--select-icon-size, #{$icon-size});
 	--icon-offset: var(--select-icon-offset, #{$padding-inline});
 	padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
