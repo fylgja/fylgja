@@ -15,6 +15,7 @@ $font-family: (
 	"Segoe UI Symbol",
 	"Noto Color Emoji"
 ) !default;
+$font-ratio: 1.375 !default;
 $font-size: 1rem !default;
 $line-height: 1.6 !default;
 
@@ -32,7 +33,7 @@ $anchor-offset: max(2rem, 5svb) !default;
 	border: 0 solid; // 1
 }
 
-:where(:root) {
+:root {
 	--root-bg: #{$root-bg};
 	--root-fg: #{$root-fg};
 	--family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -43,13 +44,14 @@ $anchor-offset: max(2rem, 5svb) !default;
 		"Liberation Mono", monospace, var(--family-emoji);
 	--chevron-light-scheme: #{$chevron-light-scheme};
 	--chevron-dark-scheme: #{$chevron-dark-scheme};
+	--font-ratio: #{$font-ratio};
+	--font-scale-1: calc(var(--font-size, #{$font-size}) * var(--font-ratio));
+	--font-scale-2: calc(var(--font-scale-1) * var(--font-ratio));
+	--font-scale-3: calc(var(--font-scale-2) * var(--font-ratio));
+	--font-scale-4: calc(var(--font-scale-3) * var(--font-ratio));
+	--font-scale-5: calc(var(--font-scale-4) * var(--font-ratio));
 	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
 	--surface-color: color-mix(in srgb, var(--root-bg) 92%, var(--root-fg));
-	font-family: var(--family-sans);
-	tab-size: 4;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-	scrollbar-gutter: stable;
 }
 
 :where(:focus-visible) {
@@ -67,13 +69,18 @@ $anchor-offset: max(2rem, 5svb) !default;
 }
 
 @media ($motion-safe) {
-	:where(:has(:target)) {
+	:has(:target) {
 		scroll-behavior: smooth;
 	}
 }
 
 :where(html) {
 	block-size: 100%;
+	font-family: var(--family-sans);
+	tab-size: 4;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	scrollbar-gutter: stable;
 }
 
 :where(body) {
@@ -90,27 +97,29 @@ $anchor-offset: max(2rem, 5svb) !default;
 }
 
 // Prevent touch delay on touch devices
+// prettier-ignore
 :where(
-		:any-link,
-		button,
-		input,
-		label[for],
-		select,
-		summary,
-		textarea,
-		[tabindex]:not([tabindex^="-"])
-	) {
+	:any-link,
+	button,
+	input,
+	label[for],
+	select,
+	summary,
+	textarea,
+	[tabindex]:not([tabindex^="-"])
+) {
 	touch-action: manipulation;
 }
 
+// prettier-ignore
 :where(
-		:any-link,
-		button,
-		label[for],
-		label:has(input[type="radio"], input[type="checkbox"]),
-		summary,
-		[tabindex]:not([tabindex^="-"])
-	) {
+	:any-link,
+	button,
+	label[for],
+	label:has(input[type="radio"], input[type="checkbox"]),
+	summary,
+	[tabindex]:not([tabindex^="-"])
+) {
 	cursor: pointer;
 }
 
@@ -127,4 +136,17 @@ $anchor-offset: max(2rem, 5svb) !default;
 // Show a diffrent cursor for any disabled element
 :disabled {
 	cursor: not-allowed;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+	display: block;
+}
+
+:where(img, svg, video, iframe) {
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+:where(iframe) {
+	aspect-ratio: var(--aspect-ratio, 16 / 9);
 }

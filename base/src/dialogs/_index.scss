@@ -18,13 +18,13 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 	--ty: var(--dialog-translate-y, 2rem);
 	--tx: var(--dialog-translate-x, 0);
 	--speed: var(--dialog-close-speed, #{$close-speed});
-	--max-size-y: calc(100% - 2em);
-	--max-size-x: calc(100% - 2em);
+	--screen-y: 2rem;
+	--screen-x: 2rem;
 	--my: auto;
 	--mx: auto;
 	position: fixed; // 1
-	max-block-size: var(--max-size-y);
-	max-inline-size: var(--max-size-x);
+	max-block-size: calc(100% - var(--screen-y));
+	max-inline-size: calc(100% - var(--screen-x));
 	background-color: var(--dialog-bg, var(--surface-color));
 	color: var(--dialog-color, var(--root-fg));
 	border-radius: $radius;

@@ -104,10 +104,10 @@ body {
 :where(dialog).offcanvas {
 	--ty: 0;
 	--tx: 100%;
-	--max-size-y: 100%;
+	--screen-y: 0;
+	--mx: auto 0;
 	block-size: 100%;
 	inline-size: min(100%, 25rem);
-	margin-inline-end: 0;
 	border-start-end-radius: 0;
 	border-end-end-radius: 0;
 }

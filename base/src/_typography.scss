@@ -4,28 +4,28 @@
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
 
-$h1-size: 3.5rem !default;
-$h2-size: 2.5rem !default;
-$h3-size: 2rem !default;
-$h4-size: 1.5rem !default;
-$h5-size: 1.25rem !default;
+$h1-size: var(--font-scale-5) !default;
+$h2-size: var(--font-scale-4) !default;
+$h3-size: var(--font-scale-3) !default;
+$h4-size: var(--font-scale-2) !default;
+$h5-size: var(--font-scale-1) !default;
 $h-size: 1.1rem !default;
 $h-weight: 700 !default;
 $h-line: 1.1 !default;
 
 // Set a general default for text block margin
-:where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre) {
+:where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
 	margin-block: var(--text-flow, #{$text-flow});
 }
 
-:where(blockquote, hr) {
+:where(blockquote, figure, hr) {
 	margin-block: var(--separator-flow, #{$separator-flow});
 	margin-inline: 0;
 }
 
 // Improved heading text wrapping
 :where(h1, h2, h3, h4, h5, h6, legend) {
-	font-size: var(--h-size, $h-size);
+	font-size: var(--h-size, #{$h-size});
 	font-weight: var(--h-weight, $h-weight);
 	line-height: var(--h-line, $h-line);
 	text-wrap: balance;
@@ -109,10 +109,6 @@ $h-line: 1.1 !default;
 	color: inherit;
 }
 
-:where(mark) {
-	padding-inline: 0.125em;
-}
-
 // Add the correct font size in all browsers
 :where(small) {
 	font-size: 0.875em;
@@ -132,4 +128,34 @@ $h-line: 1.1 !default;
 
 :where(sup) {
 	top: -0.5em;
+}
+
+:where(code, pre, kbd, samp) {
+	font-family: var(--family-mono);
+}
+
+:where(code, kbd, mark) {
+	border-radius: 0.2em;
+	padding: 0.125rem 0.25rem;
+}
+
+:where(code, pre) {
+	writing-mode: lr;
+	direction: ltr;
+}
+
+:where(pre, :not(pre) > code) {
+	background: var(--surface-color);
+}
+
+:where(kbd) {
+	border-width: 1px;
+}
+
+:where(pre) {
+	max-inline-size: max-content;
+	border-radius: 0.5em;
+	padding: 0.875em 1em;
+	white-space: pre;
+	overflow: auto;
 }
