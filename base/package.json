@@ -1,20 +1,30 @@
 {
   "name": "@fylgja/base",
   "version": "2.0.0",
-  "description": "",
+  "description": "Base provides a streamlined starting point for any web project. It’s a collection of class-less solutions, allowing you to focus on building your site.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "main": "_index.scss",
-  "unpkg": "base.css",
-  "style": "base.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
     "directory": "base"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
-  "keywords": [],
+  "keywords": [
+    "css",
+    "scss",
+    "dark mode",
+    "class-light",
+    "semantic html",
+    "custom properties",
+    "form",
+    "switch",
+    "button",
+    "dialog",
+    "modal",
+    "offcanvas"
+  ],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
@@ -23,8 +33,22 @@
     "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
     "build:dialog": "npx lightningcss --minify --bundle dialog.css -o dialog.min.css",
-    "build:parts": "npm run build:btn && npm run build:form && npm run build:dialog",
-    "build": "npm run build:main && npm run build:preflight && npm run build:parts",
+    "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form && npm run build:dialog",
     "prebuild": "npm run build:scss"
+  },
+  "main": "index.css",
+  "style": "index.css",
+  "unpkg": "index.min.css",
+  "exports": {
+    ".": "./index.css",
+    "./preflight": "./preflight.css",
+    "./btn": "./btn.css",
+    "./form": "./form.css",
+    "./dialog": "./dialog.css",
+    "./theme": "./theme/index.css",
+    "./theme.red": "./theme/red.css",
+    "./theme.blue": "./theme/blue.css",
+    "./theme.green": "./theme/green.css",
+    "./*": "./*"
   }
 }
