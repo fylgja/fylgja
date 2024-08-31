@@ -6,20 +6,20 @@
 $use-mq: true !default;
 $gap: 1em !default;
 
-:where(.grid) {
+.grid {
 	--grid-cols: 1;
 	--gap: #{$gap};
 	--_cols: var(--grid-cols);
 	display: grid;
-	gap: var(--_gp, var(--gap));
+	gap: var(--_gap, var(--gap));
 	grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
-.grid-flow-col {
+.grid-flow {
 	grid-auto-flow: column;
 	grid-template-columns: none;
 	grid-auto-columns: calc(
-		(100% - var(--_gp, var(--gap)) * (var(--_cols) - 1)) / var(--_cols)
+		(100% - var(--_gap, var(--gap)) * (var(--_cols) - 1)) / var(--_cols)
 	);
 }
 

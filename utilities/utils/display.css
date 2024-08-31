@@ -3,12 +3,7 @@
 }
 
 .block {
-  --inline: /* */ ;
-  display: var(--inline) block;
-}
-
-.inline {
-  --inline: inline;
+  display: block;
 }
 
 @media (width >= 480px) {
@@ -16,7 +11,7 @@
     display: none;
   }
   .sm\:block {
-    display: var(--inline) block;
+    display: block;
   }
 }
 @media (width >= 768px) {
@@ -24,7 +19,7 @@
     display: none;
   }
   .md\:block {
-    display: var(--inline) block;
+    display: block;
   }
 }
 @media (width >= 1024px) {
@@ -32,7 +27,7 @@
     display: none;
   }
   .lg\:block {
-    display: var(--inline) block;
+    display: block;
   }
 }
 @media (width >= 1440px) {
@@ -40,7 +35,7 @@
     display: none;
   }
   .xl\:block {
-    display: var(--inline) block;
+    display: block;
   }
 }
 @media (width >= 1920px) {
@@ -48,6 +43,6 @@
     display: none;
   }
   .xxl\:block {
-    display: var(--inline) block;
+    display: block;
   }
 }

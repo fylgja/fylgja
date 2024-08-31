@@ -13,21 +13,13 @@ $use-mq: true !default;
 	display: block;
 }
 
-.inline {
-	--inline: inline;
-
-	&:not(.block, .flex, .grid) {
-		display: inline;
-	}
-}
-
 @mixin mq-utils($name) {
 	.#{$name}\:hidden {
 		display: none;
 	}
 
 	.#{$name}\:block {
-		display: var(--inline) block;
+		display: block;
 	}
 }
 

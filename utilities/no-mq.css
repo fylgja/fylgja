@@ -9,12 +9,7 @@
 }
 
 .block {
-  --inline: /* */ ;
-  display: var(--inline) block;
-}
-
-.inline {
-  --inline: inline;
+  display: block;
 }
 
 .divide-x,
@@ -199,6 +194,18 @@
   inline-size: 100%;
 }
 
+.stroke-form-error {
+  border-color: var(--form-error-color);
+}
+
+.bg-form-error {
+  background-color: var(--form-error-color);
+}
+
+.color-form-error {
+  color: var(--form-error-color);
+}
+
 .stretched-link::after {
   content: "";
   position: absolute;
@@ -211,13 +218,30 @@
   text-overflow: ellipsis;
 }
 
+.visible,
+.peer-invalid\:invisible {
+  visibility: visible;
+}
+
+.invisible,
+.peer-invalid\:visible {
+  visibility: hidden;
+}
+
+:user-invalid ~ .peer-invalid\:visible {
+  visibility: visible;
+}
+
+:user-invalid ~ .peer-invalid\:invisible {
+  visibility: hidden;
+}
+
 .auto-grid {
   --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
-  --_gap: var(--gap);
   display: grid;
-  gap: var(--_gap);
+  gap: var(--_gap, var(--gap));
   grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gap), var(--grid-col-size), 100%), 1fr));
 }
 
@@ -226,26 +250,23 @@
   --gap: 1em;
   --_cols: var(--grid-cols);
   display: grid;
-  gap: var(--_gp, var(--gap));
+  gap: var(--_gap, var(--gap));
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
 .grid-flow {
   grid-auto-flow: column;
   grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--_gp, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
+  grid-auto-columns: calc((100% - var(--_gap, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
 }
 
-.flex,
-.flex-col {
+:is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
-  --inline: /* */ ;
-  display: var(--inline) flex;
+  display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
-.flex > *,
-.flex-col > * {
+:is(.flex, .flex-col) > * {
   --flex: 0 1 auto;
   flex: var(--_flexI, var(--flex));
 }

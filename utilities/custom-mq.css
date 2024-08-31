@@ -9,12 +9,7 @@
 }
 
 .block {
-  --inline: /* */ ;
-  display: var(--inline) block;
-}
-
-.inline {
-  --inline: inline;
+  display: block;
 }
 
 .divide-x,
@@ -199,6 +194,18 @@
   inline-size: 100%;
 }
 
+.stroke-form-error {
+  border-color: var(--form-error-color);
+}
+
+.bg-form-error {
+  background-color: var(--form-error-color);
+}
+
+.color-form-error {
+  color: var(--form-error-color);
+}
+
 .stretched-link::after {
   content: "";
   position: absolute;
@@ -211,13 +218,30 @@
   text-overflow: ellipsis;
 }
 
+.visible,
+.peer-invalid\:invisible {
+  visibility: visible;
+}
+
+.invisible,
+.peer-invalid\:visible {
+  visibility: hidden;
+}
+
+:user-invalid ~ .peer-invalid\:visible {
+  visibility: visible;
+}
+
+:user-invalid ~ .peer-invalid\:invisible {
+  visibility: hidden;
+}
+
 .auto-grid {
   --grid-max-cols: 4;
   --grid-col-size: 14rem;
   --gap: 1em;
-  --_gap: var(--gap);
   display: grid;
-  gap: var(--_gap);
+  gap: var(--_gap, var(--gap));
   grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--grid-max-cols) - var(--_gap), var(--grid-col-size), 100%), 1fr));
 }
 
@@ -226,26 +250,23 @@
   --gap: 1em;
   --_cols: var(--grid-cols);
   display: grid;
-  gap: var(--_gp, var(--gap));
+  gap: var(--_gap, var(--gap));
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
 .grid-flow {
   grid-auto-flow: column;
   grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--_gp, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
+  grid-auto-columns: calc((100% - var(--_gap, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
 }
 
-.flex,
-.flex-col {
+:is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
-  --inline: /* */ ;
-  display: var(--inline) flex;
+  display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
-.flex > *,
-.flex-col > * {
+:is(.flex, .flex-col) > * {
   --flex: 0 1 auto;
   flex: var(--_flexI, var(--flex));
 }
@@ -288,7 +309,7 @@
     display: none;
   }
   .sm\:block {
-    display: var(--inline) block;
+    display: block;
   }
   .gap:where([style*="--sm_gap:"]) {
     --_gap: var(--sm_gap);
@@ -308,13 +329,13 @@
   .grid:where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
-  .flexbox:where([style*="--sm_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  .flexbox:where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_--align-items);
   }
-  .flexbox > :where([style*="--sm_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
   .align:where([style*="--sm_align:"]) {
@@ -338,7 +359,7 @@
     display: none;
   }
   .md\:block {
-    display: var(--inline) block;
+    display: block;
   }
   .gap:where([style*="--md_gap:"]) {
     --_gap: var(--md_gap);
@@ -358,13 +379,13 @@
   .grid:where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
-  .flexbox:where([style*="--md_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  .flexbox:where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_--align-items);
   }
-  .flexbox > :where([style*="--md_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
   .align:where([style*="--md_align:"]) {
@@ -388,7 +409,7 @@
     display: none;
   }
   .lg\:block {
-    display: var(--inline) block;
+    display: block;
   }
   .gap:where([style*="--lg_gap:"]) {
     --_gap: var(--lg_gap);
@@ -408,13 +429,13 @@
   .grid:where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
-  .flexbox:where([style*="--lg_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  .flexbox:where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_--align-items);
   }
-  .flexbox > :where([style*="--lg_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
   .align:where([style*="--lg_align:"]) {
@@ -438,7 +459,7 @@
     display: none;
   }
   .xl\:block {
-    display: var(--inline) block;
+    display: block;
   }
   .gap:where([style*="--xl_gap:"]) {
     --_gap: var(--xl_gap);
@@ -458,13 +479,13 @@
   .grid:where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
-  .flexbox:where([style*="--xl_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  .flexbox:where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_--align-items);
   }
-  .flexbox > :where([style*="--xl_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
   .align:where([style*="--xl_align:"]) {
@@ -488,7 +509,7 @@
     display: none;
   }
   .xxl\:block {
-    display: var(--inline) block;
+    display: block;
   }
   .gap:where([style*="--xxl_gap:"]) {
     --_gap: var(--xxl_gap);
@@ -508,13 +529,13 @@
   .grid:where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
-  .flexbox:where([style*="--xxl_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  .flexbox:where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_--align-items);
   }
-  .flexbox > :where([style*="--xxl_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
   .align:where([style*="--xxl_align:"]) {

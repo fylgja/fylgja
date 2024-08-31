@@ -5,7 +5,7 @@
 
 $use-mq: true !default;
 
-:where(.flex, .flex-col) {
+:is(.flex, .flex-col) {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	display: flex;
@@ -22,7 +22,7 @@ $use-mq: true !default;
 }
 
 @mixin mq-utils($name) {
-	.flexbox {
+	:is(.flex, .flex-col) {
 		&:where([style*="--#{$name}_flex-dir:"]) {
 			--_flexD: var(--#{$name}_flex-dir);
 		}
