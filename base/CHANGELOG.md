@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-- This is a complete rebuild
+<!-- ## 2.0.0 - 2024-09-? -->
+
+This is a complete rebuild of the Fylgja Base component,
+now including the core v1 class-less components in to one package and optimize to be super small and still full of features!
+To make this the most optimized Started, normalize and preflight CSS package.
 
 ## 1.1.0 - 2022-06-05
 
