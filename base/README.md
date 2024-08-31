@@ -30,7 +30,6 @@ Once installed, you can import the full package with:
 
 ```css
 @import "@fylgja/base";
-/* Use "@fylgja/base.min" for the minified version */
 ```
 
 Alternatively, if you only need specific parts of the base, you can import them individually:
