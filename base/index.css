@@ -20,12 +20,6 @@
   	"Liberation Mono", monospace, var(--family-emoji);
   --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
   --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
-  --font-ratio: 1.375;
-  --font-scale-1: calc(var(--font-size, 1rem) * var(--font-ratio));
-  --font-scale-2: calc(var(--font-scale-1) * var(--font-ratio));
-  --font-scale-3: calc(var(--font-scale-2) * var(--font-ratio));
-  --font-scale-4: calc(var(--font-scale-3) * var(--font-ratio));
-  --font-scale-5: calc(var(--font-scale-4) * var(--font-ratio));
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
   --surface-color: color-mix(in srgb, var(--root-bg) 92%, var(--root-fg));
 }
@@ -133,23 +127,23 @@ summary,
 }
 
 :where(h1) {
-  --h-size: var(--font-scale-5);
+  --h-size: 3.5rem;
 }
 
 :where(h2) {
-  --h-size: var(--font-scale-4);
+  --h-size: 2.5rem;
 }
 
 :where(h3) {
-  --h-size: var(--font-scale-3);
+  --h-size: 2rem;
 }
 
 :where(h4) {
-  --h-size: var(--font-scale-2);
+  --h-size: 1.5rem;
 }
 
 :where(h5) {
-  --h-size: var(--font-scale-1);
+  --h-size: 1.25rem;
 }
 
 :where(p, li, dd) {
