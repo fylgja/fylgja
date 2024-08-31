@@ -27,8 +27,10 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "sizes";
+@use "color";
 @use "stretched-link";
 @use "truncate";
+@use "visibility";
 
 // Layout
 @use "auto-grid";

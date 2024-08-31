@@ -3,8 +3,8 @@
 @import url("../base/theme");
 
 /* Tokens */
-@import url("../tokens");
-@import url("../tokens/theme.css");
+/* @import url("../tokens");
+@import url("../tokens/theme.css"); */
 
 /* Components */
 @import url("../components/container");
@@ -71,4 +71,5 @@
 [data-theme$="lava"] {
 	--brand: hsl(0 100% 35%);
 	--on-brand: hsl(260 0% 100%);
+	--form-error-color: currentcolor;
 }

@@ -4,5 +4,6 @@
  */
 
 @use "../brand" with (
-	$brand: hsl(0 100% 35%)
+	$brand: hsl(0 100% 35%),
+	$error: currentcolor
 );

@@ -1,0 +1,17 @@
+.visible,
+.peer-invalid\:invisible {
+  visibility: visible;
+}
+
+.invisible,
+.peer-invalid\:visible {
+  visibility: hidden;
+}
+
+:user-invalid ~ .peer-invalid\:visible {
+  visibility: visible;
+}
+
+:user-invalid ~ .peer-invalid\:invisible {
+  visibility: hidden;
+}

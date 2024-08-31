@@ -6,6 +6,7 @@
   --brand: hsl(213, 73%, 35%);
   --on-brand: hsl(260, 0%, 100%);
   --form-active-color: var(--brand);
+  --form-error-color: #e00;
   --control-checked-stroke: var(--brand);
   --control-checked-bg: var(--brand);
   --control-checked-color: var(--on-brand);
@@ -64,6 +65,11 @@ body > main {
 :where(select option:checked) {
   background: var(--brand);
   color: var(--on-brand);
+}
+
+:user-invalid:not(:focus) {
+  --form-stroke: var(--form-error-color);
+  outline: 1px solid var(--form-stroke);
 }
 
 :where(.btn.-primary, [type=submit], form button:not([type])),

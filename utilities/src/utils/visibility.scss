@@ -1,0 +1,22 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "helper" as *;
+
+.visible,
+.peer-invalid\:invisible {
+	visibility: visible;
+}
+
+.invisible,
+.peer-invalid\:visible {
+	visibility: hidden;
+}
+
+:user-invalid ~ .peer-invalid\:visible {
+	visibility: visible;
+}
+
+:user-invalid ~ .peer-invalid\:invisible {
+	visibility: hidden;
+}
