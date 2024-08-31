@@ -44,12 +44,6 @@ $anchor-offset: max(2rem, 5svb) !default;
 		"Liberation Mono", monospace, var(--family-emoji);
 	--chevron-light-scheme: #{$chevron-light-scheme};
 	--chevron-dark-scheme: #{$chevron-dark-scheme};
-	--font-ratio: #{$font-ratio};
-	--font-scale-1: calc(var(--font-size, #{$font-size}) * var(--font-ratio));
-	--font-scale-2: calc(var(--font-scale-1) * var(--font-ratio));
-	--font-scale-3: calc(var(--font-scale-2) * var(--font-ratio));
-	--font-scale-4: calc(var(--font-scale-3) * var(--font-ratio));
-	--font-scale-5: calc(var(--font-scale-4) * var(--font-ratio));
 	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
 	--surface-color: color-mix(in srgb, var(--root-bg) 92%, var(--root-fg));
 }
