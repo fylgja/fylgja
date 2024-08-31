@@ -9,9 +9,8 @@ $max-cols: 4 !default;
 	--grid-max-cols: 4;
 	--grid-col-size: #{$col-size};
 	--gap: #{$gap};
-	--_gap: var(--gap);
 	display: grid;
-	gap: var(--_gap);
+	gap: var(--_gap, var(--gap));
 	grid-template-columns: repeat(
 		auto-fill,
 		minmax(
