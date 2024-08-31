@@ -2,14 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select) {
   appearance: none;
   inline-size: 100%;
   margin: 0;
@@ -23,46 +16,18 @@ select) {
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
   outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select):focus {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):focus {
   border-color: var(--form-active-color);
   outline-width: 1px;
 }
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select):is(:disabled, [readonly]) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]) {
   border-style: var(--form-disabled-border-style, dashed);
   cursor: not-allowed;
 }
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select):is(:disabled, [readonly]):focus {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]):focus {
   outline: none;
 }
-:where(input:not([type=checkbox],
-[type=radio],
-[type=range],
-[type=button],
-[type=reset],
-[type=submit]),
-textarea,
-select):disabled {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
 }
