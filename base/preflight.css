@@ -275,56 +275,6 @@ summary,
   border-block-start-width: 2px;
 }
 
-:where(dialog) {
-  --backdrop: hsla(0, 0%, 0%, 0.3);
-  --ty: var(--dialog-translate-y, 2rem);
-  --tx: var(--dialog-translate-x, 0);
-  --speed: var(--dialog-close-speed, 300ms);
-  --screen-y: 2rem;
-  --screen-x: 2rem;
-  --my: auto;
-  --mx: auto;
-  position: fixed;
-  max-block-size: calc(100% - var(--screen-y));
-  max-inline-size: calc(100% - var(--screen-x));
-  background-color: var(--dialog-bg, var(--surface-color));
-  color: var(--dialog-color, var(--root-fg));
-  border-radius: 1rem;
-  margin-block: var(--my);
-  margin-inline: var(--mx);
-  padding: 1.5rem;
-  box-shadow: var(--dialog-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
-  translate: var(--tx) var(--ty);
-  opacity: 0;
-}
-@media (prefers-reduced-motion: no-preference) {
-  :where(dialog) {
-    transition-property: translate, opacity, display, overlay;
-    transition-duration: var(--speed);
-    transition-behavior: allow-discrete;
-  }
-}
-
-:where(dialog)::backdrop {
-  background-color: var(--backdrop);
-}
-
-:where(dialog:is([open], :popover-open)) {
-  --speed: var(--dialog-open-speed, 400ms);
-  opacity: 1;
-  translate: 0 0;
-}
-@starting-style {
-  :where(dialog:is([open], :popover-open)) {
-    opacity: 0;
-    translate: var(--tx) var(--ty);
-  }
-}
-
-:where(:root:has(dialog:is([open]:modal, .noscroll))) {
-  overflow: hidden;
-}
-
 @media print {
   :root {
     --root-bg: white;
