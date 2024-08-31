@@ -3,19 +3,10 @@
 
 @use "helper" as form;
 
+$selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[type=reset],[type=submit]), textarea, select" !default;
+
 // prettier-ignore
-:where(
-	input:not(
-		[type="checkbox"],
-		[type="radio"],
-		[type="range"],
-		[type="button"],
-		[type="reset"],
-		[type="submit"]
-	),
-	textarea,
-	select
-) {
+:where(#{$selectors}) {
 	@include form.base;
 	outline-offset: calc(
 		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
