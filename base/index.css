@@ -239,7 +239,6 @@ summary,
 }
 
 :where(pre) {
-  max-inline-size: max-content;
   border-radius: 0.5em;
   padding: 0.875em 1em;
   white-space: pre;
