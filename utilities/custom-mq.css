@@ -89,13 +89,12 @@
 
 :where(.relative, .sticky, .absolute, .fixed) {
   --z: 1;
-  --inset-t: auto;
-  --inset-s: auto;
-  --inset-b: auto;
-  --inset-e: auto;
-  --inset: initial;
+  --inset: auto;
+  --inset-y: var(--inset);
+  --inset-x: var(--inset);
   z-index: var(--z);
-  inset: var(--inset, var(--inset-t) var(--inset-s) var(--inset-b) var(--inset-e));
+  inset-block: var(--inset-y);
+  inset-inline: var(--inset-x);
 }
 
 .relative {
@@ -104,7 +103,7 @@
 }
 
 .sticky {
-  --inset-t: 0;
+  --inset-y: 0 auto;
   position: sticky;
 }
 
