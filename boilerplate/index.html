@@ -294,7 +294,7 @@ p q r s t u v w x y z { | } ~ </code>
 						<label>
 							email<sup aria-hidden class="color-form-error">*</sup>
 							<input type="email" name="email" placeholder="email" autocomplete="email" required aria-describedby="email-error-message">
-							<div class="peer-invalid:visible" id="email-error-message">Please enter a valid email</div>
+							<small class="peer-invalid:visible" id="email-error-message">Please enter a valid email</small>
 						</label>
 						<label>
 							tel
@@ -313,8 +313,9 @@ p q r s t u v w x y z { | } ~ </code>
 							<input type="url" name="url" placeholder="url">
 						</label>
 						<label>
-							date
-							<input type="date" name="date" placeholder="data">
+							date<sup aria-hidden class="color-form-error">*</sup>
+							<input type="date" name="date" placeholder="data" required aria-describedby="date-error-message" min="1900-01-01" max="2025-01-01">
+							<small class="peer-invalid:visible" id="date-error-message">Please enter a date between 1900 and now</small>
 						</label>
 						<label>
 							datetime
