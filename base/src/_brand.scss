@@ -1,7 +1,9 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// stylelint-disable scss/at-rule-no-unknown, property-no-unknown
+// The brand styles are styles we feel are cool to include in your base styles, but are too opinionated to actually include.
+// This why we added this an opt in solution, to use or copy.
+// Brand styles are more subject to change, if we feel things don't work or if we found something new to include.
 
 @use "buttons/helper" as btn;
 
@@ -30,9 +32,11 @@ $error: #e00 !default;
 	}
 }
 
+// stylelint-disable scss/at-rule-no-unknown, property-no-unknown
 @view-transition {
 	navigation: auto;
 }
+// stylelint-enable scss/at-rule-no-unknown, property-no-unknown
 
 ::marker {
 	color: var(--brand);
