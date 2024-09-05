@@ -75,6 +75,10 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 	display: block;
 }
 
+:where(label:has(input:is([type="radio"], [type="checkbox"]))) {
+	inline-size: fit-content;
+}
+
 // Reset the default opacity in Firefox,
 // and apply a default placeholder color to a semi-transparent version of the current text color
 ::placeholder {

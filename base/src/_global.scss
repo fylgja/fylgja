@@ -110,7 +110,7 @@ $anchor-offset: max(2rem, 5svb) !default;
 	:any-link,
 	button,
 	label[for],
-	label:has(input[type="radio"], input[type="checkbox"]),
+	label:has(input:is([type="radio"], [type="checkbox"]):enabled),
 	summary,
 	[tabindex]:not([tabindex^="-"])
 ) {
