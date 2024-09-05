@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/base",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha",
   "description": "Base provides a streamlined starting point for any web project. It’s a collection of class-less solutions, allowing you to focus on building your site.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -34,8 +34,10 @@
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
     "build:dialog": "npx lightningcss --minify --bundle dialog.css -o dialog.min.css",
     "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form && npm run build:dialog",
-    "prebuild": "npm run build:scss",
-    "theme": "node scripts/add-theme.js"
+    "prebuild": "npm run build:scss"
+  },
+  "bin": {
+    "theme": "./bin/add-theme.js"
   },
   "main": "index.css",
   "style": "index.css",
