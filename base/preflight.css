@@ -79,7 +79,7 @@ textarea,
 :where(:any-link,
 button,
 label[for],
-label:has(input[type=radio], input[type=checkbox]),
+label:has(input:is([type=radio], [type=checkbox]):enabled),
 summary,
 [tabindex]:not([tabindex^="-"])) {
   cursor: pointer;

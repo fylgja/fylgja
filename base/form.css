@@ -97,6 +97,10 @@
   display: block;
 }
 
+:where(label:has(input:is([type=radio], [type=checkbox]))) {
+  inline-size: fit-content;
+}
+
 ::placeholder {
   opacity: 1;
   color: color-mix(in srgb, currentcolor 54%, transparent);
