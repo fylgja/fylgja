@@ -34,7 +34,8 @@
     "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
     "build:dialog": "npx lightningcss --minify --bundle dialog.css -o dialog.min.css",
     "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:form && npm run build:dialog",
-    "prebuild": "npm run build:scss"
+    "prebuild": "npm run build:scss",
+    "theme": "node scripts/add-theme.js"
   },
   "main": "index.css",
   "style": "index.css",
