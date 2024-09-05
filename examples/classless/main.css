@@ -1,0 +1,59 @@
+@import url("@fylgja/base");
+@import url("@fylgja/base/theme");
+@import url("@fylgja/form-extend");
+
+:root {
+	--anchor-offset: calc(75px + 5ex);
+}
+
+@keyframes add-shadow {
+	to {
+		box-shadow: var(--shadow-2);
+		background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
+	}
+}
+
+main,
+:is(header, footer) > * {
+	width: min((100% - 2rem), var(--container-size, 80rem));
+	margin-inline: auto;
+}
+
+main {
+	--container-size: 84ch;
+}
+
+header {
+	z-index: 9;
+	position: sticky;
+	inset-block-start: 0;
+	padding-block: 1rem;
+	background-color: var(--root-bg);
+	backdrop-filter: blur(3px);
+	animation: add-shadow linear both;
+	animation-timeline: scroll();
+	animation-range: 0 4rem;
+
+	@media print {
+		display: none;
+	}
+
+	& > * {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+footer {
+	margin-block-start: 4rem;
+	padding-block: 1rem;
+	text-align: center;
+	background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
+}
+
+/* Same as the utils */
+.scroll {
+	overflow: auto;
+}

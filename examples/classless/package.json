@@ -1,0 +1,13 @@
+{
+  "name": "fylgja-example-classless",
+  "description": "",
+  "author": "Fylgja",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "start": "vite"
+  },
+  "devDependencies": {
+    "vite": "5.4.3"
+  }
+}
