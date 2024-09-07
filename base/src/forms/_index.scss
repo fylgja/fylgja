@@ -17,21 +17,17 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 		outline-width: 1px;
 	}
 
-	&:is(:disabled, [readonly]) {
+	&:is(:disabled, [readonly]:not(:focus)) {
 		border-style: var(
 			--form-disabled-border-style,
 			#{form.$disabled-border-style}
 		);
-		cursor: not-allowed;
-
-		&:focus {
-			outline: none;
-		}
 	}
 
 	&:disabled {
 		box-shadow: none;
 		opacity: var(--form-disabled-opacity, #{form.$disabled-opacity});
+		cursor: not-allowed;
 	}
 }
 
