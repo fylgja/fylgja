@@ -134,7 +134,7 @@ $h-line: 1.1 !default;
 	font-family: var(--family-mono);
 }
 
-:where(code, kbd, mark) {
+:where(code, mark, :not(kbd) > kbd) {
 	border-radius: 0.2em;
 	padding: 0.125rem 0.25rem;
 }
@@ -148,7 +148,7 @@ $h-line: 1.1 !default;
 	background: var(--surface-color);
 }
 
-:where(kbd) {
+:where(:not(kbd) > kbd) {
 	border-width: 1px;
 }
 
