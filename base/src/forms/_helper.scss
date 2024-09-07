@@ -19,6 +19,7 @@ $icon-size: 1.25em !default;
 
 @mixin base {
 	appearance: none;
+	display: block;
 	inline-size: 100%;
 	margin: 0;
 	padding-block: var(--form-py, #{$padding-block});
