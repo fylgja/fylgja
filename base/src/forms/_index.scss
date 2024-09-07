@@ -63,7 +63,11 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 }
 
 :where(textarea) {
-	field-sizing: content; // Resize by default
+	min-block-size: var(
+		--textarea-size,
+		calc(3.5lh + var(--form-py, #{form.$padding-block}))
+	);
+	field-sizing: content; // Resize by default, disabled the rows attribute
 	resize: vertical;
 }
 
