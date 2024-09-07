@@ -17,10 +17,10 @@
 						alt="Fylgja"
 					>
 				</a>
-				<nav>
-					<button popovertarget="menuSkipTo">Jump to</button>
-					<dialog id="menuSkipTo" popover style="width: 40rem">
-						<ul>
+				<button popovertarget="menuSkipTo">Jump to</button>
+				<dialog id="menuSkipTo" popover style="--my: 1rem auto; --dialog-translate-y: -2rem;">
+					<nav>
+						<ul class="menu">
 							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#text">Text</a></li>
 							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#lists">Lists</a></li>
 							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#table">Table</a></li>
@@ -29,8 +29,8 @@
 							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#dialogs">Dialogs</a></li>
 							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#media">Media</a></li>
 						</ul>
-					</dialog>
-				</nav>
+					</nav>
+				</dialog>
 			</div>
 		</header>
 		<main>
@@ -259,77 +259,64 @@ p q r s t u v w x y z { | } ~ </code>
 				<form>
 					<fieldset id="form-fields">
 						<legend>Fields</legend>
-						<label>
-							text
+						<div class="field">
+							<label>Text</label>
 							<input type="text" name="text" placeholder="text">
-						</label>
+						</div>
 						<label>
-							number
+							<span>Number</span>
 							<input type="number" name="number" placeholder="number">
 						</label>
 						<label>
-							email<sup aria-hidden>*</sup>
-							<input type="email" name="email" placeholder="email" autocomplete="email" required aria-describedby="email-error-message">
+							<span>email<sup aria-hidden>*</sup></span>
+							<input type="email" name="email" placeholder="email" autocomplete="email" required>
 						</label>
 						<label>
-							tel
+							<span>Tel</span>
 							<input type="tel" name="tel" placeholder="telephone" autocomplete="tel">
 						</label>
 						<label>
-							password
+							<span>Password</span>
 							<input type="password" name="password" placeholder="password">
 						</label>
 						<label>
-							search
-							<input type="search" name="search" placeholder="search">
+							<span>Search</span>
+							<input type="search" name="search" placeholder="search" disabled>
 						</label>
 						<label>
-							url
-							<input type="url" name="url" placeholder="url">
+							<span>Url</span>
+							<input type="url" name="url" placeholder="url" readonly value="https://fylgja.dev">
 						</label>
 						<label>
-							date<sup aria-hidden>*</sup>
-							<input type="date" name="date" placeholder="data" required aria-describedby="date-error-message" min="1900-01-01" max="2025-01-01">
+							<span>Date</span>
+							<input type="date" name="date" placeholder="data" min="1900-01-01" max="2025-01-01">
 						</label>
 						<label>
-							datetime
+							<span>Datetime</span>
 							<input type="datetime-local" name="datetime-local" placeholder="datetime-local">
 						</label>
 						<label>
-							time
+							<span>Time</span>
 							<input type="time" name="time" placeholder="time">
 						</label>
 						<label>
-							month
+							<span>Month</span>
 							<input type="month" name="month" placeholder="month">
 						</label>
 						<label>
-							week
+							<span>Week</span>
 							<input type="week" name="week" placeholder="week">
 						</label>
 						<label>
-							file
+							<span>File</span>
 							<input type="file" name="file" placeholder="file">
 						</label>
 						<label>
-							color
+							<span>Color</span>
 							<input type="color" name="color" placeholder="color" value="#e91e63">
 						</label>
 						<label>
-							range
-							<input
-								type="range"
-								name="range"
-								value="20"
-								max="100"
-								min="0"
-								step="10"
-								style="--fill: 20"
-								oninput="event.target.style.setProperty('--fill', event.target.value)"
-							>
-						</label>
-						<label>
-							select
+							<span>Select</span>
 							<select name="select">
 								<option value="1">Level 1</option>
 								<option value="2">Level 2</option>
@@ -344,7 +331,7 @@ p q r s t u v w x y z { | } ~ </code>
 							</select>
 						</label>
 						<label>
-							Datalist Countries
+							<span>Datalist Countries</span>
 							<input type="text" name="datalist-countries" placeholder="Enter a country" list="countries">
 							<datalist id="countries">
 								<option>Netherlands</option>
@@ -355,7 +342,7 @@ p q r s t u v w x y z { | } ~ </code>
 							</datalist>
 						</label>
 						<label>
-							Datalist Time
+							<span>Datalist Time</span>
 							<input type="time" name="datalist-hours" list="popularHours">
 							<datalist id="popularHours">
 								<option value="12:00"></option>
@@ -364,53 +351,53 @@ p q r s t u v w x y z { | } ~ </code>
 							</datalist>
 						</label>
 						<label>
-							Textarea
-							<textarea name="textarea" placeholder="textarea" rows="3"></textarea>
+							<span>Textarea</span>
+							<textarea name="textarea" placeholder="textarea"></textarea>
 						</label>
 					</fieldset>
 					<fieldset id="form-checkboxes">
 						<legend>Checkboxes</legend>
 						<label>
 							<input type="checkbox" name="checkbox" checked />
-							Take Blue pill
+							<span>Take Blue pill</span>
 						</label>
 						<label>
 							<input type="checkbox" name="checkbox" />
-							Take Red pill
+							<span>Take Red pill</span>
 						</label>
 						<label>
 							<input type="checkbox" name="checkbox" indeterminate />
-							Indeterminate
+							<span>Indeterminate</span>
 						</label>
 						<label>
 							<input type="checkbox" name="checkbox" disabled />
-							Disabled
+							<span>Disabled</span>
 						</label>
 					</fieldset>
 					<fieldset id="form-radios">
 						<legend>Radio boxes</legend>
 						<label>
 							<input type="radio" name="radio" checked />
-							Take Blue pill
+							<span>Take Blue pill</span>
 						</label>
 						<label>
 							<input type="radio" name="radio" />
-							Take Red pill
+							<span>Take Red pill</span>
 						</label>
 						<label>
 							<input type="radio" name="radio" disabled />
-							Disabled
+							<span>Disabled</span>
 						</label>
 					</fieldset>
 					<fieldset id="form-switches">
 						<legend>Switches</legend>
 						<label>
 							<input type="checkbox" name="switch" role="switch">
-							Switch
+							<span>Switch</span>
 						</label>
 						<label>
 							<input type="checkbox" name="switch" role="switch" checked>
-							Switch Checked
+							<span>Switch Checked</span>
 						</label>
 					</fieldset>
 					<div id="form-actions">
@@ -421,13 +408,13 @@ p q r s t u v w x y z { | } ~ </code>
 							<input type="reset" value="input[type=reset]" />
 							<input type="submit" value="input:disabled" disabled />
 						</div>
-						<div>
+						<div class="field">
 							<button type="submit">Submit</button>
 							<button type="button">Button</button>
 							<button type="reset">Reset</button>
 							<button type="button" disabled>Disabled</button>
 						</div>
-						<div>
+						<div class="field">
 							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" hidden>
 								<symbol
 									id="btn-icon"
@@ -472,6 +459,22 @@ p q r s t u v w x y z { | } ~ </code>
 								<span>Go Fast</span>
 							</button>
 						</div>
+					</div>
+					<div id="form-range">
+						<h2>Range</h2>
+						<label>
+							<span>Range</span>
+							<input
+								type="range"
+								name="range"
+								value="20"
+								max="100"
+								min="0"
+								step="10"
+								style="--fill: 20"
+								oninput="event.target.style.setProperty('--fill', event.target.value)"
+							>
+						</label>
 					</div>
 					<div id="form-meter">
 						<h2>Meter</h2>

@@ -57,3 +57,10 @@ footer {
 .scroll {
 	overflow: auto;
 }
+
+.menu {
+	--btn-stroke: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+}
