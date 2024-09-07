@@ -4,6 +4,7 @@
  */
 :where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select) {
   appearance: none;
+  display: block;
   inline-size: 100%;
   margin: 0;
   padding-block: var(--form-py, 0.375rem);
@@ -20,16 +21,13 @@
   border-color: var(--form-active-color);
   outline-width: 1px;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]:not(:focus)) {
   border-style: var(--form-disabled-border-style, dashed);
-  cursor: not-allowed;
-}
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]):focus {
-  outline: none;
 }
 :where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
+  cursor: not-allowed;
 }
 
 :where(input[type=color]) {
@@ -89,6 +87,7 @@
 }
 
 :where(textarea) {
+  min-block-size: var(--textarea-size, calc(3.5lh + var(--form-py, 0.375rem)));
   field-sizing: content;
   resize: vertical;
 }

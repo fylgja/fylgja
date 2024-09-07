@@ -93,6 +93,10 @@ body > main {
 :is(form, fieldset) > label:has(input, select, textarea, progress, meter)) {
   margin-block-start: 0.875rem;
 }
+:where(form .field,
+:is(form, fieldset) > label:has(input, select, textarea, progress, meter)) > * + * {
+  margin-block-start: 0.375rem;
+}
 
 :where(dialog).offcanvas {
   --ty: 0;

@@ -220,7 +220,7 @@ summary,
   font-family: var(--family-mono);
 }
 
-:where(code, kbd, mark) {
+:where(code, mark, :not(kbd) > kbd) {
   border-radius: 0.2em;
   padding: 0.125rem 0.25rem;
 }
@@ -234,7 +234,7 @@ summary,
   background: var(--surface-color);
 }
 
-:where(kbd) {
+:where(:not(kbd) > kbd) {
   border-width: 1px;
 }
 
