@@ -12,6 +12,10 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
 	);
 
+	&:where(:placeholder-shown) {
+		text-overflow: ellipsis;
+	}
+
 	&:focus {
 		border-color: var(--form-active-color);
 		outline-width: 1px;

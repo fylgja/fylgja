@@ -17,6 +17,9 @@
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
   outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):where(:placeholder-shown) {
+  text-overflow: ellipsis;
+}
 :where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):focus {
   border-color: var(--form-active-color);
   outline-width: 1px;
