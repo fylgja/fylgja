@@ -145,3 +145,8 @@ $anchor-offset: max(2rem, 5svb) !default;
 :where(iframe) {
 	aspect-ratio: var(--aspect-ratio, 16 / 9);
 }
+
+// Make sure this set for all use cases and browsers
+[hidden] {
+	display: none;
+}

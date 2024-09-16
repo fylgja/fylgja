@@ -80,6 +80,7 @@ textarea,
 button,
 label[for],
 label:has(input:is([type=radio], [type=checkbox]):enabled),
+select:has(option:enabled),
 summary,
 [tabindex]:not([tabindex^="-"])) {
   cursor: pointer;
@@ -108,6 +109,10 @@ summary,
 
 :where(iframe) {
   aspect-ratio: var(--aspect-ratio, 16/9);
+}
+
+[hidden] {
+  display: none;
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
@@ -160,11 +165,7 @@ summary,
   border-inline-start: 4px solid;
 }
 
-:where(address) {
-  font-style: inherit;
-}
-
-:where(input, button, textarea, select),
+:where(input, button, textarea, select, address),
 :where(input[type=file])::-webkit-file-upload-button {
   font: inherit;
 }
@@ -220,11 +221,6 @@ summary,
   font-family: var(--family-mono);
 }
 
-:where(code, mark, :not(kbd) > kbd) {
-  border-radius: 0.2em;
-  padding: 0.125rem 0.25rem;
-}
-
 :where(code, pre) {
   writing-mode: lr;
   direction: ltr;
@@ -232,14 +228,14 @@ summary,
 
 :where(pre, :not(pre) > code) {
   background: var(--surface-color);
+  border-radius: 0.3em;
 }
 
-:where(:not(kbd) > kbd) {
-  border-width: 1px;
+:where(:not(pre) > code) {
+  padding: 0.25rem 0.375em;
 }
 
 :where(pre) {
-  border-radius: 0.5em;
   padding: 0.875em 1em;
   white-space: pre;
   overflow: auto;

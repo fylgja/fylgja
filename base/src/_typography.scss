@@ -67,12 +67,8 @@ $h-line: 1.1 !default;
 	border-inline-start: 4px solid;
 }
 
-:where(address) {
-	font-style: inherit;
-}
-
 // Inherit fonts for inputs and buttons
-:where(input, button, textarea, select),
+:where(input, button, textarea, select, address),
 :where(input[type="file"])::-webkit-file-upload-button {
 	font: inherit;
 }
@@ -134,11 +130,6 @@ $h-line: 1.1 !default;
 	font-family: var(--family-mono);
 }
 
-:where(code, mark, :not(kbd) > kbd) {
-	border-radius: 0.2em;
-	padding: 0.125rem 0.25rem;
-}
-
 :where(code, pre) {
 	writing-mode: lr;
 	direction: ltr;
@@ -146,14 +137,14 @@ $h-line: 1.1 !default;
 
 :where(pre, :not(pre) > code) {
 	background: var(--surface-color);
+	border-radius: 0.3em;
 }
 
-:where(:not(kbd) > kbd) {
-	border-width: 1px;
+:where(:not(pre) > code) {
+	padding: 0.25rem 0.375em;
 }
 
 :where(pre) {
-	border-radius: 0.5em;
 	padding: 0.875em 1em;
 	white-space: pre;
 	overflow: auto;
