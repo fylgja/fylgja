@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Fylgja Classless</title>
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
 		<header>
@@ -15,19 +15,72 @@
 						width="150"
 						height="65"
 						alt="Fylgja"
-					>
+					/>
 				</a>
 				<button popovertarget="menuSkipTo">Jump to</button>
-				<dialog id="menuSkipTo" popover style="--my: 1rem auto; --dialog-translate-y: -2rem;">
+				<dialog
+					id="menuSkipTo"
+					popover
+					style="--my: 1rem auto; --dialog-translate-y: -2rem"
+				>
 					<nav>
 						<ul class="menu">
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#text">Text</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#lists">Lists</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#table">Table</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#code">Code</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#forms">Forms</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#dialogs">Dialogs</a></li>
-							<li><a class="btn" onclick="menuSkipTo.hidePopover()" href="#media">Media</a></li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#text"
+									>Text</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#lists"
+									>Lists</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#table"
+									>Table</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#code"
+									>Code</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#forms"
+									>Forms</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#dialogs"
+									>Dialogs</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn"
+									onclick="menuSkipTo.hidePopover()"
+									href="#media"
+									>Media</a
+								>
+							</li>
 						</ul>
 					</nav>
 				</dialog>
@@ -36,7 +89,8 @@
 		<main>
 			<section id="intro">
 				<p>
-					A showcase of Fylgja using only our Native Element CSS Commponents<br />
+					A showcase of Fylgja using only our Native Element CSS
+					Commponents<br />
 					Build a full page without using any CSS classes.<br />
 					Interested? Checkout each component used here at
 					<a href="https://fylgja.dev/">Fylgja</a>
@@ -57,34 +111,59 @@
 				<h5>Heading 5</h5>
 				<p>After heading</p>
 				<h6>Heading 6</h6>
-				<p>
-					A paragraph (from the Greek paragraphos, “to write beside” or “written beside”)
-					is a self-contained unit of a discourse in writing dealing with a particular
-					point or idea. A paragraph consists of one or more sentences. Though not
-					required by the syntax of any language, paragraphs are usually an expected part
-					of formal writing, used to organize longer prose.
-				</p>
+				<article>
+					<p>
+						A paragraph in a article (from the Greek paragraphos,
+						“to write beside” or “written beside”) is a
+						self-contained unit of a discourse in writing dealing
+						with a particular point or idea. A paragraph consists of
+						one or more sentences. Though not required by the syntax
+						of any language, paragraphs are usually an expected part
+						of formal writing, used to organize longer prose.
+					</p>
+				</article>
 				<blockquote>
 					<p>
-						A block quotation (also known as a long quotation or extract) is a quotation
-						in a written document, that is set off from the main text as a paragraph, or
-						block of text.
+						A block quotation (also known as a long quotation or
+						extract) is a quotation in a written document, that is
+						set off from the main text as a paragraph, or block of
+						text.
 					</p>
 					<p>
-						It is typically distinguished visually using indentation and a different
-						typeface or smaller size quotation. It may or may not include a citation,
-						usually placed at the bottom.
+						It is typically distinguished visually using indentation
+						and a different typeface or smaller size quotation. It
+						may or may not include a citation, usually placed at the
+						bottom.
 					</p>
 					<cite><a href="#!">Said no one, ever.</a></cite>
 				</blockquote>
+				<address
+					itemprop="address"
+					itemscope
+					itemtype="https://schema.org/PostalAddress"
+				>
+					<span itemprop="streetAddress">
+						20341 Whitworth Institute 405 N. Whitworth </span
+					><br />
+					<span itemprop="addressLocality">Seattle</span>,<br />
+					<span itemprop="addressRegion">WA</span><br />
+					<span itemprop="postalCode">98052</span>
+				</address>
 				<p><a href="#!">This is a text link</a>.</p>
-				<p><strong>Strong is used to indicate strong importance.</strong></p>
+				<p>
+					<strong
+						>Strong is used to indicate strong importance.</strong
+					>
+				</p>
 				<p><em>This text has added emphasis.</em></p>
 				<p>
-					The <b>b element</b> is stylistically different text from normal
-					text, without any special importance.
+					The <b>b element</b> is stylistically different text from
+					normal text, without any special importance.
 				</p>
-				<p>The <i>i element</i> is text that is offset from the normal text.</p>
+				<p>
+					The <i>i element</i> is text that is offset from the normal
+					text.
+				</p>
 				<p>
 					The <u>u element</u> is text with an unarticulated, though
 					explicitly rendered, non-textual annotation.
@@ -96,11 +175,21 @@
 				<p><s>This text has a strikethrough</s>.</p>
 				<p>Superscript<sup>®</sup>.</p>
 				<p>Subscript for things like H<sub>2</sub>O.</p>
-				<p><small>This small text is small for for fine print, etc.</small></p>
-				<hr>
-				<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 				<p>
-					<q cite="./index_files/q">This text is a short inline quotation.</q>
+					<small
+						>This small text is small for for fine print,
+						etc.</small
+					>
+				</p>
+				<hr />
+				<p>
+					Abbreviation:
+					<abbr title="HyperText Markup Language">HTML</abbr>
+				</p>
+				<p>
+					<q cite="./index_files/q"
+						>This text is a short inline quotation.</q
+					>
 				</p>
 				<p><cite>This is a citation.</cite></p>
 				<p>The <dfn>dfn element</dfn> indicates a definition.</p>
@@ -123,7 +212,8 @@
 
 					<dt>Definition List Title 2</dt>
 					<dd>
-						This is a definition list division item with a lot more to say.
+						This is a definition list division item with a lot more
+						to say.
 					</dd>
 				</dl>
 				<details name="details" open>
@@ -261,61 +351,110 @@ p q r s t u v w x y z { | } ~ </code>
 						<legend>Fields</legend>
 						<div class="field">
 							<label>Text</label>
-							<input type="text" name="text" placeholder="text">
+							<input type="text" name="text" placeholder="text" />
 						</div>
-						<label>
+						<label class="field">
 							<span>Number</span>
-							<input type="number" name="number" placeholder="number">
+							<input
+								type="number"
+								name="number"
+								placeholder="number"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>email<sup aria-hidden>*</sup></span>
-							<input type="email" name="email" placeholder="email" autocomplete="email" required>
+							<input
+								type="email"
+								name="email"
+								placeholder="email"
+								autocomplete="email"
+								required
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Tel</span>
-							<input type="tel" name="tel" placeholder="telephone" autocomplete="tel">
+							<input
+								type="tel"
+								name="tel"
+								placeholder="telephone"
+								autocomplete="tel"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Password</span>
-							<input type="password" name="password" placeholder="password">
+							<input
+								type="password"
+								name="password"
+								placeholder="password"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Search</span>
-							<input type="search" name="search" placeholder="search" disabled>
+							<input
+								type="search"
+								name="search"
+								placeholder="search"
+								disabled
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Url</span>
-							<input type="url" name="url" placeholder="url" readonly value="https://fylgja.dev">
+							<input
+								type="url"
+								name="url"
+								placeholder="url"
+								readonly
+								value="https://fylgja.dev"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Date</span>
-							<input type="date" name="date" placeholder="data" min="1900-01-01" max="2025-01-01">
+							<input
+								type="date"
+								name="date"
+								placeholder="data"
+								min="1900-01-01"
+								max="2025-01-01"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Datetime</span>
-							<input type="datetime-local" name="datetime-local" placeholder="datetime-local">
+							<input
+								type="datetime-local"
+								name="datetime-local"
+								placeholder="datetime-local"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Time</span>
-							<input type="time" name="time" placeholder="time">
+							<input type="time" name="time" placeholder="time" />
 						</label>
-						<label>
+						<label class="field">
 							<span>Month</span>
-							<input type="month" name="month" placeholder="month">
+							<input
+								type="month"
+								name="month"
+								placeholder="month"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Week</span>
-							<input type="week" name="week" placeholder="week">
+							<input type="week" name="week" placeholder="week" />
 						</label>
-						<label>
+						<label class="field">
 							<span>File</span>
-							<input type="file" name="file" placeholder="file">
+							<input type="file" name="file" placeholder="file" />
 						</label>
-						<label>
+						<label class="field">
 							<span>Color</span>
-							<input type="color" name="color" placeholder="color" value="#e91e63">
+							<input
+								type="color"
+								name="color"
+								placeholder="color"
+								value="#e91e63"
+							/>
 						</label>
-						<label>
+						<label class="field">
 							<span>Select</span>
 							<select name="select">
 								<option value="1">Level 1</option>
@@ -330,9 +469,14 @@ p q r s t u v w x y z { | } ~ </code>
 								</optgroup>
 							</select>
 						</label>
-						<label>
+						<label class="field">
 							<span>Datalist Countries</span>
-							<input type="text" name="datalist-countries" placeholder="Enter a country" list="countries">
+							<input
+								type="text"
+								name="datalist-countries"
+								placeholder="Enter a country"
+								list="countries"
+							/>
 							<datalist id="countries">
 								<option>Netherlands</option>
 								<option>Germany</option>
@@ -341,72 +485,110 @@ p q r s t u v w x y z { | } ~ </code>
 								<option>United States</option>
 							</datalist>
 						</label>
-						<label>
+						<label class="field">
 							<span>Datalist Time</span>
-							<input type="time" name="datalist-hours" list="popularHours">
+							<input
+								type="time"
+								name="datalist-hours"
+								list="popularHours"
+							/>
 							<datalist id="popularHours">
 								<option value="12:00"></option>
 								<option value="13:00"></option>
 								<option value="14:00"></option>
 							</datalist>
 						</label>
-						<label>
+						<label class="field">
 							<span>Textarea</span>
-							<textarea name="textarea" placeholder="textarea"></textarea>
+							<textarea
+								name="textarea"
+								placeholder="textarea"
+							></textarea>
 						</label>
 					</fieldset>
 					<fieldset id="form-checkboxes">
 						<legend>Checkboxes</legend>
-						<label>
-							<input type="checkbox" name="checkbox" checked />
-							<span>Take Blue pill</span>
-						</label>
-						<label>
-							<input type="checkbox" name="checkbox" />
-							<span>Take Red pill</span>
-						</label>
-						<label>
-							<input type="checkbox" name="checkbox" indeterminate />
-							<span>Indeterminate</span>
-						</label>
-						<label>
-							<input type="checkbox" name="checkbox" disabled />
-							<span>Disabled</span>
-						</label>
+						<div class="field">
+							<label>
+								<input
+									type="checkbox"
+									name="checkbox"
+									checked
+								/>
+								<span>Take Blue pill</span>
+							</label>
+							<label>
+								<input type="checkbox" name="checkbox" />
+								<span>Take Red pill</span>
+							</label>
+							<label>
+								<input
+									type="checkbox"
+									name="checkbox"
+									indeterminate
+								/>
+								<span>Indeterminate</span>
+							</label>
+							<label>
+								<input
+									type="checkbox"
+									name="checkbox"
+									disabled
+								/>
+								<span>Disabled</span>
+							</label>
+						</div>
 					</fieldset>
 					<fieldset id="form-radios">
 						<legend>Radio boxes</legend>
-						<label>
-							<input type="radio" name="radio" checked />
-							<span>Take Blue pill</span>
-						</label>
-						<label>
-							<input type="radio" name="radio" />
-							<span>Take Red pill</span>
-						</label>
-						<label>
-							<input type="radio" name="radio" disabled />
-							<span>Disabled</span>
-						</label>
+						<div class="field">
+							<label>
+								<input type="radio" name="radio" checked />
+								<span>Take Blue pill</span>
+							</label>
+							<label>
+								<input type="radio" name="radio" />
+								<span>Take Red pill</span>
+							</label>
+							<label>
+								<input type="radio" name="radio" disabled />
+								<span>Disabled</span>
+							</label>
+						</div>
 					</fieldset>
 					<fieldset id="form-switches">
 						<legend>Switches</legend>
-						<label>
-							<input type="checkbox" name="switch" role="switch">
-							<span>Switch</span>
-						</label>
-						<label>
-							<input type="checkbox" name="switch" role="switch" checked>
-							<span>Switch Checked</span>
-						</label>
+						<div class="field">
+							<label>
+								<input
+									type="checkbox"
+									name="switch"
+									role="switch"
+								/>
+								<span>Switch</span>
+							</label>
+							<label>
+								<input
+									type="checkbox"
+									name="switch"
+									role="switch"
+									checked
+								/>
+								<span>Switch Checked</span>
+							</label>
+						</div>
 					</fieldset>
 					<div id="form-actions">
 						<h2>Action buttons</h2>
-						<div>
+						<div class="field">
 							<input type="submit" value="input[type=submit]" />
 							<input type="button" value="input[type=button]" />
 							<input type="reset" value="input[type=reset]" />
-							<input type="submit" value="input:disabled" disabled />
+							<input
+								type="submit"
+								value="input:disabled"
+								disabled
+							/>
 						</div>
 						<div class="field">
 							<button type="submit">Submit</button>
@@ -415,7 +597,12 @@ p q r s t u v w x y z { | } ~ </code>
 							<button type="button" disabled>Disabled</button>
 						</div>
 						<div class="field">
-							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" hidden>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="0"
+								height="0"
+								hidden
+							>
 								<symbol
 									id="btn-icon"
 									viewBox="0 0 24 24"
@@ -470,27 +657,87 @@ p q r s t u v w x y z { | } ~ </code>
 								value="20"
 								max="100"
 								min="0"
-								step="10"
 								style="--fill: 20"
 								oninput="event.target.style.setProperty('--fill', event.target.value)"
-							>
+							/>
+						</label>
+						<label>
+							<span>Range (same size as thumb)</span>
+							<input
+								type="range"
+								name="range"
+								value="20"
+								max="100"
+								min="0"
+								style="
+									--fill: 20;
+									--track-size: inherit;
+									--thumb-radius: var(--track-radius);
+									--thumb-border-width: 0 4px;
+								"
+								oninput="event.target.style.setProperty('--fill', event.target.value)"
+							/>
+						</label>
+						<label>
+							<span>Range Vertical</span>
+							<input
+								type="range"
+								name="range"
+								value="20"
+								max="100"
+								min="0"
+								style="--fill: 20"
+								class="vertical"
+								oninput="event.target.style.setProperty('--fill', event.target.value)"
+							/>
 						</label>
 					</div>
 					<div id="form-meter">
 						<h2>Meter</h2>
-						<label for="fuel">Fuel level:</label>
-						<meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+						<label>
+							Danger
+							<meter
+								min="0"
+								max="100"
+								low="33"
+								high="66"
+								optimum="80"
+								value="32"
+							></meter>
+						</label>
+						<label>
+							Warning
+							<meter
+								min="0"
+								max="100"
+								low="33"
+								high="66"
+								optimum="80"
+								value="50"
+							></meter>
+						</label>
+						<label>
+							success
+							<meter
+								min="0"
+								max="100"
+								low="33"
+								high="66"
+								optimum="80"
+								value="80"
+							></meter>
+						</label>
 					</div>
 					<div id="form-progress">
 						<h2>Progress</h2>
 						<div>
 							<label>
 								Loading...
-								<progress indeterminate>progress</progress>
+								<progress></progress>
 							</label>
 							<label>
 								Half way there
-								<progress value=".5">progress</progress>
+								<progress value="50" max="100">50%</progress>
 							</label>
 						</div>
 					</div>
@@ -498,71 +745,99 @@ p q r s t u v w x y z { | } ~ </code>
 			</section>
 			<section id="dialogs">
 				<h2>Dialogs</h2>
-				<button onclick="document.querySelector('#dialog-modal').showModal()">
+				<button
+					onclick="document.querySelector('#dialog-modal').showModal()"
+				>
 					Open Modal
 				</button>
 				<dialog id="dialog-modal" data-close-backdrop>
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
-						A paragraph (from the Greek paragraphos, “to write beside” or “written
-						beside”) is a self-contained unit of a discourse in writing dealing with
-						a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs
-						are usually an expected part of formal writing, used to organize longer
-						prose.
+						A paragraph (from the Greek paragraphos, “to write
+						beside” or “written beside”) is a self-contained unit of
+						a discourse in writing dealing with a particular point
+						or idea. A paragraph consists of one or more sentences.
+						Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal
+						writing, used to organize longer prose.
 					</p>
 					<hr />
-					<button onclick="document.querySelector('#dialog-modal-inner').showModal()">
+					<button
+						onclick="document.querySelector('#dialog-modal-inner').showModal()"
+					>
 						Open Modal inner
 					</button>
-					<button onclick="document.querySelector('#dialog-modal').close()">
+					<button
+						onclick="document.querySelector('#dialog-modal').close()"
+					>
 						Close
 					</button>
 				</dialog>
 				<dialog id="dialog-modal-inner" data-close-backdrop>
 					<p>
-						A paragraph (from the Greek paragraphos, “to write beside” or “written
-						beside”) is a self-contained unit of a discourse in writing dealing with
-						a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs
-						are usually an expected part of formal writing, used to organize longer
-						prose.
+						A paragraph (from the Greek paragraphos, “to write
+						beside” or “written beside”) is a self-contained unit of
+						a discourse in writing dealing with a particular point
+						or idea. A paragraph consists of one or more sentences.
+						Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal
+						writing, used to organize longer prose.
 					</p>
-					<button onclick="document.querySelector('#dialog-modal-inner').close()">
+					<button
+						onclick="document.querySelector('#dialog-modal-inner').close()"
+					>
 						Close
 					</button>
 				</dialog>
-				<button onclick="document.querySelector('#dialog-offcanvas').showModal()">
+				<button
+					onclick="document.querySelector('#dialog-offcanvas').showModal()"
+				>
 					Open Offcanvas
 				</button>
-				<dialog id="dialog-offcanvas" class="offcanvas" data-close-backdrop>
+				<dialog
+					id="dialog-offcanvas"
+					class="offcanvas"
+					data-close-backdrop
+				>
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
-						A paragraph (from the Greek paragraphos, “to write beside” or “written
-						beside”) is a self-contained unit of a discourse in writing dealing with
-						a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs
-						are usually an expected part of formal writing, used to organize longer
-						prose.
+						A paragraph (from the Greek paragraphos, “to write
+						beside” or “written beside”) is a self-contained unit of
+						a discourse in writing dealing with a particular point
+						or idea. A paragraph consists of one or more sentences.
+						Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal
+						writing, used to organize longer prose.
 					</p>
-					<button onclick="document.querySelector('#dialog-offcanvas').close()">
+					<button
+						onclick="document.querySelector('#dialog-offcanvas').close()"
+					>
 						Close
 					</button>
 				</dialog>
-				<button onclick="document.querySelector('#dialog-offcanvas-panel').showModal()">
+				<button
+					onclick="document.querySelector('#dialog-offcanvas-panel').showModal()"
+				>
 					Open Offcanvas Panel
 				</button>
-				<dialog id="dialog-offcanvas-panel" class="offcanvas" data-close-backdrop>
+				<dialog
+					id="dialog-offcanvas-panel"
+					class="offcanvas"
+					data-close-backdrop
+				>
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
-						A paragraph (from the Greek paragraphos, “to write beside” or “written
-						beside”) is a self-contained unit of a discourse in writing dealing with
-						a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs
-						are usually an expected part of formal writing, used to organize longer
-						prose.
+						A paragraph (from the Greek paragraphos, “to write
+						beside” or “written beside”) is a self-contained unit of
+						a discourse in writing dealing with a particular point
+						or idea. A paragraph consists of one or more sentences.
+						Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal
+						writing, used to organize longer prose.
 					</p>
-					<button onclick="document.querySelector('#dialog-offcanvas-panel').close()">
+					<button
+						onclick="document.querySelector('#dialog-offcanvas-panel').close()"
+					>
 						Close
 					</button>
 				</dialog>
@@ -570,18 +845,26 @@ p q r s t u v w x y z { | } ~ </code>
 				<dialog popover id="my-popover">
 					<p>Hello There! Hello World! Welcome!</p>
 					<p>
-						A paragraph (from the Greek paragraphos, “to write beside” or “written
-						beside”) is a self-contained unit of a discourse in writing dealing with
-						a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs
-						are usually an expected part of formal writing, used to organize longer
-						prose.
+						A paragraph (from the Greek paragraphos, “to write
+						beside” or “written beside”) is a self-contained unit of
+						a discourse in writing dealing with a particular point
+						or idea. A paragraph consists of one or more sentences.
+						Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal
+						writing, used to organize longer prose.
 					</p>
-					<button popovertarget="my-popover" popovertargetaction="hide">Close</button>
+					<button
+						popovertarget="my-popover"
+						popovertargetaction="hide"
+					>
+						Close
+					</button>
 				</dialog>
 				<script>
 					function backdropDialog(event) {
-						const target = event.target.closest('[data-close-backdrop]');
+						const target = event.target.closest(
+							"[data-close-backdrop]"
+						);
 						if (!target) return;
 						const rect = target.getBoundingClientRect();
 						const isInDialog =
@@ -608,7 +891,7 @@ p q r s t u v w x y z { | } ~ </code>
 						width="700"
 						height="584"
 						loading="lazy"
-					>
+					/>
 					<p>
 						Wrapped in a <code>&lt;figure&gt;</code> element, no
 						<code>&lt;figcaption&gt;</code>
@@ -620,7 +903,7 @@ p q r s t u v w x y z { | } ~ </code>
 							width="700"
 							height="584"
 							loading="lazy"
-						>
+						/>
 					</figure>
 					<p>
 						Wrapped in a <code>&lt;figure&gt;</code> element, with a
@@ -633,8 +916,10 @@ p q r s t u v w x y z { | } ~ </code>
 							width="700"
 							height="584"
 							loading="lazy"
-						>
-						<figcaption>Here is a caption for this image.</figcaption>
+						/>
+						<figcaption>
+							Here is a caption for this image.
+						</figcaption>
 					</figure>
 				</div>
 				<h2>Audio</h2>
@@ -644,7 +929,14 @@ p q r s t u v w x y z { | } ~ </code>
 				<h2>Canvas</h2>
 				<div><canvas>canvas</canvas></div>
 				<h2>Iframe</h2>
-				<div><iframe src="https://fylgja.dev" aria-label="Fylgja CSS" width="1024" height="576"></iframe></div>
+				<div>
+					<iframe
+						src="https://fylgja.dev"
+						aria-label="Fylgja CSS"
+						width="1024"
+						height="576"
+					></iframe>
+				</div>
 			</section>
 		</main>
 		<footer>
@@ -652,7 +944,7 @@ p q r s t u v w x y z { | } ~ </code>
 		</footer>
 		<script>
 			const indeterminates = document.querySelectorAll("[indeterminate]");
-			[].forEach.call(indeterminates, item => {
+			[].forEach.call(indeterminates, (item) => {
 				item.indeterminate = true;
 			});
 		</script>

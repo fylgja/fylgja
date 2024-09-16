@@ -1,6 +1,6 @@
 {
-  "name": "fylgja-example-classless",
-  "description": "",
+  "name": "fylgja-example-base",
+  "description": "Sample of the Fylgja base in action",
   "author": "Fylgja",
   "private": "true",
   "type": "module",
