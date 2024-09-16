@@ -4,13 +4,19 @@
 @use "helper" as btn;
 
 $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
+$use-input-file: true !default;
 
-:where(#{$selectors}),
-:where(input[type="file"])::file-selector-button {
-	@include btn.base;
+@if $use-input-file {
+	:where(#{$selectors}),
+	:where(input[type="file"])::file-selector-button {
+		@include btn.base;
+	}
 }
 
 :where(#{$selectors}) {
+	@if not $use-input-file {
+		@include btn.base;
+	}
 	vertical-align: middle;
 
 	&:hover {
@@ -33,16 +39,18 @@ $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
 	}
 }
 
-:where(input[type="file"]) {
-	&:hover::file-selector-button {
-		@include btn.hover;
-	}
+@if $use-input-file {
+	:where(input[type="file"]) {
+		&:hover::file-selector-button {
+			@include btn.hover;
+		}
 
-	&:active::file-selector-button {
-		@include btn.active;
-	}
+		&:active::file-selector-button {
+			@include btn.active;
+		}
 
-	&:disabled::file-selector-button {
-		@include btn.disabled;
+		&:disabled::file-selector-button {
+			@include btn.disabled;
+		}
 	}
 }
