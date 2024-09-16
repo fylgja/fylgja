@@ -1,9 +1,13 @@
 :where(input[type=range]) {
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
   --fill-color: var(--form-active-color, currentcolor);
   --fill-max: 100;
   --fill: 0;
   --size: var(--thumb-size, 4ex);
+  --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
+  --track-size: 1ex;
+  --thumb-border-width: 0.5ex;
+  --thumb-stroke: var(--root-bg);
+  --thumb-radius: 50%;
   appearance: none;
   block-size: var(--size);
   inline-size: 100%;
@@ -15,6 +19,11 @@
 :where(input[type=range]):dir(rtl) {
   --fill-direction: left;
 }
+:where(input[type=range]):where(.vertical) {
+  --fill-direction: bottom;
+  inline-size: 20ex;
+  writing-mode: vertical-lr;
+}
 :where(input[type=range]):focus-visible {
   --outline-width: 2px;
 }
@@ -23,24 +32,25 @@
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 1ex);
+  block-size: var(--track-size);
   border-radius: var(--track-radius, 0.3rem);
-  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
+  background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
-  block-size: var(--track-height, 1ex);
+  block-size: var(--track-size);
   border-radius: var(--track-radius, 0.3rem);
-  background: var(--track-color) linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
+  background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-webkit-slider-thumb {
   appearance: none;
   block-size: var(--size);
   inline-size: var(--size);
   box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
-  border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
+  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-size) - var(--size))));
+  border-radius: var(--thumb-radius);
+  border: solid var(--thumb-stroke);
+  border-width: var(--thumb-border-width);
   background: var(--thumb-bg, var(--fill-color));
   outline: var(--outline-width) solid var(--form-active-color, currentcolor);
 }
@@ -49,9 +59,10 @@
   block-size: var(--size);
   inline-size: var(--size);
   box-shadow: var(--thumb-shadow);
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-height, 1ex) - var(--size))));
-  border-radius: var(--thumb-radius, 50%);
-  border: var(--thumb-border-width, 0.5ex) solid var(--thumb-stroke, var(--root-bg));
+  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-size) - var(--size))));
+  border-radius: var(--thumb-radius);
+  border: solid var(--thumb-stroke);
+  border-width: var(--thumb-border-width);
   background: var(--thumb-bg, var(--fill-color));
   outline: var(--outline-width) solid var(--form-active-color, currentcolor);
   box-sizing: border-box;

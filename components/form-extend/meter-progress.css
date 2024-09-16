@@ -1,17 +1,69 @@
 meter,
 progress {
+  --track-height: 1ex;
+  --track-color: color-mix(in srgb, var(--root-fg) 24%, transparent);
+  --track-radius: 0.3rem;
   appearance: none;
-  block-size: 0.5rem;
+  block-size: var(--track-height, 1ex);
   inline-size: 100%;
-  border-radius: 0.3rem;
-  background: var(--bg-subtle);
+  border-radius: var(--track-radius);
+  background: var(--track-color);
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+meter::-webkit-meter-bar,
+progress::-webkit-progress-bar {
+  border: transparent;
+  background: inherit;
+}
+
+progress {
+  --fill: var(--brand, currentcolor);
+  --loading-fill: repeating-linear-gradient(
+  	-45deg,
+  	transparent 0 1ex,
+  	var(--track-color) 1ex 2ex
+  );
+}
+progress::-webkit-progress-value {
+  background-color: var(--fill);
+}
+progress::-moz-progress-bar {
+  background-color: var(--fill);
+}
+progress:not([value])::-webkit-progress-bar {
+  background-color: var(--fill);
+  background-image: var(--loading-fill);
+}
+progress:not([value])::-moz-progress-bar {
+  background-image: var(--loading-fill);
 }
 
 meter {
-  --success: #290;
+  --success: #107c10;
+  --warning: #ffb900;
   --error: #e00;
 }
-
-progress::-webkit-progress-value {
-  background-color: var(--brand, currentcolor);
+meter::-webkit-meter-inner-element {
+  position: relative;
+  display: block;
+}
+meter::-webkit-meter-optimum-value {
+  background: var(--success);
+}
+meter::-webkit-meter-suboptimum-value {
+  background: var(--warning);
+}
+meter::-webkit-meter-even-less-good-value {
+  background: var(--error);
+}
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--success);
+}
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: var(--warning);
+}
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: var(--error);
 }
