@@ -111,6 +111,7 @@ $anchor-offset: max(2rem, 5svb) !default;
 	button,
 	label[for],
 	label:has(input:is([type="radio"], [type="checkbox"]):enabled),
+	select:has(option:enabled),
 	summary,
 	[tabindex]:not([tabindex^="-"])
 ) {

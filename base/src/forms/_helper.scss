@@ -20,6 +20,7 @@ $icon-size: 1.25em !default;
 @mixin base {
 	appearance: none;
 	display: block;
+	max-inline-size: 100%;
 	inline-size: 100%;
 	margin: 0;
 	padding-block: var(--form-py, #{$padding-block});
@@ -37,6 +38,7 @@ $icon-size: 1.25em !default;
 	--icon: var(--select-icon, var(--chevron-light-scheme));
 	--icon-size: var(--select-icon-size, #{$icon-size});
 	--icon-offset: var(--select-icon-offset, #{$padding-inline});
+	inline-size: auto;
 	padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
 	background: var(--icon) var(--form-bg, #{$bg}) var(--icon-position, right)
 		var(--icon-offset) center / var(--icon-size) no-repeat;

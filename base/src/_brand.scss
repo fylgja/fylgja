@@ -92,6 +92,11 @@ body {
 	outline: 1px solid var(--form-stroke);
 }
 
+:where(.field) {
+	display: block;
+	margin-block-start: 1em;
+}
+
 // Buttons
 :where(.btn.-primary, [type="submit"], form button:not([type])),
 :where(input[type="file"])::file-selector-button {
@@ -102,21 +107,13 @@ body {
 	--btn-active-bg: color-mix(in oklab, var(--brand) 72%, #000);
 }
 
+:where([type="reset"]) {
+	--btn-color: var(--form-error-color, currentcolor);
+}
+
 :where(.btn, button, [type="button"], [type="submit"], [type="reset"]) {
 	&:has(:where(svg:only-child, img:only-child)) {
 		--btn-px: var(--btn-py, #{btn.$padding-block});
-	}
-}
-
-// prettier-ignore
-:where(
-	form .field,
-	:is(form, fieldset) > label:has(input, select, textarea, progress, meter)
-) {
-	margin-block-start: 0.875rem;
-
-	> * + * {
-		margin-block-start: 0.375rem;
 	}
 }
 

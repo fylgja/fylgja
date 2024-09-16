@@ -2,9 +2,10 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select) {
   appearance: none;
   display: block;
+  max-inline-size: 100%;
   inline-size: 100%;
   margin: 0;
   padding-block: var(--form-py, 0.375rem);
@@ -17,17 +18,17 @@
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
   outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):where(:placeholder-shown) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
   text-overflow: ellipsis;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):focus {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus {
   border-color: var(--form-active-color);
   outline-width: 1px;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):is(:disabled, [readonly]:not(:focus)) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):is(:disabled, [readonly]:not(:focus)) {
   border-style: var(--form-disabled-border-style, dashed);
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]), textarea, select):disabled {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;
@@ -72,6 +73,7 @@
   --icon: var(--select-icon, var(--chevron-light-scheme));
   --icon-size: var(--select-icon-size, 1.25em);
   --icon-offset: var(--select-icon-offset, 0.8rem);
+  inline-size: auto;
   padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
   background: var(--icon) var(--form-bg, var(--root-bg)) var(--icon-position, right) var(--icon-offset) center/var(--icon-size) no-repeat;
   -webkit-print-color-adjust: exact;
@@ -93,14 +95,6 @@
   min-block-size: var(--textarea-size, calc(3.5lh + var(--form-py, 0.375rem)));
   field-sizing: content;
   resize: vertical;
-}
-
-:where(label:has(input, select, textarea, progress, meter)) {
-  display: block;
-}
-
-:where(label:has(input:is([type=radio], [type=checkbox]))) {
-  inline-size: fit-content;
 }
 
 ::placeholder {

@@ -3,7 +3,7 @@
 
 @use "helper" as form;
 
-$selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[type=reset],[type=submit]), textarea, select" !default;
+$selectors: "input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select" !default;
 
 // prettier-ignore
 :where(#{$selectors}) {
@@ -12,7 +12,7 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
 	);
 
-	&:where(:placeholder-shown) {
+	&:placeholder-shown {
 		text-overflow: ellipsis;
 	}
 
@@ -73,14 +73,6 @@ $selectors: "input:not([type=checkbox],[type=radio],[type=range],[type=button],[
 	);
 	field-sizing: content; // Resize by default, disabled the rows attribute
 	resize: vertical;
-}
-
-:where(label:has(input, select, textarea, progress, meter)) {
-	display: block;
-}
-
-:where(label:has(input:is([type="radio"], [type="checkbox"]))) {
-	inline-size: fit-content;
 }
 
 // Reset the default opacity in Firefox,
