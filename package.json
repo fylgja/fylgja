@@ -22,6 +22,7 @@
     "metapackage"
   ],
   "scripts": {
+    "test": "npx stylelint base/**/*.scss",
     "build": "echo 'action here'"
   },
   "devDependencies": {
@@ -34,25 +35,8 @@
     "rules": {
       "rule-empty-line-before": null,
       "selector-class-pattern": null,
-      "at-rule-empty-line-before": [
-        "always",
-        {
-          "except": [
-            "blockless-after-same-name-blockless",
-            "first-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ],
-          "ignoreAtRules": [
-            "if",
-            "else",
-            "each",
-            "for",
-            "while"
-          ]
-        }
-      ]
+      "at-rule-empty-line-before": null,
+      "declaration-empty-line-before": null
     }
   }
 }
