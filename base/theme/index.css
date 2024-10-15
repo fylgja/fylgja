@@ -2,6 +2,9 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
+@view-transition {
+  navigation: auto;
+}
 :root {
   --brand: hsl(260, 84%, 56%);
   --on-brand: hsl(260, 0%, 100%);
@@ -14,18 +17,16 @@
   scrollbar-color: var(--scrollthumb-color, var(--brand)) var(--scrolltrack-color, transparent);
   accent-color: var(--brand);
   caret-color: var(--brand);
+  interpolate-size: allow-keywords;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --root-bg: color-mix(in oklab, #000 82%, var(--brand));
     --root-fg: #fff;
-    --select-icon: var(--chevron-dark-scheme);
+    --select-icon: var(--select-dark-scheme);
   }
 }
 
-@view-transition {
-  navigation: auto;
-}
 ::marker {
   color: var(--brand);
   font-weight: bolder;

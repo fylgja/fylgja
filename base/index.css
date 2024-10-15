@@ -18,15 +18,15 @@
   	Helvetica, Arial, "Helvetica Neue", sans-serif, var(--family-emoji);
   --family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
   	"Liberation Mono", monospace, var(--family-emoji);
-  --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
-  --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
+  --select-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
+  --select-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
   --surface-color: color-mix(in srgb, var(--root-bg) 92%, var(--root-fg));
 }
 
 :where(:focus-visible) {
-  outline: 2px solid;
-  outline-offset: 2px;
+  outline: var(--outline-size, 2px) solid;
+  outline-offset: var(--outline-offset, 2px);
 }
 
 :where(:active:focus-visible) {
@@ -35,7 +35,7 @@
 }
 
 :target {
-  scroll-margin-block: var(--anchor-offset, max(2rem, 5svb));
+  scroll-margin-block: var(--anchor-offset, 6ex);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -84,6 +84,11 @@ select:has(option:enabled),
 summary,
 [tabindex]:not([tabindex^="-"])) {
   cursor: pointer;
+}
+
+:where([type=button], [type=submit], [type=reset], button),
+::file-selector-button {
+  appearance: button;
 }
 
 :where(summary) {
@@ -166,7 +171,7 @@ summary,
 }
 
 :where(input, button, textarea, select, address),
-:where(input[type=file])::-webkit-file-upload-button {
+::file-selector-button {
   font: inherit;
 }
 
@@ -270,77 +275,10 @@ summary,
   border-block-start-width: 2px;
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn),
-:where(input[type=file])::file-selector-button {
-  appearance: button;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--btn-gap, 0.5em);
-  padding-block: var(--btn-py, 0.375rem);
-  padding-inline: var(--btn-px, 0.8rem);
-  border-radius: var(--btn-radius, 0.5rem);
-  border-width: var(--btn-border-width, 2px);
-  border-color: var(--btn-stroke);
-  background: var(--btn-bg, transparent);
-  color: var(--btn-color, currentcolor);
-  font-weight: var(--btn-font-weight, 500);
-  text-decoration: none;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
-  user-select: none;
-  cursor: pointer;
-}
-
-:where(button, [type=button], [type=submit], [type=reset], .btn) {
-  vertical-align: middle;
-}
-:where(button, [type=button], [type=submit], [type=reset], .btn):hover {
-  border-color: var(--btn-hover-stroke, var(--btn-stroke));
-  background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
-  color: var(--btn-hover-color, var(--btn-color, currentcolor));
-}
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-active,
-:active,
-:has(:checked),
-[aria-current=page],
-[aria-current=true]) {
-  border-color: var(--btn-active-stroke, var(--btn-stroke));
-  background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
-  color: var(--btn-active-color, var(--btn-color, currentcolor));
-}
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-disabled, :disabled) {
-  box-shadow: none;
-  border-color: var(--btn-disabled-stroke);
-  background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));
-  color: var(--btn-disabled-color, color-mix(in srgb, var(--root-fg) 40%, var(--root-bg)));
-  cursor: not-allowed;
-}
-
-:where(input[type=file]):hover::file-selector-button {
-  border-color: var(--btn-hover-stroke, var(--btn-stroke));
-  background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
-  color: var(--btn-hover-color, var(--btn-color, currentcolor));
-}
-:where(input[type=file]):active::file-selector-button {
-  border-color: var(--btn-active-stroke, var(--btn-stroke));
-  background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
-  color: var(--btn-active-color, var(--btn-color, currentcolor));
-}
-:where(input[type=file]):disabled::file-selector-button {
-  box-shadow: none;
-  border-color: var(--btn-disabled-stroke);
-  background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));
-  color: var(--btn-disabled-color, color-mix(in srgb, var(--root-fg) 40%, var(--root-bg)));
-  cursor: not-allowed;
-}
-
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select) {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select) {
   appearance: none;
-  display: block;
-  max-inline-size: 100%;
-  inline-size: 100%;
   margin: 0;
-  padding-block: var(--form-py, 0.375rem);
+  padding-block: var(--form-py, 0.4375rem);
   padding-inline: var(--form-px, 0.8rem);
   border-width: var(--form-border-width, 1px);
   border-color: var(--form-stroke);
@@ -348,22 +286,109 @@ summary,
   background: var(--form-bg, var(--root-bg));
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
-  outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
   text-overflow: ellipsis;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus-visible {
   border-color: var(--form-active-color);
-  outline-width: 1px;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):is(:disabled, [readonly]:not(:focus)) {
-  border-style: var(--form-disabled-border-style, dashed);
-}
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;
+}
+
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
+textarea,
+select) {
+  --outline-size: 1px;
+  --outline-offset: calc(
+  	(var(--form-border-width, 1px) + 1px) * -1
+  );
+  display: block;
+  max-inline-size: 100%;
+  inline-size: 100%;
+}
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
+textarea,
+select):is(:disabled, [readonly]:not(:focus)) {
+  border-style: var(--form-disabled-border-style, dashed);
+}
+
+:where(input[type=checkbox], input[type=radio]) {
+  --_gap: var(--icon-gap, 2px);
+  block-size: var(--control-size, 1.25em);
+  inline-size: var(--control-size, 1.25em);
+  border-radius: var(--control-radius, 0.35rem);
+  border-width: var(--control-border-width, 2px);
+  padding: var(--_gap);
+  user-select: none;
+}
+:where(input[type=checkbox], input[type=radio]):not(:disabled) {
+  cursor: pointer;
+}
+:where(input[type=checkbox], input[type=radio])::after {
+  content: "";
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  border-radius: inherit;
+  background-color: var(--icon-color, currentcolor);
+  scale: var(--_show-icon, 0);
+  opacity: var(--_show-icon, 0);
+  transition: translate 0.15s, scale 0.15s, opacity 0.15s;
+  forced-color-adjust: none;
+  -webkit-mask: var(--_icon) center/contain no-repeat;
+  mask: var(--_icon) center/contain no-repeat;
+}
+:where(input[type=checkbox], input[type=radio]):checked {
+  --_show-icon: 1;
+  outline-color: var(--control-checked-stroke, var(--root-fg));
+  border-color: var(--control-checked-stroke, var(--root-fg));
+  background-color: var(--control-checked-bg, var(--root-fg));
+  color: var(--control-checked-color, var(--root-bg));
+}
+
+:where(input[type=radio]) {
+  --_gap: 3px;
+  --control-radius: 50%;
+}
+
+:where(input[type=checkbox]:not([role=switch])) {
+  --_gap: 1px;
+  --_icon: url("#");
+  --checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E");
+  --indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+}
+:where(input[type=checkbox]:not([role=switch])):indeterminate {
+  --_show-icon: 1;
+  --_icon: var(--indeterminate-icon);
+}
+:where(input[type=checkbox]:not([role=switch])):checked {
+  --_icon: var(--checked-icon);
+}
+
+:where(input[type=checkbox][role=switch]) {
+  --_show-icon: 1;
+  --control-radius: 1.25em;
+  inline-size: var(--switch-size, 2em);
+}
+:where(input[type=checkbox][role=switch])::after {
+  inline-size: auto;
+  aspect-ratio: 1;
+}
+:where(input[type=checkbox][role=switch]):checked {
+  --_offset-x: calc(
+  	var(--switch-size, 2em) -
+  		var(--control-size, 1.25em)
+  );
+}
+:where(input[type=checkbox][role=switch]):checked::after {
+  translate: var(--_offset-x) 0%;
+}
+:where(input[type=checkbox][role=switch]):checked:dir(rtl)::after {
+  translate: calc(var(--_offset-x) / -1) 0%;
 }
 
 :where(input[type=color]) {
@@ -389,42 +414,32 @@ summary,
   --form-py: 0;
   --form-px: 0 0.8rem;
   --btn-radius: 0;
-  --btn-border-width: var(--form-border-width, 1px);
+  --btn-border-width: 0;
   overflow: clip;
 }
 :where(input[type=file])::file-selector-button {
-  margin-block: calc(var(--btn-border-width) / -1);
-  margin-inline: calc(var(--btn-border-width) / -1) 1em;
+  margin-inline-end: 1em;
 }
 
 :where(select) {
+  inline-size: auto;
   word-wrap: normal;
 }
 
-:where(select:not([multiple], [size]:not([size="1"]))) {
-  --icon: var(--select-icon, var(--chevron-light-scheme));
+:where(select:not([size]:not([size="1"]), [multiple])) {
   --icon-size: var(--select-icon-size, 1.25em);
   --icon-offset: var(--select-icon-offset, 0.8rem);
-  inline-size: auto;
-  padding-inline-end: calc(var(--icon-size) + var(--icon-offset));
-  background: var(--icon) var(--form-bg, var(--root-bg)) var(--icon-position, right) var(--icon-offset) center/var(--icon-size) no-repeat;
+  padding-inline-end: calc(var(--icon-size) + var(--icon-offset) + 0.5ch);
+  background: var(--select-icon, var(--select-light-scheme)) var(--form-bg, var(--root-bg)) var(--icon-position, right) var(--icon-offset) center/var(--icon-size) no-repeat;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-:where(select:not([multiple], [size]:not([size="1"]))):dir(rtl) {
+:where(select:not([size]:not([size="1"]), [multiple])):dir(rtl) {
   --icon-position: left;
 }
 
-[list]:not([type*=date], [type=month], [type=week], [type=time])::-webkit-calendar-picker-indicator, [list]:not([type*=date], [type=month], [type=week], [type=time])::-webkit-list-button {
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  visibility: hidden;
-}
-
 :where(textarea) {
-  min-block-size: var(--textarea-size, calc(3.5lh + var(--form-py, 0.375rem)));
+  min-block-size: var(--textarea-size, calc(3.5lh + var(--form-py, 0.4375rem)));
   field-sizing: content;
   resize: vertical;
 }
@@ -471,87 +486,72 @@ summary,
   text-align: inherit;
 }
 
-:where(input[type=checkbox], input[type=radio]) {
-  --_gap: var(--icon-gap, 2px);
-  appearance: none;
-  block-size: var(--size-y, 1.25em);
-  inline-size: var(--size-x, 1.25em);
-  border-radius: var(--control-radius, 0.35rem);
-  border-width: var(--control-border-width, 2px);
-  border-color: var(--control-stroke);
-  background: var(--control-bg, none);
-  color: var(--control-color, currentcolor);
-  margin: 0;
-  padding: var(--_gap);
-  user-select: none;
+::-webkit-calendar-picker-indicator {
+  line-height: 1;
 }
-:where(input[type=checkbox], input[type=radio]):not(:disabled) {
+
+:where([list]:not([type*=date], [type=month], [type=week], [type=time])) {
+  --datalist-icon: var(--select-icon, var(--chevron-light-scheme));
+}
+:where([list]:not([type*=date], [type=month], [type=week], [type=time]))::-webkit-calendar-picker-indicator {
+  display: block !important;
+  background: var(--datalist-icon) center/contain no-repeat;
+  opacity: 1;
+}
+:where([list]:not([type*=date], [type=month], [type=week], [type=time]))::-webkit-list-button {
+  appearance: none;
+  block-size: 1em;
+  inline-size: 1em;
+  padding: 3px;
+  align-self: center;
+  background: var(--datalist-icon) center/contain no-repeat;
+}
+
+:where(button, [type=button], [type=submit], [type=reset], .btn),
+:where(input[type=file])::file-selector-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--btn-gap, 0.5em);
+  padding-block: var(--btn-py, 0.375rem);
+  padding-inline: var(--btn-px, 0.8rem);
+  border-radius: var(--btn-radius, 0.5rem);
+  border-width: var(--btn-border-width, 2px);
+  border-color: var(--btn-stroke);
+  background: var(--btn-bg, transparent);
+  color: var(--btn-color, currentcolor);
+  font-weight: var(--btn-font-weight, 500);
+  text-decoration: none;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
+  user-select: none;
   cursor: pointer;
 }
-:where(input[type=checkbox], input[type=radio]):focus-visible {
-  outline-color: var(--control-stroke, currentcolor);
-}
-:where(input[type=checkbox], input[type=radio])::after {
-  content: "";
-  display: block;
-  block-size: 100%;
-  inline-size: 100%;
-  border-radius: inherit;
-  background-color: var(--icon-color, currentcolor);
-  scale: var(--_show-icon, 0);
-  opacity: var(--_show-icon, 0);
-  transition: translate 0.15s, scale 0.15s, opacity 0.15s;
-  forced-color-adjust: none;
-  -webkit-mask: var(--_icon) center/contain no-repeat;
-  mask: var(--_icon) center/contain no-repeat;
-}
-:where(input[type=checkbox], input[type=radio]):checked {
-  --_show-icon: 1;
-  outline-color: var(--control-checked-stroke, var(--root-fg));
-  border-color: var(--control-checked-stroke, var(--root-fg));
-  background-color: var(--control-checked-bg, var(--root-fg));
-  color: var(--control-checked-color, var(--root-bg));
-}
-:where(input[type=checkbox], input[type=radio]):disabled {
-  opacity: var(--control-disabled-opacity, 0.6);
+
+:where(button, [type=button], [type=submit], [type=reset], .btn) {
+  vertical-align: middle;
 }
 
-:where(input[type=radio]) {
-  --_gap: 3px;
-  --control-radius: 50%;
+:where(button, [type=button], [type=submit], [type=reset], .btn):hover,
+:where(input[type=file]):hover::file-selector-button {
+  border-color: var(--btn-hover-stroke, var(--btn-stroke));
+  background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
+  color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(input[type=checkbox]:not([role=switch])) {
-  --_gap: 1px;
-  --_icon: url("#");
-  --checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E");
-  --indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
-}
-:where(input[type=checkbox]:not([role=switch])):indeterminate {
-  --_show-icon: 1;
-  --_icon: var(--indeterminate-icon);
-}
-:where(input[type=checkbox]:not([role=switch])):checked {
-  --_icon: var(--checked-icon);
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-active, :active, :has(input:checked), [aria-current=page], [aria-current=true]),
+:where(input[type=file]):active::file-selector-button {
+  border-color: var(--btn-active-stroke, var(--btn-stroke));
+  background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
+  color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(input[type=checkbox][role=switch]) {
-  --_show-icon: 1;
-  --control-radius: 1.25em;
-  --size-x: 2em;
-}
-:where(input[type=checkbox][role=switch])::after {
-  inline-size: auto;
-  aspect-ratio: 1;
-}
-:where(input[type=checkbox][role=switch]):checked {
-  --_offset-x: calc(var(--size-x) - var(--size-y, 1.25em));
-}
-:where(input[type=checkbox][role=switch]):checked::after {
-  translate: var(--_offset-x) 0%;
-}
-:where(input[type=checkbox][role=switch]):checked:dir(rtl)::after {
-  translate: calc(var(--_offset-x) / -1) 0%;
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(.is-disabled, :disabled),
+:where(input[type=file]):disabled::file-selector-button {
+  box-shadow: none;
+  border-color: var(--btn-disabled-stroke);
+  background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));
+  color: var(--btn-disabled-color, color-mix(in srgb, var(--root-fg) 40%, var(--root-bg)));
+  cursor: not-allowed;
 }
 
 :where(dialog) {

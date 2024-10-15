@@ -1,31 +1,20 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as form;
+@use "props" as form;
 
-$selectors: "input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select" !default;
+$special-form-inputs: "[type=range], [type=button], [type=reset], [type=submit], [type=image]";
+$enable-switch: true !default;
 
-// prettier-ignore
-:where(#{$selectors}) {
+:where(input:not(#{$special-form-inputs}), textarea, select) {
 	@include form.base;
-	outline-offset: calc(
-		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
-	);
 
 	&:placeholder-shown {
 		text-overflow: ellipsis;
 	}
 
-	&:focus {
+	&:focus-visible {
 		border-color: var(--form-active-color);
-		outline-width: 1px;
-	}
-
-	&:is(:disabled, [readonly]:not(:focus)) {
-		border-style: var(
-			--form-disabled-border-style,
-			#{form.$disabled-border-style}
-		);
 	}
 
 	&:disabled {
@@ -35,34 +24,92 @@ $selectors: "input:not([type=checkbox], [type=radio], [type=range], [type=button
 	}
 }
 
+// prettier-ignore
+:where(
+	input:not([type="checkbox"], [type="radio"], #{$special-form-inputs}),
+	textarea,
+	select
+) {
+	--outline-size: 1px;
+	--outline-offset: calc(
+		(var(--form-border-width, #{form.$border-width}) + 1px) * -1
+	);
+	display: block;
+	max-inline-size: 100%;
+	inline-size: 100%;
+
+	&:is(:disabled, [readonly]:not(:focus)) {
+		border-style: var(
+			--form-disabled-border-style,
+			#{form.$disabled-border-style}
+		);
+	}
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+	@include form.control;
+}
+
+:where(input[type="radio"]) {
+	--_gap: 3px;
+	--control-radius: 50%;
+}
+
+:where(input[type="checkbox"]:not([role="switch"])) {
+	--_gap: 1px;
+	--_icon: url("#");
+	--checked-icon: #{form.$control-icon-checked};
+	--indeterminate-icon: #{form.$control-icon-indeterminate};
+
+	&:indeterminate {
+		--_show-icon: 1;
+		--_icon: var(--indeterminate-icon);
+	}
+
+	&:checked {
+		--_icon: var(--checked-icon);
+	}
+}
+
+@if $enable-switch {
+	:where(input[type="checkbox"][role="switch"]) {
+		@include form.switch;
+	}
+}
+
 :where(input[type="color"]) {
 	@include form.color;
 }
 
 :where(input[type="file"]) {
-	@include form.file;
+	--form-py: 0;
+	--form-px: 0 #{form.$padding-inline};
+	--btn-radius: 0;
+	--btn-border-width: 0;
+	overflow: clip;
+
+	&::file-selector-button {
+		margin-inline-end: 1em;
+	}
 }
 
-// Remove the inheritance of word-wrap in Safari
 :where(select) {
-	word-wrap: normal;
+	inline-size: auto;
+	word-wrap: normal; // Remove the inheritance of word-wrap in Safari
 }
 
-:where(select:not([multiple], [size]:not([size="1"]))) {
-	@include form.select-icon;
-}
+:where(select:not([size]:not([size="1"]), [multiple])) {
+	--icon-size: var(--select-icon-size, #{form.$icon-size});
+	--icon-offset: var(--select-icon-offset, #{form.$padding-inline});
+	padding-inline-end: calc(var(--icon-size) + var(--icon-offset) + 0.5ch);
+	background: var(--select-icon, var(--select-light-scheme))
+		var(--form-bg, #{form.$bg}) var(--icon-position, right)
+		var(--icon-offset) center / var(--icon-size) no-repeat;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
 
-// Remove the dropdown arrow only from text type inputs built with datalists in webkit browsers
-// Chrome = calendar-picker-indicator
-// iOS Safari = list-button
-[list]:not([type*="date"], [type="month"], [type="week"], [type="time"]) {
-	&::-webkit-calendar-picker-indicator,
-	&::-webkit-list-button {
-		width: 0;
-		height: 0;
-		margin: 0;
-		padding: 0;
-		visibility: hidden;
+	&:dir(rtl) {
+		--icon-position: left;
 	}
 }
 
@@ -122,4 +169,30 @@ $selectors: "input:not([type=checkbox], [type=radio], [type=range], [type=button
 ::-webkit-date-and-time-value {
 	min-height: 1lh; // Prevent collapse of date field on iOS Safari, if the value is empty
 	text-align: inherit; // Correct text alignment in iOS Safari
+}
+
+// Fix datalist icon alignment in webkit browsers
+::-webkit-calendar-picker-indicator {
+	line-height: 1;
+}
+
+// prettier-ignore
+:where([list]:not([type*="date"], [type="month"], [type="week"], [type="time"])) {
+	--datalist-icon: var(--select-icon, var(--chevron-light-scheme));
+
+	&::-webkit-calendar-picker-indicator {
+		// stylelint-disable-next-line declaration-no-important
+		display: block !important;
+		background: var(--datalist-icon) center/contain no-repeat;
+		opacity: 1;
+	}
+
+	&::-webkit-list-button {
+		appearance: none;
+		block-size: 1em;
+		inline-size: 1em;
+		padding: 3px;
+		align-self: center;
+		background: var(--datalist-icon) center/contain no-repeat;
+	}
 }

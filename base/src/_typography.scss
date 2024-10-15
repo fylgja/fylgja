@@ -67,9 +67,8 @@ $h-line: 1.1 !default;
 	border-inline-start: 4px solid;
 }
 
-// Inherit fonts for inputs and buttons
 :where(input, button, textarea, select, address),
-:where(input[type="file"])::-webkit-file-upload-button {
+::file-selector-button {
 	font: inherit;
 }
 

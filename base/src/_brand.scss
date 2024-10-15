@@ -5,11 +5,17 @@
 // This why we added this an opt in solution, to use or copy.
 // Brand styles are more subject to change, if we feel things don't work or if we found something new to include.
 
-@use "buttons/helper" as btn;
+@use "buttons/props" as btn;
 
 $brand: hsl(260 84% 56%) !default;
 $on-brand: hsl(260 0% 100%) !default;
 $error: #e00 !default;
+$custom-root-config: false !default;
+$extra-root-props: () !default;
+
+@view-transition {
+	navigation: auto;
+}
 
 :root {
 	--brand: #{$brand};
@@ -19,24 +25,22 @@ $error: #e00 !default;
 	--control-checked-stroke: var(--brand);
 	--control-checked-bg: var(--brand);
 	--control-checked-color: var(--on-brand);
+	@each $property, $value in $extra-root-props {
+		#{$property}: $value;
+	}
 	color-scheme: light dark;
 	scrollbar-color: var(--scrollthumb-color, var(--brand))
 		var(--scrolltrack-color, transparent);
 	accent-color: var(--brand);
 	caret-color: var(--brand);
+	interpolate-size: allow-keywords;
 
 	@media (prefers-color-scheme: dark) {
 		--root-bg: color-mix(in oklab, #000 82%, var(--brand));
 		--root-fg: #fff;
-		--select-icon: var(--chevron-dark-scheme);
+		--select-icon: var(--select-dark-scheme);
 	}
 }
-
-// stylelint-disable scss/at-rule-no-unknown, property-no-unknown
-@view-transition {
-	navigation: auto;
-}
-// stylelint-enable scss/at-rule-no-unknown, property-no-unknown
 
 ::marker {
 	color: var(--brand);

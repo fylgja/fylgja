@@ -28,13 +28,7 @@
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
-    "build:main": "npx lightningcss --minify --bundle index.css -o index.min.css",
-    "build:preflight": "npx lightningcss --minify --bundle preflight.css -o preflight.min.css",
-    "build:btn": "npx lightningcss --minify --bundle btn.css -o btn.min.css",
-    "build:btn-class": "npx lightningcss --minify --bundle btn-class.css -o btn-class.min.css",
-    "build:form": "npx lightningcss --minify --bundle form.css -o form.min.css",
-    "build:dialog": "npx lightningcss --minify --bundle dialog.css -o dialog.min.css",
-    "build": "npm run build:main && npm run build:preflight && npm run build:btn && npm run build:btn-class && npm run build:form && npm run build:dialog",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "prebuild": "npm run build:scss"
   },
   "bin": {
