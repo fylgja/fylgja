@@ -3,7 +3,6 @@
  * Licensed under MIT Open Source
  */
 :where(.btn) {
-  appearance: button;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -27,11 +26,7 @@
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn):is(.is-active,
-:active,
-:has(:checked),
-[aria-current=page],
-[aria-current=true]) {
+:where(.btn):is(.is-active, :active, :has(input:checked), [aria-current=page], [aria-current=true]) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
