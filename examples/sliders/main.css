@@ -1,0 +1,27 @@
+@import url("@fylgja/base");
+@import url("@fylgja/base/theme");
+@import url("@fylgja/container");
+@import url("@fylgja/utilities");
+
+header {
+	padding-block: 1rem;
+	background-color: var(--surface-color);
+
+	@media print {
+		display: none;
+	}
+
+	& > * {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+footer {
+	margin-block-start: 4rem;
+	padding-block: 1rem;
+	text-align: center;
+	background-color: var(--surface-color);
+}

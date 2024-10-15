@@ -6,10 +6,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@fylgja/base": path.resolve(__dirname, "../../base"),
-			"@fylgja/form-extend": path.resolve(
-				__dirname,
-				"../../components/form-extend"
-			),
 			"@fylgja/container": path.resolve(
 				__dirname,
 				"../../components/container"

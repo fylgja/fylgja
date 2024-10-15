@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="auto">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Fylgja Classless</title>
 		<link rel="stylesheet" href="main.css" />
+		<script>
+			const storageKey = "theme-preference";
+			const mqIsDark = window.matchMedia("(prefers-color-scheme: dark)");
+			const themeToggle = document.getElementById("theme-toggle");
+
+			const getColorPreference = () => {
+				const preference = localStorage.getItem(storageKey);
+				return preference
+					? preference
+					: mqIsDark.matches
+					? "dark"
+					: "light";
+			};
+
+			const theme = {
+				value: getColorPreference(),
+			};
+
+			const saveColorPreference = () => {
+				localStorage.setItem(storageKey, theme.value);
+			};
+
+			const applyColorPreference = () => {
+				document.documentElement.setAttribute(
+					"data-theme",
+					theme.value
+				);
+			};
+
+			applyColorPreference();
+
+			document.addEventListener("change", (e) => {
+				if (e.target !== document.getElementById("theme-toggle"))
+					return;
+				theme.value = e.target.value;
+				saveColorPreference();
+				applyColorPreference();
+			});
+		</script>
 	</head>
 	<body>
-		<header>
-			<div>
-				<a href="/">
+		<header class="sticky">
+			<div class="container flex align gap">
+				<a href="/" style="--mx: 0 auto">
 					<img
 						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
 						width="150"
@@ -17,7 +56,30 @@
 						alt="Fylgja"
 					/>
 				</a>
-				<button popovertarget="menuSkipTo">Jump to</button>
+				<label class="hidden sm:block">
+					<span class="sr-only">Pick color theme</span>
+					<select
+						id="theme-toggle"
+						name="color-scheme"
+						style="
+							--form-border-width: var(--btn-border-width, 2px);
+							--form-radius: var(--btn-radius, 0.5rem);
+							--form-stroke: var(--btn-stroke);
+							--form-bg: var(--btn-bg, transparent);
+							--form-color: var(--btn-color, currentcolor);
+						"
+					>
+						<option value="auto">Auto</option>
+						<option value="light">Light</option>
+						<option value="dark">Dark</option>
+						<option value="light material">Material</option>
+						<option value="dark material">Dark Material</option>
+					</select>
+				</label>
+				<script>
+					document.getElementById("theme-toggle").value = theme.value;
+				</script>
+				<button popovertarget="menuSkipTo">Go to</button>
 				<dialog
 					id="menuSkipTo"
 					popover
@@ -86,7 +148,7 @@
 				</dialog>
 			</div>
 		</header>
-		<main>
+		<main class="container" style="--container-size: 84ch">
 			<section id="intro">
 				<p>
 					A showcase of Fylgja using only our Native Element CSS
@@ -218,11 +280,26 @@
 				</dl>
 				<details name="details" open>
 					<summary>Details and summary element</summary>
-					<p>Example paragraph text.</p>
+					<div>
+						<p>Example paragraph text.</p>
+						<p>Line 2.</p>
+					</div>
 				</details>
 				<details name="details">
 					<summary>Details and summary element</summary>
-					<p>Example paragraph text.</p>
+					<div>
+						<p>Example paragraph text.</p>
+					</div>
+				</details>
+				<details name="details">
+					<summary>Details and summary element</summary>
+					<div>
+						<p>Example paragraph text.</p>
+						<ul>
+							<li>with a list</li>
+							<li>with a list 2</li>
+						</ul>
+					</div>
 				</details>
 				<h3>Ordered List</h3>
 				<ol>
@@ -445,15 +522,16 @@ p q r s t u v w x y z { | } ~ </code>
 							<span>File</span>
 							<input type="file" name="file" placeholder="file" />
 						</label>
-						<label class="field">
-							<span>Color</span>
+						<div class="field">
+							<label for="color">Color</label>
 							<input
+								id="color"
 								type="color"
 								name="color"
 								placeholder="color"
 								value="#e91e63"
 							/>
-						</label>
+						</div>
 						<label class="field">
 							<span>Select</span>
 							<select name="select">
@@ -578,6 +656,13 @@ p q r s t u v w x y z { | } ~ </code>
 							</label>
 						</div>
 					</fieldset>
+					<script>
+						const indeterminates =
+							document.querySelectorAll("[indeterminate]");
+						[].forEach.call(indeterminates, (item) => {
+							item.indeterminate = true;
+						});
+					</script>
 					<div id="form-actions">
 						<h2>Action buttons</h2>
 						<div class="field">
@@ -671,7 +756,7 @@ p q r s t u v w x y z { | } ~ </code>
 								min="0"
 								style="
 									--fill: 20;
-									--track-size: inherit;
+									--track-size: var(--size);
 									--thumb-radius: var(--track-radius);
 									--thumb-border-width: 0 4px;
 								"
@@ -923,11 +1008,28 @@ p q r s t u v w x y z { | } ~ </code>
 					</figure>
 				</div>
 				<h2>Audio</h2>
-				<div><audio controls="">audio</audio></div>
+				<div>
+					<audio controls>
+						<source
+							src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+							type="audio/mpeg"
+						/>
+					</audio>
+				</div>
 				<h2>Video</h2>
-				<div><video controls="">video</video></div>
-				<h2>Canvas</h2>
-				<div><canvas>canvas</canvas></div>
+				<div>
+					<video controls>
+						<source
+							src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+							type="video/webm"
+						/>
+
+						<source
+							src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+							type="video/mp4"
+						/>
+					</video>
+				</div>
 				<h2>Iframe</h2>
 				<div>
 					<iframe
@@ -940,13 +1042,9 @@ p q r s t u v w x y z { | } ~ </code>
 			</section>
 		</main>
 		<footer>
-			<p><small>© 2024 Fylgja. All Rights Reserved.</small></p>
+			<div class="container">
+				<p><small>© 2024 Fylgja. All Rights Reserved.</small></p>
+			</div>
 		</footer>
-		<script>
-			const indeterminates = document.querySelectorAll("[indeterminate]");
-			[].forEach.call(indeterminates, (item) => {
-				item.indeterminate = true;
-			});
-		</script>
 	</body>
 </html>
