@@ -25,7 +25,6 @@ $disabled-color: color-mix(
 ) !default;
 
 @mixin base {
-	appearance: button; // Correct the inability to style the border radius in iOS Safari
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;

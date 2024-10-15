@@ -1,0 +1,129 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$padding-block: 0.4375rem !default;
+$padding-inline: 0.8rem !default;
+$border-width: 1px !default;
+$radius: 0.35rem !default;
+$font-size: inherit !default;
+$line-height: inherit !default;
+$font-weight: 500 !default;
+
+$bg: var(--root-bg) !default;
+$color: var(--root-fg) !default;
+
+$disabled-border-style: dashed !default;
+$disabled-opacity: 0.6 !default;
+
+$icon-size: 1.25em !default;
+
+$control-size: 1.25em !default;
+$control-radius: 0.35rem !default;
+$control-border-width: 2px !default;
+$control-icon-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E") !default;
+$control-icon-indeterminate: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") !default;
+
+$switch-size: ($control-size + 0.75) !default;
+
+$color-padding: 3px !default;
+$color-size: 2.5em !default;
+
+@mixin base {
+	appearance: none;
+	margin: 0;
+	padding-block: var(--form-py, #{$padding-block});
+	padding-inline: var(--form-px, #{$padding-inline});
+	border-width: var(--form-border-width, #{$border-width});
+	border-color: var(--form-stroke);
+	border-radius: var(--form-radius, #{$radius});
+	background: var(--form-bg, #{$bg});
+	color: var(--form-color, #{$color});
+	transition: color 250ms, background-color 250ms, border-color 250ms,
+		box-shadow 250ms, var(--outline-transition);
+}
+
+@mixin control {
+	--_gap: var(--icon-gap, 2px);
+	block-size: var(--control-size, #{$control-size});
+	inline-size: var(--control-size, #{$control-size});
+	border-radius: var(--control-radius, #{$control-radius});
+	border-width: var(--control-border-width, #{$control-border-width});
+	padding: var(--_gap);
+	user-select: none;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		block-size: 100%;
+		inline-size: 100%;
+		border-radius: inherit;
+		background-color: var(--icon-color, currentcolor);
+		scale: var(--_show-icon, 0);
+		opacity: var(--_show-icon, 0);
+		transition: translate 0.15s, scale 0.15s, opacity 0.15s;
+		forced-color-adjust: none;
+		// stylelint-disable-next-line property-no-vendor-prefix
+		-webkit-mask: var(--_icon) center / contain no-repeat;
+		mask: var(--_icon) center / contain no-repeat;
+	}
+
+	&:checked {
+		--_show-icon: 1;
+		outline-color: var(--control-checked-stroke, var(--root-fg));
+		border-color: var(--control-checked-stroke, var(--root-fg));
+		background-color: var(--control-checked-bg, var(--root-fg));
+		color: var(--control-checked-color, var(--root-bg));
+	}
+}
+
+@mixin switch {
+	--_show-icon: 1;
+	--control-radius: 1.25em;
+	inline-size: var(--switch-size, #{$switch-size});
+
+	&::after {
+		inline-size: auto;
+		aspect-ratio: 1;
+	}
+
+	&:checked {
+		--_offset-x: calc(
+			var(--switch-size, #{$switch-size}) -
+				var(--control-size, #{$control-size})
+		);
+
+		&::after {
+			translate: var(--_offset-x) 0%;
+		}
+
+		&:dir(rtl)::after {
+			translate: calc(var(--_offset-x) / -1) 0%;
+		}
+	}
+}
+
+@mixin color {
+	--form-py: #{$color-padding};
+	--form-px: #{$color-padding};
+	block-size: var(--block-size, #{$color-size});
+	inline-size: var(--inline-size, #{$color-size});
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+		border-radius: inherit;
+	}
+
+	&::-moz-color-swatch {
+		border: 0;
+		border-radius: inherit;
+	}
+
+	&::-webkit-color-swatch {
+		border: 0;
+		border-radius: inherit;
+	}
+}
