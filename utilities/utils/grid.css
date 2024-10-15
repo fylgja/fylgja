@@ -1,16 +1,18 @@
 .grid {
   --grid-cols: 1;
-  --gap: 1em;
   --_cols: var(--grid-cols);
   display: grid;
-  gap: var(--_gap, var(--gap));
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
 .grid-flow {
-  grid-auto-flow: column;
+  --grid-flow-size: calc(
+  	(100% - var(--_gap, var(--gap, 0px)) * (var(--_cols) - 1)) /
+  		var(--_cols)
+  );
   grid-template-columns: none;
-  grid-auto-columns: calc((100% - var(--_gap, var(--gap)) * (var(--_cols) - 1)) / var(--_cols));
+  grid-auto-flow: column;
+  grid-auto-columns: var(--grid-flow-size);
 }
 
 @media (width >= 480px) {

@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as *;
+@use "props" as *;
 
 $use-mq: true !default;
 
@@ -20,6 +20,18 @@ $use-mq: true !default;
 
 	.#{$name}\:block {
 		display: block;
+	}
+
+	.#{$name}\:inline-block {
+		display: inline block;
+	}
+
+	.#{$name}\:flex {
+		display: flex;
+	}
+
+	.#{$name}\:inline-flex {
+		display: inline flex;
 	}
 }
 

@@ -1,49 +1,49 @@
 .sr-only {
-  --_use: initial;
-  position: var(--_use, absolute);
-  block-size: var(--_use, 1px);
-  inline-size: var(--_use, 1px);
-  overflow: var(--_use, hidden);
-  clip-path: var(--_use, inset(50%));
+  --_sr-use: initial;
+  position: var(--_sr-use, absolute);
+  block-size: var(--_sr-use, 1px);
+  inline-size: var(--_sr-use, 1px);
+  overflow: var(--_sr-use, hidden);
+  clip-path: var(--_sr-use, inset(50%));
 }
 
 @media (width >= 480px) {
   .sm\:sr-only {
-    --_use: initial;
+    --_sr-use: initial;
   }
   .sm\:not-sr-only {
-    --_use: /* */ ;
+    --_sr-use: /* */ ;
   }
 }
 @media (width >= 768px) {
   .md\:sr-only {
-    --_use: initial;
+    --_sr-use: initial;
   }
   .md\:not-sr-only {
-    --_use: /* */ ;
+    --_sr-use: /* */ ;
   }
 }
 @media (width >= 1024px) {
   .lg\:sr-only {
-    --_use: initial;
+    --_sr-use: initial;
   }
   .lg\:not-sr-only {
-    --_use: /* */ ;
+    --_sr-use: /* */ ;
   }
 }
 @media (width >= 1440px) {
   .xl\:sr-only {
-    --_use: initial;
+    --_sr-use: initial;
   }
   .xl\:not-sr-only {
-    --_use: /* */ ;
+    --_sr-use: /* */ ;
   }
 }
 @media (width >= 1920px) {
   .xxl\:sr-only {
-    --_use: initial;
+    --_sr-use: initial;
   }
   .xxl\:not-sr-only {
-    --_use: /* */ ;
+    --_sr-use: /* */ ;
   }
 }

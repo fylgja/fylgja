@@ -13,6 +13,15 @@
   .sm\:block {
     display: block;
   }
+  .sm\:inline-block {
+    display: inline block;
+  }
+  .sm\:flex {
+    display: flex;
+  }
+  .sm\:inline-flex {
+    display: inline flex;
+  }
 }
 @media (width >= 768px) {
   .md\:hidden {
@@ -20,6 +29,15 @@
   }
   .md\:block {
     display: block;
+  }
+  .md\:inline-block {
+    display: inline block;
+  }
+  .md\:flex {
+    display: flex;
+  }
+  .md\:inline-flex {
+    display: inline flex;
   }
 }
 @media (width >= 1024px) {
@@ -29,6 +47,15 @@
   .lg\:block {
     display: block;
   }
+  .lg\:inline-block {
+    display: inline block;
+  }
+  .lg\:flex {
+    display: flex;
+  }
+  .lg\:inline-flex {
+    display: inline flex;
+  }
 }
 @media (width >= 1440px) {
   .xl\:hidden {
@@ -37,6 +64,15 @@
   .xl\:block {
     display: block;
   }
+  .xl\:inline-block {
+    display: inline block;
+  }
+  .xl\:flex {
+    display: flex;
+  }
+  .xl\:inline-flex {
+    display: inline flex;
+  }
 }
 @media (width >= 1920px) {
   .xxl\:hidden {
@@ -44,5 +80,14 @@
   }
   .xxl\:block {
     display: block;
+  }
+  .xxl\:inline-block {
+    display: inline block;
+  }
+  .xxl\:flex {
+    display: flex;
+  }
+  .xxl\:inline-flex {
+    display: inline flex;
   }
 }

@@ -1,22 +1,26 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as *;
+@use "props" as *;
 
 .visible,
-.peer-invalid\:invisible {
+.peer-invalid\:invisible,
+.has-hover\:invisible {
 	visibility: visible;
 }
 
 .invisible,
-.peer-invalid\:visible {
+.peer-invalid\:visible,
+.has-hover\:visible {
 	visibility: hidden;
 }
 
-:user-invalid ~ .peer-invalid\:visible {
+:user-invalid ~ .peer-invalid\:visible,
+:hover > .has-hover\:visible {
 	visibility: visible;
 }
 
-:user-invalid ~ .peer-invalid\:invisible {
+:user-invalid ~ .peer-invalid\:invisible,
+:hover > .has-hover\:invisible {
 	visibility: hidden;
 }

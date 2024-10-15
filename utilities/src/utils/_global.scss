@@ -4,7 +4,7 @@
 $use-mq: true !default;
 $use-custom-mq: false !default;
 
-@use "helper" as *;
+@use "props" as *;
 @use "content-lazy";
 @use "display" with (
 	$use-mq: false
@@ -26,7 +26,7 @@ $use-custom-mq: false !default;
 @use "spacing" with (
 	$use-mq: false
 );
-@use "sizes";
+@use "helpers";
 @use "color";
 @use "stretched-link";
 @use "truncate";

@@ -1,26 +1,25 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-@use "helper" as *;
+@use "props" as *;
 
 $use-mq: true !default;
-$gap: 1em !default;
 
 .grid {
 	--grid-cols: 1;
-	--gap: #{$gap};
 	--_cols: var(--grid-cols);
 	display: grid;
-	gap: var(--_gap, var(--gap));
 	grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
 
 .grid-flow {
-	grid-auto-flow: column;
-	grid-template-columns: none;
-	grid-auto-columns: calc(
-		(100% - var(--_gap, var(--gap)) * (var(--_cols) - 1)) / var(--_cols)
+	--grid-flow-size: calc(
+		(100% - var(--_gap, var(--gap, 0px)) * (var(--_cols) - 1)) /
+			var(--_cols)
 	);
+	grid-template-columns: none;
+	grid-auto-flow: column;
+	grid-auto-columns: var(--grid-flow-size);
 }
 
 @mixin mq-utils($name) {

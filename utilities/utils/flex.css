@@ -1,11 +1,14 @@
 :is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
+  --grow: initial;
+  --shrink: initial;
+  --basis: initial;
   display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
 :is(.flex, .flex-col) > * {
-  --flex: 0 1 auto;
+  --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   flex: var(--_flexI, var(--flex));
 }
 
@@ -18,7 +21,7 @@
     --_flexD: var(--sm_flex-dir);
   }
   :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
-    --_flexW: var(--sm_--align-items);
+    --_flexW: var(--sm_flex-wrap);
   }
   :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
@@ -29,7 +32,7 @@
     --_flexD: var(--md_flex-dir);
   }
   :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
-    --_flexW: var(--md_--align-items);
+    --_flexW: var(--md_flex-wrap);
   }
   :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
@@ -40,7 +43,7 @@
     --_flexD: var(--lg_flex-dir);
   }
   :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
-    --_flexW: var(--lg_--align-items);
+    --_flexW: var(--lg_flex-wrap);
   }
   :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
@@ -51,7 +54,7 @@
     --_flexD: var(--xl_flex-dir);
   }
   :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
-    --_flexW: var(--xl_--align-items);
+    --_flexW: var(--xl_flex-wrap);
   }
   :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
@@ -62,7 +65,7 @@
     --_flexD: var(--xxl_flex-dir);
   }
   :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
-    --_flexW: var(--xxl_--align-items);
+    --_flexW: var(--xxl_flex-wrap);
   }
   :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
