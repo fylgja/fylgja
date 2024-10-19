@@ -140,7 +140,7 @@ $h-line: 1.1 !default;
 }
 
 :where(:not(pre) > code) {
-	padding: 0.25rem 0.375em;
+	padding: 0.125rem 0.25em;
 }
 
 :where(pre) {
