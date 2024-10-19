@@ -45,7 +45,9 @@ $anchor-offset: 6ex !default;
 	--select-light-scheme: #{$chevron-light-scheme};
 	--select-dark-scheme: #{$chevron-dark-scheme};
 	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
-	--surface-color: color-mix(in srgb, var(--root-bg) 92%, var(--root-fg));
+	--surface-color: color-mix(in srgb, var(--root-bg) 94%, var(--root-fg));
+	--code-bg: var(--surface-color);
+	--code-fg: var(--root-fg);
 }
 
 :where(:focus-visible) {
