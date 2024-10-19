@@ -27,7 +27,6 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "helpers";
-@use "color";
 @use "stretched-link";
 @use "truncate";
 @use "visibility";
