@@ -22,8 +22,6 @@
   --select-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
   --surface-color: color-mix(in srgb, var(--root-bg) 94%, var(--root-fg));
-  --code-bg: var(--surface-color);
-  --code-fg: var(--root-fg);
 }
 
 :where(:focus-visible) {
@@ -234,7 +232,8 @@ summary,
 }
 
 :where(pre, :not(pre) > code) {
-  background: var(--surface-color);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1019607843);
+  background: rgba(255, 255, 255, 0.1019607843);
   border-radius: 0.3em;
 }
 

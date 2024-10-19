@@ -135,8 +135,8 @@ $h-line: 1.1 !default;
 }
 
 :where(pre, :not(pre) > code) {
-	background: var(--code-bg);
-	color: var(--code-fg);
+	border: 0.1rem solid #0000001a;
+	background: #ffffff1a;
 	border-radius: 0.3em;
 }
 
