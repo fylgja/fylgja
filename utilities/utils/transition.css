@@ -1,0 +1,19 @@
+.transition-display, .transition-color, .transition {
+  --transition-props: border-color, background-color, color,
+  	text-decoration-color, opacity, box-shadow, transform, translate, scale,
+  	rotate, filter, backdrop-filter, display, overlay;
+  --transition-ease: cubic-bezier(0.5, 0, 0.5, 1);
+  --transition-duration: 150ms;
+  transition-property: var(--transition-props);
+  transition-timing-function: var(--transition-ease);
+  transition-duration: var(--transition-duration);
+  transition-behavior: allow-discrete;
+}
+
+.transition-color {
+  --properties: border-color, background-color, color, text-decoration-color;
+}
+
+.transition-display {
+  --properties: opacity, transform, translate, scale, rotate, display, overlay;
+}

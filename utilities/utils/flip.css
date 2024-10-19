@@ -1,0 +1,7 @@
+:where(details:open summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip {
+  scale: -1;
+}
+
+:where(details:open summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip-rotate {
+  rotate: 180deg;
+}

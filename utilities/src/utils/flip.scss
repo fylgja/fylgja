@@ -1,0 +1,12 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$selectors: "details:open summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]" !default;
+
+:where(#{$selectors}) > .flip {
+	scale: -1;
+}
+
+:where(#{$selectors}) > .flip-rotate {
+	rotate: 180deg;
+}

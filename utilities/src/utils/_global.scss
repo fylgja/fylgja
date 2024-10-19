@@ -10,6 +10,7 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "divide";
+@use "flip";
 @use "flow";
 @use "gradient";
 @use "helpers";
@@ -25,6 +26,7 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "stretched-link";
+@use "transition";
 @use "truncate";
 @use "visibility";
 
