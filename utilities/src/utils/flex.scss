@@ -5,7 +5,8 @@
 
 $use-mq: true !default;
 
-:is(.flex, .flex-col) {
+.flex,
+.flex-col {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	--grow: initial;

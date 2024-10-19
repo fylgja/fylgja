@@ -11,10 +11,8 @@ $use-custom-mq: false !default;
 );
 @use "divide";
 @use "flow";
-@use "gap" with (
-	$use-mq: false
-);
 @use "gradient";
+@use "helpers";
 @use "line-clamp";
 @use "list";
 @use "overlay";
@@ -26,7 +24,6 @@ $use-custom-mq: false !default;
 @use "spacing" with (
 	$use-mq: false
 );
-@use "helpers";
 @use "stretched-link";
 @use "truncate";
 @use "visibility";
@@ -39,10 +36,13 @@ $use-custom-mq: false !default;
 @use "flex" with (
 	$use-mq: false
 );
+@use "stack";
 @use "align" with (
 	$use-mq: false
 );
-@use "stack";
+@use "gap" with (
+	$use-mq: false
+);
 
 // Aria
 @use "sr-only" with (

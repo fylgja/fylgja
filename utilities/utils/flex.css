@@ -1,4 +1,5 @@
-:is(.flex, .flex-col) {
+.flex,
+.flex-col {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -7,7 +8,8 @@
   display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
-:is(.flex, .flex-col) > * {
+.flex > *,
+.flex-col > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   flex: var(--_flexI, var(--flex));
 }
