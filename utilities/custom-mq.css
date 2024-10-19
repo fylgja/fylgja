@@ -25,6 +25,14 @@
   border-inline-start-width: var(--divide);
 }
 
+:where(details:open summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip {
+  scale: -1;
+}
+
+:where(details:open summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip-rotate {
+  rotate: 180deg;
+}
+
 .flow-unset > *,
 .flow > :first-child {
   margin-block: 0;
@@ -32,11 +40,6 @@
 
 .flow > * + * {
   margin-block: var(--flow, 1em) 0;
-}
-
-.gap {
-  --gap: 1em;
-  gap: var(--_gap, var(--gap));
 }
 
 .bg-gradient,
@@ -63,6 +66,18 @@
   background-clip: text;
   background-image: var(--gradient);
   color: transparent;
+}
+
+.w-full {
+  inline-size: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .line-clamp {
@@ -185,34 +200,30 @@
   padding-inline: var(--px);
 }
 
-.w-full {
-  inline-size: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.stroke-form-error {
-  border-color: var(--form-error-color);
-}
-
-.bg-form-error {
-  background-color: var(--form-error-color);
-}
-
-.color-form-error {
-  color: var(--form-error-color);
-}
-
 .stretched-link::after {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.transition-display, .transition-color, .transition {
+  --transition-props: border-color, background-color, color,
+  	text-decoration-color, opacity, box-shadow, transform, translate, scale,
+  	rotate, filter, backdrop-filter, display, overlay;
+  --transition-ease: cubic-bezier(0.5, 0, 0.5, 1);
+  --transition-duration: 150ms;
+  transition-property: var(--transition-props);
+  transition-timing-function: var(--transition-ease);
+  transition-duration: var(--transition-duration);
+  transition-behavior: allow-discrete;
+}
+
+.transition-color {
+  --properties: border-color, background-color, color, text-decoration-color;
+}
+
+.transition-display {
+  --properties: opacity, transform, translate, scale, rotate, display, overlay;
 }
 
 .truncate {
@@ -267,7 +278,8 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-col) {
+.flex,
+.flex-col {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -276,13 +288,23 @@
   display: flex;
   flex-flow: var(--_flexD, var(--flex-dir)) var(--_flexW, var(--flex-wrap));
 }
-:is(.flex, .flex-col) > * {
+.flex > *,
+.flex-col > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   flex: var(--_flexI, var(--flex));
 }
 
 .flex-col {
   --flex-dir: column;
+}
+
+.stack {
+  display: grid;
+}
+.stack > *,
+.stack > ::before,
+.stack > ::after {
+  grid-area: 1/1;
 }
 
 .align {
@@ -296,13 +318,9 @@
   place-self: var(--_alignS, var(--align-self));
 }
 
-.stack {
-  display: grid;
-}
-.stack > *,
-.stack > ::before,
-.stack > ::after {
-  grid-area: 1/1;
+.gap {
+  --gap: 1em;
+  gap: var(--_gap, var(--gap));
 }
 
 .sr-only {
