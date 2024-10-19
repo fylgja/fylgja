@@ -31,8 +31,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --root-bg: color-mix(in oklab, #000 82%, var(--brand));
-    --root-fg: #fff;
+    --root-fg: hsl(0 0% 98%);
     --select-icon: var(--select-dark-scheme);
+    --code-bg: color-mix(in srgb, var(--root-bg) 82%, var(--root-fg));
   }
 }
 
