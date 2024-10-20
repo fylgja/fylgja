@@ -3,6 +3,6 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: montly
+    interval: monthly
     day: "sunday"
   versioning-strategy: increase
