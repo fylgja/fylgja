@@ -280,8 +280,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-.flex,
-.flex-col {
+:is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -292,8 +291,7 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-.flex > *,
-.flex-col > * {
+:is(.flex, .flex-col) > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   --_flexI: var(--flex);
   flex: var(--_flexI);
