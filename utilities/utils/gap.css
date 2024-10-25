@@ -1,6 +1,7 @@
 .gap {
   --gap: 1em;
-  gap: var(--_gap, var(--gap));
+  --_gap: var(--gap);
+  gap: var(--_gap);
 }
 
 @media (width >= 480px) {

@@ -8,7 +8,8 @@ $gap: 1em !default;
 
 .gap {
 	--gap: #{$gap};
-	gap: var(--_gap, var(--gap));
+	--_gap: var(--gap);
+	gap: var(--_gap);
 }
 
 @mixin mq-utils($name) {

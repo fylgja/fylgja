@@ -1,12 +1,15 @@
 .align {
   --align: normal space-between;
   --align-items: center legacy;
-  --align-self: auto;
-  place-content: var(--_alignC, var(--align));
-  place-items: var(--_alignI, var(--align-items));
+  --_alignC: var(--align);
+  --_alignI: var(--align-items);
+  place-content: var(--_alignC);
+  place-items: var(--_alignI);
 }
 .align > * {
-  place-self: var(--_alignS, var(--align-self));
+  --align-self: auto;
+  --_alignS: var(--align-self);
+  place-self: var(--_alignS);
 }
 
 @media (width >= 480px) {
