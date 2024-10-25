@@ -26,12 +26,12 @@
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn):is(.is-active, :active, :has(input:checked), [aria-current=page], [aria-current=true]) {
+:where(.btn):is(:active, :has(input:checked), [aria-current=page], [aria-current=true]) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn):is(.is-disabled, :disabled) {
+:where(.btn):disabled {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
   background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));

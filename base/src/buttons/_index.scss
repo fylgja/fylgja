@@ -4,7 +4,7 @@
 @use "props" as btn;
 
 $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
-$active-selectors: ".is-active, :active, :has(input:checked), [aria-current=page], [aria-current=true]" !default;
+$active-selectors: ":active, :has(input:checked), [aria-current=page], [aria-current=true]" !default;
 $use-input-file: true !default;
 
 @if $use-input-file {
@@ -28,7 +28,7 @@ $use-input-file: true !default;
 		@include btn.active;
 	}
 
-	:where(#{$selectors}):is(.is-disabled, :disabled),
+	:where(#{$selectors}):disabled,
 	:where(input[type="file"]):disabled::file-selector-button {
 		@include btn.disabled;
 	}
@@ -46,7 +46,7 @@ $use-input-file: true !default;
 			@include btn.active;
 		}
 
-		&:is(.is-disabled, :disabled) {
+		&:disabled {
 			@include btn.disabled;
 		}
 	}

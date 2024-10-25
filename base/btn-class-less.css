@@ -33,14 +33,14 @@
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):is(.is-active, :active, :has(input:checked), [aria-current=page], [aria-current=true]),
+:where(button, [type=button], [type=submit], [type=reset]):is(:active, :has(input:checked), [aria-current=page], [aria-current=true]),
 :where(input[type=file]):active::file-selector-button {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):is(.is-disabled, :disabled),
+:where(button, [type=button], [type=submit], [type=reset]):disabled,
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
