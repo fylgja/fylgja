@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const packageRoot = path.dirname(__dirname);
-const fileToCopy = path.join(packageRoot, "theme", "index.css");
+const fileToCopy = path.join(packageRoot, "theme.css");
 let destinationPath = process.argv[2];
 
 if (!destinationPath) {
