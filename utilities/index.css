@@ -1,3 +1,7 @@
+.clip {
+  overflow: clip;
+}
+
 .content-lazy {
   --content-size: 500px;
   content-visibility: auto;
