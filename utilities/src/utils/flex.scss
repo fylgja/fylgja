@@ -5,7 +5,7 @@
 
 $use-mq: true !default;
 
-:is(.flex, .flex-col) {
+:is(.flex, .flex-col, .inline-flex) {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	--grow: initial;
@@ -25,6 +25,10 @@ $use-mq: true !default;
 
 .flex-col {
 	--flex-dir: column;
+}
+
+.inline-flex {
+	display: inline flex;
 }
 
 @mixin mq-utils($name) {

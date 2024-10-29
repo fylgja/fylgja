@@ -6,22 +6,28 @@
 $use-mq: true !default;
 
 .hidden {
-	--_show: initial;
-	display: var(--_show, none);
+	display: none;
 }
 
-.not-hidden {
-	--_show: /* */ ;
-	display: var(--_show, none);
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline block;
 }
 
 @mixin mq-utils($name) {
 	.#{$name}\:hidden {
-		--_show: initial;
+		display: none;
 	}
 
-	.#{$name}\:not-hidden {
-		--_show: /* */ ;
+	.#{$name}\:block {
+		display: block;
+	}
+
+	.#{$name}\:inline-block {
+		display: inline block;
 	}
 }
 

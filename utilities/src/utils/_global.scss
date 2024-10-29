@@ -11,9 +11,6 @@ $use-custom-mq: false !default;
 @use "flow";
 @use "gradient";
 @use "helpers";
-@use "hidden" with (
-	$use-mq: false
-);
 @use "line-clamp";
 @use "list";
 @use "overlay";
@@ -39,6 +36,9 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "stack";
+@use "display" with (
+	$use-mq: false
+);
 @use "align" with (
 	$use-mq: false
 );
@@ -53,13 +53,13 @@ $use-custom-mq: false !default;
 
 @if $use-mq {
 	@include for-mq("min", $var-syntax: $use-custom-mq) using ($name) {
-		@include hidden.mq-utils($name);
 		@include gap.mq-utils($name);
 		@include spacing.mq-utils($name);
 
 		// Layout
 		@include grid.mq-utils($name);
 		@include flex.mq-utils($name);
+		@include display.mq-utils($name);
 		@include align.mq-utils($name);
 
 		// Aria

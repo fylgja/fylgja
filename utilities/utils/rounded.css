@@ -3,6 +3,10 @@
   border-radius: var(--rounded);
 }
 
+.rounded-none {
+  border-radius: 0;
+}
+
 .rounded-inherit {
   border-radius: inherit;
 }

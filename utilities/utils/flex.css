@@ -1,4 +1,4 @@
-:is(.flex, .flex-col) {
+:is(.flex, .flex-col, .inline-flex) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -9,7 +9,7 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-:is(.flex, .flex-col) > * {
+:is(.flex, .flex-col, .inline-flex) > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   --_flexI: var(--flex);
   flex: var(--_flexI);
@@ -17,6 +17,10 @@
 
 .flex-col {
   --flex-dir: column;
+}
+
+.inline-flex {
+  display: inline flex;
 }
 
 @media (width >= 480px) {

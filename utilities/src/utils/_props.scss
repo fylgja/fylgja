@@ -1,6 +1,9 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:map";
+@use "sass:list";
+
 $breakpoints: (
 	"sm": 480px,
 	"md": 768px,
@@ -9,7 +12,20 @@ $breakpoints: (
 	"xxl": 1920px,
 ) !default;
 
-/// @param {"min"|"max"|string} $range [min] - direction of the media query or custom syntax
+@function map-get-next($map, $key) {
+	$keys: map.keys($map);
+	$next-key: list.index($keys, $key) + 1;
+	$next-has-key: $next-key <= list.length($keys);
+
+	@if $next-has-key {
+		$next-key-value: list.nth($keys, $next-key);
+		@return map.get($map, $next-key-value);
+	} @else {
+		@return "";
+	}
+}
+
+/// @param {"min"|"max"|"minmax"} $range [min] - direction of the media query
 /// @param {Map} $map [$breakpoints] - map to loop trough
 /// @param {Bool} $var-syntax [false] - opt in to use @custom-media syntax
 /// @content any value inside will be wrapped in the mq, for classes use it with `for-mq using ($name)`
@@ -17,22 +33,35 @@ $breakpoints: (
 @mixin for-mq($range: "min", $map: $breakpoints, $var-syntax: false) {
 	@if $var-syntax {
 		@each $name, $mq in $map {
-			$syntax: if($range == "min", "--#{$name}", "--#{$name}-max");
+			$syntax: if($range == "max", "--#{$name}-max", "--#{$name}");
 
 			@media ($syntax) {
 				@content ($name);
 			}
 		}
 	} @else {
-		$syntax: if(
-			$range == "min",
-			"width >=",
-			if($range == "max", "width <", $range)
-		);
-
 		@each $name, $mq in $map {
-			@media ($syntax $mq) {
-				@content ($name);
+			@if $range == "minmax" {
+				$next-mq: map-get-next($map, $name);
+				$syntax: if(
+					$next-mq != "",
+					"#{$mq} <= width <= #{$next-mq}",
+					"width >= #{$mq}"
+				);
+
+				@media ($syntax) {
+					@content ($name);
+				}
+			} @else {
+				$syntax: if(
+					$range == "max",
+					"width < #{$mq}",
+					"width >= #{$mq}"
+				);
+
+				@media ($syntax) {
+					@content ($name);
+				}
 			}
 		}
 	}

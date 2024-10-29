@@ -72,16 +72,6 @@
   font-style: italic;
 }
 
-.hidden {
-  --_show: initial;
-  display: var(--_show, none);
-}
-
-.not-hidden {
-  --_show: /* */ ;
-  display: var(--_show, none);
-}
-
 .line-clamp {
   --line-count: 3;
   display: -webkit-box;
@@ -135,6 +125,10 @@
 .rounded {
   --rounded: 0.25rem;
   border-radius: var(--rounded);
+}
+
+.rounded-none {
+  border-radius: 0;
 }
 
 .rounded-inherit {
@@ -280,7 +274,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-col) {
+:is(.flex, .flex-col, .inline-flex) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -291,7 +285,7 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-:is(.flex, .flex-col) > * {
+:is(.flex, .flex-col, .inline-flex) > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   --_flexI: var(--flex);
   flex: var(--_flexI);
@@ -301,6 +295,10 @@
   --flex-dir: column;
 }
 
+.inline-flex {
+  display: inline flex;
+}
+
 .stack {
   display: grid;
 }
@@ -308,6 +306,18 @@
 .stack > ::before,
 .stack > ::after {
   grid-area: 1/1;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline block;
 }
 
 .align {
