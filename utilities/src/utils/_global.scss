@@ -11,7 +11,6 @@ $use-custom-mq: false !default;
 @use "flip";
 @use "flow";
 @use "gradient";
-@use "helpers";
 @use "line-clamp";
 @use "list";
 @use "overlay";
@@ -19,6 +18,7 @@ $use-custom-mq: false !default;
 @use "rounded";
 @use "scroll";
 @use "scrollbar";
+@use "size";
 @use "snap";
 @use "spacing" with (
 	$use-mq: false
@@ -26,6 +26,7 @@ $use-custom-mq: false !default;
 @use "stretched-link";
 @use "transition";
 @use "truncate";
+@use "typography";
 @use "visibility";
 
 // Layout

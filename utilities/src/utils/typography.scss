@@ -1,14 +1,22 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.w-full {
-	inline-size: 100%;
+.text-start {
+	text-align: start;
 }
 
 .text-center {
 	text-align: center;
 }
 
+.text-end {
+	text-align: end;
+}
+
 .italic {
+	font-style: italic;
+}
+
+.not-italic {
 	font-style: italic;
 }

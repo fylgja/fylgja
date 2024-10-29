@@ -60,18 +60,6 @@
   color: transparent;
 }
 
-.w-full {
-  inline-size: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.italic {
-  font-style: italic;
-}
-
 .line-clamp {
   --line-count: 3;
   display: -webkit-box;
@@ -168,6 +156,10 @@
   height: 0.4rem;
 }
 
+.w-full {
+  inline-size: 100%;
+}
+
 .snap {
   --snap-dir: x mandatory;
   --snap-stop: normal;
@@ -226,6 +218,26 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.not-italic {
+  font-style: italic;
 }
 
 .visible,
