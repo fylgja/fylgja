@@ -135,9 +135,10 @@ $h-line: 1.1 !default;
 }
 
 :where(pre, :not(pre) > code) {
-	border: 0.1rem solid #0000001a;
-	background: #ffffff1a;
-	border-radius: 0.3em;
+	border-radius: var(--code-radius, 0.3em);
+	border: 0.1rem solid var(--code-stroke, #0001);
+	background: var(--code-bg, #fff1);
+	color: var(--code-color);
 }
 
 :where(:not(pre) > code) {

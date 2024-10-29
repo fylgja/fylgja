@@ -232,9 +232,10 @@ summary,
 }
 
 :where(pre, :not(pre) > code) {
-  border: 0.1rem solid rgba(0, 0, 0, 0.1019607843);
-  background: rgba(255, 255, 255, 0.1019607843);
-  border-radius: 0.3em;
+  border-radius: var(--code-radius, 0.3em);
+  border: 0.1rem solid var(--code-stroke, rgba(0, 0, 0, 0.0666666667));
+  background: var(--code-bg, rgba(255, 255, 255, 0.0666666667));
+  color: var(--code-color);
 }
 
 :where(:not(pre) > code) {
