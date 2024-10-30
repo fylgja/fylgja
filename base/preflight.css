@@ -130,30 +130,26 @@ summary,
 }
 
 :where(h1, h2, h3, h4, h5, h6, legend) {
-  font-size: var(--h-size, 1.1rem);
+  font-size: var(--h-size, 1.125rem);
   font-weight: var(--h-weight, 700);
   line-height: var(--h-line, 1.1);
   text-wrap: balance;
 }
 
 :where(h1) {
-  --h-size: 3.5rem;
+  --h-size: 3rem;
 }
 
 :where(h2) {
-  --h-size: 2.5rem;
+  --h-size: 2.25rem;
 }
 
 :where(h3) {
-  --h-size: 2rem;
+  --h-size: 1.75rem;
 }
 
 :where(h4) {
   --h-size: 1.5rem;
-}
-
-:where(h5) {
-  --h-size: 1.25rem;
 }
 
 :where(p, li, dd) {
@@ -165,9 +161,22 @@ summary,
   font-weight: 500;
 }
 
-:where(blockquote) {
+:where(blockquote, pre) {
+  padding-block: 0.25em;
   padding-inline-start: 1.5em;
+}
+
+:where(mark, :not(pre) > code) {
+  padding: 0.0625em 0.25em;
+}
+
+:where(blockquote) {
   border-inline-start: 4px solid;
+}
+
+:where(pre) {
+  white-space: pre;
+  overflow: auto;
 }
 
 :where(input, button, textarea, select, address),
@@ -233,19 +242,9 @@ summary,
 
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
-  border: 0.1rem solid var(--code-stroke, rgba(0, 0, 0, 0.0666666667));
-  background: var(--code-bg, rgba(255, 255, 255, 0.0666666667));
+  border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.0666666667));
+  background: var(--code-bg, color-mix(in srgb, currentcolor 18%, transparent));
   color: var(--code-color);
-}
-
-:where(:not(pre) > code) {
-  padding: 0.125rem 0.25em;
-}
-
-:where(pre) {
-  padding: 0.875em 1em;
-  white-space: pre;
-  overflow: auto;
 }
 
 :where(table) {
