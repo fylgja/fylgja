@@ -4,12 +4,11 @@
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
 
-$h1-size: 3.5rem !default;
-$h2-size: 2.5rem !default;
-$h3-size: 2rem !default;
+$h1-size: 3rem !default;
+$h2-size: 2.25rem !default;
+$h3-size: 1.75rem !default;
 $h4-size: 1.5rem !default;
-$h5-size: 1.25rem !default;
-$h-size: 1.1rem !default;
+$h-size: 1.125rem !default;
 $h-weight: 700 !default;
 $h-line: 1.1 !default;
 
@@ -47,10 +46,6 @@ $h-line: 1.1 !default;
 	--h-size: #{$h4-size};
 }
 
-:where(h5) {
-	--h-size: #{$h5-size};
-}
-
 // Prevent orphans in supported browsers
 :where(p, li, dd) {
 	text-wrap: pretty;
@@ -62,9 +57,22 @@ $h-line: 1.1 !default;
 	font-weight: 500;
 }
 
-:where(blockquote) {
+:where(blockquote, pre) {
+	padding-block: 0.25em;
 	padding-inline-start: 1.5em;
+}
+
+:where(mark, :not(pre) > code) {
+	padding: 0.0625em 0.25em;
+}
+
+:where(blockquote) {
 	border-inline-start: 4px solid;
+}
+
+:where(pre) {
+	white-space: pre;
+	overflow: auto;
 }
 
 :where(input, button, textarea, select, address),
@@ -136,17 +144,10 @@ $h-line: 1.1 !default;
 
 :where(pre, :not(pre) > code) {
 	border-radius: var(--code-radius, 0.3em);
-	border: 0.1rem solid var(--code-stroke, #0001);
-	background: var(--code-bg, #fff1);
+	border: 1px solid var(--code-stroke, #0001);
+	background: var(
+		--code-bg,
+		color-mix(in srgb, currentcolor 18%, transparent)
+	);
 	color: var(--code-color);
-}
-
-:where(:not(pre) > code) {
-	padding: 0.125rem 0.25em;
-}
-
-:where(pre) {
-	padding: 0.875em 1em;
-	white-space: pre;
-	overflow: auto;
 }
