@@ -57,20 +57,18 @@ $h-line: 1.1 !default;
 	font-weight: 500;
 }
 
-:where(blockquote, pre) {
-	padding-block: 0.25em;
-	padding-inline-start: 1.5em;
-}
-
 :where(mark, :not(pre) > code) {
 	padding: 0.0625em 0.25em;
 }
 
 :where(blockquote) {
 	border-inline-start: 4px solid;
+	padding-inline-start: 1.5em;
+	padding-block: 0.25em;
 }
 
 :where(pre) {
+	padding: 0.5em 1em;
 	white-space: pre;
 	overflow: auto;
 }
