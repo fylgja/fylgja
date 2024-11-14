@@ -1,3 +1,15 @@
+.border {
+  --border: 1px;
+  --border-y: var(--border);
+  --border-x: var(--border);
+  border-block: var(--border-y);
+  border-inline: var(--border-x);
+}
+
+.border-none {
+  border: 0;
+}
+
 .clip {
   overflow: clip;
 }
@@ -115,8 +127,13 @@
 }
 
 .rounded {
-  --rounded: 0.25rem;
-  border-radius: var(--rounded);
+  --rounded: 0.5rem;
+  --rounded-y: var(--rounded);
+  --rounded-x: var(--rounded);
+  border-start-start-radius: var(--rounded-y);
+  border-end-start-radius: var(--rounded-y);
+  border-end-end-radius: var(--rounded-x);
+  border-start-end-radius: var(--rounded-x);
 }
 
 .rounded-none {
@@ -333,7 +350,7 @@
 }
 
 .inline-block {
-  display: inline block;
+  display: inline-block;
 }
 
 .align {
@@ -400,7 +417,7 @@
     display: block;
   }
   .sm\:inline-block {
-    display: inline block;
+    display: inline-block;
   }
   .align:where([style*="--sm_align:"]) {
     --_alignC: var(--sm_align);
@@ -453,7 +470,7 @@
     display: block;
   }
   .md\:inline-block {
-    display: inline block;
+    display: inline-block;
   }
   .align:where([style*="--md_align:"]) {
     --_alignC: var(--md_align);
@@ -506,7 +523,7 @@
     display: block;
   }
   .lg\:inline-block {
-    display: inline block;
+    display: inline-block;
   }
   .align:where([style*="--lg_align:"]) {
     --_alignC: var(--lg_align);
@@ -559,7 +576,7 @@
     display: block;
   }
   .xl\:inline-block {
-    display: inline block;
+    display: inline-block;
   }
   .align:where([style*="--xl_align:"]) {
     --_alignC: var(--xl_align);
@@ -612,7 +629,7 @@
     display: block;
   }
   .xxl\:inline-block {
-    display: inline block;
+    display: inline-block;
   }
   .align:where([style*="--xxl_align:"]) {
     --_alignC: var(--xxl_align);
