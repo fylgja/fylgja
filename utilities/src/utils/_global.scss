@@ -5,6 +5,7 @@ $use-mq: true !default;
 $use-custom-mq: false !default;
 
 @use "props" as *;
+@use "border";
 @use "clip";
 @use "content-lazy";
 @use "divide";
