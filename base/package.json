@@ -41,13 +41,11 @@
     ".": "./index.css",
     "./preflight": "./preflight.css",
     "./btn": "./btn.css",
-    "./btn-class": "./btn-class.css",
+    "./btn-class-less": "./btn-class-less.css",
+    "./btn-class-only": "./btn-class-only.css",
     "./form": "./form.css",
     "./dialog": "./dialog.css",
-    "./theme": "./theme/index.css",
-    "./theme.red": "./theme/red.css",
-    "./theme.blue": "./theme/blue.css",
-    "./theme.green": "./theme/green.css",
+    "./theme": "./theme.css",
     "./*": "./*"
   }
 }
