@@ -1,8 +1,9 @@
 :where(.join) {
   position: relative;
-  display: flex;
+  display: inline-flex;
   max-width: max-content;
   border-radius: var(--rounded, 0.5em);
+  vertical-align: middle;
 }
 :where(.join) :focus-visible {
   translate: 0 0;
