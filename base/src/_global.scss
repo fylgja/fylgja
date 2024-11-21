@@ -154,6 +154,6 @@ $anchor-offset: 6ex !default;
 }
 
 // Make sure this set for all use cases and browsers
-[hidden] {
+[hidden]:where(:not([hidden="until-found"])) {
 	display: none;
 }
