@@ -116,7 +116,7 @@ summary,
   aspect-ratio: var(--aspect-ratio, 16/9);
 }
 
-[hidden] {
+[hidden]:where(:not([hidden=until-found])) {
   display: none;
 }
 
