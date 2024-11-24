@@ -149,3 +149,7 @@ $h-line: 1.1 !default;
 	);
 	color: var(--code-color);
 }
+
+:where(abbr[title]) {
+	cursor: help;
+}
