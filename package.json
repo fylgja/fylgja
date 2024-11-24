@@ -23,7 +23,10 @@
   ],
   "scripts": {
     "test": "npx stylelint base/**/*.scss",
-    "build": "echo 'action here'"
+    "build:scss": "npx sass --no-source-map fylgja.scss fylgja.css",
+    "build:min": "npx lightningcss --minify --bundle fylgja.css -o fylgja.min.css",
+    "build": "npm run build:scss",
+    "postbuild": "npm run build:min"
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^7.0.0",
