@@ -6,9 +6,6 @@
   "author": "Fylgja",
   "license": "MIT",
   "type": "module",
-  "unpkg": "index.min.css",
-  "style": "index.css",
-  "sass": "src/index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -17,26 +14,131 @@
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
-    "css-tokens",
-    "css-props",
-    "scss-tokens",
-    "scss-props",
+    "css",
+    "scss",
+    "utilities",
+    "variables",
+    "custom properties",
     "design-tokens",
-    "figma-tokens"
+    "figma-tokens",
+    "style-dictionary"
   ],
   "scripts": {
-    "start": "",
+    "start": "npm run build",
+    "gen:types": "npx tsc -p tsconfig.json",
     "build:tokens": "node scripts/build.js",
-    "build:main": "npx lightningcss --bundle --custom-media css/_index.css -o index.css",
-    "build:main:min": "npx lightningcss --minify --bundle --custom-media css/_index.css -o index.min.css",
-    "build:darkmode": "npx lightningcss --bundle css/_theme.css -o theme.css",
-    "prebuild": "npm run build:tokens",
-    "build": "npm run build:main && npm run build:main:min && npm run build:darkmode"
+    "build:main": "npx lightningcss --minify --bundle --custom-media css/index.css -o css/index.min.css",
+    "build": "npm run build:tokens",
+    "postbuild": "npm run build:main && npm run gen:types"
   },
-  "devDependencies": {
-    "@fylgja/props-builder": "^1.1.0"
-  },
-  "dependencies": {
-    "@fylgja/colors": "^2.0.0-beta.6"
+  "main": "index.cjs",
+  "style": "css/index.min.css",
+  "unpkg": "css/index.min.css",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs",
+      "style": "./index.min.css",
+      "default": "./index.cjs"
+    },
+    "./jit": {
+      "types": "./jit.d.ts",
+      "import": "./jit.js",
+      "require": "./jit.cjs",
+      "default": "./jit.cjs"
+    },
+    "./aspect-ratio": {
+      "types": "./js/aspect-ratio.d.ts",
+      "import": "./js/aspect-ratio.js",
+      "require": "./js/aspect-ratio.cjs",
+      "style": "./css/aspect-ratio.css",
+      "sass": "./scss/aspect-ratio.css",
+      "default": "./js/aspect-ratio.cjs"
+    },
+    "./aspect-ratio.host": "./css/aspect-ratio.host.css",
+    "./border-radios": {
+      "types": "./js/border-radios.d.ts",
+      "import": "./js/border-radios.js",
+      "require": "./js/border-radios.cjs",
+      "style": "./css/border-radios.css",
+      "sass": "./scss/border-radios.css",
+      "default": "./js/border-radios.cjs"
+    },
+    "./border-radios.host": "./css/border-radios.host.css",
+    "./border-sizes": {
+      "types": "./js/border-sizes.d.ts",
+      "import": "./js/border-sizes.js",
+      "require": "./js/border-sizes.cjs",
+      "style": "./css/border-sizes.css",
+      "sass": "./scss/border-sizes.css",
+      "default": "./js/border-sizes.cjs"
+    },
+    "./border-sizes.host": "./css/border-sizes.host.css",
+    "./colors": {
+      "types": "./js/colors.d.ts",
+      "import": "./js/colors.js",
+      "require": "./js/colors.cjs",
+      "style": "./css/colors.css",
+      "sass": "./scss/colors.css",
+      "default": "./js/colors.cjs"
+    },
+    "./easing": {
+      "types": "./js/easing.d.ts",
+      "import": "./js/easing.js",
+      "require": "./js/easing.cjs",
+      "style": "./css/easing.css",
+      "sass": "./scss/easing.css",
+      "default": "./js/easing.cjs"
+    },
+    "./easing.host": "./css/easing.host.css",
+    "./fonts": {
+      "types": "./js/fonts.d.ts",
+      "import": "./js/fonts.js",
+      "require": "./js/fonts.cjs",
+      "style": "./css/fonts.css",
+      "sass": "./scss/fonts.css",
+      "default": "./js/fonts.cjs"
+    },
+    "./fonts.host": "./css/fonts.host.css",
+    "./hues": {
+      "types": "./js/hues.d.ts",
+      "import": "./js/hues.js",
+      "require": "./js/hues.cjs",
+      "style": "./css/hues.css",
+      "sass": "./scss/hues.css",
+      "default": "./js/hues.cjs"
+    },
+    "./hues.host": "./css/hues.host.css",
+    "./shadows": {
+      "types": "./js/shadows.d.ts",
+      "import": "./js/shadows.js",
+      "require": "./js/shadows.cjs",
+      "style": "./css/shadows.css",
+      "sass": "./scss/shadows.css",
+      "default": "./js/shadows.cjs"
+    },
+    "./shadows.host": "./css/shadows.host.css",
+    "./sizes": {
+      "types": "./js/sizes.d.ts",
+      "import": "./js/sizes.js",
+      "require": "./js/sizes.cjs",
+      "style": "./css/sizes.css",
+      "sass": "./scss/sizes.css",
+      "default": "./js/sizes.cjs"
+    },
+    "./sizes.host": "./css/sizes.host.css",
+    "./z-layer": {
+      "types": "./js/z-layer.d.ts",
+      "import": "./js/z-layer.js",
+      "require": "./js/z-layer.cjs",
+      "style": "./css/z-layer.css",
+      "sass": "./scss/z-layer.css",
+      "default": "./js/z-layer.cjs"
+    },
+    "./z-layer.host": "./css/z-layer.host.css",
+    "./*": "./*"
   }
 }

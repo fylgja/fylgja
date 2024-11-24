@@ -82,27 +82,27 @@
     },
     "conditional": {
       "1": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-1))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.1.value})",
         "type": "borderRadius"
       },
       "2": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-2))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.2.value})",
         "type": "borderRadius"
       },
       "3": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-3))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.3.value})",
         "type": "borderRadius"
       },
       "4": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-4))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.4.value})",
         "type": "borderRadius"
       },
       "5": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-5))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.5.value})",
         "type": "borderRadius"
       },
       "6": {
-        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-6))",
+        "value": "clamp(0px, calc(100cqi - 100%) * 1e5, {radius.6.value})",
         "type": "borderRadius"
       }
     }
@@ -485,51 +485,27 @@
   },
   "shadow": {
     "1": {
-      "value": [
-        "0 2px 1px -1px var(--shadow-color-umbra)",
-        "0 1px 1px var(--shadow-color-penumbra)",
-        "0 1px 3px var(--shadow-color-ambient)"
-      ],
+      "value": "0 2px 1px -1px {shadow.color.umbra.value},0 1px 1px {shadow.color.penumbra.value},0 1px 3px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "2": {
-      "value": [
-        "0 3px 1px -2px var(--shadow-color-umbra)",
-        "0 2px 2px var(--shadow-color-penumbra)",
-        "0 1px 5px var(--shadow-color-ambient)"
-      ],
+      "value": "0 3px 1px -2px {shadow.color.umbra.value},0 2px 2px {shadow.color.penumbra.value},0 1px 5px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "3": {
-      "value": [
-        "0 2px 4px -1px var(--shadow-color-umbra)",
-        "0 4px 5px var(--shadow-color-penumbra)",
-        "0 1px 10px var(--shadow-color-ambient)"
-      ],
+      "value": "0 2px 4px -1px {shadow.color.umbra.value},0 4px 5px {shadow.color.penumbra.value},0 1px 10px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "4": {
-      "value": [
-        "0 3px 5px -1px var(--shadow-color-umbra)",
-        "0 6px 10px var(--shadow-color-penumbra)",
-        "0 1px 18px var(--shadow-color-ambient)"
-      ],
+      "value": "0 3px 5px -1px {shadow.color.umbra.value},0 6px 10px {shadow.color.penumbra.value},0 1px 18px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "5": {
-      "value": [
-        "0 5px 5px -3px var(--shadow-color-umbra)",
-        "0 8px 10px 1px var(--shadow-color-penumbra)",
-        "0 3px 14px 2px var(--shadow-color-ambient)"
-      ],
+      "value": "0 5px 5px -3px {shadow.color.umbra.value},0 8px 10px 1px {shadow.color.penumbra.value},0 3px 14px 2px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "6": {
-      "value": [
-        "0 7px 8px -4px var(--shadow-color-umbra)",
-        "0 12px 17px 2px var(--shadow-color-penumbra)",
-        "0 5px 22px 4px var(--shadow-color-ambient)"
-      ],
+      "value": "0 7px 8px -4px {shadow.color.umbra.value},0 12px 17px 2px {shadow.color.penumbra.value},0 5px 22px 4px {shadow.color.ambient.value}",
       "type": "boxShadow"
     },
     "strength": {
@@ -542,15 +518,15 @@
         "type": "boxShadow"
       },
       "umbra": {
-        "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 18%), transparent)",
+        "value": "color-mix(in srgb, {shadow.color.value} calc({shadow.strength.value} + 18%), transparent)",
         "type": "boxShadow"
       },
       "penumbra": {
-        "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 12%), transparent)",
+        "value": "color-mix(in srgb, {shadow.color.value} calc({shadow.strength.value} + 12%), transparent)",
         "type": "boxShadow"
       },
       "ambient": {
-        "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 10%), transparent)",
+        "value": "color-mix(in srgb, {shadow.color.value} calc({shadow.strength.value} + 10%), transparent)",
         "type": "boxShadow"
       }
     }

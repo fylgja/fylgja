@@ -40,7 +40,7 @@ export default {
 	sizeContent: {
 		1: "25ch",
 		2: "45ch",
-		3: "65ch",
+		3: "64ch",
 	},
 	sizeHeading: {
 		1: "22ch",

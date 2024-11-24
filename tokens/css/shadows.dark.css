@@ -1,6 +1,10 @@
+:where(:root) {
+}
+
 @media (prefers-color-scheme: dark) {
-    :where(:root) {
-        --shadow-color: hsl(220 40% 2%);
-        --shadow-strength: 25%;
-    }
+	:where(:root) {
+    --shadow-color: hsl(220 40% 2%);
+    --shadow-strength: 25%;
+
+	}
 }
