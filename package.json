@@ -28,7 +28,8 @@
   "devDependencies": {
     "@fylgja/stylelint-config": "^7.0.0",
     "lightningcss-cli": "^1.26.0",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "typescript": "^5.7.2"
   },
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
