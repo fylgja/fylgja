@@ -245,6 +245,10 @@ summary,
   color: var(--code-color);
 }
 
+:where(abbr[title]) {
+  cursor: help;
+}
+
 :where(table) {
   border-spacing: 0;
   border-color: var(--table-stroke, #777);

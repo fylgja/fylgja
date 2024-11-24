@@ -34,18 +34,6 @@
   "bin": {
     "theme": "./bin/add-theme.js"
   },
-  "main": "index.css",
   "style": "index.css",
-  "unpkg": "index.min.css",
-  "exports": {
-    ".": "./index.css",
-    "./preflight": "./preflight.css",
-    "./btn": "./btn.css",
-    "./btn-class-less": "./btn-class-less.css",
-    "./btn-class-only": "./btn-class-only.css",
-    "./form": "./form.css",
-    "./dialog": "./dialog.css",
-    "./theme": "./theme.css",
-    "./*": "./*"
-  }
+  "unpkg": "index.min.css"
 }
