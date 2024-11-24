@@ -53,39 +53,19 @@ export function isFileType(filename) {
  * @param {string} separator - separator to use for the combined keys
  * @returns Object - flattened object
  */
-export const flattenObj = (obj, separator = "-", parentKey = "") => {
+export const flattenObj = (obj, separator = "-") => {
 	let result = {};
 
-	// Separate non-numeric and numeric keys
-	const nonNumericKeys = [];
-	const numericKeys = [];
-
-	for (const key in obj) {
-		if (Object.hasOwnProperty.call(obj, key)) {
-			if (/^\d+$/.test(key)) {
-				numericKeys.push(key);
-			} else {
-				nonNumericKeys.push(key);
+	for (const i in obj) {
+		if (typeof obj[i] === "object" && !Array.isArray(obj[i])) {
+			const temp = flattenObj(obj[i]);
+			for (const j in temp) {
+				result[i + separator + j] = temp[j];
 			}
+		} else {
+			result[i] = obj[i];
 		}
 	}
-
-	// First process non-numeric keys
-	[...nonNumericKeys, ...numericKeys].forEach((key) => {
-		const newKey = parentKey ? `${parentKey}${separator}${key}` : key;
-
-		if (
-			typeof obj[key] === "object" &&
-			obj[key] !== null &&
-			!Array.isArray(obj[key])
-		) {
-			// Recursive flatten for nested objects
-			Object.assign(result, flattenObj(obj[key], separator, newKey));
-		} else {
-			// Assign flat value
-			result[newKey] = obj[key];
-		}
-	});
 
 	return result;
 };
