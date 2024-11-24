@@ -1,15 +1,36 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.divide-x,
-.divide-y {
+.divide-y > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
 	--divide: 1px;
-}
-
-.divide-y > :not(template, [hidden]) + * {
 	border-block-start-width: var(--divide);
 }
 
-.divide-x > :not(template, [hidden]) + * {
+.divide-x > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
+	--divide: 1px;
 	border-inline-start-width: var(--divide);
+}
+
+.divide-gap-y > :not(template, [hidden]:where(:not([hidden="until-found"]))) {
+	--gap: 0.5em;
+
+	&:not(:first-of-type) {
+		padding-block-start: var(--gap);
+	}
+
+	&:not(:last-of-type) {
+		padding-block-end: var(--gap);
+	}
+}
+
+.divide-gap-x > :not(template, [hidden]:where(:not([hidden="until-found"]))) {
+	--gap: 0.5em;
+
+	&:not(:first-of-type) {
+		padding-inline-start: var(--gap);
+	}
+
+	&:not(:last-of-type) {
+		padding-inline-end: var(--gap);
+	}
 }
