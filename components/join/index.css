@@ -1,0 +1,50 @@
+:where(.join) {
+  position: relative;
+  display: inline-flex;
+  max-width: max-content;
+  border-radius: var(--rounded, 0.5em);
+  vertical-align: middle;
+}
+:where(.join) :focus-visible {
+  translate: 0 0;
+}
+:where(.join) > * {
+  margin: 0;
+  border-radius: 0;
+}
+:where(.join) > :first-child {
+  border-start-start-radius: inherit;
+  border-end-start-radius: inherit;
+}
+:where(.join) > :last-child {
+  border-start-end-radius: inherit;
+  border-end-end-radius: inherit;
+}
+
+:where(.join.-custom-input, .join.-step) {
+  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
+}
+:where(.join.-custom-input, .join.-step) label {
+  position: relative;
+}
+:where(.join.-custom-input, .join.-step) label :where([type=checkbox], [type=radio]) {
+  position: absolute;
+  opacity: 0;
+  block-size: auto;
+  inline-size: auto;
+}
+:where(.join.-custom-input, .join.-step):has(:focus-visible) {
+  outline: 2px solid var(--brand, currentcolor);
+  outline-offset: 2px;
+}
+
+:where(.join.-step) {
+  color: var(--brand);
+}
+:where(.join.-step) label {
+  --_checked: 1;
+  opacity: var(--_checked);
+}
+:where(.join.-step) label:has(:checked) ~ label {
+  --_checked: 0.6;
+}

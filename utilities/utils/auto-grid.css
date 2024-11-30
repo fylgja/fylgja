@@ -1,0 +1,6 @@
+.auto-grid {
+  --max-cols: 4;
+  --max-cols-size: 14rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100% / var(--max-cols), var(--max-cols-size), 100%), 1fr));
+}

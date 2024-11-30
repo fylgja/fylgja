@@ -1,0 +1,65 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$gap: 0.5em !default;
+$padding-block: 0.375rem !default;
+$padding-inline: 0.8rem !default;
+$border-width: 2px !default;
+$radius: 0.5rem !default;
+$font-weight: 500 !default;
+
+$bg: transparent !default;
+$color: currentcolor !default;
+
+$hover-bg: color-mix(in srgb, currentcolor, transparent 86%) !default;
+$hover-color: currentcolor !default;
+
+$active-bg: color-mix(in srgb, currentcolor, transparent 78%) !default;
+$active-color: currentcolor !default;
+
+$disabled-bg: color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)) !default;
+$disabled-color: color-mix(
+	in srgb,
+	var(--root-fg) 40%,
+	var(--root-bg)
+) !default;
+
+@mixin base {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--btn-gap, #{$gap});
+	padding-block: var(--btn-py, #{$padding-block});
+	padding-inline: var(--btn-px, #{$padding-inline});
+	border-radius: var(--btn-radius, #{$radius});
+	border-width: var(--btn-border-width, #{$border-width});
+	border-color: var(--btn-stroke);
+	background: var(--btn-bg, #{$bg});
+	color: var(--btn-color, #{$color});
+	font-weight: var(--btn-font-weight, #{$font-weight});
+	text-decoration: none;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s,
+		box-shadow 0.2s, var(--outline-transition);
+	user-select: none;
+	cursor: pointer;
+}
+
+@mixin disabled {
+	box-shadow: none;
+	border-color: var(--btn-disabled-stroke);
+	background-color: var(--btn-disabled-bg, #{$disabled-bg});
+	color: var(--btn-disabled-color, #{$disabled-color});
+	cursor: not-allowed;
+}
+
+@mixin hover {
+	border-color: var(--btn-hover-stroke, var(--btn-stroke));
+	background-color: var(--btn-hover-bg, var(--btn-bg, #{$hover-bg}));
+	color: var(--btn-hover-color, var(--btn-color, #{$hover-color}));
+}
+
+@mixin active {
+	border-color: var(--btn-active-stroke, var(--btn-stroke));
+	background-color: var(--btn-active-bg, var(--btn-bg, #{$active-bg}));
+	color: var(--btn-active-color, var(--btn-color, #{$active-color}));
+}

@@ -1,0 +1,41 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@media print {
+	:root {
+		--root-bg: white;
+		--root-fg: black;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6) {
+		page-break-after: avoid;
+	}
+
+	:is(h2, h3, h4, h5, h6, p) {
+		orphans: 3;
+		widows: 3;
+	}
+
+	:is(tr, img, svg, pre, blockquote) {
+		page-break-inside: avoid;
+	}
+
+	:is(abbr[title])::after {
+		content: " (" attr(title) ")";
+	}
+
+	:is(a[href]:not([href^="#"], [href^="javascript:"]))::after {
+		content: " (" attr(href) ")";
+	}
+
+	// Repeat the table header per page
+	:is(thead) {
+		display: table-header-group;
+	}
+
+	// Keep bg colors for interactive elements
+	:is(input, select, textarea, button, .btn) {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

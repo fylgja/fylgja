@@ -1,0 +1,25 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props" as *;
+
+$use-mq: true !default;
+$gap: 1em !default;
+
+.gap {
+	--gap: #{$gap};
+	--_gap: var(--gap);
+	gap: var(--_gap);
+}
+
+@mixin mq-utils($name) {
+	.gap:where([style*="--#{$name}_gap:"]) {
+		--_gap: var(--#{$name}_gap);
+	}
+}
+
+@if $use-mq {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}

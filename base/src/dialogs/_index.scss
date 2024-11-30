@@ -1,0 +1,63 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$motion-safe: "prefers-reduced-motion: no-preference";
+
+$radius: 1rem !default;
+$padding: 1.5rem !default;
+$shadow: 0 3px 5px hsl(0 0% 0% / 18%) !default;
+
+$close-speed: 300ms !default;
+$open-speed: 400ms !default;
+
+$backdrop: hsl(0 0% 0% / 30%) !default;
+
+// 1: Prevents weird overflow, if moving offscreen on Android with a `@starting-style`
+:where(dialog) {
+	--backdrop: #{$backdrop};
+	--ty: var(--dialog-translate-y, 2rem);
+	--tx: var(--dialog-translate-x, 0);
+	--speed: var(--dialog-close-speed, #{$close-speed});
+	--screen-y: 2rem;
+	--screen-x: 2rem;
+	--my: auto;
+	--mx: auto;
+	position: fixed; // 1
+	max-block-size: calc(100% - var(--screen-y));
+	max-inline-size: calc(100% - var(--screen-x));
+	background-color: var(--dialog-bg, var(--surface-color));
+	color: var(--dialog-color, var(--root-fg));
+	border-radius: $radius;
+	margin-block: var(--my);
+	margin-inline: var(--mx);
+	padding: $padding;
+	box-shadow: var(--dialog-shadow, #{$shadow});
+	translate: var(--tx) var(--ty);
+	opacity: 0;
+
+	@media ($motion-safe) {
+		transition-property: translate, opacity, display, overlay;
+		transition-duration: var(--speed);
+		transition-behavior: allow-discrete;
+	}
+}
+
+:where(dialog)::backdrop {
+	background-color: var(--backdrop);
+}
+
+:where(dialog:is([open], :popover-open)) {
+	--speed: var(--dialog-open-speed, #{$open-speed});
+	opacity: 1;
+	translate: 0 0;
+
+	@starting-style {
+		opacity: 0;
+		translate: var(--tx) var(--ty);
+	}
+}
+
+// Add page scroll-lock by default to dialog element modals
+:where(:root:has(dialog:is([open]:modal, .noscroll))) {
+	overflow: hidden;
+}

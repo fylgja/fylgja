@@ -1,0 +1,14 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.border {
+	--border: 1px;
+	--border-y: var(--border);
+	--border-x: var(--border);
+	border-block: var(--border-y);
+	border-inline: var(--border-x);
+}
+
+.border-none {
+	border: 0;
+}

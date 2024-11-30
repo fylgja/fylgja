@@ -1,0 +1,30 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+:where(.relative, .sticky, .absolute, .fixed) {
+	--z: 1;
+	--inset: auto;
+	--inset-y: var(--inset);
+	--inset-x: var(--inset);
+	z-index: var(--z);
+	inset-block: var(--inset-y);
+	inset-inline: var(--inset-x);
+}
+
+.relative {
+	--z: auto;
+	position: relative;
+}
+
+.sticky {
+	--inset-y: 0 auto;
+	position: sticky;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}

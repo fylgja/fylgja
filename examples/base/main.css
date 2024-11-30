@@ -1,0 +1,94 @@
+@import url("@fylgja/base");
+@import url("@fylgja/base/theme");
+@import url("@fylgja/form-extend");
+@import url("@fylgja/container");
+@import url("@fylgja/tokens");
+@import url("@fylgja/tokens/theme");
+@import url("@fylgja/utilities");
+
+:root {
+	--anchor-offset: calc(75px + 5ex);
+}
+
+[data-theme^="light"] {
+	--root-bg: hsl(0 0% 100%);
+	--root-fg: hsl(0 0% 8%);
+	--select-icon: var(--select-light-scheme);
+	--shadow-color: gray;
+	--shadow-strength: 1%;
+	color-scheme: light;
+}
+
+[data-theme^="dark"] {
+	--root-bg: color-mix(in oklab, #000 82%, var(--brand));
+	--root-fg: hsl(0 0% 100%);
+	--select-icon: var(--select-dark-scheme);
+	--shadow-color: #030407;
+	--shadow-strength: 25%;
+	color-scheme: dark;
+}
+
+[data-theme$="material"] {
+	--brand: hsl(213, 69%, 48%);
+	--on-brand: hsl(260, 0%, 100%);
+	--btn-stroke: transparent;
+	--btn-bg: color-mix(in srgb, var(--brand), transparent 86%);
+	--btn-hover-bg: color-mix(in srgb, var(--brand), transparent 74%);
+	--btn-active-bg: color-mix(in srgb, var(--brand), transparent 64%);
+	--form-border-width: 0 0 1px;
+	--form-bg: var(--surface-color);
+	--form-radius: 0.25rem 0.25rem 0 0;
+	--control-radius: 0.25rem;
+	--control-size: 1.375em;
+	--switch-size: 2.175em;
+
+	:where(input[type="checkbox"]) {
+		--control-checked-color: var(--root-bg);
+	}
+
+	:where(input[type="radio"]) {
+		--control-checked-bg: var(--root-bg);
+		--control-checked-color: var(--brand);
+	}
+
+	:where([type="reset"]) {
+		--btn-bg: color-mix(in srgb, currentcolor, transparent 86%);
+		--btn-hover-bg: color-mix(in srgb, currentcolor, transparent 74%);
+		--btn-active-bg: color-mix(in srgb, currentcolor, transparent 64%);
+	}
+}
+
+@keyframes add-shadow {
+	to {
+		box-shadow: var(--shadow-2);
+		background-color: color-mix(in srgb, var(--root-bg) 60%, #fff3);
+	}
+}
+
+header {
+	--z: 9;
+	padding-block: 1rem;
+	background-color: var(--root-bg);
+	backdrop-filter: blur(3px);
+	animation: add-shadow linear both;
+	animation-timeline: scroll();
+	animation-range: 0 4rem;
+
+	@media print {
+		display: none;
+	}
+}
+
+footer {
+	margin-block-start: 4rem;
+	padding-block: 1rem;
+	text-align: center;
+	background-color: var(--surface-color);
+}
+
+.menu {
+	--btn-stroke: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+}

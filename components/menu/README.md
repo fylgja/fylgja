@@ -1,23 +1,23 @@
-# Fylgja - Menu
+# Container component
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/menu)](https://www.npmjs.org/package/@fylgja/menu)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/container)](https://www.npmjs.org/package/@fylgja/container)
 ![license](https://img.shields.io/github/license/fylgja/fylgja)
 
-The menu component makes it easy to build common navigation patterns,
-like a navbar or menu in a dropdown.
+The container component is wrapper component,
+to make all child elements fit better in the page.
 
 ## Installation
 
 ```bash
-npm install @fylgja/menu
+npm install @fylgja/container
 ```
 
 Then include the component in to your code via;
 
 ```scss
-@use "@fylgja/menu";
+@use "@fylgja/container";
 // Or via PostCSS import
-@import "@fylgja/menu";
+@import "@fylgja/container";
 ```
 
 ### `@layer` support
@@ -26,11 +26,11 @@ If you need support for `@layer`,
 use the following import;
 
 ```scss
-@use "@fylgja/menu" with ($menu-layer: "components");
+@use "@fylgja/container" with ($container-layer: "components");
 // Or via native CSS import, also supported by PostCSS import
-@import "@fylgja/menu" layer("components");
+@import "@fylgja/container" layer("components");
 ```
 
 ## How to use
 
-For more information see the [menu docs on the Fylgja.dev](https://fylgja.dev/components/menu/).
+For more information see the [container docs on the Fylgja.dev](https://fylgja.dev/components/container/).

@@ -1,0 +1,134 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// The brand styles are styles we feel are cool to include in your base styles, but are too opinionated to actually include.
+// This why we added this an opt in solution, to use or copy.
+// Brand styles are more subject to change, if we feel things don't work or if we found something new to include.
+
+@use "buttons/props" as btn;
+
+$brand: hsl(260 84% 56%) !default;
+$on-brand: hsl(260 0% 100%) !default;
+$error: #e00 !default;
+$custom-root-config: false !default;
+$extra-root-props: () !default;
+
+@view-transition {
+	navigation: auto;
+}
+
+:root {
+	--brand: #{$brand};
+	--on-brand: #{$on-brand};
+	--form-active-color: var(--brand);
+	--form-error-color: #{$error};
+	--control-checked-stroke: var(--brand);
+	--control-checked-bg: var(--brand);
+	--control-checked-color: var(--on-brand);
+	@each $property, $value in $extra-root-props {
+		#{$property}: $value;
+	}
+	color-scheme: light dark;
+	scrollbar-color: var(--scrollthumb-color, var(--brand))
+		var(--scrolltrack-color, transparent);
+	accent-color: var(--brand);
+	caret-color: var(--brand);
+	interpolate-size: allow-keywords;
+
+	@media (prefers-color-scheme: dark) {
+		--root-bg: color-mix(in oklab, #000 82%, var(--brand));
+		--root-fg: hsl(0 0% 98%);
+		--select-icon: var(--select-dark-scheme);
+	}
+}
+
+::marker {
+	color: var(--brand);
+	font-weight: bolder;
+}
+
+::selection {
+	text-shadow: none;
+	background: var(--brand);
+	color: var(--on-brand);
+}
+
+:focus-visible {
+	outline-color: var(--brand);
+}
+
+blockquote,
+hr {
+	border-color: var(--brand);
+}
+
+:where(tbody tr:nth-child(even) :is(th, td)) {
+	background: var(--surface-color);
+}
+
+// Fixed footer
+body {
+	display: flex;
+	flex-direction: column;
+
+	> main {
+		flex-grow: 1;
+	}
+}
+
+// Default container based elements
+:where(body > :is(main, header, footer), article, section, aside) {
+	container-type: inline-size;
+}
+
+// Forms
+::-webkit-calendar-picker-indicator {
+	outline-color: var(--brand);
+}
+
+:where(select option:checked) {
+	background: var(--brand);
+	color: var(--on-brand);
+}
+
+:user-invalid:not(:focus) {
+	--form-stroke: var(--form-error-color);
+	outline: 1px solid var(--form-stroke);
+}
+
+:where(.field) {
+	display: block;
+	margin-block-start: 1em;
+}
+
+// Buttons
+:where(.btn.-primary, [type="submit"], form button:not([type])),
+:where(input[type="file"])::file-selector-button {
+	--btn-stroke: transparent;
+	--btn-bg: var(--brand);
+	--btn-color: var(--on-brand);
+	--btn-hover-bg: color-mix(in oklab, var(--brand) 80%, #000);
+	--btn-active-bg: color-mix(in oklab, var(--brand) 72%, #000);
+}
+
+:where([type="reset"]) {
+	--btn-color: var(--form-error-color, currentcolor);
+}
+
+:where(.btn, button, [type="button"], [type="submit"], [type="reset"]) {
+	&:has(:where(svg:only-child, img:only-child)) {
+		--btn-px: var(--btn-py, #{btn.$padding-block});
+	}
+}
+
+// Dialogs
+:where(dialog).offcanvas {
+	--ty: 0;
+	--tx: 100%;
+	--screen-y: 0;
+	--mx: auto 0;
+	block-size: 100%;
+	inline-size: min(100%, 25rem);
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
+}

@@ -1,0 +1,19 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.scrollbar-none {
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.scrollbar-thin {
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 0.4rem;
+		height: 0.4rem;
+	}
+}

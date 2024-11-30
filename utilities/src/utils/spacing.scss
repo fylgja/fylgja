@@ -1,0 +1,46 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props" as *;
+
+$use-mq: true !default;
+
+:where([style*="--my:"]) {
+	margin-block: var(--my);
+}
+
+:where([style*="--mx:"]) {
+	margin-inline: var(--mx);
+}
+
+:where([style*="--py:"]) {
+	padding-block: var(--py);
+}
+
+:where([style*="--px:"]) {
+	padding-inline: var(--px);
+}
+
+@mixin mq-utils($name) {
+	:where([style*="--#{$name}_my:"]) {
+		margin-block: var(--#{$name}_my);
+	}
+
+	:where([style*="--#{$name}_mx:"]) {
+		margin-inline: var(--#{$name}_mx);
+	}
+
+	:where([style*="--#{$name}_py:"]) {
+		padding-block: var(--#{$name}_py);
+	}
+
+	:where([style*="--#{$name}_px:"]) {
+		padding-inline: var(--#{$name}_px);
+	}
+}
+
+@if $use-mq {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}

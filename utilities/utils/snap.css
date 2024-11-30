@@ -1,0 +1,11 @@
+.snap {
+  --snap-dir: x mandatory;
+  --snap-stop: normal;
+  --snap-align: start;
+  scroll-snap-type: var(--snap-dir);
+  scroll-snap-stop: var(--snap-stop);
+  scroll-behavior: smooth;
+}
+.snap > * {
+  scroll-snap-align: var(--snap-align);
+}

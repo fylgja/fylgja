@@ -1,0 +1,8 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.stretched-link::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}

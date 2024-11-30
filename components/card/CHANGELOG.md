@@ -6,30 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.0] - 2023-09-02
-### Changed
-- Replace positions properties with inset
-
-## [1.2.2] - 2023-02-19
+## [1.1.4] - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
-  CSS can use native, for SCSS use the new variable `$card-layer`,
-  the options from v1.2 are deprecated
+  CSS can use native, for SCSS use the new variable `$container-layer`,
+  the options from v1.1 are deprecated
 
-## [1.2.1] - 2023-02-05
+## [1.1.3] - 2022-11-05
 ### Changed
-- color syntax with new linter rules
+- use Fylgja Theme atLayer for building the `@layer` variant
 
-## [1.2.0] - 2023-01-31
+### Fixed
+- imports for PostCSS import [#121](https://github.com/fylgja/fylgja/issues/121)
+
+## [1.1.0] - 2022-07-24
 ### Added
 - support for `@layer` in components scope
 
-## [1.1.0] - 2022-06-05
-### Added
-- Moved style logic to mixin
-
-### Changed
-- Slimmed down the CSS by using the `:is` selector
+## [1.0.1] - 2022-06-05
+_Nothing besides docs_
 
 ## [1.0.0] - 2021-06-22
 Initial Release 🎉

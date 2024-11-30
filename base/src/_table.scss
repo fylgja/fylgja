@@ -1,0 +1,36 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$py: 0.875em !default;
+$px: 0.625em !default;
+$stroke: #777 !default;
+
+:where(table) {
+	border-spacing: 0;
+	border-color: var(--table-stroke, #{$stroke});
+}
+
+// Make border color inheritance the same between browsers
+:where(thead, tbody, tfoot, tr, th, td) {
+	border-color: inherit;
+	text-align: inherit;
+}
+
+:where(th, td) {
+	padding-block: var(--table-py, #{$py});
+	padding-inline: var(--table-px, #{$px});
+	background: var(--root-bg);
+	color: var(--root-fg);
+}
+
+:where(tr + tr :is(th, td)) {
+	border-block-start-width: 1px;
+}
+
+:where(thead tr:last-child :is(th, td)) {
+	border-block-end-width: 2px;
+}
+
+:where(tfoot tr:first-child :is(th, td)) {
+	border-block-start-width: 2px;
+}

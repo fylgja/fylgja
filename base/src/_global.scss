@@ -1,0 +1,158 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$motion-safe: "prefers-reduced-motion: no-preference";
+
+$root-bg: hsl(0 0% 100%) !default;
+$root-fg: hsl(0 0% 8%) !default;
+
+$font-family: (
+	ui-sans-serif,
+	system-ui,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol",
+	"Noto Color Emoji"
+) !default;
+$font-ratio: 1.375 !default;
+$font-size: 1rem !default;
+$line-height: 1.6 !default;
+
+$data-icon-base-props: 'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+$chevron-light-scheme: url('data:image/svg+xml,<svg #{$data-icon-base-props} stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>') !default;
+$chevron-dark-scheme: url('data:image/svg+xml,<svg #{$data-icon-base-props} stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>') !default;
+
+$anchor-offset: 6ex !default;
+
+// 1: Allow adding a border to an element by just adding a border-width
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	border: 0 solid; // 1
+}
+
+:root {
+	--root-bg: #{$root-bg};
+	--root-fg: #{$root-fg};
+	--family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	--family-sans: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		Helvetica, Arial, "Helvetica Neue", sans-serif, var(--family-emoji);
+	--family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+		"Liberation Mono", monospace, var(--family-emoji);
+	--select-light-scheme: #{$chevron-light-scheme};
+	--select-dark-scheme: #{$chevron-dark-scheme};
+	--outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
+	--surface-color: color-mix(in srgb, var(--root-bg) 94%, var(--root-fg));
+}
+
+:where(:focus-visible) {
+	outline: var(--outline-size, 2px) solid;
+	outline-offset: var(--outline-offset, 2px);
+}
+
+:where(:active:focus-visible) {
+	outline-offset: 0;
+	transition: var(--outline-transition);
+}
+
+:target {
+	scroll-margin-block: var(--anchor-offset, #{$anchor-offset});
+}
+
+@media ($motion-safe) {
+	:has(:target) {
+		scroll-behavior: smooth;
+	}
+}
+
+:where(html) {
+	block-size: 100%;
+	font-family: var(--family-sans);
+	tab-size: 4;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	scrollbar-gutter: stable;
+}
+
+:where(body) {
+	min-block-size: 100%;
+	margin: 0;
+	background-color: var(--root-bg);
+	color: var(--root-fg);
+	font-size: var(--font-size, #{$font-size});
+	line-height: var(--line-height, #{$line-height});
+}
+
+:where(article, section) {
+	display: flow-root;
+}
+
+// Prevent touch delay on touch devices
+// prettier-ignore
+:where(
+	:any-link,
+	button,
+	input,
+	label[for],
+	select,
+	summary,
+	textarea,
+	[tabindex]:not([tabindex^="-"])
+) {
+	touch-action: manipulation;
+}
+
+// Set a default cursor for interactive elements
+// prettier-ignore
+:where(
+	:any-link,
+	button,
+	label[for],
+	label:has(input:is([type="radio"], [type="checkbox"]):enabled),
+	select:has(option:enabled),
+	summary
+) {
+	cursor: pointer;
+}
+
+// Correct the inability to style the border radius for buttons in iOS Safari.
+:where([type="button"], [type="submit"], [type="reset"], button),
+::file-selector-button {
+	appearance: button;
+}
+
+// Correct default display for all browsers
+:where(summary) {
+	display: list-item;
+}
+
+// Makes sure any child element is inline, useful for headings
+:where(summary > *) {
+	display: inline;
+}
+
+// Show a diffrent cursor for any disabled element
+:disabled {
+	cursor: not-allowed;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+	display: block;
+}
+
+:where(img, svg, video, iframe) {
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+:where(iframe) {
+	aspect-ratio: var(--aspect-ratio, 16 / 9);
+}
+
+// Make sure this set for all use cases and browsers
+[hidden]:where(:not([hidden="until-found"])) {
+	display: none;
+}

@@ -1,28 +1,28 @@
 {
-  "name": "@fylgja/badge",
-  "version": "1.1.1",
-  "description": "Badges component serves as a small blocks to indicate notifications. Or to highlight an item",
+  "name": "@fylgja/container",
+  "version": "2.0.0",
+  "description": "The Fylgja container component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "badge.css",
+  "style": "container.css",
   "sass": "_index.scss",
-  "unpkg": "badge.css",
+  "unpkg": "container.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "components/badge"
+    "directory": "components/container"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
     "fylgja component",
-    "badge"
+    "container",
+    "wrapper"
   ],
   "scripts": {
-    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
-  },
-  "dependencies": {
-    "@fylgja/theme": "^1.2.0"
+    "start": "npx sass --no-source-map -w src:./",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "prebuild": "npx sass --no-source-map src:./"
   }
 }

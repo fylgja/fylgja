@@ -1,0 +1,37 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+:where(.breadcrumbs) {
+	--breadcrumbs-separator: "/";
+	--breadcrumbs-gap: 0.5rem;
+	display: flex;
+	gap: var(--breadcrumbs-gap);
+
+	li {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--breadcrumbs-gap);
+		white-space: nowrap;
+	}
+
+	li + li::before {
+		content: var(--breadcrumbs-separator);
+
+		@supports (content: "a" / "a") {
+			content: var(--breadcrumbs-separator) / "";
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&[aria-current="page"] {
+			font-weight: bolder;
+			text-decoration: none;
+		}
+	}
+}

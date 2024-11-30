@@ -1,0 +1,11 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.flow-unset > *,
+.flow > :first-child {
+	margin-block: 0;
+}
+
+.flow > * + * {
+	margin-block: var(--flow, 1em) 0;
+}

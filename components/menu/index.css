@@ -1,0 +1,9 @@
+.menu {
+  --menu-dir: column;
+  display: flex;
+  flex-flow: var(--menu-dir) wrap;
+}
+.menu :where(.btn, button) {
+  --btn-stroke: transparent;
+  justify-content: space-between;
+}

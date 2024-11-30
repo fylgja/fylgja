@@ -1,0 +1,13 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.menu {
+	--menu-dir: column;
+	display: flex;
+	flex-flow: var(--menu-dir) wrap;
+
+	:where(.btn, button) {
+		--btn-stroke: transparent;
+		justify-content: space-between;
+	}
+}

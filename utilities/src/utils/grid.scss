@@ -1,0 +1,35 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props" as *;
+
+$use-mq: true !default;
+
+.grid {
+	--grid-cols: 1;
+	--_cols: var(--grid-cols);
+	display: grid;
+	grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+}
+
+.grid-flow {
+	--grid-flow-size: calc(
+		(100% - var(--_gap, var(--gap, 0px)) * (var(--_cols) - 1)) /
+			var(--_cols)
+	);
+	grid-template-columns: none;
+	grid-auto-flow: column;
+	grid-auto-columns: var(--grid-flow-size);
+}
+
+@mixin mq-utils($name) {
+	.grid:where([style*="--#{$name}_grid-cols:"]) {
+		--_cols: var(--#{$name}_grid-cols);
+	}
+}
+
+@if $use-mq {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}

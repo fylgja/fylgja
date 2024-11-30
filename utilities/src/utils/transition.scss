@@ -1,0 +1,28 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+%utility-transition {
+	--transition-props: border-color, background-color, color,
+		text-decoration-color, opacity, box-shadow, transform, translate, scale,
+		rotate, filter, backdrop-filter, display, overlay;
+	--transition-ease: cubic-bezier(0.5, 0, 0.5, 1);
+	--transition-duration: 150ms;
+	transition-property: var(--transition-props);
+	transition-timing-function: var(--transition-ease);
+	transition-duration: var(--transition-duration);
+	transition-behavior: allow-discrete;
+}
+
+.transition {
+	@extend %utility-transition;
+}
+
+.transition-color {
+	@extend %utility-transition;
+	--properties: border-color, background-color, color, text-decoration-color;
+}
+
+.transition-display {
+	@extend %utility-transition;
+	--properties: opacity, transform, translate, scale, rotate, display, overlay;
+}

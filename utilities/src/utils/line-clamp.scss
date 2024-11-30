@@ -1,0 +1,10 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.line-clamp {
+	--line-count: 3;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--line-count);
+}

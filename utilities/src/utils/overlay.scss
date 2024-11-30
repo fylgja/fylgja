@@ -1,0 +1,11 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+// Inspired by: https://www.smashingmagazine.com/2024/01/css-border-image-property/
+
+.overlay {
+	--overlay-bg: hsl(0 0% 0% / 60%);
+	--overlay-fg: #fff;
+	border-image: 0 fill linear-gradient(0deg, var(--overlay-bg), transparent);
+	color: var(--overlay-fg);
+}

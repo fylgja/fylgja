@@ -1,0 +1,29 @@
+.divide-y > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
+  --divide: 1px;
+  border-block-start-width: var(--divide);
+}
+
+.divide-x > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
+  --divide: 1px;
+  border-inline-start-width: var(--divide);
+}
+
+.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))) {
+  --gap: 0.5em;
+}
+.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
+  padding-block-start: var(--gap);
+}
+.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
+  padding-block-end: var(--gap);
+}
+
+.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))) {
+  --gap: 0.5em;
+}
+.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
+  padding-inline-start: var(--gap);
+}
+.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
+  padding-inline-end: var(--gap);
+}

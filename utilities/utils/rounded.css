@@ -1,0 +1,23 @@
+.rounded {
+  --rounded: 0.5rem;
+  --rounded-y: var(--rounded);
+  --rounded-x: var(--rounded);
+  border-start-start-radius: var(--rounded-y);
+  border-end-start-radius: var(--rounded-y);
+  border-end-end-radius: var(--rounded-x);
+  border-start-end-radius: var(--rounded-x);
+}
+
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-inherit {
+  border-radius: inherit;
+}
+
+.round {
+  aspect-ratio: 1;
+  border-radius: 100000px;
+  overflow: clip;
+}

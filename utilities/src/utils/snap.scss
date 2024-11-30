@@ -1,0 +1,15 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.snap {
+	--snap-dir: x mandatory;
+	--snap-stop: normal;
+	--snap-align: start;
+	scroll-snap-type: var(--snap-dir);
+	scroll-snap-stop: var(--snap-stop);
+	scroll-behavior: smooth;
+
+	> * {
+		scroll-snap-align: var(--snap-align);
+	}
+}

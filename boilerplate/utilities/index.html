@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fylgja Boilerplate</title>
+		<link rel="stylesheet" href="../main.css">
+		<script src="../index.js"></script>
+	</head>
+	<body>
+		<header class="sticky-header">
+			<div class="container flex align gap" style="--py: 1rem;">
+				<a href="/">
+					<img
+						src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
+						width="150"
+						height="65"
+						alt="Fylgja"
+					>
+				</a>
+				<nav>
+					<a class="btn" href="/">Back</a>
+					<button popovertarget="menuTheme" aria-label="Pick Theme">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h0.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg>
+					</button>
+					<dialog id="menuTheme" popover class="offcanvas">
+						<div class="flex align">
+							<strong>Pick theme</strong>
+							<button
+								popovertarget="menuTheme"
+								popovertargetaction="hide"
+								aria-label="Close theme Options"
+							>X</button>
+						</div>
+						<hr style="--my: 0.5rem;">
+						<div class="menu">
+							<button class="menu-item" data-set-theme="auto">Default</button>
+							<button class="menu-item" data-set-theme="dark">Dark theme</button>
+							<button class="menu-item" data-set-theme="light">Light theme</button>
+							<button class="menu-item" data-set-theme="dark arc">Arc Dark theme</button>
+							<button class="menu-item" data-set-theme="light arc">Arc Light theme</button>
+							<button class="menu-item" data-set-theme="dark lava">Lava Dark theme</button>
+							<button class="menu-item" data-set-theme="light lava">Lava Light theme</button>
+						</div>
+					</dialog>
+				</nav>
+			</div>
+		</header>
+		<main class="container">
+			<section aria-label="Auto Grid">
+				<h2>Auto grid</h2>
+				<div class="auto-grid">
+					<figure class="stack">
+						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
+						<figcaption
+							class="overlay flex align"
+							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
+						>
+							<span>Coffee beans</span>
+						</figcaption>
+					</figure>
+					<img src="https://picsum.photos/id/426/480/480" alt="coffee beans">
+					<img src="https://picsum.photos/id/427/480/480" alt="coffee beans">
+				</div>
+			</section>
+			<section aria-label="Grid Cols">
+				<h2>Grid Cols</h2>
+				<div class="grid" style="--md_grid: 3;">
+					<figure class="stack">
+						<img src="https://picsum.photos/id/425/480/480" alt="coffee beans">
+						<figcaption
+							class="overlay flex align"
+							style="--flex-dir: column; --align: end; --py: 1rem; --px: 1rem;"
+						>
+							<span>Coffee beans</span>
+						</figcaption>
+					</figure>
+					<img src="https://picsum.photos/id/426/480/480" alt="coffee beans">
+					<img src="https://picsum.photos/id/427/480/480" alt="coffee beans">
+				</div>
+			</section>
+			<section aria-label="Snap">
+				<h2>Snap</h2>
+				<div class="flow">
+					<ul
+						role="list"
+						class="snap grid grid-flow scroll-x scroll-mask-x"
+						style="--md_grid: 4; --py: 0 .875em;"
+					>
+						<li>
+							<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+						</li>
+						<li>
+							<img src="https://picsum.photos/id/426/500/300" alt="coffee beans">
+						</li>
+						<li>
+							<img src="https://picsum.photos/id/427/500/300" alt="coffee beans">
+						</li>
+						<li>
+							<img src="https://picsum.photos/id/428/500/300" alt="coffee beans">
+						</li>
+						<li>
+							<img src="https://picsum.photos/id/429/500/300" alt="coffee beans">
+						</li>
+						<li>
+							<img src="https://picsum.photos/id/430/500/300" alt="coffee beans">
+						</li>
+					</ul>
+					<div
+						role="list"
+						class="snap grid grid-flow scroll-x"
+						style="--md_grid: 3;"
+					>
+						<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/431/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/432/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/433/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/434/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/435/500/300" alt="coffee beans">
+					</div>
+					<div
+						role="list"
+						class="snap scroll-x flex"
+						style="--snap-align: center;"
+					>
+						<img src="https://picsum.photos/id/425/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/431/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/432/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/433/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/434/500/300" alt="coffee beans">
+						<img src="https://picsum.photos/id/435/500/300" alt="coffee beans">
+					</div>
+				</div>
+			</section>
+			<section aria-label="Color Tokens">
+				<h2>Color Tokens</h2>
+				<div style="--hue: 270;">
+					<div class="flex color-boxes">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="flex color-boxes" style="--chroma: 0.3;">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+				<style>
+					.color-boxes > * {
+						aspect-ratio: 1;
+						width: 5rem;
+						background-color: var(--clr);
+
+						&:nth-child(1) { --clr: var(--color-1) }
+						&:nth-child(2) { --clr: var(--color-2) }
+						&:nth-child(3) { --clr: var(--color-3) }
+						&:nth-child(4) { --clr: var(--color-4) }
+						&:nth-child(5) { --clr: var(--color-5) }
+						&:nth-child(6) { --clr: var(--color-6) }
+						&:nth-child(7) { --clr: var(--color-7) }
+						&:nth-child(8) { --clr: var(--color-8) }
+						&:nth-child(9) { --clr: var(--color-9) }
+						&:nth-child(10) { --clr: var(--color-10) }
+						&:nth-child(11) { --clr: var(--color-11) }
+						&:nth-child(12) { --clr: var(--color-12) }
+						&:nth-child(13) { --clr: var(--color-13) }
+						&:nth-child(14) { --clr: var(--color-14) }
+
+						@media (width > 768px) {
+							width: 6rem;
+						}
+					}
+				</style>
+			</section>
+		</main>
+	</body>
+</html>

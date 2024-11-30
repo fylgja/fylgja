@@ -1,0 +1,14 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.scroll-x {
+	--scroll-x: auto;
+	overflow-x: var(--scroll-x);
+	overscroll-behavior-x: contain;
+}
+
+.scroll-y {
+	--scroll-y: auto;
+	overflow-y: var(--scroll-y);
+	overscroll-behavior-y: contain;
+}

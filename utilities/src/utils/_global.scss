@@ -1,0 +1,71 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$use-mq: true !default;
+$use-custom-mq: false !default;
+
+@use "props" as *;
+@use "border";
+@use "clip";
+@use "content-lazy";
+@use "divide";
+@use "flip";
+@use "flow";
+@use "gradient";
+@use "line-clamp";
+@use "list";
+@use "overlay";
+@use "position";
+@use "rounded";
+@use "scroll";
+@use "scrollbar";
+@use "size";
+@use "snap";
+@use "spacing" with (
+	$use-mq: false
+);
+@use "stretched-link";
+@use "transition";
+@use "truncate";
+@use "typography";
+@use "visibility";
+
+// Layout
+@use "auto-grid";
+@use "grid" with (
+	$use-mq: false
+);
+@use "flex" with (
+	$use-mq: false
+);
+@use "stack";
+@use "display" with (
+	$use-mq: false
+);
+@use "align" with (
+	$use-mq: false
+);
+@use "gap" with (
+	$use-mq: false
+);
+
+// Aria
+@use "sr-only" with (
+	$use-mq: false
+);
+
+@if $use-mq {
+	@include for-mq("min", $var-syntax: $use-custom-mq) using ($name) {
+		@include gap.mq-utils($name);
+		@include spacing.mq-utils($name);
+
+		// Layout
+		@include grid.mq-utils($name);
+		@include flex.mq-utils($name);
+		@include display.mq-utils($name);
+		@include align.mq-utils($name);
+
+		// Aria
+		@include sr-only.mq-utils($name);
+	}
+}

@@ -1,0 +1,25 @@
+.bg-gradient,
+.border-gradient,
+.text-gradient {
+  --gradient-from: currentcolor;
+  --gradient-to: transparent;
+  --gradient-stops: var(--gradient-from), var(--gradient-to);
+  --gradient-angle: 0deg;
+  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+}
+
+.bg-gradient {
+  background-image: var(--gradient);
+}
+
+.border-gradient {
+  border-image-source: var(--gradient);
+  border-image-slice: 1;
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--gradient);
+  color: transparent;
+}

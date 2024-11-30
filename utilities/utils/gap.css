@@ -1,0 +1,31 @@
+.gap {
+  --gap: 1em;
+  --_gap: var(--gap);
+  gap: var(--_gap);
+}
+
+@media (width >= 480px) {
+  .gap:where([style*="--sm_gap:"]) {
+    --_gap: var(--sm_gap);
+  }
+}
+@media (width >= 768px) {
+  .gap:where([style*="--md_gap:"]) {
+    --_gap: var(--md_gap);
+  }
+}
+@media (width >= 1024px) {
+  .gap:where([style*="--lg_gap:"]) {
+    --_gap: var(--lg_gap);
+  }
+}
+@media (width >= 1440px) {
+  .gap:where([style*="--xl_gap:"]) {
+    --_gap: var(--xl_gap);
+  }
+}
+@media (width >= 1920px) {
+  .gap:where([style*="--xxl_gap:"]) {
+    --_gap: var(--xxl_gap);
+  }
+}

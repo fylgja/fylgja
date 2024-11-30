@@ -1,0 +1,88 @@
+{
+  "layer-1": {
+    "$value": 1
+  },
+  "size-2": {
+    "$value": "0.5em",
+    "$type": "dimension"
+  },
+  "size-4": {
+    "$value": "4em",
+    "$type": "dimension"
+  },
+  "color-red-0": {
+    "$value": "#fff5f5",
+    "$type": "color"
+  },
+  "color-red-1": {
+    "$value": "#ffe3e3",
+    "$type": "color"
+  },
+  "color-red-2": {
+    "$value": "#ffc9c9",
+    "$type": "color"
+  },
+  "color-red-3": {
+    "$value": "#ffa8a8",
+    "$type": "color"
+  },
+  "color-red-4": {
+    "$value": "#ff8787",
+    "$type": "color"
+  },
+  "color-red-5": {
+    "$value": "#ff6b6b",
+    "$type": "color"
+  },
+  "color-red-6": {
+    "$value": "#fa5252",
+    "$type": "color"
+  },
+  "color-red-7": {
+    "$value": "#f03e3e",
+    "$type": "color"
+  },
+  "color-red-8": {
+    "$value": "#e03131",
+    "$type": "color"
+  },
+  "color-red-9": {
+    "$value": "#c92a2a",
+    "$type": "color"
+  },
+  "color-green": {
+    "$value": "#0f0",
+    "$type": "color"
+  },
+  "color-blue": {
+    "$value": "#00f",
+    "$type": "color"
+  },
+  "shadow-color": {
+    "$value": "gray",
+    "$type": "color"
+  },
+  "shadow-weight": {
+    "$value": "1%"
+  },
+  "shadow-1": {
+    "$value": [
+      "0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))",
+      "0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%))",
+      "0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%))"
+    ]
+  },
+  "shadow-@media:dark-color": {
+    "$value": "hsl(220 40% 2%)",
+    "$type": "color"
+  },
+  "shadow-@media:dark-weight": {
+    "$value": "25%"
+  },
+  "spin-@": {
+    "$value": "@keyframes spin { to { rotate: 360deg }}"
+  },
+  "animateSpin": {
+    "$value": "spin 1s linear infinite"
+  }
+}

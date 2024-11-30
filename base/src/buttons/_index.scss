@@ -1,0 +1,53 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props" as btn;
+
+$selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
+$active-selectors: ":active, :has(input:checked), [aria-current=page], [aria-current=true]" !default;
+$use-input-file: true !default;
+
+@if $use-input-file {
+	:where(#{$selectors}),
+	:where(input[type="file"])::file-selector-button {
+		@include btn.base;
+	}
+
+	:where(#{$selectors}) {
+		vertical-align: middle;
+	}
+
+	:where(#{$selectors}):hover,
+	:where(input[type="file"]):hover::file-selector-button {
+		@include btn.hover;
+	}
+
+	// prettier-ignore
+	:where(#{$selectors}):is(#{$active-selectors}),
+	:where(input[type="file"]):active::file-selector-button {
+		@include btn.active;
+	}
+
+	:where(#{$selectors}):disabled,
+	:where(input[type="file"]):disabled::file-selector-button {
+		@include btn.disabled;
+	}
+} @else {
+	:where(#{$selectors}) {
+		@include btn.base;
+		vertical-align: middle;
+
+		&:hover {
+			@include btn.hover;
+		}
+
+		// prettier-ignore
+		&:is(#{$active-selectors}) {
+			@include btn.active;
+		}
+
+		&:disabled {
+			@include btn.disabled;
+		}
+	}
+}

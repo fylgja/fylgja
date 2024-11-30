@@ -1,0 +1,43 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props" as *;
+
+$use-mq: true !default;
+
+.align {
+	--align: normal space-between;
+	--align-items: center legacy;
+	--_alignC: var(--align);
+	--_alignI: var(--align-items);
+	place-content: var(--_alignC);
+	place-items: var(--_alignI);
+
+	> * {
+		--align-self: auto;
+		--_alignS: var(--align-self);
+		place-self: var(--_alignS);
+	}
+}
+
+@mixin mq-utils($name) {
+	.align {
+		&:where([style*="--#{$name}_align:"]) {
+			--_alignC: var(--#{$name}_align);
+		}
+
+		&:where([style*="--#{$name}_align-items:"]) {
+			--_alignI: var(--#{$name}_--align-items);
+		}
+
+		> :where([style*="--#{$name}_align-self:"]) {
+			--_alignS: var(--#{$name}_align-self);
+		}
+	}
+}
+
+@if $use-mq {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}

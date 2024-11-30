@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/card",
-  "version": "1.3.0",
-  "description": "The card component is a wrapper component. Which allow you to make visual sectioned content",
+  "version": "2.0.0",
+  "description": "The Fylgja card component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
@@ -17,12 +17,12 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "card"
+    "card",
+    "wrapper"
   ],
   "scripts": {
-    "build": "npx sass --no-source-map -s compressed -I node_modules src:./"
-  },
-  "dependencies": {
-    "@fylgja/theme": "^1.2.0"
+    "start": "npx sass --no-source-map -w src:./",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "prebuild": "npx sass --no-source-map src:./"
   }
 }
