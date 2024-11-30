@@ -113,8 +113,7 @@ $anchor-offset: 6ex !default;
 	label[for],
 	label:has(input:is([type="radio"], [type="checkbox"]):enabled),
 	select:has(option:enabled),
-	summary,
-	[tabindex]:not([tabindex^="-"])
+	summary
 ) {
 	cursor: pointer;
 }
