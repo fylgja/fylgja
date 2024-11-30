@@ -81,8 +81,7 @@ button,
 label[for],
 label:has(input:is([type=radio], [type=checkbox]):enabled),
 select:has(option:enabled),
-summary,
-[tabindex]:not([tabindex^="-"])) {
+summary) {
   cursor: pointer;
 }
 
@@ -240,8 +239,8 @@ summary,
 
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
-  border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.0666666667));
-  background: var(--code-bg, color-mix(in srgb, currentcolor 18%, transparent));
+  border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
+  background: var(--code-bg, color-mix(in srgb, currentcolor 10%, transparent));
   color: var(--code-color);
 }
 
