@@ -12,6 +12,11 @@ $h-size: 1.125rem !default;
 $h-weight: 700 !default;
 $h-line: 1.1 !default;
 
+$code-radius: 0.3em !default;
+$code-stroke: #0003 !default;
+$code-bg: color-mix(in srgb, currentcolor 10%, transparent) !default;
+$code-color: null !default;
+
 // Set a general default for text block margin
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
 	margin-block: var(--text-flow, #{$text-flow});
@@ -141,13 +146,10 @@ $h-line: 1.1 !default;
 }
 
 :where(pre, :not(pre) > code) {
-	border-radius: var(--code-radius, 0.3em);
-	border: 1px solid var(--code-stroke, #0001);
-	background: var(
-		--code-bg,
-		color-mix(in srgb, currentcolor 18%, transparent)
-	);
-	color: var(--code-color);
+	border-radius: var(--code-radius, #{$code-radius});
+	border: 1px solid var(--code-stroke, #{$code-stroke});
+	background: var(--code-bg, #{$code-bg});
+	color: var(--code-color#{if($code-color, ", " $code-color, "")});
 }
 
 :where(abbr[title]) {
