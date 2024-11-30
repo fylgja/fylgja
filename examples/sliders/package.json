@@ -8,7 +8,7 @@
     "start": "vite"
   },
   "devDependencies": {
-    "vite": "5.4.3"
+    "vite": "5.4.6"
   },
   "dependencies": {
     "dark-mode-toggle": "^0.15.0"
