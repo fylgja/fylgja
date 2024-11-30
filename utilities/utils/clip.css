@@ -1,3 +1,14 @@
 .clip {
+  overflow: hidden;
   overflow: clip;
+}
+
+.clip-y {
+  overflow-y: hidden;
+  overflow-y: clip;
+}
+
+.clip-x {
+  overflow-x: hidden;
+  overflow-x: clip;
 }

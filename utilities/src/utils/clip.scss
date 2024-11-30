@@ -2,5 +2,16 @@
 // Licensed under MIT Open Source
 
 .clip {
+	overflow: hidden; // Fallback for clip until better browser support
 	overflow: clip;
+}
+
+.clip-y {
+	overflow-y: hidden; // Fallback for clip until better browser support
+	overflow-y: clip;
+}
+
+.clip-x {
+	overflow-x: hidden; // Fallback for clip until better browser support
+	overflow-x: clip;
 }
