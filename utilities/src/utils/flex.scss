@@ -5,7 +5,7 @@
 
 $use-mq: true !default;
 
-:is(.flex, .flex-col, .inline-flex) {
+:is(.flex, .flex-wrap, .flex-col, .inline-flex) {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	--grow: initial;
@@ -21,6 +21,10 @@ $use-mq: true !default;
 		--_flexI: var(--flex);
 		flex: var(--_flexI);
 	}
+}
+
+.flex-wrap {
+	--flex-wrap: wrap;
 }
 
 .flex-col {
