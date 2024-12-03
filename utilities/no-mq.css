@@ -335,7 +335,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-col, .inline-flex) {
+:is(.flex, .flex-wrap, .flex-col, .inline-flex) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -346,10 +346,14 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-:is(.flex, .flex-col, .inline-flex) > * {
+:is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
   --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
   --_flexI: var(--flex);
   flex: var(--_flexI);
+}
+
+.flex-wrap {
+  --flex-wrap: wrap;
 }
 
 .flex-col {
