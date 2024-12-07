@@ -31,11 +31,11 @@
     "build": "npm run build:tokens",
     "postbuild": "npm run build:main && npm run gen:types"
   },
-  "main": "index.cjs",
   "style": "css/index.min.css",
-  "unpkg": "css/index.min.css",
+  "main": "index.cjs",
   "module": "index.js",
   "types": "index.d.ts",
+  "unpkg": "css/index.min.css",
   "exports": {
     ".": {
       "types": "./index.d.ts",
