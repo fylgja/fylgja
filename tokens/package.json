@@ -27,9 +27,10 @@
     "start": "npm run build",
     "gen:types": "npx tsc -p tsconfig.json",
     "build:tokens": "node scripts/build.js",
-    "build:main": "npx lightningcss --minify --bundle --custom-media css/index.css -o css/index.min.css",
+    "build:main": "npx lightningcss --bundle --custom-media css/_bundle.css -o css/index.css",
+    "build:main-min": "npx lightningcss --minify --bundle --custom-media css/index.css -o css/index.min.css",
     "build": "npm run build:tokens",
-    "postbuild": "npm run build:main && npm run gen:types"
+    "postbuild": "npm run build:main && npm run build:main-min && npm run gen:types"
   },
   "style": "css/index.min.css",
   "main": "index.cjs",
