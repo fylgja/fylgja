@@ -24,16 +24,15 @@
   translate: var(--tx) var(--ty);
   opacity: 0;
 }
+:where(dialog)::backdrop {
+  background-color: var(--backdrop);
+}
 @media (prefers-reduced-motion: no-preference) {
   :where(dialog) {
     transition-property: translate, opacity, display, overlay;
     transition-duration: var(--speed);
     transition-behavior: allow-discrete;
   }
-}
-
-:where(dialog)::backdrop {
-  background-color: var(--backdrop);
 }
 
 :where(dialog:is([open], :popover-open)) {
@@ -48,6 +47,10 @@
   }
 }
 
-:where(:root:has(dialog:is([open]:modal, .noscroll))) {
+:where(:root:has(dialog[open]:modal)) {
   overflow: hidden;
+}
+
+dialog:not([open]) {
+  display: none;
 }

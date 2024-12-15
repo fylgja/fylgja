@@ -35,15 +35,15 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 	translate: var(--tx) var(--ty);
 	opacity: 0;
 
+	&::backdrop {
+		background-color: var(--backdrop);
+	}
+
 	@media ($motion-safe) {
 		transition-property: translate, opacity, display, overlay;
 		transition-duration: var(--speed);
 		transition-behavior: allow-discrete;
 	}
-}
-
-:where(dialog)::backdrop {
-	background-color: var(--backdrop);
 }
 
 :where(dialog:is([open], :popover-open)) {
@@ -58,6 +58,11 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 }
 
 // Add page scroll-lock by default to dialog element modals
-:where(:root:has(dialog:is([open]:modal, .noscroll))) {
+:where(:root:has(dialog[open]:modal)) {
 	overflow: hidden;
+}
+
+// Add extra specificity for combination with utility classes
+dialog:not([open]) {
+	display: none;
 }
