@@ -59,28 +59,6 @@
         "value": "1e5px",
         "type": "borderRadius"
       },
-      "blob": {
-        "1": {
-          "value": "30% 70% 70% 30% / 53% 30% 70% 47%",
-          "type": "borderRadius"
-        },
-        "2": {
-          "value": "53% 47% 34% 66% / 63% 46% 54% 37%",
-          "type": "borderRadius"
-        },
-        "3": {
-          "value": "37% 63% 56% 44% / 49% 56% 44% 51%",
-          "type": "borderRadius"
-        },
-        "4": {
-          "value": "63% 37% 37% 63% / 43% 37% 63% 57%",
-          "type": "borderRadius"
-        },
-        "5": {
-          "value": "49% 51% 48% 52% / 57% 44% 56% 43%",
-          "type": "borderRadius"
-        }
-      },
       "conditional": {
         "1": {
           "value": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-1))",
@@ -533,25 +511,17 @@
         ],
         "type": "boxShadow"
       },
-      "strength": {
-        "value": "1%",
-        "type": "boxShadow"
-      },
       "color": {
-        "DEFAULT": {
-          "value": "gray",
-          "type": "boxShadow"
-        },
         "umbra": {
-          "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 18%), transparent)",
+          "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 18%), transparent)",
           "type": "boxShadow"
         },
         "penumbra": {
-          "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 12%), transparent)",
+          "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), transparent)",
           "type": "boxShadow"
         },
         "ambient": {
-          "value": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 10%), transparent)",
+          "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 10%), transparent)",
           "type": "boxShadow"
         }
       }

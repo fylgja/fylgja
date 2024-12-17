@@ -16,13 +16,6 @@ export default {
     "5": "2rem",
     "6": "3rem",
     "full": "1e5px",
-    "blob": {
-      "1": "30% 70% 70% 30% / 53% 30% 70% 47%",
-      "2": "53% 47% 34% 66% / 63% 46% 54% 37%",
-      "3": "37% 63% 56% 44% / 49% 56% 44% 51%",
-      "4": "63% 37% 37% 63% / 43% 37% 63% 57%",
-      "5": "49% 51% 48% 52% / 57% 44% 56% 43%"
-    },
     "conditional": {
       "1": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-1))",
       "2": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-2))",
@@ -147,6 +140,11 @@ export default {
     "4": "1.5",
     "5": "1.8"
   },
+  "shadow-color": {
+    "umbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 18%), transparent)",
+    "penumbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), transparent)",
+    "ambient": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 10%), transparent)"
+  },
   "shadow": {
     "1": [
       "0 2px 1px -1px var(--shadow-color-umbra)",
@@ -177,14 +175,7 @@ export default {
       "0 7px 8px -4px var(--shadow-color-umbra)",
       "0 12px 17px 2px var(--shadow-color-penumbra)",
       "0 5px 22px 4px var(--shadow-color-ambient)"
-    ],
-    "strength": "1%",
-    "color": {
-      "DEFAULT": "gray",
-      "umbra": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 18%), transparent)",
-      "penumbra": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 12%), transparent)",
-      "ambient": "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 10%), transparent)"
-    }
+    ]
   },
   "size": {
     "1": "0.25rem",

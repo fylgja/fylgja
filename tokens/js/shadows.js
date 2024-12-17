@@ -2,16 +2,14 @@
 // Licensed under MIT Open Source
 
 const shadows = {
+	"shadow-color": {
+		umbra: "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 18%), transparent)",
+		penumbra:
+			"color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), transparent)",
+		ambient:
+			"color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 10%), transparent)",
+	},
 	shadow: {
-		strength: "1%",
-		color: {
-			DEFAULT: "gray",
-			umbra: "color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 18%), transparent)",
-			penumbra:
-				"color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 12%), transparent)",
-			ambient:
-				"color-mix(in srgb, var(--shadow-color) calc(var(--shadow-strength) + 10%), transparent)",
-		},
 		1: [
 			"0 2px 1px -1px var(--shadow-color-umbra)",
 			"0 1px 1px var(--shadow-color-penumbra)",

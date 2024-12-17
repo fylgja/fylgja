@@ -16,13 +16,6 @@ declare const _default: {
         "5": string;
         "6": string;
         full: string;
-        blob: {
-            "1": string;
-            "2": string;
-            "3": string;
-            "4": string;
-            "5": string;
-        };
         conditional: {
             "1": string;
             "2": string;
@@ -147,6 +140,11 @@ declare const _default: {
         "4": string;
         "5": string;
     };
+    "shadow-color": {
+        umbra: string;
+        penumbra: string;
+        ambient: string;
+    };
     shadow: {
         "1": string[];
         "2": string[];
@@ -154,13 +152,6 @@ declare const _default: {
         "4": string[];
         "5": string[];
         "6": string[];
-        strength: string;
-        color: {
-            DEFAULT: string;
-            umbra: string;
-            penumbra: string;
-            ambient: string;
-        };
     };
     size: {
         "1": string;
