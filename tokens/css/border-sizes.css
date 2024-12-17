@@ -1,8 +1,8 @@
 :where(:root) {
-    --border-size-1: 0.125rem;
-    --border-size-2: 0.25rem;
-    --border-size-3: 0.375rem;
-    --border-size-4: 0.5rem;
-    --border-size-5: 0.75rem;
-    --border-size-6: 1rem;
+	--border-size-1: 0.125rem;
+	--border-size-2: 0.25rem;
+	--border-size-3: 0.375rem;
+	--border-size-4: 0.5rem;
+	--border-size-5: 0.75rem;
+	--border-size-6: 1rem;
 }

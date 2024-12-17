@@ -29,7 +29,7 @@ const toStyleTokens = (
 		varSyntax = "--",
 	} = {}
 ) => {
-	const indent = varSyntax === "--" ? "    " : "";
+	const indent = varSyntax === "--" ? "\t" : "";
 	const flatProps = flattenObj(props);
 	const isScss = varSyntax === "$";
 
@@ -71,7 +71,7 @@ const toStyleTokens = (
 		}
 
 		if (isDarkMode) {
-			stylesDark += `${indent}${varName}: ${value};\n`;
+			stylesDark += `${indent}${indent}${varName}: ${value};\n`;
 		} else {
 			styles += `${indent}${varName}: ${value};\n`;
 		}
@@ -81,10 +81,10 @@ const toStyleTokens = (
 		result = styles;
 		result += stylesDark;
 	} else {
-		result = `${selector} {\n${styles}}\n`;
+		result = styles ? `${selector} {\n${styles}}\n` : "";
 
 		if (stylesDark) {
-			result += `\n${mediaDark} {\n\t${selector} {\n${stylesDark}\n\t}\n}`;
+			result += `\n${mediaDark} {\n\t${selector} {\n${stylesDark}\t}\n}`;
 		}
 	}
 
