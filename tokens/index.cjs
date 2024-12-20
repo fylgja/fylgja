@@ -141,9 +141,9 @@ module.exports = {
     "5": "1.8"
   },
   "shadow-color": {
-    "umbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 18%), transparent)",
-    "penumbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), transparent)",
-    "ambient": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 10%), transparent)"
+    "umbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 20%), #0000)",
+    "penumbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 14%), #0000)",
+    "ambient": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), #0000)"
   },
   "shadow": {
     "1": [
@@ -152,29 +152,29 @@ module.exports = {
       "0 1px 3px var(--shadow-color-ambient)"
     ],
     "2": [
-      "0 3px 1px -2px var(--shadow-color-umbra)",
-      "0 2px 2px var(--shadow-color-penumbra)",
-      "0 1px 5px var(--shadow-color-ambient)"
+      "0 3px 3px -2px var(--shadow-color-umbra)",
+      "0 3px 4px var(--shadow-color-penumbra)",
+      "0 1px 8px var(--shadow-color-ambient)"
     ],
     "3": [
-      "0 2px 4px -1px var(--shadow-color-umbra)",
-      "0 4px 5px var(--shadow-color-penumbra)",
-      "0 1px 10px var(--shadow-color-ambient)"
-    ],
-    "4": [
       "0 3px 5px -1px var(--shadow-color-umbra)",
       "0 6px 10px var(--shadow-color-penumbra)",
       "0 1px 18px var(--shadow-color-ambient)"
     ],
-    "5": [
+    "4": [
       "0 5px 5px -3px var(--shadow-color-umbra)",
       "0 8px 10px 1px var(--shadow-color-penumbra)",
       "0 3px 14px 2px var(--shadow-color-ambient)"
     ],
-    "6": [
+    "5": [
       "0 7px 8px -4px var(--shadow-color-umbra)",
       "0 12px 17px 2px var(--shadow-color-penumbra)",
       "0 5px 22px 4px var(--shadow-color-ambient)"
+    ],
+    "6": [
+      "0 8px 10px -5px var(--shadow-color-umbra)",
+      "0 16px 24px 2px var(--shadow-color-penumbra)",
+      "0 6px 30px 5px var(--shadow-color-ambient)"
     ]
   },
   "size": {
