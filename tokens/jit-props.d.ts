@@ -92,10 +92,10 @@ declare const _default: {
     "--fontSize-3": string;
     "--fontSize-4": string;
     "--fontSize-5": string;
+    "--fontSize-6": string;
     "--fontSize-7": string;
     "--fontSize-8": string;
     "--fontSize-9": string;
-    "--fontSize-10": string;
     "--fontSize-fluid-1": string;
     "--fontSize-fluid-2": string;
     "--fontSize-fluid-3": string;

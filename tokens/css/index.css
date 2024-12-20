@@ -65,10 +65,10 @@
   --font-size-3: 1.125rem;
   --font-size-4: 1.25rem;
   --font-size-5: 1.5rem;
-  --font-size-7: 2rem;
-  --font-size-8: 2.5rem;
-  --font-size-9: 3rem;
-  --font-size-10: 3.5rem;
+  --font-size-6: 2rem;
+  --font-size-7: 2.5rem;
+  --font-size-8: 3rem;
+  --font-size-9: 3.5rem;
   --font-size-fluid-1: clamp(.875rem, 1.5cqi, 1rem);
   --font-size-fluid-2: clamp(1rem, 2cqi, 1.125rem);
   --font-size-fluid-3: clamp(1.25rem, 2cqi, 1.5rem);
