@@ -324,6 +324,18 @@
   display: grid;
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
+.grid > * {
+  --grid-row: auto;
+  --grid-col: auto;
+  --_gridIR: var(--grid-row);
+  --_gridIC: var(--grid-col);
+  grid-row: var(--_gridIR);
+  grid-column: var(--_gridIC);
+}
+
+.col-span-full {
+  --grid-col: 1 / -1;
+}
 
 .grid-flow {
   --grid-flow-size: calc(
@@ -347,7 +359,10 @@
   flex-flow: var(--_flexD) var(--_flexW);
 }
 :is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
-  --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
+  --grow: 0;
+  --shrink: 1;
+  --basis: auto;
+  --flex: var(--grow) var(--shrink) var(--basis);
   --_flexI: var(--flex);
   flex: var(--_flexI);
 }
@@ -430,16 +445,20 @@
   :where([style*="--sm_px:"]) {
     padding-inline: var(--sm_px);
   }
-  .grid:where([style*="--sm_grid-cols:"]) {
+  .grid :where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--sm_flex-dir:"]) {
+  .grid > :where([style*="--sm_grid-cols:"]) {
+    --_gridIR: var(--sm_grid-row);
+    --_gridIC: var(--sm_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
   .sm\:hidden {
@@ -483,16 +502,20 @@
   :where([style*="--md_px:"]) {
     padding-inline: var(--md_px);
   }
-  .grid:where([style*="--md_grid-cols:"]) {
+  .grid :where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--md_flex-dir:"]) {
+  .grid > :where([style*="--md_grid-cols:"]) {
+    --_gridIR: var(--md_grid-row);
+    --_gridIC: var(--md_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
   .md\:hidden {
@@ -536,16 +559,20 @@
   :where([style*="--lg_px:"]) {
     padding-inline: var(--lg_px);
   }
-  .grid:where([style*="--lg_grid-cols:"]) {
+  .grid :where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--lg_flex-dir:"]) {
+  .grid > :where([style*="--lg_grid-cols:"]) {
+    --_gridIR: var(--lg_grid-row);
+    --_gridIC: var(--lg_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
   .lg\:hidden {
@@ -589,16 +616,20 @@
   :where([style*="--xl_px:"]) {
     padding-inline: var(--xl_px);
   }
-  .grid:where([style*="--xl_grid-cols:"]) {
+  .grid :where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--xl_flex-dir:"]) {
+  .grid > :where([style*="--xl_grid-cols:"]) {
+    --_gridIR: var(--xl_grid-row);
+    --_gridIC: var(--xl_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
   .xl\:hidden {
@@ -642,16 +673,20 @@
   :where([style*="--xxl_px:"]) {
     padding-inline: var(--xxl_px);
   }
-  .grid:where([style*="--xxl_grid-cols:"]) {
+  .grid :where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--xxl_flex-dir:"]) {
+  .grid > :where([style*="--xxl_grid-cols:"]) {
+    --_gridIR: var(--xxl_grid-row);
+    --_gridIC: var(--xxl_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
   .xxl\:hidden {

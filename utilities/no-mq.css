@@ -324,6 +324,18 @@
   display: grid;
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
+.grid > * {
+  --grid-row: auto;
+  --grid-col: auto;
+  --_gridIR: var(--grid-row);
+  --_gridIC: var(--grid-col);
+  grid-row: var(--_gridIR);
+  grid-column: var(--_gridIC);
+}
+
+.col-span-full {
+  --grid-col: 1 / -1;
+}
 
 .grid-flow {
   --grid-flow-size: calc(
@@ -347,7 +359,10 @@
   flex-flow: var(--_flexD) var(--_flexW);
 }
 :is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
-  --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
+  --grow: 0;
+  --shrink: 1;
+  --basis: auto;
+  --flex: var(--grow) var(--shrink) var(--basis);
   --_flexI: var(--flex);
   flex: var(--_flexI);
 }
