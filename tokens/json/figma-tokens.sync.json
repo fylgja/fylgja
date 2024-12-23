@@ -536,83 +536,135 @@
         "type": "sizing"
       },
       "3": {
-        "value": "0.5rem",
+        "value": "0.375rem",
         "type": "sizing"
       },
       "4": {
-        "value": "0.625rem",
+        "value": "0.5rem",
         "type": "sizing"
       },
       "5": {
-        "value": "0.75rem",
+        "value": "0.625rem",
         "type": "sizing"
       },
       "6": {
-        "value": "0.875rem",
+        "value": "0.75rem",
         "type": "sizing"
       },
       "7": {
-        "value": "1rem",
+        "value": "0.875rem",
         "type": "sizing"
       },
       "8": {
-        "value": "1.25rem",
+        "value": "1rem",
         "type": "sizing"
       },
       "9": {
-        "value": "1.5rem",
+        "value": "1.25rem",
         "type": "sizing"
       },
       "10": {
-        "value": "1.75rem",
+        "value": "1.5rem",
         "type": "sizing"
       },
       "11": {
-        "value": "2rem",
+        "value": "1.75rem",
         "type": "sizing"
       },
       "12": {
-        "value": "2.25rem",
+        "value": "2rem",
         "type": "sizing"
       },
       "13": {
-        "value": "2.5rem",
+        "value": "2.25rem",
         "type": "sizing"
       },
       "14": {
-        "value": "2.75rem",
+        "value": "2.5rem",
         "type": "sizing"
       },
       "15": {
-        "value": "3rem",
+        "value": "2.75rem",
         "type": "sizing"
       },
       "16": {
-        "value": "4rem",
+        "value": "3rem",
         "type": "sizing"
       },
       "17": {
-        "value": "5rem",
+        "value": "3.5rem",
         "type": "sizing"
       },
       "18": {
-        "value": "7.5rem",
+        "value": "4rem",
         "type": "sizing"
       },
       "19": {
-        "value": "10rem",
+        "value": "5rem",
         "type": "sizing"
       },
       "20": {
-        "value": "15rem",
+        "value": "6rem",
         "type": "sizing"
       },
       "21": {
-        "value": "20rem",
+        "value": "7rem",
         "type": "sizing"
       },
       "22": {
-        "value": "30rem",
+        "value": "8rem",
+        "type": "sizing"
+      },
+      "23": {
+        "value": "9rem",
+        "type": "sizing"
+      },
+      "24": {
+        "value": "10rem",
+        "type": "sizing"
+      },
+      "25": {
+        "value": "11rem",
+        "type": "sizing"
+      },
+      "26": {
+        "value": "12rem",
+        "type": "sizing"
+      },
+      "27": {
+        "value": "13rem",
+        "type": "sizing"
+      },
+      "28": {
+        "value": "14rem",
+        "type": "sizing"
+      },
+      "29": {
+        "value": "15rem",
+        "type": "sizing"
+      },
+      "30": {
+        "value": "16rem",
+        "type": "sizing"
+      },
+      "31": {
+        "value": "18rem",
+        "type": "sizing"
+      },
+      "32": {
+        "value": "20rem",
+        "type": "sizing"
+      },
+      "33": {
+        "value": "24rem",
+        "type": "sizing"
+      },
+      "34": {
+        "value": "28rem",
+        "type": "sizing"
+      },
+      "35": {
+        "value": "32rem",
         "type": "sizing"
       }
     },

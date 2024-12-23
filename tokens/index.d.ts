@@ -176,6 +176,19 @@ declare const _default: {
         "20": string;
         "21": string;
         "22": string;
+        "23": string;
+        "24": string;
+        "25": string;
+        "26": string;
+        "27": string;
+        "28": string;
+        "29": string;
+        "30": string;
+        "31": string;
+        "32": string;
+        "33": string;
+        "34": string;
+        "35": string;
     };
     sizeContent: {
         "1": string;
