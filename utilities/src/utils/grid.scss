@@ -10,6 +10,19 @@ $use-mq: true !default;
 	--_cols: var(--grid-cols);
 	display: grid;
 	grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
+
+	> * {
+		--grid-row: auto;
+		--grid-col: auto;
+		--_gridIR: var(--grid-row);
+		--_gridIC: var(--grid-col);
+		grid-row: var(--_gridIR);
+		grid-column: var(--_gridIC);
+	}
+}
+
+.col-span-full {
+	--grid-col: 1 / -1;
 }
 
 .grid-flow {
@@ -23,8 +36,15 @@ $use-mq: true !default;
 }
 
 @mixin mq-utils($name) {
-	.grid:where([style*="--#{$name}_grid-cols:"]) {
-		--_cols: var(--#{$name}_grid-cols);
+	.grid {
+		:where([style*="--#{$name}_grid-cols:"]) {
+			--_cols: var(--#{$name}_grid-cols);
+		}
+
+		> :where([style*="--#{$name}_grid-cols:"]) {
+			--_gridIR: var(--#{$name}_grid-row);
+			--_gridIC: var(--#{$name}_grid-col);
+		}
 	}
 }
 
