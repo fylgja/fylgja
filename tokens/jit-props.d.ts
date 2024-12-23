@@ -132,17 +132,11 @@ declare const _default: {
     "--size-15": string;
     "--size-16": string;
     "--size-17": string;
+    "--size-18": string;
     "--size-19": string;
     "--size-20": string;
     "--size-21": string;
     "--size-22": string;
-    "--size-xxs": string;
-    "--size-xs": string;
-    "--size-sm": string;
-    "--size-md": string;
-    "--size-lg": string;
-    "--size-xl": string;
-    "--size-xxl": string;
     "--sizeContent-1": string;
     "--sizeContent-2": string;
     "--sizeContent-3": string;

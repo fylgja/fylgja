@@ -171,17 +171,11 @@ declare const _default: {
         "15": string;
         "16": string;
         "17": string;
+        "18": string;
         "19": string;
         "20": string;
         "21": string;
         "22": string;
-        xxs: string;
-        xs: string;
-        sm: string;
-        md: string;
-        lg: string;
-        xl: string;
-        xxl: string;
     };
     sizeContent: {
         "1": string;
