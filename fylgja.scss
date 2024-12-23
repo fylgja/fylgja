@@ -3,6 +3,6 @@
  * Licensed under MIT Open Source
  */
 
-@import "base/src";
-@import "tokens/scss";
-@import "utilities/src";
+@use "base/src" as base;
+@use "tokens/scss" as tokens;
+@use "utilities/src" as utils;

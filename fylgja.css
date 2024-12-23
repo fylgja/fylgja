@@ -2,6 +2,10 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 *,
 ::before,
 ::after {
@@ -81,8 +85,7 @@ button,
 label[for],
 label:has(input:is([type=radio], [type=checkbox]):enabled),
 select:has(option:enabled),
-summary,
-[tabindex]:not([tabindex^="-"])) {
+summary) {
   cursor: pointer;
 }
 
@@ -240,8 +243,8 @@ summary,
 
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
-  border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.0666666667));
-  background: var(--code-bg, color-mix(in srgb, currentcolor 18%, transparent));
+  border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
+  background: var(--code-bg, color-mix(in srgb, currentcolor 10%, transparent));
   color: var(--code-color);
 }
 
@@ -290,15 +293,12 @@ summary,
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
-
 :where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
   text-overflow: ellipsis;
 }
-
 :where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus-visible {
   border-color: var(--form-active-color);
 }
-
 :where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
@@ -316,7 +316,6 @@ select) {
   max-inline-size: 100%;
   inline-size: 100%;
 }
-
 :where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
 textarea,
 select):is(:disabled, [readonly]:not(:focus)) {
@@ -332,11 +331,9 @@ select):is(:disabled, [readonly]:not(:focus)) {
   padding: var(--_gap);
   user-select: none;
 }
-
 :where(input[type=checkbox], input[type=radio]):not(:disabled) {
   cursor: pointer;
 }
-
 :where(input[type=checkbox], input[type=radio])::after {
   content: "";
   display: block;
@@ -351,7 +348,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
   -webkit-mask: var(--_icon) center/contain no-repeat;
   mask: var(--_icon) center/contain no-repeat;
 }
-
 :where(input[type=checkbox], input[type=radio]):checked {
   --_show-icon: 1;
   outline-color: var(--control-checked-stroke, var(--root-fg));
@@ -371,12 +367,10 @@ select):is(:disabled, [readonly]:not(:focus)) {
   --checked-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E %3C/svg%3E");
   --indeterminate-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='4'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
 }
-
 :where(input[type=checkbox]:not([role=switch])):indeterminate {
   --_show-icon: 1;
   --_icon: var(--indeterminate-icon);
 }
-
 :where(input[type=checkbox]:not([role=switch])):checked {
   --_icon: var(--checked-icon);
 }
@@ -386,23 +380,19 @@ select):is(:disabled, [readonly]:not(:focus)) {
   --control-radius: 1.25em;
   inline-size: var(--switch-size, 2em);
 }
-
 :where(input[type=checkbox][role=switch])::after {
   inline-size: auto;
   aspect-ratio: 1;
 }
-
 :where(input[type=checkbox][role=switch]):checked {
   --_offset-x: calc(
   	var(--switch-size, 2em) -
   		var(--control-size, 1.25em)
   );
 }
-
 :where(input[type=checkbox][role=switch]):checked::after {
   translate: var(--_offset-x) 0%;
 }
-
 :where(input[type=checkbox][role=switch]):checked:dir(rtl)::after {
   translate: calc(var(--_offset-x) / -1) 0%;
 }
@@ -413,17 +403,14 @@ select):is(:disabled, [readonly]:not(:focus)) {
   block-size: var(--block-size, 2.5em);
   inline-size: var(--inline-size, 2.5em);
 }
-
 :where(input[type=color])::-webkit-color-swatch-wrapper {
   padding: 0;
   border-radius: inherit;
 }
-
 :where(input[type=color])::-moz-color-swatch {
   border: 0;
   border-radius: inherit;
 }
-
 :where(input[type=color])::-webkit-color-swatch {
   border: 0;
   border-radius: inherit;
@@ -436,7 +423,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
   --btn-border-width: 0;
   overflow: clip;
 }
-
 :where(input[type=file])::file-selector-button {
   margin-inline-end: 1em;
 }
@@ -454,7 +440,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-
 :where(select:not([size]:not([size="1"]), [multiple])):dir(rtl) {
   --icon-position: left;
 }
@@ -514,13 +499,11 @@ select):is(:disabled, [readonly]:not(:focus)) {
 :where([list]:not([type*=date], [type=month], [type=week], [type=time])) {
   --datalist-icon: var(--select-icon, var(--chevron-light-scheme));
 }
-
 :where([list]:not([type*=date], [type=month], [type=week], [type=time]))::-webkit-calendar-picker-indicator {
   display: block !important;
   background: var(--datalist-icon) center/contain no-repeat;
   opacity: 1;
 }
-
 :where([list]:not([type*=date], [type=month], [type=week], [type=time]))::-webkit-list-button {
   appearance: none;
   block-size: 1em;
@@ -561,7 +544,7 @@ select):is(:disabled, [readonly]:not(:focus)) {
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, :has(input:checked), [aria-current=page], [aria-current=true]),
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, :has(input:checked), [aria-current=page], [aria-current=true]),
 :where(input[type=file]):active::file-selector-button {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
@@ -599,7 +582,9 @@ select):is(:disabled, [readonly]:not(:focus)) {
   translate: var(--tx) var(--ty);
   opacity: 0;
 }
-
+:where(dialog)::backdrop {
+  background-color: var(--backdrop);
+}
 @media (prefers-reduced-motion: no-preference) {
   :where(dialog) {
     transition-property: translate, opacity, display, overlay;
@@ -607,24 +592,25 @@ select):is(:disabled, [readonly]:not(:focus)) {
     transition-behavior: allow-discrete;
   }
 }
-:where(dialog)::backdrop {
-  background-color: var(--backdrop);
-}
 
 :where(dialog:is([open], :popover-open)) {
   --speed: var(--dialog-open-speed, 400ms);
   opacity: 1;
   translate: 0 0;
 }
-
 @starting-style {
   :where(dialog:is([open], :popover-open)) {
     opacity: 0;
     translate: var(--tx) var(--ty);
   }
 }
-:where(:root:has(dialog:is([open]:modal, .noscroll))) {
+
+:where(:root:has(dialog[open]:modal)) {
   overflow: hidden;
+}
+
+dialog:not([open]) {
+  display: none;
 }
 
 @media print {
@@ -656,6 +642,10 @@ select):is(:disabled, [readonly]:not(:focus)) {
     print-color-adjust: exact;
   }
 }
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 .border {
   --border: 1px;
   --border-y: var(--border);
@@ -669,7 +659,18 @@ select):is(:disabled, [readonly]:not(:focus)) {
 }
 
 .clip {
+  overflow: hidden;
   overflow: clip;
+}
+
+.clip-y {
+  overflow-y: hidden;
+  overflow-y: clip;
+}
+
+.clip-x {
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .content-lazy {
@@ -691,11 +692,9 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))) {
   --gap: 0.5em;
 }
-
 .divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
   padding-block-start: var(--gap);
 }
-
 .divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
   padding-block-end: var(--gap);
 }
@@ -703,11 +702,9 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))) {
   --gap: 0.5em;
 }
-
 .divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
   padding-inline-start: var(--gap);
 }
-
 .divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
   padding-inline-end: var(--gap);
 }
@@ -766,7 +763,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .list-none {
   list-style-type: none;
 }
-
 .list-none::-webkit-details-marker {
   display: none;
 }
@@ -845,7 +841,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .scrollbar-none {
   scrollbar-width: none;
 }
-
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -853,7 +848,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .scrollbar-thin {
   scrollbar-width: thin;
 }
-
 .scrollbar-thin::-webkit-scrollbar {
   width: 0.4rem;
   height: 0.4rem;
@@ -871,7 +865,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
   scroll-snap-stop: var(--snap-stop);
   scroll-behavior: smooth;
 }
-
 .snap > * {
   scroll-snap-align: var(--snap-align);
 }
@@ -979,6 +972,18 @@ select):is(:disabled, [readonly]:not(:focus)) {
   display: grid;
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
+.grid > * {
+  --grid-row: auto;
+  --grid-col: auto;
+  --_gridIR: var(--grid-row);
+  --_gridIC: var(--grid-col);
+  grid-row: var(--_gridIR);
+  grid-column: var(--_gridIC);
+}
+
+.col-span-full {
+  --grid-col: 1 / -1;
+}
 
 .grid-flow {
   --grid-flow-size: calc(
@@ -990,7 +995,7 @@ select):is(:disabled, [readonly]:not(:focus)) {
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-col, .inline-flex) {
+:is(.flex, .flex-wrap, .flex-col, .inline-flex) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -1001,11 +1006,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-
-:is(.flex, .flex-col, .inline-flex) > * {
-  --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
+:is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
+  --grow: 0;
+  --shrink: 1;
+  --basis: auto;
+  --flex: var(--grow) var(--shrink) var(--basis);
   --_flexI: var(--flex);
   flex: var(--_flexI);
+}
+
+.flex-wrap {
+  --flex-wrap: wrap;
 }
 
 .flex-col {
@@ -1019,7 +1030,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
 .stack {
   display: grid;
 }
-
 .stack > *,
 .stack > ::before,
 .stack > ::after {
@@ -1046,7 +1056,6 @@ select):is(:disabled, [readonly]:not(:focus)) {
   place-content: var(--_alignC);
   place-items: var(--_alignI);
 }
-
 .align > * {
   --align-self: auto;
   --_alignS: var(--align-self);
@@ -1087,13 +1096,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   .grid:where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--sm_flex-dir:"]) {
+  .grid > :where([style*="--sm_grid-cols:"]) {
+    --_gridIR: var(--sm_grid-row);
+    --_gridIC: var(--sm_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
   .sm\:hidden {
@@ -1140,13 +1153,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   .grid:where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--md_flex-dir:"]) {
+  .grid > :where([style*="--md_grid-cols:"]) {
+    --_gridIR: var(--md_grid-row);
+    --_gridIC: var(--md_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
   .md\:hidden {
@@ -1193,13 +1210,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   .grid:where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--lg_flex-dir:"]) {
+  .grid > :where([style*="--lg_grid-cols:"]) {
+    --_gridIR: var(--lg_grid-row);
+    --_gridIC: var(--lg_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
   .lg\:hidden {
@@ -1246,13 +1267,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   .grid:where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--xl_flex-dir:"]) {
+  .grid > :where([style*="--xl_grid-cols:"]) {
+    --_gridIR: var(--xl_grid-row);
+    --_gridIC: var(--xl_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
   .xl\:hidden {
@@ -1299,13 +1324,17 @@ select):is(:disabled, [readonly]:not(:focus)) {
   .grid:where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
-  :is(.flex, .flex-col):where([style*="--xxl_flex-dir:"]) {
+  .grid > :where([style*="--xxl_grid-cols:"]) {
+    --_gridIR: var(--xxl_grid-row);
+    --_gridIC: var(--xxl_grid-col);
+  }
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
   .xxl\:hidden {
