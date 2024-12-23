@@ -4,7 +4,7 @@
 @use "props" as btn;
 
 $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
-$active-selectors: ":active, :has(input:checked), [aria-current=page], [aria-current=true]" !default;
+$active-selectors: ":active, .is-active, :has(input:checked), [aria-current=page], [aria-current=true]" !default;
 $use-input-file: true !default;
 
 @if $use-input-file {

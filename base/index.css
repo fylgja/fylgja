@@ -540,7 +540,7 @@ select):is(:disabled, [readonly]:not(:focus)) {
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, :has(input:checked), [aria-current=page], [aria-current=true]),
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, :has(input:checked), [aria-current=page], [aria-current=true]),
 :where(input[type=file]):active::file-selector-button {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
