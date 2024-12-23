@@ -28,7 +28,7 @@
 }
 
 @media (width >= 480px) {
-  .grid :where([style*="--sm_grid-cols:"]) {
+  .grid:where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
   .grid > :where([style*="--sm_grid-cols:"]) {
@@ -37,7 +37,7 @@
   }
 }
 @media (width >= 768px) {
-  .grid :where([style*="--md_grid-cols:"]) {
+  .grid:where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
   .grid > :where([style*="--md_grid-cols:"]) {
@@ -46,7 +46,7 @@
   }
 }
 @media (width >= 1024px) {
-  .grid :where([style*="--lg_grid-cols:"]) {
+  .grid:where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
   .grid > :where([style*="--lg_grid-cols:"]) {
@@ -55,7 +55,7 @@
   }
 }
 @media (width >= 1440px) {
-  .grid :where([style*="--xl_grid-cols:"]) {
+  .grid:where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
   .grid > :where([style*="--xl_grid-cols:"]) {
@@ -64,7 +64,7 @@
   }
 }
 @media (width >= 1920px) {
-  .grid :where([style*="--xxl_grid-cols:"]) {
+  .grid:where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
   .grid > :where([style*="--xxl_grid-cols:"]) {
