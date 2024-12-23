@@ -10,7 +10,10 @@
   flex-flow: var(--_flexD) var(--_flexW);
 }
 :is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
-  --flex: var(--grow, 0) var(--shrink, 1) var(--basis, auto);
+  --grow: 0;
+  --shrink: 1;
+  --basis: auto;
+  --flex: var(--grow) var(--shrink) var(--basis);
   --_flexI: var(--flex);
   flex: var(--_flexI);
 }
@@ -28,57 +31,57 @@
 }
 
 @media (width >= 480px) {
-  :is(.flex, .flex-col):where([style*="--sm_flex-dir:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
 }
 @media (width >= 768px) {
-  :is(.flex, .flex-col):where([style*="--md_flex-dir:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
 }
 @media (width >= 1024px) {
-  :is(.flex, .flex-col):where([style*="--lg_flex-dir:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
 }
 @media (width >= 1440px) {
-  :is(.flex, .flex-col):where([style*="--xl_flex-dir:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
 }
 @media (width >= 1920px) {
-  :is(.flex, .flex-col):where([style*="--xxl_flex-dir:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
-  :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
+  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
 }
