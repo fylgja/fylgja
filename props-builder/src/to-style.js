@@ -61,9 +61,15 @@ const toStyleTokens = (
 			varName = varName.replace("-@media:dark", isScss ? "-dark" : "");
 		}
 
-		// Handle SCSS specific syntax for division and special quoting
-		if (typeof value === "string" && isScss && value.includes("/")) {
-			value = `"${value}"`;
+		// Handle SCSS specific escaped values
+		if (typeof value === "string" && isScss) {
+			const regex = /[\/><=]|^\(.*\)$/;
+
+			// If the value contains any of the characters /, >, <, >=, <=
+			// or is wrapped in parentheses, wrap it in quotes
+			if (regex.test(value)) {
+				value = `"${value}"`;
+			}
 		}
 
 		if (isScss) {
