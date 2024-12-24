@@ -19,12 +19,14 @@
 
 :user-invalid ~ .peer-invalid\:visible,
 :where(:hover, :hover > summary, :hover > .stack) > .has-hover\:visible,
-:where([open], [open] > summary, [open] > .stack) > .has-open\:visible {
+:where([open], [open] > summary, [open] > summary > .stack)
+	> .has-open\:visible {
 	visibility: visible;
 }
 
 :user-invalid ~ .peer-invalid\:invisible,
 :where(:hover, :hover > summary, :hover > .stack) > .has-hover\:invisible,
-:where([open], [open] > summary, [open] > .stack) > .has-open\:invisible {
+:where([open], [open] > summary, [open] > summary > .stack)
+	> .has-open\:invisible {
 	visibility: hidden;
 }
