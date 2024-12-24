@@ -11,26 +11,43 @@
 	border-inline-start-width: var(--divide);
 }
 
-.divide-gap-y > :not(template, [hidden]:where(:not([hidden="until-found"]))) {
-	--gap: 0.5em;
+.divide-gap-y,
+.divide-gap-x {
+	--divide-gap: 0.5em;
+}
 
-	&:not(:first-of-type) {
-		padding-block-start: var(--gap);
+.divide-gap-y {
+	> :not(
+		template,
+		[hidden]:where(:not([hidden="until-found"])),
+		:first-child
+	) {
+		padding-block-start: var(--divide-gap);
 	}
 
-	&:not(:last-of-type) {
-		padding-block-end: var(--gap);
+	> :not(
+		template,
+		[hidden]:where(:not([hidden="until-found"])),
+		:last-child
+	) {
+		padding-block-end: var(--divide-gap);
 	}
 }
 
-.divide-gap-x > :not(template, [hidden]:where(:not([hidden="until-found"]))) {
-	--gap: 0.5em;
-
-	&:not(:first-of-type) {
-		padding-inline-start: var(--gap);
+.divide-gap-x {
+	> :not(
+		template,
+		[hidden]:where(:not([hidden="until-found"])),
+		:first-child
+	) {
+		padding-block-start: var(--divide-gap);
 	}
 
-	&:not(:last-of-type) {
-		padding-inline-end: var(--gap);
+	> :not(
+		template,
+		[hidden]:where(:not([hidden="until-found"])),
+		:last-child
+	) {
+		padding-block-end: var(--divide-gap);
 	}
 }
