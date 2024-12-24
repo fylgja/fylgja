@@ -1,21 +1,25 @@
 .visible,
 .peer-invalid\:invisible,
-.has-hover\:invisible {
+.has-hover\:invisible,
+.has-open\:invisible {
   visibility: visible;
 }
 
 .invisible,
 .peer-invalid\:visible,
-.has-hover\:visible {
+.has-hover\:visible,
+.has-open\:visible {
   visibility: hidden;
 }
 
 :user-invalid ~ .peer-invalid\:visible,
-:hover > .has-hover\:visible {
+:where(:hover, :hover > summary, :hover > .stack) > .has-hover\:visible,
+:where([open], [open] > summary, [open] > .stack) > .has-open\:visible {
   visibility: visible;
 }
 
 :user-invalid ~ .peer-invalid\:invisible,
-:hover > .has-hover\:invisible {
+:where(:hover, :hover > summary, :hover > .stack) > .has-hover\:invisible,
+:where([open], [open] > summary, [open] > .stack) > .has-open\:invisible {
   visibility: hidden;
 }
