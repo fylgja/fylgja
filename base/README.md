@@ -34,28 +34,28 @@ Once installed, you can import the full package with:
 
 Alternatively, if you only need specific parts of the base, you can import them individually:
 
-| Import Path              | Description                                                                    |
-| ------------------------ | ------------------------------------------------------------------------------ |
-| `@fylgja/base/preflight` | Global defaults and typography                                                 |
-| `@fylgja/base/btn`       | Button styles, including styles for input buttons and a `.btn` class for links |
-| `@fylgja/base/form`      | Comprehensive form styles                                                      |
-| `@fylgja/base/dialog`    | Dialog styles, including support for popovers                                  |
+| Import Path                   | Description                                    |
+| ----------------------------- | ---------------------------------------------- |
+| `@fylgja/base/preflight`      | Global defaults, typography and table defaults |
+| `@fylgja/base/btn`            | HTML Button styles + `.btn` class for links    |
+| `@fylgja/base/btn-class-only` | Just the `.btn` class for adding btn styles    |
+| `@fylgja/base/btn-class-less` | Just the HTML Button styles                    |
+| `@fylgja/base/form`           | Comprehensive form styles                      |
+| `@fylgja/base/dialog`         | Dialog styles, including support for popovers  |
 
 ### Theme Styles
 
 By default, Fylgja Base is a clean canvas, meaning no brand colors or additional extras are included.
-If you prefer to use predefined themes, we offer these as separate imports, or you can copy them directly into your project.
+If you prefer to use predefined theme, we offer one as a separate import, or you can copy them directly into your project.
 
 ```css
-@import "@fylgja/base/theme"; /* or use 'theme.red', 'theme.blue', 'theme.green' */
+@import "@fylgja/base/theme";
 ```
 
-With the brand color themes, we include styles for dark mode, view transitions, primary button styling, and offcanvas support for the dialog.
+With the brand color theme, we include styles for dark mode, view transitions, primary button styling, and offcanvas support for the dialog.
 
-### SCSS Source Files
+### Essentially class-less
 
-While Fylgja Base is designed to be easy to use without requiring build tools,
-we also offer SCSS source files.
+The Fylgja Base uses the `.btn` class to reduce button size.
 
-These can be used to customize the generated CSS files to better suit your project's needs.
-For example, if you want to go fully classless, you can disable the `.btn` class.
+Alternative import options are available for those who prefer to avoid this class and want to go full class-less.
