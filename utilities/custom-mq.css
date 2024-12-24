@@ -41,24 +41,31 @@
   border-inline-start-width: var(--divide);
 }
 
-.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))) {
-  --gap: 0.5em;
-}
-.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
-  padding-block-start: var(--gap);
-}
-.divide-gap-y > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
-  padding-block-end: var(--gap);
+.divide-gap-y,
+.divide-gap-x {
+  --divide-gap: 0.5em;
 }
 
-.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))) {
-  --gap: 0.5em;
+.divide-gap-y > :not(template,
+[hidden]:where(:not([hidden=until-found])),
+:first-child) {
+  padding-block-start: var(--divide-gap);
 }
-.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:first-of-type) {
-  padding-inline-start: var(--gap);
+.divide-gap-y > :not(template,
+[hidden]:where(:not([hidden=until-found])),
+:last-child) {
+  padding-block-end: var(--divide-gap);
 }
-.divide-gap-x > :not(template, [hidden]:where(:not([hidden=until-found]))):not(:last-of-type) {
-  padding-inline-end: var(--gap);
+
+.divide-gap-x > :not(template,
+[hidden]:where(:not([hidden=until-found])),
+:first-child) {
+  padding-block-start: var(--divide-gap);
+}
+.divide-gap-x > :not(template,
+[hidden]:where(:not([hidden=until-found])),
+:last-child) {
+  padding-block-end: var(--divide-gap);
 }
 
 :where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip {
@@ -487,7 +494,7 @@
     --_show: initial;
   }
   .sm\:not-sr-only {
-    --_show: /* */ ;
+    --_show: /* */;
   }
 }
 @media (--md) {
@@ -544,7 +551,7 @@
     --_show: initial;
   }
   .md\:not-sr-only {
-    --_show: /* */ ;
+    --_show: /* */;
   }
 }
 @media (--lg) {
@@ -601,7 +608,7 @@
     --_show: initial;
   }
   .lg\:not-sr-only {
-    --_show: /* */ ;
+    --_show: /* */;
   }
 }
 @media (--xl) {
@@ -658,7 +665,7 @@
     --_show: initial;
   }
   .xl\:not-sr-only {
-    --_show: /* */ ;
+    --_show: /* */;
   }
 }
 @media (--xxl) {
@@ -715,6 +722,6 @@
     --_show: initial;
   }
   .xxl\:not-sr-only {
-    --_show: /* */ ;
+    --_show: /* */;
   }
 }
