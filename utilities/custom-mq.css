@@ -481,6 +481,9 @@
   .sm\:inline-block {
     display: inline-block;
   }
+  .sm\:table-cell {
+    display: table-cell;
+  }
   .align:where([style*="--sm_align:"]) {
     --_alignC: var(--sm_align);
   }
@@ -537,6 +540,9 @@
   }
   .md\:inline-block {
     display: inline-block;
+  }
+  .md\:table-cell {
+    display: table-cell;
   }
   .align:where([style*="--md_align:"]) {
     --_alignC: var(--md_align);
@@ -595,6 +601,9 @@
   .lg\:inline-block {
     display: inline-block;
   }
+  .lg\:table-cell {
+    display: table-cell;
+  }
   .align:where([style*="--lg_align:"]) {
     --_alignC: var(--lg_align);
   }
@@ -652,6 +661,9 @@
   .xl\:inline-block {
     display: inline-block;
   }
+  .xl\:table-cell {
+    display: table-cell;
+  }
   .align:where([style*="--xl_align:"]) {
     --_alignC: var(--xl_align);
   }
@@ -708,6 +720,9 @@
   }
   .xxl\:inline-block {
     display: inline-block;
+  }
+  .xxl\:table-cell {
+    display: table-cell;
   }
   .align:where([style*="--xxl_align:"]) {
     --_alignC: var(--xxl_align);
