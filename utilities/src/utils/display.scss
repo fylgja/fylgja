@@ -29,6 +29,10 @@ $use-mq: true !default;
 	.#{$name}\:inline-block {
 		display: inline-block;
 	}
+
+	.#{$name}\:table-cell {
+		display: table-cell;
+	}
 }
 
 @if $use-mq {
