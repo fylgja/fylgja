@@ -48,7 +48,7 @@ hr {
 }
 
 :where(tbody tr:nth-child(even) :is(th, td)) {
-  background: var(--surface-color);
+  background: var(--table-even-bg, var(--surface-color));
 }
 
 body {
