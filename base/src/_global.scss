@@ -36,8 +36,6 @@ $anchor-offset: 6ex !default;
 :root {
 	--root-bg: #{$root-bg};
 	--root-fg: #{$root-fg};
-	--family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
 	--family-system: system-ui, sans-serif;
 	--family-mono: ui-monospace, Menlo, Consolas, monospace;
 	--select-light-scheme: #{$chevron-light-scheme};
@@ -68,7 +66,7 @@ $anchor-offset: 6ex !default;
 
 :where(html) {
 	block-size: 100%;
-	font-family: var(--family-system), var(--family-emoji);
+	font-family: var(--family-system);
 	tab-size: 4;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
