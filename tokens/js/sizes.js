@@ -1,10 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// Tokens and sizes inspired by:
-// - Open-Props (https://open-props.dev)
-// - Tailwind (https://tailwindcss.com)
-
 export default {
 	size: {
 		1: "0.125rem", // 2px
@@ -42,15 +38,14 @@ export default {
 		33: "24rem", // 384px
 		34: "28rem", // 448px
 		35: "32rem", // 512px
-	},
-	sizeContent: {
-		1: "24ch",
-		2: "45ch",
-		3: "68ch",
-	},
-	sizeHeading: {
-		1: "20ch",
-		2: "28ch",
-		3: "36ch",
+		36: "36rem", // 576px
+		37: "42rem", // 672px
+		38: "48rem", // 768px
+		39: "56rem", // 896px
+		40: "64rem", // 1024px
+		41: "72rem", // 1152px
+		42: "80rem", // 1280px
+		heading: "36ch", // 288px
+		content: "64ch", // 512px
 	},
 };
