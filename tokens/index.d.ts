@@ -189,16 +189,15 @@ declare const _default: {
         "33": string;
         "34": string;
         "35": string;
-    };
-    sizeContent: {
-        "1": string;
-        "2": string;
-        "3": string;
-    };
-    sizeHeading: {
-        "1": string;
-        "2": string;
-        "3": string;
+        "36": string;
+        "37": string;
+        "38": string;
+        "39": string;
+        "40": string;
+        "41": string;
+        "42": string;
+        heading: string;
+        content: string;
     };
     layer: {
         "1": number;

@@ -665,33 +665,41 @@
     "35": {
       "value": "32rem",
       "type": "sizing"
-    }
-  },
-  "sizeContent": {
-    "1": {
-      "value": "24ch",
+    },
+    "36": {
+      "value": "36rem",
       "type": "sizing"
     },
-    "2": {
-      "value": "45ch",
+    "37": {
+      "value": "42rem",
       "type": "sizing"
     },
-    "3": {
-      "value": "68ch",
-      "type": "sizing"
-    }
-  },
-  "sizeHeading": {
-    "1": {
-      "value": "20ch",
+    "38": {
+      "value": "48rem",
       "type": "sizing"
     },
-    "2": {
-      "value": "28ch",
+    "39": {
+      "value": "56rem",
       "type": "sizing"
     },
-    "3": {
+    "40": {
+      "value": "64rem",
+      "type": "sizing"
+    },
+    "41": {
+      "value": "72rem",
+      "type": "sizing"
+    },
+    "42": {
+      "value": "80rem",
+      "type": "sizing"
+    },
+    "heading": {
       "value": "36ch",
+      "type": "sizing"
+    },
+    "content": {
+      "value": "64ch",
       "type": "sizing"
     }
   },
