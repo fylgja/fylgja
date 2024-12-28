@@ -1,6 +1,4 @@
-.bg-gradient,
-.border-gradient,
-.text-gradient {
+.text-gradient, .border-gradient, .bg-gradient {
   --gradient-from: currentcolor;
   --gradient-to: transparent;
   --gradient-stops: var(--gradient-from), var(--gradient-to);

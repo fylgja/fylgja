@@ -14,7 +14,7 @@ $use-mq: true !default;
 }
 
 .inline-block {
-	display: inline-block;
+	display: inline flow-root;
 }
 
 @mixin mq-utils($name) {
@@ -27,7 +27,7 @@ $use-mq: true !default;
 	}
 
 	.#{$name}\:inline-block {
-		display: inline-block;
+		display: inline flow-root;
 	}
 
 	.#{$name}\:table-cell {

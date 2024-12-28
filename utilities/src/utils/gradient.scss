@@ -1,9 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.bg-gradient,
-.border-gradient,
-.text-gradient {
+%utility-gradient {
 	--gradient-from: currentcolor;
 	--gradient-to: transparent;
 	--gradient-stops: var(--gradient-from), var(--gradient-to);
@@ -12,15 +10,18 @@
 }
 
 .bg-gradient {
+	@extend %utility-gradient;
 	background-image: var(--gradient);
 }
 
 .border-gradient {
+	@extend %utility-gradient;
 	border-image-source: var(--gradient);
 	border-image-slice: 1;
 }
 
 .text-gradient {
+	@extend %utility-gradient;
 	// stylelint-disable-next-line property-no-vendor-prefix
 	-webkit-background-clip: text;
 	background-clip: text;

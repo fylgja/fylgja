@@ -7,7 +7,7 @@
 }
 
 .inline-block {
-  display: inline-block;
+  display: inline flow-root;
 }
 
 @media (width >= 480px) {
@@ -18,7 +18,7 @@
     display: block;
   }
   .sm\:inline-block {
-    display: inline-block;
+    display: inline flow-root;
   }
   .sm\:table-cell {
     display: table-cell;
@@ -32,7 +32,7 @@
     display: block;
   }
   .md\:inline-block {
-    display: inline-block;
+    display: inline flow-root;
   }
   .md\:table-cell {
     display: table-cell;
@@ -46,7 +46,7 @@
     display: block;
   }
   .lg\:inline-block {
-    display: inline-block;
+    display: inline flow-root;
   }
   .lg\:table-cell {
     display: table-cell;
@@ -60,7 +60,7 @@
     display: block;
   }
   .xl\:inline-block {
-    display: inline-block;
+    display: inline flow-root;
   }
   .xl\:table-cell {
     display: table-cell;
@@ -74,7 +74,7 @@
     display: block;
   }
   .xxl\:inline-block {
-    display: inline-block;
+    display: inline flow-root;
   }
   .xxl\:table-cell {
     display: table-cell;

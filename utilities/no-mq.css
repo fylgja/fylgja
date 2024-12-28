@@ -1,27 +1,12 @@
-.border {
-  --border: 1px;
-  --border-y: var(--border);
-  --border-x: var(--border);
-  border-block: var(--border-y);
-  border-inline: var(--border-x);
-}
-
-.border-none {
-  border: 0;
-}
-
 .clip {
-  overflow: hidden;
   overflow: clip;
 }
 
 .clip-y {
-  overflow-y: hidden;
   overflow-y: clip;
 }
 
 .clip-x {
-  overflow-x: hidden;
   overflow-x: clip;
 }
 
@@ -85,9 +70,7 @@
   margin-block: var(--flow, 1em) 0;
 }
 
-.bg-gradient,
-.border-gradient,
-.text-gradient {
+.text-gradient, .border-gradient, .bg-gradient {
   --gradient-from: currentcolor;
   --gradient-to: transparent;
   --gradient-stops: var(--gradient-from), var(--gradient-to);
@@ -408,7 +391,7 @@
 }
 
 .inline-block {
-  display: inline-block;
+  display: inline flow-root;
 }
 
 .align {
