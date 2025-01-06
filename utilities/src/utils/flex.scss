@@ -5,9 +5,7 @@
 
 $use-mq: true !default;
 
-$selector: ":is(.flex, .flex-wrap, .flex-col, .inline-flex)";
-
-#{$selector} {
+:is(.flex, .flex-col) {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
 	--grow: initial;
@@ -28,18 +26,16 @@ $selector: ":is(.flex, .flex-wrap, .flex-col, .inline-flex)";
 	}
 }
 
-.flex-wrap {
-	--flex-wrap: wrap;
-}
-
 .flex-col {
 	--flex-dir: column;
 }
 
+.flex-wrap {
+	--flex-wrap: wrap;
 }
 
 @mixin mq-utils($name) {
-	#{$selector} {
+	:is(.flex, .flex-col) {
 		&:where([style*="--#{$name}_flex-dir:"]) {
 			--_flexD: var(--#{$name}_flex-dir);
 		}
