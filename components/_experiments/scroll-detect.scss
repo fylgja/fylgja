@@ -1,0 +1,29 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@keyframes --scroll {
+	0%,
+	to {
+		--scroll: 1;
+	}
+}
+
+:root {
+	timeline-scope: --scroll;
+	animation: --scroll forwards;
+	animation-timeline: --scroll;
+	container-name: --scroll;
+}
+
+/*
+
+.box {
+	overflow: auto;
+	scroll-timeline: --scroll;
+}
+
+The CSS when .box is overflowing
+you can target any element on the page!
+@container --scroll style(--scroll: 1) { }
+
+*/

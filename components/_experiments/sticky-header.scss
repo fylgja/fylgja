@@ -1,0 +1,39 @@
+// Sample for a CSS only sticky header
+// inspired by https://codepen.io/argyleink/pen/gbYGgrB for the newer syntax
+
+.sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+
+	> nav {
+		animation: --sticky-header linear both;
+		animation-timeline: scroll();
+		animation-range: 0 2vh;
+	}
+}
+
+@keyframes --sticky-header {
+	to {
+		background: white;
+	}
+}
+
+/* Newer syntax
+
+.sticky-header {
+	container-type: scroll-state;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+
+	> nav {
+		transition: background-color 0.3s var(--ease-3);
+
+		@container scroll-state(stuck: top) {
+			background-color: white;
+		}
+	}
+}
+
+*/
