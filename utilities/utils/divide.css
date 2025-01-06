@@ -1,3 +1,7 @@
+:where(.divide-y, .divide-x) > * {
+  border: inherit;
+}
+
 .divide-y > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
   --divide: 1px;
   border-block-start-width: var(--divide);
