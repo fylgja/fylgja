@@ -36,8 +36,6 @@ $selector: ":is(.flex, .flex-wrap, .flex-col, .inline-flex)";
 	--flex-dir: column;
 }
 
-.inline-flex {
-	display: inline flex;
 }
 
 @mixin mq-utils($name) {
