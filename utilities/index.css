@@ -16,6 +16,10 @@
   contain-intrinsic-block-size: var(--content-size);
 }
 
+:where(.divide-y, .divide-x) > * {
+  border: inherit;
+}
+
 .divide-y > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
   --divide: 1px;
   border-block-start-width: var(--divide);
@@ -341,7 +345,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-wrap, .flex-col, .inline-flex) {
+:is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -352,7 +356,7 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-:is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
+:is(.flex, .flex-col) > * {
   --grow: 0;
   --shrink: 1;
   --basis: auto;
@@ -361,16 +365,12 @@
   flex: var(--_flexI);
 }
 
-.flex-wrap {
-  --flex-wrap: wrap;
-}
-
 .flex-col {
   --flex-dir: column;
 }
 
-.inline-flex {
-  display: inline flex;
+.flex-wrap {
+  --flex-wrap: wrap;
 }
 
 .stack {
@@ -406,6 +406,11 @@
   --align-self: auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
+}
+
+.align-center {
+  place-content: center;
+  place-items: center;
 }
 
 .gap {
@@ -446,13 +451,13 @@
     --_gridIR: var(--sm_grid-row);
     --_gridIC: var(--sm_grid-col);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--sm_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--sm_flex:"]) {
     --_flexI: var(--sm_flex);
   }
   .sm\:hidden {
@@ -506,13 +511,13 @@
     --_gridIR: var(--md_grid-row);
     --_gridIC: var(--md_grid-col);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--md_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--md_flex:"]) {
     --_flexI: var(--md_flex);
   }
   .md\:hidden {
@@ -566,13 +571,13 @@
     --_gridIR: var(--lg_grid-row);
     --_gridIC: var(--lg_grid-col);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--lg_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--lg_flex:"]) {
     --_flexI: var(--lg_flex);
   }
   .lg\:hidden {
@@ -626,13 +631,13 @@
     --_gridIR: var(--xl_grid-row);
     --_gridIC: var(--xl_grid-col);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xl_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--xl_flex:"]) {
     --_flexI: var(--xl_flex);
   }
   .xl\:hidden {
@@ -686,13 +691,13 @@
     --_gridIR: var(--xxl_grid-row);
     --_gridIC: var(--xxl_grid-col);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-dir:"]) {
+  :is(.flex, .flex-col):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-col):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
-  :is(.flex, .flex-wrap, .flex-col, .inline-flex) > :where([style*="--xxl_flex:"]) {
+  :is(.flex, .flex-col) > :where([style*="--xxl_flex:"]) {
     --_flexI: var(--xxl_flex);
   }
   .xxl\:hidden {

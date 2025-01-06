@@ -16,6 +16,10 @@
   contain-intrinsic-block-size: var(--content-size);
 }
 
+:where(.divide-y, .divide-x) > * {
+  border: inherit;
+}
+
 .divide-y > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
   --divide: 1px;
   border-block-start-width: var(--divide);
@@ -341,7 +345,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-wrap, .flex-col, .inline-flex) {
+:is(.flex, .flex-col) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --grow: initial;
@@ -352,7 +356,7 @@
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }
-:is(.flex, .flex-wrap, .flex-col, .inline-flex) > * {
+:is(.flex, .flex-col) > * {
   --grow: 0;
   --shrink: 1;
   --basis: auto;
@@ -361,16 +365,12 @@
   flex: var(--_flexI);
 }
 
-.flex-wrap {
-  --flex-wrap: wrap;
-}
-
 .flex-col {
   --flex-dir: column;
 }
 
-.inline-flex {
-  display: inline flex;
+.flex-wrap {
+  --flex-wrap: wrap;
 }
 
 .stack {
@@ -406,6 +406,11 @@
   --align-self: auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
+}
+
+.align-center {
+  place-content: center;
+  place-items: center;
 }
 
 .gap {
