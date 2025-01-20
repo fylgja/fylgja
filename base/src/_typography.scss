@@ -1,6 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+$selectors: ":root" !default;
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
 
@@ -17,38 +18,50 @@ $code-stroke: #0003 !default;
 $code-bg: color-mix(in srgb, currentcolor 10%, transparent) !default;
 $code-color: null !default;
 
+#{$selectors} {
+	--text-flow: #{$text-flow};
+	--separator-flow: #{$separator-flow};
+	--h-size: #{$h-size};
+	--h-weight: #{$h-weight};
+	--h-line: #{$h-line};
+	--h1-size: #{$h1-size};
+	--h2-size: #{$h2-size};
+	--h3-size: #{$h3-size};
+	--h4-size: #{$h4-size};
+}
+
 // Set a general default for text block margin
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
-	margin-block: var(--text-flow, #{$text-flow});
+	margin-block: var(--text-flow);
 }
 
 :where(blockquote, figure, hr) {
-	margin-block: var(--separator-flow, #{$separator-flow});
+	margin-block: var(--separator-flow);
 	margin-inline: 0;
 }
 
 // Improved heading text wrapping
 :where(h1, h2, h3, h4, h5, h6, legend) {
-	font-size: var(--h-size, #{$h-size});
-	font-weight: var(--h-weight, $h-weight);
-	line-height: var(--h-line, $h-line);
+	font-size: var(--h-size);
+	font-weight: var(--h-weight);
+	line-height: var(--h-line);
 	text-wrap: balance;
 }
 
 :where(h1) {
-	--h-size: #{$h1-size};
+	--h-size: var(--h1-size);
 }
 
 :where(h2) {
-	--h-size: #{$h2-size};
+	--h-size: var(--h2-size);
 }
 
 :where(h3) {
-	--h-size: #{$h3-size};
+	--h-size: var(--h3-size);
 }
 
 :where(h4) {
-	--h-size: #{$h4-size};
+	--h-size: var(--h4-size);
 }
 
 // Prevent orphans in supported browsers

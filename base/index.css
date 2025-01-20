@@ -115,36 +115,48 @@ summary) {
   display: none;
 }
 
+:root {
+  --text-flow: 1em 1rem;
+  --separator-flow: 2.5em;
+  --h-size: 1.125rem;
+  --h-weight: 700;
+  --h-line: 1.1;
+  --h1-size: 3rem;
+  --h2-size: 2.25rem;
+  --h3-size: 1.75rem;
+  --h4-size: 1.5rem;
+}
+
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
-  margin-block: var(--text-flow, 1em 1rem);
+  margin-block: var(--text-flow);
 }
 
 :where(blockquote, figure, hr) {
-  margin-block: var(--separator-flow, 2.5em);
+  margin-block: var(--separator-flow);
   margin-inline: 0;
 }
 
 :where(h1, h2, h3, h4, h5, h6, legend) {
-  font-size: var(--h-size, 1.125rem);
-  font-weight: var(--h-weight, 700);
-  line-height: var(--h-line, 1.1);
+  font-size: var(--h-size);
+  font-weight: var(--h-weight);
+  line-height: var(--h-line);
   text-wrap: balance;
 }
 
 :where(h1) {
-  --h-size: 3rem;
+  --h-size: var(--h1-size);
 }
 
 :where(h2) {
-  --h-size: 2.25rem;
+  --h-size: var(--h2-size);
 }
 
 :where(h3) {
-  --h-size: 1.75rem;
+  --h-size: var(--h3-size);
 }
 
 :where(h4) {
-  --h-size: 1.5rem;
+  --h-size: var(--h4-size);
 }
 
 :where(p, li, dd) {
