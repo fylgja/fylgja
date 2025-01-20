@@ -613,7 +613,7 @@ select):is(:disabled, [readonly]:not(:focus)) {
   overflow: hidden;
 }
 
-dialog:not([open]) {
+dialog:not([open], :popover-open) {
   display: none;
 }
 
