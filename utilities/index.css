@@ -203,6 +203,18 @@
   inline-size: 100%;
 }
 
+.max-w-full {
+  max-inline-size: 100%;
+}
+
+.h-full {
+  block-size: 100%;
+}
+
+.max-h-full {
+  max-block-size: 100%;
+}
+
 .snap {
   --snap-dir: x mandatory;
   --snap-stop: normal;
