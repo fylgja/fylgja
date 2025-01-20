@@ -63,6 +63,6 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 }
 
 // Add extra specificity for combination with utility classes
-dialog:not([open]) {
+dialog:not([open], :popover-open) {
 	display: none;
 }
