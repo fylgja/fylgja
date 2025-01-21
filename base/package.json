@@ -31,9 +31,7 @@
     "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "prebuild": "npm run build:scss"
   },
-  "bin": {
-    "theme": "./bin/add-theme.js"
-  },
+  "bin": "./bin/add-theme.js",
   "style": "index.css",
   "unpkg": "index.min.css"
 }
