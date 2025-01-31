@@ -285,7 +285,7 @@ summary) {
   border-block-start-width: 2px;
 }
 
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select) {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input) {
   appearance: none;
   margin: 0;
   padding-block: var(--form-py, 0.4375rem);
@@ -297,13 +297,13 @@ summary) {
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):placeholder-shown {
   text-overflow: ellipsis;
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus-visible {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):focus-visible {
   border-color: var(--form-active-color);
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;

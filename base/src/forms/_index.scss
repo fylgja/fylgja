@@ -3,10 +3,17 @@
 
 @use "props" as form;
 
-$special-form-inputs: "[type=range], [type=button], [type=reset], [type=submit], [type=image]";
+$additional-selectors: ".form-input" !default;
 $enable-switch: true !default;
 
-:where(input:not(#{$special-form-inputs}), textarea, select) {
+$default-ignore-inputs: "[type=range], [type=button], [type=reset], [type=submit], [type=image]";
+$form-selectors: if(
+	$additional-selectors,
+	"input:not(#{$default-ignore-inputs}), textarea, select, #{$additional-selectors}",
+	"input:not(#{$default-ignore-inputs}), textarea, select"
+);
+
+:where(#{$form-selectors}) {
 	@include form.base;
 
 	&:placeholder-shown {
@@ -26,7 +33,7 @@ $enable-switch: true !default;
 
 // prettier-ignore
 :where(
-	input:not([type="checkbox"], [type="radio"], #{$special-form-inputs}),
+	input:not([type="checkbox"], [type="radio"], #{$default-ignore-inputs}),
 	textarea,
 	select
 ) {
