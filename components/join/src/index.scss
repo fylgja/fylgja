@@ -5,7 +5,7 @@
 	position: relative;
 	display: inline-flex;
 	max-width: max-content;
-	border-radius: var(--rounded, 0.5em);
+	border-radius: var(--rounded, 0.35rem);
 	vertical-align: middle;
 
 	:focus-visible {
