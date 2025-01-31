@@ -69,9 +69,6 @@
 }
 
 .join:where(.form-input) {
-	--outline-size: 1px;
-	--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
-
 	> * {
 		padding: 0;
 		border: 0;

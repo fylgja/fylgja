@@ -14,6 +14,7 @@
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
+
 :where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
   text-overflow: ellipsis;
 }
@@ -26,9 +27,7 @@
   cursor: not-allowed;
 }
 
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
-textarea,
-select) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select) {
   --outline-size: 1px;
   --outline-offset: calc(
   	(var(--form-border-width, 1px) + 1px) * -1
@@ -37,9 +36,7 @@ select) {
   max-inline-size: 100%;
   inline-size: 100%;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
-textarea,
-select):is(:disabled, [readonly]:not(:focus)) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):is(:disabled, [readonly]:not(:focus)) {
   border-style: var(--form-disabled-border-style, dashed);
 }
 

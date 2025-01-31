@@ -6,16 +6,25 @@
 $additional-selectors: ".form-input" !default;
 $enable-switch: true !default;
 
-$default-ignore-inputs: "[type=range], [type=button], [type=reset], [type=submit], [type=image]";
+$input-ignore-list: "[type=range], [type=button], [type=reset], [type=submit], [type=image]";
+$field-ignore-list: "[type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]";
 $form-selectors: if(
 	$additional-selectors,
-	"input:not(#{$default-ignore-inputs}), textarea, select, #{$additional-selectors}",
-	"input:not(#{$default-ignore-inputs}), textarea, select"
+	"input:not(#{$input-ignore-list}), textarea, select, #{$additional-selectors}",
+	"input:not(#{$input-ignore-list}), textarea, select"
+);
+
+$form-field-only-selectors: if(
+	$additional-selectors,
+	"input:not(#{$field-ignore-list}), textarea, select, #{$additional-selectors}",
+	"input:not(#{$field-ignore-list}), textarea, select"
 );
 
 :where(#{$form-selectors}) {
 	@include form.base;
+}
 
+:where(input:not(#{$input-ignore-list}), textarea, select) {
 	&:placeholder-shown {
 		text-overflow: ellipsis;
 	}
@@ -31,12 +40,7 @@ $form-selectors: if(
 	}
 }
 
-// prettier-ignore
-:where(
-	input:not([type="checkbox"], [type="radio"], #{$default-ignore-inputs}),
-	textarea,
-	select
-) {
+:where(#{$form-field-only-selectors}) {
 	--outline-size: 1px;
 	--outline-offset: calc(
 		(var(--form-border-width, #{form.$border-width}) + 1px) * -1

@@ -297,21 +297,20 @@ summary) {
   color: var(--form-color, var(--root-fg));
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):placeholder-shown {
+
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):placeholder-shown {
   text-overflow: ellipsis;
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):focus-visible {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):focus-visible {
   border-color: var(--form-active-color);
 }
-:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):disabled {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select):disabled {
   box-shadow: none;
   opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;
 }
 
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
-textarea,
-select) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input) {
   --outline-size: 1px;
   --outline-offset: calc(
   	(var(--form-border-width, 1px) + 1px) * -1
@@ -320,9 +319,7 @@ select) {
   max-inline-size: 100%;
   inline-size: 100%;
 }
-:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]),
-textarea,
-select):is(:disabled, [readonly]:not(:focus)) {
+:where(input:not([type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit], [type=image]), textarea, select, .form-input):is(:disabled, [readonly]:not(:focus)) {
   border-style: var(--form-disabled-border-style, dashed);
 }
 
