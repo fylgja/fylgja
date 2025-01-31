@@ -1,7 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-:where(.join) {
+.join {
 	position: relative;
 	display: inline-flex;
 	max-width: max-content;
@@ -28,7 +28,7 @@
 	}
 }
 
-:where(.join.-custom-input, .join.-step) {
+.join:where(.-custom-input, .-step, .form-input) {
 	transition:
 		color 250ms,
 		background-color 250ms,
@@ -36,32 +36,44 @@
 		box-shadow 250ms,
 		var(--outline-transition);
 
-	label {
-		position: relative;
-
-		:where([type="checkbox"], [type="radio"]) {
-			position: absolute;
-			opacity: 0;
-			block-size: auto;
-			inline-size: auto;
-		}
-	}
-
-	&:has(:focus-visible) {
-		outline: 2px solid var(--brand, currentcolor);
-		outline-offset: 2px;
+	&:where(:has(:focus-visible)) {
+		outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
+		outline-offset: var(--outline-offset, 2px);
 	}
 }
 
-:where(.join.-step) {
+.join:where(.-custom-input, .-step) {
+	label {
+		position: relative;
+	}
+
+	input:is([type="checkbox"], [type="radio"]) {
+		position: absolute;
+		opacity: 0;
+		block-size: auto;
+		inline-size: auto;
+	}
+}
+
+.join:where(.-step) {
 	color: var(--brand);
 
 	label {
-		--_checked: 1;
-		opacity: var(--_checked);
+		--_is-checked: initial;
+		opacity: var(--_is-checked, 0.6);
 
 		&:has(:checked) ~ label {
-			--_checked: 0.6;
+			--_is-checked: /* */;
 		}
+	}
+}
+
+.join:where(.form-input) {
+	--outline-size: 1px;
+	--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+
+	> * {
+		padding: 0;
+		border: 0;
 	}
 }
