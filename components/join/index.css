@@ -25,10 +25,10 @@
   border-end-end-radius: inherit;
 }
 
-.join:where(.-custom-input, .-step, .form-input) {
+.join:where(.-custom-input, .-step, .-merge-inputs) {
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
 }
-.join:where(.-custom-input, .-step, .form-input):where(:has(:focus-visible)) {
+.join:where(.-custom-input, .-step, .-merge-inputs):where(:has(:focus-visible)) {
   outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
   outline-offset: var(--outline-offset, 2px);
 }
@@ -54,13 +54,16 @@
   --_is-checked: /* */;
 }
 
-.join:where(.form-input):where(:has(:focus-visible)) {
-  border-color: var(--form-active-color);
+.join:where(.-merge-inputs) {
+  --outline-size: 1px;
+  --outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
-.join:where(.form-input) > input {
-  padding: 0;
-  border: 0;
+.join:where(.-merge-inputs):where(:has(:focus-visible)) {
+  --form-stroke: var(--form-active-color);
 }
-.join:where(.form-input) > input:focus-visible {
-  outline-color: transparent;
+.join:where(.-merge-inputs) > :not(:first-child) {
+  border-inline-start-width: 0;
+}
+.join:where(.-merge-inputs) > :not(:last-child) {
+  border-inline-end-width: 0;
 }

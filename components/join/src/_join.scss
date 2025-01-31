@@ -31,7 +31,7 @@ $use-modifiers: true !default;
 }
 
 @if $use-modifiers {
-	.join:where(.-custom-input, .-step, .form-input) {
+	.join:where(.-custom-input, .-step, .-merge-inputs) {
 		transition:
 			color 250ms,
 			background-color 250ms,
@@ -71,18 +71,20 @@ $use-modifiers: true !default;
 		}
 	}
 
-	.join:where(.form-input) {
+	.join:where(.-merge-inputs) {
+		--outline-size: 1px;
+		--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+
 		&:where(:has(:focus-visible)) {
-			border-color: var(--form-active-color);
+			--form-stroke: var(--form-active-color);
 		}
 
-		> input {
-			padding: 0;
-			border: 0;
+		> :not(:first-child) {
+			border-inline-start-width: 0;
+		}
 
-			&:focus-visible {
-				outline-color: transparent;
-			}
+		> :not(:last-child) {
+			border-inline-end-width: 0;
 		}
 	}
 }
