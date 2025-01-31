@@ -1,32 +1,29 @@
 {
-  "name": "@fylgja/join",
+  "name": "@fylgja/input-group",
   "version": "1.0.0",
-  "description": "The Fylgja join component",
+  "description": "The Fylgja input-group component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "join.css",
+  "style": "input-group.css",
   "sass": "_index.scss",
-  "unpkg": "join.css",
+  "unpkg": "input-group.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "components/join"
+    "directory": "components/input-group"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
     "fylgja component",
-    "join",
     "button group",
     "form group",
     "wrapper"
   ],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
-    "build:base-only": "npx lightningcss --minify --bundle base-only.css -o base-only.min.css",
-    "build:index": "npx lightningcss --minify --bundle index.css -o index.min.css",
-    "build": "npm run build:base-only && npm run build:index",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "prebuild": "npx sass --no-source-map src:./"
   }
 }

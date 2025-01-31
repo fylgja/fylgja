@@ -1,0 +1,84 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.input-group {
+	--outline-size: 1px;
+	--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+	position: relative;
+	display: inline-flex;
+	max-width: max-content;
+	border-radius: var(--rounded, 0.35rem);
+	transition:
+		color 250ms,
+		background-color 250ms,
+		border-color 250ms,
+		box-shadow 250ms,
+		var(--outline-transition);
+	vertical-align: middle;
+
+	// Push item to top, without using position
+	:focus-visible {
+		translate: 0 0;
+	}
+
+	> * {
+		margin: 0;
+		border-radius: 0;
+
+		// The group will handle the focus
+		&:focus {
+			outline: none;
+		}
+	}
+
+	> :first-child {
+		border-start-start-radius: inherit;
+		border-end-start-radius: inherit;
+	}
+
+	> :last-child {
+		border-start-end-radius: inherit;
+		border-end-end-radius: inherit;
+	}
+
+	> :not(input:first-of-type, button, .btn) {
+		border-inline-start-width: 0;
+	}
+
+	> :not(input:last-of-type, button, .btn) {
+		border-inline-end-width: 0;
+	}
+
+	&:where(:has(:focus-visible)) {
+		--form-stroke: var(--form-active-color);
+		outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
+		outline-offset: var(--outline-offset, 2px);
+	}
+
+	// If the label is in the style button (btn) then hide the input visually, still-clickable
+	// Requires the wrapping label solution and some sort of sr-only or visually-only utility for the label text
+	:where(label.btn) {
+		position: relative;
+	}
+
+	:where(label.btn input:is([type="checkbox"], [type="radio"])) {
+		position: absolute;
+		opacity: 0;
+		block-size: auto;
+		inline-size: auto;
+	}
+}
+
+// Great for review star input groups
+.input-group.-step {
+	color: var(--brand);
+
+	:where(label) {
+		--_is-checked: initial;
+		opacity: var(--_is-checked, 0.6);
+
+		&:has(:checked) ~ label {
+			--_is-checked: /* */;
+		}
+	}
+}
