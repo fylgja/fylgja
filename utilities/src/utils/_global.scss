@@ -38,6 +38,7 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "stack";
+@use "container";
 @use "display" with (
 	$use-mq: false
 );

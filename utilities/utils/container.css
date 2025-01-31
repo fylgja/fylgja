@@ -1,0 +1,9 @@
+:root {
+  --container-size: 1280px;
+  --container-gap: 1.25rem;
+}
+
+.container {
+  inline-size: min(100% - var(--container-gap) * 2, var(--container-size));
+  margin-inline: auto;
+}
