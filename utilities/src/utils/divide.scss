@@ -1,17 +1,21 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+.divide-y,
+.divide-x {
+	--divide: 1px;
+}
+
 :where(.divide-y, .divide-x) > * {
-	border: inherit;
+	border-color: inherit;
+	border-style: inherit;
 }
 
 .divide-y > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
-	--divide: 1px;
 	border-block-start-width: var(--divide);
 }
 
 .divide-x > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
-	--divide: 1px;
 	border-inline-start-width: var(--divide);
 }
 
