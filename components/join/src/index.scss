@@ -29,8 +29,12 @@
 }
 
 :where(.join.-custom-input, .join.-step) {
-	transition: color 250ms, background-color 250ms, border-color 250ms,
-		box-shadow 250ms, var(--outline-transition);
+	transition:
+		color 250ms,
+		background-color 250ms,
+		border-color 250ms,
+		box-shadow 250ms,
+		var(--outline-transition);
 
 	label {
 		position: relative;
