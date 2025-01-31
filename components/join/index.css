@@ -54,10 +54,13 @@
   --_is-checked: /* */;
 }
 
-.join:where(.form-input) {
+.join:where(.form-input):where(:has(:focus-visible)) {
   border-color: var(--form-active-color);
 }
-.join:where(.form-input) > * {
+.join:where(.form-input) > input {
   padding: 0;
   border: 0;
+}
+.join:where(.form-input) > input:focus-visible {
+  outline-color: transparent;
 }

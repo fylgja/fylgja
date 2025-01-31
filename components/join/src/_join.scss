@@ -72,11 +72,17 @@ $use-modifiers: true !default;
 	}
 
 	.join:where(.form-input) {
-		border-color: var(--form-active-color);
+		&:where(:has(:focus-visible)) {
+			border-color: var(--form-active-color);
+		}
 
-		> * {
+		> input {
 			padding: 0;
 			border: 0;
+
+			&:focus-visible {
+				outline-color: transparent;
+			}
 		}
 	}
 }
