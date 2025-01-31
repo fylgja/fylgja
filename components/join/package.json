@@ -24,7 +24,9 @@
   ],
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
-    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "build:base-only": "npx lightningcss --minify --bundle base-only.css -o base-only.min.css",
+    "build:index": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "build": "npm run build:base-only && npm run build:index",
     "prebuild": "npx sass --no-source-map src:./"
   }
 }

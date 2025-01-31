@@ -1,0 +1,1 @@
+.join{border-radius:var(--rounded,.35rem);vertical-align:middle;max-width:max-content;display:inline-flex;position:relative}.join :focus-visible{translate:0}.join>*{border-radius:0;margin:0}.join>:first-child{border-start-start-radius:inherit;border-end-start-radius:inherit}.join>:last-child{border-start-end-radius:inherit;border-end-end-radius:inherit}

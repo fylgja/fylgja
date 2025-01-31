@@ -3,4 +3,6 @@
  * Licensed under MIT Open Source
  */
 
-@use "./join";
+@use "./join" with (
+	$use-modifiers: false
+);

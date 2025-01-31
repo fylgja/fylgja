@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 .join {
   position: relative;
   display: inline-flex;
@@ -51,8 +55,7 @@
 }
 
 .join:where(.form-input) {
-  --outline-size: 1px;
-  --outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+  border-color: var(--form-active-color);
 }
 .join:where(.form-input) > * {
   padding: 0;
