@@ -136,7 +136,7 @@ summary) {
   margin-inline: 0;
 }
 
-:where(h1, h2, h3, h4, h5, h6, legend) {
+:where(h1, h2, h3, h4, h5, h6) {
   font-size: var(--h-size);
   font-weight: var(--h-weight);
   line-height: var(--h-line);
