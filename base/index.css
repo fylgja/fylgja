@@ -295,7 +295,7 @@ summary) {
   border-radius: var(--form-radius, 0.35rem);
   background: var(--form-bg, var(--root-bg));
   color: var(--form-color, var(--root-fg));
-  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
+  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms;
 }
 
 :where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select):placeholder-shown {
@@ -388,7 +388,7 @@ summary) {
 :where(input[type=checkbox][role=switch]):checked {
   --_offset-x: calc(
   	var(--switch-size, 2em) -
-  		var(--control-size, 1.25em)
+  	var(--control-size, 1.25em)
   );
 }
 :where(input[type=checkbox][role=switch]):checked::after {

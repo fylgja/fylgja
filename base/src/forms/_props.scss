@@ -38,8 +38,11 @@ $color-size: 2.5em !default;
 	border-radius: var(--form-radius, #{$radius});
 	background: var(--form-bg, #{$bg});
 	color: var(--form-color, #{$color});
-	transition: color 250ms, background-color 250ms, border-color 250ms,
-		box-shadow 250ms, var(--outline-transition);
+	transition:
+		color 250ms,
+		background-color 250ms,
+		border-color 250ms,
+		box-shadow 250ms;
 }
 
 @mixin control {
@@ -64,7 +67,10 @@ $color-size: 2.5em !default;
 		background-color: var(--icon-color, currentcolor);
 		scale: var(--_show-icon, 0);
 		opacity: var(--_show-icon, 0);
-		transition: translate 0.15s, scale 0.15s, opacity 0.15s;
+		transition:
+			translate 0.15s,
+			scale 0.15s,
+			opacity 0.15s;
 		forced-color-adjust: none;
 		// stylelint-disable-next-line property-no-vendor-prefix
 		-webkit-mask: var(--_icon) center / contain no-repeat;
@@ -91,9 +97,10 @@ $color-size: 2.5em !default;
 	}
 
 	&:checked {
+		// prettier-ignore
 		--_offset-x: calc(
 			var(--switch-size, #{$switch-size}) -
-				var(--control-size, #{$control-size})
+			var(--control-size, #{$control-size})
 		);
 
 		&::after {
