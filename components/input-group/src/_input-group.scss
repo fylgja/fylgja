@@ -10,10 +10,12 @@
 		color 250ms,
 		background-color 250ms,
 		border-color 250ms,
-		box-shadow 250ms;
+		box-shadow 250ms,
+		var(--outline-transition);
 	vertical-align: middle;
 
 	&:has(> input, > select, > textarea) {
+		--outline-transition: /* */;
 		--outline-size: 1px;
 		--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 	}
