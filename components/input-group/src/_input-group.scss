@@ -2,8 +2,6 @@
 // Licensed under MIT Open Source
 
 .input-group {
-	--outline-size: 1px;
-	--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 	position: relative;
 	display: inline-flex;
 	max-width: max-content;
@@ -12,9 +10,13 @@
 		color 250ms,
 		background-color 250ms,
 		border-color 250ms,
-		box-shadow 250ms,
-		var(--outline-transition);
+		box-shadow 250ms;
 	vertical-align: middle;
+
+	&:has(> input, > select, > textarea) {
+		--outline-size: 1px;
+		--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
+	}
 
 	&:focus-within {
 		--form-stroke: var(--form-active-color);
@@ -22,10 +24,10 @@
 		outline-offset: var(--outline-offset, 2px);
 	}
 
-	// Input Children, accepted cases are inputs and button anything else is custom
 	> * {
 		margin: 0;
 		border-radius: 0;
+		outline: none;
 	}
 
 	> :first-child {
@@ -38,20 +40,14 @@
 		border-end-end-radius: inherit;
 	}
 
-	> :focus {
-		outline: none;
-
-		// Push item to top, without using position
-		translate: 0 0;
-	}
-
-	> :not(template, [hidden]:where(:not([hidden="until-found"])))
-		+ :not(button, .btn) {
+	> :not(:first-child, button, .btn) {
 		border-inline-start-width: 0;
 	}
 
-	// If the label is in the style button (btn) then hide the input visually, still-clickable
-	// Requires the wrapping label solution and some sort of sr-only or visually-only utility for the label text
+	> :not(:last-child, button, .btn) {
+		border-inline-end-width: 0;
+	}
+
 	:where(label.btn) {
 		position: relative;
 	}

@@ -3,14 +3,16 @@
  * Licensed under MIT Open Source
  */
 .input-group {
-  --outline-size: 1px;
-  --outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
   position: relative;
   display: inline-flex;
   max-width: max-content;
   border-radius: var(--rounded, 0.35rem);
-  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
+  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms;
   vertical-align: middle;
+}
+.input-group:has(> input, > select, > textarea) {
+  --outline-size: 1px;
+  --outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 }
 .input-group:focus-within {
   --form-stroke: var(--form-active-color);
@@ -20,6 +22,7 @@
 .input-group > * {
   margin: 0;
   border-radius: 0;
+  outline: none;
 }
 .input-group > :first-child {
   border-start-start-radius: inherit;
@@ -29,12 +32,11 @@
   border-start-end-radius: inherit;
   border-end-end-radius: inherit;
 }
-.input-group > :focus {
-  outline: none;
-  translate: 0 0;
-}
-.input-group > :not(template, [hidden]:where(:not([hidden=until-found]))) + :not(button, .btn) {
+.input-group > :not(:first-child, button, .btn) {
   border-inline-start-width: 0;
+}
+.input-group > :not(:last-child, button, .btn) {
+  border-inline-end-width: 0;
 }
 .input-group :where(label.btn) {
   position: relative;
