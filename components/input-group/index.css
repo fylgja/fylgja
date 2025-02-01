@@ -12,15 +12,14 @@
   transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
   vertical-align: middle;
 }
-.input-group :focus-visible {
-  translate: 0 0;
+.input-group:focus-within {
+  --form-stroke: var(--form-active-color);
+  outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
+  outline-offset: var(--outline-offset, 2px);
 }
 .input-group > * {
   margin: 0;
   border-radius: 0;
-}
-.input-group > *:focus {
-  outline: none;
 }
 .input-group > :first-child {
   border-start-start-radius: inherit;
@@ -30,16 +29,12 @@
   border-start-end-radius: inherit;
   border-end-end-radius: inherit;
 }
-.input-group > :not(input:first-of-type, button, .btn) {
+.input-group > :focus {
+  outline: none;
+  translate: 0 0;
+}
+.input-group > :not(template, [hidden]:where(:not([hidden=until-found]))) + :not(button, .btn) {
   border-inline-start-width: 0;
-}
-.input-group > :not(input:last-of-type, button, .btn) {
-  border-inline-end-width: 0;
-}
-.input-group:where(:has(:focus-visible)) {
-  --form-stroke: var(--form-active-color);
-  outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
-  outline-offset: var(--outline-offset, 2px);
 }
 .input-group :where(label.btn) {
   position: relative;

@@ -16,19 +16,16 @@
 		var(--outline-transition);
 	vertical-align: middle;
 
-	// Push item to top, without using position
-	:focus-visible {
-		translate: 0 0;
+	&:focus-within {
+		--form-stroke: var(--form-active-color);
+		outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
+		outline-offset: var(--outline-offset, 2px);
 	}
 
+	// Input Children, accepted cases are inputs and button anything else is custom
 	> * {
 		margin: 0;
 		border-radius: 0;
-
-		// The group will handle the focus
-		&:focus {
-			outline: none;
-		}
 	}
 
 	> :first-child {
@@ -41,18 +38,16 @@
 		border-end-end-radius: inherit;
 	}
 
-	> :not(input:first-of-type, button, .btn) {
+	> :focus {
+		outline: none;
+
+		// Push item to top, without using position
+		translate: 0 0;
+	}
+
+	> :not(template, [hidden]:where(:not([hidden="until-found"])))
+		+ :not(button, .btn) {
 		border-inline-start-width: 0;
-	}
-
-	> :not(input:last-of-type, button, .btn) {
-		border-inline-end-width: 0;
-	}
-
-	&:where(:has(:focus-visible)) {
-		--form-stroke: var(--form-active-color);
-		outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
-		outline-offset: var(--outline-offset, 2px);
 	}
 
 	// If the label is in the style button (btn) then hide the input visually, still-clickable
