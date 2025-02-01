@@ -18,9 +18,9 @@
 		--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
 	}
 
-	&:focus-within {
+	&:has(:focus-visible) {
 		--form-stroke: var(--form-active-color);
-		outline: var(--outline-size, 2px) solid var(--brand, currentcolor);
+		outline: var(--outline-size, 2px) solid var(--form-active-color);
 		outline-offset: var(--outline-offset, 2px);
 	}
 
