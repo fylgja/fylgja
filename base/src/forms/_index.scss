@@ -119,12 +119,13 @@ $form-selectors: if(
 }
 
 :where(textarea) {
-	min-block-size: var(
-		--textarea-size,
-		calc(3.5lh + var(--form-py, #{form.$padding-block}))
-	);
-	field-sizing: content; // Resize by default, disabled the rows attribute
 	resize: vertical;
+}
+
+:where(textarea:not([row])) {
+	$min-size: calc(3.5lh + var(--form-py, #{form.$padding-block}));
+	min-block-size: var(--textarea-min-size, #{$min-size});
+	field-sizing: content;
 }
 
 // Reset the default opacity in Firefox,
