@@ -1,15 +1,14 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$max-cols: 4 !default;
-$max-cols-size: 14rem !default;
+$max-col-size: 14rem !default;
 
 .auto-grid {
-	--max-cols: #{$max-cols};
-	--max-cols-size: #{$max-cols-size};
+	--max-col-size: #{$max-col-size};
 	display: grid;
 	grid-template-columns: repeat(
 		auto-fill,
-		minmax(clamp(100% / var(--max-cols), var(--max-cols-size), 100%), 1fr)
+		min(100%, var(--max-col-size)),
+		1fr
 	);
 }
