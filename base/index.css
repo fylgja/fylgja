@@ -446,9 +446,12 @@ summary) {
 }
 
 :where(textarea) {
-  min-block-size: var(--textarea-size, calc(3.5lh + var(--form-py, 0.4375rem)));
-  field-sizing: content;
   resize: vertical;
+}
+
+:where(textarea:not([row])) {
+  min-block-size: var(--textarea-min-size, calc(3.5lh + var(--form-py, 0.4375rem)));
+  field-sizing: content;
 }
 
 ::placeholder {
