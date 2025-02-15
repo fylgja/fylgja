@@ -1,11 +1,19 @@
-.rounded {
-  --rounded: 0.5rem;
-  --rounded-y: var(--rounded);
-  --rounded-x: var(--rounded);
-  border-start-start-radius: var(--rounded-y);
-  border-end-start-radius: var(--rounded-y);
-  border-end-end-radius: var(--rounded-x);
-  border-start-end-radius: var(--rounded-x);
+.rounded,
+.rounded-conditional {
+  --radius: 0.5rem;
+  --radius-y: var(--radius);
+  --radius-x: var(--radius);
+  --_radius-y: var(--radius-y);
+  --_radius-x: var(--radius-x);
+  border-start-start-radius: var(--_radius-y);
+  border-end-start-radius: var(--_radius-y);
+  border-end-end-radius: var(--_radius-x);
+  border-start-end-radius: var(--_radius-x);
+}
+
+.rounded-conditional {
+  --_radius-y: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-y));
+  --_radius-x: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-x));
 }
 
 .rounded-none {
