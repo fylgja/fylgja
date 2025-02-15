@@ -1,7 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-// Port to tokens + samples
+/// ! Experimental Version
+/// Powered by `animation-timeline` and the `scroll()` this works but is not yet baseline
+/// @source https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline
+/// @source https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/scroll
+
+// ? Research: Alternately method `@container scroll-state` as a solution
+
+// stylelint-disable property-no-vendor-prefix
+
 @property --scroll-mask-start-opacity {
 	syntax: "<percentage>";
 	inherits: false;
