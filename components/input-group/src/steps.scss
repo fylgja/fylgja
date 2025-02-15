@@ -1,0 +1,24 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "props";
+
+.input-group:where(.--step) {
+	color: var(--brand);
+
+	:where(label) {
+		--_is-checked: initial;
+		--_not-checked: /* */;
+		position: relative;
+		opacity: var(--_is-checked, 0.6);
+
+		&:has(:checked) ~ label {
+			--_is-checked: /* */;
+			--_not-checked: initial;
+		}
+	}
+
+	:where(label input:is([type="checkbox"], [type="radio"])) {
+		@extend %input-group-sr-only;
+	}
+}

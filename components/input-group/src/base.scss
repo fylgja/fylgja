@@ -1,10 +1,11 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "props";
+
 .input-group {
 	position: relative;
-	display: inline-flex;
-	max-width: max-content;
+	display: flex;
 	border-radius: var(--rounded, 0.35rem);
 	transition:
 		color 250ms,
@@ -14,16 +15,16 @@
 		var(--outline-transition);
 	vertical-align: middle;
 
-	&:has(> input, > select, > textarea) {
-		--outline-transition: /* */;
-		--outline-size: 1px;
-		--outline-offset: calc((var(--form-border-width, 1px) + 1px) * -1);
-	}
-
 	&:has(:focus-visible) {
 		--form-stroke: var(--form-active-color);
 		outline: var(--outline-size, 2px) solid var(--form-active-color);
 		outline-offset: var(--outline-offset, 2px);
+	}
+
+	&:has(> :is(input, select, textarea):focus) {
+		--outline-transition: /* */;
+		--outline-size: 1px;
+		--outline-offset: 0;
 	}
 
 	> * {
@@ -42,12 +43,10 @@
 		border-end-end-radius: inherit;
 	}
 
-	> :not(:first-child, button, .btn) {
-		border-inline-start-width: 0;
-	}
-
-	> :not(:last-child, button, .btn) {
-		border-inline-end-width: 0;
+	> :not(template, [hidden]:where(:not([hidden="until-found"]))) {
+		+ :not(button, .btn) {
+			border-inline-start-width: 0;
+		}
 	}
 
 	:where(label.btn) {
@@ -55,23 +54,6 @@
 	}
 
 	:where(label.btn input:is([type="checkbox"], [type="radio"])) {
-		position: absolute;
-		opacity: 0;
-		block-size: auto;
-		inline-size: auto;
-	}
-}
-
-// Great for review star input groups
-.input-group.-step {
-	color: var(--brand);
-
-	:where(label) {
-		--_is-checked: initial;
-		opacity: var(--_is-checked, 0.6);
-
-		&:has(:checked) ~ label {
-			--_is-checked: /* */;
-		}
+		@extend %input-group-sr-only;
 	}
 }

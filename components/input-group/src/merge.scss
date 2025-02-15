@@ -1,0 +1,12 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.input-group:where(.--merge) {
+	> :not(:last-child) {
+		border-inline-end-width: 0;
+	}
+
+	.form-input button {
+		--btn-border-width: 0;
+	}
+}

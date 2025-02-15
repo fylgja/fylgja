@@ -1,0 +1,6 @@
+.input-group:where(.--merge) > :not(:last-child) {
+  border-inline-end-width: 0;
+}
+.input-group:where(.--merge) .form-input button {
+  --btn-border-width: 0;
+}

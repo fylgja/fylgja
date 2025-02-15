@@ -1,0 +1,43 @@
+.input-group :where(label.btn input:is([type=checkbox], [type=radio])) {
+  position: absolute;
+  opacity: 0;
+  block-size: auto;
+  inline-size: auto;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  border-radius: var(--rounded, 0.35rem);
+  transition: color 250ms, background-color 250ms, border-color 250ms, box-shadow 250ms, var(--outline-transition);
+  vertical-align: middle;
+}
+.input-group:has(:focus-visible) {
+  --form-stroke: var(--form-active-color);
+  outline: var(--outline-size, 2px) solid var(--form-active-color);
+  outline-offset: var(--outline-offset, 2px);
+}
+.input-group:has(> :is(input, select, textarea):focus) {
+  --outline-transition: /* */;
+  --outline-size: 1px;
+  --outline-offset: 0;
+}
+.input-group > * {
+  margin: 0;
+  border-radius: 0;
+  outline: none;
+}
+.input-group > :first-child {
+  border-start-start-radius: inherit;
+  border-end-start-radius: inherit;
+}
+.input-group > :last-child {
+  border-start-end-radius: inherit;
+  border-end-end-radius: inherit;
+}
+.input-group > :not(template, [hidden]:where(:not([hidden=until-found]))) + :not(button, .btn) {
+  border-inline-start-width: 0;
+}
+.input-group :where(label.btn) {
+  position: relative;
+}

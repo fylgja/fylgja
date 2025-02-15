@@ -1,0 +1,20 @@
+.input-group:where(.--step) :where(label input:is([type=checkbox], [type=radio])) {
+  position: absolute;
+  opacity: 0;
+  block-size: auto;
+  inline-size: auto;
+}
+
+.input-group:where(.--step) {
+  color: var(--brand);
+}
+.input-group:where(.--step) :where(label) {
+  --_is-checked: initial;
+  --_not-checked: /* */;
+  position: relative;
+  opacity: var(--_is-checked, 0.6);
+}
+.input-group:where(.--step) :where(label):has(:checked) ~ label {
+  --_is-checked: /* */;
+  --_not-checked: initial;
+}
