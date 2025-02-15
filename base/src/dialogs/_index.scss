@@ -61,8 +61,3 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 :where(:root:has(dialog[open]:modal)) {
 	overflow: hidden;
 }
-
-// Add extra specificity for combination with utility classes
-dialog:not([open], :popover-open) {
-	display: none;
-}
