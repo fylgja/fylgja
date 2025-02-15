@@ -4,38 +4,39 @@
 @use "props" as *;
 
 $use-mq: true !default;
+$utils: (
+	"size-y": "block-size",
+	"size-x": "inline-size",
+	"my": "margin-block",
+	"mx": "margin-inline",
+	"py": "padding-block",
+	"px": "padding-inline",
+) !default;
 
-:where([style*="--my:"]) {
-	margin-block: var(--my);
+:where([style*="--size:"]) {
+	block-size: var(--size);
+	inline-size: var(--size);
 }
 
-:where([style*="--mx:"]) {
-	margin-inline: var(--mx);
+:where([style*="--m:"]) {
+	margin: var(--m);
 }
 
-:where([style*="--py:"]) {
-	padding-block: var(--py);
+:where([style*="--p:"]) {
+	padding: var(--p);
 }
 
-:where([style*="--px:"]) {
-	padding-inline: var(--px);
+@each $var, $prop in $utils {
+	:where([style*="--#{$var}:"]) {
+		#{$prop}: var(--#{$var});
+	}
 }
 
 @mixin mq-utils($name) {
-	:where([style*="--#{$name}_my:"]) {
-		margin-block: var(--#{$name}_my);
-	}
-
-	:where([style*="--#{$name}_mx:"]) {
-		margin-inline: var(--#{$name}_mx);
-	}
-
-	:where([style*="--#{$name}_py:"]) {
-		padding-block: var(--#{$name}_py);
-	}
-
-	:where([style*="--#{$name}_px:"]) {
-		padding-inline: var(--#{$name}_px);
+	@each $var, $prop in $utils {
+		:where([style*="--#{$name}_#{$var}:"]) {
+			#{$prop}: var(--#{$name}_#{$var});
+		}
 	}
 }
 
