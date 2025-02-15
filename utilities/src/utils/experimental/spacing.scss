@@ -1,0 +1,58 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+/// ! Experimental Version
+/// This is uses the upcoming `attr()` function, with the focus on unit based values.
+/// @source https://developer.mozilla.org/en-US/docs/Web/CSS/attr
+
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "sass:meta";
+@use "../props" as *;
+
+$use-mq: true !default;
+$utils: (
+	"size-y": "block-size",
+	"size-x": "inline-size",
+	"my": "margin-block",
+	"mx": "margin-inline",
+	"py": "padding-block",
+	"px": "padding-inline",
+) !default;
+
+$type: "type(auto | <length-percentage>)";
+$prefix: "style";
+
+[#{$prefix}-size] {
+	block-size: attr(#{$prefix}-size #{$type}, 1rem);
+	inline-size: attr(#{$prefix}-size #{$type}, 1rem);
+}
+
+[#{$prefix}-m] {
+	margin: attr(#{$prefix}-m #{$type});
+}
+
+[#{$prefix}-p] {
+	padding: attr(#{$prefix}-p #{$type});
+}
+
+@each $var, $prop in $utils {
+	[#{$prefix}-#{$var}] {
+		#{$prop}: attr(#{$prefix}-#{$var} #{$type}, 1rem);
+	}
+}
+
+@mixin mq-utils($name) {
+	@each $var, $prop in $utils {
+		[#{$prefix}-#{$name}-#{$var}] {
+			#{$prop}: attr(#{$prefix}-#{$name}-#{$var} #{$type}, 1rem);
+		}
+	}
+}
+
+@if $use-mq {
+	@include for-mq using ($name) {
+		@include mq-utils($name);
+	}
+}
