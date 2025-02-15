@@ -8,6 +8,13 @@ module.exports = {
     "ultrawide": "18/5",
     "golden": "1.618/1"
   },
+  "border-size": {
+    "1": "1px",
+    "2": "2px",
+    "3": "4px",
+    "4": "8px",
+    "5": "12px"
+  },
   "radius": {
     "1": "0.125rem",
     "2": "0.25rem",
@@ -15,25 +22,7 @@ module.exports = {
     "4": "1rem",
     "5": "2rem",
     "6": "3rem",
-    "full": "1e5px",
-    "conditional": {
-      "1": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-1))",
-      "2": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-2))",
-      "3": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-3))",
-      "4": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-4))",
-      "5": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-5))",
-      "6": "clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-6))"
-    }
-  },
-  "border": {
-    "size": {
-      "1": "0.125rem",
-      "2": "0.25rem",
-      "3": "0.375rem",
-      "4": "0.5rem",
-      "5": "0.75rem",
-      "6": "1rem"
-    }
+    "full": "1e5px"
   },
   "color": {
     "0": "oklch(99% calc(.03 * var(--chroma, 1)) var(--hue, 0))",
@@ -177,52 +166,24 @@ module.exports = {
       "0 6px 30px 5px var(--shadow-color-ambient)"
     ]
   },
+  "spacing": "0.25rem",
   "size": {
-    "1": "0.125rem",
-    "2": "0.25rem",
-    "3": "0.375rem",
-    "4": "0.5rem",
-    "5": "0.625rem",
-    "6": "0.75rem",
-    "7": "0.875rem",
-    "8": "1rem",
-    "9": "1.25rem",
-    "10": "1.5rem",
-    "11": "1.75rem",
-    "12": "2rem",
-    "13": "2.25rem",
-    "14": "2.5rem",
-    "15": "2.75rem",
-    "16": "3rem",
-    "17": "3.5rem",
-    "18": "4rem",
-    "19": "5rem",
-    "20": "6rem",
-    "21": "7rem",
-    "22": "8rem",
-    "23": "9rem",
-    "24": "10rem",
-    "25": "11rem",
-    "26": "12rem",
-    "27": "13rem",
-    "28": "14rem",
-    "29": "15rem",
-    "30": "16rem",
-    "31": "18rem",
-    "32": "20rem",
-    "33": "24rem",
-    "34": "28rem",
-    "35": "32rem",
-    "36": "36rem",
-    "37": "42rem",
-    "38": "48rem",
-    "39": "56rem",
-    "40": "64rem",
-    "41": "72rem",
-    "42": "80rem",
-    "heading": "36ch",
-    "content": "64ch"
+    "1": "calc(var(--spacing) * 1)",
+    "2": "calc(var(--spacing) * 2)",
+    "3": "calc(var(--spacing) * 3)",
+    "4": "calc(var(--spacing) * 4)",
+    "5": "calc(var(--spacing) * 5)",
+    "6": "calc(var(--spacing) * 6)",
+    "7": "calc(var(--spacing) * 7)",
+    "8": "calc(var(--spacing) * 8)",
+    "9": "calc(var(--spacing) * 9)",
+    "10": "calc(var(--spacing) * 10)",
+    "11": "calc(var(--spacing) * 11)",
+    "12": "calc(var(--spacing) * 12)",
+    "05": "calc(var(--spacing) * 0.5)"
   },
+  "size-heading": "36ch",
+  "size-content": "64ch",
   "layer": {
     "1": 1,
     "2": 2,

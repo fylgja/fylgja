@@ -1,7 +1,6 @@
 /* Root selector */
 @import url("aspect-ratios.css");
-@import url("border-radius.css");
-@import url("border-sizes.css");
+@import url("borders.css");
 @import url("easing.css");
 @import url("fonts.css");
 @import url("hues.css");

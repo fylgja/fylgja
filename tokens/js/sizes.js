@@ -2,50 +2,22 @@
 // Licensed under MIT Open Source
 
 export default {
+	spacing: "0.25rem", // 4px
 	size: {
-		1: "0.125rem", // 2px
-		2: "0.25rem", // 4px
-		3: "0.375rem", // 6px
-		4: "0.5rem", // 8px
-		5: "0.625rem", // 10px
-		6: "0.75rem", // 12px
-		7: "0.875rem", // 14px
-		8: "1rem", // 16px
-		9: "1.25rem", // 20px
-		10: "1.5rem", // 24px
-		11: "1.75rem", // 28px
-		12: "2rem", // 32px
-		13: "2.25rem", // 36px
-		14: "2.5rem", // 40px
-		15: "2.75rem", // 44px
-		16: "3rem", // 48px
-		17: "3.5rem", // 56px
-		18: "4rem", // 64px
-		19: "5rem", // 80px
-		20: "6rem", // 96px
-		21: "7rem", // 112px
-		22: "8rem", // 128px
-		23: "9rem", // 144px
-		24: "10rem", // 160px
-		25: "11rem", // 176px
-		26: "12rem", // 192px
-		27: "13rem", // 208px
-		28: "14rem", // 224px
-		29: "15rem", // 240px
-		30: "16rem", // 256px
-		31: "18rem", // 288px
-		32: "20rem", // 320px
-		33: "24rem", // 384px
-		34: "28rem", // 448px
-		35: "32rem", // 512px
-		36: "36rem", // 576px
-		37: "42rem", // 672px
-		38: "48rem", // 768px
-		39: "56rem", // 896px
-		40: "64rem", // 1024px
-		41: "72rem", // 1152px
-		42: "80rem", // 1280px
-		heading: "36ch", // 288px
-		content: "64ch", // 512px
+		"05": "calc(var(--spacing) * 0.5)",
+		1: "calc(var(--spacing) * 1)",
+		2: "calc(var(--spacing) * 2)",
+		3: "calc(var(--spacing) * 3)",
+		4: "calc(var(--spacing) * 4)", // 16
+		5: "calc(var(--spacing) * 5)",
+		6: "calc(var(--spacing) * 6)",
+		7: "calc(var(--spacing) * 7)",
+		8: "calc(var(--spacing) * 8)", // 32
+		9: "calc(var(--spacing) * 9)",
+		10: "calc(var(--spacing) * 10)",
+		11: "calc(var(--spacing) * 11)",
+		12: "calc(var(--spacing) * 12)", // 48
 	},
+	"size-heading": "36ch", // 288px
+	"size-content": "64ch", // 512px
 };

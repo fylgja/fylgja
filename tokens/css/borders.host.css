@@ -1,0 +1,14 @@
+:host {
+	--border-size-1: 1px;
+	--border-size-2: 2px;
+	--border-size-3: 4px;
+	--border-size-4: 8px;
+	--border-size-5: 12px;
+	--radius-1: 0.125rem;
+	--radius-2: 0.25rem;
+	--radius-3: 0.5rem;
+	--radius-4: 1rem;
+	--radius-5: 2rem;
+	--radius-6: 3rem;
+	--radius-full: 1e5px;
+}

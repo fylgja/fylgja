@@ -4,8 +4,7 @@
 import { propsBuilder } from "../../props-builder/index.js";
 
 import aspectRatios from "../js/aspect-ratios.js";
-import borderRadius from "../js/border-radius.js";
-import borderSizes from "../js/border-sizes.js";
+import borders from "../js/borders.js";
 import { colors, hues, staticColors } from "../js/colors.js";
 import easing from "../js/easing.js";
 import fonts from "../js/fonts.js";
@@ -17,8 +16,7 @@ import zLayer from "../js/z-layer.js";
 Object.entries({
 	"aspect-ratios": aspectRatios,
 	"z-layer": zLayer,
-	"border-radius": borderRadius,
-	"border-sizes": borderSizes,
+	borders,
 	hues,
 	easing,
 	fonts,
@@ -45,8 +43,7 @@ propsBuilder(mq, "scss/mq.scss");
 // All props, except mq's
 const props = {
 	...aspectRatios,
-	...borderRadius,
-	...borderSizes,
+	...borders,
 	...colors,
 	...hues,
 	...easing,
