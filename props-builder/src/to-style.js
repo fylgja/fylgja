@@ -27,7 +27,7 @@ const toStyleTokens = (
 		selector = ":root",
 		mediaDark = "@media (prefers-color-scheme: dark)",
 		varSyntax = "--",
-	} = {}
+	} = {},
 ) => {
 	const indent = varSyntax === "--" ? "\t" : "";
 	const flatProps = flattenObj(props);
@@ -47,6 +47,10 @@ const toStyleTokens = (
 		if (isKeyFrame) {
 			appendedMeta += `${appendedMeta ? "\n\n" : ""}${value}`;
 			return;
+		}
+
+		if (name.includes(".")) {
+			name = name.replaceAll(".", "");
 		}
 
 		name = kebabCase(name);
