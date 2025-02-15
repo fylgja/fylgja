@@ -25,7 +25,7 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 	position: fixed; // 1
 	max-block-size: calc(100% - var(--screen-y));
 	max-inline-size: calc(100% - var(--screen-x));
-	background-color: var(--dialog-bg, var(--surface-color));
+	background-color: var(--dialog-bg, var(--root-bg));
 	color: var(--dialog-color, var(--root-fg));
 	border-radius: $radius;
 	margin-block: var(--my);
