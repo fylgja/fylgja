@@ -14,7 +14,7 @@
   position: fixed;
   max-block-size: calc(100% - var(--screen-y));
   max-inline-size: calc(100% - var(--screen-x));
-  background-color: var(--dialog-bg, var(--surface-color));
+  background-color: var(--dialog-bg, var(--root-bg));
   color: var(--dialog-color, var(--root-fg));
   border-radius: 1rem;
   margin-block: var(--my);
@@ -49,8 +49,4 @@
 
 :where(:root:has(dialog[open]:modal)) {
   overflow: hidden;
-}
-
-dialog:not([open], :popover-open) {
-  display: none;
 }
