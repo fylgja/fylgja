@@ -213,12 +213,9 @@ summary) {
 }
 
 :where(hr) {
+  height: auto;
   border-block-end-width: 2px;
   color: inherit;
-}
-
-:where(small) {
-  font-size: 0.875em;
 }
 
 :where(sub, sup) {

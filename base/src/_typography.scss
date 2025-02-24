@@ -122,15 +122,11 @@ $code-color: null !default;
 	margin-inline-start: 0;
 }
 
-// Correct the inheritance of color in Firefox
+// Correct the inheritance of colors in Firefox
 :where(hr) {
+	height: auto;
 	border-block-end-width: 2px;
 	color: inherit;
-}
-
-// Add the correct font size in all browsers
-:where(small) {
-	font-size: 0.875em;
 }
 
 // Prevent sub and sup elements from affecting the line height in all browsers
