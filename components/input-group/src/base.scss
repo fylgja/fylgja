@@ -53,7 +53,7 @@
 		position: relative;
 	}
 
-	:where(label.btn input:is([type="checkbox"], [type="radio"])) {
+	:where(label.btn input) {
 		@extend %input-group-sr-only;
 	}
 }

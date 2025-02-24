@@ -3,7 +3,7 @@
 
 @use "props";
 
-.input-group:where(.--step) {
+.input-group:where(.--steps) {
 	color: var(--brand);
 
 	:where(label) {
@@ -18,7 +18,7 @@
 		}
 	}
 
-	:where(label input:is([type="checkbox"], [type="radio"])) {
+	:where(label input) {
 		@extend %input-group-sr-only;
 	}
 }
