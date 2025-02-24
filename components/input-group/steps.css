@@ -12,7 +12,7 @@
   --_is-checked: initial;
   --_not-checked: /* */;
   position: relative;
-  opacity: var(--_is-checked, 0.6);
+  opacity: var(--_not-checked, 0.6);
 }
 .input-group:where(.--step) :where(label):has(:checked) ~ label {
   --_is-checked: /* */;
