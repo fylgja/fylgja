@@ -1,4 +1,4 @@
-.input-group :where(label.btn input:is([type=checkbox], [type=radio])) {
+.input-group :where(label.btn input) {
   position: absolute;
   opacity: 0;
   block-size: auto;

@@ -2,7 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-.input-group:where(.--step) :where(label input:is([type=checkbox], [type=radio])), .input-group :where(label.btn input:is([type=checkbox], [type=radio])) {
+.input-group:where(.--steps) :where(label input), .input-group :where(label.btn input) {
   position: absolute;
   opacity: 0;
   block-size: auto;
@@ -52,16 +52,16 @@
   --btn-border-width: 0;
 }
 
-.input-group:where(.--step) {
+.input-group:where(.--steps) {
   color: var(--brand);
 }
-.input-group:where(.--step) :where(label) {
+.input-group:where(.--steps) :where(label) {
   --_is-checked: initial;
   --_not-checked: /* */;
   position: relative;
   opacity: var(--_not-checked, 0.6);
 }
-.input-group:where(.--step) :where(label):has(:checked) ~ label {
+.input-group:where(.--steps) :where(label):has(:checked) ~ label {
   --_is-checked: /* */;
   --_not-checked: initial;
 }
