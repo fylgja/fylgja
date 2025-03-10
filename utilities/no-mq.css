@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 .clip {
   overflow: clip;
 }
@@ -61,12 +65,20 @@
   padding-block-end: var(--divide-gap);
 }
 
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-flip {
   scale: -1;
 }
-
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > .flip-rotate {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-turn {
+  rotate: 90deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-rotate {
   rotate: 180deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-hide {
+  visibility: visible;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-show {
+  visibility: visible;
 }
 
 .flow-unset > *,
@@ -152,14 +164,22 @@
   position: fixed;
 }
 
-.rounded {
-  --rounded: 0.5rem;
-  --rounded-y: var(--rounded);
-  --rounded-x: var(--rounded);
-  border-start-start-radius: var(--rounded-y);
-  border-end-start-radius: var(--rounded-y);
-  border-end-end-radius: var(--rounded-x);
-  border-start-end-radius: var(--rounded-x);
+.rounded,
+.rounded-conditional {
+  --radius: 0.5rem;
+  --radius-y: var(--radius);
+  --radius-x: var(--radius);
+  --_radius-y: var(--radius-y);
+  --_radius-x: var(--radius-x);
+  border-start-start-radius: var(--_radius-y);
+  border-end-start-radius: var(--_radius-y);
+  border-end-end-radius: var(--_radius-x);
+  border-start-end-radius: var(--_radius-x);
+}
+
+.rounded-conditional {
+  --_radius-y: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-y));
+  --_radius-x: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-x));
 }
 
 .rounded-none {
@@ -231,6 +251,27 @@
   scroll-snap-align: var(--snap-align);
 }
 
+:where([style*="--size:"]) {
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+
+:where([style*="--m:"]) {
+  margin: var(--m);
+}
+
+:where([style*="--p:"]) {
+  padding: var(--p);
+}
+
+:where([style*="--size-y:"]) {
+  block-size: var(--size-y);
+}
+
+:where([style*="--size-x:"]) {
+  inline-size: var(--size-x);
+}
+
 :where([style*="--my:"]) {
   margin-block: var(--my);
 }
@@ -299,55 +340,32 @@
   font-style: italic;
 }
 
-.visible,
-.peer-invalid\:invisible,
-.has-hover\:invisible,
-.has-open\:invisible {
-  visibility: visible;
-}
-
-.invisible,
-.peer-invalid\:visible,
-.has-hover\:visible,
-.has-open\:visible {
-  visibility: hidden;
-}
-
-:user-invalid ~ .peer-invalid\:visible,
-:where(:hover, :hover > summary, :hover > .stack) > .has-hover\:visible,
-:where([open], [open] > summary, [open] > summary > .stack) > .has-open\:visible {
-  visibility: visible;
-}
-
-:user-invalid ~ .peer-invalid\:invisible,
-:where(:hover, :hover > summary, :hover > .stack) > .has-hover\:invisible,
-:where([open], [open] > summary, [open] > summary > .stack) > .has-open\:invisible {
-  visibility: hidden;
-}
-
 .auto-grid {
   --max-col-size: 14rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, min(100%, var(--max-col-size)), 1fr);
 }
 
-.grid {
+:where(.grid-cols) {
+  display: grid;
+}
+
+.grid-cols {
   --grid-cols: 1;
   --_cols: var(--grid-cols);
-  display: grid;
   grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
 }
-.grid > * {
-  --grid-row: auto;
-  --grid-col: auto;
-  --_gridIR: var(--grid-row);
-  --_gridIC: var(--grid-col);
+.grid-cols > * {
+  --row: auto;
+  --col: auto;
+  --_gridIR: var(--row);
+  --_gridIC: var(--col);
   grid-row: var(--_gridIR);
   grid-column: var(--_gridIC);
 }
 
 .col-span-full {
-  --grid-col: 1 / -1;
+  --col: 1 / -1;
 }
 
 .grid-flow {
@@ -360,24 +378,11 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:is(.flex, .flex-col) {
+:where(.flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
-  --grow: initial;
-  --shrink: initial;
-  --basis: initial;
-  --_flexD: var(--flex-dir);
-  --_flexW: var(--flex-wrap);
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
-}
-:is(.flex, .flex-col) > * {
-  --grow: 0;
-  --shrink: 1;
-  --basis: auto;
-  --flex: var(--grow) var(--shrink) var(--basis);
-  --_flexI: var(--flex);
-  flex: var(--_flexI);
 }
 
 .flex-col {
@@ -419,6 +424,58 @@
   display: inline flow-root;
 }
 
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline grid;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.open\:hidden:where([open], :popover-open) {
+  display: none;
+}
+
+.open\:block:where([open], :popover-open) {
+  display: block;
+}
+
+.open\:inline-block:where([open], :popover-open) {
+  display: inline flow-root;
+}
+
+.open\:flex:where([open], :popover-open) {
+  display: flex;
+}
+
+.open\:inline-flex:where([open], :popover-open) {
+  display: inline flex;
+}
+
+.open\:grid:where([open], :popover-open) {
+  display: grid;
+}
+
+.open\:inline-grid:where([open], :popover-open) {
+  display: inline grid;
+}
+
+.open\:table-cell:where([open], :popover-open) {
+  display: table-cell;
+}
+
 .align {
   --align: normal space-between;
   --align-items: center legacy;
@@ -427,8 +484,9 @@
   place-content: var(--_alignC);
   place-items: var(--_alignI);
 }
-.align > * {
-  --align-self: auto;
+
+.align-self {
+  --align-self: start auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
 }

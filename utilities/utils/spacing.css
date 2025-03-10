@@ -1,3 +1,24 @@
+:where([style*="--size:"]) {
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+
+:where([style*="--m:"]) {
+  margin: var(--m);
+}
+
+:where([style*="--p:"]) {
+  padding: var(--p);
+}
+
+:where([style*="--size-y:"]) {
+  block-size: var(--size-y);
+}
+
+:where([style*="--size-x:"]) {
+  inline-size: var(--size-x);
+}
+
 :where([style*="--my:"]) {
   margin-block: var(--my);
 }
@@ -15,6 +36,12 @@
 }
 
 @media (width >= 480px) {
+  :where([style*="--sm_size-y:"]) {
+    block-size: var(--sm_size-y);
+  }
+  :where([style*="--sm_size-x:"]) {
+    inline-size: var(--sm_size-x);
+  }
   :where([style*="--sm_my:"]) {
     margin-block: var(--sm_my);
   }
@@ -29,6 +56,12 @@
   }
 }
 @media (width >= 768px) {
+  :where([style*="--md_size-y:"]) {
+    block-size: var(--md_size-y);
+  }
+  :where([style*="--md_size-x:"]) {
+    inline-size: var(--md_size-x);
+  }
   :where([style*="--md_my:"]) {
     margin-block: var(--md_my);
   }
@@ -43,6 +76,12 @@
   }
 }
 @media (width >= 1024px) {
+  :where([style*="--lg_size-y:"]) {
+    block-size: var(--lg_size-y);
+  }
+  :where([style*="--lg_size-x:"]) {
+    inline-size: var(--lg_size-x);
+  }
   :where([style*="--lg_my:"]) {
     margin-block: var(--lg_my);
   }
@@ -57,6 +96,12 @@
   }
 }
 @media (width >= 1440px) {
+  :where([style*="--xl_size-y:"]) {
+    block-size: var(--xl_size-y);
+  }
+  :where([style*="--xl_size-x:"]) {
+    inline-size: var(--xl_size-x);
+  }
   :where([style*="--xl_my:"]) {
     margin-block: var(--xl_my);
   }
@@ -71,6 +116,12 @@
   }
 }
 @media (width >= 1920px) {
+  :where([style*="--xxl_size-y:"]) {
+    block-size: var(--xxl_size-y);
+  }
+  :where([style*="--xxl_size-x:"]) {
+    inline-size: var(--xxl_size-x);
+  }
   :where([style*="--xxl_my:"]) {
     margin-block: var(--xxl_my);
   }

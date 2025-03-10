@@ -8,7 +8,7 @@ $use-custom-mq: false !default;
 @use "clip";
 @use "content-lazy";
 @use "divide";
-@use "flip";
+@use "toggle";
 @use "flow";
 @use "gradient";
 @use "line-clamp";
@@ -27,11 +27,10 @@ $use-custom-mq: false !default;
 @use "transition";
 @use "truncate";
 @use "typography";
-@use "visibility";
 
 // Layout
 @use "auto-grid";
-@use "grid" with (
+@use "grid-cols" with (
 	$use-mq: false
 );
 @use "flex" with (
@@ -60,9 +59,9 @@ $use-custom-mq: false !default;
 		@include spacing.mq-utils($name);
 
 		// Layout
-		@include grid.mq-utils($name);
-		@include flex.mq-utils($name);
 		@include display.mq-utils($name);
+		@include flex.mq-utils($name);
+		@include grid-cols.mq-utils($name);
 		@include align.mq-utils($name);
 
 		// Aria
