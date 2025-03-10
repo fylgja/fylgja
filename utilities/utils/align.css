@@ -6,8 +6,9 @@
   place-content: var(--_alignC);
   place-items: var(--_alignI);
 }
-.align > * {
-  --align-self: auto;
+
+.align-self {
+  --align-self: start auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
 }
@@ -24,7 +25,7 @@
   .align:where([style*="--sm_align-items:"]) {
     --_alignI: var(--sm_--align-items);
   }
-  .align > :where([style*="--sm_align-self:"]) {
+  .align-self:where([style*="--sm_align-self:"]) {
     --_alignS: var(--sm_align-self);
   }
 }
@@ -35,7 +36,7 @@
   .align:where([style*="--md_align-items:"]) {
     --_alignI: var(--md_--align-items);
   }
-  .align > :where([style*="--md_align-self:"]) {
+  .align-self:where([style*="--md_align-self:"]) {
     --_alignS: var(--md_align-self);
   }
 }
@@ -46,7 +47,7 @@
   .align:where([style*="--lg_align-items:"]) {
     --_alignI: var(--lg_--align-items);
   }
-  .align > :where([style*="--lg_align-self:"]) {
+  .align-self:where([style*="--lg_align-self:"]) {
     --_alignS: var(--lg_align-self);
   }
 }
@@ -57,7 +58,7 @@
   .align:where([style*="--xl_align-items:"]) {
     --_alignI: var(--xl_--align-items);
   }
-  .align > :where([style*="--xl_align-self:"]) {
+  .align-self:where([style*="--xl_align-self:"]) {
     --_alignS: var(--xl_align-self);
   }
 }
@@ -68,7 +69,7 @@
   .align:where([style*="--xxl_align-items:"]) {
     --_alignI: var(--xxl_--align-items);
   }
-  .align > :where([style*="--xxl_align-self:"]) {
+  .align-self:where([style*="--xxl_align-self:"]) {
     --_alignS: var(--xxl_align-self);
   }
 }

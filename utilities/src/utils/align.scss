@@ -12,12 +12,12 @@ $use-mq: true !default;
 	--_alignI: var(--align-items);
 	place-content: var(--_alignC);
 	place-items: var(--_alignI);
+}
 
-	> * {
-		--align-self: auto;
-		--_alignS: var(--align-self);
-		place-self: var(--_alignS);
-	}
+.align-self {
+	--align-self: start auto;
+	--_alignS: var(--align-self);
+	place-self: var(--_alignS);
 }
 
 .align-center {
@@ -34,10 +34,10 @@ $use-mq: true !default;
 		&:where([style*="--#{$name}_align-items:"]) {
 			--_alignI: var(--#{$name}_--align-items);
 		}
+	}
 
-		> :where([style*="--#{$name}_align-self:"]) {
-			--_alignS: var(--#{$name}_align-self);
-		}
+	.align-self:where([style*="--#{$name}_align-self:"]) {
+		--_alignS: var(--#{$name}_align-self);
 	}
 }
 
