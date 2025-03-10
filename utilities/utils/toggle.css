@@ -1,0 +1,15 @@
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-flip {
+  scale: -1;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-turn {
+  rotate: 90deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-rotate {
+  rotate: 180deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-hide {
+  visibility: visible;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-show {
+  visibility: visible;
+}

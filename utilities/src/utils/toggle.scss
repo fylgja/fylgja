@@ -1,0 +1,26 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$selectors: "details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]" !default;
+
+:where(#{$selectors}, :is(#{$selectors}) > :is(.group, .stack)) {
+	> .toggle-flip {
+		scale: -1;
+	}
+
+	> .toggle-turn {
+		rotate: 90deg;
+	}
+
+	> .toggle-rotate {
+		rotate: 180deg;
+	}
+
+	> .toggle-hide {
+		visibility: visible;
+	}
+
+	> .toggle-show {
+		visibility: visible;
+	}
+}
