@@ -1,0 +1,10 @@
+.field-error-message {
+  --_field-state: initial;
+  color: var(--form-error-color);
+  visibility: var(--_field-state, hidden);
+}
+
+:user-invalid ~ .field-error-message,
+.field-error-message:has(~ :user-invalid) {
+  --_field-state: /* */;
+}
