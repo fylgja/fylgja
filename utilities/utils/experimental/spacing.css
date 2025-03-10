@@ -1,0 +1,137 @@
+[style-size] {
+  block-size: attr(style-size type(auto | <length-percentage>), 1rem);
+  inline-size: attr(style-size type(auto | <length-percentage>), 1rem);
+}
+
+[style-m] {
+  margin: attr(style-m type(auto | <length-percentage>));
+}
+
+[style-p] {
+  padding: attr(style-p type(auto | <length-percentage>));
+}
+
+[style-size-y] {
+  block-size: attr(style-size-y type(auto | <length-percentage>), 1rem);
+}
+
+[style-size-x] {
+  inline-size: attr(style-size-x type(auto | <length-percentage>), 1rem);
+}
+
+[style-my] {
+  margin-block: attr(style-my type(auto | <length-percentage>), 1rem);
+}
+
+[style-mx] {
+  margin-inline: attr(style-mx type(auto | <length-percentage>), 1rem);
+}
+
+[style-py] {
+  padding-block: attr(style-py type(auto | <length-percentage>), 1rem);
+}
+
+[style-px] {
+  padding-inline: attr(style-px type(auto | <length-percentage>), 1rem);
+}
+
+@media (width >= 480px) {
+  [style-sm-size-y] {
+    block-size: attr(style-sm-size-y type(auto | <length-percentage>), 1rem);
+  }
+  [style-sm-size-x] {
+    inline-size: attr(style-sm-size-x type(auto | <length-percentage>), 1rem);
+  }
+  [style-sm-my] {
+    margin-block: attr(style-sm-my type(auto | <length-percentage>), 1rem);
+  }
+  [style-sm-mx] {
+    margin-inline: attr(style-sm-mx type(auto | <length-percentage>), 1rem);
+  }
+  [style-sm-py] {
+    padding-block: attr(style-sm-py type(auto | <length-percentage>), 1rem);
+  }
+  [style-sm-px] {
+    padding-inline: attr(style-sm-px type(auto | <length-percentage>), 1rem);
+  }
+}
+@media (width >= 768px) {
+  [style-md-size-y] {
+    block-size: attr(style-md-size-y type(auto | <length-percentage>), 1rem);
+  }
+  [style-md-size-x] {
+    inline-size: attr(style-md-size-x type(auto | <length-percentage>), 1rem);
+  }
+  [style-md-my] {
+    margin-block: attr(style-md-my type(auto | <length-percentage>), 1rem);
+  }
+  [style-md-mx] {
+    margin-inline: attr(style-md-mx type(auto | <length-percentage>), 1rem);
+  }
+  [style-md-py] {
+    padding-block: attr(style-md-py type(auto | <length-percentage>), 1rem);
+  }
+  [style-md-px] {
+    padding-inline: attr(style-md-px type(auto | <length-percentage>), 1rem);
+  }
+}
+@media (width >= 1024px) {
+  [style-lg-size-y] {
+    block-size: attr(style-lg-size-y type(auto | <length-percentage>), 1rem);
+  }
+  [style-lg-size-x] {
+    inline-size: attr(style-lg-size-x type(auto | <length-percentage>), 1rem);
+  }
+  [style-lg-my] {
+    margin-block: attr(style-lg-my type(auto | <length-percentage>), 1rem);
+  }
+  [style-lg-mx] {
+    margin-inline: attr(style-lg-mx type(auto | <length-percentage>), 1rem);
+  }
+  [style-lg-py] {
+    padding-block: attr(style-lg-py type(auto | <length-percentage>), 1rem);
+  }
+  [style-lg-px] {
+    padding-inline: attr(style-lg-px type(auto | <length-percentage>), 1rem);
+  }
+}
+@media (width >= 1440px) {
+  [style-xl-size-y] {
+    block-size: attr(style-xl-size-y type(auto | <length-percentage>), 1rem);
+  }
+  [style-xl-size-x] {
+    inline-size: attr(style-xl-size-x type(auto | <length-percentage>), 1rem);
+  }
+  [style-xl-my] {
+    margin-block: attr(style-xl-my type(auto | <length-percentage>), 1rem);
+  }
+  [style-xl-mx] {
+    margin-inline: attr(style-xl-mx type(auto | <length-percentage>), 1rem);
+  }
+  [style-xl-py] {
+    padding-block: attr(style-xl-py type(auto | <length-percentage>), 1rem);
+  }
+  [style-xl-px] {
+    padding-inline: attr(style-xl-px type(auto | <length-percentage>), 1rem);
+  }
+}
+@media (width >= 1920px) {
+  [style-xxl-size-y] {
+    block-size: attr(style-xxl-size-y type(auto | <length-percentage>), 1rem);
+  }
+  [style-xxl-size-x] {
+    inline-size: attr(style-xxl-size-x type(auto | <length-percentage>), 1rem);
+  }
+  [style-xxl-my] {
+    margin-block: attr(style-xxl-my type(auto | <length-percentage>), 1rem);
+  }
+  [style-xxl-mx] {
+    margin-inline: attr(style-xxl-mx type(auto | <length-percentage>), 1rem);
+  }
+  [style-xxl-py] {
+    padding-block: attr(style-xxl-py type(auto | <length-percentage>), 1rem);
+  }
+  [style-xxl-px] {
+    padding-inline: attr(style-xxl-px type(auto | <length-percentage>), 1rem);
+  }
+}
