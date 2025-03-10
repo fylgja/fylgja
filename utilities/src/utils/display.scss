@@ -4,34 +4,34 @@
 @use "props" as *;
 
 $use-mq: true !default;
+$utils: (
+	"hidden": none,
+	"block": block,
+	"inline-block": inline flow-root,
+	"flex": flex,
+	"inline-flex": inline flex,
+	"grid": grid,
+	"inline-grid": inline grid,
+	"table-cell": table-cell,
+) !default;
 
-.hidden {
-	display: none;
+@each $class, $value in $utils {
+	.#{$class} {
+		display: $value;
+	}
 }
 
-.block {
-	display: block;
-}
-
-.inline-block {
-	display: inline flow-root;
+@each $class, $value in $utils {
+	.open\:#{$class}:where([open], :popover-open) {
+		display: $value;
+	}
 }
 
 @mixin mq-utils($name) {
-	.#{$name}\:hidden {
-		display: none;
-	}
-
-	.#{$name}\:block {
-		display: block;
-	}
-
-	.#{$name}\:inline-block {
-		display: inline flow-root;
-	}
-
-	.#{$name}\:table-cell {
-		display: table-cell;
+	@each $class, $value in $utils {
+		.#{$name}\:#{$class} {
+			display: $value;
+		}
 	}
 }
 

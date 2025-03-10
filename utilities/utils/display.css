@@ -10,6 +10,58 @@
   display: inline flow-root;
 }
 
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline grid;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.open\:hidden:where([open], :popover-open) {
+  display: none;
+}
+
+.open\:block:where([open], :popover-open) {
+  display: block;
+}
+
+.open\:inline-block:where([open], :popover-open) {
+  display: inline flow-root;
+}
+
+.open\:flex:where([open], :popover-open) {
+  display: flex;
+}
+
+.open\:inline-flex:where([open], :popover-open) {
+  display: inline flex;
+}
+
+.open\:grid:where([open], :popover-open) {
+  display: grid;
+}
+
+.open\:inline-grid:where([open], :popover-open) {
+  display: inline grid;
+}
+
+.open\:table-cell:where([open], :popover-open) {
+  display: table-cell;
+}
+
 @media (width >= 480px) {
   .sm\:hidden {
     display: none;
@@ -19,6 +71,18 @@
   }
   .sm\:inline-block {
     display: inline flow-root;
+  }
+  .sm\:flex {
+    display: flex;
+  }
+  .sm\:inline-flex {
+    display: inline flex;
+  }
+  .sm\:grid {
+    display: grid;
+  }
+  .sm\:inline-grid {
+    display: inline grid;
   }
   .sm\:table-cell {
     display: table-cell;
@@ -34,6 +98,18 @@
   .md\:inline-block {
     display: inline flow-root;
   }
+  .md\:flex {
+    display: flex;
+  }
+  .md\:inline-flex {
+    display: inline flex;
+  }
+  .md\:grid {
+    display: grid;
+  }
+  .md\:inline-grid {
+    display: inline grid;
+  }
   .md\:table-cell {
     display: table-cell;
   }
@@ -47,6 +123,18 @@
   }
   .lg\:inline-block {
     display: inline flow-root;
+  }
+  .lg\:flex {
+    display: flex;
+  }
+  .lg\:inline-flex {
+    display: inline flex;
+  }
+  .lg\:grid {
+    display: grid;
+  }
+  .lg\:inline-grid {
+    display: inline grid;
   }
   .lg\:table-cell {
     display: table-cell;
@@ -62,6 +150,18 @@
   .xl\:inline-block {
     display: inline flow-root;
   }
+  .xl\:flex {
+    display: flex;
+  }
+  .xl\:inline-flex {
+    display: inline flex;
+  }
+  .xl\:grid {
+    display: grid;
+  }
+  .xl\:inline-grid {
+    display: inline grid;
+  }
   .xl\:table-cell {
     display: table-cell;
   }
@@ -75,6 +175,18 @@
   }
   .xxl\:inline-block {
     display: inline flow-root;
+  }
+  .xxl\:flex {
+    display: flex;
+  }
+  .xxl\:inline-flex {
+    display: inline flex;
+  }
+  .xxl\:grid {
+    display: grid;
+  }
+  .xxl\:inline-grid {
+    display: inline grid;
   }
   .xxl\:table-cell {
     display: table-cell;

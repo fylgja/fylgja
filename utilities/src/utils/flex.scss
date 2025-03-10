@@ -5,25 +5,11 @@
 
 $use-mq: true !default;
 
-:is(.flex, .flex-col) {
+:where(.flex-col, .flex-wrap) {
 	--flex-dir: row;
 	--flex-wrap: nowrap;
-	--grow: initial;
-	--shrink: initial;
-	--basis: initial;
-	--_flexD: var(--flex-dir);
-	--_flexW: var(--flex-wrap);
 	display: flex;
 	flex-flow: var(--_flexD) var(--_flexW);
-
-	> * {
-		--grow: 0;
-		--shrink: 1;
-		--basis: auto;
-		--flex: var(--grow) var(--shrink) var(--basis);
-		--_flexI: var(--flex);
-		flex: var(--_flexI);
-	}
 }
 
 .flex-col {
@@ -35,17 +21,13 @@ $use-mq: true !default;
 }
 
 @mixin mq-utils($name) {
-	:is(.flex, .flex-col) {
+	:is(.flex-col, .flex-wrap) {
 		&:where([style*="--#{$name}_flex-dir:"]) {
 			--_flexD: var(--#{$name}_flex-dir);
 		}
 
 		&:where([style*="--#{$name}_flex-wrap:"]) {
 			--_flexW: var(--#{$name}_flex-wrap);
-		}
-
-		> :where([style*="--#{$name}_flex:"]) {
-			--_flexI: var(--#{$name}_flex);
 		}
 	}
 }
