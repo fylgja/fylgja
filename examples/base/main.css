@@ -1,9 +1,7 @@
 @import url("@fylgja/base");
 @import url("@fylgja/base/theme");
 @import url("@fylgja/form-extend");
-@import url("@fylgja/container");
-@import url("@fylgja/tokens");
-@import url("@fylgja/tokens/theme");
+@import url("@fylgja/tokens/css");
 @import url("@fylgja/utilities");
 
 :root {
