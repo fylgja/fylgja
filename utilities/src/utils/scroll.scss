@@ -2,13 +2,11 @@
 // Licensed under MIT Open Source
 
 .scroll-x {
-	--scroll-x: auto;
-	overflow-x: var(--scroll-x);
+	overflow-x: auto;
 	overscroll-behavior-x: contain;
 }
 
 .scroll-y {
-	--scroll-y: auto;
-	overflow-y: var(--scroll-y);
+	overflow-y: auto;
 	overscroll-behavior-y: contain;
 }
