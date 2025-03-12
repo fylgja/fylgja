@@ -1,16 +1,20 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+// Common size utilities used by many other frameworks
+// Also offered with the dynamic spacing utils
+
 .w-full {
 	inline-size: 100%;
 }
 
-.max-w-full {
-	max-inline-size: 100%;
-}
-
 .h-full {
 	block-size: 100%;
+}
+
+// Max variants
+.max-w-full {
+	max-inline-size: 100%;
 }
 
 .max-h-full {
