@@ -2,12 +2,12 @@
   inline-size: 100%;
 }
 
-.max-w-full {
-  max-inline-size: 100%;
-}
-
 .h-full {
   block-size: 100%;
+}
+
+.max-w-full {
+  max-inline-size: 100%;
 }
 
 .max-h-full {

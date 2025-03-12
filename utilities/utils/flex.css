@@ -1,6 +1,8 @@
 :where(.flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
+  --_flexD: var(--flex-dir);
+  --_flexW: var(--flex-wrap);
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }

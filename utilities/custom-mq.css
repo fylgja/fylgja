@@ -65,23 +65,7 @@
   padding-block-end: var(--divide-gap);
 }
 
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-flip {
-  scale: -1;
-}
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-turn {
-  rotate: 90deg;
-}
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-rotate {
-  rotate: 180deg;
-}
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-hide {
-  visibility: visible;
-}
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-show {
-  visibility: visible;
-}
-
-.flow-unset > *,
+.flow-none > *,
 .flow > :first-child {
   margin-block: 0;
 }
@@ -197,14 +181,12 @@
 }
 
 .scroll-x {
-  --scroll-x: auto;
-  overflow-x: var(--scroll-x);
+  overflow-x: auto;
   overscroll-behavior-x: contain;
 }
 
 .scroll-y {
-  --scroll-y: auto;
-  overflow-y: var(--scroll-y);
+  overflow-y: auto;
   overscroll-behavior-y: contain;
 }
 
@@ -227,12 +209,12 @@
   inline-size: 100%;
 }
 
-.max-w-full {
-  max-inline-size: 100%;
-}
-
 .h-full {
   block-size: 100%;
+}
+
+.max-w-full {
+  max-inline-size: 100%;
 }
 
 .max-h-full {
@@ -292,6 +274,22 @@
   content: "";
   position: absolute;
   inset: 0;
+}
+
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-flip {
+  scale: -1;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-turn {
+  rotate: 90deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-rotate {
+  rotate: 180deg;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-hide {
+  visibility: visible;
+}
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-show {
+  visibility: visible;
 }
 
 .transition-display, .transition-color, .transition {
@@ -381,6 +379,8 @@
 :where(.flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
+  --_flexD: var(--flex-dir);
+  --_flexW: var(--flex-wrap);
   display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
 }

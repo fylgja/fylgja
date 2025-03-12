@@ -1,4 +1,4 @@
-.flow-unset > *,
+.flow-none > *,
 .flow > :first-child {
   margin-block: 0;
 }
