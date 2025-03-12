@@ -1,10 +1,12 @@
 # Fylgja Utilities
 
-Fylgja utilities provides a curated set of CSS utilities.
-These utilities don't offer a build tool and can be used directly as is.
-For this reason each utility is only created if it made sense in production facing projects.
+Fylgja Utilities offers a focused collection of production-ready CSS utilities.
 
-Now this curated set of CSS utilities is made for usages as a standealone package or in combination with other CSS utility frameworks, souche as TailwindCSS and UnoCSS.
+Designed for direct use without a build step,
+each utility is carefully selected for practical application.
+
+Fylgja Utilities integrates seamlessly as a standalone solution
+or alongside other utility frameworks like Tailwind CSS and UnoCSS.
 
 ## Installation
 
