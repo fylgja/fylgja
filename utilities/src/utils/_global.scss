@@ -8,7 +8,6 @@ $use-custom-mq: false !default;
 @use "clip";
 @use "content-lazy";
 @use "divide";
-@use "toggle";
 @use "flow";
 @use "gradient";
 @use "line-clamp";
@@ -24,6 +23,7 @@ $use-custom-mq: false !default;
 	$use-mq: false
 );
 @use "stretched-link";
+@use "toggle";
 @use "transition";
 @use "truncate";
 @use "typography";
