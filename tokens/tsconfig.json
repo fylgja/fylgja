@@ -9,5 +9,5 @@
     "moduleResolution": "NodeNext",
     "skipLibCheck": true
   },
-  "include": ["jit-props.js", "index.js", "js/*.js"]
+  "include": ["jit-props.js", "index.js"]
 }
