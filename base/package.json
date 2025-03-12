@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/base",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0",
   "description": "Base provides a streamlined starting point for any web project. It’s a collection of class-less solutions, allowing you to focus on building your site.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -12,26 +12,25 @@
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
-    "css",
-    "scss",
-    "dark mode",
-    "class-light",
-    "semantic html",
-    "custom properties",
-    "form",
-    "switch",
-    "button",
+    "fylgja",
+    "classless",
+    "typography",
+    "tables",
+    "buttons",
+    "forms",
     "dialog",
     "modal",
-    "offcanvas"
+    "offcanvas",
+    "print"
   ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
+  "bin": "./bin/add-theme.js",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
     "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "prebuild": "npm run build:scss"
-  },
-  "bin": "./bin/add-theme.js",
-  "style": "index.css",
-  "unpkg": "index.min.css"
+  }
 }
