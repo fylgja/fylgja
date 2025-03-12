@@ -46,17 +46,23 @@ Alternatively, if you only need specific parts of the base, you can import them 
 
 ### Theme Styles
 
-By default, Fylgja Base is a clean canvas, meaning no brand colors or additional extras are included.
-If you prefer to use predefined theme, we offer one as a separate import, or you can copy them directly into your project.
+Fylgja Base provides a clean foundation,
+intentionally excluding brand colors and extra styling by default.
 
-```css
+To apply a pre-defined theme, import it separately:
+
+```CSS
 @import "@fylgja/base/theme";
 ```
 
-With the brand color theme, we include styles for dark mode, view transitions, primary button styling, and offcanvas support for the dialog.
+For theme customization, copy the styles to your project:
 
-### Essentially class-less
+```Bash
+npx @fylgja/base
+```
 
-The Fylgja Base uses the `.btn` class to reduce button size.
+This command will add the theme styles to `src/css`, `src/styles`, or `src/assets` (if present),
+or the current directory if no folder is found.
 
-Alternative import options are available for those who prefer to avoid this class and want to go full class-less.
+Beyond brand colors, the theme includes styles for dark mode, view transitions,
+primary buttons, and off-canvas dialog support.
