@@ -5,9 +5,6 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "unpkg": "index.min.css",
-  "style": "index.css",
-  "sass": "src/index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -21,6 +18,9 @@
     "css-utilities",
     "scss-utilities"
   ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
