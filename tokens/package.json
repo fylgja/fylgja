@@ -30,6 +30,7 @@
     "build:main": "npx lightningcss --bundle --custom-media css/_bundle.css -o css/index.css",
     "build:main-min": "npx lightningcss --minify --bundle --custom-media css/index.css -o css/index.min.css",
     "build": "npm run build:tokens",
+    "prebuild": "node scripts/cleanup.js",
     "postbuild": "npm run build:main && npm run build:main-min && npm run gen:types"
   },
   "unpkg": "css/index.min.css",
@@ -50,8 +51,6 @@
       "require": "./jit.cjs",
       "default": "./jit.cjs"
     },
-    "./css": "./css/index.css",
-    "./style": "./css/index.css",
     "./*": "./*"
   }
 }
