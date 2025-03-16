@@ -32,6 +32,7 @@ Object.entries({ shadows, colors }).forEach(([tokenName, tokens]) => {
 });
 
 propsBuilder(darkModeShadows, "css/shadows.dark.css");
+propsBuilder(mq, "css/mq.css");
 
 // Additional SCSS builds
 propsBuilder(shadows, "scss/shadows.scss");
