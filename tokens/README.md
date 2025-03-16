@@ -1,5 +1,9 @@
 # Fylgja Tokens
 
+[![NPM version](https://img.shields.io/npm/v/@fylgja/tokens)](https://www.npmjs.com/package/@fylgja/tokens)
+[![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Ftokens)](https://www.npmjs.com/package/@fylgja/tokens)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+
 Establish a consistent design language across your projects with Fylgja Design Tokens.
 
 This predefined set of tokens eliminates redundant variations in spacing, colors, and other design elements,

@@ -1,5 +1,9 @@
 # Fylgja Base
 
+[![NPM version](https://img.shields.io/npm/v/@fylgja/base)](https://www.npmjs.com/package/@fylgja/base)
+[![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Fbase)](https://www.npmjs.com/package/@fylgja/base)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+
 Fylgja Base provides a streamlined starting point for any web project.
 It’s a collection of class-less solutions,
 allowing you to focus on building your site using plain HTML or your preferred frontend language,
