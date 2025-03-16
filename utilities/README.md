@@ -19,7 +19,7 @@ npm install @fylgja/utilities
 Alternatively, you can use it directly via a CDN:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/@fylgja/utilities@1.0/index.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fylgja/utilities/index.min.css" rel="stylesheet">
 ```
 
 ## Usage
