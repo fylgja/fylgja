@@ -1,7 +1,7 @@
 {
   "name": "fylgja",
   "version": "2.0.0",
-  "description": "The modular CSS framework. Powered via CSS components",
+  "description": "The modular CSS library. Powered via CSS components",
   "homepage": "https://fylgja.dev/",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "metapackage"
   ],
   "scripts": {
-    "test": "npx stylelint base/**/*.scss",
+    "test": "npx stylelint **/*.scss",
     "build:scss": "npx sass --no-source-map fylgja.scss fylgja.css",
     "build:min": "npx lightningcss --minify --bundle fylgja.css -o fylgja.min.css",
     "build": "npm run build:scss",
@@ -33,15 +33,10 @@
     "lightningcss-cli": "^1.28.2",
     "prettier": "^3.4.2",
     "sass": "^1.83.0",
+    "stylelint": "^16.16.0",
     "typescript": "^5.7.2"
   },
   "stylelint": {
-    "extends": "@fylgja/stylelint-config",
-    "rules": {
-      "rule-empty-line-before": null,
-      "selector-class-pattern": null,
-      "at-rule-empty-line-before": null,
-      "declaration-empty-line-before": null
-    }
+    "extends": "@fylgja/stylelint-config"
   }
 }
