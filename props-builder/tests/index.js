@@ -31,11 +31,9 @@ const props = {
 	"layer-1": 1,
 	"size-2": "0.5em",
 	"size-4": "4em",
-	color: {
-		red,
-		green,
-		blue,
-	},
+	red,
+	green,
+	blue,
 	shadow: {
 		color: "gray",
 		weight: "1%",
@@ -56,7 +54,9 @@ const props = {
 propsBuilder(props, "tests/_fylgja.json");
 propsBuilder(props, "tests/_fylgja.tokens.json");
 propsBuilder(props, "tests/_fylgja.figma-tokens.json");
-propsBuilder(props, "tests/_fylgja.figma-tokens.sync.json");
+propsBuilder(props, "tests/_fylgja.figma-tokens.sync.json", {
+	wrapper: "fylgja",
+});
 propsBuilder(props, "tests/_fylgja.style-dictionary-tokens.json");
 propsBuilder(props, "tests/_tokens.scss");
 propsBuilder(props, "tests/_tokens.css");

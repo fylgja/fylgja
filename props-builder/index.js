@@ -3,7 +3,11 @@
 
 import fs from "node:fs";
 import { isFileType } from "./src/utils.js";
-import { formatFigma, formatStyleDictionary } from "./src/formats/index.js";
+import {
+	formatTokens,
+	formatFigma,
+	formatStyleDictionary,
+} from "./src/formats/index.js";
 import toTokens from "./src/to-tokens.js";
 import toStyleTokens from "./src/to-style.js";
 import toCssJitTokens from "./src/to-css-jit.js";
@@ -16,12 +20,19 @@ import toCssJitTokens from "./src/to-css-jit.js";
  * @param {string} filename
  * @param {Object} options
  * @param {'auto'|'tokens'|'figma'|'style-dictionary'|'scss'|'css'|'css-jit'|'cjs'|'mjs'|'json'} options.parseAs
- * @param {writeToFile} options.writeToFile
+ * @param {Boolean} options.writeToFile
+ * @param {string} options.selector
+ * @param {string} options.wrapper - Wrapper for Design Tokens
  */
 export const propsBuilder = (
 	props,
 	filename,
-	{ parseAs = "auto", writeToFile = true, selector = ":where(:root)" } = {}
+	{
+		parseAs = "auto",
+		writeToFile = true,
+		selector = ":where(:root)",
+		wrapper = "",
+	} = {},
 ) => {
 	let data = "";
 	const fileType = isFileType(filename);
@@ -30,21 +41,25 @@ export const propsBuilder = (
 		fileType === "mjs"
 			? "export default "
 			: fileType === "cjs"
-			? "module.exports = "
-			: "";
+				? "module.exports = "
+				: "";
 
 	switch (parseSyntax) {
 		case "tokens":
-			data = toTokens(props);
+			data = toTokens(props, formatTokens, { wrapper });
 			break;
 
 		case "figma":
-			data = toTokens(props, formatFigma);
+			data = toTokens(props, formatFigma, {
+				cssVarToToken: true,
+				wrapper,
+			});
 			break;
 
 		case "style-dictionary":
 			data = toTokens(props, formatStyleDictionary, {
 				cssVarToToken: true,
+				wrapper,
 			});
 			break;
 
