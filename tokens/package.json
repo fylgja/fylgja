@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/tokens",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -16,7 +16,6 @@
     "fylgja",
     "css",
     "scss",
-    "utilities",
     "variables",
     "custom properties",
     "design-tokens",
@@ -33,7 +32,7 @@
     "prebuild": "node scripts/cleanup.js",
     "postbuild": "npm run build:main && npm run build:main-min && npm run gen:types"
   },
-  "unpkg": "css/index.min.css",
+  "unpkg": "js/index.js",
   "style": "css/index.css",
   "sass": "scss/index.scss",
   "main": "js/index.cjs",
@@ -51,6 +50,10 @@
       "require": "./jit.cjs",
       "default": "./jit.cjs"
     },
+    "./tokens": "./tokens/tokens.json",
+    "./figma": "./tokens/figma-tokens.json",
+    "./figma.sync": "./tokens/figma-tokens.sync.json",
+    "./style-dictionary": "./tokens/style-dictionary-tokens.json",
     "./*": "./*"
   }
 }

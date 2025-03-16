@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-<!-- ## 1.0.0 - 2024-09-? -->
+## 2.0.0 - 2025-03-16
+
+Fylgja Tokens has been completely rebuilt,
+consolidating core v1 tokens components into a single,
+highly optimized package.
+
+## 1.0.0 - 2023-02-20
 
 Initial Release 🎉
+
