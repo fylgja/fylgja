@@ -1,22 +1,28 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+const genSizes = (max = 10, extra = []) => {
+	const sizes = {};
+	const arr = Array.from(Array(max + 1).keys()).slice(1);
+	arr.push(...extra);
+
+	arr.forEach((size) => {
+		sizes[`${size}`] = `calc(var(--spacing) * ${size})`;
+	});
+
+	return sizes;
+};
+
+const listSizes = genSizes(
+	10,
+	[12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 50, 60, 70, 80, 90, 100, 120],
+);
+
 export default {
 	spacing: "0.25rem", // 4px
 	size: {
 		"05": "calc(var(--spacing) * 0.5)",
-		1: "calc(var(--spacing) * 1)",
-		2: "calc(var(--spacing) * 2)",
-		3: "calc(var(--spacing) * 3)",
-		4: "calc(var(--spacing) * 4)", // 16
-		5: "calc(var(--spacing) * 5)",
-		6: "calc(var(--spacing) * 6)",
-		7: "calc(var(--spacing) * 7)",
-		8: "calc(var(--spacing) * 8)", // 32
-		9: "calc(var(--spacing) * 9)",
-		10: "calc(var(--spacing) * 10)",
-		11: "calc(var(--spacing) * 11)",
-		12: "calc(var(--spacing) * 12)", // 48
+		...listSizes,
 	},
 	"size-heading": "36ch", // 288px
 	"size-content": "64ch", // 512px
