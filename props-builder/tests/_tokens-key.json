@@ -1,4 +1,0 @@
-{
-  "spin-@": "@keyframes spin { to { rotate: 360deg }}",
-  "animateSpin": "spin 1s linear infinite"
-}
