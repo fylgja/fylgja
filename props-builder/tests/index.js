@@ -17,7 +17,7 @@ const red = {
 	6: "#fa5252",
 	7: "#f03e3e",
 	8: "#e03131",
-	9: "#c92a2a",
+	9: "#f00",
 };
 const green = "#0f0";
 const blue = "#00f";
@@ -31,9 +31,11 @@ const props = {
 	"layer-1": 1,
 	"size-2": "0.5em",
 	"size-4": "4em",
-	red,
-	green,
-	blue,
+	color: {
+		red,
+		green,
+		blue,
+	},
 	shadow: {
 		color: "gray",
 		weight: "1%",
