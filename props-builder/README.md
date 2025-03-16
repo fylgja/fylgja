@@ -1,6 +1,7 @@
 # Fylgja - Props Builder
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/props-builder)](https://www.npmjs.com/package/@fylgja/props-builder)
+![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Fprops-builder)
 [![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
 
 
