@@ -1,7 +1,12 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-import { cssVarRegex, flattenObj, unflattenObj } from "./utils.js";
+import {
+	cssVarRegex,
+	isValidString,
+	flattenObj,
+	unflattenObj,
+} from "./utils.js";
 import { formatTokens } from "./formats/index.js";
 
 const defaultColorKeys = [
@@ -57,28 +62,35 @@ const tokenizeCSSVar = (token, metaValueKey) => {
 const toTokens = (
 	props,
 	metaExtend = formatTokens,
-	{ colorKeys = defaultColorKeys, cssVarToToken = false } = {}
+	{ wrapper = "", colorKeys = defaultColorKeys, cssVarToToken = false } = {},
 ) => {
 	const flatProps = flattenObj(props);
 	const isUsingDefaultFormat = metaExtend === formatTokens;
 	const metaValueKey = isUsingDefaultFormat ? "$value" : "value";
 	const shouldUseMinified = isUsingDefaultFormat;
 
-	const tokens = Object.entries(flatProps).reduce((acc, [key, token]) => {
+	let tokens = Object.entries(flatProps).reduce((acc, [key, token]) => {
 		const meta = metaExtend(key, colorKeys);
 		const value = cssVarToToken
 			? tokenizeCSSVar(token, metaValueKey)
 			: token;
 
-		acc[key] = { [metaValueKey]: value, ...meta };
+		if (!acc[meta.type]) {
+			acc = { ...acc, [meta.type]: {} };
+		}
+
+		acc[meta.type][key] = { [metaValueKey]: value, ...meta };
+
 		return acc;
 	}, {});
 
-	const output = shouldUseMinified
+	if (wrapper && isValidString(wrapper)) {
+		tokens = { [wrapper]: tokens };
+	}
+
+	return shouldUseMinified
 		? JSON.stringify(tokens, null, 2)
 		: JSON.stringify(unflattenObj(tokens), null, 2);
-
-	return output;
 };
 
 export { toTokens as default, defaultColorKeys, toTokens };

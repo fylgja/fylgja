@@ -14,10 +14,21 @@ export function kebabCase(string) {
 }
 
 /**
+ * Check if the value is a string and does not contain special characters
+ *
+ * @param {*} value
+ * @returns {boolean}
+ */
+export function isValidString(value) {
+	const regex = /^[a-zA-Z0-9\s]+$/;
+	return typeof value === "string" && regex.test(value);
+}
+
+/**
  * get the file type based on the file name.
  *
  * @param {string} filename
- * @returns string - file base type to work with
+ * @returns {string} - file base type to work with
  */
 export function isFileType(filename) {
 	if (
@@ -51,7 +62,7 @@ export function isFileType(filename) {
  *
  * @param {Object} obj - object to flatten
  * @param {string} separator - separator to use for the combined keys
- * @returns Object - flattened object
+ * @returns {Object} - flattened object
  */
 export const flattenObj = (obj, separator = "-") => {
 	let result = {};
@@ -76,7 +87,7 @@ export const flattenObj = (obj, separator = "-") => {
  *
  * @param {Object} obj - object to unflatten
  * @param {string} separator - separator to use to detect the nested keys
- * @returns Object - nested object based on the separator
+ * @returns {Object} - nested object based on the separator
  */
 export const unflattenObj = (obj, separator = "-") => {
 	let result = {};
