@@ -3,7 +3,7 @@
 
 import { propsBuilder } from "../../props-builder/index.js";
 
-import aspectRatios from "../js/aspect-ratios.js";
+import aspectRatios from "../js/aspect-ratio.js";
 import borders from "../js/borders.js";
 import { colors, hues, staticColors } from "../js/colors.js";
 import easing from "../js/easing.js";
@@ -14,7 +14,7 @@ import sizes from "../js/sizes.js";
 import zLayer from "../js/z-layer.js";
 
 Object.entries({
-	"aspect-ratios": aspectRatios,
+	"aspect-ratio": aspectRatios,
 	"z-layer": zLayer,
 	borders,
 	hues,
