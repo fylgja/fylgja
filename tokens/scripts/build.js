@@ -76,7 +76,7 @@ const tokens = {
 	...sizes,
 	...zLayer,
 };
-propsBuilder(tokens, "json/tokens.json"); // For e.g. Sketch or Style Dictionary
-propsBuilder(tokens, "json/figma-tokens.json");
-propsBuilder(tokens, "json/figma-tokens.sync.json", { wrapper: "fylgja" });
-propsBuilder(tokens, "json/style-dictionary-tokens.json");
+propsBuilder(tokens, "tokens/tokens.json"); // For e.g. Sketch
+propsBuilder(tokens, "tokens/figma-tokens.json");
+propsBuilder(tokens, "tokens/figma-tokens.sync.json", { wrapper: "fylgja" });
+propsBuilder(tokens, "tokens/style-dictionary-tokens.json");
