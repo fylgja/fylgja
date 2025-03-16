@@ -1,7 +1,7 @@
 {
   "name": "@fylgja/props-builder",
-  "version": "1.1.0",
-  "description": "Build your own Design Tokens (CSS props) with ease",
+  "version": "2.0.0",
+  "description": "Effortlessly generate Design Tokens (CSS custom properties) from JavaScript objects.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
@@ -10,16 +10,18 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
-    "directory": "packages/props-builder"
+    "directory": "props-builder"
   },
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "keywords": [
     "fylgja",
-    "fylgja component",
-    "css-variables",
-    "css-props",
-    "css-builder",
-    "design-tokens"
+    "css",
+    "scss",
+    "variables",
+    "custom properties",
+    "design-tokens",
+    "figma-tokens",
+    "style-dictionary"
   ],
   "scripts": {
     "pretest": "rm -rf tests/*.{css,scss,json}",
