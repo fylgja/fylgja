@@ -21,7 +21,7 @@ npm install @fylgja/base
 Alternatively, you can use it directly via a CDN:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/@fylgja/base@2.0/index.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fylgja/base/index.min.css" rel="stylesheet">
 ```
 
 ## Usage
