@@ -4,18 +4,25 @@
 function formatFigma(key, colorKeys = []) {
 	if (!key) return;
 
-	if (key.includes("size") && !key.includes("border-size"))
+	if (key.includes("size") && !key.includes("border-size")) {
 		return { type: "sizing" };
+	}
 
-	if (key.includes("border-size")) return { type: "borderWidth" };
+	if (key.includes("border-size")) {
+		return { type: "borderWidth" };
+	}
 
-	if (key.includes("border-radius") || key.includes("radius"))
+	if (key.includes("border-radius") || key.includes("radius")) {
 		return { type: "borderRadius" };
+	}
 
-	if (key.includes("shadow")) return { type: "boxShadow" };
+	if (key.includes("shadow")) {
+		return { type: "boxShadow" };
+	}
 
-	if (colorKeys.some((color) => key.includes(color)))
+	if (colorKeys.some((color) => key.includes(color))) {
 		return { type: "color" };
+	}
 
 	return { type: "other" };
 }
