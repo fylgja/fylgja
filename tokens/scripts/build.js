@@ -65,7 +65,18 @@ propsBuilder(props, "jit-props.js", { parseAs: "css-jit" });
 propsBuilder(props, "jit-props.cjs", { parseAs: "css-jit" });
 
 // Design Tokens
-propsBuilder(props, "json/tokens.json"); // For e.g. Sketch or Style Dictionary
-propsBuilder(props, "json/figma-tokens.json");
-propsBuilder({ fylgja: props }, "json/figma-tokens.sync.json");
-propsBuilder(props, "json/style-dictionary-tokens.json");
+const tokens = {
+	...aspectRatios,
+	...borders,
+	...staticColors,
+	...hues,
+	...easing,
+	...fonts,
+	...shadows,
+	...sizes,
+	...zLayer,
+};
+propsBuilder(tokens, "json/tokens.json"); // For e.g. Sketch or Style Dictionary
+propsBuilder(tokens, "json/figma-tokens.json");
+propsBuilder(tokens, "json/figma-tokens.sync.json", { wrapper: "fylgja" });
+propsBuilder(tokens, "json/style-dictionary-tokens.json");

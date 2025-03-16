@@ -1,13 +1,14 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-function replaceDefaultHue(colors, replaceValue) {
+function replaceChromaHue(colors, hue) {
 	return Object.fromEntries(
 		Object.entries(colors).map(([key, value]) => {
 			value = value.toString();
-			value = value.replaceAll("var(--hue, 0)", replaceValue);
+			value = value.replace(/calc\(([^*]+)\s\*\svar\(.*?\)\)/, "$1");
+			value = value.replace("var(--hue, 0)", hue);
 			return [key, value];
-		})
+		}),
 	);
 }
 
@@ -49,18 +50,18 @@ const hues = {
 };
 
 const staticColors = {
-	pink: replaceDefaultHue(colors.color, hues.hue.pink),
-	purple: replaceDefaultHue(colors.color, hues.hue.purple),
-	violet: replaceDefaultHue(colors.color, hues.hue.violet),
-	indigo: replaceDefaultHue(colors.color, hues.hue.indigo),
-	blue: replaceDefaultHue(colors.color, hues.hue.blue),
-	cyan: replaceDefaultHue(colors.color, hues.hue.cyan),
-	teal: replaceDefaultHue(colors.color, hues.hue.teal),
-	green: replaceDefaultHue(colors.color, hues.hue.green),
-	lime: replaceDefaultHue(colors.color, hues.hue.lime),
-	yellow: replaceDefaultHue(colors.color, hues.hue.yellow),
-	orange: replaceDefaultHue(colors.color, hues.hue.orange),
-	red: replaceDefaultHue(colors.color, hues.hue.red),
+	pink: replaceChromaHue(colors.color, hues.hue.pink),
+	purple: replaceChromaHue(colors.color, hues.hue.purple),
+	violet: replaceChromaHue(colors.color, hues.hue.violet),
+	indigo: replaceChromaHue(colors.color, hues.hue.indigo),
+	blue: replaceChromaHue(colors.color, hues.hue.blue),
+	cyan: replaceChromaHue(colors.color, hues.hue.cyan),
+	teal: replaceChromaHue(colors.color, hues.hue.teal),
+	green: replaceChromaHue(colors.color, hues.hue.green),
+	lime: replaceChromaHue(colors.color, hues.hue.lime),
+	yellow: replaceChromaHue(colors.color, hues.hue.yellow),
+	orange: replaceChromaHue(colors.color, hues.hue.orange),
+	red: replaceChromaHue(colors.color, hues.hue.red),
 };
 
 export { colors as default, colors, hues, staticColors };
