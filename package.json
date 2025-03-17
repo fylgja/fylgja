@@ -10,17 +10,17 @@
   "bugs": "https://github.com/fylgja/fylgja/issues",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "fylgja.css",
-  "sass": "index.scss",
-  "unpkg": "fylgja.css",
   "keywords": [
     "fylgja",
     "css",
-    "sass",
+    "scss",
     "framework",
     "library",
     "metapackage"
   ],
+  "unpkg": "fylgja.css",
+  "style": "fylgja.css",
+  "sass": "index.scss",
   "scripts": {
     "test": "npx stylelint **/*.scss",
     "build:scss": "npx sass --no-source-map fylgja.scss fylgja.css",
