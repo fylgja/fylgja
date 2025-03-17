@@ -38,8 +38,28 @@
   },
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
+    "rules": {
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "blockless-after-blockless",
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ],
+          "ignoreAtRules": [
+            "else",
+            "each",
+            "return"
+          ]
+        }
+      ]
+    },
     "ignoreFiles": [
-      "**/_experiments/**/*"
+      "**/_experiments/**/*",
+      "components/_sort/**/*"
     ]
   }
 }

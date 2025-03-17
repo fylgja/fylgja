@@ -27,11 +27,13 @@
 		--mask-start-opacity: 100%;
 		--mask-end-opacity: 0%;
 	}
+
 	2%,
 	98% {
 		--mask-start-opacity: 0%;
 		--mask-end-opacity: 0%;
 	}
+
 	100% {
 		--mask-start-opacity: 0%;
 		--mask-end-opacity: 100%;
