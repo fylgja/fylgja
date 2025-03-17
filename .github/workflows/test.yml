@@ -2,14 +2,7 @@
 
 name: Test
 
-on:
-  push:
-    branches: ["main"]
-    paths:
-      - "bundles/**/*.{css,scss}"
-      - "components/**/*.{css,scss}"
-  pull_request:
-    branches: [opened, synchronize, reopened, edited]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   NODE: 16
