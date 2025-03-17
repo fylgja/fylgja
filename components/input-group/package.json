@@ -5,9 +5,6 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "input-group.css",
-  "sass": "_index.scss",
-  "unpkg": "input-group.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -21,6 +18,9 @@
     "form group",
     "wrapper"
   ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
