@@ -1,6 +1,6 @@
 @import url("@fylgja/base");
-@import url("@fylgja/base/theme");
-@import url("@fylgja/form-extend");
+@import url("theme");
+@import url("../../components/_todo/form-extend");
 @import url("@fylgja/tokens/css");
 @import url("@fylgja/utilities");
 
