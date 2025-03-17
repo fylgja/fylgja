@@ -9,7 +9,7 @@ on:
     types: [created]
 
 env:
-  NODE: 16
+  NODE: 20
 
 jobs:
   build:
