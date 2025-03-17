@@ -37,6 +37,9 @@
     "typescript": "^5.7.2"
   },
   "stylelint": {
-    "extends": "@fylgja/stylelint-config"
+    "extends": "@fylgja/stylelint-config",
+    "ignoreFiles": [
+      "**/_experiments/**/*"
+    ]
   }
 }
