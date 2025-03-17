@@ -42,7 +42,7 @@
   outline-color: var(--brand);
 }
 
-:where(:not(h1, h2, h3, h4, h5, h6, strong)) :any-link {
+:where(:not(h1, h2, h3, h4, h5, h6, strong) > a) {
   font-weight: 500;
 }
 
