@@ -72,7 +72,6 @@ $code-color: null !default;
 // Let links be part of the text by default and inherit the color where needed
 :where(:any-link) {
 	color: inherit;
-	font-weight: 500;
 }
 
 :where(mark, :not(pre) > code) {

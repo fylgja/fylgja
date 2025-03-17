@@ -165,7 +165,6 @@ summary) {
 
 :where(:any-link) {
   color: inherit;
-  font-weight: 500;
 }
 
 :where(mark, :not(pre) > code) {

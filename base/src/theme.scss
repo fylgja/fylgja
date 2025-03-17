@@ -61,6 +61,10 @@ $extra-root-props: () !default;
 	outline-color: var(--brand);
 }
 
+:where(:not(h1, h2, h3, h4, h5, h6, strong)) :any-link {
+	font-weight: 500;
+}
+
 blockquote,
 hr {
 	border-color: var(--brand);
