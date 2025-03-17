@@ -1,80 +1,66 @@
 <div align="center">
-<h1>
+<div role="heading" aria-level="1">
   <a href="https://fylgja.dev/">
-    <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg" alt="Fylgja" width="300" height="130">
+    <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg" alt="Fylgja: Your Modular CSS Toolkit" width="300" height="130">
   </a>
-</h1>
+</div>
 
-[![NPM version](https://img.shields.io/npm/v/fylgja?logo=npm&style=flat-square)](https://www.npmjs.com/package/fylgja)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja/test.yml?branch=main&color=%2343a047&style=flat-square)](https://github.com/fylgja/fylgja/actions)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234&style=flat-square)](/LICENSE)
+The flexible and lightweight CSS library designed to streamline your web development.
+
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja/test.yml?branch=main&logo=github)](https://github.com/fylgja/fylgja/actions)
+[![NPM version](https://img.shields.io/npm/v/fylgja?logo=npm)](https://www.npmjs.com/package/fylgja)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
 
 </div>
 
-Fylgja is a component-based CSS Library that allows you to pick and choose the components you need. Each component is built as a foundation for a specific component, so you can style it to your own look without having to build the base styles from scratch every time.
+**Fylgja CSS** empowers developers with a modular and customizable approach to styling web projects. Unlike monolithic frameworks, Fylgja provides focused solutions that enhance your workflow without adding unnecessary bloat.
 
-Fylgja is powered by SCSS, but can also be used with PostCSS or as plain CSS. This makes it easy to include Fylgja in your projects, regardless of your preferred setup.
+## Why Choose Fylgja?
 
-## Learn more
+* **Modular Design:** Include only the components you need, keeping your CSS lean and efficient.
+* **Lightweight Core:** Start with a minimal footprint, thanks to optimized components and a size-conscious philosophy.
+* **Customization First:** Easily override styles with low specificity and leverage CSS variables for quick adjustments.
+* **Seamless Integration:** Works harmoniously with existing tools like TailwindCSS or UnoCSS.
 
-* [Website](https://fylgja.dev/)
-* [Installation](https://fylgja.dev/getting-started/)
-* [Guides/Docs](https://fylgja.dev/guides/)
-* [Features](https://fylgja.dev/features/)
-  * [Accessibility](https://fylgja.dev/features/accessibility/)
-  * [Darkmode](https://fylgja.dev/features/darkmode/)
-  * [Design Tokens](https://fylgja.dev/features/design-tokens/)
-  * [Native Elements (a.k.a. classless)](https://fylgja.dev/features/native-styles/)
-  * [RTL (Right to Left)](https://fylgja.dev/features/rtl/)
-* [Support](https://fylgja.dev/support/)
-* [Testing/Playground](https://stackblitz.com/edit/fylgja-playground)
-* [Documentation Github Repo](https://github.com/fylgja/site)
+## Core Components
 
-## Checkout all Fylgja CSS Components
+Fylgja offers a suite of modular components to suit your development needs:
 
-[On Fylgja.dev](https://fylgja.dev/components/)
+* **Fylgja Base:**
+    * A robust foundation that goes beyond basic resets.
+    * Provides sensible default styles for common HTML elements using classless styling.
+    * Ensures cross-browser consistency without unnecessary overrides, leveraging `:where` for zero specificity.
+    * Example: A better browser default, form and button styles out of the box.
+* **Fylgja Tokens (Props):**
+    * A centralized system for managing design values (colors, spacing, etc.).
+    * Available as SCSS or CSS variables for easy integration and customization.
+    * Use Fylgja's build tools to tailor tokens to your project's specific requirements.
+* **Fylgja Utilities:**
+    * A collection of focused CSS utility classes.
+    * Designed to complement, not replace, utility-first frameworks.
+    * Seamlessly integrates with Fylgja Tokens, Open Props, or other variable-driven systems.
+* **Fylgja Components:**
+    * Ready-to-use, single-class components for building complex UI elements.
+    * Accelerates development by providing pre-styled, reusable components.
 
-Or on npmjs.com, using on of the links below:
+## Modularity in Action
 
-[Aria Only](https://www.npmjs.com/package/@fylgja/aria-only) -
-[Aspect Ratio](https://www.npmjs.com/package/@fylgja/aspect-ratio) -
-[Auto Grid](https://www.npmjs.com/package/@fylgja/auto-grid) -
-[Avatar](https://www.npmjs.com/package/@fylgja/avatar) -
-[Badge](https://www.npmjs.com/package/@fylgja/badge) -
-[Base](https://www.npmjs.com/package/@fylgja/base) -
-[Borders](https://www.npmjs.com/package/@fylgja/borders) -
-[Breadcrumbs](https://www.npmjs.com/package/@fylgja/breadcrumbs) -
-[Button](https://www.npmjs.com/package/@fylgja/button) -
-[Card](https://www.npmjs.com/package/@fylgja/card) -
-[Code](https://www.npmjs.com/package/@fylgja/code) -
-[Colors](https://www.npmjs.com/package/@fylgja/colors) -
-[Container](https://www.npmjs.com/package/@fylgja/container) -
-[Control](https://www.npmjs.com/package/@fylgja/control) -
-[Details](https://www.npmjs.com/package/@fylgja/details) -
-[Dialog](https://www.npmjs.com/package/@fylgja/dialog) -
-[Easing](https://www.npmjs.com/package/@fylgja/easing) -
-[Fonts](https://www.npmjs.com/package/@fylgja/fonts) -
-[Form](https://www.npmjs.com/package/@fylgja/form) -
-[Gradient](https://www.npmjs.com/package/@fylgja/gradient) -
-[Hashlink](https://www.npmjs.com/package/@fylgja/hashlink) -
-[Input Group](https://www.npmjs.com/package/@fylgja/input-group) -
-[List](https://www.npmjs.com/package/@fylgja/list) -
-[Marquee](https://www.npmjs.com/package/@fylgja/marquee) -
-[Menu](https://www.npmjs.com/package/@fylgja/menu) -
-[Mq](https://www.npmjs.com/package/@fylgja/mq) -
-[Pagination](https://www.npmjs.com/package/@fylgja/pagination) -
-[Print](https://www.npmjs.com/package/@fylgja/print) -
-[Progress](https://www.npmjs.com/package/@fylgja/progress) -
-[Range](https://www.npmjs.com/package/@fylgja/range) -
-[Scroll Slider](https://www.npmjs.com/package/@fylja/scroll-slider/) -
-[Scrollbar](https://www.npmjs.com/package/@fylgja/scrollbar) -
-[Section](https://www.npmjs.com/package/@fylgja/section) -
-[Shadow](https://www.npmjs.com/package/@fylgja/shadow) -
-[Sizes](https://www.npmjs.com/package/@fylgja/sizes) -
-[Stretched Link](https://www.npmjs.com/package/@fylja/stretched-link/) -
-[Table](https://www.npmjs.com/package/@fylgja/table) -
-[Tokens](https://www.npmjs.com/package/@fylgja/tokens) -
-[Transform](https://www.npmjs.com/package/@fylgja/transform) -
-[Transition](https://www.npmjs.com/package/@fylgja/transition) -
-[Utilpack](https://www.npmjs.com/package/@fylgja/utilpack) -
-[Z-layer](https://www.npmjs.com/package/@fylgja/z-layer)
+Fylgja's modularity allows you to pick and choose the components that fit your project's needs. For instance, you can use **Fylgja Base** solely for its form styles, without importing other elements. This granular control ensures optimal performance and minimal bloat.
+
+## Performance Optimized
+
+Fylgja prioritizes performance by delivering lightweight components. For example, the minified **Fylgja Base** Preflight is only 6kb, significantly smaller than many comparable libraries.
+
+## Effortless Customization
+
+Fylgja is designed for effortless customization. Low CSS specificity and the use of CSS variables enable you to easily adapt styles to your project's unique design. The `:where` selector within **Fylgja Base** ensures that your custom styles are never overridden unintentionally.
+
+## Getting Started
+
+Explore the Fylgja documentation at [fylgja.dev](https://fylgja.dev/) to learn how to integrate Fylgja into your workflow.
+
+```bash
+npm install fylgja
+```
+
+Start building your next project with the flexibility and efficiency of Fylgja.
