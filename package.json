@@ -18,6 +18,7 @@
     "library",
     "metapackage"
   ],
+  "files": [],
   "scripts": {
     "test": "npx stylelint **/*.scss",
     "build:scss": "npx sass --no-source-map fylgja.scss fylgja.css",
