@@ -25,6 +25,11 @@
     "build": "npm run build:scss",
     "postbuild": "npm run build:min"
   },
+  "dependencies": {
+    "@fylgja/base": "^2.0.0",
+    "@fylgja/tokens": "^2.0.0",
+    "@fylgja/utilities": "^2.0.1"
+  },
   "devDependencies": {
     "@fylgja/stylelint-config": "^7.0.0",
     "lightningcss-cli": "^1.28.2",
