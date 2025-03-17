@@ -6,9 +6,9 @@
   --_radius-y: var(--radius-y);
   --_radius-x: var(--radius-x);
   border-start-start-radius: var(--_radius-y);
-  border-end-start-radius: var(--_radius-y);
+  border-end-start-radius: var(--_radius-x);
   border-end-end-radius: var(--_radius-x);
-  border-start-end-radius: var(--_radius-x);
+  border-start-end-radius: var(--_radius-y);
 }
 
 .rounded-conditional {
