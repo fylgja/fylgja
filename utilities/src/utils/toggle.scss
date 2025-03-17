@@ -17,13 +17,13 @@ $selectors-not: "details:not([open]) > summary, [aria-expanded=false], [aria-sel
 		rotate: 180deg;
 	}
 
-	> .toggle-hide {
+	> .toggle-show {
 		visibility: hidden;
 	}
 }
 
 :where(#{$selectors-not}, :is(#{$selectors-not}) > :is(.group, .stack)) {
-	> .toggle-show {
+	> .toggle-hide {
 		visibility: hidden;
 	}
 }
