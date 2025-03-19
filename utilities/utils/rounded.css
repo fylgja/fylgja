@@ -3,17 +3,23 @@
   --radius: 0.5rem;
   --radius-y: var(--radius);
   --radius-x: var(--radius);
-  --_radius-y: var(--radius-y);
-  --_radius-x: var(--radius-x);
-  border-start-start-radius: var(--_radius-y);
-  border-end-start-radius: var(--_radius-x);
-  border-end-end-radius: var(--_radius-x);
-  border-start-end-radius: var(--_radius-y);
+  --radius-t: var(--radius-y);
+  --radius-b: var(--radius-x);
+  --radius-s: initial;
+  --radius-e: initial;
+  --_radius-t: var(--radius-t);
+  --_radius-b: var(--radius-b);
+  --_radius-s: var(--radius-s);
+  --_radius-e: var(--radius-e);
+  border-start-start-radius: var(--_radius-s, var(--_radius-t));
+  border-end-start-radius: var(--_radius-s, var(--_radius-b));
+  border-start-end-radius: var(--_radius-e, var(--_radius-t));
+  border-end-end-radius: var(--_radius-e, var(--_radius-b));
 }
 
 .rounded-conditional {
-  --_radius-y: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-y));
-  --_radius-x: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-x));
+  --_radius-t: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-t));
+  --_radius-b: clamp(0px, calc(100cqi - 100%) * 1e5, var(--radius-b));
 }
 
 .rounded-none {
