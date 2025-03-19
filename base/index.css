@@ -122,9 +122,9 @@ summary) {
   --h-weight: 700;
   --h-line: 1.1;
   --h1-size: 3rem;
-  --h2-size: 2.25rem;
-  --h3-size: 1.75rem;
-  --h4-size: 1.5rem;
+  --h2-size: 2rem;
+  --h3-size: 1.625rem;
+  --h4-size: 1.375rem;
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, dl, ul, ol, pre, hgroup) {
@@ -203,7 +203,7 @@ summary) {
   font-weight: 500;
 }
 
-:where(dd + dt) {
+:where(li + li, dd + dt) {
   margin-block-start: 0.5em;
 }
 
