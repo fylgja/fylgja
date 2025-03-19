@@ -4,6 +4,7 @@
 $selectors: ":root" !default;
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
+$list-flow: 0.5em !default;
 
 $h1-size: 3rem !default;
 $h2-size: 2rem !default;
@@ -21,6 +22,7 @@ $code-color: null !default;
 #{$selectors} {
 	--text-flow: #{$text-flow};
 	--separator-flow: #{$separator-flow};
+	--list-flow: #{$list-flow};
 	--h-size: #{$h-size};
 	--h-weight: #{$h-weight};
 	--h-line: #{$h-line};
@@ -98,6 +100,7 @@ $code-color: null !default;
 // Remove list styles on ul, ol elements with a list role or inside a nav element,
 // The list role presevers the list A11Y: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
 :where(:is(ul, ol)[role="list"], nav :is(ul, ol)) {
+	--list-flow: 0;
 	list-style: none;
 	margin-block: 0;
 	padding-inline-start: 0;
@@ -114,7 +117,7 @@ $code-color: null !default;
 }
 
 :where(li + li, dd + dt) {
-	margin-block-start: 0.5em;
+	margin-block-start: var(--list-flow);
 }
 
 :where(dd) {
