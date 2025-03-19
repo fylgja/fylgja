@@ -118,6 +118,7 @@ summary) {
 :root {
   --text-flow: 1em 1rem;
   --separator-flow: 2.5em;
+  --list-flow: 0.5em;
   --h-size: 1.125rem;
   --h-weight: 700;
   --h-line: 1.1;
@@ -189,6 +190,7 @@ summary) {
 }
 
 :where(:is(ul, ol)[role=list], nav :is(ul, ol)) {
+  --list-flow: 0;
   list-style: none;
   margin-block: 0;
   padding-inline-start: 0;
@@ -204,7 +206,7 @@ summary) {
 }
 
 :where(li + li, dd + dt) {
-  margin-block-start: 0.5em;
+  margin-block-start: var(--list-flow);
 }
 
 :where(dd) {
