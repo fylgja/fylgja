@@ -1,4 +1,4 @@
-:where(.flex-col, .flex-wrap) {
+:where(.flex, .flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --_flexD: var(--flex-dir);
@@ -15,43 +15,51 @@
   --flex-wrap: wrap;
 }
 
+.flex-none {
+  flex: none;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
 @media (width >= 480px) {
-  :is(.flex-col, .flex-wrap):where([style*="--sm_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
 }
 @media (width >= 768px) {
-  :is(.flex-col, .flex-wrap):where([style*="--md_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
 }
 @media (width >= 1024px) {
-  :is(.flex-col, .flex-wrap):where([style*="--lg_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
 }
 @media (width >= 1440px) {
-  :is(.flex-col, .flex-wrap):where([style*="--xl_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
 }
 @media (width >= 1920px) {
-  :is(.flex-col, .flex-wrap):where([style*="--xxl_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
 }

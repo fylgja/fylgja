@@ -10,6 +10,10 @@
   display: inline flow-root;
 }
 
+.flow-root {
+  display: flow-root;
+}
+
 .flex {
   display: flex;
 }
@@ -42,6 +46,10 @@
   display: inline flow-root;
 }
 
+.open\:flow-root:where([open], :popover-open) {
+  display: flow-root;
+}
+
 .open\:flex:where([open], :popover-open) {
   display: flex;
 }
@@ -72,6 +80,9 @@
   .sm\:inline-block {
     display: inline flow-root;
   }
+  .sm\:flow-root {
+    display: flow-root;
+  }
   .sm\:flex {
     display: flex;
   }
@@ -97,6 +108,9 @@
   }
   .md\:inline-block {
     display: inline flow-root;
+  }
+  .md\:flow-root {
+    display: flow-root;
   }
   .md\:flex {
     display: flex;
@@ -124,6 +138,9 @@
   .lg\:inline-block {
     display: inline flow-root;
   }
+  .lg\:flow-root {
+    display: flow-root;
+  }
   .lg\:flex {
     display: flex;
   }
@@ -150,6 +167,9 @@
   .xl\:inline-block {
     display: inline flow-root;
   }
+  .xl\:flow-root {
+    display: flow-root;
+  }
   .xl\:flex {
     display: flex;
   }
@@ -175,6 +195,9 @@
   }
   .xxl\:inline-block {
     display: inline flow-root;
+  }
+  .xxl\:flow-root {
+    display: flow-root;
   }
   .xxl\:flex {
     display: flex;

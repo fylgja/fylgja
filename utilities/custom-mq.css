@@ -348,7 +348,7 @@
 .auto-grid {
   --max-col-size: 14rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--max-col-size)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--max-col-size)), 1fr));
 }
 
 :where(.grid-cols) {
@@ -383,7 +383,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:where(.flex-col, .flex-wrap) {
+:where(.flex, .flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --_flexD: var(--flex-dir);
@@ -398,6 +398,14 @@
 
 .flex-wrap {
   --flex-wrap: wrap;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-auto {
+  flex: auto;
 }
 
 .stack {
@@ -429,6 +437,10 @@
 
 .inline-block {
   display: inline flow-root;
+}
+
+.flow-root {
+  display: flow-root;
 }
 
 .flex {
@@ -463,6 +475,10 @@
   display: inline flow-root;
 }
 
+.open\:flow-root:where([open], :popover-open) {
+  display: flow-root;
+}
+
 .open\:flex:where([open], :popover-open) {
   display: flex;
 }
@@ -483,7 +499,8 @@
   display: table-cell;
 }
 
-.align {
+.align,
+.align-center {
   --align: normal space-between;
   --align-items: center legacy;
   --_alignC: var(--align);
@@ -492,15 +509,20 @@
   place-items: var(--_alignI);
 }
 
-.align-self {
+.align-center {
+  --align: center;
+  --align-items: center;
+}
+
+.align-self,
+.align-self-end {
   --align-self: start auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
 }
 
-.align-center {
-  place-content: center;
-  place-items: center;
+.align-self-end {
+  --align-self: end auto;
 }
 
 .gap {
@@ -549,6 +571,9 @@
   .sm\:inline-block {
     display: inline flow-root;
   }
+  .sm\:flow-root {
+    display: flow-root;
+  }
   .sm\:flex {
     display: flex;
   }
@@ -564,10 +589,10 @@
   .sm\:table-cell {
     display: table-cell;
   }
-  :is(.flex-col, .flex-wrap):where([style*="--sm_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--sm_flex-dir:"]) {
     --_flexD: var(--sm_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--sm_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--sm_flex-wrap:"]) {
     --_flexW: var(--sm_flex-wrap);
   }
   .grid-cols:where([style*="--sm_grid-cols:"]) {
@@ -624,6 +649,9 @@
   .md\:inline-block {
     display: inline flow-root;
   }
+  .md\:flow-root {
+    display: flow-root;
+  }
   .md\:flex {
     display: flex;
   }
@@ -639,10 +667,10 @@
   .md\:table-cell {
     display: table-cell;
   }
-  :is(.flex-col, .flex-wrap):where([style*="--md_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--md_flex-dir:"]) {
     --_flexD: var(--md_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--md_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--md_flex-wrap:"]) {
     --_flexW: var(--md_flex-wrap);
   }
   .grid-cols:where([style*="--md_grid-cols:"]) {
@@ -699,6 +727,9 @@
   .lg\:inline-block {
     display: inline flow-root;
   }
+  .lg\:flow-root {
+    display: flow-root;
+  }
   .lg\:flex {
     display: flex;
   }
@@ -714,10 +745,10 @@
   .lg\:table-cell {
     display: table-cell;
   }
-  :is(.flex-col, .flex-wrap):where([style*="--lg_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--lg_flex-dir:"]) {
     --_flexD: var(--lg_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--lg_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--lg_flex-wrap:"]) {
     --_flexW: var(--lg_flex-wrap);
   }
   .grid-cols:where([style*="--lg_grid-cols:"]) {
@@ -774,6 +805,9 @@
   .xl\:inline-block {
     display: inline flow-root;
   }
+  .xl\:flow-root {
+    display: flow-root;
+  }
   .xl\:flex {
     display: flex;
   }
@@ -789,10 +823,10 @@
   .xl\:table-cell {
     display: table-cell;
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xl_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xl_flex-dir:"]) {
     --_flexD: var(--xl_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xl_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xl_flex-wrap:"]) {
     --_flexW: var(--xl_flex-wrap);
   }
   .grid-cols:where([style*="--xl_grid-cols:"]) {
@@ -849,6 +883,9 @@
   .xxl\:inline-block {
     display: inline flow-root;
   }
+  .xxl\:flow-root {
+    display: flow-root;
+  }
   .xxl\:flex {
     display: flex;
   }
@@ -864,10 +901,10 @@
   .xxl\:table-cell {
     display: table-cell;
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xxl_flex-dir:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xxl_flex-dir:"]) {
     --_flexD: var(--xxl_flex-dir);
   }
-  :is(.flex-col, .flex-wrap):where([style*="--xxl_flex-wrap:"]) {
+  :is(.flex, .flex-col, .flex-wrap):where([style*="--xxl_flex-wrap:"]) {
     --_flexW: var(--xxl_flex-wrap);
   }
   .grid-cols:where([style*="--xxl_grid-cols:"]) {

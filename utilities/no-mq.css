@@ -348,7 +348,7 @@
 .auto-grid {
   --max-col-size: 14rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--max-col-size)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--max-col-size)), 1fr));
 }
 
 :where(.grid-cols) {
@@ -383,7 +383,7 @@
   grid-auto-columns: var(--grid-flow-size);
 }
 
-:where(.flex-col, .flex-wrap) {
+:where(.flex, .flex-col, .flex-wrap) {
   --flex-dir: row;
   --flex-wrap: nowrap;
   --_flexD: var(--flex-dir);
@@ -398,6 +398,14 @@
 
 .flex-wrap {
   --flex-wrap: wrap;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-auto {
+  flex: auto;
 }
 
 .stack {
@@ -429,6 +437,10 @@
 
 .inline-block {
   display: inline flow-root;
+}
+
+.flow-root {
+  display: flow-root;
 }
 
 .flex {
@@ -463,6 +475,10 @@
   display: inline flow-root;
 }
 
+.open\:flow-root:where([open], :popover-open) {
+  display: flow-root;
+}
+
 .open\:flex:where([open], :popover-open) {
   display: flex;
 }
@@ -483,7 +499,8 @@
   display: table-cell;
 }
 
-.align {
+.align,
+.align-center {
   --align: normal space-between;
   --align-items: center legacy;
   --_alignC: var(--align);
@@ -492,15 +509,20 @@
   place-items: var(--_alignI);
 }
 
-.align-self {
+.align-center {
+  --align: center;
+  --align-items: center;
+}
+
+.align-self,
+.align-self-end {
   --align-self: start auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
 }
 
-.align-center {
-  place-content: center;
-  place-items: center;
+.align-self-end {
+  --align-self: end auto;
 }
 
 .gap {
