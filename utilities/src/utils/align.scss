@@ -5,7 +5,8 @@
 
 $use-mq: true !default;
 
-.align {
+.align,
+.align-center {
 	--align: normal space-between;
 	--align-items: center legacy;
 	--_alignC: var(--align);
@@ -15,6 +16,11 @@ $use-mq: true !default;
 }
 
 .align-self {
+.align-center {
+	--align: center;
+	--align-items: center;
+}
+
 	--align-self: start auto;
 	--_alignS: var(--align-self);
 	place-self: var(--_alignS);
