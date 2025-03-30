@@ -22,6 +22,14 @@ $use-mq: true !default;
 	--flex-wrap: wrap;
 }
 
+.flex-none {
+	flex: none;
+}
+
+.flex-auto {
+	flex: auto;
+}
+
 @mixin mq-utils($name) {
 	:is(.flex, .flex-col, .flex-wrap) {
 		&:where([style*="--#{$name}_flex-dir:"]) {
