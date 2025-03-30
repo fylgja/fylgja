@@ -28,3 +28,12 @@
 	background-image: var(--gradient);
 	color: transparent;
 }
+
+.rounded-gradient {
+	@extend %utility-gradient;
+	--rounded-bg: var(--root-bg, #fff);
+	border-color: transparent;
+	background:
+		linear-gradient(var(--rounded-bg) 0 0) padding-box,
+		var(--gradient) border-box;
+}
