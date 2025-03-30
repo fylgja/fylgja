@@ -5,7 +5,8 @@
 
 $use-mq: true !default;
 
-.align {
+.align,
+.align-center {
 	--align: normal space-between;
 	--align-items: center legacy;
 	--_alignC: var(--align);
@@ -14,15 +15,20 @@ $use-mq: true !default;
 	place-items: var(--_alignI);
 }
 
-.align-self {
+.align-center {
+	--align: center;
+	--align-items: center;
+}
+
+.align-self,
+.align-self-end {
 	--align-self: start auto;
 	--_alignS: var(--align-self);
 	place-self: var(--_alignS);
 }
 
-.align-center {
-	place-content: center;
-	place-items: center;
+.align-self-end {
+	--align-self: end auto;
 }
 
 @mixin mq-utils($name) {
