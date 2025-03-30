@@ -7,7 +7,7 @@ $max-col-size: 14rem !default;
 	--max-col-size: #{$max-col-size};
 	display: grid;
 	grid-template-columns: repeat(
-		auto-fit,
+		auto-fill,
 		minmax(min(100%, var(--max-col-size)), 1fr)
 	);
 }
