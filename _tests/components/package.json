@@ -1,6 +1,6 @@
 {
-  "name": "fylgja-example-base",
-  "description": "Sample of the Fylgja base in action",
+  "name": "fylgja-example-components",
+  "description": "Sample of the Fylgja components in action",
   "author": "Fylgja",
   "private": "true",
   "type": "module",
@@ -9,8 +9,5 @@
   },
   "devDependencies": {
     "vite": "^6.2.7"
-  },
-  "dependencies": {
-    "dark-mode-toggle": "^0.16.1"
   }
 }
