@@ -12,23 +12,15 @@
 }
 
 :where(.card-content,
-.card:not(figure,
-img,
-picture,
-video,
-:has(.card-content,
-> :is(img, picture, video):only-child)),
+.card:not(img, video, iframe, figure, picture),
+:has(.card-content, > :is(img, video, iframe, figure, picture):only-child),
 .card > figcaption) {
   padding-block: var(--card-padding, var(--card-py, 1.25rem));
   padding-inline: var(--card-padding, var(--card-px, 1.25rem));
 }
 :where(.card-content,
-.card:not(figure,
-img,
-picture,
-video,
-:has(.card-content,
-> :is(img, picture, video):only-child)),
+.card:not(img, video, iframe, figure, picture),
+:has(.card-content, > :is(img, video, iframe, figure, picture):only-child),
 .card > figcaption) > :first-child {
   margin-block-start: 0;
 }

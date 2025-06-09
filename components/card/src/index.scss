@@ -8,6 +8,8 @@ $bg: color-mix(in oklab, var(--root-bg) 88%, white) !default;
 $stroke: color-mix(in oklab, var(--root-bg) 88%, black) !default;
 $shadow: none !default;
 
+$media-elements: "img, video, iframe, figure, picture";
+
 :where(.card) {
 	background-color: var(--card-bg, #{$bg});
 	color: var(--card-color, var(--root-fg));
@@ -22,19 +24,10 @@ $shadow: none !default;
 	}
 }
 
-// prettier-ignore
 :where(
 	.card-content,
-	.card:not(
-		figure,
-		img,
-		picture,
-		video,
-		:has(
-			.card-content,
-			> :is(img, picture, video):only-child
-		)
-	),
+	.card:not(#{$media-elements}),
+	:has(.card-content, > :is(#{$media-elements}):only-child),
 	.card > figcaption
 ) {
 	padding-block: var(--card-padding, var(--card-py, #{$padding-block}));
