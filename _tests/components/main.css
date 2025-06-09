@@ -1,7 +1,8 @@
 @import url("@fylgja/base");
 @import url("@fylgja/base/theme");
-@import url("@fylgja/container");
+@import url("@fylgja/tokens/css");
 @import url("@fylgja/utilities");
+@import "../../components/card/index.css";
 
 header {
 	padding-block: 1rem;
@@ -24,4 +25,10 @@ footer {
 	padding-block: 1rem;
 	text-align: center;
 	background-color: var(--surface-color);
+}
+
+.media-bg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
