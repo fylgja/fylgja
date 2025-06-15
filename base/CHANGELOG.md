@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for `[aria-disabled="true"]` on buttons to better accommodate JavaScript-driven disabled states.
 - Custom `-webkit-tap-highlight-color` to buttons to prevent the default browser highlight from affecting brand colors.
 
 ### Removed
