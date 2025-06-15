@@ -140,7 +140,7 @@ $anchor-offset: 6ex !default;
 	max-inline-size: 100%;
 }
 
-:where(img, svg, video, iframe) {
+:where(img, svg, iframe) {
 	block-size: auto;
 }
 
