@@ -5,7 +5,7 @@
 
 @use "./global";
 @use "./typography" with (
-	$selectors: "article, .entry-content, .prose"
+	$selectors: ".entry-content, .prose"
 );
 @use "./table";
 @use "./print";
