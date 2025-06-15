@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Custom `-webkit-tap-highlight-color` to buttons to prevent the default browser highlight from affecting brand colors.
+
+### Removed
+
+- `article` element from scoped preflight styles, allowing only class-based options.
+  This change was made because lists of products or posts can also be considered articles,
+  making the previous default behavior for the scoped version less appropriate.
+
 ## 2.0.0 - 2025-03-12
 
 Fylgja Base has been completely rebuilt,
