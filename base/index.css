@@ -100,10 +100,10 @@ summary) {
 
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
+  max-inline-size: 100%;
 }
 
-:where(img, svg, video, iframe) {
-  max-inline-size: 100%;
+:where(img, svg, iframe) {
   block-size: auto;
 }
 
@@ -533,6 +533,7 @@ summary) {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn) {
@@ -553,7 +554,7 @@ summary) {
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):disabled,
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:disabled [aria-disabled=true]),
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
