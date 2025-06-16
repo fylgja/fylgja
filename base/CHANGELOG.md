@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support for `[aria-disabled="true"]` on buttons to better accommodate JavaScript-driven disabled states.
+
+### Changed
+
+- Removed `-webkit-tap-highlight-color` on buttons to prevent the default browser highlight from affecting the active color.
+  Also add consistency between link and normal buttons when clicked or tapped.
+
+### Removed
+
+- `article` element from scoped preflight styles, allowing only class-based options.
+  This change was made because lists of products or posts can also be considered articles,
+  making the previous default behavior for the scoped version less appropriate.
+
 ## 2.0.0 - 2025-03-12
 
 Fylgja Base has been completely rebuilt,
