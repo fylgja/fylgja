@@ -46,13 +46,10 @@ $disabled-color: color-mix(
 		var(--outline-transition);
 	user-select: none;
 	cursor: pointer;
-	// Don't use the default browser color,
-	// Instead use the same color used for desktop with hover,
-	// But now use it for the touch tap
-	-webkit-tap-highlight-color: var(
-		--btn-hover-bg,
-		var(--btn-bg, #{$hover-bg})
-	);
+	// Disable default tap color.
+	// The active state is already handling this case when click or tapped
+	// Also makes the behavior the same as none link buttons.
+	-webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
 
 @mixin disabled {
