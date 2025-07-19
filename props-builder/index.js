@@ -46,7 +46,10 @@ export const propsBuilder = (
 
 	switch (parseSyntax) {
 		case "tokens":
-			data = toTokens(props, formatTokens, { wrapper });
+			data = toTokens(props, formatTokens, {
+				wrapper,
+				groupTypes: false,
+			});
 			break;
 
 		case "figma":
@@ -65,10 +68,12 @@ export const propsBuilder = (
 
 		case "scss":
 			data = toStyleTokens(props, { varSyntax: "$" });
+			data += "\n";
 			break;
 
 		case "css":
 			data = toStyleTokens(props, { selector });
+			data += "\n";
 			break;
 
 		case "css-jit":
