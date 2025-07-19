@@ -33,6 +33,7 @@ declare const _default: {
     "--color-12": string;
     "--color-13": string;
     "--color-14": string;
+    "--hue-@": string;
     "--hue-pink": number;
     "--hue-purple": number;
     "--hue-violet": number;

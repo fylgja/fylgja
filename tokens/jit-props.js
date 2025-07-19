@@ -33,6 +33,7 @@ export default {
   "--color-12": "oklch(20% calc(.10 * var(--chroma, 1)) var(--hue, 0))",
   "--color-13": "oklch(15% calc(.07 * var(--chroma, 1)) var(--hue, 0))",
   "--color-14": "oklch(11% calc(.05 * var(--chroma, 1)) var(--hue, 0))",
+  "--hue-@": "@property --hue { syntax: \"<angle> | <number>\"; inherits: true; initial-value: 0; }",
   "--hue-pink": 350,
   "--hue-purple": 330,
   "--hue-violet": 310,
