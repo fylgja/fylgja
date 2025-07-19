@@ -1,7 +1,14 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-function formatFigma(key, colorKeys = []) {
+/**
+ * Adds the right type to the design token value
+ *
+ * @param {string} key
+ * @param {string[]} colorKeys - Possible color keys
+ * @returns {Object}
+ */
+function formatFigma(key, colorKeys = [], numberKeys = []) {
 	if (!key) return;
 
 	if (key.includes("size") && !key.includes("border-size")) {

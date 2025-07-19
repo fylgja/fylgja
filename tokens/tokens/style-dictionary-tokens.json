@@ -1,272 +1,25 @@
 {
-  "other": {
-    "ratio-box": {
-      "value": 1,
-      "type": "other"
+  "ratio": {
+    "box": {
+      "value": 1
     },
-    "ratio-landscape": {
-      "value": "4/3",
-      "type": "other"
+    "landscape": {
+      "value": "4/3"
     },
-    "ratio-portrait": {
-      "value": "3/4",
-      "type": "other"
+    "portrait": {
+      "value": "3/4"
     },
-    "ratio-widescreen": {
-      "value": "16/9",
-      "type": "other"
+    "widescreen": {
+      "value": "16/9"
     },
-    "ratio-superwide": {
-      "value": "21/9",
-      "type": "other"
+    "superwide": {
+      "value": "21/9"
     },
-    "ratio-ultrawide": {
-      "value": "18/5",
-      "type": "other"
+    "ultrawide": {
+      "value": "18/5"
     },
-    "ratio-golden": {
-      "value": "1.618/1",
-      "type": "other"
-    },
-    "ease-1": {
-      "value": "cubic-bezier(0.25, 0.1, 0.1, 1)",
-      "type": "other"
-    },
-    "ease-2": {
-      "value": "cubic-bezier(0.25, 0.1, 0.2, 1)",
-      "type": "other"
-    },
-    "ease-3": {
-      "value": "cubic-bezier(0.25, 0.1, 0.3, 1)",
-      "type": "other"
-    },
-    "ease-4": {
-      "value": "cubic-bezier(0.25, 0.1, 0.4, 1)",
-      "type": "other"
-    },
-    "ease-5": {
-      "value": "cubic-bezier(0.25, 0.1, 0.5, 1)",
-      "type": "other"
-    },
-    "easeIn-1": {
-      "value": "cubic-bezier(0.3, 0, 1, 1)",
-      "type": "other"
-    },
-    "easeIn-2": {
-      "value": "cubic-bezier(0.5, 0, 1, 1)",
-      "type": "other"
-    },
-    "easeIn-3": {
-      "value": "cubic-bezier(0.7, 0, 1, 1)",
-      "type": "other"
-    },
-    "easeIn-4": {
-      "value": "cubic-bezier(0.9, 0, 1, 1)",
-      "type": "other"
-    },
-    "easeIn-5": {
-      "value": "cubic-bezier(1, 0, 1, 1)",
-      "type": "other"
-    },
-    "easeOut-1": {
-      "value": "cubic-bezier(0, 0, 0.7, 1)",
-      "type": "other"
-    },
-    "easeOut-2": {
-      "value": "cubic-bezier(0, 0, 0.5, 1)",
-      "type": "other"
-    },
-    "easeOut-3": {
-      "value": "cubic-bezier(0, 0, 0.3, 1)",
-      "type": "other"
-    },
-    "easeOut-4": {
-      "value": "cubic-bezier(0, 0, 0.1, 1)",
-      "type": "other"
-    },
-    "easeOut-5": {
-      "value": "cubic-bezier(0, 0, 0, 1)",
-      "type": "other"
-    },
-    "easeInOut-1": {
-      "value": "cubic-bezier(0.1, 0, 0.9, 1)",
-      "type": "other"
-    },
-    "easeInOut-2": {
-      "value": "cubic-bezier(0.3, 0, 0.7, 1)",
-      "type": "other"
-    },
-    "easeInOut-3": {
-      "value": "cubic-bezier(0.5, 0, 0.5, 1)",
-      "type": "other"
-    },
-    "easeInOut-4": {
-      "value": "cubic-bezier(0.7, 0, 0.3, 1)",
-      "type": "other"
-    },
-    "easeInOut-5": {
-      "value": "cubic-bezier(0.9, 0, 0.1, 1)",
-      "type": "other"
-    },
-    "easeElasticIn-1": {
-      "value": "cubic-bezier(0.5, 0.25, 0.75, -0.25)",
-      "type": "other"
-    },
-    "easeElasticIn-2": {
-      "value": "cubic-bezier(0.5, 0, 0.75, -0.25)",
-      "type": "other"
-    },
-    "easeElasticIn-3": {
-      "value": "cubic-bezier(0.5, -0.25, 0.75, -0.25)",
-      "type": "other"
-    },
-    "easeElasticIn-4": {
-      "value": "cubic-bezier(0.5, -0.5, 0.75, -0.25)",
-      "type": "other"
-    },
-    "easeElasticIn-5": {
-      "value": "cubic-bezier(0.5, -0.75, 0.75, -0.25)",
-      "type": "other"
-    },
-    "easeElasticOut-1": {
-      "value": "cubic-bezier(0.5, 0.75, 0.75, 1.25)",
-      "type": "other"
-    },
-    "easeElasticOut-2": {
-      "value": "cubic-bezier(0.5, 1, 0.75, 1.25)",
-      "type": "other"
-    },
-    "easeElasticOut-3": {
-      "value": "cubic-bezier(0.5, 1.25, 0.75, 1.25)",
-      "type": "other"
-    },
-    "easeElasticOut-4": {
-      "value": "cubic-bezier(0.5, 1.5, 0.75, 1.25)",
-      "type": "other"
-    },
-    "easeElasticOut-5": {
-      "value": "cubic-bezier(0.5, 1.75, 0.75, 1.25)",
-      "type": "other"
-    },
-    "easeElasticInOut-1": {
-      "value": "cubic-bezier(0.5, -0.1, 0.1, 1.5)",
-      "type": "other"
-    },
-    "easeElasticInOut-2": {
-      "value": "cubic-bezier(0.5, -0.3, 0.1, 1.5)",
-      "type": "other"
-    },
-    "easeElasticInOut-3": {
-      "value": "cubic-bezier(0.5, -0.5, 0.1, 1.5)",
-      "type": "other"
-    },
-    "easeElasticInOut-4": {
-      "value": "cubic-bezier(0.5, -0.7, 0.1, 1.5)",
-      "type": "other"
-    },
-    "easeElasticInOut-5": {
-      "value": "cubic-bezier(0.5, -0.9, 0.1, 1.5)",
-      "type": "other"
-    },
-    "fontSize-1": {
-      "value": "0.875rem",
-      "type": "other"
-    },
-    "fontSize-2": {
-      "value": "1rem",
-      "type": "other"
-    },
-    "fontSize-3": {
-      "value": "1.125rem",
-      "type": "other"
-    },
-    "fontSize-4": {
-      "value": "1.25rem",
-      "type": "other"
-    },
-    "fontSize-5": {
-      "value": "1.5rem",
-      "type": "other"
-    },
-    "fontSize-6": {
-      "value": "2rem",
-      "type": "other"
-    },
-    "fontSize-7": {
-      "value": "2.5rem",
-      "type": "other"
-    },
-    "fontSize-8": {
-      "value": "3rem",
-      "type": "other"
-    },
-    "fontSize-9": {
-      "value": "3.5rem",
-      "type": "other"
-    },
-    "fontSize-fluid-1": {
-      "value": "clamp(0.875rem, 1.5cqi, 1rem)",
-      "type": "other"
-    },
-    "fontSize-fluid-2": {
-      "value": "clamp(1rem, 2cqi, 1.125rem)",
-      "type": "other"
-    },
-    "fontSize-fluid-3": {
-      "value": "clamp(1.25rem, 2cqi, 1.5rem)",
-      "type": "other"
-    },
-    "fontSize-fluid-4": {
-      "value": "clamp(1.5rem, 3cqi, 2rem)",
-      "type": "other"
-    },
-    "fontSize-fluid-5": {
-      "value": "clamp(2rem, 5cqi, 3.5rem)",
-      "type": "other"
-    },
-    "lineHeight-1": {
-      "value": "1.1",
-      "type": "other"
-    },
-    "lineHeight-2": {
-      "value": "1.25",
-      "type": "other"
-    },
-    "lineHeight-3": {
-      "value": "1.375",
-      "type": "other"
-    },
-    "lineHeight-4": {
-      "value": "1.5",
-      "type": "other"
-    },
-    "lineHeight-5": {
-      "value": "1.8",
-      "type": "other"
-    },
-    "spacing": {
-      "value": "0.25rem",
-      "type": "other"
-    },
-    "layer-1": {
-      "value": 1,
-      "type": "other"
-    },
-    "layer-2": {
-      "value": 2,
-      "type": "other"
-    },
-    "layer-3": {
-      "value": 4,
-      "type": "other"
-    },
-    "layer-4": {
-      "value": 6,
-      "type": "other"
-    },
-    "layer-5": {
-      "value": 8,
-      "type": "other"
+    "golden": {
+      "value": "1.618/1"
     }
   },
   "border": {
@@ -1043,54 +796,188 @@
     "red-14": {
       "value": "oklch(11% .05 25)",
       "type": "color"
+    }
+  },
+  "ease": {
+    "1": {
+      "value": "cubic-bezier(0.25, 0.1, 0.1, 1)"
     },
-    "hue-pink": {
-      "value": 350,
-      "type": "color"
+    "2": {
+      "value": "cubic-bezier(0.25, 0.1, 0.2, 1)"
     },
-    "hue-purple": {
-      "value": 330,
-      "type": "color"
+    "3": {
+      "value": "cubic-bezier(0.25, 0.1, 0.3, 1)"
     },
-    "hue-violet": {
-      "value": 310,
-      "type": "color"
+    "4": {
+      "value": "cubic-bezier(0.25, 0.1, 0.4, 1)"
     },
-    "hue-indigo": {
-      "value": 290,
-      "type": "color"
+    "5": {
+      "value": "cubic-bezier(0.25, 0.1, 0.5, 1)"
+    }
+  },
+  "easeIn": {
+    "1": {
+      "value": "cubic-bezier(0.3, 0, 1, 1)"
     },
-    "hue-blue": {
-      "value": 260,
-      "type": "color"
+    "2": {
+      "value": "cubic-bezier(0.5, 0, 1, 1)"
     },
-    "hue-cyan": {
-      "value": 220,
-      "type": "color"
+    "3": {
+      "value": "cubic-bezier(0.7, 0, 1, 1)"
     },
-    "hue-teal": {
-      "value": 170,
-      "type": "color"
+    "4": {
+      "value": "cubic-bezier(0.9, 0, 1, 1)"
     },
-    "hue-green": {
-      "value": 140,
-      "type": "color"
+    "5": {
+      "value": "cubic-bezier(1, 0, 1, 1)"
+    }
+  },
+  "easeOut": {
+    "1": {
+      "value": "cubic-bezier(0, 0, 0.7, 1)"
     },
-    "hue-lime": {
-      "value": 125,
-      "type": "color"
+    "2": {
+      "value": "cubic-bezier(0, 0, 0.5, 1)"
     },
-    "hue-yellow": {
-      "value": 96,
-      "type": "color"
+    "3": {
+      "value": "cubic-bezier(0, 0, 0.3, 1)"
     },
-    "hue-orange": {
-      "value": 70,
-      "type": "color"
+    "4": {
+      "value": "cubic-bezier(0, 0, 0.1, 1)"
     },
-    "hue-red": {
-      "value": 25,
-      "type": "color"
+    "5": {
+      "value": "cubic-bezier(0, 0, 0, 1)"
+    }
+  },
+  "easeInOut": {
+    "1": {
+      "value": "cubic-bezier(0.1, 0, 0.9, 1)"
+    },
+    "2": {
+      "value": "cubic-bezier(0.3, 0, 0.7, 1)"
+    },
+    "3": {
+      "value": "cubic-bezier(0.5, 0, 0.5, 1)"
+    },
+    "4": {
+      "value": "cubic-bezier(0.7, 0, 0.3, 1)"
+    },
+    "5": {
+      "value": "cubic-bezier(0.9, 0, 0.1, 1)"
+    }
+  },
+  "easeElasticIn": {
+    "1": {
+      "value": "cubic-bezier(0.5, 0.25, 0.75, -0.25)"
+    },
+    "2": {
+      "value": "cubic-bezier(0.5, 0, 0.75, -0.25)"
+    },
+    "3": {
+      "value": "cubic-bezier(0.5, -0.25, 0.75, -0.25)"
+    },
+    "4": {
+      "value": "cubic-bezier(0.5, -0.5, 0.75, -0.25)"
+    },
+    "5": {
+      "value": "cubic-bezier(0.5, -0.75, 0.75, -0.25)"
+    }
+  },
+  "easeElasticOut": {
+    "1": {
+      "value": "cubic-bezier(0.5, 0.75, 0.75, 1.25)"
+    },
+    "2": {
+      "value": "cubic-bezier(0.5, 1, 0.75, 1.25)"
+    },
+    "3": {
+      "value": "cubic-bezier(0.5, 1.25, 0.75, 1.25)"
+    },
+    "4": {
+      "value": "cubic-bezier(0.5, 1.5, 0.75, 1.25)"
+    },
+    "5": {
+      "value": "cubic-bezier(0.5, 1.75, 0.75, 1.25)"
+    }
+  },
+  "easeElasticInOut": {
+    "1": {
+      "value": "cubic-bezier(0.5, -0.1, 0.1, 1.5)"
+    },
+    "2": {
+      "value": "cubic-bezier(0.5, -0.3, 0.1, 1.5)"
+    },
+    "3": {
+      "value": "cubic-bezier(0.5, -0.5, 0.1, 1.5)"
+    },
+    "4": {
+      "value": "cubic-bezier(0.5, -0.7, 0.1, 1.5)"
+    },
+    "5": {
+      "value": "cubic-bezier(0.5, -0.9, 0.1, 1.5)"
+    }
+  },
+  "fontSize": {
+    "1": {
+      "value": "0.875rem"
+    },
+    "2": {
+      "value": "1rem"
+    },
+    "3": {
+      "value": "1.125rem"
+    },
+    "4": {
+      "value": "1.25rem"
+    },
+    "5": {
+      "value": "1.5rem"
+    },
+    "6": {
+      "value": "2rem"
+    },
+    "7": {
+      "value": "2.5rem"
+    },
+    "8": {
+      "value": "3rem"
+    },
+    "9": {
+      "value": "3.5rem"
+    },
+    "fluid": {
+      "1": {
+        "value": "clamp(0.875rem, 1.5cqi, 1rem)"
+      },
+      "2": {
+        "value": "clamp(1rem, 2cqi, 1.125rem)"
+      },
+      "3": {
+        "value": "clamp(1.25rem, 2cqi, 1.5rem)"
+      },
+      "4": {
+        "value": "clamp(1.5rem, 3cqi, 2rem)"
+      },
+      "5": {
+        "value": "clamp(2rem, 5cqi, 3.5rem)"
+      }
+    }
+  },
+  "lineHeight": {
+    "1": {
+      "value": "1.1"
+    },
+    "2": {
+      "value": "1.25"
+    },
+    "3": {
+      "value": "1.375"
+    },
+    "4": {
+      "value": "1.5"
+    },
+    "5": {
+      "value": "1.8"
     }
   },
   "box": {
@@ -1132,6 +1019,9 @@
         "type": "box-shadow"
       }
     }
+  },
+  "spacing": {
+    "value": "0.25rem"
   },
   "size": {
     "size-1": {
@@ -1253,6 +1143,23 @@
     "size-content": {
       "value": "64ch",
       "type": "size"
+    }
+  },
+  "layer": {
+    "1": {
+      "value": 1
+    },
+    "2": {
+      "value": 2
+    },
+    "3": {
+      "value": 4
+    },
+    "4": {
+      "value": 6
+    },
+    "5": {
+      "value": 8
     }
   }
 }
