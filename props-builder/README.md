@@ -55,13 +55,13 @@ import { propsBuilder } from "../index.js";
 
 propsBuilder(
   {
-		color: {
-			red: "#f00",
-			green: "#0f0",
-			blue: "#00f",
-		}
-	},
-	"output.css"
+    color: {
+      red: "#f00",
+      green: "#0f0",
+      blue: "#00f",
+    }
+  },
+  "output.css"
 );
 ```
 
@@ -69,9 +69,9 @@ This will generate output.css with the following content:
 
 ```css
 :where(:root) {
-	--color-red: #f00;
-	--color-green: #0f0;
-	--color-blue: #00f;
+  --color-red: #f00;
+  --color-green: #0f0;
+  --color-blue: #00f;
 }
 ```
 
