@@ -1042,54 +1042,6 @@
       "red-14": {
         "value": "oklch(11% .05 25)",
         "type": "color"
-      },
-      "hue-pink": {
-        "value": 350,
-        "type": "color"
-      },
-      "hue-purple": {
-        "value": 330,
-        "type": "color"
-      },
-      "hue-violet": {
-        "value": 310,
-        "type": "color"
-      },
-      "hue-indigo": {
-        "value": 290,
-        "type": "color"
-      },
-      "hue-blue": {
-        "value": 260,
-        "type": "color"
-      },
-      "hue-cyan": {
-        "value": 220,
-        "type": "color"
-      },
-      "hue-teal": {
-        "value": 170,
-        "type": "color"
-      },
-      "hue-green": {
-        "value": 140,
-        "type": "color"
-      },
-      "hue-lime": {
-        "value": 125,
-        "type": "color"
-      },
-      "hue-yellow": {
-        "value": 96,
-        "type": "color"
-      },
-      "hue-orange": {
-        "value": 70,
-        "type": "color"
-      },
-      "hue-red": {
-        "value": 25,
-        "type": "color"
       }
     },
     "boxShadow": {
