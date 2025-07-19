@@ -35,14 +35,14 @@ Then, use it to generate output files based on your configuration:
 import { propsBuilder } from "../index.js";
 
 propsBuilder(
-	props, // Required: JavaScript object containing your design tokens.
-    filename, // Required: Name of the output file.
-    {
-        parseAs: "auto", // Optional: Specifies the output format ("auto", "css", "json"). Defaults to "auto" (determined by file extension).
-        writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
-        selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
-        wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
-    }
+  props, // Required: JavaScript object containing your design tokens.
+  filename, // Required: Name of the output file.
+  {
+    parseAs: "auto", // Optional: Specifies the output format ("auto", "css", "json"). Defaults to "auto" (determined by file extension).
+    writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
+    selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
+    wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
+  }
 )
 ```
 
@@ -54,7 +54,7 @@ The optional parameters provide flexibility for advanced scenarios.
 import { propsBuilder } from "../index.js";
 
 propsBuilder(
-	{
+  {
 		color: {
 			red: "#f00",
 			green: "#0f0",
