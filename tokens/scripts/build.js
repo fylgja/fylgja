@@ -69,7 +69,6 @@ const tokens = {
 	...aspectRatios,
 	...borders,
 	...staticColors,
-	...hues,
 	...easing,
 	...fonts,
 	...shadows,
