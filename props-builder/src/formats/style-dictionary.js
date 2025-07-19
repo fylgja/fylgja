@@ -1,7 +1,15 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-function formatStyleDictionary(key, colorKeys = []) {
+/**
+ * Adds the right type to the design token value
+ *
+ * @source https://styledictionary.com/info/tokens/
+ * @param {string} key
+ * @param {string[]} colorKeys - Possible color keys
+ * @returns {Object}
+ */
+function formatStyleDictionary(key, colorKeys = [], numberKeys = []) {
 	if (!key) return;
 
 	if (key.includes("size") && !key.includes("border-size")) {
@@ -24,7 +32,7 @@ function formatStyleDictionary(key, colorKeys = []) {
 		return { type: "color" };
 	}
 
-	return { type: "other" };
+	return {};
 }
 
 export default formatStyleDictionary;
