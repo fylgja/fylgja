@@ -62,7 +62,12 @@ const tokenizeCSSVar = (token, metaValueKey) => {
 const toTokens = (
 	props,
 	metaExtend = formatTokens,
-	{ wrapper = "", colorKeys = defaultColorKeys, cssVarToToken = false } = {},
+	{
+		wrapper = "",
+		groupTypes = true,
+		colorKeys = defaultColorKeys,
+		cssVarToToken = false,
+	} = {},
 ) => {
 	const flatProps = flattenObj(props);
 	const isUsingDefaultFormat = metaExtend === formatTokens;
@@ -74,12 +79,17 @@ const toTokens = (
 		const value = cssVarToToken
 			? tokenizeCSSVar(token, metaValueKey)
 			: token;
+		const metaType = meta.type || meta.$type;
 
-		if (!acc[meta.type]) {
-			acc = { ...acc, [meta.type]: {} };
+		if (groupTypes && metaType) {
+			if (!acc[metaType]) {
+				acc = { ...acc, [metaType]: {} };
+			}
+
+			acc[metaType][key] = { [metaValueKey]: value, ...meta };
+		} else {
+			acc[key] = { [metaValueKey]: value, ...meta };
 		}
-
-		acc[meta.type][key] = { [metaValueKey]: value, ...meta };
 
 		return acc;
 	}, {});

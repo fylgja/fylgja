@@ -41,6 +41,7 @@ module.exports = {
     "13": "oklch(15% calc(.07 * var(--chroma, 1)) var(--hue, 0))",
     "14": "oklch(11% calc(.05 * var(--chroma, 1)) var(--hue, 0))"
   },
+  "hue-@": "@property --hue { syntax: \"<angle> | <number>\"; inherits: true; initial-value: 0; }",
   "hue": {
     "pink": 350,
     "purple": 330,

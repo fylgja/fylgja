@@ -145,6 +145,15 @@
   --color-12: oklch(20% calc(.1 * var(--chroma, 1)) var(--hue, 0));
   --color-13: oklch(15% calc(.07 * var(--chroma, 1)) var(--hue, 0));
   --color-14: oklch(11% calc(.05 * var(--chroma, 1)) var(--hue, 0));
+}
+
+@property --hue {
+  syntax: "<angle> | <number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+* {
   --shadow-color-umbra: color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 20%), #0000);
   --shadow-color-penumbra: color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 14%), #0000);
   --shadow-color-ambient: color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%)  + 12%), #0000);

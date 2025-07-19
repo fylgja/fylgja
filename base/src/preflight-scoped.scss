@@ -5,7 +5,7 @@
 
 @use "./global";
 @use "./typography" with (
-	$selectors: ":where(article), .entry-content, .prose"
+	$selectors: ".entry-content, .prose"
 );
 @use "./table";
 @use "./print";

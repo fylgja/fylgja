@@ -43,3 +43,4 @@ const deleteFiles = async (dir, extension) => {
 
 deleteFiles("css", ".css");
 deleteFiles("scss", ".scss");
+deleteFiles("tokens", ".json");

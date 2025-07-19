@@ -41,6 +41,7 @@ declare const _default: {
         "13": string;
         "14": string;
     };
+    "hue-@": string;
     hue: {
         pink: number;
         purple: number;

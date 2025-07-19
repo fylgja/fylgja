@@ -15,3 +15,5 @@
 	--color-13: oklch(15% calc(.07 * var(--chroma, 1)) var(--hue, 0));
 	--color-14: oklch(11% calc(.05 * var(--chroma, 1)) var(--hue, 0));
 }
+
+@property --hue { syntax: "<angle> | <number>"; inherits: true; initial-value: 0; }

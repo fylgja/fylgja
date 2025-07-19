@@ -5,7 +5,8 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "mobile": "vite --host"
   },
   "devDependencies": {
     "vite": "^6.3.4"

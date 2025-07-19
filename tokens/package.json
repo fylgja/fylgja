@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/tokens",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -52,7 +52,7 @@
     },
     "./css": "./css/index.css",
     "./css.min": "./css/index.min.css",
-    "./tokens": "./tokens/tokens.json",
+    "./tokens": "./tokens/fylgja.tokens.json",
     "./figma": "./tokens/figma-tokens.json",
     "./figma.sync": "./tokens/figma-tokens.sync.json",
     "./style-dictionary": "./tokens/style-dictionary-tokens.json",
