@@ -5,9 +5,6 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "card.css",
-  "sass": "_index.scss",
-  "unpkg": "card.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -18,8 +15,12 @@
     "fylgja",
     "fylgja component",
     "card",
-    "wrapper"
+    "product",
+    "blog"
   ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build": "npx lightningcss --minify --bundle index.css -o index.min.css",

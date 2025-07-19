@@ -20,57 +20,36 @@
             </div>
         </header>
         <main class="container" style="--py: 3rem">
-            <div class="auto-grid gap" style="--max-col-size: 19rem">
+            <div class="auto-grid gap flow-none" style="--max-col-size: 16rem">
                 <div class="card">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a, commodi
                     reiciendis aut doloremque earum fugit ducimus officiis hic saepe ipsam
                     recusandae, officia, vel itaque asperiores eum! Explicabo, reiciendis!
                 </div>
-                <div class="card --elevated">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a, commodi
-                    reiciendis aut doloremque earum fugit ducimus officiis hic saepe ipsam
-                    recusandae, officia, vel itaque asperiores eum! Explicabo, reiciendis!
-                </div>
-                <div class="card">
-                    <img
-                        src="https://picsum.photos/id/425/500/300"
-                        alt="coffee beans"
-                        class="media-bg"
-                    />
-                </div>
-                <div class="card">
-                    <img
-                        src="https://picsum.photos/id/425/500/300"
-                        alt="coffee beans"
-                        class="media-bg"
-                    />
-                    <p class="card-content">
+                <figure class="card --elevated">
+                    <figcaption>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a,
-                        commodi reiciendis
+                        commodi reiciendis aut doloremque earum fugit ducimus officiis hic saepe
+                        ipsam recusandae, officia, vel itaque asperiores eum! Explicabo, reiciendis!
+                    </figcaption>
+                </figure>
+                <img
+                    src="https://picsum.photos/id/26/500/500"
+                    alt="coffee beans"
+                    class="card --hover h-full object-cover"
+                />
+                <article class="card --elevated --hover" aria-labelledby="product-coffee">
+                    <img
+                        src="https://picsum.photos/id/425/500/300"
+                        alt="coffee beans"
+                        class="rounded"
+                    />
+                    <h2 id="product-coffee">Coffee Bean Bundle</h2>
+                    <p class="flex-wrap gap align">
+                        <a href="#" class="btn --primary stretched-link">Add to Cart</a>
+                        <a href="#" class="btn relative">Wishlist</a>
                     </p>
-                </div>
-                <figure class="card">
-                    <img
-                        src="https://picsum.photos/id/425/500/300"
-                        alt="coffee beans"
-                        class="media-bg"
-                    />
-                    <figcaption>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a,
-                        commodi reiciendis
-                    </figcaption>
-                </figure>
-                <figure class="card grid-cols" style="--grid-cols: 2; --md_col: span 2">
-                    <img
-                        src="https://picsum.photos/id/425/500/300"
-                        alt="coffee beans"
-                        class="media-bg"
-                    />
-                    <figcaption>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a,
-                        commodi reiciendis
-                    </figcaption>
-                </figure>
+                </article>
             </div>
         </main>
         <footer>

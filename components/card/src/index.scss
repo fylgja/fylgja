@@ -1,44 +1,5 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$radius: 1rem !default;
-$padding-block: 1.25rem !default;
-$padding-inline: 1.25rem !default;
-$bg: color-mix(in oklab, var(--root-bg) 88%, white) !default;
-$stroke: color-mix(in oklab, var(--root-bg) 88%, black) !default;
-$shadow: none !default;
-
-$media-elements: "img, video, iframe, figure, picture";
-
-:where(.card) {
-	background-color: var(--card-bg, #{$bg});
-	color: var(--card-color, var(--root-fg));
-	border: 1px solid var(--card-stroke, #{$stroke});
-	border-radius: var(--card-radius, #{$radius});
-	box-shadow: var(--card-shadow, #{$shadow});
-	overflow: clip;
-
-	&.--elevated {
-		--card-shadow: var(--shadow-2);
-		--card-stroke: transparent;
-	}
-}
-
-:where(
-	.card-content,
-	.card:not(#{$media-elements}),
-	:has(.card-content, > :is(#{$media-elements}):only-child),
-	.card > figcaption
-) {
-	padding-block: var(--card-padding, var(--card-py, #{$padding-block}));
-	padding-inline: var(--card-padding, var(--card-px, #{$padding-inline}));
-
-	> :first-child {
-		margin-block-start: 0;
-	}
-}
-
-// Remove use text flow if used directly on text instead trough a wrapper
-:where(.card-content) {
-	margin-block: 0;
-}
+@use "./base";
+@use "./elevated";
