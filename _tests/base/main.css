@@ -1,8 +1,8 @@
-@import url("@fylgja/base");
-@import url("theme");
+@import url("../../base");
+@import url("../../base/theme");
 @import url("../../components/_todo/form-extend");
-@import url("@fylgja/tokens/css");
-@import url("@fylgja/utilities");
+@import url("../../tokens/css");
+@import url("../../utilities");
 
 :root {
 	--anchor-offset: calc(75px + 5ex);

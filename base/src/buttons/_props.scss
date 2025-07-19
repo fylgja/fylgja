@@ -38,10 +38,18 @@ $disabled-color: color-mix(
 	color: var(--btn-color, #{$color});
 	font-weight: var(--btn-font-weight, #{$font-weight});
 	text-decoration: none;
-	transition: color 0.2s, background-color 0.2s, border-color 0.2s,
-		box-shadow 0.2s, var(--outline-transition);
+	transition:
+		color 0.2s,
+		background-color 0.2s,
+		border-color 0.2s,
+		box-shadow 0.2s,
+		var(--outline-transition);
 	user-select: none;
 	cursor: pointer;
+	// Disable default tap color.
+	// The active state is already handling this case when click or tapped
+	// Also makes the behavior the same as none link buttons.
+	-webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
 
 @mixin disabled {

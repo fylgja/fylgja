@@ -20,6 +20,7 @@
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
   user-select: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 :where(button, [type=button], [type=submit], [type=reset]) {
@@ -40,7 +41,7 @@
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):disabled,
+:where(button, [type=button], [type=submit], [type=reset]):is(:disabled [aria-disabled=true]),
 :where(input[type=file]):disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);

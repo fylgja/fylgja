@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.0.1 - 2025-07-19
+
+### Fixed
+- Incorrect type output in `design-token` syntax
+
 ## 2.0.0 - 2025-03-16
 
 A complete rewrite of the props builder has resulted in a cleaner,

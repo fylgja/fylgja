@@ -39,12 +39,12 @@ const toStyleTokens = (
 	let result = "";
 
 	Object.entries(flatProps).forEach(([name, value]) => {
-		const isKeyFrame = name.endsWith("-@");
+		const isProperty = name.endsWith("-@");
 		const isDarkMode = name.includes("-@media:dark");
 
 		if (Array.isArray(value)) value = value.join(", ");
 
-		if (isKeyFrame) {
+		if (isProperty) {
 			appendedMeta += `${appendedMeta ? "\n\n" : ""}${value}`;
 			return;
 		}
@@ -98,7 +98,7 @@ const toStyleTokens = (
 		}
 	}
 
-	// Append keyframes/meta data if present
+	// Append property data if present
 	if (appendedMeta) {
 		result += `\n${appendedMeta}`;
 	}

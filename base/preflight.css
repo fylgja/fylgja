@@ -100,10 +100,10 @@ summary) {
 
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
+  max-inline-size: 100%;
 }
 
-:where(img, svg, video, iframe) {
-  max-inline-size: 100%;
+:where(img, svg, iframe) {
   block-size: auto;
 }
 
