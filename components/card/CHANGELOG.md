@@ -6,25 +6,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.4] - 2023-02-19
+## 2.0.0 - 2025-07-19
+
+The card component has been completely refactored for improved clarity and efficiency.
+
+It is now fully decoupled from external dependencies, making integration simpler.
+
+The card uses the standard flow layout, offering easier and more flexible layout options.
+
+Modularity has been enhanced: elevated/shadow styles are now optional and can be enabled as needed,
+rather than included by default.
+
+## 1.1.4 - 2023-02-19
 ### Changed
 - Simplified `@layer` support,
   CSS can use native, for SCSS use the new variable `$container-layer`,
   the options from v1.1 are deprecated
 
-## [1.1.3] - 2022-11-05
+## 1.1.3 - 2022-11-05
 ### Changed
 - use Fylgja Theme atLayer for building the `@layer` variant
 
 ### Fixed
 - imports for PostCSS import [#121](https://github.com/fylgja/fylgja/issues/121)
 
-## [1.1.0] - 2022-07-24
+## 1.1.0 - 2022-07-24
 ### Added
 - support for `@layer` in components scope
 
-## [1.0.1] - 2022-06-05
-_Nothing besides docs_
-
-## [1.0.0] - 2021-06-22
+## 1.0.0 - 2021-06-22
 Initial Release 🎉

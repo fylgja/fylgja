@@ -1,0 +1,10 @@
+.card:where(.--elevated) {
+  --card-shadow: var(--shadow-2);
+  --card-stroke: transparent;
+}
+@media (any-pointer: fine) {
+  .card:where(.--hover):hover {
+    --card-shadow: var(--shadow-4);
+    --card-stroke: transparent;
+  }
+}
