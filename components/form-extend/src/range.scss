@@ -1,0 +1,94 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+@use "sass:math";
+
+$track-color: color-mix(in srgb, var(--root-fg) 24%, transparent) !default;
+$track-size: 1ex !default;
+$track-radius: 0.3rem !default;
+
+$thumb-size: 4ex !default;
+$thumb-radius: 50% !default;
+$thumb-stroke: var(--root-bg) !default;
+$thumb-border-width: math.div($thumb-size, 8) !default;
+
+@mixin track {
+	--_progression: calc(100% * var(--fill) / var(--fill-max));
+	block-size: var(--track-size);
+	border-radius: var(--track-radius, #{$track-radius});
+	background: linear-gradient(
+		to var(--fill-direction, right),
+		var(--fill-color) var(--_progression),
+		var(--track-color) var(--_progression)
+	);
+}
+
+@mixin thumb {
+	appearance: none;
+	block-size: var(--size);
+	inline-size: var(--size);
+	box-shadow: var(--thumb-shadow);
+	margin-block-start: var(
+		--thumb-offset,
+		calc(0.5 * calc(var(--track-size) - var(--size)))
+	);
+	border-radius: var(--thumb-radius);
+	border: solid var(--thumb-stroke);
+	border-width: var(--thumb-border-width);
+	background: var(--thumb-bg, var(--fill-color));
+	outline: var(--outline-width) solid var(--form-active-color, currentcolor);
+}
+
+:where(input[type="range"]) {
+	--fill-color: var(--form-active-color, currentcolor);
+	--fill-max: 100;
+	--fill: 0;
+	--size: var(--thumb-size, #{$thumb-size});
+	--track-color: #{$track-color};
+	--track-size: #{$track-size};
+	--thumb-border-width: #{$thumb-border-width};
+	--thumb-stroke: #{$thumb-stroke};
+	--thumb-radius: #{$thumb-radius};
+	appearance: none;
+	block-size: var(--size);
+	inline-size: 100%;
+	margin: 0;
+	background: none;
+	outline: 0;
+	cursor: grab;
+
+	&:dir(rtl) {
+		--fill-direction: left;
+	}
+
+	&:where(.vertical) {
+		--fill-direction: bottom;
+		inline-size: 20ex;
+		writing-mode: vertical-lr;
+	}
+
+	&:focus-visible {
+		--outline-width: 2px;
+	}
+
+	&:active {
+		cursor: grabbing;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track;
+	}
+
+	&::-moz-range-track {
+		@include track;
+	}
+
+	&::-webkit-slider-thumb {
+		@include thumb;
+	}
+
+	&::-moz-range-thumb {
+		@include thumb;
+		box-sizing: border-box;
+	}
+}
