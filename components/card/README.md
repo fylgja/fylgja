@@ -33,10 +33,11 @@ Once installed, you can import the full package with:
 
 Alternatively, if you only need specific parts, you can import them individually:
 
-| Import Path             | Description                                              |
-| ----------------------- | -------------------------------------------------------- |
-| `@fylgja/card/base`     | Contains to core of the Card                             |
-| `@fylgja/card/elevated` | Contains the `--elevated` and `--hover` modifier classes |
+| Import Path             | Description                                |
+| ----------------------- | ------------------------------------------ |
+| `@fylgja/card/base`     | Contains to core of the Card               |
+| `@fylgja/card/elevated` | Contains the `--elevated` modifier classes |
+| `@fylgja/card/hover`    | Contains the `--hover` modifier classes    |
 
 ## Modifiers
 
@@ -49,7 +50,7 @@ This token is provided by the `@fylgja/tokens` or by other Token/Props framework
 
 ### `--hover`
 
-Simliar to the `--elevated` modifier, only instead this work on the hover interaction.
+Simliar to the `--elevated` modifier, only instead this work on the hover interaction and does not unset the border.
 This version uses a shadow dept of 4, so the Design Token `--shadow-4` is required.
 
-This modifier is paired best with solutions such as the `stretched-link` which makes the card clickable.
+This modifier is paired best with solutions such as the [`stretched-link`](https://fylgja.dev/library/utilities/#stretched-link) which makes the card clickable.
