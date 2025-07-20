@@ -99,14 +99,20 @@ body {
 	color: var(--on-brand);
 }
 
-:user-invalid:not(:focus) {
+:where(
+	:user-invalid:not(:focus),
+	.input-group:has(:user-invalid):not(:focus-within)
+) {
 	--form-stroke: var(--form-error-color);
 	outline: 1px solid var(--form-stroke);
 }
 
-:where(.field) {
+.field {
 	display: block;
-	margin-block-start: 1em;
+
+	&:where(:not(:last-child)) {
+		margin-block-end: 1em;
+	}
 }
 
 // Buttons
