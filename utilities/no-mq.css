@@ -70,11 +70,14 @@
   margin-block: 0;
 }
 
-.flow > * + * {
-  margin-block: var(--flow, 1em) 0;
+.flow {
+  --flow: 1em;
+}
+.flow > :not(template) + * {
+  margin-block: var(--flow) 0;
 }
 
-.text-gradient, .border-gradient, .bg-gradient {
+.border-gradient, .text-gradient, .bg-gradient {
   --gradient-from: currentcolor;
   --gradient-to: transparent;
   --gradient-stops: var(--gradient-from), var(--gradient-to);
@@ -83,19 +86,20 @@
 }
 
 .bg-gradient {
-  background-image: var(--gradient);
-}
-
-.border-gradient {
-  border-image-source: var(--gradient);
-  border-image-slice: 1;
+  background: var(--gradient);
 }
 
 .text-gradient {
+  background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--gradient);
-  color: transparent;
+  color: rgba(0, 0, 0, 0);
+}
+
+.border-gradient {
+  --inner-bg: var(--root-bg, #fff);
+  background: linear-gradient(var(--inner-bg, rgba(0, 0, 0, 0)) 0 0) padding-box, var(--gradient) border-box;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .line-clamp {
