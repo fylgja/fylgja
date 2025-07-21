@@ -3,6 +3,8 @@
 
 $motion-safe: "prefers-reduced-motion: no-preference";
 
+$bg: color-mix(in oklab, var(--root-bg) 88%, white);
+$color: var(--root-fg);
 $radius: 1rem !default;
 $padding: 1.5rem !default;
 $shadow: 0 3px 5px hsl(0 0% 0% / 18%) !default;
@@ -25,8 +27,8 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 	position: fixed; // 1
 	max-block-size: calc(100% - var(--screen-y));
 	max-inline-size: calc(100% - var(--screen-x));
-	background-color: var(--dialog-bg, var(--root-bg));
-	color: var(--dialog-color, var(--root-fg));
+	background-color: var(--dialog-bg#{if($bg, ", " $bg, "")});
+	color: var(--dialog-color#{if($color, ", " $color, "")});
 	border-radius: $radius;
 	margin-block: var(--my);
 	margin-inline: var(--mx);
