@@ -5,6 +5,18 @@ $track-height: 1ex !default;
 $track-color: color-mix(in srgb, var(--root-fg) 24%, transparent) !default;
 $track-radius: 0.3rem !default;
 
+$progress-height: 1.8ex !default;
+
+@keyframes progressLoading {
+	from {
+		background-position: -100% 0;
+	}
+
+	to {
+		background-position: 200% 0;
+	}
+}
+
 meter,
 progress {
 	--track-height: #{$track-height};
@@ -16,39 +28,58 @@ progress {
 	border-radius: var(--track-radius);
 	background: var(--track-color);
 	vertical-align: middle;
-	overflow: hidden;
+
+	@media (forced-colors: active) {
+		border: 1px solid;
+	}
 }
 
 meter::-webkit-meter-bar,
 progress::-webkit-progress-bar {
+	align-self: auto;
 	border: transparent;
 	background: inherit;
 }
 
 progress {
+	--progress-value-radius: var(--track-radius);
+	--track-height: #{$progress-height};
 	--fill: var(--brand, currentcolor);
-	--loading-fill: repeating-linear-gradient(
-		-45deg,
-		transparent 0 1ex,
-		var(--track-color) 1ex 2ex
-	);
+
+	@media (forced-colors: active) {
+		--fill: currentcolor;
+	}
 
 	&::-webkit-progress-value {
+		border-radius: var(--progress-value-radius);
 		background-color: var(--fill);
+		forced-color-adjust: none;
 	}
 
 	&::-moz-progress-bar {
+		border-radius: var(--progress-value-radius);
 		background-color: var(--fill);
+		forced-color-adjust: none;
 	}
 
-	&:not([value]) {
-		&::-webkit-progress-bar {
-			background-color: var(--fill);
-			background-image: var(--loading-fill);
+	@media (prefers-reduced-motion: no-preference) {
+		&:indeterminate {
+			background: var(--track-color)
+				linear-gradient(var(--fill), var(--fill)) 0 0 / 50% no-repeat;
+			animation: 5s infinite linear progressLoading;
 		}
+	}
 
-		&::-moz-progress-bar {
-			background-image: var(--loading-fill);
+	&.show-value {
+		position: relative;
+
+		&::after {
+			content: attr(value) "%";
+			position: absolute;
+			inset: 0;
+			text-align: center;
+			font-size: var(--track-height);
+			line-height: 1;
 		}
 	}
 }
@@ -57,6 +88,7 @@ meter {
 	--success: #107c10;
 	--warning: #ffb900;
 	--error: #e00;
+	overflow: hidden;
 
 	&::-webkit-meter-inner-element {
 		position: relative;

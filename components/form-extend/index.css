@@ -50,12 +50,14 @@
   --_progression: calc(100% * var(--fill) / var(--fill-max));
   block-size: var(--track-size);
   border-radius: var(--track-radius, 0.3rem);
+  border: 1px solid transparent;
   background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-moz-range-track {
   --_progression: calc(100% * var(--fill) / var(--fill-max));
   block-size: var(--track-size);
   border-radius: var(--track-radius, 0.3rem);
+  border: 1px solid transparent;
   background: linear-gradient(to var(--fill-direction, right), var(--fill-color) var(--_progression), var(--track-color) var(--_progression));
 }
 :where(input[type=range])::-webkit-slider-thumb {
@@ -84,6 +86,14 @@
   box-sizing: border-box;
 }
 
+@keyframes progressLoading {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
 meter,
 progress {
   --track-height: 1ex;
@@ -95,41 +105,64 @@ progress {
   border-radius: var(--track-radius);
   background: var(--track-color);
   vertical-align: middle;
-  overflow: hidden;
+}
+@media (forced-colors: active) {
+  meter,
+  progress {
+    border: 1px solid;
+  }
 }
 
 meter::-webkit-meter-bar,
 progress::-webkit-progress-bar {
+  align-self: auto;
   border: transparent;
   background: inherit;
 }
 
 progress {
+  --progress-value-radius: var(--track-radius);
+  --track-height: 1.8ex;
   --fill: var(--brand, currentcolor);
-  --loading-fill: repeating-linear-gradient(
-  	-45deg,
-  	transparent 0 1ex,
-  	var(--track-color) 1ex 2ex
-  );
+}
+@media (forced-colors: active) {
+  progress {
+    --fill: currentcolor;
+  }
 }
 progress::-webkit-progress-value {
+  border-radius: var(--progress-value-radius);
   background-color: var(--fill);
+  forced-color-adjust: none;
 }
 progress::-moz-progress-bar {
+  border-radius: var(--progress-value-radius);
   background-color: var(--fill);
+  forced-color-adjust: none;
 }
-progress:not([value])::-webkit-progress-bar {
-  background-color: var(--fill);
-  background-image: var(--loading-fill);
+@media (prefers-reduced-motion: no-preference) {
+  progress:indeterminate {
+    background: var(--track-color) linear-gradient(var(--fill), var(--fill)) 0 0/50% no-repeat;
+    animation: 5s infinite linear progressLoading;
+  }
 }
-progress:not([value])::-moz-progress-bar {
-  background-image: var(--loading-fill);
+progress.show-value {
+  position: relative;
+}
+progress.show-value::after {
+  content: attr(value) "%";
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  font-size: var(--track-height);
+  line-height: 1;
 }
 
 meter {
   --success: #107c10;
   --warning: #ffb900;
   --error: #e00;
+  overflow: hidden;
 }
 meter::-webkit-meter-inner-element {
   position: relative;

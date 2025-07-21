@@ -16,6 +16,7 @@ $thumb-border-width: math.div($thumb-size, 8) !default;
 	--_progression: calc(100% * var(--fill) / var(--fill-max));
 	block-size: var(--track-size);
 	border-radius: var(--track-radius, #{$track-radius});
+	border: 1px solid transparent;
 	background: linear-gradient(
 		to var(--fill-direction, right),
 		var(--fill-color) var(--_progression),

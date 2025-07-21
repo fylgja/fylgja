@@ -48,7 +48,7 @@
                         alt="coffee beans"
                         class="rounded"
                     />
-                    <h2 id="product-coffee">Coffee Bean Bundle</h2>
+                    <h2 id="product-coffee" class="lead">Coffee Bean Bundle</h2>
                     <p class="flex-wrap gap align">
                         <a href="#" class="btn --primary stretched-link">Add to Cart</a>
                         <a href="#" class="btn relative">Wishlist</a>
@@ -108,12 +108,26 @@
 
                 <fieldset>
                     <label for="fuel">Fuel level:</label>
-                    <meter id="fuel" value="60"></meter>
+                    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+                        at 50/100
+                    </meter>
+
+                    <label for="password">Enter password</label>
+                    <input type="password" id="password" required />
+                    <meter
+                        id="password-strength-meter"
+                        max="4"
+                        low="2"
+                        high="3"
+                        optimum="3.5"
+                        class="password-meter"
+                    ></meter>
+                    <p id="password-strength-text"></p>
                 </fieldset>
 
                 <fieldset>
                     <label for="file">File progress:</label>
-                    <progress id="file" max="100" value="70"></progress>
+                    <progress id="file" max="100" value="70" class="show-value"></progress>
 
                     <label for="updating">Updating..</label>
                     <progress id="updating">Loading</progress>
@@ -121,7 +135,14 @@
 
                 <fieldset>
                     <label for="input-range">Input Range</label>
-                    <input type="range" name="input-range" id="input-range" />
+                    <input
+                        type="range"
+                        name="input-range"
+                        id="input-range"
+                        value="40"
+                        style="--fill: 40"
+                        oninput="this.style.setProperty('--fill', this.value)"
+                    />
                 </fieldset>
             </section>
         </main>
@@ -130,5 +151,33 @@
                 <p><small>© 2024 Fylgja. All Rights Reserved.</small></p>
             </div>
         </footer>
+        <script>
+            const strength = {
+                0: "Worst",
+                1: "Bad",
+                2: "Weak",
+                3: "Good",
+                4: "Strong",
+            };
+            const password = document.getElementById("password");
+            const meter = document.getElementById("password-strength-meter");
+            const text = document.getElementById("password-strength-text");
+
+            password.addEventListener("input", function () {
+                const val = password.value;
+                const result = zxcvbn(val);
+
+                // Update the password strength meter
+                meter.value = result.score;
+
+                // Update the text indicator
+                if (val !== "") {
+                    text.textContent = "Strength: " + strength[result.score];
+                } else {
+                    text.textContent = "";
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     </body>
 </html>
