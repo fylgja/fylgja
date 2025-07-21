@@ -70,8 +70,11 @@
   margin-block: 0;
 }
 
-.flow > * + * {
-  margin-block: var(--flow, 1em) 0;
+.flow {
+  --flow: 1em;
+}
+.flow > :not(template) + * {
+  margin-block: var(--flow) 0;
 }
 
 .border-gradient, .text-gradient, .bg-gradient {
@@ -332,6 +335,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.lead {
+  font-size: var(--lead-size, large);
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 .text-start {

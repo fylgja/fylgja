@@ -70,8 +70,11 @@
   margin-block: 0;
 }
 
-.flow > * + * {
-  margin-block: var(--flow, 1em) 0;
+.flow {
+  --flow: 1em;
+}
+.flow > :not(template) + * {
+  margin-block: var(--flow) 0;
 }
 
 .border-gradient, .text-gradient, .bg-gradient {
@@ -332,6 +335,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.lead {
+  font-size: var(--lead-size, large);
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 .text-start {
@@ -607,8 +624,10 @@
   .grid-cols:where([style*="--sm_grid-cols:"]) {
     --_cols: var(--sm_grid-cols);
   }
-  .grid-cols > :where([style*="--sm_grid-cols:"]) {
+  .grid-cols > :where([style*="--sm_row:"]) {
     --_gridIR: var(--sm_row);
+  }
+  .grid-cols > :where([style*="--sm_col:"]) {
     --_gridIC: var(--sm_col);
   }
   .align:where([style*="--sm_align:"]) {
@@ -685,8 +704,10 @@
   .grid-cols:where([style*="--md_grid-cols:"]) {
     --_cols: var(--md_grid-cols);
   }
-  .grid-cols > :where([style*="--md_grid-cols:"]) {
+  .grid-cols > :where([style*="--md_row:"]) {
     --_gridIR: var(--md_row);
+  }
+  .grid-cols > :where([style*="--md_col:"]) {
     --_gridIC: var(--md_col);
   }
   .align:where([style*="--md_align:"]) {
@@ -763,8 +784,10 @@
   .grid-cols:where([style*="--lg_grid-cols:"]) {
     --_cols: var(--lg_grid-cols);
   }
-  .grid-cols > :where([style*="--lg_grid-cols:"]) {
+  .grid-cols > :where([style*="--lg_row:"]) {
     --_gridIR: var(--lg_row);
+  }
+  .grid-cols > :where([style*="--lg_col:"]) {
     --_gridIC: var(--lg_col);
   }
   .align:where([style*="--lg_align:"]) {
@@ -841,8 +864,10 @@
   .grid-cols:where([style*="--xl_grid-cols:"]) {
     --_cols: var(--xl_grid-cols);
   }
-  .grid-cols > :where([style*="--xl_grid-cols:"]) {
+  .grid-cols > :where([style*="--xl_row:"]) {
     --_gridIR: var(--xl_row);
+  }
+  .grid-cols > :where([style*="--xl_col:"]) {
     --_gridIC: var(--xl_col);
   }
   .align:where([style*="--xl_align:"]) {
@@ -919,8 +944,10 @@
   .grid-cols:where([style*="--xxl_grid-cols:"]) {
     --_cols: var(--xxl_grid-cols);
   }
-  .grid-cols > :where([style*="--xxl_grid-cols:"]) {
+  .grid-cols > :where([style*="--xxl_row:"]) {
     --_gridIR: var(--xxl_row);
+  }
+  .grid-cols > :where([style*="--xxl_col:"]) {
     --_gridIC: var(--xxl_col);
   }
   .align:where([style*="--xxl_align:"]) {

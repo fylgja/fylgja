@@ -1,0 +1,36 @@
+@import url("@fylgja/base");
+@import url("@fylgja/base/theme");
+@import url("@fylgja/tokens/css");
+@import url("@fylgja/utilities");
+@import "../../components/input-group/index.css";
+@import "../../components/card/index.css";
+@import "../../components/form-extend/index.css";
+
+header {
+	padding-block: 1rem;
+	background-color: var(--surface-color);
+
+	@media print {
+		display: none;
+	}
+
+	& > * {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+footer {
+	margin-block-start: 4rem;
+	padding-block: 1rem;
+	text-align: center;
+	background-color: var(--surface-color);
+}
+
+.media-bg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

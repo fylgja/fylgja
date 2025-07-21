@@ -6,6 +6,10 @@
 	margin-block: 0;
 }
 
-.flow > * + * {
-	margin-block: var(--flow, 1em) 0;
+.flow {
+	--flow: 1em;
+
+	> :not(template) + * {
+		margin-block: var(--flow) 0;
+	}
 }
