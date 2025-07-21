@@ -329,6 +329,20 @@
   text-overflow: ellipsis;
 }
 
+.lead {
+  font-size: var(--lead-size, large);
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
 .text-start {
   text-align: start;
 }
