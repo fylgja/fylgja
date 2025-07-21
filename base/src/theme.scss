@@ -40,7 +40,7 @@ $extra-root-props: () !default;
 	interpolate-size: allow-keywords;
 
 	@media (prefers-color-scheme: dark) {
-		--root-bg: color-mix(in oklab, #000 82%, var(--brand));
+		--root-bg: color-mix(in oklab, hsl(0 15% 5%) 92%, var(--brand));
 		--root-fg: hsl(0 0% 98%);
 		--select-icon: var(--select-dark-scheme);
 	}

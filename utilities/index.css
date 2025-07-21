@@ -117,6 +117,14 @@
   display: none;
 }
 
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
 .overlay {
   --overlay-bg: hsl(0 0% 0% / 60%);
   --overlay-fg: #fff;
