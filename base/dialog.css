@@ -14,8 +14,8 @@
   position: fixed;
   max-block-size: calc(100% - var(--screen-y));
   max-inline-size: calc(100% - var(--screen-x));
-  background-color: var(--dialog-bg, var(--root-bg));
-  color: var(--dialog-color, var(--root-fg));
+  background-color: var(--dialog-bg,  color-mix(in oklab, var(--root-bg) 88%, white));
+  color: var(--dialog-color,  var(--root-fg));
   border-radius: 1rem;
   margin-block: var(--my);
   margin-inline: var(--mx);

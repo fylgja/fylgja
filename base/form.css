@@ -23,7 +23,6 @@
 }
 :where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select):disabled {
   box-shadow: none;
-  opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;
 }
 

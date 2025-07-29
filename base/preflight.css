@@ -246,7 +246,7 @@ summary) {
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
   border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
-  background: var(--code-bg, color-mix(in srgb, currentcolor 10%, transparent));
+  background: var(--code-bg,  var(--surface-color));
   color: var(--code-color);
 }
 
