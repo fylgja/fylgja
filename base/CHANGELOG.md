@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed `-webkit-tap-highlight-color` on buttons to prevent the default browser highlight from affecting the active color.
   Also add consistency between link and normal buttons when clicked or tapped.
+- Trimmed down the selector for the default styles for the `::file-selector-button`, not scoping it by default under the `input:file`
 
 ### Removed
 

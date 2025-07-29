@@ -119,7 +119,7 @@ body {
 .btn-primary,
 .btn:where(.--primary),
 :where([type="submit"], form button:not([type])),
-:where(input[type="file"])::file-selector-button {
+::file-selector-button {
 	--btn-stroke: transparent;
 	--btn-bg: var(--brand);
 	--btn-color: var(--on-brand);
