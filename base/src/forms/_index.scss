@@ -29,7 +29,6 @@ $form-selectors: if(
 
 	&:disabled {
 		box-shadow: none;
-		opacity: var(--form-disabled-opacity, #{form.$disabled-opacity});
 		cursor: not-allowed;
 	}
 }
