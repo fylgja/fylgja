@@ -42,23 +42,9 @@
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
     "rules": {
-      "at-rule-empty-line-before": [
-        "always",
-        {
-          "except": [
-            "blockless-after-blockless",
-            "first-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ],
-          "ignoreAtRules": [
-            "else",
-            "each",
-            "return"
-          ]
-        }
-      ]
+      "at-rule-empty-line-before": null,
+      "declaration-empty-line-before": null,
+      "custom-property-empty-line-before": null
     },
     "ignoreFiles": [
       "**/_experiments/**/*",
