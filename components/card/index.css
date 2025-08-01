@@ -30,10 +30,6 @@
   margin-block-end: 0;
 }
 
-.card:where(img, video, iframe, picture) {
-  border-width: 0;
-}
-
 .card:where(.--elevated) {
   --card-shadow: var(--shadow-2);
   --card-stroke: transparent;
