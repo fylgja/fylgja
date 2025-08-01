@@ -546,7 +546,7 @@ summary) {
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], :where(:has(input:checked))) {
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));

@@ -14,7 +14,7 @@
   --control-checked-bg: var(--brand);
   --control-checked-color: var(--on-brand);
   color-scheme: light dark;
-  scrollbar-color: var(--scrollthumb-color, var(--brand)) var(--scrolltrack-color, transparent);
+  scrollbar-color: var(--scrollthumb-color, var(--brand)) var(--scrolltrack-color, var(--surface-color));
   accent-color: var(--brand);
   caret-color: var(--brand);
   interpolate-size: allow-keywords;
