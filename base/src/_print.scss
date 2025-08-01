@@ -20,16 +20,17 @@
 		page-break-inside: avoid;
 	}
 
-	:is(abbr[title])::after {
+	abbr[title]::after {
 		content: " (" attr(title) ")";
 	}
 
-	:is(a[href]:not([href^="#"], [href^="javascript:"]))::after {
+	a[href^="https://"]::after
+	{
 		content: " (" attr(href) ")";
 	}
 
 	// Repeat the table header per page
-	:is(thead) {
+	thead {
 		display: table-header-group;
 	}
 
