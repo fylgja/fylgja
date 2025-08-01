@@ -43,13 +43,6 @@
   background: none;
   overflow: hidden;
 }
-@supports (timeline-scope: --foo) {
-  :where(input[type=range]) {
-    animation: --range-observer linear reverse both;
-    animation-timeline: --range-thumb;
-    timeline-scope: --range-thumb;
-  }
-}
 :where(input[type=range]):dir(rtl) {
   --track-dir: -90deg;
 }
@@ -61,10 +54,6 @@
 :where(input[type=range])::-moz-range-track {
   block-size: var(--track-size);
   background: var(--track-color);
-}
-:where(input[type=range])::-moz-range-progress {
-  block-size: var(--track-size);
-  background: var(--track-fill);
 }
 :where(input[type=range])::-webkit-slider-thumb {
   appearance: none;
@@ -80,11 +69,6 @@
 }
 :where(input[type=range])::-webkit-slider-thumb:active {
   cursor: grabbing;
-}
-@supports (timeline-scope: --foo) {
-  :where(input[type=range])::-webkit-slider-thumb {
-    view-timeline: --range-thumb inline;
-  }
 }
 :where(input[type=range])::-moz-range-thumb {
   appearance: none;

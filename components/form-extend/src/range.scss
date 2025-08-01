@@ -32,10 +32,11 @@ $track-radius: 0.3rem !default;
 		inherits: true;
 	}
 
-	@keyframes --range-observer {
+	@keyframes range-observer {
 		from {
 			--range-value: 0;
 		}
+
 		to {
 			--range-value: 100;
 		}
@@ -67,10 +68,12 @@ $track-radius: 0.3rem !default;
 	// Required for the progress value in Chrome and later Safari
 	overflow: hidden;
 
-	@supports (timeline-scope: --foo) {
-		animation: --range-observer linear reverse both;
-		animation-timeline: --range-thumb;
-		timeline-scope: --range-thumb;
+	@if $enable-native-fill {
+		@supports (timeline-scope: --foo) {
+			animation: range-observer linear reverse both;
+			animation-timeline: --range-thumb;
+			timeline-scope: --range-thumb;
+		}
 	}
 
 	&:dir(rtl) {
@@ -93,9 +96,11 @@ $track-radius: 0.3rem !default;
 		background: var(--track-color);
 	}
 
-	&::-moz-range-progress {
-		block-size: var(--track-size);
-		background: var(--track-fill);
+	@if $enable-native-fill {
+		&::-moz-range-progress {
+			block-size: var(--track-size);
+			background: var(--track-fill);
+		}
 	}
 
 	&::-webkit-slider-thumb {
@@ -105,8 +110,10 @@ $track-radius: 0.3rem !default;
 			calc(0.5 * (var(--track-size) - var(--thumb-size-y)))
 		);
 
-		@supports (timeline-scope: --foo) {
-			view-timeline: --range-thumb inline;
+		@if $enable-native-fill {
+			@supports (timeline-scope: --foo) {
+				view-timeline: --range-thumb inline;
+			}
 		}
 	}
 
