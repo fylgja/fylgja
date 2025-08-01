@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.0 - 2025-08-01
+
 ### Added
 
 - Support for `[aria-disabled="true"]` on buttons to better accommodate JavaScript-driven disabled states.
+- Support for `[aria-selected="true"]` on buttons to better accommodate JavaScript-driven active states.
 
 ### Changed
 
@@ -23,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   This change was made because lists of products or posts can also be considered articles,
   making the previous default behavior for the scoped version less appropriate.
 - Opacity style from disabled form state, allowing custom color options and fixed the A11Y bug with `input:file`
+- the cursor style from `abbr[title]`,
+  This feature, should be avoided and inline explanation should be used instead for better A11Y.
 
 ## 2.0.0 - 2025-03-12
 

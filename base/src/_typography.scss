@@ -162,7 +162,3 @@ $code-color: null !default;
 	background: var(--code-bg#{if($code-bg, ", " $code-bg, "")});
 	color: var(--code-color#{if($code-color, ", " $code-color, "")});
 }
-
-:where(abbr[title]) {
-	cursor: help;
-}
