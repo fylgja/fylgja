@@ -6,5 +6,5 @@
 @use "./buttons" with (
 	$selectors: "button, [type=button], [type=submit], [type=reset]",
 	$active-selectors:
-		":active, :has(input:checked), [aria-current=page], [aria-current=true]"
+		":active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))"
 );
