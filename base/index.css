@@ -57,10 +57,6 @@
   line-height: var(--line-height, 1.6);
 }
 
-:where(article, section) {
-  display: flow-root;
-}
-
 :where(:any-link,
 button,
 input,
@@ -248,10 +244,6 @@ summary) {
   border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
   background: var(--code-bg,  var(--surface-color));
   color: var(--code-color);
-}
-
-:where(abbr[title]) {
-  cursor: help;
 }
 
 :where(table) {
@@ -466,10 +458,6 @@ summary) {
   padding: 0;
 }
 
-:where(fieldset + fieldset) {
-  margin-block-start: 1em;
-}
-
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -625,13 +613,13 @@ summary) {
   :is(tr, img, svg, pre, blockquote) {
     page-break-inside: avoid;
   }
-  :is(abbr[title])::after {
+  abbr[title]::after {
     content: " (" attr(title) ")";
   }
-  :is(a[href]:not([href^="#"], [href^="javascript:"]))::after {
+  a[href^="https://"]::after {
     content: " (" attr(href) ")";
   }
-  :is(thead) {
+  thead {
     display: table-header-group;
   }
   :is(input, select, textarea, button, .btn) {

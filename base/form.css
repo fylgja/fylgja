@@ -185,10 +185,6 @@
   padding: 0;
 }
 
-:where(fieldset + fieldset) {
-  margin-block-start: 1em;
-}
-
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
