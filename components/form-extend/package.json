@@ -16,7 +16,8 @@
     "fylgja component",
     "form validation",
     "input range",
-    "progress"
+    "progress",
+    "meter"
   ],
   "unpkg": "index.min.css",
   "style": "index.css",
