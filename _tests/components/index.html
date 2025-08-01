@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="auto">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fylgja Classless</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <a href="/" style="--mx: 0 auto">
+                    <img
+                        src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg"
+                        width="150"
+                        height="65"
+                        alt="Fylgja"
+                    />
+                </a>
+            </div>
+        </header>
+        <main class="flow" style="--flow: 3rem; --py: 3rem">
+            <section
+                aria-label="card"
+                class="container auto-grid gap flow-none"
+                style="--max-col-size: 16rem"
+            >
+                <div class="card">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a, commodi
+                    reiciendis aut doloremque earum fugit ducimus officiis hic saepe ipsam
+                    recusandae, officia, vel itaque asperiores eum! Explicabo, reiciendis!
+                </div>
+                <figure class="card --elevated">
+                    <figcaption>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea a,
+                        commodi reiciendis aut doloremque earum fugit ducimus officiis hic saepe
+                        ipsam recusandae, officia, vel itaque asperiores eum! Explicabo, reiciendis!
+                    </figcaption>
+                </figure>
+                <img
+                    src="https://picsum.photos/id/26/500/500"
+                    width="500"
+                    height="500"
+                    alt="coffee beans"
+                    class="card --hover h-full object-cover"
+                />
+                <article class="card --elevated --hover" aria-labelledby="product-coffee">
+                    <img
+                        src="https://picsum.photos/id/425/500/300"
+                        alt="coffee beans"
+                        class="rounded"
+                    />
+                    <h2 id="product-coffee" class="lead">Coffee Bean Bundle</h2>
+                    <p class="flex-wrap gap align">
+                        <a href="#" class="btn --primary stretched-link">Add to Cart</a>
+                        <a href="#" class="btn relative">Wishlist</a>
+                    </p>
+                </article>
+            </section>
+            <section aria-label="form-extend" class="container" style="--container-size: 64ch">
+                <fieldset>
+                    <div class="field">
+                        <label for="email-validate">Email with Validation</label>
+                        <input
+                            type="email"
+                            name="email-validate"
+                            id="email-validate"
+                            value="invalid-email"
+                            aria-errormessage="err1"
+                        />
+                        <div id="err1" class="field-error-message">
+                            Invalid Email Address, please use a email in the format
+                            <code>me@example.com</code>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="url-validate">Site</label>
+                        <div class="input-group">
+                            <div class="form-input align-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                            </div>
+                            <input
+                                type="url"
+                                name="url-validate"
+                                id="url-validate"
+                                placeholder="https://domain.com"
+                                autocomplete="url"
+                                aria-errormessage="err2"
+                            />
+                        </div>
+                        <div id="err2" class="field-error-message">
+                            Invalid Url, please use a valid ulr
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <label for="fuel">Fuel level:</label>
+                    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+                        at 50/100
+                    </meter>
+
+                    <label for="password">Enter password</label>
+                    <input type="password" id="password" required />
+                    <meter
+                        id="password-strength-meter"
+                        max="4"
+                        low="2"
+                        high="3"
+                        optimum="3.5"
+                        class="password-meter"
+                    ></meter>
+                    <p id="password-strength-text"></p>
+                </fieldset>
+
+                <fieldset>
+                    <label for="file">File progress:</label>
+                    <progress id="file" max="100" value="70" class="show-value"></progress>
+
+                    <label for="updating">Updating..</label>
+                    <progress id="updating">Loading</progress>
+                </fieldset>
+
+                <fieldset>
+                    <div class="field">
+                        <label for="input-range">Input Range</label>
+                        <input
+                            type="range"
+                            name="input-range"
+                            id="input-range"
+                            value="40"
+                            style="--range-value: 40"
+                            oninput="this.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+                    <div class="field">
+                        <label for="input-range-line">Input Range - Style Line</label>
+                        <input
+                            type="range"
+                            name="input-range-line"
+                            id="input-range-line"
+                            value="50"
+                            min="25"
+                            max="125"
+                            style="--range-value: 25; --thumb-size-x: 2ex; --thumb-size-y: 3rem"
+                            oninput="this.style.setProperty('--range-value', (this.value - this.min))"
+                        />
+                    </div>
+                    <div class="field">
+                        <label for="input-range-vertical">Input Range - Vertical</label>
+                        <input
+                            type="range"
+                            name="input-range-vertical"
+                            id="input-range-vertical"
+                            class="vertical"
+                            value="40"
+                            style="--range-value: 40"
+                            oninput="this.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+                    <div id="rangeCompare" class="compare stack" style="--range-value: 50">
+                        <img
+                            src="https://picsum.photos/id/500/840/500"
+                            width="840"
+                            height="500"
+                            alt=""
+                            class="before"
+                        />
+                        <img
+                            src="https://picsum.photos/id/600/840/500"
+                            width="840"
+                            height="500"
+                            alt=""
+                            class="after"
+                        />
+                        <input
+                            type="range"
+                            id="range"
+                            class="w-full"
+                            oninput="rangeCompare.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+
+                    <style>
+                        .vertical {
+                            --track-dir: 0deg;
+                            writing-mode: vertical-lr;
+                            direction: rtl;
+                        }
+
+                        .compare {
+                            inline-size: fit-content;
+                            --_val: calc(var(--range-value) * 100% / 100);
+
+                            @supports (timeline-scope: --foo) {
+                                animation: --range-observer linear reverse both;
+                                animation-timeline: --range-thumb;
+                                timeline-scope: --range-thumb;
+                            }
+
+                            .before {
+                                mask: linear-gradient(90deg, #000 0, var(--_val), #0000 0);
+                            }
+
+                            .after {
+                                mask: linear-gradient(90deg, #0000 0, var(--_val), #000 0);
+                            }
+
+                            input {
+                                --track-color: transparent;
+                                --track-fill: var(--track-color);
+                                --track-size: 100%;
+                                --thumb-size-y: 100%;
+                                --thumb-size-x: 6px;
+                                --thumb-stroke-size: 0 2px;
+                                --thumb-color: var(--root-fg);
+                                --track-radius: 0px;
+                                --thumb-radius: 0px;
+                                z-index: 1;
+                                min-block-size: unset;
+
+                                @supports (timeline-scope: --foo) {
+                                    timeline-scope: unset;
+                                }
+                            }
+                        }
+                    </style>
+                </fieldset>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p><small>© 2024 Fylgja. All Rights Reserved.</small></p>
+            </div>
+        </footer>
+        <script>
+            const strength = {
+                0: "Worst",
+                1: "Bad",
+                2: "Weak",
+                3: "Good",
+                4: "Strong",
+            };
+            const password = document.getElementById("password");
+            const meter = document.getElementById("password-strength-meter");
+            const text = document.getElementById("password-strength-text");
+
+            password.addEventListener("input", function () {
+                const val = password.value;
+                const result = zxcvbn(val);
+
+                // Update the password strength meter
+                meter.value = result.score;
+
+                // Update the text indicator
+                if (val !== "") {
+                    text.textContent = "Strength: " + strength[result.score];
+                } else {
+                    text.textContent = "";
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+    </body>
+</html>

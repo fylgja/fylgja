@@ -1,0 +1,18 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
+
+$invalid-selectors: ":user-invalid, [aria-invalid=true]";
+
+.field-error-message {
+	--_field-state: initial;
+	color: var(--form-error-color);
+	visibility: var(--_field-state, hidden);
+}
+
+:is(#{$invalid-selectors}) ~ .field-error-message,
+.field-error-message:has(~ #{$invalid-selectors}),
+.field:has(#{$invalid-selectors}) > .field-error-message {
+	--_field-state: /* */;
+}

@@ -1,6 +1,6 @@
 @import url("../../base");
 @import url("../../base/theme");
-@import url("../../components/_todo/form-extend");
+@import url("../../components/form-extend");
 @import url("../../tokens/css");
 @import url("../../utilities");
 

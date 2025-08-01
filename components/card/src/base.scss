@@ -1,0 +1,52 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+$radius: 1rem !default;
+$padding-block: 1.25rem !default;
+$padding-inline: 1.25rem !default;
+$bg: color-mix(in oklab, var(--root-bg) 88%, white) !default;
+$stroke: color-mix(in oklab, var(--root-bg) 88%, black) !default;
+$shadow: none !default;
+
+.card {
+	position: relative;
+	background-color: var(--card-bg, #{$bg});
+	color: var(--card-color, var(--root-fg));
+	border: 1px solid var(--card-stroke, #{$stroke});
+	border-radius: var(--card-radius, #{$radius});
+	box-shadow: var(--card-shadow, #{$shadow});
+	transition:
+		scale 0.2s,
+		color 0.2s,
+		background-color 0.2s,
+		border-color 0.2s,
+		box-shadow 0.2s,
+		var(--outline-transition);
+	overflow: clip;
+}
+
+.card-content {
+	// Remove use text flow if used directly on text instead trough a wrapper
+	margin-block: 0;
+}
+
+:is(
+	.card-content,
+	.card > :where(figcaption),
+	.card:where(:not(img, video, iframe, figure, picture, :has(.card-content)))
+) {
+	padding-block: var(--card-padding, var(--card-py, #{$padding-block}));
+	padding-inline: var(--card-padding, var(--card-px, #{$padding-inline}));
+
+	> :first-child {
+		margin-block-start: 0;
+	}
+
+	> :last-child {
+		margin-block-end: 0;
+	}
+}
+
+.card:where(img, video, iframe, picture) {
+	border-width: 0;
+}

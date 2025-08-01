@@ -13,6 +13,8 @@ $bg: var(--root-bg) !default;
 $color: var(--root-fg) !default;
 
 $disabled-border-style: dashed !default;
+
+/// @deprecated using this var is will not have any effect, and will be removed in the next release
 $disabled-opacity: 0.6 !default;
 
 $icon-size: 1.25em !default;

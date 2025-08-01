@@ -1,0 +1,7 @@
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
+
+.card:where(.--elevated) {
+	--card-shadow: var(--shadow-2);
+	--card-stroke: transparent;
+}

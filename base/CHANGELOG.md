@@ -15,12 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed `-webkit-tap-highlight-color` on buttons to prevent the default browser highlight from affecting the active color.
   Also add consistency between link and normal buttons when clicked or tapped.
+- Trimmed down the selector for the default styles for the `::file-selector-button`, not scoping it by default under the `input:file`
 
 ### Removed
 
 - `article` element from scoped preflight styles, allowing only class-based options.
   This change was made because lists of products or posts can also be considered articles,
   making the previous default behavior for the scoped version less appropriate.
+- Opacity style from disabled form state, allowing custom color options and fixed the A11Y bug with `input:file`
 
 ## 2.0.0 - 2025-03-12
 

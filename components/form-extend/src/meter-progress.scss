@@ -1,0 +1,113 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
+
+$track-height: 1ex !default;
+$track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg)) !default;
+$track-radius: 0.4em !default;
+
+$progress-height: 1.8ex !default;
+
+@keyframes progress-loading {
+	from {
+		background-position: -100% 0;
+	}
+
+	to {
+		background-position: 200% 0;
+	}
+}
+
+meter,
+progress {
+	--track-height: #{$track-height};
+	--track-color: #{$track-color};
+	--track-radius: #{$track-radius};
+	appearance: none;
+	block-size: var(--track-height, #{$track-height});
+	inline-size: 100%;
+	border-radius: var(--track-radius);
+	background: var(--track-color);
+	vertical-align: middle;
+
+	@media (forced-colors: active) {
+		border: 1px solid;
+	}
+}
+
+meter::-webkit-meter-bar,
+progress::-webkit-progress-bar {
+	align-self: auto;
+	border: transparent;
+	background: inherit;
+}
+
+progress {
+	--_transition: inline-size 0.2s, block-size 0.2s;
+	--progress-value-radius: var(--track-radius);
+	--track-height: #{$progress-height};
+	--fill: var(--brand, currentcolor);
+
+	@media (forced-colors: active) {
+		--fill: currentcolor;
+	}
+
+	&::-webkit-progress-value {
+		border-radius: var(--progress-value-radius);
+		background-color: var(--fill);
+		transition: var(--_transition);
+		forced-color-adjust: none;
+	}
+
+	&::-moz-progress-bar {
+		border-radius: var(--progress-value-radius);
+		background-color: var(--fill);
+		transition: var(--_transition);
+		forced-color-adjust: none;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		&:indeterminate {
+			background: var(--track-color)
+				linear-gradient(var(--fill), var(--fill)) 0 0 / 50% no-repeat;
+			animation: 5s infinite linear progress-loading;
+		}
+	}
+}
+
+meter {
+	--success: #107c10;
+	--warning: #ffb900;
+	--error: #e00;
+	overflow: hidden;
+
+	&::-webkit-meter-inner-element {
+		position: relative;
+		display: block;
+	}
+
+	&::-webkit-meter-optimum-value {
+		background: var(--success);
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		background: var(--warning);
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		background: var(--error);
+	}
+
+	&:-moz-meter-optimum::-moz-meter-bar {
+		background: var(--success);
+	}
+
+	&:-moz-meter-sub-optimum::-moz-meter-bar {
+		background: var(--warning);
+	}
+
+	&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+		background: var(--error);
+	}
+}

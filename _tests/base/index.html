@@ -625,31 +625,23 @@ p q r s t u v w x y z { | } ~ </code>
                         <h2>Range</h2>
                         <label>
                             <span>Range</span>
-                            <input
-                                type="range"
-                                name="range"
-                                value="20"
-                                max="100"
-                                min="0"
-                                style="--fill: 20"
-                                oninput="event.target.style.setProperty('--fill', event.target.value)"
-                            />
+                            <input type="range" name="range" value="20" max="100" min="0" />
                         </label>
                         <label>
                             <span>Range (same size as thumb)</span>
                             <input
+                                id="input-range"
                                 type="range"
                                 name="range"
                                 value="20"
                                 max="100"
                                 min="0"
                                 style="
-                                    --fill: 20;
-                                    --track-size: var(--size);
-                                    --thumb-radius: var(--track-radius);
-                                    --thumb-border-width: 0 4px;
+                                    --track-size: var(--thumb-size-y);
+                                    --thumb-radius: 0;
+                                    --thumb-stroke-size: 0 2px;
                                 "
-                                oninput="event.target.style.setProperty('--fill', event.target.value)"
+                                oninput="setRangeValue(this)"
                             />
                         </label>
                         <label>
@@ -660,11 +652,19 @@ p q r s t u v w x y z { | } ~ </code>
                                 value="20"
                                 max="100"
                                 min="0"
-                                style="--fill: 20"
                                 class="vertical"
-                                oninput="event.target.style.setProperty('--fill', event.target.value)"
                             />
                         </label>
+                        <script>
+                            function setRangeValue(el) {
+                                if (CSS.supports("timeline-scope", "--foo")) return;
+                                el.style.setProperty(
+                                    "--range-value",
+                                    `calc(${el.value} / ${el.max} * 100%)`,
+                                );
+                            }
+                            setRangeValue(document.getElementById("input-range"));
+                        </script>
                     </div>
                     <div id="form-meter">
                         <h2>Meter</h2>

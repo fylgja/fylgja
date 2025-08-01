@@ -3,7 +3,7 @@
  * Licensed under MIT Open Source
  */
 :where(button, [type=button], [type=submit], [type=reset], .btn),
-:where(input[type=file])::file-selector-button {
+::file-selector-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -28,21 +28,20 @@
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn):hover,
-:where(input[type=file]):hover::file-selector-button {
+::file-selector-button:hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], :where(:has(input:checked))),
-:where(input[type=file]):active::file-selector-button {
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn):is(:disabled [aria-disabled=true]),
-:where(input[type=file]):disabled::file-selector-button {
+:disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
   background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));

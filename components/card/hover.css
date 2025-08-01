@@ -1,0 +1,5 @@
+@media (any-pointer: fine) {
+  .card:where(.--hover):hover {
+    --card-shadow: var(--shadow-4);
+  }
+}

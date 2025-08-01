@@ -246,7 +246,7 @@ summary) {
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
   border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
-  background: var(--code-bg, color-mix(in srgb, currentcolor 10%, transparent));
+  background: var(--code-bg,  var(--surface-color));
   color: var(--code-color);
 }
 
@@ -304,7 +304,6 @@ summary) {
 }
 :where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select):disabled {
   box-shadow: none;
-  opacity: var(--form-disabled-opacity, 0.6);
   cursor: not-allowed;
 }
 
@@ -516,7 +515,7 @@ summary) {
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn),
-:where(input[type=file])::file-selector-button {
+::file-selector-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -541,21 +540,20 @@ summary) {
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn):hover,
-:where(input[type=file]):hover::file-selector-button {
+::file-selector-button:hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], :where(:has(input:checked))),
-:where(input[type=file]):active::file-selector-button {
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn):is(:disabled [aria-disabled=true]),
-:where(input[type=file]):disabled::file-selector-button {
+:disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
   background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));
@@ -575,8 +573,8 @@ summary) {
   position: fixed;
   max-block-size: calc(100% - var(--screen-y));
   max-inline-size: calc(100% - var(--screen-x));
-  background-color: var(--dialog-bg, var(--root-bg));
-  color: var(--dialog-color, var(--root-fg));
+  background-color: var(--dialog-bg,  color-mix(in oklab, var(--root-bg) 88%, white));
+  color: var(--dialog-color,  var(--root-fg));
   border-radius: 1rem;
   margin-block: var(--my);
   margin-inline: var(--mx);

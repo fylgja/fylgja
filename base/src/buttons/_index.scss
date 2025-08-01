@@ -5,12 +5,12 @@
 
 $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
 $disabled-selectors: ":disabled [aria-disabled=true]" !default;
-$active-selectors: ":active, .is-active, [aria-current=page], [aria-current=true], :where(:has(input:checked))" !default;
+$active-selectors: ":active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))" !default;
 $use-input-file: true !default;
 
 @if $use-input-file {
 	:where(#{$selectors}),
-	:where(input[type="file"])::file-selector-button {
+	::file-selector-button {
 		@include btn.base;
 	}
 
@@ -19,18 +19,16 @@ $use-input-file: true !default;
 	}
 
 	:where(#{$selectors}):hover,
-	:where(input[type="file"]):hover::file-selector-button {
+	::file-selector-button:hover {
 		@include btn.hover;
 	}
 
-	// prettier-ignore
-	:where(#{$selectors}):is(#{$active-selectors}),
-	:where(input[type="file"]):active::file-selector-button {
+	:where(#{$selectors}):is(#{$active-selectors}) {
 		@include btn.active;
 	}
 
 	:where(#{$selectors}):is(#{$disabled-selectors}),
-	:where(input[type="file"]):disabled::file-selector-button {
+	:disabled::file-selector-button {
 		@include btn.disabled;
 	}
 } @else {

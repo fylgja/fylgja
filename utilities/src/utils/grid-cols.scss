@@ -44,8 +44,11 @@ $use-mq: true !default;
 			--_cols: var(--#{$name}_grid-cols);
 		}
 
-		> :where([style*="--#{$name}_grid-cols:"]) {
+		> :where([style*="--#{$name}_row:"]) {
 			--_gridIR: var(--#{$name}_row);
+		}
+
+		> :where([style*="--#{$name}_col:"]) {
 			--_gridIC: var(--#{$name}_col);
 		}
 	}
