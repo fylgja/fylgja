@@ -2,7 +2,7 @@
   position: relative;
   background-color: var(--card-bg, color-mix(in oklab, var(--root-bg) 88%, white));
   color: var(--card-color, var(--root-fg));
-  border: 1px solid var(--card-stroke, color-mix(in oklab, var(--root-bg) 88%, black));
+  border: 1px solid var(--card-stroke, color-mix(in oklab, var(--root-bg) 88%, var(--root-fg)));
   border-radius: var(--card-radius, 1rem);
   box-shadow: var(--card-shadow, none);
   transition: scale 0.2s, color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, var(--outline-transition);
