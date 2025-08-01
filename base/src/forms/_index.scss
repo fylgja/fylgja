@@ -147,10 +147,6 @@ $form-selectors: if(
 	padding: 0;
 }
 
-:where(fieldset + fieldset) {
-	margin-block-start: 1em;
-}
-
 // Removes the extra space in older webkit browsers
 ::-webkit-search-decoration {
 	-webkit-appearance: none;
