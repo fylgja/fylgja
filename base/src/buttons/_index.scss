@@ -5,7 +5,7 @@
 
 $selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
 $disabled-selectors: ":disabled [aria-disabled=true]" !default;
-$active-selectors: ":active, .is-active, [aria-current=page], [aria-current=true], :where(:has(input:checked))" !default;
+$active-selectors: ":active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))" !default;
 $use-input-file: true !default;
 
 @if $use-input-file {
