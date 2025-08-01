@@ -1,91 +1,113 @@
-// Fylgja (https://fylgja.dev)
-// Licensed under MIT Open Source
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 
-@use "sass:math";
+$enable-native-fill: false !default;
 
-$track-color: color-mix(in srgb, var(--root-fg) 24%, transparent) !default;
-$track-size: 1ex !default;
+$track-height: 1ex !default;
+$track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg)) !default;
 $track-radius: 0.3rem !default;
-
-$thumb-size: 4ex !default;
-$thumb-radius: 50% !default;
-$thumb-stroke: var(--root-bg) !default;
-$thumb-border-width: math.div($thumb-size, 8) !default;
-
-@mixin track {
-	--_progression: calc(100% * var(--fill) / var(--fill-max));
-	block-size: var(--track-size);
-	border-radius: var(--track-radius, #{$track-radius});
-	border: 1px solid transparent;
-	background: linear-gradient(
-		to var(--fill-direction, right),
-		var(--fill-color) var(--_progression),
-		var(--track-color) var(--_progression)
-	);
-}
 
 @mixin thumb {
 	appearance: none;
-	block-size: var(--size);
-	inline-size: var(--size);
+	block-size: var(--thumb-size-y);
+	inline-size: var(--thumb-size-x);
 	box-shadow: var(--thumb-shadow);
-	margin-block-start: var(
-		--thumb-offset,
-		calc(0.5 * calc(var(--track-size) - var(--size)))
-	);
 	border-radius: var(--thumb-radius);
 	border: solid var(--thumb-stroke);
-	border-width: var(--thumb-border-width);
-	background: var(--thumb-bg, var(--fill-color));
-	outline: var(--outline-width) solid var(--form-active-color, currentcolor);
-}
-
-:where(input[type="range"]) {
-	--fill-color: var(--form-active-color, currentcolor);
-	--fill-max: 100;
-	--fill: 0;
-	--size: var(--thumb-size, #{$thumb-size});
-	--track-color: #{$track-color};
-	--track-size: #{$track-size};
-	--thumb-border-width: #{$thumb-border-width};
-	--thumb-stroke: #{$thumb-stroke};
-	--thumb-radius: #{$thumb-radius};
-	appearance: none;
-	block-size: var(--size);
-	inline-size: 100%;
-	margin: 0;
-	background: none;
-	outline: 0;
+	border-width: var(--thumb-stroke-size);
+	background-color: var(--thumb-color);
 	cursor: grab;
-
-	&:dir(rtl) {
-		--fill-direction: left;
-	}
-
-	&:where(.vertical) {
-		--fill-direction: bottom;
-		inline-size: 20ex;
-		writing-mode: vertical-lr;
-	}
-
-	&:focus-visible {
-		--outline-width: 2px;
-	}
 
 	&:active {
 		cursor: grabbing;
 	}
+}
+
+@if $enable-native-fill {
+	@property --range-value {
+		syntax: "<number>";
+		initial-value: 0;
+		inherits: true;
+	}
+
+	@keyframes --range-observer {
+		from {
+			--range-value: 0;
+		}
+		to {
+			--range-value: 100;
+		}
+	}
+}
+
+:where(input[type="range"]) {
+	--range-value: 0;
+
+	--track-size: 0.5em;
+	--track-fill: var(--form-active-color, currentcolor);
+	--track-color: #{$track-color};
+	--track-radius: 0.4em;
+	--track-dir: 90deg;
+
+	--thumb-radius: 1em;
+	--thumb-stroke: var(--root-bg);
+	--thumb-stroke-size: 0.5ex;
+	--thumb-size-y: 2em;
+	--thumb-size-x: 2em;
+	--thumb-color: var(--form-active-color, currentcolor);
+
+	appearance: none;
+	min-block-size: var(--thumb-size-y);
+	inline-size: min(100%, 25ex);
+	margin: 0;
+	border-radius: var(--track-radius);
+	background: none;
+	// Required for the progress value in Chrome and later Safari
+	overflow: hidden;
+
+	@supports (timeline-scope: --foo) {
+		animation: --range-observer linear reverse both;
+		animation-timeline: --range-thumb;
+		timeline-scope: --range-thumb;
+	}
+
+	&:dir(rtl) {
+		--track-dir: -90deg;
+	}
 
 	&::-webkit-slider-runnable-track {
-		@include track;
+		--_val: calc(var(--range-value) * 100% / 100);
+		block-size: var(--track-size);
+		background: var(--track-color)
+			linear-gradient(
+				var(--track-dir),
+				var(--track-fill) var(--_val),
+				var(--track-color) var(--_val)
+			);
 	}
 
 	&::-moz-range-track {
-		@include track;
+		block-size: var(--track-size);
+		background: var(--track-color);
+	}
+
+	&::-moz-range-progress {
+		block-size: var(--track-size);
+		background: var(--track-fill);
 	}
 
 	&::-webkit-slider-thumb {
 		@include thumb;
+		margin-block-start: var(
+			--thumb-offset,
+			calc(0.5 * (var(--track-size) - var(--thumb-size-y)))
+		);
+
+		@supports (timeline-scope: --foo) {
+			view-timeline: --range-thumb inline;
+		}
 	}
 
 	&::-moz-range-thumb {

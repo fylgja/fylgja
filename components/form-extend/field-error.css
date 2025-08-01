@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 .field-error-message {
   --_field-state: initial;
   color: var(--form-error-color);

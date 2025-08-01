@@ -1,13 +1,15 @@
-// Fylgja (https://fylgja.dev)
-// Licensed under MIT Open Source
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 
 $track-height: 1ex !default;
-$track-color: color-mix(in srgb, var(--root-fg) 24%, transparent) !default;
-$track-radius: 0.3rem !default;
+$track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg)) !default;
+$track-radius: 0.4em !default;
 
 $progress-height: 1.8ex !default;
 
-@keyframes progressLoading {
+@keyframes progress-loading {
 	from {
 		background-position: -100% 0;
 	}
@@ -42,6 +44,7 @@ progress::-webkit-progress-bar {
 }
 
 progress {
+	--_transition: inline-size 0.2s, block-size 0.2s;
 	--progress-value-radius: var(--track-radius);
 	--track-height: #{$progress-height};
 	--fill: var(--brand, currentcolor);
@@ -53,12 +56,14 @@ progress {
 	&::-webkit-progress-value {
 		border-radius: var(--progress-value-radius);
 		background-color: var(--fill);
+		transition: var(--_transition);
 		forced-color-adjust: none;
 	}
 
 	&::-moz-progress-bar {
 		border-radius: var(--progress-value-radius);
 		background-color: var(--fill);
+		transition: var(--_transition);
 		forced-color-adjust: none;
 	}
 
@@ -66,20 +71,7 @@ progress {
 		&:indeterminate {
 			background: var(--track-color)
 				linear-gradient(var(--fill), var(--fill)) 0 0 / 50% no-repeat;
-			animation: 5s infinite linear progressLoading;
-		}
-	}
-
-	&.show-value {
-		position: relative;
-
-		&::after {
-			content: attr(value) "%";
-			position: absolute;
-			inset: 0;
-			text-align: center;
-			font-size: var(--track-height);
-			line-height: 1;
+			animation: 5s infinite linear progress-loading;
 		}
 	}
 }
