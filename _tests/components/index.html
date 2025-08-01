@@ -19,10 +19,10 @@
                 </a>
             </div>
         </header>
-        <main class="container flow" style="--flow: 3rem; --py: 3rem">
+        <main class="flow" style="--flow: 3rem; --py: 3rem">
             <section
                 aria-label="card"
-                class="auto-grid gap flow-none"
+                class="container auto-grid gap flow-none"
                 style="--max-col-size: 16rem"
             >
                 <div class="card">
@@ -39,6 +39,8 @@
                 </figure>
                 <img
                     src="https://picsum.photos/id/26/500/500"
+                    width="500"
+                    height="500"
                     alt="coffee beans"
                     class="card --hover h-full object-cover"
                 />
@@ -55,7 +57,7 @@
                     </p>
                 </article>
             </section>
-            <section aria-label="form-extend">
+            <section aria-label="form-extend" class="container" style="--container-size: 64ch">
                 <fieldset>
                     <div class="field">
                         <label for="email-validate">Email with Validation</label>
@@ -134,15 +136,109 @@
                 </fieldset>
 
                 <fieldset>
-                    <label for="input-range">Input Range</label>
-                    <input
-                        type="range"
-                        name="input-range"
-                        id="input-range"
-                        value="40"
-                        style="--fill: 40"
-                        oninput="this.style.setProperty('--fill', this.value)"
-                    />
+                    <div class="field">
+                        <label for="input-range">Input Range</label>
+                        <input
+                            type="range"
+                            name="input-range"
+                            id="input-range"
+                            value="40"
+                            style="--range-value: 40"
+                            oninput="this.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+                    <div class="field">
+                        <label for="input-range-line">Input Range - Style Line</label>
+                        <input
+                            type="range"
+                            name="input-range-line"
+                            id="input-range-line"
+                            value="50"
+                            min="25"
+                            max="125"
+                            style="--range-value: 25; --thumb-size-x: 2ex; --thumb-size-y: 3rem"
+                            oninput="this.style.setProperty('--range-value', (this.value - this.min))"
+                        />
+                    </div>
+                    <div class="field">
+                        <label for="input-range-vertical">Input Range - Vertical</label>
+                        <input
+                            type="range"
+                            name="input-range-vertical"
+                            id="input-range-vertical"
+                            class="vertical"
+                            value="40"
+                            style="--range-value: 40"
+                            oninput="this.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+                    <div id="rangeCompare" class="compare stack" style="--range-value: 50">
+                        <img
+                            src="https://picsum.photos/id/500/840/500"
+                            width="840"
+                            height="500"
+                            alt=""
+                            class="before"
+                        />
+                        <img
+                            src="https://picsum.photos/id/600/840/500"
+                            width="840"
+                            height="500"
+                            alt=""
+                            class="after"
+                        />
+                        <input
+                            type="range"
+                            id="range"
+                            class="w-full"
+                            oninput="rangeCompare.style.setProperty('--range-value', this.value)"
+                        />
+                    </div>
+
+                    <style>
+                        .vertical {
+                            --track-dir: 0deg;
+                            writing-mode: vertical-lr;
+                            direction: rtl;
+                        }
+
+                        .compare {
+                            inline-size: fit-content;
+                            --_val: calc(var(--range-value) * 100% / 100);
+
+                            @supports (timeline-scope: --foo) {
+                                animation: --range-observer linear reverse both;
+                                animation-timeline: --range-thumb;
+                                timeline-scope: --range-thumb;
+                            }
+
+                            .before {
+                                mask: linear-gradient(90deg, #000 0, var(--_val), #0000 0);
+                            }
+
+                            .after {
+                                mask: linear-gradient(90deg, #0000 0, var(--_val), #000 0);
+                            }
+
+                            input {
+                                --track-color: transparent;
+                                --track-fill: var(--track-color);
+                                --track-size: 100%;
+                                --thumb-size-y: 100%;
+                                --thumb-size-x: 6px;
+                                --thumb-stroke-size: 0 2px;
+                                --thumb-color: var(--root-fg);
+                                --track-radius: 0px;
+                                --thumb-radius: 0px;
+                                z-index: 1;
+                                min-block-size: unset;
+
+                                @supports (timeline-scope: --foo) {
+                                    timeline-scope: unset;
+                                }
+                            }
+                        }
+                    </style>
                 </fieldset>
             </section>
         </main>
