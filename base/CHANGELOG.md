@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   This change was made because lists of products or posts can also be considered articles,
   making the previous default behavior for the scoped version less appropriate.
 - Opacity style from disabled form state, allowing custom color options and fixed the A11Y bug with `input:file`
+- `flow-root` from `article` and `section`, makes more sense as a utility
 - the cursor style from `abbr[title]`,
   This feature, should be avoided and inline explanation should be used instead for better A11Y.
 

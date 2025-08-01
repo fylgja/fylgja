@@ -82,10 +82,6 @@ $anchor-offset: 6ex !default;
 	line-height: var(--line-height, #{$line-height});
 }
 
-:where(article, section) {
-	display: flow-root;
-}
-
 // Prevent touch delay on touch devices
 // prettier-ignore
 :where(
