@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/form-extend)](https://www.npmjs.com/package/@fylgja/form-extend)
 [![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Fform-extend)](https://www.npmjs.com/package/@fylgja/form-extend)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](https://github.com/fylgja/fylgja/blob/main/LICENSE)
 
 Enhance your forms with advanced features, including native validation and flexible base and component styles for a wide range of form fields.
 

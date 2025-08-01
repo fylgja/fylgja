@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/utilities)](https://www.npmjs.com/package/@fylgja/utilities)
 [![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Futilities)](https://www.npmjs.com/package/@fylgja/utilities)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](https://github.com/fylgja/fylgja/blob/main/LICENSE)
 
 Fylgja Utilities offers a focused collection of production-ready CSS utilities.
 

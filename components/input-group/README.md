@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/input-group)](https://www.npmjs.com/package/@fylgja/input-group)
 [![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Finput-group)](https://www.npmjs.com/package/@fylgja/input-group)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](https://github.com/fylgja/fylgja/blob/main/LICENSE)
 
 The Fylgja Input Group component allows you to group inputs and buttons together
 to create more intuitive form controls.

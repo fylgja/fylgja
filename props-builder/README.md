@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/props-builder)](https://www.npmjs.com/package/@fylgja/props-builder)
 [![NPM Downloads](https://img.shields.io/npm/dt/%40fylgja%2Fprops-builder)](https://www.npmjs.com/package/@fylgja/props-builder)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](/LICENSE)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23234)](https://github.com/fylgja/fylgja/blob/main/LICENSE)
 
 The Fylgja Props Builder simplifies the creation of Design Tokens (CSS custom properties)
 by converting JavaScript objects into CSS variables or JSON-based token systems.
