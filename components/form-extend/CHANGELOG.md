@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `range-vertical` modifier.
+
+### Changed
+
+- Split range fill, the same way as seen with other components to allow easier mix and match
+- Added range fill to the default import
+
 ### Fixed
 
 - use case where the root colors are missing from `@fylgja/base`,

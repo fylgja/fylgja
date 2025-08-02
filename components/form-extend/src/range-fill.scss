@@ -3,6 +3,41 @@
  * Licensed under MIT Open Source
  */
 
-@use "range.scss" with (
-	$enable-native-fill: true
-);
+@property --range-value {
+	syntax: "<number>";
+	initial-value: 0;
+	inherits: true;
+}
+
+@keyframes range-observer {
+	from {
+		--range-value: 0;
+	}
+
+	to {
+		--range-value: 100;
+	}
+}
+
+:where(input[type="range"]) {
+	// Required for the progress value in Chrome and later Safari
+	overflow: hidden;
+
+	@supports (timeline-scope: --foo) {
+		animation: range-observer linear reverse both;
+		animation-timeline: --range-thumb;
+		timeline-scope: --range-thumb;
+	}
+
+	&::-moz-range-progress {
+		block-size: var(--track-size);
+		border-radius: var(--track-radius);
+		background: var(--track-fill);
+	}
+
+	&::-webkit-slider-thumb {
+		@supports (timeline-scope: --foo) {
+			view-timeline: --range-thumb inline;
+		}
+	}
+}
