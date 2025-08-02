@@ -9,7 +9,7 @@
 .flow {
 	--flow: 1em;
 
-	> :not(template) + * {
+	> :where(:not(:first-child)) {
 		margin-block: var(--flow) 0;
 	}
 }

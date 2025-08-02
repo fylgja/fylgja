@@ -1,61 +1,22 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.divide-y,
-.divide-x {
+:where(.divide-y, .divide-x) {
+	--flow: 0;
 	--divide: 1px;
+
+	> :where(:not(:first-child)) {
+		border-color: inherit;
+		border-style: inherit;
+	}
 }
 
-:where(.divide-y, .divide-x) > * {
-	border-color: inherit;
-	border-style: inherit;
-}
-
-.divide-y > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
+.divide-y > :where(:not(:first-child)) {
 	border-block-start-width: var(--divide);
+	padding-block: var(--flow) 0;
 }
 
-.divide-x > :not(template, [hidden]:where(:not([hidden="until-found"]))) + * {
+.divide-x > :where(:not(:first-child)) {
 	border-inline-start-width: var(--divide);
-}
-
-.divide-gap-y,
-.divide-gap-x {
-	--divide-gap: 0.5em;
-}
-
-.divide-gap-y {
-	> :not(
-			template,
-			[hidden]:where(:not([hidden="until-found"])),
-			:first-child
-		) {
-		padding-block-start: var(--divide-gap);
-	}
-
-	> :not(
-			template,
-			[hidden]:where(:not([hidden="until-found"])),
-			:last-child
-		) {
-		padding-block-end: var(--divide-gap);
-	}
-}
-
-.divide-gap-x {
-	> :not(
-			template,
-			[hidden]:where(:not([hidden="until-found"])),
-			:first-child
-		) {
-		padding-block-start: var(--divide-gap);
-	}
-
-	> :not(
-			template,
-			[hidden]:where(:not([hidden="until-found"])),
-			:last-child
-		) {
-		padding-block-end: var(--divide-gap);
-	}
+	padding-inline: var(--flow) 0;
 }

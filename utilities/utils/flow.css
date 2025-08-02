@@ -6,6 +6,6 @@
 .flow {
   --flow: 1em;
 }
-.flow > :not(template) + * {
+.flow > :where(:not(:first-child)) {
   margin-block: var(--flow) 0;
 }

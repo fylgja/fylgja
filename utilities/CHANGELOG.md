@@ -20,11 +20,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated `border-gradient` to a background-based method to support `border-radius`. This includes a fallback requiring an inner background color for browsers that do not support `background-clip: border-area`.
 - Gradients now default to the **oklab** color space where supported, resulting in smoother color transitions.
+- Refactored `divide-y` and `divide-x` to use the `flow` utility for managing gaps.
 - Cleaned up selectors to reduce overall file size.
 
 ### Fixed
 
 - Corrected the default `from` color in the `text-gradient` utility.
+
+### Removed
+
+- **Breaking Change:** Removed specific `:not()` selectors from the Divide and Flow utilities, streamlining the implementation with CSS variables.
+- **Breaking Change:** Removed the `divide-y-gap` and `divide-x-gap` utilities. Please use the `flow` utility directly to achieve similar results.
 
 ## 2.0.0 - 2025-03-12
 
