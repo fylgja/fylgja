@@ -1,36 +1,61 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+/// @todo add background-clip: border-area to border-gradient, when Chrome has added support
+/// @link https://github.com/fylgja/fylgja/pull/287#issuecomment-2781314239
+
+// stylelint-disable function-linear-gradient-no-nonstandard-direction
+
 %utility-gradient {
-	--gradient-from: currentcolor;
+	--gradient-from: canvastext;
 	--gradient-to: transparent;
 	--gradient-stops: var(--gradient-from), var(--gradient-to);
-	--gradient-angle: 0deg;
-	--gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+	--gradient-angle: ;
+	--gradient-color-space: ;
+	--gradient:
+		var(--gradient-angle) var(--gradient-color-space), var(--gradient-stops);
+
+	@supports (background: linear-gradient(in lab, red, red)) {
+		--gradient-color-space: in oklab;
+	}
 }
 
-.bg-gradient {
+.bg-gradient,
+.text-gradient {
 	@extend %utility-gradient;
-	background: var(--gradient);
+	background: linear-gradient(var(--gradient));
+}
+
+.radial-gradient {
+	@extend %utility-gradient;
+	background: radial-gradient(var(--gradient));
+}
+
+.conic-gradient {
+	@extend %utility-gradient;
+	background: conic-gradient(var(--gradient));
 }
 
 .text-gradient {
-	@extend %utility-gradient;
-	background: var(--gradient);
-	// Keep support for older browsers, to avoid A11Y issues with transparent text
-	// stylelint-disable-next-line property-no-vendor-prefix
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: #0000;
+	@supports (background-clip: text) {
+		background-clip: text;
+		color: #0000;
+	}
 }
 
-/// @todo add support for background-clip: border-area when Chrome has added support
-/// @source see https://github.com/fylgja/fylgja/pull/287#issuecomment-2781314239
 .border-gradient {
 	@extend %utility-gradient;
-	--inner-bg: var(--root-bg, #fff);
+	--inner-bg: var(--root-bg, canvas);
+	--_inner: var(--inner-bg) 0 0;
 	background:
-		linear-gradient(var(--inner-bg, #0000) 0 0) padding-box,
-		var(--gradient) border-box;
+		linear-gradient(var(--_inner)) padding-box,
+		linear-gradient(var(--gradient)) border-box;
 	border-color: #0000;
+}
+
+.border-gradient:where(.text-gradient) {
+	background:
+		linear-gradient(var(--gradient)) text,
+		linear-gradient(var(--_inner)) padding-box,
+		linear-gradient(var(--gradient)) border-box;
 }

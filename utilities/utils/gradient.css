@@ -1,24 +1,47 @@
-.border-gradient, .text-gradient, .bg-gradient {
-  --gradient-from: currentcolor;
+.border-gradient, .conic-gradient, .radial-gradient, .bg-gradient,
+.text-gradient {
+  --gradient-from: canvastext;
   --gradient-to: transparent;
   --gradient-stops: var(--gradient-from), var(--gradient-to);
-  --gradient-angle: 0deg;
-  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+  --gradient-angle: ;
+  --gradient-color-space: ;
+  --gradient:
+  	var(--gradient-angle) var(--gradient-color-space), var(--gradient-stops);
+}
+@supports (background: linear-gradient(in lab, red, red)) {
+  .border-gradient, .conic-gradient, .radial-gradient, .bg-gradient,
+  .text-gradient {
+    --gradient-color-space: in oklab;
+  }
 }
 
-.bg-gradient {
-  background: var(--gradient);
-}
-
+.bg-gradient,
 .text-gradient {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: rgba(0, 0, 0, 0);
+  background: linear-gradient(var(--gradient));
+}
+
+.radial-gradient {
+  background: radial-gradient(var(--gradient));
+}
+
+.conic-gradient {
+  background: conic-gradient(var(--gradient));
+}
+
+@supports (background-clip: text) {
+  .text-gradient {
+    background-clip: text;
+    color: rgba(0, 0, 0, 0);
+  }
 }
 
 .border-gradient {
-  --inner-bg: var(--root-bg, #fff);
-  background: linear-gradient(var(--inner-bg, rgba(0, 0, 0, 0)) 0 0) padding-box, var(--gradient) border-box;
+  --inner-bg: var(--root-bg, canvas);
+  --_inner: var(--inner-bg) 0 0;
+  background: linear-gradient(var(--_inner)) padding-box, linear-gradient(var(--gradient)) border-box;
   border-color: rgba(0, 0, 0, 0);
+}
+
+.border-gradient:where(.text-gradient) {
+  background: linear-gradient(var(--gradient)) text, linear-gradient(var(--_inner)) padding-box, linear-gradient(var(--gradient)) border-box;
 }
