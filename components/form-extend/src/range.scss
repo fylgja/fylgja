@@ -44,7 +44,6 @@ $track-radius: 0.3rem !default;
 	min-block-size: var(--thumb-size-y);
 	inline-size: min(100%, 30ex);
 	margin: 0;
-	border-radius: var(--track-radius);
 	background: none;
 
 	&:dir(rtl) {
@@ -54,6 +53,7 @@ $track-radius: 0.3rem !default;
 	&::-webkit-slider-runnable-track {
 		--_val: calc(var(--range-value) * 100% / 100);
 		block-size: var(--track-size);
+		border-radius: var(--track-radius);
 		background: var(--track-color)
 			linear-gradient(
 				var(--track-dir),
@@ -64,6 +64,7 @@ $track-radius: 0.3rem !default;
 
 	&::-moz-range-track {
 		block-size: var(--track-size);
+		border-radius: var(--track-radius);
 		background: var(--track-color);
 	}
 
