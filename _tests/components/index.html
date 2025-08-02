@@ -148,25 +148,12 @@
                         />
                     </div>
                     <div class="field">
-                        <label for="input-range-line">Input Range - Style Line</label>
-                        <input
-                            type="range"
-                            name="input-range-line"
-                            id="input-range-line"
-                            value="50"
-                            min="25"
-                            max="125"
-                            style="--range-value: 25; --thumb-size-x: 2ex; --thumb-size-y: 3rem"
-                            oninput="this.style.setProperty('--range-value', (this.value - this.min))"
-                        />
-                    </div>
-                    <div class="field">
                         <label for="input-range-vertical">Input Range - Vertical</label>
                         <input
                             type="range"
                             name="input-range-vertical"
                             id="input-range-vertical"
-                            class="vertical"
+                            class="range-vertical"
                             value="40"
                             style="--range-value: 40"
                             oninput="this.style.setProperty('--range-value', this.value)"
@@ -196,12 +183,6 @@
                     </div>
 
                     <style>
-                        .vertical {
-                            --track-dir: 0deg;
-                            writing-mode: vertical-lr;
-                            direction: rtl;
-                        }
-
                         .compare {
                             inline-size: fit-content;
                             --_val: calc(var(--range-value) * 100% / 100);
