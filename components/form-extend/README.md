@@ -36,6 +36,7 @@ Alternatively, if you only need specific parts, you can import them individually
 | `@fylgja/form-extend/meter-progress` | Styles for `<meter>` and `<progress>` elements      |
 | `@fylgja/form-extend/range`          | Styles for the `<input type="range">` element       |
 | `@fylgja/form-extend/range-fill`     | Adds a CSS-only value fill to the `<range>` element |
+| `@fylgja/form-extend/range-vertical` | Adds `.range-vertical` modifier                     |
 
 ### Form Validation
 
@@ -88,3 +89,7 @@ eliminating the need for JavaScript.
 > Firefox uses a native fill method, while Chrome and Safari depend on scroll animations.
 > As of now, Safari support is not fully available,
 > but you can continue to use the JavaScript solution alongside this CSS-only method.
+
+#### Vertical Modifier
+
+To change the orientation of a range slider to vertical, add the `.range-vertical` class to the input element.
