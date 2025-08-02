@@ -2,14 +2,12 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-.clip {
-  overflow: clip;
-}
-
+.clip,
 .clip-y {
   overflow-y: clip;
 }
 
+.clip,
 .clip-x {
   overflow-x: clip;
 }
@@ -20,49 +18,23 @@
   contain-intrinsic-block-size: var(--content-size);
 }
 
-.divide-y,
-.divide-x {
+:where(.divide-y, .divide-x) {
+  --flow: 0;
   --divide: 1px;
 }
-
-:where(.divide-y, .divide-x) > * {
+:where(.divide-y, .divide-x) > :where(:not(:first-child)) {
   border-color: inherit;
   border-style: inherit;
 }
 
-.divide-y > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
+.divide-y > :where(:not(:first-child)) {
   border-block-start-width: var(--divide);
+  padding-block: var(--flow) 0;
 }
 
-.divide-x > :not(template, [hidden]:where(:not([hidden=until-found]))) + * {
+.divide-x > :where(:not(:first-child)) {
   border-inline-start-width: var(--divide);
-}
-
-.divide-gap-y,
-.divide-gap-x {
-  --divide-gap: 0.5em;
-}
-
-.divide-gap-y > :not(template,
-[hidden]:where(:not([hidden=until-found])),
-:first-child) {
-  padding-block-start: var(--divide-gap);
-}
-.divide-gap-y > :not(template,
-[hidden]:where(:not([hidden=until-found])),
-:last-child) {
-  padding-block-end: var(--divide-gap);
-}
-
-.divide-gap-x > :not(template,
-[hidden]:where(:not([hidden=until-found])),
-:first-child) {
-  padding-block-start: var(--divide-gap);
-}
-.divide-gap-x > :not(template,
-[hidden]:where(:not([hidden=until-found])),
-:last-child) {
-  padding-block-end: var(--divide-gap);
+  padding-inline: var(--flow) 0;
 }
 
 .flow-none > *,
@@ -73,33 +45,48 @@
 .flow {
   --flow: 1em;
 }
-.flow > :not(template) + * {
+.flow > :where(:not(:first-child)) {
   margin-block: var(--flow) 0;
 }
 
-.border-gradient, .text-gradient, .bg-gradient {
-  --gradient-from: currentcolor;
+.border-gradient, .bg-gradient,
+.text-gradient {
+  --gradient-from: canvastext;
   --gradient-to: transparent;
   --gradient-stops: var(--gradient-from), var(--gradient-to);
-  --gradient-angle: 0deg;
-  --gradient: linear-gradient(var(--gradient-angle), var(--gradient-stops));
+  --gradient-angle: ;
+  --gradient-color-space: ;
+  --gradient:
+  	var(--gradient-angle) var(--gradient-color-space), var(--gradient-stops);
+}
+@supports (background: linear-gradient(in lab, red, red)) {
+  .border-gradient, .bg-gradient,
+  .text-gradient {
+    --gradient-color-space: in oklab;
+  }
 }
 
-.bg-gradient {
-  background: var(--gradient);
-}
-
+.bg-gradient,
 .text-gradient {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: rgba(0, 0, 0, 0);
+  background: linear-gradient(var(--gradient));
+}
+
+@supports (background-clip: text) {
+  .text-gradient {
+    background-clip: text;
+    color: rgba(0, 0, 0, 0);
+  }
 }
 
 .border-gradient {
-  --inner-bg: var(--root-bg, #fff);
-  background: linear-gradient(var(--inner-bg, rgba(0, 0, 0, 0)) 0 0) padding-box, var(--gradient) border-box;
+  --inner-bg: var(--root-bg, canvas);
+  --_inner: var(--inner-bg) 0 0;
+  background: linear-gradient(var(--_inner)) padding-box, linear-gradient(var(--gradient)) border-box;
   border-color: rgba(0, 0, 0, 0);
+}
+
+.border-gradient:where(.text-gradient) {
+  background: linear-gradient(var(--gradient)) text, linear-gradient(var(--_inner)) padding-box, linear-gradient(var(--gradient)) border-box;
 }
 
 .line-clamp {
@@ -196,6 +183,52 @@
   aspect-ratio: 1;
   border-radius: 100000px;
   overflow: clip;
+}
+
+@property --mask-color-start {
+  inherits: false;
+  syntax: "<color>";
+  initial-value: #000;
+}
+@property --mask-color-end {
+  inherits: false;
+  syntax: "<color>";
+  initial-value: #000;
+}
+@keyframes scroll-mask {
+  0% {
+    --mask-color-start: #000;
+    --mask-color-end: hsl(0 0 0 / 0%);
+  }
+  2%, 98% {
+    --mask-color-start: hsl(0 0 0 / 0%);
+    --mask-color-end: hsl(0 0 0 / 0%);
+  }
+  100% {
+    --mask-color-start: hsl(0 0 0 / 0%);
+    --mask-color-end: #000;
+  }
+}
+.scroll-mask {
+  --mask-dir: 90deg;
+  --mask-size: 1.5rem;
+  --mask-color-start: #000;
+  --mask-color-end: #000;
+  --mask: linear-gradient(
+  	var(--mask-dir),
+  	var(--mask-color-start),
+  	#000 var(--mask-size),
+  	#000 calc(100% - var(--mask-size)),
+  	var(--mask-color-end)
+  );
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  animation: scroll-mask;
+  animation-timeline: scroll(self inline);
+}
+.scroll-mask.scroll-y {
+  --mask-dir: 180deg;
+  animation-timeline: scroll(self block);
 }
 
 .scroll-x {
@@ -371,6 +404,10 @@
   font-style: italic;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .auto-grid {
   --max-col-size: 14rem;
   display: grid;
@@ -525,8 +562,7 @@
   display: table-cell;
 }
 
-.align,
-.align-center {
+.align {
   --align: normal space-between;
   --align-items: center legacy;
   --_alignC: var(--align);
@@ -536,25 +572,28 @@
 }
 
 .align-center {
-  --align: center;
-  --align-items: center;
+  place-content: center;
+  place-items: center;
 }
 
-.align-self,
-.align-self-end {
+.align-self {
   --align-self: start auto;
   --_alignS: var(--align-self);
   place-self: var(--_alignS);
 }
 
 .align-self-end {
-  --align-self: end auto;
+  place-self: end auto;
 }
 
 .gap {
   --gap: 1em;
   --_gap: var(--gap);
   gap: var(--_gap);
+}
+
+.gap-sm {
+  gap: 0.5em;
 }
 
 .sr-only {
