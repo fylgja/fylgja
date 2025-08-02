@@ -2,10 +2,6 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
 .field-error-message {
   --_field-state: initial;
   color: var(--form-error-color);
@@ -18,41 +14,42 @@
   --_field-state: /* */;
 }
 
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
 :where(input[type=range]) {
   --range-value: 0;
-  --track-size: 0.5em;
+  --track-dir: to right;
+  --track-size: 0.8ex;
+  --track-radius: 0.3rem;
+  --track-color: color-mix(in srgb, currentcolor 24%, canvas);
   --track-fill: var(--form-active-color, currentcolor);
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg));
-  --track-radius: 0.4em;
-  --track-dir: 90deg;
+  --thumb-size-y: 2.5em;
+  --thumb-size-x: 1em;
   --thumb-radius: 1em;
   --thumb-stroke: var(--root-bg);
-  --thumb-stroke-size: 0.5ex;
-  --thumb-size-y: 2em;
-  --thumb-size-x: 2em;
+  --thumb-stroke-size: 3px;
   --thumb-color: var(--form-active-color, currentcolor);
+  display: block;
   appearance: none;
   min-block-size: var(--thumb-size-y);
-  inline-size: min(100%, 25ex);
+  inline-size: 100%;
   margin: 0;
-  border-radius: var(--track-radius);
   background: none;
-  overflow: hidden;
+  cursor: grab;
+}
+:where(input[type=range]):active {
+  cursor: grabbing;
 }
 :where(input[type=range]):dir(rtl) {
-  --track-dir: -90deg;
+  --track-dir: to left;
 }
 :where(input[type=range])::-webkit-slider-runnable-track {
   --_val: calc(var(--range-value) * 100% / 100);
   block-size: var(--track-size);
+  border-radius: var(--track-radius);
   background: var(--track-color) linear-gradient(var(--track-dir), var(--track-fill) var(--_val), var(--track-color) var(--_val));
 }
 :where(input[type=range])::-moz-range-track {
   block-size: var(--track-size);
+  border-radius: var(--track-radius);
   background: var(--track-color);
 }
 :where(input[type=range])::-webkit-slider-thumb {
@@ -64,11 +61,7 @@
   border: solid var(--thumb-stroke);
   border-width: var(--thumb-stroke-size);
   background-color: var(--thumb-color);
-  cursor: grab;
   margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-size) - var(--thumb-size-y))));
-}
-:where(input[type=range])::-webkit-slider-thumb:active {
-  cursor: grabbing;
 }
 :where(input[type=range])::-moz-range-thumb {
   appearance: none;
@@ -79,17 +72,51 @@
   border: solid var(--thumb-stroke);
   border-width: var(--thumb-stroke-size);
   background-color: var(--thumb-color);
-  cursor: grab;
   box-sizing: border-box;
 }
-:where(input[type=range])::-moz-range-thumb:active {
-  cursor: grabbing;
+
+.range-vertical {
+  --track-dir: to top;
+  max-inline-size: 24ex;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  animation-direction: normal;
 }
 
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
+@property --range-value {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+@keyframes range-observer {
+  from {
+    --range-value: 0;
+  }
+  to {
+    --range-value: 100;
+  }
+}
+:where(input[type=range]) {
+  overflow: hidden;
+}
+@supports (timeline-scope: --foo) {
+  :where(input[type=range]) {
+    animation: range-observer linear reverse both;
+    animation-timeline: --range-thumb;
+    timeline-scope: --range-thumb;
+  }
+}
+:where(input[type=range])::-moz-range-progress {
+  block-size: var(--track-size);
+  border-radius: var(--track-radius);
+  background: var(--track-fill);
+}
+@supports (timeline-scope: --foo) {
+  :where(input[type=range])::-webkit-slider-thumb {
+    view-timeline: --range-thumb inline;
+  }
+}
+
 @keyframes progress-loading {
   from {
     background-position: -100% 0;
@@ -101,7 +128,7 @@
 meter,
 progress {
   --track-height: 1ex;
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg));
+  --track-color: color-mix(in srgb, currentcolor 24%, canvas);
   --track-radius: 0.4em;
   appearance: none;
   block-size: var(--track-height, 1ex);

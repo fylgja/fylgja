@@ -1,7 +1,3 @@
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
 @keyframes progress-loading {
   from {
     background-position: -100% 0;
@@ -13,7 +9,7 @@
 meter,
 progress {
   --track-height: 1ex;
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg));
+  --track-color: color-mix(in srgb, currentcolor 24%, canvas);
   --track-radius: 0.4em;
   appearance: none;
   block-size: var(--track-height, 1ex);

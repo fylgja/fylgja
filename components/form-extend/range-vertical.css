@@ -1,0 +1,7 @@
+.range-vertical {
+  --track-dir: to top;
+  max-inline-size: 24ex;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  animation-direction: normal;
+}

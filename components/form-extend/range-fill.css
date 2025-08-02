@@ -1,11 +1,3 @@
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
 @property --range-value {
   syntax: "<number>";
   initial-value: 0;
@@ -20,24 +12,6 @@
   }
 }
 :where(input[type=range]) {
-  --range-value: 0;
-  --track-size: 0.5em;
-  --track-fill: var(--form-active-color, currentcolor);
-  --track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg));
-  --track-radius: 0.4em;
-  --track-dir: 90deg;
-  --thumb-radius: 1em;
-  --thumb-stroke: var(--root-bg);
-  --thumb-stroke-size: 0.5ex;
-  --thumb-size-y: 2em;
-  --thumb-size-x: 2em;
-  --thumb-color: var(--form-active-color, currentcolor);
-  appearance: none;
-  min-block-size: var(--thumb-size-y);
-  inline-size: min(100%, 25ex);
-  margin: 0;
-  border-radius: var(--track-radius);
-  background: none;
   overflow: hidden;
 }
 @supports (timeline-scope: --foo) {
@@ -47,54 +21,13 @@
     timeline-scope: --range-thumb;
   }
 }
-:where(input[type=range]):dir(rtl) {
-  --track-dir: -90deg;
-}
-:where(input[type=range])::-webkit-slider-runnable-track {
-  --_val: calc(var(--range-value) * 100% / 100);
-  block-size: var(--track-size);
-  background: var(--track-color) linear-gradient(var(--track-dir), var(--track-fill) var(--_val), var(--track-color) var(--_val));
-}
-:where(input[type=range])::-moz-range-track {
-  block-size: var(--track-size);
-  background: var(--track-color);
-}
 :where(input[type=range])::-moz-range-progress {
   block-size: var(--track-size);
+  border-radius: var(--track-radius);
   background: var(--track-fill);
-}
-:where(input[type=range])::-webkit-slider-thumb {
-  appearance: none;
-  block-size: var(--thumb-size-y);
-  inline-size: var(--thumb-size-x);
-  box-shadow: var(--thumb-shadow);
-  border-radius: var(--thumb-radius);
-  border: solid var(--thumb-stroke);
-  border-width: var(--thumb-stroke-size);
-  background-color: var(--thumb-color);
-  cursor: grab;
-  margin-block-start: var(--thumb-offset, calc(0.5 * (var(--track-size) - var(--thumb-size-y))));
-}
-:where(input[type=range])::-webkit-slider-thumb:active {
-  cursor: grabbing;
 }
 @supports (timeline-scope: --foo) {
   :where(input[type=range])::-webkit-slider-thumb {
     view-timeline: --range-thumb inline;
   }
-}
-:where(input[type=range])::-moz-range-thumb {
-  appearance: none;
-  block-size: var(--thumb-size-y);
-  inline-size: var(--thumb-size-x);
-  box-shadow: var(--thumb-shadow);
-  border-radius: var(--thumb-radius);
-  border: solid var(--thumb-stroke);
-  border-width: var(--thumb-stroke-size);
-  background-color: var(--thumb-color);
-  cursor: grab;
-  box-sizing: border-box;
-}
-:where(input[type=range])::-moz-range-thumb:active {
-  cursor: grabbing;
 }
