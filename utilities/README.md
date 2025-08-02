@@ -42,4 +42,4 @@ You can import any utility mentioned below, using:
 @import "@fylgja/utilities/{UTILITY_NAME}";
 ```
 
-_align • auto-grid • clip • container • content-lazy • display • divide • flex • flow • gap • gradient • grid-cols • line-clamp • list • overlay • position • rounded • scroll • scrollbar • size • snap • spacing • sr-only • stack • stretched-link • toggle • transition • truncate • typography_
+_align • auto-grid • clip • container • content-lazy • display • divide • flex • flow • gap • gradient • grid-cols • line-clamp • list • overlay • position • rounded • scroll • scroll-mask • scrollbar • size • snap • spacing • sr-only • stack • stretched-link • toggle • transition • truncate • typography_

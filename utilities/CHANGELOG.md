@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `font-bold` and `font-normal` for basic font-weight control.
 - `lead` utility for styling introductory text or footer headings.
 - `radial-gradient` and `conic-gradient` as alternative styles for `bg-gradient`.
+- `scroll-mask` utility to apply a gradient mask, indicating more content is available in scrollable areas.
 
 ### Changed
 

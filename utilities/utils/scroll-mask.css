@@ -1,0 +1,45 @@
+@property --mask-color-start {
+  inherits: false;
+  syntax: "<color>";
+  initial-value: #000;
+}
+@property --mask-color-end {
+  inherits: false;
+  syntax: "<color>";
+  initial-value: #000;
+}
+@keyframes scroll-mask {
+  0% {
+    --mask-color-start: #000;
+    --mask-color-end: hsl(0 0 0 / 0%);
+  }
+  2%, 98% {
+    --mask-color-start: hsl(0 0 0 / 0%);
+    --mask-color-end: hsl(0 0 0 / 0%);
+  }
+  100% {
+    --mask-color-start: hsl(0 0 0 / 0%);
+    --mask-color-end: #000;
+  }
+}
+.scroll-mask {
+  --mask-dir: 90deg;
+  --mask-size: 1.5rem;
+  --mask-color-start: #000;
+  --mask-color-end: #000;
+  --mask: linear-gradient(
+  	var(--mask-dir),
+  	var(--mask-color-start),
+  	#000 var(--mask-size),
+  	#000 calc(100% - var(--mask-size)),
+  	var(--mask-color-end)
+  );
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  animation: scroll-mask;
+  animation-timeline: scroll(self inline);
+}
+.scroll-mask.scroll-y {
+  --mask-dir: 180deg;
+  animation-timeline: scroll(self block);
+}
