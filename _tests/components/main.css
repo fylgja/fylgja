@@ -1,10 +1,12 @@
 @import url("@fylgja/base");
 @import url("@fylgja/base/theme");
 @import url("@fylgja/tokens/css");
+
+@import url("@fylgja/input-group");
+@import url("@fylgja/card");
+@import url("@fylgja/form-extend");
+
 @import url("@fylgja/utilities");
-@import "../../components/input-group/index.css";
-@import "../../components/card/index.css";
-@import "../../components/form-extend/index.css";
 
 header {
 	padding-block: 1rem;
