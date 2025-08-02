@@ -1,14 +1,12 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-.clip {
-	overflow: clip;
-}
-
+.clip,
 .clip-y {
 	overflow-y: clip;
 }
 
+.clip,
 .clip-x {
 	overflow-x: clip;
 }

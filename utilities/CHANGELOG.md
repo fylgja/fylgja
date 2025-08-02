@@ -11,17 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `gap-sm` as an alias for `gap`, setting `--gap` to `0.5em` for scenarios like spacing icons next to text.
+- `gap-sm` as an alias for `gap`, setting `--gap` to `0.5em` for spacing icons next to text.
 - `font-bold` and `font-normal` for basic font-weight control.
 - `lead` utility for styling introductory text or footer headings.
-- `radial-gradient` and `conic-gradient` as alternative styles for `bg-gradient`.
 - `scroll-mask` utility to apply a gradient mask, indicating more content is available in scrollable areas.
 
 ### Changed
 
-- `border-gradient` now uses a background-based approach to support `border-radius`.
-  This requires an inner background color for cross-browser compatibility until `background-clip: border-area` is widely adopted.
-- Gradients now default to the **oklab** color space, when supported, creating smoother color transitions.
+- Updated `border-gradient` to a background-based method to support `border-radius`. This includes a fallback requiring an inner background color for browsers that do not support `background-clip: border-area`.
+- Gradients now default to the **oklab** color space where supported, resulting in smoother color transitions.
+- Cleaned up selectors to reduce overall file size.
 
 ### Fixed
 

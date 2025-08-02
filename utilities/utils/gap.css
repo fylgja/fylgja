@@ -1,12 +1,11 @@
-.gap,
-.gap-sm {
+.gap {
   --gap: 1em;
   --_gap: var(--gap);
   gap: var(--_gap);
 }
 
 .gap-sm {
-  --gap: 0.5em;
+  gap: 0.5em;
 }
 
 @media (width >= 480px) {

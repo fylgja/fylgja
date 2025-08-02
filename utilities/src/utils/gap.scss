@@ -7,15 +7,14 @@
 $use-mq: true !default;
 $gap: 1em !default;
 
-.gap,
-.gap-sm {
+.gap {
 	--gap: #{$gap};
 	--_gap: var(--gap);
 	gap: var(--_gap);
 }
 
 .gap-sm {
-	--gap: #{math.div($gap, 2)};
+	gap: #{math.div($gap, 2)};
 }
 
 @mixin mq-utils($name) {

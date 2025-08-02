@@ -26,16 +26,6 @@
 	background: linear-gradient(var(--gradient));
 }
 
-.radial-gradient {
-	@extend %utility-gradient;
-	background: radial-gradient(var(--gradient));
-}
-
-.conic-gradient {
-	@extend %utility-gradient;
-	background: conic-gradient(var(--gradient));
-}
-
 .text-gradient {
 	@supports (background-clip: text) {
 		background-clip: text;

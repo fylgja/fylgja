@@ -1,4 +1,4 @@
-.border-gradient, .conic-gradient, .radial-gradient, .bg-gradient,
+.border-gradient, .bg-gradient,
 .text-gradient {
   --gradient-from: canvastext;
   --gradient-to: transparent;
@@ -9,7 +9,7 @@
   	var(--gradient-angle) var(--gradient-color-space), var(--gradient-stops);
 }
 @supports (background: linear-gradient(in lab, red, red)) {
-  .border-gradient, .conic-gradient, .radial-gradient, .bg-gradient,
+  .border-gradient, .bg-gradient,
   .text-gradient {
     --gradient-color-space: in oklab;
   }
@@ -18,14 +18,6 @@
 .bg-gradient,
 .text-gradient {
   background: linear-gradient(var(--gradient));
-}
-
-.radial-gradient {
-  background: radial-gradient(var(--gradient));
-}
-
-.conic-gradient {
-  background: conic-gradient(var(--gradient));
 }
 
 @supports (background-clip: text) {
