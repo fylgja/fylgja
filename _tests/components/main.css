@@ -7,6 +7,7 @@
 @import url("@fylgja/form-extend");
 
 @import url("@fylgja/utilities");
+@import url("@fylgja/utilities/utils/scroll-mask.css");
 
 header {
 	padding-block: 1rem;

@@ -61,7 +61,11 @@
                 <div class="auto-grid gap">
                     <div
                         class="card bg-gradient"
-                        style="--gradient-angle: 35deg; --gradient-stops: red, yellow"
+                        style="
+                            --card-color: #111;
+                            --gradient-angle: 35deg;
+                            --gradient-stops: red, yellow;
+                        "
                     >
                         background Gradient
                     </div>
@@ -83,23 +87,152 @@
                     >
                         Text & Border Gradient
                     </div>
-                    <div class="card radial-gradient" style="--gradient-stops: red, yellow">
-                        Radial Gradient
-                    </div>
-                    <div
-                        class="card conic-gradient"
-                        style="
-                            --gradient-stops:
-                                oklab(0.63 0.24 -0.23), oklab(0.89 -0.2 -0.05),
-                                oklab(0.63 0.24 -0.23);
-                            --gradient-color-space: in oklch decreasing hue;
-                        "
-                    >
-                        Conic Gradient
-                    </div>
+                </div>
+                <h2>Slider</h2>
+                <div
+                    class="snap scroll-x scroll-mask grid-cols grid-flow gap"
+                    style="--sm_grid-cols: 2"
+                >
+                    <img
+                        src="https://placecats.com/neo_banana/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/neo/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/millie/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/bella/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/millie_neo/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                </div>
+                <div
+                    class="snap scroll-y scroll-mask"
+                    style="
+                        --size-x: 380px;
+                        --size-y: 230px;
+                        --my: 2rem;
+                        --snap-dir: y mandatory;
+                        --snap-align: center;
+                    "
+                >
+                    <img
+                        src="https://placecats.com/neo_banana/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/neo/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/millie/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/bella/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://placecats.com/millie_neo/380/200"
+                        alt="Meow"
+                        width="380"
+                        height="200"
+                        loading="lazy"
+                    />
+                </div>
+                <h2>Overflow</h2>
+                <div class="scroll-x scroll-mask nowrap">
+                    <table>
+                        <caption>
+                            Table Caption
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Table Heading 1</th>
+                                <th>Table Heading 2</th>
+                                <th>Table Heading 3</th>
+                                <th>Table Heading 4</th>
+                                <th>Table Heading 5</th>
+                                <th>Table Heading 6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Table Cell 1</td>
+                                <td>Table Cell 2</td>
+                                <td>Table Cell 3</td>
+                                <td>Table Cell 4</td>
+                                <td>Table Cell 5</td>
+                                <td>Table Cell 6</td>
+                            </tr>
+                            <tr>
+                                <td>Table Cell 1</td>
+                                <td>Table Cell 2</td>
+                                <td>Table Cell 3</td>
+                                <td>Table Cell 4</td>
+                                <td>Table Cell 5</td>
+                                <td>Table Cell 6</td>
+                            </tr>
+                            <tr>
+                                <td>Table Cell 1</td>
+                                <td>Table Cell 2</td>
+                                <td>Table Cell 3</td>
+                                <td>Table Cell 4</td>
+                                <td>Table Cell 5</td>
+                                <td>Table Cell 6</td>
+                            </tr>
+                            <tr>
+                                <td>Table Cell 1</td>
+                                <td>Table Cell 2</td>
+                                <td>Table Cell 3</td>
+                                <td>Table Cell 4</td>
+                                <td>Table Cell 5</td>
+                                <td>Table Cell 6</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
-            <section aria-label="form-extend" class="container" style="--container-size: 64ch">
+            <section
+                aria-label="form-extend"
+                class="container divide-y flow"
+                style="--container-size: 64ch"
+            >
                 <fieldset>
                     <div class="field">
                         <label for="email-validate">Email with Validation</label>
