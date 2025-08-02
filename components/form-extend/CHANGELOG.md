@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- use case where the root colors are missing from `@fylgja/base`,
+  This allows form-extend to be used with other systems.
+
 ## 1.0.0 - 2025-08-01
 
 Initial Release 🎉

@@ -4,7 +4,7 @@
  */
 
 $track-height: 1ex !default;
-$track-color: color-mix(in srgb, var(--root-fg) 24%, var(--root-bg)) !default;
+$track-color: color-mix(in srgb, currentcolor 24%, canvas) !default;
 $track-radius: 0.4em !default;
 
 $progress-height: 1.8ex !default;
