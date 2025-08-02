@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Split range fill, the same way as seen with other components to allow easier mix and match
 - Added range fill to the default import
+- Made the range slider thumb in the bar style, for a more modern look
 
 ### Fixed
 

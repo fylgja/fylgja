@@ -1,11 +1,17 @@
-/**
- * Fylgja (https://fylgja.dev)
- * Licensed under MIT Open Source
- */
+// Fylgja (https://fylgja.dev)
+// Licensed under MIT Open Source
 
-$track-size: 1ex !default;
-$track-color: color-mix(in srgb, currentcolor 24%, canvas) !default;
+$track-size: 0.8ex !default;
 $track-radius: 0.3rem !default;
+$track-color: color-mix(in srgb, currentcolor 24%, canvas) !default;
+$track-fill: var(--form-active-color, currentcolor) !default;
+
+$thumb-size-y: 2.5em !default;
+$thumb-size-x: 1em !default;
+$thumb-radius: 1em !default;
+$thumb-stroke: var(--root-bg) !default;
+$thumb-stroke-size: 3px !default;
+$thumb-color: var(--form-active-color, currentcolor) !default;
 
 @mixin thumb {
 	appearance: none;
@@ -16,35 +22,35 @@ $track-radius: 0.3rem !default;
 	border: solid var(--thumb-stroke);
 	border-width: var(--thumb-stroke-size);
 	background-color: var(--thumb-color);
-	cursor: grab;
-
-	&:active {
-		cursor: grabbing;
-	}
 }
 
 :where(input[type="range"]) {
 	--range-value: 0;
 
-	--track-size: #{$track-size};
-	--track-fill: var(--form-active-color, currentcolor);
-	--track-color: #{$track-color};
-	--track-radius: #{$track-radius};
 	--track-dir: to right;
+	--track-size: #{$track-size};
+	--track-radius: #{$track-radius};
+	--track-color: #{$track-color};
+	--track-fill: #{$track-fill};
 
-	--thumb-radius: 1em;
-	--thumb-stroke: var(--root-bg);
-	--thumb-stroke-size: 0.5ex;
-	--thumb-size-y: 2em;
-	--thumb-size-x: 2em;
-	--thumb-color: var(--form-active-color, currentcolor);
+	--thumb-size-y: #{$thumb-size-y};
+	--thumb-size-x: #{$thumb-size-x};
+	--thumb-radius: #{$thumb-radius};
+	--thumb-stroke: #{$thumb-stroke};
+	--thumb-stroke-size: #{$thumb-stroke-size};
+	--thumb-color: #{$thumb-color};
 
 	display: block;
 	appearance: none;
 	min-block-size: var(--thumb-size-y);
-	inline-size: min(100%, 30ex);
+	inline-size: 100%;
 	margin: 0;
 	background: none;
+	cursor: grab;
+
+	&:active {
+		cursor: grabbing;
+	}
 
 	&:dir(rtl) {
 		--track-dir: to left;
