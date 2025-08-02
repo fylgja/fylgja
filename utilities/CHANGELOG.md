@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `gap-sm` as alias for `gap` with `--gap: 0.5em`, commen for cases where we use text with a icon
+- `gap-sm` as an alias for `gap`, setting `--gap` to `0.5em` for scenarios like spacing icons next to text.
 - `font-bold` and `font-normal` for basic font-weight control.
 - `lead` utility for styling introductory text or footer headings.
 - `radial-gradient` and `conic-gradient` as alternative styles for `bg-gradient`.
