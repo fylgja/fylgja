@@ -1,15 +1,21 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:math";
 @use "props" as *;
 
 $use-mq: true !default;
 $gap: 1em !default;
 
-.gap {
+.gap,
+.gap-sm {
 	--gap: #{$gap};
 	--_gap: var(--gap);
 	gap: var(--_gap);
+}
+
+.gap-sm {
+	--gap: #{math.div($gap, 2)};
 }
 
 @mixin mq-utils($name) {

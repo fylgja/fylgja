@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.0 - 2025-08-02
+
+### Added
+
+- `gap-sm` as alias for `gap` with `--gap: 0.5em`, commen for cases where we use text with a icon
+
 ## 2.0.0 - 2025-03-12
 
 This is a complete rebuild of the Fylgja Utilpak and renamed to Fylgja Utilities.
