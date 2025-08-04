@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Updated the divide utilities to support both `gap` and `flow` for more flexible horizontal spacing.
+
 ## 2.1.0 - 2025-08-03
 
 ### Added

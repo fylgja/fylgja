@@ -2,7 +2,8 @@
 // Licensed under MIT Open Source
 
 :where(.divide-y, .divide-x) {
-	--flow: 0;
+	--gap: 0;
+	--flow: var(--gap);
 	--divide: 1px;
 
 	> :where(:not(:first-child)) {
