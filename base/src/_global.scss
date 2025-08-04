@@ -58,12 +58,6 @@ $anchor-offset: 6ex !default;
 	scroll-margin-block: var(--anchor-offset, #{$anchor-offset});
 }
 
-@media ($motion-safe) {
-	:has(:target) {
-		scroll-behavior: smooth;
-	}
-}
-
 :where(html) {
 	block-size: 100%;
 	font-family: var(--family-system);
@@ -71,6 +65,12 @@ $anchor-offset: 6ex !default;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 	scrollbar-gutter: stable;
+
+	@media ($motion-safe) {
+		&:has(:target) {
+			scroll-behavior: smooth;
+		}
+	}
 }
 
 :where(body) {
