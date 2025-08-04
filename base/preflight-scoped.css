@@ -34,11 +34,6 @@
   scroll-margin-block: var(--anchor-offset, 6ex);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :has(:target) {
-    scroll-behavior: smooth;
-  }
-}
 :where(html) {
   block-size: 100%;
   font-family: var(--family-system);
@@ -46,6 +41,11 @@
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scrollbar-gutter: stable;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :where(html):has(:target) {
+    scroll-behavior: smooth;
+  }
 }
 
 :where(body) {
