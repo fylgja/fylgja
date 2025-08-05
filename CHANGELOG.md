@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 2.1.0 - 2025-08-06
 
-This release brings a host of improvements across the Fylgja ecosystem, focusing on new features, performance enhancements, and an improved developer experience.
+This release brings a host of improvements across the Fylgja library, focusing on new features, performance enhancements, and an improved developer experience.
 
 ### [@fylgja/base]
 
