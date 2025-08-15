@@ -1,0 +1,108 @@
+{
+  "other": {
+    "layer-1": {
+      "value": 1,
+      "type": "other"
+    },
+    "spin-@": {
+      "value": "@keyframes spin { to { rotate: 360deg }}",
+      "type": "other"
+    },
+    "animateSpin": {
+      "value": "spin 1s linear infinite",
+      "type": "other"
+    }
+  },
+  "sizing": {
+    "size-2": {
+      "value": "0.5em",
+      "type": "sizing"
+    },
+    "size-4": {
+      "value": "4em",
+      "type": "sizing"
+    }
+  },
+  "color": {
+    "color-red-0": {
+      "value": "#fff5f5",
+      "type": "color"
+    },
+    "color-red-1": {
+      "value": "#ffe3e3",
+      "type": "color"
+    },
+    "color-red-2": {
+      "value": "#ffc9c9",
+      "type": "color"
+    },
+    "color-red-3": {
+      "value": "#ffa8a8",
+      "type": "color"
+    },
+    "color-red-4": {
+      "value": "#ff8787",
+      "type": "color"
+    },
+    "color-red-5": {
+      "value": "#ff6b6b",
+      "type": "color"
+    },
+    "color-red-6": {
+      "value": "#fa5252",
+      "type": "color"
+    },
+    "color-red-7": {
+      "value": "#f03e3e",
+      "type": "color"
+    },
+    "color-red-8": {
+      "value": "#e03131",
+      "type": "color"
+    },
+    "color-red-9": {
+      "value": "#f00",
+      "type": "color"
+    },
+    "color-green": {
+      "value": "#0f0",
+      "type": "color"
+    },
+    "color-blue": {
+      "value": "#00f",
+      "type": "color"
+    }
+  },
+  "borderWidth": {
+    "border-size-2": {
+      "value": "0.5em",
+      "type": "borderWidth"
+    },
+    "border-size-4": {
+      "value": "4em",
+      "type": "borderWidth"
+    }
+  },
+  "boxShadow": {
+    "shadow-1": {
+      "value": "0 2px 1px -1px hsl({shadow.color.value} / calc({shadow.weight.value} + 18%)),0 1px 1px hsl({shadow.color.value} / calc({shadow.weight.value} + 12%)),0 1px 3px hsl({shadow.color.value} / calc({shadow.weight.value} + 10%))",
+      "type": "boxShadow"
+    },
+    "shadow-color": {
+      "value": "gray",
+      "type": "boxShadow"
+    },
+    "shadow-weight": {
+      "value": "1%",
+      "type": "boxShadow"
+    },
+    "shadow-@media:dark-color": {
+      "value": "hsl(220 40% 2%)",
+      "type": "boxShadow"
+    },
+    "shadow-@media:dark-weight": {
+      "value": "25%",
+      "type": "boxShadow"
+    }
+  }
+}

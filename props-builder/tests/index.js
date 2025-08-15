@@ -1,5 +1,11 @@
 import { propsBuilder } from "../index.js";
 
+import { readFile } from "fs/promises";
+const designTokens = JSON.parse(
+	await readFile(new URL("./test.tokens.json", import.meta.url)),
+);
+// Or `import designTokens from './test.tokens.json' with { type: 'json' };` in Node 22+
+
 const shadowUmbra =
 	"hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))";
 const shadowPenumbra =
@@ -84,3 +90,9 @@ propsBuilder(props, "tests/_tokens-tw4.css", {
 propsBuilder(propsKeys, "tests/_tokens-key.css");
 propsBuilder(propsKeys, "tests/_tokens-key.scss");
 propsBuilder(propsKeys, "tests/_tokens-key.json");
+
+// From design token file
+propsBuilder(designTokens, "tests/_design.tokens.css", {
+	inputTypeTokens: true,
+	inputTypeSyntax: "figma",
+});

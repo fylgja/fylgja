@@ -2,6 +2,7 @@
 // Licensed under MIT Open Source
 
 export const cssVarRegex = /var\(--([a-zA-Z0-9-]+)\)/g;
+export const tokenVarRegex = /\{([a-zA-Z0-9.-]+)\}/g;
 
 /**
  * Convert a string to kebab case.

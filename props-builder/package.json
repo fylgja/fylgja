@@ -24,7 +24,7 @@
     "style-dictionary"
   ],
   "scripts": {
-    "pretest": "rm -rf tests/*.{css,scss,json}",
+    "pretest": "rm -rf tests/_*.{css,scss,json}",
     "test": "node tests/index.js"
   }
 }

@@ -8,6 +8,7 @@ import {
 	formatFigma,
 	formatStyleDictionary,
 } from "./src/formats/index.js";
+import fromTokens from "./src/from-tokens.js";
 import toTokens from "./src/to-tokens.js";
 import toStyleTokens from "./src/to-style.js";
 import toCssJitTokens from "./src/to-css-jit.js";
@@ -32,6 +33,8 @@ export const propsBuilder = (
 		writeToFile = true,
 		selector = ":where(:root)",
 		wrapper = "",
+		inputTypeTokens = false,
+		inputTypeSyntax = "default",
 	} = {},
 ) => {
 	let data = "";
@@ -43,6 +46,10 @@ export const propsBuilder = (
 			: fileType === "cjs"
 				? "module.exports = "
 				: "";
+
+	if (inputTypeTokens) {
+		props = fromTokens(props, inputTypeSyntax);
+	}
 
 	switch (parseSyntax) {
 		case "tokens":
