@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support for Tailwind v4 selector `@theme`, allowing you to create Tailwind configuration with Design Tokens
+
 ## 2.0.1 - 2025-07-19
 
 ### Fixed

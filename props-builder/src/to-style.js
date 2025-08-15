@@ -32,6 +32,7 @@ const toStyleTokens = (
 	const indent = varSyntax === "--" ? "\t" : "";
 	const flatProps = flattenObj(props);
 	const isScss = varSyntax === "$";
+	const isTw4 = selector === "@theme";
 
 	let styles = "";
 	let stylesDark = "";
@@ -45,7 +46,9 @@ const toStyleTokens = (
 		if (Array.isArray(value)) value = value.join(", ");
 
 		if (isProperty) {
-			appendedMeta += `${appendedMeta ? "\n\n" : ""}${value}`;
+			appendedMeta += isTw4
+				? `${appendedMeta ? "\n\n" : ""}${indent}${value}`
+				: `${appendedMeta ? "\n\n" : ""}${value}`;
 			return;
 		}
 
@@ -90,17 +93,24 @@ const toStyleTokens = (
 	if (isScss) {
 		result = styles;
 		result += stylesDark;
+		result += appendedMeta ? `\n${appendedMeta}` : "";
+	} else if (isTw4) {
+		if (styles || appendedMeta) {
+			result = `${selector} {\n`;
+			result += styles ? styles : "";
+			result += appendedMeta ? `\n${appendedMeta}` : "";
+			result += `\n}\n`;
+		}
+
+		result += stylesDark
+			? `\n${mediaDark} {\n\t:root {\n${stylesDark}\t}\n}`
+			: "";
 	} else {
 		result = styles ? `${selector} {\n${styles}}\n` : "";
-
-		if (stylesDark) {
-			result += `\n${mediaDark} {\n\t${selector} {\n${stylesDark}\t}\n}`;
-		}
-	}
-
-	// Append property data if present
-	if (appendedMeta) {
-		result += `\n${appendedMeta}`;
+		result += stylesDark
+			? `\n${mediaDark} {\n\t${selector} {\n${stylesDark}\t}\n}`
+			: "";
+		result += appendedMeta ? `\n${appendedMeta}` : "";
 	}
 
 	return result.trim();

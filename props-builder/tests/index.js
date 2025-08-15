@@ -25,6 +25,8 @@ const blue = "#00f";
 const propsKeys = {
 	"spin-@": "@keyframes spin { to { rotate: 360deg }}",
 	animateSpin: "spin 1s linear infinite",
+	"rotate-@": "@keyframes rotate { to { rotate: 360deg }}",
+	animateRotate: "rotate 1s linear infinite",
 };
 
 const props = {
@@ -35,6 +37,10 @@ const props = {
 		red,
 		green,
 		blue,
+	},
+	border: {
+		"size-2": "0.5em",
+		"size-4": "4em",
 	},
 	shadow: {
 		color: "gray",
@@ -67,6 +73,11 @@ propsBuilder(props, "tests/_jit-tokens.js", { parseAs: "css-jit" });
 // With custom selector
 propsBuilder(props, "tests/_tokens-selector.css", {
 	selector: ".fylgja-test-zone",
+});
+
+// For Tailwind v4
+propsBuilder(props, "tests/_tokens-tw4.css", {
+	selector: "@theme",
 });
 
 // Only render keyframes
