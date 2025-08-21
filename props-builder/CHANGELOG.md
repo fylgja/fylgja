@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Support for Tailwind v4 selector `@theme`, allowing you to create Tailwind configuration with Design Tokens.
-- Support for importing Design Tokens as the source, allowing you to create CSS Props with a Design Token file.
+- Support for Tailwind v4 selector `@theme`,
+  allowing you to create Tailwind configuration with Design Tokens.
+- Support for importing Design Tokens as the source,
+  allowing you to create CSS Props with a Design Token file.
 
 ## 2.0.1 - 2025-07-19
 
