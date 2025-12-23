@@ -9,6 +9,10 @@ Inspired by:
 - https://github.com/fylgja/fylgja-sass
 - https://una.im/5-css-functions/
 
+Maybe:
+
+- https://www.bram.us/2025/02/18/css-at-function-and-css-if/
+
 <!---
 
 ## Installation
