@@ -7,13 +7,13 @@
 @function --conditional-radius(--radius, --edge-dist: 4px) {
 	result: clamp(
 		0px,
-		((100vw - var(--edge-dist)) - 100%) * 100000,
+		((100vw - var(--edge-dist)) - 100%) * 1e5,
 		var(--radius)
 	);
 }
 
-/* TODO text this with not just font sizes */
-@function --fluid-type(--min, --max, --scalar: 2vw) {
+/* TODO test this with not just font sizes */
+@function --fluid-size(--min, --max, --scalar: 2vw) {
 	result: clamp(var(--min), var(--scalar) + var(--min), var(--max));
 }
 
@@ -21,7 +21,6 @@
 	result: calc(-1 * var(--value));
 }
 
-/* TODO More color spaces? */
-@function --opacity(--color, --opacity) {
-	result: oklch(from var(--color) l c h / var(--opacity));
+@function --alpha(--color, --alpha) {
+	result: oklch(from var(--color) l c h / var(--alpha));
 }
