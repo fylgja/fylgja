@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.2 - 2025-12-27
+
+### Changed
+
+- Allow single side vars for position utility
+
 ## 2.1.1 - 2025-08-04
 
 ### Changed

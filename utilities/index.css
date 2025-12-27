@@ -122,9 +122,8 @@
 
 :where(.relative, .sticky, .absolute, .fixed) {
   --z: 1;
-  --inset: auto;
-  --inset-y: var(--inset);
-  --inset-x: var(--inset);
+  --inset-y: var(--inset, var(--inset-t, auto) var(--inset-b, auto));
+  --inset-x: var(--inset, var(--inset-s, auto) var(--inset-e, auto));
   z-index: var(--z);
   inset-block: var(--inset-y);
   inset-inline: var(--inset-x);
