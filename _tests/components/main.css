@@ -3,8 +3,10 @@
 @import url("@fylgja/tokens/css");
 
 @import url("@fylgja/input-group");
+@import url("@fylgja/badge");
 @import url("@fylgja/card");
 @import url("@fylgja/form-extend");
+@import url("@fylgja/toast");
 
 @import url("@fylgja/utilities");
 @import url("@fylgja/utilities/utils/scroll-mask.css");
