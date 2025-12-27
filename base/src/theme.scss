@@ -84,11 +84,6 @@ body {
 	}
 }
 
-// Default container based elements
-:where(body > :is(main, header, footer), article, section, aside) {
-	container-type: inline-size;
-}
-
 // Forms
 ::-webkit-calendar-picker-indicator {
 	outline-color: var(--brand);
