@@ -1,0 +1,29 @@
+{
+  "name": "@fylgja/toast",
+  "version": "1.0.0",
+  "description": "The Fylgja toast component",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/toast"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "toast",
+    "message",
+    "notification"
+  ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "sass": "src/index.scss",
+  "scripts": {
+    "start": "npx sass --no-source-map -w src:./",
+    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
+    "prebuild": "npx sass --no-source-map src:./"
+  }
+}

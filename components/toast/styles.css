@@ -1,0 +1,27 @@
+.toast {
+  --_bg: oklch(from var(--toast-style) 100% calc(c / 2) h);
+  --_fg: oklch(from var(--toast-style) 20% c h);
+  --toast-bg: var(--_bg, var(--surface-color));
+  --toast-color: var(--_fg, var(--root-fg));
+}
+@supports (color: light-dark(#fff, #000)) {
+  .toast {
+    --_bg: light-dark(
+    	oklch(from var(--toast-style) 100% calc(c / 2) h),
+    	oklch(from var(--toast-style) 15% calc(c / 2) h)
+    );
+    --_fg: light-dark(
+    	oklch(from var(--toast-style) 20% c h),
+    	oklch(from var(--toast-style) 90% c h)
+    );
+  }
+}
+.toast:where([data-type=info]) {
+  --toast-style: var(--brand);
+}
+.toast:where([data-type=warning]) {
+  --toast-style: #f09e2e;
+}
+.toast:where([data-type=error]) {
+  --toast-style: #e00;
+}
