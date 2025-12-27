@@ -1,0 +1,16 @@
+.badge {
+  max-inline-size: fit-content;
+  min-inline-size: calc(2ch + var(--badge-px, 0.625ch));
+  padding-block: var(--badge-py, 0.625ch);
+  padding-inline: var(--badge-px, 0.625ch);
+  border-radius: var(--badge-radius, 5rem);
+  background: var(--badge-bg, var(--brand));
+  color: var(--badge-color, var(--on-brand));
+  font-size: 0.75em;
+  font-weight: bolder;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
