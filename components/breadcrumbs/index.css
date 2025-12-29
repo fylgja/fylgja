@@ -1,30 +1,33 @@
-:where(.breadcrumbs) {
-  --breadcrumbs-separator: "/";
-  --breadcrumbs-gap: 0.5rem;
+:where(.breadcrumbs, .breadcrumbs > ol) {
   display: flex;
   gap: var(--breadcrumbs-gap);
 }
-:where(.breadcrumbs) li {
+
+.breadcrumbs {
+  --breadcrumbs-separator: "/";
+  --breadcrumbs-gap: 0.5rem;
+}
+.breadcrumbs li {
   display: inline-flex;
   align-items: center;
   gap: var(--breadcrumbs-gap);
   white-space: nowrap;
 }
-:where(.breadcrumbs) li + li::before {
+.breadcrumbs :where(li + li)::before {
   content: var(--breadcrumbs-separator);
 }
 @supports (content: "a"/"a") {
-  :where(.breadcrumbs) li + li::before {
+  .breadcrumbs :where(li + li)::before {
     content: var(--breadcrumbs-separator)/"";
   }
 }
-:where(.breadcrumbs) a {
+.breadcrumbs a {
+  font-weight: normal;
   text-decoration: none;
 }
-:where(.breadcrumbs) a:hover {
+.breadcrumbs a:where(:hover:not([aria-current=page])) {
   text-decoration: underline;
 }
-:where(.breadcrumbs) a[aria-current=page] {
+.breadcrumbs a:where([aria-current=page]) {
   font-weight: bolder;
-  text-decoration: none;
 }

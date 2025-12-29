@@ -1,11 +1,14 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-:where(.breadcrumbs) {
-	--breadcrumbs-separator: "/";
-	--breadcrumbs-gap: 0.5rem;
+:where(.breadcrumbs, .breadcrumbs > ol) {
 	display: flex;
 	gap: var(--breadcrumbs-gap);
+}
+
+.breadcrumbs {
+	--breadcrumbs-separator: "/";
+	--breadcrumbs-gap: 0.5rem;
 
 	li {
 		display: inline-flex;
@@ -14,7 +17,7 @@
 		white-space: nowrap;
 	}
 
-	li + li::before {
+	:where(li + li)::before {
 		content: var(--breadcrumbs-separator);
 
 		@supports (content: "a" / "a") {
@@ -23,15 +26,15 @@
 	}
 
 	a {
+		font-weight: normal;
 		text-decoration: none;
 
-		&:hover {
+		&:where(:hover:not([aria-current="page"])) {
 			text-decoration: underline;
 		}
 
-		&[aria-current="page"] {
+		&:where([aria-current="page"]) {
 			font-weight: bolder;
-			text-decoration: none;
 		}
 	}
 }
