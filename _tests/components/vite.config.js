@@ -1,24 +1,23 @@
 import path from "path";
 import { defineConfig } from "vite";
 
+function pkgPath(path) {
+	return `../../${path}`;
+}
+
 export default defineConfig({
 	plugins: [],
 	resolve: {
 		alias: {
-			"@fylgja/base": path.resolve(__dirname, "../../base"),
-			"@fylgja/badge": path.resolve(__dirname, "../../components/badge"),
-			"@fylgja/input-group": path.resolve(
-				__dirname,
-				"../../components/input-group",
-			),
-			"@fylgja/toast": path.resolve(__dirname, "../../components/toast"),
-			"@fylgja/card": path.resolve(__dirname, "../../components/card"),
-			"@fylgja/form-extend": path.resolve(
-				__dirname,
-				"../../components/form-extend",
-			),
-			"@fylgja/tokens": path.resolve(__dirname, "../../tokens"),
-			"@fylgja/utilities": path.resolve(__dirname, "../../utilities"),
+			"@fylgja/badge": pkgPath("components/badge"),
+			"@fylgja/base": pkgPath("base"),
+			"@fylgja/breadcrumbs": pkgPath("components/breadcrumbs"),
+			"@fylgja/card": pkgPath("components/card"),
+			"@fylgja/form-extend": pkgPath("components/form-extend"),
+			"@fylgja/input-group": pkgPath("components/input-group"),
+			"@fylgja/toast": pkgPath("components/toast"),
+			"@fylgja/tokens": pkgPath("tokens"),
+			"@fylgja/utilities": pkgPath("utilities"),
 		},
 	},
 });

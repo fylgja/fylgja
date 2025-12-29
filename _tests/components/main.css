@@ -4,6 +4,7 @@
 
 @import url("@fylgja/input-group");
 @import url("@fylgja/badge");
+@import url("@fylgja/breadcrumbs");
 @import url("@fylgja/card");
 @import url("@fylgja/form-extend");
 @import url("@fylgja/toast");
