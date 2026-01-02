@@ -20,6 +20,7 @@
     "custom properties",
     "design-tokens",
     "figma-tokens",
+    "tailwindcss",
     "style-dictionary"
   ],
   "scripts": {
@@ -52,6 +53,7 @@
     },
     "./css": "./css/index.css",
     "./css.min": "./css/index.min.css",
+    "./tailwind": "./tailwind/index.css",
     "./tokens": "./tokens/fylgja.tokens.json",
     "./figma": "./tokens/figma-tokens.json",
     "./figma.sync": "./tokens/figma-tokens.sync.json",

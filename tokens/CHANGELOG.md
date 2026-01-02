@@ -7,12 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.0 - 2026-01-02
+
+### Added
+
+- Gray colors to static colors output
+- Static Colors to CSS import options
+- Support for TailwindCSS
+
+### Changed
+
+- **Partial Breaking change**: Reworked the shadows to simpler solution for colors, allowing easier adjustmen using only 1 CSS var
+  if you used the internal option for shadow weights, make sure to update this import.
+  If you used the `--shadow-color-{umbra,penumbra,ambient}` or `--shadow-strength` CSS vars, make sure to update this to `--shadow-color`.
+
 ## 2.1.0 - 2025-07-19
 
 ### Added
+
 - Support for animations on the **hue** values
 
 ### Fixed
+
 - Incorrect type output in `design-token` syntax
 
 ## 2.0.0 - 2025-03-16
