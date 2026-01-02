@@ -100,39 +100,14 @@ export default {
   "--lineHeight-3": "1.375",
   "--lineHeight-4": "1.5",
   "--lineHeight-5": "1.8",
-  "--shadow-color-umbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 20%), #0000)",
-  "--shadow-color-penumbra": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 14%), #0000)",
-  "--shadow-color-ambient": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), #0000)",
-  "--shadow-1": [
-    "0 2px 1px -1px var(--shadow-color-umbra)",
-    "0 1px 1px var(--shadow-color-penumbra)",
-    "0 1px 3px var(--shadow-color-ambient)"
-  ],
-  "--shadow-2": [
-    "0 3px 3px -2px var(--shadow-color-umbra)",
-    "0 3px 4px var(--shadow-color-penumbra)",
-    "0 1px 8px var(--shadow-color-ambient)"
-  ],
-  "--shadow-3": [
-    "0 3px 5px -1px var(--shadow-color-umbra)",
-    "0 6px 10px var(--shadow-color-penumbra)",
-    "0 1px 18px var(--shadow-color-ambient)"
-  ],
-  "--shadow-4": [
-    "0 5px 5px -3px var(--shadow-color-umbra)",
-    "0 8px 10px 1px var(--shadow-color-penumbra)",
-    "0 3px 14px 2px var(--shadow-color-ambient)"
-  ],
-  "--shadow-5": [
-    "0 7px 8px -4px var(--shadow-color-umbra)",
-    "0 12px 17px 2px var(--shadow-color-penumbra)",
-    "0 5px 22px 4px var(--shadow-color-ambient)"
-  ],
-  "--shadow-6": [
-    "0 8px 10px -5px var(--shadow-color-umbra)",
-    "0 16px 24px 2px var(--shadow-color-penumbra)",
-    "0 6px 30px 5px var(--shadow-color-ambient)"
-  ],
+  "--shadow-color-DEFAULT": "hsl(0 0 0 / 10%)",
+  "--shadow-color--@": "@property --shadow-color { syntax: \"<color>\"; inherits: true; initial-value: hsl(0 0 0 / 10%); }",
+  "--shadow-1": "0 2px 1px -1px var(--shadow-color), 0 1px 1px var(--shadow-color), 0 1px 3px var(--shadow-color)",
+  "--shadow-2": "0 3px 3px -2px var(--shadow-color), 0 3px 4px var(--shadow-color), 0 1px 8px var(--shadow-color)",
+  "--shadow-3": "0 3px 5px -1px var(--shadow-color), 0 6px 10px var(--shadow-color), 0 1px 18px var(--shadow-color)",
+  "--shadow-4": "0 5px 5px -3px var(--shadow-color), 0 8px 10px 1px var(--shadow-color), 0 3px 14px 2px var(--shadow-color)",
+  "--shadow-5": "0 7px 8px -4px var(--shadow-color), 0 12px 17px 2px var(--shadow-color), 0 5px 22px 4px var(--shadow-color)",
+  "--shadow-6": "0 8px 10px -5px var(--shadow-color), 0 16px 24px 2px var(--shadow-color), 0 6px 30px 5px var(--shadow-color)",
   "--spacing": "0.25rem",
   "--size-1": "calc(var(--spacing) * 1)",
   "--size-2": "calc(var(--spacing) * 2)",

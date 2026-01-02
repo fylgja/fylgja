@@ -289,7 +289,7 @@
 	--shadow-2xl: 0 8px 10px -5px #0001, 0 16px 24px 2px #0001, 0 6px 30px 5px #0001;
 	--spacing-content: 64ch;
 	--spacing-heading: 36ch;
-	--breakpoint-sm: 80px;
+	--breakpoint-sm: 480px;
 	--breakpoint-md: 768px;
 	--breakpoint-lg: 1024px;
 	--breakpoint-xl: 1440px;

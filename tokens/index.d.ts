@@ -131,17 +131,16 @@ declare const _default: {
         "5": string;
     };
     "shadow-color": {
-        umbra: string;
-        penumbra: string;
-        ambient: string;
+        DEFAULT: string;
+        "-@": string;
     };
     shadow: {
-        "1": string[];
-        "2": string[];
-        "3": string[];
-        "4": string[];
-        "5": string[];
-        "6": string[];
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
     };
     spacing: string;
     size: {
@@ -184,6 +183,5 @@ declare const _default: {
         "5": number;
     };
     "shadow-color-@media:dark": string;
-    "shadow-strength-@media:dark": string;
 };
 export default _default;

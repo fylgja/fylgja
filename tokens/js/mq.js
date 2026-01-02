@@ -2,7 +2,7 @@
 // Licensed under MIT Open Source
 
 const breakpoints = {
-	sm: "80px",
+	sm: "480px",
 	md: "768px",
 	lg: "1024px",
 	xl: "1440px",
