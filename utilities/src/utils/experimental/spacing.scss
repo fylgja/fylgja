@@ -22,7 +22,7 @@ $utils: (
 ) !default;
 
 $type: "type(auto | <length-percentage>)";
-$prefix: "style";
+$prefix: "data";
 
 [#{$prefix}-size] {
 	block-size: attr(#{$prefix}-size #{$type}, 1rem);
