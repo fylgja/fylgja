@@ -111,7 +111,7 @@ summary) {
   display: none;
 }
 
-.entry-content, .prose {
+article, .entry-content, .prose {
   --text-flow: 1em 1rem;
   --separator-flow: 2.5em;
   --list-flow: 0.5em;
