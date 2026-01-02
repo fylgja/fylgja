@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.3 - 2026-01-02
+
+### Changed
+
+- Make the Scoped Typography also work with the `<article>` tag, for a classless experience.
+
 ## 2.1.2 - 2025-12-27
 
 ### Changed
