@@ -101,7 +101,19 @@ Object.entries(twProps).forEach(([tokenName, tokens]) => {
 		twFileName = `aspect-ratio`;
 	}
 
-	if (["breakpoint", "color", "shadow"].includes(tokenName)) {
+	if (tokenName === "ease") {
+		twFileName = `easing`;
+	}
+
+	if (tokenName === "breakpoint") {
+		twFileName = `mq`;
+	}
+
+	if (tokenName === "spacing") {
+		twFileName = `sizes`;
+	}
+
+	if (["color", "shadow"].includes(tokenName)) {
 		twFileName = `${tokenName}s`;
 	}
 
