@@ -1,14 +1,33 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-function replaceChromaHue(colors, hue) {
+function replaceChromaHue(colors, hue = 0, chroma = 1) {
 	return Object.fromEntries(
 		Object.entries(colors).map(([key, value]) => {
+			let newChroma;
 			value = value.toString();
-			value = value.replace(/calc\(([^*]+)\s\*\svar\(.*?\)\)/, "$1");
+
+			if (chroma < 1) {
+				const chromaValue = value.match(/calc\(([^ *]+)/)[1];
+				newChroma = (parseFloat(chromaValue) * chroma).toFixed(3);
+			}
+
+			value = value.replace(
+				/calc\(([^*]+)\s\*\svar\(.*?\)\)/,
+				newChroma ?? "$1",
+			);
 			value = value.replace("var(--hue, 0)", hue);
 			return [key, value];
 		}),
+	);
+}
+
+function replaceNumberKeysToShadeKeys(values) {
+	const keys = [
+		0, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950, 1000,
+	];
+	return Object.fromEntries(
+		Object.keys(values).map((key, index) => [keys[index], values[key]]),
 	);
 }
 
@@ -63,6 +82,20 @@ const staticColors = {
 	yellow: replaceChromaHue(colors.color, hues.hue.yellow),
 	orange: replaceChromaHue(colors.color, hues.hue.orange),
 	red: replaceChromaHue(colors.color, hues.hue.red),
+
+	// Gray values
+	slate: replaceChromaHue(colors.color, hues.hue.blue, 0.2),
+	gray: replaceChromaHue(colors.color, hues.hue.blue, 0.1),
+	stone: replaceChromaHue(colors.color, hues.hue.green, 0.1),
+	zinc: replaceChromaHue(colors.color, hues.hue.red, 0.1),
 };
 
-export { colors as default, colors, hues, staticColors };
+// A.k.a. Tailwind syntax
+const shadeColors = Object.fromEntries(
+	Object.entries(staticColors).map(([name, colors]) => [
+		name,
+		replaceNumberKeysToShadeKeys(colors),
+	]),
+);
+
+export { colors as default, colors, hues, staticColors, shadeColors };
