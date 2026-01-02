@@ -1,17 +1,25 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-export default {
-	sm: "(width >= 480px)",
-	smMax: "(width < 480px)",
-	md: "(width >= 768px)",
-	mdMax: "(width < 768px)",
-	lg: "(width >= 1024px)",
-	lgMax: "(width < 1024px)",
-	xl: "(width >= 1440px)",
-	xlMax: "(width < 1440px)",
-	xxl: "(width >= 1920px)",
-	xxlMax: "(width < 1920px)",
+const breakpoints = {
+	sm: "80px",
+	md: "768px",
+	lg: "1024px",
+	xl: "1440px",
+	"2xl": "1920px",
+};
+
+const mq = {
+	sm: `(width >= ${breakpoints.sm})`,
+	smMax: `(width < ${breakpoints.sm})`,
+	md: `(width >= ${breakpoints.md})`,
+	mdMax: `(width < ${breakpoints.md})`,
+	lg: `(width >= ${breakpoints.lg})`,
+	lgMax: `(width < ${breakpoints.lg})`,
+	xl: `(width >= ${breakpoints.xl})`,
+	xlMax: `(width < ${breakpoints.xl})`,
+	xxl: `(width >= ${breakpoints["2xl"]})`,
+	xxlMax: `(width < ${breakpoints["2xl"]})`,
 
 	// Device input
 	hdColor: "(dynamic-range: high)",
@@ -39,3 +47,5 @@ export default {
 	portrait: "(orientation: portrait)",
 	landscape: "(orientation: landscape)",
 };
+
+export { mq as default, mq, breakpoints };
