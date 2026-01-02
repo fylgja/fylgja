@@ -28,6 +28,186 @@
       "value": "1.618/1",
       "type": "other"
     },
+    "slate-0": {
+      "value": "oklch(99% 0.006 260)",
+      "type": "other"
+    },
+    "slate-1": {
+      "value": "oklch(95% 0.012 260)",
+      "type": "other"
+    },
+    "slate-2": {
+      "value": "oklch(90% 0.024 260)",
+      "type": "other"
+    },
+    "slate-3": {
+      "value": "oklch(88% 0.028 260)",
+      "type": "other"
+    },
+    "slate-4": {
+      "value": "oklch(82% 0.032 260)",
+      "type": "other"
+    },
+    "slate-5": {
+      "value": "oklch(78% 0.034 260)",
+      "type": "other"
+    },
+    "slate-6": {
+      "value": "oklch(68% 0.038 260)",
+      "type": "other"
+    },
+    "slate-7": {
+      "value": "oklch(58% 0.042 260)",
+      "type": "other"
+    },
+    "slate-8": {
+      "value": "oklch(52% 0.040 260)",
+      "type": "other"
+    },
+    "slate-9": {
+      "value": "oklch(44% 0.036 260)",
+      "type": "other"
+    },
+    "slate-10": {
+      "value": "oklch(35% 0.030 260)",
+      "type": "other"
+    },
+    "slate-11": {
+      "value": "oklch(28% 0.024 260)",
+      "type": "other"
+    },
+    "slate-12": {
+      "value": "oklch(20% 0.020 260)",
+      "type": "other"
+    },
+    "slate-13": {
+      "value": "oklch(15% 0.014 260)",
+      "type": "other"
+    },
+    "slate-14": {
+      "value": "oklch(11% 0.010 260)",
+      "type": "other"
+    },
+    "stone-0": {
+      "value": "oklch(99% 0.003 140)",
+      "type": "other"
+    },
+    "stone-1": {
+      "value": "oklch(95% 0.006 140)",
+      "type": "other"
+    },
+    "stone-2": {
+      "value": "oklch(90% 0.012 140)",
+      "type": "other"
+    },
+    "stone-3": {
+      "value": "oklch(88% 0.014 140)",
+      "type": "other"
+    },
+    "stone-4": {
+      "value": "oklch(82% 0.016 140)",
+      "type": "other"
+    },
+    "stone-5": {
+      "value": "oklch(78% 0.017 140)",
+      "type": "other"
+    },
+    "stone-6": {
+      "value": "oklch(68% 0.019 140)",
+      "type": "other"
+    },
+    "stone-7": {
+      "value": "oklch(58% 0.021 140)",
+      "type": "other"
+    },
+    "stone-8": {
+      "value": "oklch(52% 0.020 140)",
+      "type": "other"
+    },
+    "stone-9": {
+      "value": "oklch(44% 0.018 140)",
+      "type": "other"
+    },
+    "stone-10": {
+      "value": "oklch(35% 0.015 140)",
+      "type": "other"
+    },
+    "stone-11": {
+      "value": "oklch(28% 0.012 140)",
+      "type": "other"
+    },
+    "stone-12": {
+      "value": "oklch(20% 0.010 140)",
+      "type": "other"
+    },
+    "stone-13": {
+      "value": "oklch(15% 0.007 140)",
+      "type": "other"
+    },
+    "stone-14": {
+      "value": "oklch(11% 0.005 140)",
+      "type": "other"
+    },
+    "zinc-0": {
+      "value": "oklch(99% 0.003 25)",
+      "type": "other"
+    },
+    "zinc-1": {
+      "value": "oklch(95% 0.006 25)",
+      "type": "other"
+    },
+    "zinc-2": {
+      "value": "oklch(90% 0.012 25)",
+      "type": "other"
+    },
+    "zinc-3": {
+      "value": "oklch(88% 0.014 25)",
+      "type": "other"
+    },
+    "zinc-4": {
+      "value": "oklch(82% 0.016 25)",
+      "type": "other"
+    },
+    "zinc-5": {
+      "value": "oklch(78% 0.017 25)",
+      "type": "other"
+    },
+    "zinc-6": {
+      "value": "oklch(68% 0.019 25)",
+      "type": "other"
+    },
+    "zinc-7": {
+      "value": "oklch(58% 0.021 25)",
+      "type": "other"
+    },
+    "zinc-8": {
+      "value": "oklch(52% 0.020 25)",
+      "type": "other"
+    },
+    "zinc-9": {
+      "value": "oklch(44% 0.018 25)",
+      "type": "other"
+    },
+    "zinc-10": {
+      "value": "oklch(35% 0.015 25)",
+      "type": "other"
+    },
+    "zinc-11": {
+      "value": "oklch(28% 0.012 25)",
+      "type": "other"
+    },
+    "zinc-12": {
+      "value": "oklch(20% 0.010 25)",
+      "type": "other"
+    },
+    "zinc-13": {
+      "value": "oklch(15% 0.007 25)",
+      "type": "other"
+    },
+    "zinc-14": {
+      "value": "oklch(11% 0.005 25)",
+      "type": "other"
+    },
     "ease-1": {
       "value": "cubic-bezier(0.25, 0.1, 0.1, 1)",
       "type": "other"
@@ -1041,43 +1221,99 @@
     "red-14": {
       "value": "oklch(11% .05 25)",
       "type": "color"
+    },
+    "gray-0": {
+      "value": "oklch(99% 0.003 260)",
+      "type": "color"
+    },
+    "gray-1": {
+      "value": "oklch(95% 0.006 260)",
+      "type": "color"
+    },
+    "gray-2": {
+      "value": "oklch(90% 0.012 260)",
+      "type": "color"
+    },
+    "gray-3": {
+      "value": "oklch(88% 0.014 260)",
+      "type": "color"
+    },
+    "gray-4": {
+      "value": "oklch(82% 0.016 260)",
+      "type": "color"
+    },
+    "gray-5": {
+      "value": "oklch(78% 0.017 260)",
+      "type": "color"
+    },
+    "gray-6": {
+      "value": "oklch(68% 0.019 260)",
+      "type": "color"
+    },
+    "gray-7": {
+      "value": "oklch(58% 0.021 260)",
+      "type": "color"
+    },
+    "gray-8": {
+      "value": "oklch(52% 0.020 260)",
+      "type": "color"
+    },
+    "gray-9": {
+      "value": "oklch(44% 0.018 260)",
+      "type": "color"
+    },
+    "gray-10": {
+      "value": "oklch(35% 0.015 260)",
+      "type": "color"
+    },
+    "gray-11": {
+      "value": "oklch(28% 0.012 260)",
+      "type": "color"
+    },
+    "gray-12": {
+      "value": "oklch(20% 0.010 260)",
+      "type": "color"
+    },
+    "gray-13": {
+      "value": "oklch(15% 0.007 260)",
+      "type": "color"
+    },
+    "gray-14": {
+      "value": "oklch(11% 0.005 260)",
+      "type": "color"
     }
   },
   "boxShadow": {
-    "shadow-color-umbra": {
-      "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 20%), #0000)",
+    "shadow-color-DEFAULT": {
+      "value": "hsl(0 0 0 / 10%)",
       "type": "boxShadow"
     },
-    "shadow-color-penumbra": {
-      "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 14%), #0000)",
-      "type": "boxShadow"
-    },
-    "shadow-color-ambient": {
-      "value": "color-mix(in srgb, var(--shadow-color, gray) calc(var(--shadow-strength, 1%) + 12%), #0000)",
+    "shadow-color--@": {
+      "value": "@property --shadow-color { syntax: \"<color>\"; inherits: true; initial-value: hsl(0 0 0 / 10%); }",
       "type": "boxShadow"
     },
     "shadow-1": {
-      "value": "0 2px 1px -1px {shadow.color.umbra.value},0 1px 1px {shadow.color.penumbra.value},0 1px 3px {shadow.color.ambient.value}",
+      "value": "0 2px 1px -1px {shadow.color.value}, 0 1px 1px {shadow.color.value}, 0 1px 3px {shadow.color.value}",
       "type": "boxShadow"
     },
     "shadow-2": {
-      "value": "0 3px 3px -2px {shadow.color.umbra.value},0 3px 4px {shadow.color.penumbra.value},0 1px 8px {shadow.color.ambient.value}",
+      "value": "0 3px 3px -2px {shadow.color.value}, 0 3px 4px {shadow.color.value}, 0 1px 8px {shadow.color.value}",
       "type": "boxShadow"
     },
     "shadow-3": {
-      "value": "0 3px 5px -1px {shadow.color.umbra.value},0 6px 10px {shadow.color.penumbra.value},0 1px 18px {shadow.color.ambient.value}",
+      "value": "0 3px 5px -1px {shadow.color.value}, 0 6px 10px {shadow.color.value}, 0 1px 18px {shadow.color.value}",
       "type": "boxShadow"
     },
     "shadow-4": {
-      "value": "0 5px 5px -3px {shadow.color.umbra.value},0 8px 10px 1px {shadow.color.penumbra.value},0 3px 14px 2px {shadow.color.ambient.value}",
+      "value": "0 5px 5px -3px {shadow.color.value}, 0 8px 10px 1px {shadow.color.value}, 0 3px 14px 2px {shadow.color.value}",
       "type": "boxShadow"
     },
     "shadow-5": {
-      "value": "0 7px 8px -4px {shadow.color.umbra.value},0 12px 17px 2px {shadow.color.penumbra.value},0 5px 22px 4px {shadow.color.ambient.value}",
+      "value": "0 7px 8px -4px {shadow.color.value}, 0 12px 17px 2px {shadow.color.value}, 0 5px 22px 4px {shadow.color.value}",
       "type": "boxShadow"
     },
     "shadow-6": {
-      "value": "0 8px 10px -5px {shadow.color.umbra.value},0 16px 24px 2px {shadow.color.penumbra.value},0 6px 30px 5px {shadow.color.ambient.value}",
+      "value": "0 8px 10px -5px {shadow.color.value}, 0 16px 24px 2px {shadow.color.value}, 0 6px 30px 5px {shadow.color.value}",
       "type": "boxShadow"
     }
   },
