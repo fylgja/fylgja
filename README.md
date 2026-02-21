@@ -28,23 +28,23 @@ Built with modularity in mind, Fylgja CSS allows you to pick exactly what you ne
 
 Fylgja offers a suite of packages tailored to your development needs:
 
-### [Fylgja Base](https://fylgja.dev/base/)
+### [Fylgja Base](https://fylgja.dev/library/base/)
 A robust foundation that goes beyond basic resets.
 - Provides sensible default styles for common HTML elements using classless styling.
 - Ensures cross-browser consistency without unnecessary overrides, leveraging `:where` for zero specificity.
 - **Includes:** Improved browser defaults, form controls, and button styles out of the box.
 
-### [Fylgja Tokens](https://fylgja.dev/tokens/)
+### [Fylgja Tokens](https://fylgja.dev/library/tokens/)
 A centralized system for managing design values (colors, spacing, typography).
 - Available as SCSS or CSS variables for easy integration.
 - Use Fylgja's build tools to tailor tokens to your specific brand requirements.
 
-### [Fylgja Utilities](https://fylgja.dev/utilities/)
+### [Fylgja Utilities](https://fylgja.dev/library/utilities/)
 A collection of focused CSS utility classes.
 - Designed to complement—not replace—utility-first frameworks.
 - Seamlessly integrates with Fylgja Tokens and other variable-driven systems.
 
-### [Fylgja Components](https://fylgja.dev/components/components/)
+### [Fylgja Components](https://fylgja.dev/library/components/)
 Ready-to-use, single-class components for building complex UI elements.
 - Accelerates development with pre-styled, accessible components.
 - Available as individual packages (e.g., `@fylgja/card`, `@fylgja/dialog`).
