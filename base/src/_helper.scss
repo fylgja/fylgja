@@ -1,0 +1,12 @@
+/// Returns a CSS variable with a fallback if provided.
+///
+/// @param {String} $name - The variable name.
+/// @param {Any} $var - The fallback value.
+/// @return {String} - The CSS variable.
+@function var-if($name, $var) {
+	@if $var {
+		@return var(--#{$name}, #{$var});
+	} @else {
+		@return var(--#{$name});
+	}
+}

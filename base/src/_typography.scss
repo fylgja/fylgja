@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "./helper" as *;
+
 $selectors: ":root" !default;
 $text-flow: 1em 1rem !default;
 $separator-flow: 2.5em !default;
@@ -159,6 +161,6 @@ $code-color: null !default;
 :where(pre, :not(pre) > code) {
 	border-radius: var(--code-radius, #{$code-radius});
 	border: 1px solid var(--code-stroke, #{$code-stroke});
-	background: var(--code-bg#{if($code-bg, ", " $code-bg, "")});
-	color: var(--code-color#{if($code-color, ", " $code-color, "")});
+	background: var-if("code-bg", $code-bg);
+	color: var-if("code-color", $code-color);
 }

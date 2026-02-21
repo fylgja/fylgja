@@ -1,6 +1,8 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "../helper" as *;
+
 $motion-safe: "prefers-reduced-motion: no-preference";
 
 $bg: color-mix(in oklab, var(--root-bg) 88%, white);
@@ -27,8 +29,8 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 	position: fixed; // 1
 	max-block-size: calc(100% - var(--screen-y));
 	max-inline-size: calc(100% - var(--screen-x));
-	background-color: var(--dialog-bg#{if($bg, ", " $bg, "")});
-	color: var(--dialog-color#{if($color, ", " $color, "")});
+	background-color: var-if("dialog-bg", $bg);
+	color: var-if("dialog-color", $color);
 	border-radius: $radius;
 	margin-block: var(--my);
 	margin-inline: var(--mx);
