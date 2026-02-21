@@ -6,7 +6,7 @@
   </a>
 </div>
 
-**Your Modular CSS Companion**
+**Your CSS Companion**
 
 [![Fylgja](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffylgja%2F.github%2Frefs%2Fheads%2Fmain%2Fassets%2Fbadge%2Fv1.0.0.json)](https://fylgja.dev/)
 [![CI](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja/test.yml?color=%230969da&label=&branch=main&logo=github&labelColor=%232b1c2c)](https://github.com/fylgja/fylgja/actions)
