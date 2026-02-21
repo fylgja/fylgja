@@ -39,7 +39,6 @@ $thumb-color: var(--form-active-color, currentcolor) !default;
 	--thumb-stroke: #{$thumb-stroke};
 	--thumb-stroke-size: #{$thumb-stroke-size};
 	--thumb-color: #{$thumb-color};
-
 	display: block;
 	appearance: none;
 	min-block-size: var(--thumb-size-y);

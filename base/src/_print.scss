@@ -8,7 +8,7 @@
 	}
 
 	:is(h1, h2, h3, h4, h5, h6) {
-		page-break-after: avoid;
+		break-after: avoid;
 	}
 
 	:is(h2, h3, h4, h5, h6, p) {
@@ -17,7 +17,7 @@
 	}
 
 	:is(tr, img, svg, pre, blockquote) {
-		page-break-inside: avoid;
+		break-inside: avoid;
 	}
 
 	abbr[title]::after {

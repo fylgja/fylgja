@@ -29,6 +29,7 @@ $extra-root-props: () !default;
 	--control-checked-stroke: var(--brand);
 	--control-checked-bg: var(--brand);
 	--control-checked-color: var(--on-brand);
+	// stylelint-disable-next-line at-rule-empty-line-before
 	@each $property, $value in $extra-root-props {
 		#{$property}: $value;
 	}

@@ -83,7 +83,6 @@ $anchor-offset: 6ex !default;
 }
 
 // Prevent touch delay on touch devices
-// prettier-ignore
 :where(
 	:any-link,
 	button,
@@ -98,7 +97,6 @@ $anchor-offset: 6ex !default;
 }
 
 // Set a default cursor for interactive elements
-// prettier-ignore
 :where(
 	:any-link,
 	button,
@@ -113,6 +111,7 @@ $anchor-offset: 6ex !default;
 // Correct the inability to style the border radius for buttons in iOS Safari.
 :where([type="button"], [type="submit"], [type="reset"], button),
 ::file-selector-button {
+	// stylelint-disable-next-line declaration-property-value-keyword-no-deprecated
 	appearance: button;
 }
 

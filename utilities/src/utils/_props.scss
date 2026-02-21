@@ -19,6 +19,7 @@ $breakpoints: (
 
 	@if $next-has-key {
 		$next-key-value: list.nth($keys, $next-key);
+
 		@return map.get($map, $next-key-value);
 	} @else {
 		@return "";
