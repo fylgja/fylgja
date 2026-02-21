@@ -242,7 +242,7 @@ summary) {
 :where(pre, :not(pre) > code) {
   border-radius: var(--code-radius, 0.3em);
   border: 1px solid var(--code-stroke, rgba(0, 0, 0, 0.2));
-  background: var(--code-bg,  var(--surface-color));
+  background: var(--code-bg, var(--surface-color));
   color: var(--code-color);
 }
 
@@ -275,7 +275,7 @@ summary) {
   border-block-start-width: 2px;
 }
 
-:where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select, .form-input) {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select), .form-input {
   appearance: none;
   margin: 0;
   padding-block: var(--form-py, 0.4375rem);
@@ -419,7 +419,7 @@ summary) {
 
 :where(select) {
   inline-size: auto;
-  word-wrap: normal;
+  overflow-wrap: normal;
 }
 
 :where(select:not([size]:not([size="1"]), [multiple])) {
@@ -502,7 +502,7 @@ summary) {
   background: var(--datalist-icon) center/contain no-repeat;
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn),
+:is(:where(button, [type=button], [type=submit], [type=reset]), .btn),
 ::file-selector-button {
   display: inline-flex;
   justify-content: center;
@@ -523,24 +523,24 @@ summary) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn) {
+:is(:where(button, [type=button], [type=submit], [type=reset]), .btn) {
   vertical-align: middle;
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):hover,
+:is(:is(:where(button, [type=button], [type=submit], [type=reset]), .btn)):hover,
 ::file-selector-button:hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
+:is(:is(:where(button, [type=button], [type=submit], [type=reset]), .btn)):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:disabled [aria-disabled=true]),
+:is(:is(:where(button, [type=button], [type=submit], [type=reset]), .btn)):is(:disabled, .is-disabled, [aria-disabled=true]),
 :disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
@@ -561,8 +561,8 @@ summary) {
   position: fixed;
   max-block-size: calc(100% - var(--screen-y));
   max-inline-size: calc(100% - var(--screen-x));
-  background-color: var(--dialog-bg,  color-mix(in oklab, var(--root-bg) 88%, white));
-  color: var(--dialog-color,  var(--root-fg));
+  background-color: var(--dialog-bg, color-mix(in oklab, var(--root-bg) 88%, white));
+  color: var(--dialog-color, var(--root-fg));
   border-radius: 1rem;
   margin-block: var(--my);
   margin-inline: var(--mx);
@@ -604,14 +604,14 @@ summary) {
     --root-fg: black;
   }
   :is(h1, h2, h3, h4, h5, h6) {
-    page-break-after: avoid;
+    break-after: avoid;
   }
   :is(h2, h3, h4, h5, h6, p) {
     orphans: 3;
     widows: 3;
   }
   :is(tr, img, svg, pre, blockquote) {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
   abbr[title]::after {
     content: " (" attr(title) ")";

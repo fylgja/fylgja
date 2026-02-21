@@ -146,7 +146,7 @@
 
 :where(select) {
   inline-size: auto;
-  word-wrap: normal;
+  overflow-wrap: normal;
 }
 
 :where(select:not([size]:not([size="1"]), [multiple])) {

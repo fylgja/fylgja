@@ -27,20 +27,20 @@
   vertical-align: middle;
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):hover,
+:is(:where(button, [type=button], [type=submit], [type=reset])):hover,
 ::file-selector-button:hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):is(:active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
+:is(:where(button, [type=button], [type=submit], [type=reset])):is(:active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
 
-:where(button, [type=button], [type=submit], [type=reset]):is(:disabled [aria-disabled=true]),
+:is(:where(button, [type=button], [type=submit], [type=reset])):is(:disabled, [aria-disabled=true]),
 :disabled::file-selector-button {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);

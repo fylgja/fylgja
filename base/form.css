@@ -2,7 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select, .form-input) {
+:where(input:not([type=range], [type=button], [type=reset], [type=submit]), textarea, select), .form-input {
   appearance: none;
   margin: 0;
   padding-block: var(--form-py, 0.4375rem);
@@ -146,7 +146,7 @@
 
 :where(select) {
   inline-size: auto;
-  word-wrap: normal;
+  overflow-wrap: normal;
 }
 
 :where(select:not([size]:not([size="1"]), [multiple])) {

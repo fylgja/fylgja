@@ -2,7 +2,7 @@
  * Fylgja (https://fylgja.dev)
  * Licensed under MIT Open Source
  */
-:where(.btn) {
+.btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -22,17 +22,18 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   vertical-align: middle;
 }
-:where(.btn):hover {
+
+.btn:hover {
   border-color: var(--btn-hover-stroke, var(--btn-stroke));
   background-color: var(--btn-hover-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 86%)));
   color: var(--btn-hover-color, var(--btn-color, currentcolor));
 }
-:where(.btn):is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
+.btn:is(:active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))) {
   border-color: var(--btn-active-stroke, var(--btn-stroke));
   background-color: var(--btn-active-bg, var(--btn-bg, color-mix(in srgb, currentcolor, transparent 78%)));
   color: var(--btn-active-color, var(--btn-color, currentcolor));
 }
-:where(.btn):disabled {
+.btn:is(:disabled, .is-disabled, [aria-disabled=true]) {
   box-shadow: none;
   border-color: var(--btn-disabled-stroke);
   background-color: var(--btn-disabled-bg, color-mix(in srgb, var(--root-bg) 90%, var(--root-fg)));
