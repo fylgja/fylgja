@@ -5,6 +5,8 @@
 
 @use "./buttons" with (
 	$selectors: "button, [type=button], [type=submit], [type=reset]",
+	$wrapper: "where",
+	$disabled-selectors: ":disabled, [aria-disabled=true]",
 	$active-selectors:
 		":active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))"
 );

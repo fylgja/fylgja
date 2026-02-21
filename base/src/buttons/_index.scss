@@ -1,51 +1,61 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:string";
 @use "props" as btn;
 
-$selectors: "button, [type=button], [type=submit], [type=reset], .btn" !default;
-$disabled-selectors: ":disabled [aria-disabled=true]" !default;
+$selectors: ":where(button, [type=button], [type=submit], [type=reset]), .btn" !default;
+
+$disabled-selectors: ":disabled, .is-disabled, [aria-disabled=true]" !default;
 $active-selectors: ":active, .is-active, [aria-current=page], [aria-current=true], [aria-selected=true], :where(:has(input:checked))" !default;
 $use-input-file: true !default;
+$wrapper: "is" !default;
+
+$btn-selectors: $selectors;
+
+@if string.index($btn-selectors, ",") {
+	$btn-selectors: ":#{$wrapper}(#{$selectors})";
+}
 
 @if $use-input-file {
-	:where(#{$selectors}),
+	#{$btn-selectors},
 	::file-selector-button {
 		@include btn.base;
 	}
 
-	:where(#{$selectors}) {
+	#{$btn-selectors} {
 		vertical-align: middle;
 	}
 
-	:where(#{$selectors}):hover,
+	:is(#{$btn-selectors}):hover,
 	::file-selector-button:hover {
 		@include btn.hover;
 	}
 
-	:where(#{$selectors}):is(#{$active-selectors}) {
+	:is(#{$btn-selectors}):is(#{$active-selectors}) {
 		@include btn.active;
 	}
 
-	:where(#{$selectors}):is(#{$disabled-selectors}),
+	:is(#{$btn-selectors}):is(#{$disabled-selectors}),
 	:disabled::file-selector-button {
 		@include btn.disabled;
 	}
 } @else {
-	:where(#{$selectors}) {
+	#{$btn-selectors} {
 		@include btn.base;
 		vertical-align: middle;
+	}
 
+	#{$btn-selectors} {
 		&:hover {
 			@include btn.hover;
 		}
 
-		// prettier-ignore
 		&:is(#{$active-selectors}) {
 			@include btn.active;
 		}
 
-		&:disabled {
+		&:is(#{$disabled-selectors}) {
 			@include btn.disabled;
 		}
 	}
