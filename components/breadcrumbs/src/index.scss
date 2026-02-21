@@ -1,12 +1,12 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-:where(.breadcrumbs, .breadcrumbs > ol) {
+:where(.breadcrumbs, nav[aria-label="breadcrumbs"] > ol) {
 	display: flex;
 	gap: var(--breadcrumbs-gap);
 }
 
-.breadcrumbs {
+:where(.breadcrumbs, nav[aria-label="breadcrumbs"]) {
 	--breadcrumbs-separator: "/";
 	--breadcrumbs-gap: 0.5rem;
 

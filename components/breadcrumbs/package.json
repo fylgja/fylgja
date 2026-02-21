@@ -5,9 +5,6 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "breadcrumbs.css",
-  "sass": "_index.scss",
-  "unpkg": "breadcrumbs.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -17,8 +14,12 @@
   "keywords": [
     "fylgja",
     "fylgja component",
-    "breadcrumbs"
+    "breadcrumbs",
+    "navigation"
   ],
+  "unpkg": "breadcrumbs.css",
+  "style": "breadcrumbs.css",
+  "sass": "src/index.scss",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
