@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-- Allow `.btn` to overide base styles
+## 2.1.4 - 2026-02-21
+
+### Changed
+
+- Increased specificity for `.form-input` and `.btn` to override base styles
+- Optimized print styles by replacing legacy `page-break-*` properties with modern `break-*` properties
+
+### Removed
+
+- Redundant `:is()` usage on class-only button selectors
+
 ## 2.1.3 - 2026-01-02
 
 ### Changed
