@@ -20,9 +20,27 @@
             </div>
         </header>
         <main class="flow" style="--flow: 3rem; --py: 3rem">
-            <section aria-label="breadcrumbs" class="container">
+            <section aria-label="breadcrumbs test section" class="container">
                 <nav aria-label="breadcrumbs">
-                    <ol class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">Fylgja</a></li>
+                        <li><a href="/docs">Docs</a></li>
+                        <li><a href="/docs/core-concepts">Core Concepts</a></li>
+                        <li>
+                            <a aria-current="page" href="/docs/core-concepts/accessibility"
+                                >Accessibility</a
+                            >
+                        </li>
+                    </ol>
+                </nav>
+                <nav aria-label="breadcrumbs with back link">
+                    <a class="lg:hidden btn text-sm" href="/docs/core-concepts">
+                        ← Back to Core Concepts</a
+                    >
+                    <ol
+                        class="breadcrumbs hidden lg:flex"
+                        style="--breadcrumbs-separator: &quot;→&quot;"
+                    >
                         <li><a href="/">Fylgja</a></li>
                         <li><a href="/docs">Docs</a></li>
                         <li><a href="/docs/core-concepts">Core Concepts</a></li>
@@ -76,7 +94,11 @@
             >
                 Heads Up!!
                 <button
-                    onclick="document.querySelector('.toast[data-type=warning]').setAttribute('hidden', '')"
+                    onclick="
+                        document
+                            .querySelector('.toast[data-type=warning]')
+                            .setAttribute('hidden', '')
+                    "
                     style="--btn-stroke: #0000"
                     aria-label="Close Message"
                 >
@@ -495,7 +517,9 @@
                                 type="range"
                                 id="range"
                                 class="w-full"
-                                oninput="rangeCompare.style.setProperty('--range-value', this.value)"
+                                oninput="
+                                    rangeCompare.style.setProperty('--range-value', this.value)
+                                "
                             />
                         </label>
                     </div>
