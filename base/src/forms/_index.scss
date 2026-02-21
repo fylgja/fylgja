@@ -99,7 +99,7 @@ $form-selectors: if(
 
 :where(select) {
 	inline-size: auto;
-	word-wrap: normal; // Remove the inheritance of word-wrap in Safari
+	overflow-wrap: normal; // Remove the inheritance of word-wrap in Safari
 }
 
 :where(select:not([size]:not([size="1"]), [multiple])) {

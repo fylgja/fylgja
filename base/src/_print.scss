@@ -24,8 +24,7 @@
 		content: " (" attr(title) ")";
 	}
 
-	a[href^="https://"]::after
-	{
+	a[href^="https://"]::after {
 		content: " (" attr(href) ")";
 	}
 
