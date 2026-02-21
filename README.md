@@ -1,10 +1,10 @@
 <div align="center">
 
-<a href="https://fylgja.dev/">
-  <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg" alt="Fylgja: Your Modular CSS Toolkit" width="300" height="130">
-</a>
-
-# Fylgja
+<div role="heading" aria-level="1">
+  <a href="https://fylgja.dev/">
+    <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg" alt="Fylgja: Your Modular CSS Toolkit" width="300" height="130">
+  </a>
+</div>
 
 **Your Modular CSS Companion**
 
