@@ -8,13 +8,13 @@ $enable-switch: true !default;
 
 $input-ignore-list: "[type=range], [type=button], [type=reset], [type=submit]";
 $field-ignore-list: "[type=checkbox], [type=radio], [type=range], [type=button], [type=reset], [type=submit]";
-$form-selectors: if(
-	$additional-selectors,
-	"input:not(#{$input-ignore-list}), textarea, select, #{$additional-selectors}",
-	"input:not(#{$input-ignore-list}), textarea, select"
-);
+$form-selectors: ":where(input:not(#{$input-ignore-list}), textarea, select)";
 
-:where(#{$form-selectors}) {
+@if $additional-selectors {
+	$form-selectors: ":where(input:not(#{$input-ignore-list}), textarea, select), #{$additional-selectors}";
+}
+
+#{$form-selectors} {
 	@include form.base;
 }
 
