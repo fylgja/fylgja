@@ -5,9 +5,9 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "vite"
+    "start": "npx vite"
   },
   "devDependencies": {
-    "vite": "^6.4.1"
+    "vite": "^7.3.1"
   }
 }
