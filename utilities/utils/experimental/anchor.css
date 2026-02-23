@@ -1,0 +1,9 @@
+[anchor] {
+  anchor-name: attr(anchor type(<custom-ident>));
+}
+
+[anchortarget] {
+  position-anchor: attr(anchortarget type(<custom-ident>));
+  position-area: bottom;
+  position-try: flip-block;
+}
