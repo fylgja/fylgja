@@ -38,7 +38,8 @@
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
     "rules": {
-      "scss/load-partial-extension": null
+      "scss/load-partial-extension": null,
+      "scss/operator-no-unspaced": null
     },
     "ignoreFiles": [
       "**/_experiments/**/*"
