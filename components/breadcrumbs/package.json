@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/breadcrumbs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "The Fylgja breadcrumbs component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -17,8 +17,8 @@
     "breadcrumbs",
     "navigation"
   ],
-  "unpkg": "breadcrumbs.css",
-  "style": "breadcrumbs.css",
+  "unpkg": "index.min.css",
+  "style": "index.css",
   "sass": "src/index.scss",
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
