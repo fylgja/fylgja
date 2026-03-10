@@ -8,32 +8,46 @@ This directory contains an AI skill definition (`SKILL.md`) for the Fylgja CSS l
 
 To use this skill globally across all your projects so your AI assistant always knows about Fylgja CSS:
 
-Copy the `ai-skill` folder to your Gemini CLI skills directory.
+Install the skill directly using the Gemini CLI.
 
 ```bash
-mkdir -p ~/.gemini/skills/fylgja-css
-cp ai-skill/SKILL.md ~/.gemini/skills/fylgja-css/
+gemini skills install https://github.com/fylgja/fylgja --path ai-skill
 ```
 
-### Claude CLI
-To use this skill globally across all your projects so your AI assistant always knows about Fylgja CSS:
+### Claude Code
 
-Copy the `ai-skill` folder to your Claude CLI skills directory.
+To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
 
 ```bash
-mkdir -p ~/.claude/skills/fylgja-css
-cp ai-skill/SKILL.md ~/.claude/skills/fylgja-css/
+mkdir -p .claude/skills/fylgja
+curl -o .claude/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
-### Other AI CLIs
+### Cursor
 
-To use this skill globally across all your projects with other AI CLI tools, copy the folder to their respective skills directory:
-
-Copy the `ai-skill` folder to the AI CLI's skills directory.
+To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
 
 ```bash
-mkdir -p ~/.<ai-cli-name>/skills/fylgja-css
-cp ai-skill/SKILL.md ~/.<ai-cli-name>/skills/fylgja-css/
+mkdir -p .cursor/skills/fylgja
+curl -o .cursor/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+```
+
+### GitHub Copilot
+
+To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
+
+```bash
+mkdir -p .github/skills/fylgja
+curl -o .github/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+```
+
+### Other AI Agents
+
+If your CLI agent uses a different folder (like `.codex` or `.opencode`), just replace the folder name in the path:
+
+```bash
+mkdir -p .YOUR_AGENT_FOLDER/skills/fylgja
+curl -o .YOUR_AGENT_FOLDER/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
 ### Local Project Installation
