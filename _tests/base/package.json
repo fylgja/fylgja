@@ -9,7 +9,7 @@
     "mobile": "vite --host"
   },
   "devDependencies": {
-    "vite": "^6.4.1"
+    "vite": "^6.4.2"
   },
   "dependencies": {
     "dark-mode-toggle": "^0.16.1"
