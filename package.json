@@ -23,17 +23,17 @@
     "test": "npx stylelint **/*.scss"
   },
   "dependencies": {
-    "@fylgja/base": "^2.1.1",
-    "@fylgja/tokens": "^2.1.0",
-    "@fylgja/utilities": "^2.1.1"
+    "@fylgja/base": "^2.1.4",
+    "@fylgja/tokens": "^2.2.0",
+    "@fylgja/utilities": "^2.1.2"
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^8.0.1",
-    "lightningcss-cli": "^1.30.1",
-    "prettier": "^3.6.2",
-    "sass": "^1.89.2",
-    "stylelint": "^17.3.0",
-    "typescript": "^6.0.2"
+    "lightningcss-cli": "^1.32.0",
+    "prettier": "^3.8.3",
+    "sass": "^1.100.0",
+    "stylelint": "^17.12.0",
+    "typescript": "^6.0.3"
   },
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
