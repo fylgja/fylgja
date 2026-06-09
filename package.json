@@ -33,7 +33,7 @@
     "prettier": "^3.6.2",
     "sass": "^1.89.2",
     "stylelint": "^17.3.0",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.2"
   },
   "stylelint": {
     "extends": "@fylgja/stylelint-config",
