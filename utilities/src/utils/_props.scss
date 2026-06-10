@@ -34,7 +34,7 @@ $breakpoints: (
 @mixin for-mq($range: "min", $map: $breakpoints, $var-syntax: false) {
 	@if $var-syntax {
 		@each $name, $mq in $map {
-			$syntax: if($range == "max", "--#{$name}-max", "--#{$name}");
+			$syntax: if(sass($range == "max"): "--#{$name}-max"; else: "--#{$name}");
 
 			@media ($syntax) {
 				@content ($name);
@@ -44,21 +44,13 @@ $breakpoints: (
 		@each $name, $mq in $map {
 			@if $range == "minmax" {
 				$next-mq: map-get-next($map, $name);
-				$syntax: if(
-					$next-mq != "",
-					"#{$mq} <= width <= #{$next-mq}",
-					"width >= #{$mq}"
-				);
+				$syntax: if(sass($next-mq != ""): "#{$mq} <= width <= #{$next-mq}"; else: "width >= #{$mq}");
 
 				@media ($syntax) {
 					@content ($name);
 				}
 			} @else {
-				$syntax: if(
-					$range == "max",
-					"width < #{$mq}",
-					"width >= #{$mq}"
-				);
+				$syntax: if(sass($range == "max"): "width < #{$mq}"; else: "width >= #{$mq}");
 
 				@media ($syntax) {
 					@content ($name);
