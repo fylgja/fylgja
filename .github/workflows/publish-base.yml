@@ -12,6 +12,9 @@ jobs:
   npm-publish:
     if: "contains(github.event.head_commit.message, 'Release base')"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./base
     permissions:
       id-token: write
       contents: read
@@ -21,6 +24,7 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org/
-      - run: cd ./base
       - run: npm ci
-      - run: NODE_AUTH_TOKEN="" npm publish --access public
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ""
