@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.3 - 2026-06-10
+
+### Changed
+
+- Updated `if()` syntax in `_props.scss` to use the modern CSS-compatible form, removing the deprecated Sass ternary style. If you compile the SCSS source directly, Sass 1.77.0 or higher is now required.
+-
+### Fixed
+
+- `flex-col` and `flex-wrap` shorthands from setting the default display, if the html element is a dialog or popover
+
 ## 2.1.2 - 2025-12-27
 
 ### Changed

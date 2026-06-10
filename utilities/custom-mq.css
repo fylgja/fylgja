@@ -372,7 +372,6 @@
 
 .lead {
   font-size: var(--lead-size, large);
-  line-height: inherit;
   font-weight: bold;
 }
 
@@ -451,8 +450,11 @@
   --flex-wrap: nowrap;
   --_flexD: var(--flex-dir);
   --_flexW: var(--flex-wrap);
-  display: flex;
   flex-flow: var(--_flexD) var(--_flexW);
+}
+
+:where(:is(.flex-col, .flex-wrap):not(dialog, [popover])) {
+  display: flex;
 }
 
 .flex-col {
