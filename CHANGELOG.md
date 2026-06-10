@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.0 - 2026-06-10
+
+### Added
+
+- New CLI via `npx fylgja@latest add <target>`. Copy any Fylgja CSS file directly into your project without installing anything. Run `npx fylgja@latest help` to see all available targets.
+
+### [@fylgja/base] 2.1.6
+
+Minor fixes and improvements. For full details see the [@fylgja/base] changelog.
+
+### [@fylgja/tokens] 2.2.1
+
+Minor fixes and improvements. For full details see the [@fylgja/tokens] changelog.
+
+### [@fylgja/utilities] 2.1.3
+
+Updated Sass `if()` syntax to the modern CSS-compatible form. Requires Sass 1.77.0 or higher when compiling from source. Also fixes `flex-col` and `flex-wrap` shorthands incorrectly overriding display on dialog and popover elements. For full details see the [@fylgja/utilities] changelog.
+
 ## 2.1.0 - 2025-08-06
 
 This release brings a host of improvements across the Fylgja library, focusing on new features, performance enhancements, and an improved developer experience.
