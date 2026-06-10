@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.1 - 2026-06-10
+
+### Added
+
+- Missing copyright banners to the CSS files so the new npx command, has the right meta information.
+
 ## 2.2.0 - 2026-01-02
 
 ### Added
@@ -40,4 +46,3 @@ highly optimized package.
 ## 1.0.0 - 2023-02-20
 
 Initial Release 🎉
-
