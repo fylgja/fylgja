@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/base",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "Base provides a streamlined starting point for any web project. It’s a collection of class-less solutions, allowing you to focus on building your site.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -31,7 +31,6 @@
   "scripts": {
     "start": "npx sass --no-source-map -w src:./",
     "build:scss": "npx sass --no-source-map src:./",
-    "build": "npx lightningcss --minify --bundle index.css -o index.min.css",
-    "prebuild": "npm run build:scss"
+    "build": "npm run build:scss && npx lightningcss --minify --bundle index.css -o index.min.css"
   }
 }

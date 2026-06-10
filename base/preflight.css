@@ -13,7 +13,7 @@
   --root-bg: hsl(0, 0%, 100%);
   --root-fg: hsl(0, 0%, 8%);
   --family-system: system-ui, sans-serif;
-  --family-mono: ui-monospace, Menlo, Consolas, monospace;
+  --family-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --select-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
   --select-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
   --outline-transition: outline-offset 150ms cubic-bezier(0.25, 0, 0.4, 1);
