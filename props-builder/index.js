@@ -24,6 +24,7 @@ import toCssJitTokens from "./src/to-css-jit.js";
  * @param {Boolean} options.writeToFile
  * @param {string} options.selector
  * @param {string} options.wrapper - Wrapper for Design Tokens
+ * @param {string} options.banner - Prepended to the output as-is
  */
 export const propsBuilder = (
 	props,
@@ -33,6 +34,7 @@ export const propsBuilder = (
 		writeToFile = true,
 		selector = ":where(:root)",
 		wrapper = "",
+		banner = "",
 		inputTypeTokens = false,
 		inputTypeSyntax = "default",
 	} = {},
@@ -96,6 +98,10 @@ export const propsBuilder = (
 			data += JSON.stringify(props, null, 2);
 			data += "\n";
 			break;
+	}
+
+	if (banner) {
+		data = `${banner}\n${data}`;
 	}
 
 	if (writeToFile) {
