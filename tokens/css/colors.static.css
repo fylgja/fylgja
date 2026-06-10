@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 :where(:root) {
 	--color-pink-0: oklch(99% .03 350);
 	--color-pink-1: oklch(95% .06 350);

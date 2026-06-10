@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 @media (prefers-color-scheme: dark) {
 	:where(:root) {
 		--shadow-color: hsl(220 40% 2% / 25%);

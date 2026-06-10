@@ -3,6 +3,10 @@
 
 import { propsBuilder } from "../../props-builder/index.js";
 
+const COPYRIGHT = "/**\n * Fylgja (https://fylgja.dev)\n * Licensed under MIT Open Source\n */";
+const cssBuilder = (props, filename, opts = {}) =>
+	propsBuilder(props, filename, { banner: COPYRIGHT, ...opts });
+
 import aspectRatios from "../js/aspect-ratio.js";
 import borders from "../js/borders.js";
 import { colors, hues, staticColors, shadeColors } from "../js/colors.js";
@@ -22,18 +26,18 @@ Object.entries({
 	fonts,
 	sizes,
 }).forEach(([tokenName, tokens]) => {
-	propsBuilder(tokens, `css/${tokenName}.css`);
+	cssBuilder(tokens, `css/${tokenName}.css`);
 	propsBuilder(tokens, `scss/${tokenName}.scss`);
-	propsBuilder(tokens, `css/${tokenName}.host.css`, { selector: ":host" });
+	cssBuilder(tokens, `css/${tokenName}.host.css`, { selector: ":host" });
 });
 
 Object.entries({ shadows, colors }).forEach(([tokenName, tokens]) => {
-	propsBuilder(tokens, `css/${tokenName}.css`, { selector: "*" });
+	cssBuilder(tokens, `css/${tokenName}.css`, { selector: "*" });
 });
 
-propsBuilder(darkModeShadows, "css/shadows.dark.css");
-propsBuilder(mq, "css/mq.css");
-propsBuilder({ color: staticColors }, "css/colors.static.css");
+cssBuilder(darkModeShadows, "css/shadows.dark.css");
+cssBuilder(mq, "css/mq.css");
+cssBuilder({ color: staticColors }, "css/colors.static.css");
 
 // Additional SCSS builds
 propsBuilder(shadows, "scss/shadows.scss");
@@ -59,7 +63,7 @@ const props = {
 	propsBuilder({ ...props, ...darkModeShadows }, `index.${ext}`);
 });
 
-propsBuilder({ ...props, ...darkModeShadows }, "css/index.css");
+cssBuilder({ ...props, ...darkModeShadows }, "css/index.css");
 
 // Support for jit-props, e.g. the open-props syntax
 propsBuilder(props, "jit-props.js", { parseAs: "css-jit" });
@@ -93,7 +97,7 @@ const twProps = {
 	breakpoint: breakpoints,
 };
 
-propsBuilder(twProps, "tailwind/index.css", { selector: "@theme" });
+cssBuilder(twProps, "tailwind/index.css", { selector: "@theme" });
 Object.entries(twProps).forEach(([tokenName, tokens]) => {
 	let twFileName = tokenName;
 
@@ -117,7 +121,7 @@ Object.entries(twProps).forEach(([tokenName, tokens]) => {
 		twFileName = `${tokenName}s`;
 	}
 
-	propsBuilder({ [tokenName]: tokens }, `tailwind/${twFileName}.css`, {
+	cssBuilder({ [tokenName]: tokens }, `tailwind/${twFileName}.css`, {
 		selector: "@theme",
 	});
 });

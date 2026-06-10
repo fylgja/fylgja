@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 :where(:root) {
 	--sm: (width >= 480px);
 	--sm-max: (width < 480px);

@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 * {
 	--shadow-color: hsl(0 0 0 / 10%);
 	--shadow-1: 0 2px 1px -1px var(--shadow-color), 0 1px 1px var(--shadow-color), 0 1px 3px var(--shadow-color);

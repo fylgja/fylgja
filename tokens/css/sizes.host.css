@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 :host {
 	--spacing: 0.25rem;
 	--size-1: calc(var(--spacing) * 1);

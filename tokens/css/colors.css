@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 * {
 	--color-0: oklch(99% calc(.03 * var(--chroma, 1)) var(--hue, 0));
 	--color-1: oklch(95% calc(.06 * var(--chroma, 1)) var(--hue, 0));

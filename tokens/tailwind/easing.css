@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 @theme {
 	--ease-xs: cubic-bezier(0.25, 0.1, 0.1, 1);
 	--ease-sm: cubic-bezier(0.25, 0.1, 0.2, 1);

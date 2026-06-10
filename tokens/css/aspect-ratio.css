@@ -1,3 +1,7 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 :where(:root) {
 	--ratio-box: 1;
 	--ratio-landscape: 4/3;
