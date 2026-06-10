@@ -1,10 +1,11 @@
 {
   "name": "@fylgja/base",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Base provides a streamlined starting point for any web project. It’s a collection of class-less solutions, allowing you to focus on building your site.",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",

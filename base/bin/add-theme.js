@@ -1,27 +1,26 @@
 #!/usr/bin/env node
+// TODO: This script will be replaced by the meta package CLI in the next major release.
 
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const packageRoot = path.dirname(__dirname);
+const packageRoot = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const fileToCopy = path.join(packageRoot, "theme.css");
+
+const SEARCH_DIRS = ["src/css", "src/styles", "src/assets"];
+
 let destinationPath = process.argv[2];
 
 if (!destinationPath) {
-	const baseDirs = ["src/css", "src/styles", "src/assets"];
 	const projectRoot = process.cwd();
-
-	destinationPath = baseDirs.reduce((acc, dir) => {
-		const currentPath = path.join(projectRoot, dir);
-		if (!acc && fs.existsSync(currentPath)) {
-			return path.join(currentPath);
+	for (const dir of SEARCH_DIRS) {
+		if (fs.existsSync(path.join(projectRoot, dir))) {
+			destinationPath = path.join(projectRoot, dir);
+			break;
 		}
-		return acc;
-	}, null);
-
-	if (!destinationPath) {
-		destinationPath = path.join(projectRoot);
 	}
+	destinationPath ??= projectRoot;
 }
 
 destinationPath = path.join(destinationPath, "theme.css");
@@ -29,12 +28,6 @@ destinationPath = path.join(destinationPath, "theme.css");
 if (fs.existsSync(destinationPath)) {
 	console.log("theme.css already exists in the target directory.");
 } else {
-	fs.copyFile(fileToCopy, destinationPath, (err) => {
-		if (err) {
-			console.error("Error copying file:", err);
-		} else {
-			const relativePath = path.relative(process.cwd(), destinationPath);
-			console.log("File copied successfully to:", relativePath);
-		}
-	});
+	fs.copyFileSync(fileToCopy, destinationPath);
+	console.log("File copied successfully to:", path.relative(process.cwd(), destinationPath));
 }

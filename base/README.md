@@ -62,7 +62,7 @@ To apply a pre-defined theme, import it separately:
 For theme customization, copy the styles to your project:
 
 ```Bash
-npx @fylgja/base
+npx fylgja@latest add theme
 ```
 
 This command will add the theme styles to `src/css`, `src/styles`, or `src/assets` (if present),
