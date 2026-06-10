@@ -12,6 +12,6 @@
     "vite": "^6.4.2"
   },
   "dependencies": {
-    "dark-mode-toggle": "^0.16.1"
+    "dark-mode-toggle": "^0.18.0"
   }
 }
