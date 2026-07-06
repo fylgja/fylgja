@@ -1,15 +1,6 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-const groupKeysFigma = [
-	"other",
-	"sizing",
-	"borderWidth",
-	"borderRadius",
-	"boxShadow",
-	"color",
-];
-
 /**
  * Adds the right type to the design token value
  *
@@ -43,4 +34,4 @@ function formatFigma(key, colorKeys = []) {
 	return { type: "other" };
 }
 
-export { groupKeysFigma, formatFigma, formatFigma as default };
+export { formatFigma, formatFigma as default };

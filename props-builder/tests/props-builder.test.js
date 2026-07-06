@@ -346,12 +346,12 @@ describe("converting a Figma-syntax design tokens file", () => {
 
 		assert.ok(css.includes("--layer-1: 1;"));
 		assert.ok(css.includes("--animate-spin: spin 1s linear infinite;"));
-		assert.ok(css.includes("--size-2: 0.5em;"));
-		assert.ok(css.includes("--color-red-0: #fff5f5;"));
-		assert.ok(css.includes("--border-size-2: 0.5em;"));
+		assert.ok(css.includes("--sizing-size-2: 0.5em;"));
+		assert.ok(css.includes("--color-color-red-0: #fff5f5;"));
+		assert.ok(css.includes("--border-width-border-size-2: 0.5em;"));
 		assert.ok(
 			css.includes(
-				"--shadow-1: 0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))," +
+				"--box-shadow-shadow-1: 0 2px 1px -1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 18%))," +
 					"0 1px 1px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 12%))," +
 					"0 1px 3px hsl(var(--shadow-color) / calc(var(--shadow-weight) + 10%));"
 			),
@@ -359,10 +359,86 @@ describe("converting a Figma-syntax design tokens file", () => {
 		);
 		assert.ok(
 			css.includes(
-				"@media (prefers-color-scheme: dark) {\n\t:where(:root) {\n\t\t--shadow-color: hsl(220 40% 2%);\n\t\t--shadow-weight: 25%;\n\t}\n}"
+				"@media (prefers-color-scheme: dark) {\n\t:where(:root) {\n\t\t--box-shadow-shadow-color: hsl(220 40% 2%);\n\t\t--box-shadow-shadow-weight: 25%;\n\t}\n}"
 			)
 		);
 		assert.ok(css.includes("@keyframes spin { to { rotate: 360deg }}"));
 		assert.ok(!css.includes("@keyframes rotate"), "this fixture has no rotate keyframe");
+	});
+
+	test("no longer auto-unwraps Figma structural groups other than the top-level `other` group", () => {
+		const css = build(designTokens, "tokens.css", {
+			inputTypeTokens: true,
+			inputTypeSyntax: "figma",
+		});
+
+		assert.ok(!css.includes("--size-2:"), "the `sizing` group must not be stripped away");
+		assert.ok(!css.includes("--border-size-2:"), "the `borderWidth` group must not be stripped away");
+		assert.ok(!css.includes("--shadow-1:"), "the `boxShadow` group must not be stripped away");
+	});
+
+	test("still unwraps a top-level `other` group, since it's only ever meaningful at the root", () => {
+		const css = build(designTokens, "tokens.css", {
+			inputTypeTokens: true,
+			inputTypeSyntax: "figma",
+		});
+
+		assert.ok(css.includes("--layer-1: 1;"), "a top-level `other` group should be unwrapped");
+	});
+
+	test("does not unwrap an `other` key nested deeper in the tree", () => {
+		const figmaExport = {
+			sizing: {
+				other: {
+					"gap-1": { value: "4px" },
+				},
+			},
+		};
+
+		const css = build(figmaExport, "tokens.css", {
+			inputTypeTokens: true,
+			inputTypeSyntax: "figma",
+		});
+
+		assert.ok(
+			css.includes("--sizing-other-gap-1: 4px;"),
+			"a nested `other` key is just a regular token group with that name, and must be left alone"
+		);
+	});
+
+	test("collapses a redundant nested colors.color group instead of keeping both levels", () => {
+		const figmaExport = {
+			colors: {
+				color: {
+					primary: { value: "#1d4ed8" },
+				},
+			},
+		};
+
+		const css = build(figmaExport, "tokens.css", {
+			inputTypeTokens: true,
+			inputTypeSyntax: "figma",
+		});
+
+		assert.ok(css.includes("--colors-primary: #1d4ed8;"));
+		assert.ok(!css.includes("--colors-color-primary"), "the redundant inner `color` key should be collapsed away");
+	});
+
+	test("collapses a redundant nested colors.colors group the same way", () => {
+		const figmaExport = {
+			colors: {
+				colors: {
+					primary: { value: "#1d4ed8" },
+				},
+			},
+		};
+
+		const css = build(figmaExport, "tokens.css", {
+			inputTypeTokens: true,
+			inputTypeSyntax: "figma",
+		});
+
+		assert.ok(css.includes("--colors-primary: #1d4ed8;"));
+		assert.ok(!css.includes("--colors-colors-primary"), "the redundant inner `colors` key should be collapsed away");
 	});
 });

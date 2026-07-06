@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support for importing a Google Stitch Markdown design-token export,
+  by setting the input syntax to `stitch`.
+  Only the YAML frontmatter is used, and the `colors` group is renamed to the singular `color` automatically,
+  unless one already exists.
+
+- A `stripPrefix` option on `propsBuilder()`, to unwrap props by
+  following a key path and dropping the wrapping keys.
+
+- A `rename` option on `propsBuilder()`, to recursively rename keys,
+  aligning them with your own naming convention.
+  See the Usage section in the README for examples of both.
+
+### Changed
+
+- Metadata keys are now filtered out during token conversion,
+  so they're never turned into a CSS custom property.
+
+- Figma-syntax conversion no longer automatically unwraps every structural group at every nesting level,
+  since this sometimes removed too much in real-world token files.
+  Use the `stripPrefix`/`rename` options to unwrap groups explicitly instead.
+
+  Two exceptions are still handled automatically: a top-level `other`
+  group,
+  since it's only ever meaningful at the root of the tree,
+  and a redundant nested color group, which some Figma exports produce.
+
+- Migrated the test suite from an ad-hoc script runner to Node's
+  built-in test runner. The old example script moved to a clearer,
+  more descriptive filename.
+
 ## 2.1.1 - 2026-06-10
 
 ### Added
