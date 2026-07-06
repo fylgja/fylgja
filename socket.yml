@@ -1,7 +1,0 @@
-version: 2
-
-issueRules:
-  # Every published package embeds its own homepage URL (https://fylgja.dev)
-  # in package.json and in the generated file banner comment. This is
-  # expected attribution, not a supply-chain risk.
-  urlStrings: false
