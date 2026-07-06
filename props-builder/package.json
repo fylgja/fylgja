@@ -24,8 +24,8 @@
     "style-dictionary"
   ],
   "scripts": {
-    "preplayground": "rm -rf tests/_*.{css,scss,json}",
-    "playground": "node tests/index.js",
+    "cleanup-manual-test": "rm -rf tests/_*.{css,scss,json}",
+    "manual-test": "npm run cleanup-manual-test && node tests/manual-test.js",
     "test": "node --test tests/*.test.js"
   }
 }
