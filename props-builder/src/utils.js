@@ -83,6 +83,63 @@ export const flattenObj = (obj, separator = "-") => {
 };
 
 /**
+ * Unwrap a nested Object by following a path of keys, dropping everything
+ * above it. Useful for tokens files that wrap the actual tokens in
+ * structural keys (e.g. `tokens.values`) that shouldn't end up in the
+ * generated CSS variable names.
+ *
+ * @param {Object} obj - object to unwrap
+ * @param {string|string[]} keyPath - dot/dash separated path, or array of keys, to unwrap
+ * @returns {Object} - the object found at `keyPath`, or the original object if the path doesn't exist
+ */
+export const stripPrefixPath = (obj, keyPath) => {
+	if (!keyPath) return obj;
+
+	const keys = Array.isArray(keyPath) ? keyPath : keyPath.split(/[.-]/);
+	let current = obj;
+
+	for (const key of keys) {
+		if (
+			current &&
+			typeof current === "object" &&
+			!Array.isArray(current) &&
+			Object.prototype.hasOwnProperty.call(current, key)
+		) {
+			current = current[key];
+		} else {
+			return obj;
+		}
+	}
+
+	return current;
+};
+
+/**
+ * Recursively renames Object keys based on a lookup map.
+ * Useful to align generated token names with a naming convention
+ * (e.g. renaming a `colors` group to `color`).
+ *
+ * @param {Object} obj - object to rename keys in
+ * @param {Object} renameMap - map of `{ [currentKey]: newKey }`
+ * @returns {Object} - object with renamed keys
+ */
+export const renameKeys = (obj, renameMap) => {
+	if (!renameMap || typeof obj !== "object" || obj === null || Array.isArray(obj)) {
+		return obj;
+	}
+
+	return Object.fromEntries(
+		Object.entries(obj).map(([key, value]) => {
+			const newKey = Object.prototype.hasOwnProperty.call(renameMap, key)
+				? renameMap[key]
+				: key;
+
+			return [newKey, renameKeys(value, renameMap)];
+		}),
+	);
+};
+
+/**
  * Turns a flat Object in to a deep nested Object,
  * based on the keys
  *
