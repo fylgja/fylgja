@@ -1,5 +1,6 @@
 import { tokenVarRegex } from "./utils.js";
 import { groupKeysFigma } from "./formats/figma.js";
+import fromStitch from "./formats/stitch.js";
 
 /**
  * Converts a design token object from a specific syntax (e.g., Design Tokens or Figma Tokens)
@@ -13,12 +14,19 @@ import { groupKeysFigma } from "./formats/figma.js";
  *
  * For Figma tokens, it also unnest values from groups defined in `groupKeysFigma`.
  *
- * @param {object} props The design token object to convert.
+ * For Google Stitch tokens, `props` is the raw Markdown file content (a string),
+ * which gets reduced to its known token groups before the usual conversion runs.
+ *
+ * @param {object|string} props The design token object to convert, or (for "stitch") the raw Markdown content.
  * @param {string} [syntax="default"] The syntax of the design token object.
- *  Supported values are "default", "figma", and "style-dictionary".
+ *  Supported values are "default", "figma", "style-dictionary", and "stitch".
  * @returns {object} A simplified object with the token values.
  */
 const fromTokens = (props, syntax = "default") => {
+	if (syntax === "stitch") {
+		return fromTokens(fromStitch(props), "default");
+	}
+
 	const isFigma = syntax === "figma";
 	const keyValueName = isFigma ? "value" : "$value";
 
@@ -47,10 +55,11 @@ const fromTokens = (props, syntax = "default") => {
 	}
 
 	const newProps = Object.fromEntries(
-		Object.entries(props).map(([key, value]) => [
-			key,
-			fromTokens(value, syntax),
-		]),
+		Object.entries(props)
+			// Metadata keys (e.g. `$description`, `$type`) are not tokens
+			// and should never be turned into a CSS custom property.
+			.filter(([key]) => !key.startsWith("$"))
+			.map(([key, value]) => [key, fromTokens(value, syntax)]),
 	);
 
 	if (isFigma) {

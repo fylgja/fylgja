@@ -2,7 +2,7 @@
 // Licensed under MIT Open Source
 
 import fs from "node:fs";
-import { isFileType } from "./src/utils.js";
+import { isFileType, stripPrefixPath, renameKeys } from "./src/utils.js";
 import {
 	formatTokens,
 	formatFigma,
@@ -25,6 +25,8 @@ import toCssJitTokens from "./src/to-css-jit.js";
  * @param {string} options.selector
  * @param {string} options.wrapper - Wrapper for Design Tokens
  * @param {string} options.banner - Prepended to the output as-is
+ * @param {string|string[]} options.stripPrefix - Unwraps `props` by following this key path, dropping the wrapping keys (e.g. `"tokens.values"`)
+ * @param {Object} options.rename - Map of `{ [currentKey]: newKey }` applied recursively to `props`, to align naming (e.g. `{ colors: "color" }`)
  */
 export const propsBuilder = (
 	props,
@@ -37,6 +39,8 @@ export const propsBuilder = (
 		banner = "",
 		inputTypeTokens = false,
 		inputTypeSyntax = "default",
+		stripPrefix = "",
+		rename = null,
 	} = {},
 ) => {
 	let data = "";
@@ -52,6 +56,9 @@ export const propsBuilder = (
 	if (inputTypeTokens) {
 		props = fromTokens(props, inputTypeSyntax);
 	}
+
+	props = stripPrefixPath(props, stripPrefix);
+	props = renameKeys(props, rename);
 
 	switch (parseSyntax) {
 		case "tokens":

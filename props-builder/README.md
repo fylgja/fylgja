@@ -42,6 +42,8 @@ propsBuilder(
         wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
         inputTypeTokens: false, // Optional: Set to true if the input `props` are in a design token format. Defaults to false.
         inputTypeSyntax: "default", // Optional: Specifies the syntax of the input tokens if `inputTypeTokens` is true.
+        stripPrefix: "", // Optional: Dot/dash separated key path (or array of keys) to unwrap, dropping wrapping keys (e.g. "tokens.values").
+        rename: null, // Optional: Map of `{ [currentKey]: newKey }` applied recursively, to align naming (e.g. `{ colors: "color" }`).
     }
 )
 ```
@@ -132,6 +134,18 @@ The key step is to configure the `options` object based on your JSON file's form
     const options = {
         inputTypeTokens: true,
         inputTypeSyntax: "figma"
+    };
+    ```
+
+* **For a Google Stitch Markdown export:**
+    Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'stitch'`.
+    Pass the raw Markdown file content (a string) as `props`, not a parsed object.
+    Only the YAML frontmatter is used, and every key in it is converted to tokens, except for known metadata keys (`name`, `description`).
+    The `colors` group is automatically renamed to the singular `color` (unless a `color` group already exists).
+    ```js
+    const options = {
+        inputTypeTokens: true,
+        inputTypeSyntax: "stitch"
     };
     ```
 
