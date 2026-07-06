@@ -3,6 +3,9 @@ name: Publish Fylgja Tokens
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     uses: ./.github/workflows/test.yml
