@@ -33,19 +33,19 @@ Then, use it to generate output files based on your configuration:
 import { propsBuilder } from "@fylgja/props-builder";
 
 propsBuilder(
-	props, // Required: JavaScript object containing your design tokens.
-    filename, // Required: Name of the output file.
-    {
-        parseAs: "auto", // Optional: Specifies the output format. Defaults to "auto".
-        writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
-        selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
-        wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
-        inputTypeTokens: false, // Optional: Set to true if the input `props` are in a design token format. Defaults to false.
-        inputTypeSyntax: "default", // Optional: Specifies the syntax of the input tokens if `inputTypeTokens` is true.
-        stripPrefix: "", // Optional: Dot/dash separated key path (or array of keys) to unwrap, dropping wrapping keys (e.g. "tokens.values").
-        rename: null, // Optional: Map of `{ [currentKey]: newKey }` applied recursively, to align naming (e.g. `{ colors: "color" }`).
-    }
-)
+  props, // Required: JavaScript object containing your design tokens.
+  filename, // Required: Name of the output file.
+  {
+    parseAs: "auto", // Optional: Specifies the output format. Defaults to "auto".
+    writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
+    selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
+    wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
+    inputTypeTokens: false, // Optional: Set to true if the input `props` are in a design token format. Defaults to false.
+    inputTypeSyntax: "default", // Optional: Specifies the syntax of the input tokens if `inputTypeTokens` is true.
+    stripPrefix: "", // Optional: Dot/dash separated key path (or array of keys) to unwrap, dropping wrapping keys (e.g. "tokens.values").
+    rename: null, // Optional: Map of `{ [currentKey]: newKey }` applied recursively, to align naming (e.g. `{ colors: "color" }`).
+  },
+);
 ```
 
 For basic usage, only the `props` and `filename` arguments are necessary.
@@ -56,14 +56,14 @@ The optional parameters provide flexibility for advanced scenarios.
 import { propsBuilder } from "@fylgja/props-builder";
 
 propsBuilder(
-	{
-		color: {
-			red: "#f00",
-			green: "#0f0",
-			blue: "#00f",
-		}
-	},
-	"output.css"
+  {
+    color: {
+      red: "#f00",
+      green: "#0f0",
+      blue: "#00f",
+    },
+  },
+  "output.css",
 );
 ```
 
@@ -71,9 +71,9 @@ This will generate output.css with the following content:
 
 ```css
 :where(:root) {
-	--color-red: #f00;
-	--color-green: #0f0;
-	--color-blue: #00f;
+  --color-red: #f00;
+  --color-green: #0f0;
+  --color-blue: #00f;
 }
 ```
 
@@ -102,8 +102,8 @@ const tokens = JSON.parse(readFileSync("path/to/your/tokens.json", "utf-8"));
 
 // 👇 Configure the builder based on your token format
 const options = {
-    // inputTypeTokens: ...,
-    // inputTypeSyntax: ...,
+  // inputTypeTokens: ...,
+  // inputTypeSyntax: ...,
 };
 
 // Build the CSS file
@@ -116,38 +116,41 @@ console.log("Successfully built tokens.css!");
 
 The key step is to configure the `options` object based on your JSON file's format.
 
-* **For a simple, key-value JSON file:**
-    You don't need any special options. The builder handles it by default.
-    ```js
-    const options = {};
-    ```
+- **For a simple, key-value JSON file:**
+  You don't need any special options. The builder handles it by default.
 
-* **For a W3C Design Tokens spec file:**
-    Set `inputTypeTokens` to `true`.
-    ```js
-    const options = { inputTypeTokens: true };
-    ```
+  ```js
+  const options = {};
+  ```
 
-* **For a Figma Tokens file:**
-    Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'figma'`.
-    ```js
-    const options = {
-        inputTypeTokens: true,
-        inputTypeSyntax: "figma"
-    };
-    ```
+- **For a W3C Design Tokens spec file:**
+  Set `inputTypeTokens` to `true`.
 
-* **For a Google Stitch Markdown export:**
-    Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'stitch'`.
-    Pass the raw Markdown file content (a string) as `props`, not a parsed object.
-    Only the YAML frontmatter is used, and every key in it is converted to tokens, except for known metadata keys (`name`, `description`).
-    The `colors` group is automatically renamed to the singular `color` (unless a `color` group already exists).
-    ```js
-    const options = {
-        inputTypeTokens: true,
-        inputTypeSyntax: "stitch"
-    };
-    ```
+  ```js
+  const options = { inputTypeTokens: true };
+  ```
+
+- **For a Figma Tokens file:**
+  Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'figma'`.
+
+  ```js
+  const options = {
+    inputTypeTokens: true,
+    inputTypeSyntax: "figma",
+  };
+  ```
+
+- **For a Google Stitch Markdown export:**
+  Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'stitch'`.
+  Pass the raw Markdown file content (a string) as `props`, not a parsed object.
+  Only the YAML frontmatter is used, and every key in it is converted to tokens, except for known metadata keys (`name`, `description`).
+  The `colors` group is automatically renamed to the singular `color` (unless a `color` group already exists).
+  ```js
+  const options = {
+    inputTypeTokens: true,
+    inputTypeSyntax: "stitch",
+  };
+  ```
 
 #### 4. Run the build script
 
