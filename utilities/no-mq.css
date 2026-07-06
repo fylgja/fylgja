@@ -598,7 +598,7 @@
   gap: 0.5em;
 }
 
-.sr-only {
+.sr-only:where(:not(:focus, :focus-within)) {
   --_show: initial;
   position: var(--_show, absolute);
   block-size: var(--_show, 1px);
