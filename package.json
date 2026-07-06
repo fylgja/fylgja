@@ -1,6 +1,6 @@
 {
   "name": "fylgja",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "The modular CSS library. Powered via CSS components",
   "homepage": "https://fylgja.dev/",
   "repository": {
@@ -34,14 +34,14 @@
   "dependencies": {
     "@fylgja/base": "^2.1.6",
     "@fylgja/tokens": "^2.2.1",
-    "@fylgja/utilities": "^2.1.3"
+    "@fylgja/utilities": "^2.1.4"
   },
   "devDependencies": {
     "@fylgja/stylelint-config": "^8.0.1",
     "lightningcss-cli": "^1.32.0",
-    "prettier": "^3.8.3",
-    "sass": "^1.100.0",
-    "stylelint": "^17.12.0",
+    "prettier": "^3.9.4",
+    "sass": "^1.101.0",
+    "stylelint": "^17.14.0",
     "typescript": "^6.0.3"
   },
   "stylelint": {

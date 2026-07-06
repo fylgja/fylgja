@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.2 - 2026-07-06
+
+### [@fylgja/utilities] 2.1.4
+
+Minor fixes and improvements. For full details see the [@fylgja/utilities] changelog.
+
 ## 2.2.1 - 2026-06-10
 
 ### Added
