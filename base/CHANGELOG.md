@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- `--family-emoji` custom property, so the emoji fallbacks can be swapped or reused on their own.
+
+### Changed
+
+- System font family no longer relies on `system-ui`.
+  It resolves to fonts that render CJK text incorrectly on Windows,
+  such as Yu Gothic UI mangling Greek letters and Chinese punctuation.
+  The stack now leads with `-apple-system` and `BlinkMacSystemFont`,
+  which keep the native look on Apple platforms while letting other systems pick a locale appropriate font.
+- Mono font family to include `SF Mono`, `Monaco`, `Cascadia Mono` and `Liberation Mono` as fallbacks.
+
+### Removed
+
+- The `$font-family` Sass variable, it was never applied to `--family-system`.
+  Set `--family-system` in your own CSS instead.
+
 ## 2.1.6 - 2026-06-10
 
 ### Changed
