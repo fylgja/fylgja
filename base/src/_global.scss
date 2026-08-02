@@ -1,14 +1,23 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+@use "sass:meta";
+
 $motion-safe: "prefers-reduced-motion: no-preference";
 
 $root-bg: hsl(0 0% 100%) !default;
 $root-fg: hsl(0 0% 8%) !default;
 
+// system-ui is left out on purpose, it resolves to fonts that render CJK text
+// incorrectly on Windows. See https://github.com/twbs/bootstrap/issues/42703
 $font-family: (
-	ui-sans-serif,
-	system-ui,
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	"Helvetica Neue",
+	"Noto Sans",
+	Arial,
 	sans-serif,
 	"Apple Color Emoji",
 	"Segoe UI Emoji",
@@ -36,7 +45,7 @@ $anchor-offset: 6ex !default;
 :root {
 	--root-bg: #{$root-bg};
 	--root-fg: #{$root-fg};
-	--family-system: system-ui, sans-serif;
+	--family-system: #{meta.inspect($font-family)};
 	--family-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 	--select-light-scheme: #{$chevron-light-scheme};
 	--select-dark-scheme: #{$chevron-dark-scheme};
