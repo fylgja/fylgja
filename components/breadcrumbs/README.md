@@ -30,32 +30,17 @@ Once installed, you can import the full package with:
 
 ### Basic Usage
 
-The breadcrumbs component can be used with a utility class or completely classless by relying on standard HTML5 accessibility attributes.
-
-#### Classless (Recommended)
-
-To use the breadcrumbs without adding specific CSS classes, simply wrap your list in a `<nav>` element with `aria-label="breadcrumbs"`. This approach promotes semantic HTML and automatic accessibility.
+Add the `.breadcrumbs` class to your list. Wrap it in a `<nav>` element with a descriptive
+`aria-label` (its exact wording doesn't matter, it's only for accessibility, not styling).
 
 ```html
-<nav aria-label="breadcrumbs">
-  <ol>
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumbs">
     <li><a href="#">Home</a></li>
     <li><a href="#">Category</a></li>
     <li><a href="#" aria-current="page">Current Page</a></li>
   </ol>
 </nav>
-```
-
-#### Class-based
-
-If you prefer using classes or need to style a list that isn't inside a navigation landmark, you can use the `.breadcrumbs` class.
-
-```html
-<ol class="breadcrumbs">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Category</a></li>
-  <li><a href="#" aria-current="page">Current Page</a></li>
-</ol>
 ```
 
 ## Customization
@@ -70,8 +55,7 @@ The breadcrumbs component uses CSS variables for easy customization. You can ove
 ### Example
 
 ```css
-.breadcrumbs,
-nav[aria-label="breadcrumbs"] {
+.breadcrumbs {
     --breadcrumbs-gap: 1rem;
     --breadcrumbs-separator: ">";
 }

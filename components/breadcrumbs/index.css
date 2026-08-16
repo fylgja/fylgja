@@ -1,33 +1,30 @@
-:where(.breadcrumbs, nav[aria-label=breadcrumbs] > ol) {
+.breadcrumbs {
+  --breadcrumbs-separator: "/";
+  --breadcrumbs-gap: 0.5rem;
   display: flex;
   gap: var(--breadcrumbs-gap);
 }
-
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) {
-  --breadcrumbs-separator: "/";
-  --breadcrumbs-gap: 0.5rem;
-}
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) li {
+.breadcrumbs li {
   display: inline-flex;
   align-items: center;
   gap: var(--breadcrumbs-gap);
   white-space: nowrap;
 }
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) :where(li + li)::before {
+.breadcrumbs :where(li + li)::before {
   content: var(--breadcrumbs-separator);
 }
 @supports (content: "a"/"a") {
-  :where(.breadcrumbs, nav[aria-label=breadcrumbs]) :where(li + li)::before {
+  .breadcrumbs :where(li + li)::before {
     content: var(--breadcrumbs-separator)/"";
   }
 }
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) a {
+.breadcrumbs a {
   font-weight: normal;
   text-decoration: none;
 }
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) a:where(:hover:not([aria-current=page])) {
+.breadcrumbs a:where(:hover:not([aria-current=page])) {
   text-decoration: underline;
 }
-:where(.breadcrumbs, nav[aria-label=breadcrumbs]) a:where([aria-current=page]) {
+.breadcrumbs a:where([aria-current=page]) {
   font-weight: bolder;
 }
