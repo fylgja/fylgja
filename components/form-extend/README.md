@@ -87,8 +87,9 @@ eliminating the need for JavaScript.
 > [!note]
 > This feature relies on scroll animations, which may not be supported in all browsers.
 > Firefox uses a native fill method, while Chrome and Safari depend on scroll animations.
-> As of now, Safari support is not fully available,
-> but you can continue to use the JavaScript solution alongside this CSS-only method.
+> Safari only supports this from version 26 onward, so whether this CSS-only method
+> works for you depends on which Safari versions you need to support (Fylgja's baseline
+> goes back to 18). Use the JavaScript solution alongside it if you need to cover older versions.
 
 #### Vertical Modifier
 
