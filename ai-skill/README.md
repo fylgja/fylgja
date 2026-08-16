@@ -1,18 +1,8 @@
 # Fylgja CSS AI Skill
 
-This directory contains an AI skill definition (`SKILL.md`) for the Fylgja CSS library. This skill helps AI assistants (like Gemini CLI) understand the core concepts, packages, and architecture of Fylgja, allowing them to provide better code generation, architectural advice, and support for projects using Fylgja CSS.
+This directory contains an AI skill definition (`SKILL.md`) for the Fylgja CSS library. This skill helps AI assistants (like Claude Code) understand the core concepts, packages, and architecture of Fylgja, allowing them to provide better code generation, architectural advice, and support for projects using Fylgja CSS.
 
 ## How to Install
-
-### Gemini CLI
-
-To use this skill globally across all your projects so your AI assistant always knows about Fylgja CSS:
-
-Install the skill directly using the Gemini CLI.
-
-```bash
-gemini skills install https://github.com/fylgja/fylgja --path ai-skill
-```
 
 ### Claude Code
 
@@ -23,36 +13,21 @@ mkdir -p .claude/skills/fylgja
 curl -o .claude/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
-### Cursor
-
-To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
-
-```bash
-mkdir -p .cursor/skills/fylgja
-curl -o .cursor/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
-```
-
-### GitHub Copilot
-
-To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
-
-```bash
-mkdir -p .github/skills/fylgja
-curl -o .github/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
-```
-
 ### Other AI Agents
 
-If your CLI agent uses a different folder (like `.codex` or `.opencode`), just replace the folder name in the path:
+Agents that read skills from their own dot folder follow the same steps, only the folder name changes:
 
 ```bash
-mkdir -p .YOUR_AGENT_FOLDER/skills/fylgja
-curl -o .YOUR_AGENT_FOLDER/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+# Replace .agents with your AI agent folder, e.g. .cursor, .github or .codex
+mkdir -p .agents/skills/fylgja
+curl -o .agents/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
-### Local Project Installation
+Some agents ship their own installer instead, so check their docs first if the folder layout differs.
 
-If you want to keep the skill local to a specific project using Fylgja, you can simply include this directory in your project repository. Some AI assistants will automatically read `.md` files or workspace instructions containing this context.
+### Commit the skill to your repo
+
+Instead of fetching `SKILL.md` on every machine, you can copy this directory into your project and commit it. The skill then travels with the repo, so every collaborator and CI checkout has it without running anything, pinned to the version you copied. Some AI assistants will also automatically read `.md` files or workspace instructions containing this context.
 
 ## Usage
 
