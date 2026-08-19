@@ -9,8 +9,8 @@ This directory contains an AI skill definition (`SKILL.md`) for the Fylgja CSS l
 To use this skill locally in your project so your AI assistant always knows about Fylgja CSS:
 
 ```bash
-mkdir -p .claude/skills/fylgja
-curl -o .claude/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+mkdir -p .claude/skills/fylgja-css
+curl -o .claude/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
 ### Other AI Agents
@@ -19,8 +19,8 @@ Agents that read skills from their own dot folder follow the same steps, only th
 
 ```bash
 # Replace .agents with your AI agent folder, e.g. .cursor, .github or .codex
-mkdir -p .agents/skills/fylgja
-curl -o .agents/skills/fylgja/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+mkdir -p .agents/skills/fylgja-css
+curl -o .agents/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
 ```
 
 Some agents ship their own installer instead, so check their docs first if the folder layout differs.
