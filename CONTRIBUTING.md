@@ -7,7 +7,7 @@ Thanks for helping out! This guide covers the specifics of working in this repos
 This is a monorepo. Each package is published independently to npm under the `@fylgja` scope:
 
 - `base/`, `tokens/`, `utilities/` — core packages, also bundled together into the root `fylgja` metapackage.
-- `components/*` — individual components (`badge`, `breadcrumbs`, `card`, `form-extend`, `input-group`, `toast`).
+- `components/*` — individual components (`badge`, `breadcrumbs`, `callout`, `card`, `form-extend`, `input-group`, `toast`).
 - `props-builder/` — the Design Token → CSS custom properties build tool.
 - `_tests/base` and `_tests/components` — example Vite apps for manually previewing changes in a browser.
 

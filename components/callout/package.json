@@ -1,0 +1,30 @@
+{
+  "name": "@fylgja/callout",
+  "version": "1.0.0",
+  "description": "The Fylgja callout component",
+  "homepage": "https://fylgja.dev/",
+  "author": "Fylgja",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fylgja/fylgja",
+    "directory": "components/callout"
+  },
+  "bugs": "https://github.com/fylgja/fylgja/issues",
+  "type": "module",
+  "keywords": [
+    "fylgja",
+    "fylgja component",
+    "callout",
+    "alert",
+    "admonition",
+    "blockquote"
+  ],
+  "unpkg": "index.min.css",
+  "style": "index.css",
+  "scripts": {
+    "build:index": "npx lightningcss --bundle bundle.css -o index.min.css",
+    "build:min": "npx lightningcss --minify --bundle bundle.css -o index.min.css",
+    "build": "npm run build:index && npm run build:min"
+  }
+}

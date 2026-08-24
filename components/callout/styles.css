@@ -1,0 +1,31 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
+.callout {
+	--callout-note: light-dark(#0969da, #2f81f7);
+	--callout-tip: light-dark(#1a7f37, #3fb950);
+	--callout-important: light-dark(#8250df, #a371f7);
+	--callout-warning: light-dark(#9a6700, #d29922);
+	--callout-caution: light-dark(#d1242f, #f85149);
+
+	&:where([data-callout="note"]) {
+		--callout-style: var(--callout-note);
+	}
+
+	&:where([data-callout="tip"]) {
+		--callout-style: var(--callout-tip);
+	}
+
+	&:where([data-callout="important"]) {
+		--callout-style: var(--callout-important);
+	}
+
+	&:where([data-callout="warning"]) {
+		--callout-style: var(--callout-warning);
+	}
+
+	&:where([data-callout="caution"]) {
+		--callout-style: var(--callout-caution);
+	}
+}

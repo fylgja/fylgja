@@ -12,6 +12,7 @@ export default defineConfig({
 			"@fylgja/badge": pkgPath("components/badge"),
 			"@fylgja/base": pkgPath("base"),
 			"@fylgja/breadcrumbs": pkgPath("components/breadcrumbs"),
+			"@fylgja/callout": pkgPath("components/callout"),
 			"@fylgja/card": pkgPath("components/card"),
 			"@fylgja/form-extend": pkgPath("components/form-extend"),
 			"@fylgja/input-group": pkgPath("components/input-group"),
