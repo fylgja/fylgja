@@ -74,7 +74,9 @@ Five types are provided: `note`, `tip`, `important`, `warning`, and `caution`. A
 
 Icons are left to your markdown plugin. The component only keeps whatever `<svg>` it finds in the title from being squashed, so any icon set works. Give the icon `fill="currentcolor"`, or `stroke="currentcolor"` for an outline set, and it picks up the accent color.
 
-To restyle a type, override its color variable:
+## Customization
+
+To restyle a type, override its color variable. Each type has one, `--callout-note` through `--callout-caution`, set with `light-dark()`.
 
 ```css
 .callout {
@@ -90,17 +92,3 @@ To add a tinted background, or to change the spacing:
     --callout-px: 1.5rem;
 }
 ```
-
-### Variables
-
-| Variable                | Default            | Description                               |
-| ----------------------- | ------------------ | ----------------------------------------- |
-| `--callout-style`       | `var(--brand)`     | Accent color driving the border and title |
-| `--callout-my`          | `var(--text-flow)` | Block margin around the callout           |
-| `--callout-py`          | `0.5rem`           | Block padding                             |
-| `--callout-px`          | `1rem`             | Inline padding                            |
-| `--callout-stroke-size` | `0.25em`           | Border width                              |
-| `--callout-bg`          | `transparent`      | Background color                          |
-| `--callout-gap`         | `0.5em`            | Space between the title icon and its text |
-
-Each type also has a color variable, `--callout-note` through `--callout-caution`, set with `light-dark()`.
