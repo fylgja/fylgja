@@ -6,7 +6,7 @@
 
 The Fylgja Callout component styles the highlighted blocks that markdown plugins generate from blockquote syntax, known as callouts, alerts, or admonitions.
 
-Use it for notes, tips, warnings, and other asides that need to stand apart from the surrounding prose.
+Use it for notes, tips, warnings, and other remarks that need to stand apart from the surrounding prose.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 {
   "name": "@fylgja/callout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Fylgja callout component",
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
@@ -23,7 +23,7 @@
   "unpkg": "index.min.css",
   "style": "index.css",
   "scripts": {
-    "build:index": "npx lightningcss --bundle bundle.css -o index.min.css",
+    "build:index": "npx lightningcss --bundle bundle.css -o index.css",
     "build:min": "npx lightningcss --minify --bundle bundle.css -o index.min.css",
     "build": "npm run build:index && npm run build:min"
   }
