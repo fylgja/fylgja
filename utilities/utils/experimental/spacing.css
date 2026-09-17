@@ -1,137 +1,137 @@
 [data-size] {
-  block-size: attr(data-size type(auto | <length-percentage>), 1rem);
-  inline-size: attr(data-size type(auto | <length-percentage>), 1rem);
+  block-size: calc(var(--spacing) * attr(data-size type(<number>), 1));
+  inline-size: calc(var(--spacing) * attr(data-size type(<number>), 1));
 }
 
 [data-m] {
-  margin: attr(data-m type(auto | <length-percentage>));
+  margin: calc(var(--spacing) * attr(data-m type(<number>), 1));
 }
 
 [data-p] {
-  padding: attr(data-p type(auto | <length-percentage>));
+  padding: calc(var(--spacing) * attr(data-p type(<number>), 1));
 }
 
 [data-size-y] {
-  block-size: attr(data-size-y type(auto | <length-percentage>), 1rem);
+  block-size: calc(var(--spacing) * attr(data-size-y type(<number>), 1));
 }
 
 [data-size-x] {
-  inline-size: attr(data-size-x type(auto | <length-percentage>), 1rem);
+  inline-size: calc(var(--spacing) * attr(data-size-x type(<number>), 1));
 }
 
 [data-my] {
-  margin-block: attr(data-my type(auto | <length-percentage>), 1rem);
+  margin-block: calc(var(--spacing) * attr(data-my type(<number>), 1));
 }
 
 [data-mx] {
-  margin-inline: attr(data-mx type(auto | <length-percentage>), 1rem);
+  margin-inline: calc(var(--spacing) * attr(data-mx type(<number>), 1));
 }
 
 [data-py] {
-  padding-block: attr(data-py type(auto | <length-percentage>), 1rem);
+  padding-block: calc(var(--spacing) * attr(data-py type(<number>), 1));
 }
 
 [data-px] {
-  padding-inline: attr(data-px type(auto | <length-percentage>), 1rem);
+  padding-inline: calc(var(--spacing) * attr(data-px type(<number>), 1));
 }
 
 @media (width >= 480px) {
   [data-sm-size-y] {
-    block-size: attr(data-sm-size-y type(auto | <length-percentage>), 1rem);
+    block-size: calc(var(--spacing) * attr(data-sm-size-y type(<number>), 1));
   }
   [data-sm-size-x] {
-    inline-size: attr(data-sm-size-x type(auto | <length-percentage>), 1rem);
+    inline-size: calc(var(--spacing) * attr(data-sm-size-x type(<number>), 1));
   }
   [data-sm-my] {
-    margin-block: attr(data-sm-my type(auto | <length-percentage>), 1rem);
+    margin-block: calc(var(--spacing) * attr(data-sm-my type(<number>), 1));
   }
   [data-sm-mx] {
-    margin-inline: attr(data-sm-mx type(auto | <length-percentage>), 1rem);
+    margin-inline: calc(var(--spacing) * attr(data-sm-mx type(<number>), 1));
   }
   [data-sm-py] {
-    padding-block: attr(data-sm-py type(auto | <length-percentage>), 1rem);
+    padding-block: calc(var(--spacing) * attr(data-sm-py type(<number>), 1));
   }
   [data-sm-px] {
-    padding-inline: attr(data-sm-px type(auto | <length-percentage>), 1rem);
+    padding-inline: calc(var(--spacing) * attr(data-sm-px type(<number>), 1));
   }
 }
 @media (width >= 768px) {
   [data-md-size-y] {
-    block-size: attr(data-md-size-y type(auto | <length-percentage>), 1rem);
+    block-size: calc(var(--spacing) * attr(data-md-size-y type(<number>), 1));
   }
   [data-md-size-x] {
-    inline-size: attr(data-md-size-x type(auto | <length-percentage>), 1rem);
+    inline-size: calc(var(--spacing) * attr(data-md-size-x type(<number>), 1));
   }
   [data-md-my] {
-    margin-block: attr(data-md-my type(auto | <length-percentage>), 1rem);
+    margin-block: calc(var(--spacing) * attr(data-md-my type(<number>), 1));
   }
   [data-md-mx] {
-    margin-inline: attr(data-md-mx type(auto | <length-percentage>), 1rem);
+    margin-inline: calc(var(--spacing) * attr(data-md-mx type(<number>), 1));
   }
   [data-md-py] {
-    padding-block: attr(data-md-py type(auto | <length-percentage>), 1rem);
+    padding-block: calc(var(--spacing) * attr(data-md-py type(<number>), 1));
   }
   [data-md-px] {
-    padding-inline: attr(data-md-px type(auto | <length-percentage>), 1rem);
+    padding-inline: calc(var(--spacing) * attr(data-md-px type(<number>), 1));
   }
 }
 @media (width >= 1024px) {
   [data-lg-size-y] {
-    block-size: attr(data-lg-size-y type(auto | <length-percentage>), 1rem);
+    block-size: calc(var(--spacing) * attr(data-lg-size-y type(<number>), 1));
   }
   [data-lg-size-x] {
-    inline-size: attr(data-lg-size-x type(auto | <length-percentage>), 1rem);
+    inline-size: calc(var(--spacing) * attr(data-lg-size-x type(<number>), 1));
   }
   [data-lg-my] {
-    margin-block: attr(data-lg-my type(auto | <length-percentage>), 1rem);
+    margin-block: calc(var(--spacing) * attr(data-lg-my type(<number>), 1));
   }
   [data-lg-mx] {
-    margin-inline: attr(data-lg-mx type(auto | <length-percentage>), 1rem);
+    margin-inline: calc(var(--spacing) * attr(data-lg-mx type(<number>), 1));
   }
   [data-lg-py] {
-    padding-block: attr(data-lg-py type(auto | <length-percentage>), 1rem);
+    padding-block: calc(var(--spacing) * attr(data-lg-py type(<number>), 1));
   }
   [data-lg-px] {
-    padding-inline: attr(data-lg-px type(auto | <length-percentage>), 1rem);
+    padding-inline: calc(var(--spacing) * attr(data-lg-px type(<number>), 1));
   }
 }
 @media (width >= 1440px) {
   [data-xl-size-y] {
-    block-size: attr(data-xl-size-y type(auto | <length-percentage>), 1rem);
+    block-size: calc(var(--spacing) * attr(data-xl-size-y type(<number>), 1));
   }
   [data-xl-size-x] {
-    inline-size: attr(data-xl-size-x type(auto | <length-percentage>), 1rem);
+    inline-size: calc(var(--spacing) * attr(data-xl-size-x type(<number>), 1));
   }
   [data-xl-my] {
-    margin-block: attr(data-xl-my type(auto | <length-percentage>), 1rem);
+    margin-block: calc(var(--spacing) * attr(data-xl-my type(<number>), 1));
   }
   [data-xl-mx] {
-    margin-inline: attr(data-xl-mx type(auto | <length-percentage>), 1rem);
+    margin-inline: calc(var(--spacing) * attr(data-xl-mx type(<number>), 1));
   }
   [data-xl-py] {
-    padding-block: attr(data-xl-py type(auto | <length-percentage>), 1rem);
+    padding-block: calc(var(--spacing) * attr(data-xl-py type(<number>), 1));
   }
   [data-xl-px] {
-    padding-inline: attr(data-xl-px type(auto | <length-percentage>), 1rem);
+    padding-inline: calc(var(--spacing) * attr(data-xl-px type(<number>), 1));
   }
 }
 @media (width >= 1920px) {
   [data-xxl-size-y] {
-    block-size: attr(data-xxl-size-y type(auto | <length-percentage>), 1rem);
+    block-size: calc(var(--spacing) * attr(data-xxl-size-y type(<number>), 1));
   }
   [data-xxl-size-x] {
-    inline-size: attr(data-xxl-size-x type(auto | <length-percentage>), 1rem);
+    inline-size: calc(var(--spacing) * attr(data-xxl-size-x type(<number>), 1));
   }
   [data-xxl-my] {
-    margin-block: attr(data-xxl-my type(auto | <length-percentage>), 1rem);
+    margin-block: calc(var(--spacing) * attr(data-xxl-my type(<number>), 1));
   }
   [data-xxl-mx] {
-    margin-inline: attr(data-xxl-mx type(auto | <length-percentage>), 1rem);
+    margin-inline: calc(var(--spacing) * attr(data-xxl-mx type(<number>), 1));
   }
   [data-xxl-py] {
-    padding-block: attr(data-xxl-py type(auto | <length-percentage>), 1rem);
+    padding-block: calc(var(--spacing) * attr(data-xxl-py type(<number>), 1));
   }
   [data-xxl-px] {
-    padding-inline: attr(data-xxl-px type(auto | <length-percentage>), 1rem);
+    padding-inline: calc(var(--spacing) * attr(data-xxl-px type(<number>), 1));
   }
 }

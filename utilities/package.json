@@ -5,6 +5,7 @@
   "homepage": "https://fylgja.dev/",
   "author": "Fylgja",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja",
@@ -27,6 +28,16 @@
     "build:main": "npx lightningcss --minify --bundle index.css -o index.min.css",
     "build:no-mq": "npx lightningcss --minify --bundle no-mq.css -o no-mq.min.css",
     "build:custom-mq": "npx lightningcss --minify --bundle custom-mq.css -o custom-mq.min.css",
-    "build": "npm run build:scss && npm run build:main && npm run build:no-mq && npm run build:custom-mq"
+    "build:exp": "npx css-attr-polyfill utils/experimental/spacing.css --config ./scripts/fylgja.config.json",
+    "build:exp:min": "node ./scripts/build.js",
+    "build": "npm run build:scss && npm run build:main && npm run build:no-mq && npm run build:custom-mq && npm run build:exp"
+  },
+  "devDependencies": {
+    "@fylgja/css-attr-polyfill": "^1.0.0",
+    "lightningcss": "^1.33.0",
+    "lightningcss-cli": "^1.33.0"
+  },
+  "allowScripts": {
+    "lightningcss-cli@1.33.0": true
   }
 }
