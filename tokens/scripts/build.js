@@ -140,6 +140,10 @@ const tokens = {
 
 propsBuilder(tokens, "tokens/tokens.json");
 propsBuilder(tokens, "tokens/fylgja.tokens.json");
+propsBuilder(tokens, "tokens/fylgja.resolver.json", {
+	name: "Fylgja",
+	description: "Fylgja design tokens",
+});
 
 propsBuilder(tokens, "tokens/figma-tokens.json");
 propsBuilder(tokens, "tokens/figma-tokens.sync.json", { wrapper: "fylgja" });

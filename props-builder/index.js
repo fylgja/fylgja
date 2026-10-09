@@ -12,6 +12,7 @@ import fromTokens from "./src/from-tokens.js";
 import toTokens from "./src/to-tokens.js";
 import toStyleTokens from "./src/to-style.js";
 import toCssJitTokens from "./src/to-css-jit.js";
+import { toDtcg } from "./src/to-dtcg.js";
 
 /**
  * Builds a tokens in any syntax from a Javascript object,
@@ -20,10 +21,12 @@ import toCssJitTokens from "./src/to-css-jit.js";
  * @param {Object} props
  * @param {string} filename
  * @param {Object} options
- * @param {'auto'|'tokens'|'figma'|'style-dictionary'|'scss'|'css'|'css-jit'|'cjs'|'mjs'|'json'} options.parseAs
+ * @param {'auto'|'tokens'|'dtcg'|'figma'|'style-dictionary'|'scss'|'css'|'css-jit'|'cjs'|'mjs'|'json'} options.parseAs
  * @param {Boolean} options.writeToFile
  * @param {string} options.selector
  * @param {string} options.wrapper - Wrapper for Design Tokens
+ * @param {string} options.name - Name of the Design Tokens Resolver (`dtcg` only)
+ * @param {string} options.description - Description of the Design Tokens Resolver (`dtcg` only)
  * @param {string} options.banner - Prepended to the output as-is
  * @param {string|string[]} options.stripPrefix - Unwraps `props` by following this key path, dropping the wrapping keys (e.g. `"tokens.values"`)
  * @param {Object} options.rename - Map of `{ [currentKey]: newKey }` applied recursively to `props`, to align naming (e.g. `{ colors: "color" }`)
@@ -36,6 +39,8 @@ export const propsBuilder = (
 		writeToFile = true,
 		selector = ":where(:root)",
 		wrapper = "",
+		name = "Design Tokens",
+		description = "",
 		banner = "",
 		inputTypeTokens = false,
 		inputTypeSyntax = "default",
@@ -66,6 +71,10 @@ export const propsBuilder = (
 				wrapper,
 				groupTypes: false,
 			});
+			break;
+
+		case "dtcg":
+			data = toDtcg(props, { name, description });
 			break;
 
 		case "figma":

@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support for the Design Tokens 2025.10 specification as input format,
+  including typed values (e.g. color objects and dimensions), composite tokens,
+  `$type` inheritance, `$root` tokens, `$extends` groups, `$ref` JSON Pointers,
+  and Resolver documents.
+
+- A `dtcg` output format, picked automatically for `*.resolver.json` files,
+  to create a Design Tokens Resolver 2025.10 document.
+  Use the new `name` and `description` options to describe it.
+
+### Changed
+
+- Token references are now converted to kebab case CSS variables,
+  matching the custom property names in the CSS output.
+
 ## 2.2.0 - 2026-07-06
 
 ### Added

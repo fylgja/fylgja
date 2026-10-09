@@ -1,5 +1,18 @@
-import { tokenVarRegex } from "./utils.js";
 import fromStitch from "./formats/stitch.js";
+import {
+	isPlainObject,
+	isToken,
+	mergeTokenTrees,
+	pathToCssVar,
+	referencesToCssVars,
+	tokenValueToCss,
+} from "./formats/dtcg.js";
+import {
+	fromResolver,
+	getPath,
+	isResolverDocument,
+	parsePointer,
+} from "./formats/resolver.js";
 
 /**
  * Some Figma exports wrap the color group in a redundant nested
@@ -51,6 +64,83 @@ const unwrapTopLevelOtherGroup = (props) => {
 };
 
 /**
+ * Converts a Design Tokens (2025.10) tree into a simplified, nested object with CSS values.
+ *
+ * - `$root` tokens are written as `DEFAULT`, which is dropped from the CSS variable name
+ * - `$extends` groups are deep merged with the group they extend
+ * - `$type` is inherited from parent groups
+ * - Curly brace references and `$ref` JSON Pointers to a token become CSS variables,
+ *   pointers into a value (e.g. `#/color/blue/$value/components/0`) are resolved to that value
+ *
+ * @param {Object} root - the whole token tree, used to resolve references
+ * @returns {Object}
+ */
+const fromDtcgTokens = (root) => {
+	/**
+	 * @param {string} pointer
+	 * @returns {*}
+	 */
+	const resolvePointer = (pointer) => {
+		const path = parsePointer(pointer);
+		const valueIndex = path.indexOf("$value");
+
+		if (valueIndex === -1 || valueIndex === path.length - 1) {
+			return pathToCssVar(path);
+		}
+
+		return tokenValueToCss(getPath(root, path, pointer), undefined, resolvePointer);
+	};
+
+	/**
+	 * @param {Object} group
+	 * @param {string[]} trail - `$extends` targets seen so far, to detect circular references
+	 * @returns {Object}
+	 */
+	const applyExtends = (group, trail = []) => {
+		const { $extends, ...rest } = group;
+		if (typeof $extends !== "string") return group;
+
+		const path = $extends.startsWith("{")
+			? $extends.slice(1, -1).split(".")
+			: parsePointer($extends);
+		const key = path.join("/");
+
+		if (trail.includes(key)) {
+			throw new Error(`Circular "$extends" reference: "${$extends}"`);
+		}
+
+		const target = applyExtends(getPath(root, path, $extends), [...trail, key]);
+		return mergeTokenTrees(target, rest);
+	};
+
+	/**
+	 * @param {*} node
+	 * @param {string|undefined} inheritedType
+	 * @returns {*}
+	 */
+	const convert = (node, inheritedType) => {
+		if (isToken(node)) {
+			return tokenValueToCss(node.$value, node.$type ?? inheritedType, resolvePointer);
+		}
+
+		if (!isPlainObject(node)) return node;
+
+		const group = applyExtends(node);
+		const type = group.$type ?? inheritedType;
+
+		return Object.fromEntries(
+			Object.entries(group)
+				// Metadata keys (e.g. `$description`, `$type`) are not tokens
+				// and should never be turned into a CSS custom property.
+				.filter(([key]) => key === "$root" || !key.startsWith("$"))
+				.map(([key, value]) => [key === "$root" ? "DEFAULT" : key, convert(value, type)]),
+		);
+	};
+
+	return convert(root, undefined);
+};
+
+/**
  * Converts a design token object from a specific syntax (e.g., Design Tokens or Figma Tokens)
  * to a simplified, nested object structure.
  *
@@ -59,6 +149,9 @@ const unwrapTopLevelOtherGroup = (props) => {
  *
  * It also converts token references (e.g., "{color.brand.primary}")
  * into CSS variables (e.g., "var(--color-brand-primary)").
+ *
+ * For the default syntax, the Design Tokens 2025.10 format is supported,
+ * including Resolver documents (see `fromDtcgTokens` and `fromResolver`).
  *
  * For Figma tokens, it also collapses a redundant nested `color`/`colors`
  * group (see `collapseRedundantColorGroup`) and unwraps a top-level
@@ -78,9 +171,6 @@ const fromTokens = (props, syntax = "default", isTopLevel = true) => {
 		return fromTokens(fromStitch(props), "default", isTopLevel);
 	}
 
-	const isFigma = syntax === "figma";
-	const keyValueName = isFigma ? "value" : "$value";
-
 	if (syntax === "style-dictionary") {
 		console.log("Using default convert syntax");
 		console.log(
@@ -88,15 +178,14 @@ const fromTokens = (props, syntax = "default", isTopLevel = true) => {
 		);
 	}
 
-	if (Object.prototype.hasOwnProperty.call(props, keyValueName)) {
-		const value = props[keyValueName];
+	if (syntax !== "figma") {
+		return fromDtcgTokens(isResolverDocument(props) ? fromResolver(props) : props);
+	}
+
+	if (Object.prototype.hasOwnProperty.call(props, "value")) {
+		const value = props.value;
 		if (typeof value === "string") {
-			// Use regex to grab all values with the following example `{color.blue.7}`
-			return value.replace(tokenVarRegex, (_match, group) => {
-				const newGroup = group.replace(/\.value$/, "");
-				const newVar = newGroup.replace(/\./g, "-");
-				return `var(--${newVar})`;
-			});
+			return referencesToCssVars(value);
 		}
 		return value;
 	}
@@ -113,18 +202,14 @@ const fromTokens = (props, syntax = "default", isTopLevel = true) => {
 			.map(([key, value]) => [key, fromTokens(value, syntax, false)]),
 	);
 
-	if (isFigma) {
-		const collapsed = Object.fromEntries(
-			Object.entries(newProps).map(([key, value]) => [
-				key,
-				collapseRedundantColorGroup(key, value),
-			]),
-		);
+	const collapsed = Object.fromEntries(
+		Object.entries(newProps).map(([key, value]) => [
+			key,
+			collapseRedundantColorGroup(key, value),
+		]),
+	);
 
-		return isTopLevel ? unwrapTopLevelOtherGroup(collapsed) : collapsed;
-	}
-
-	return newProps;
+	return isTopLevel ? unwrapTopLevelOtherGroup(collapsed) : collapsed;
 };
 
 export default fromTokens;
