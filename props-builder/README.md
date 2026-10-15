@@ -37,11 +37,12 @@ propsBuilder(
   filename, // Required: Name of the output file.
   {
     parseAs: "auto", // Optional: Specifies the output format. Defaults to "auto".
-    writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
+    writeToFile: true, // Optional: If false, returns the generated content as a string instead of writing the file. Defaults to true.
     selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
     wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
     name: "Design Tokens", // Optional: Name of the Design Tokens Resolver (dtcg output only).
     description: "", // Optional: Description of the Design Tokens Resolver (dtcg output only).
+    banner: "", // Optional: Prepended to the output as-is, e.g. for a license header.
     inputTypeTokens: false, // Optional: Set to true if the input `props` are in a design token format. Defaults to false.
     inputTypeSyntax: "default", // Optional: Specifies the syntax of the input tokens if `inputTypeTokens` is true.
     stripPrefix: "", // Optional: Dot/dash separated key path (or array of keys) to unwrap, dropping wrapping keys (e.g. "tokens.values").
