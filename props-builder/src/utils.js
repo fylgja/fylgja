@@ -2,7 +2,6 @@
 // Licensed under MIT Open Source
 
 export const cssVarRegex = /var\(--([a-zA-Z0-9-]+)\)/g;
-export const tokenVarRegex = /\{([a-zA-Z0-9.-]+)\}/g;
 
 /**
  * Convert a string to kebab case.
@@ -41,6 +40,10 @@ export function isFileType(filename) {
 
 	if (filename.endsWith("style-dictionary-tokens.json")) {
 		return "style-dictionary";
+	}
+
+	if (filename.endsWith(".resolver.json")) {
+		return "dtcg";
 	}
 
 	if (filename.endsWith("tokens.json")) {

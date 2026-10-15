@@ -40,6 +40,8 @@ propsBuilder(
     writeToFile: true, // Optional: If false, outputs the generated content to the console. Defaults to true.
     selector: ":where(:root)", // Optional: CSS selector for custom property declarations (CSS output only).
     wrapper: "", // Optional: Wrapper for design system-specific formatting (e.g., Figma).
+    name: "Design Tokens", // Optional: Name of the Design Tokens Resolver (dtcg output only).
+    description: "", // Optional: Description of the Design Tokens Resolver (dtcg output only).
     inputTypeTokens: false, // Optional: Set to true if the input `props` are in a design token format. Defaults to false.
     inputTypeSyntax: "default", // Optional: Specifies the syntax of the input tokens if `inputTypeTokens` is true.
     stripPrefix: "", // Optional: Dot/dash separated key path (or array of keys) to unwrap, dropping wrapping keys (e.g. "tokens.values").
@@ -78,6 +80,36 @@ This will generate output.css with the following content:
 ```
 
 This example demonstrates a simple use case with a plain JavaScript object.
+
+### Output formats
+
+The output format is picked from the filename, unless `parseAs` is set.
+
+| Filename                          | `parseAs`          | Output                                          |
+| --------------------------------- | ------------------ | ----------------------------------------------- |
+| `*.css`                           | `css`              | CSS custom properties                           |
+| `*.scss`                          | `scss`             | SCSS variables                                  |
+| `*.js`, `*.mjs`, `*.cjs`, `*.json` | `mjs`, `cjs`, `json` | The props as is                               |
+| `*.resolver.json`                 | `dtcg`             | Design Tokens Resolver (2025.10)                |
+| `*tokens.json`                    | `tokens`           | Design Tokens (legacy draft syntax)             |
+| `*figma-tokens.json`              | `figma`            | Figma Tokens                                    |
+| `*style-dictionary-tokens.json`   | `style-dictionary` | Style Dictionary tokens                         |
+|                                   | `css-jit`          | A flat object for JIT tools, like jit-props     |
+
+### To Design Tokens 2025.10
+
+The `dtcg` output follows the [Design Tokens 2025.10 specification](https://www.designtokens.org/tr/2025.10/).
+Values are converted to typed token values, e.g. `0.5rem` becomes a `dimension` token with `{ "value": 0.5, "unit": "rem" }`,
+and `var(--shadow-color)` becomes a `{shadow-color.$root}` reference.
+
+```js
+propsBuilder(props, "tokens/fylgja.resolver.json", { name: "Fylgja" });
+```
+
+All tokens go in a single set of a Resolver document. Dark mode values (`@media:dark`) are left out.
+
+The specification has no way to express some CSS values, such as `calc()`, `clamp()`, `var()` inside a color, or units other than `px` and `rem` (or `ms` and `s` for durations).
+These tokens are skipped with a warning, together with any token referencing them.
 
 For more advanced scenarios, including how to use different JSON file formats, see the "From Design Tokens to CSS" section below.
 
@@ -123,12 +155,21 @@ The key step is to configure the `options` object based on your JSON file's form
   const options = {};
   ```
 
-- **For a W3C Design Tokens spec file:**
+- **For a W3C Design Tokens spec file (including 2025.10 and Resolver files):**
   Set `inputTypeTokens` to `true`.
 
   ```js
   const options = { inputTypeTokens: true };
   ```
+
+  Design Tokens 2025.10 values, such as color objects or dimensions, are converted to CSS values.
+  Composite tokens become CSS shorthands (`border`, `shadow`, `transition`, and gradient color stops),
+  except for `typography`, which becomes a custom property per part (e.g. `--heading-font-size`).
+  Groups support `$type` inheritance, `$root` tokens, and `$extends`.
+  Both `{token.path}` references and `$ref` JSON Pointers within the same file are supported.
+
+  For a Resolver file, all sets are merged in the resolution order, and each modifier uses its `default` context.
+  A `$ref` to another file is not supported, merge those files into a single document first.
 
 - **For a Figma Tokens file:**
   Set `inputTypeTokens` to `true` and `inputTypeSyntax` to `'figma'`.

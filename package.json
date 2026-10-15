@@ -37,6 +37,7 @@
     "@fylgja/utilities": "^2.1.4"
   },
   "devDependencies": {
+    "@fylgja/css-attr-polyfill": "^1.0.0",
     "@fylgja/stylelint-config": "^8.0.1",
     "lightningcss-cli": "^1.32.0",
     "prettier": "^3.9.4",
@@ -53,5 +54,9 @@
     "ignoreFiles": [
       "**/_experiments/**/*"
     ]
+  },
+  "allowScripts": {
+    "lightningcss-cli@1.33.0": true,
+    "@parcel/watcher@2.5.0": true
   }
 }

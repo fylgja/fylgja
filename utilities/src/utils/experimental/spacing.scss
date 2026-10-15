@@ -21,32 +21,32 @@ $utils: (
 	"px": "padding-inline",
 ) !default;
 
-$type: "type(auto | <length-percentage>)";
+$type: "type(<number>)";
 $prefix: "data";
 
 [#{$prefix}-size] {
-	block-size: attr(#{$prefix}-size #{$type}, 1rem);
-	inline-size: attr(#{$prefix}-size #{$type}, 1rem);
+	block-size: calc(var(--spacing) * attr(#{$prefix}-size #{$type}, 1));
+	inline-size: calc(var(--spacing) * attr(#{$prefix}-size #{$type}, 1));
 }
 
 [#{$prefix}-m] {
-	margin: attr(#{$prefix}-m #{$type});
+	margin: calc(var(--spacing) * attr(#{$prefix}-m #{$type}, 1));
 }
 
 [#{$prefix}-p] {
-	padding: attr(#{$prefix}-p #{$type});
+	padding: calc(var(--spacing) * attr(#{$prefix}-p #{$type}, 1));
 }
 
 @each $var, $prop in $utils {
 	[#{$prefix}-#{$var}] {
-		#{$prop}: attr(#{$prefix}-#{$var} #{$type}, 1rem);
+		#{$prop}: calc(var(--spacing) * attr(#{$prefix}-#{$var} #{$type}, 1));
 	}
 }
 
 @mixin mq-utils($name) {
 	@each $var, $prop in $utils {
 		[#{$prefix}-#{$name}-#{$var}] {
-			#{$prop}: attr(#{$prefix}-#{$name}-#{$var} #{$type}, 1rem);
+			#{$prop}: calc(var(--spacing) * attr(#{$prefix}-#{$name}-#{$var} #{$type}, 1));
 		}
 	}
 }

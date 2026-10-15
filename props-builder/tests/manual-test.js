@@ -9,6 +9,7 @@ propsBuilder(props, "tests/_fylgja.figma-tokens.sync.json", {
 	wrapper: "fylgja",
 });
 propsBuilder(props, "tests/_fylgja.style-dictionary-tokens.json");
+propsBuilder(props, "tests/_fylgja.resolver.json", { name: "Fylgja" });
 propsBuilder(props, "tests/_tokens.scss");
 propsBuilder(props, "tests/_tokens.css");
 propsBuilder(props, "tests/_jit-tokens.js", { parseAs: "css-jit" });
