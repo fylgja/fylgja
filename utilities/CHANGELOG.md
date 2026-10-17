@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- `scroll-mask` fade not running in minified builds, since Lightning CSS folded `animation-timeline` into the `animation` shorthand
+
 ## 2.1.4 - 2026-07-06
 
 ### Fixed
