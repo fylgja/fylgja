@@ -50,3 +50,21 @@
 :where(:root:has(dialog[open]:modal)) {
   overflow: hidden;
 }
+
+:where([popover]:not(dialog)) {
+  padding: var(--popover-padding, 0.5rem);
+  border: 0;
+  border-radius: var(--popover-radius, 0.5rem);
+  background-color: var(--popover-bg, color-mix(in oklab, var(--root-bg) 88%, white));
+  color: var(--popover-color, var(--root-fg));
+  box-shadow: var(--popover-shadow, 0 3px 5px hsla(0, 0%, 0%, 0.18));
+}
+
+@supports (position-area: block-end) {
+  :where([popover]:not(dialog, [popover=manual])) {
+    inset: auto;
+    margin: var(--popover-offset, 0.25rem);
+    position-area: var(--popover-position, block-end span-inline-end);
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+}

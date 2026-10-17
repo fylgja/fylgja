@@ -10,9 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `--family-emoji` custom property, so the emoji fallbacks can be swapped or reused on their own.
+- Defaults for popovers that are not a dialog, such as a menu or a tooltip. They get the dialog surface (background, color, radius, shadow) with a smaller padding and no browser border, customizable with `--popover-bg`, `--popover-color`, `--popover-radius`, `--popover-padding`, and `--popover-shadow`.
+- `auto` and `hint` popovers are anchored to their invoker in browsers with anchor positioning. Set where they open with `--popover-position` (any `position-area` value) and the gap with `--popover-offset`. `manual` popovers keep the centered default.
 
 ### Changed
 
+- An `auto` or `hint` popover opened from a script without a `source` now has no anchor and opens at the top start of the viewport, not centered. Open it with an invoker (`commandfor` or `popovertarget`) or `showPopover({ source })`.
 - System font family no longer relies on `system-ui`.
   It resolves to fonts that render CJK text incorrectly on Windows,
   such as Yu Gothic UI mangling Greek letters and Chinese punctuation.
