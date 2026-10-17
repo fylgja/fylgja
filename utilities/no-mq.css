@@ -327,20 +327,20 @@
   inset: 0;
 }
 
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-flip {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open), :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open)) > :is(.group, .stack)) > .toggle-flip {
   scale: -1;
 }
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-turn {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open), :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open)) > :is(.group, .stack)) > .toggle-turn {
   rotate: 90deg;
 }
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-rotate {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open), :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open)) > :is(.group, .stack)) > .toggle-rotate {
   rotate: 180deg;
 }
-:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]) > :is(.group, .stack)) > .toggle-hide {
+:where(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open), :is(details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open)) > :is(.group, .stack)) > .toggle-hide {
   visibility: hidden;
 }
 
-:where(details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending], :is(details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending]) > :is(.group, .stack)) > .toggle-show {
+:where(details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending], :is([commandfor], [popovertarget]):has(+ [popover]:not(:popover-open)), :is(details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending], :is([commandfor], [popovertarget]):has(+ [popover]:not(:popover-open))) > :is(.group, .stack)) > .toggle-show {
   visibility: hidden;
 }
 

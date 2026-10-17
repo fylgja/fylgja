@@ -1,8 +1,10 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
-$selectors: "details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending]" !default;
-$selectors-not: "details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending]" !default;
+// Popover invokers expose their state to assistive tech but never set aria-expanded,
+// so they match on the popover right after them instead
+$selectors: "details[open] > summary, [aria-expanded=true], [aria-selected=true], [aria-sort=ascending], :is([commandfor], [popovertarget]):has(+ :popover-open)" !default;
+$selectors-not: "details:not([open]) > summary, [aria-expanded=false], [aria-selected=false], [aria-sort=descending], :is([commandfor], [popovertarget]):has(+ [popover]:not(:popover-open))" !default;
 
 :where(#{$selectors}, :is(#{$selectors}) > :is(.group, .stack)) {
 	> .toggle-flip {
