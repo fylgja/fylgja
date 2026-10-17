@@ -1,3 +1,7 @@
+/*!
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
 /* Root selector */
 @import url("aspect-ratio.css");
 @import url("borders.css");
@@ -7,9 +11,9 @@
 @import url("sizes.css");
 @import url("z-layer.css");
 
-/* Media dark */
-@import url("shadows.dark.css");
-
-/* Wild card selector */
+/* Wild card selector, shadows.css also sets --shadow-color on :root */
 @import url("colors.css");
 @import url("shadows.css");
+
+/* Media dark, after shadows.css so it overrides the default --shadow-color */
+@import url("shadows.dark.css");
