@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `--family-emoji` custom property, so the emoji fallbacks can be swapped or reused on their own.
 
+### Fixed
+
+- The list reset for `[role="list"]` and lists inside a `nav` now also covers `menu`, which gets the same browser list styles as `ul`.
+
 ### Changed
 
 - System font family no longer relies on `system-ui`.

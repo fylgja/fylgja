@@ -99,9 +99,9 @@ $code-color: null !default;
 	font: inherit;
 }
 
-// Remove list styles on ul, ol elements with a list role or inside a nav element,
+// Remove list styles on ul, ol, menu elements with a list role or inside a nav element,
 // The list role presevers the list A11Y: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
-:where(:is(ul, ol)[role="list"], nav :is(ul, ol)) {
+:where(:is(ul, ol, menu)[role="list"], nav :is(ul, ol, menu)) {
 	--list-flow: 0;
 	list-style: none;
 	margin-block: 0;

@@ -186,7 +186,7 @@ summary) {
   font: inherit;
 }
 
-:where(:is(ul, ol)[role=list], nav :is(ul, ol)) {
+:where(:is(ul, ol, menu)[role=list], nav :is(ul, ol, menu)) {
   --list-flow: 0;
   list-style: none;
   margin-block: 0;
