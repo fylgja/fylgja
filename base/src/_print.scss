@@ -20,6 +20,12 @@
 		break-inside: avoid;
 	}
 
+	// Show the content of closed details, and undo a collapsed animation height
+	::details-content {
+		content-visibility: visible;
+		height: auto !important;
+	}
+
 	abbr[title]::after {
 		content: " (" attr(title) ")";
 	}
