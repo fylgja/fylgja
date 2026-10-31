@@ -5,10 +5,14 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "mobile": "vite --host"
+    "start": "npx vite",
+    "dev": "npx vite",
+    "mobile": "npx vite --host"
   },
   "devDependencies": {
     "vite": "^8.3.3"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }

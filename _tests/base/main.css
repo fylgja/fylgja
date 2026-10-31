@@ -1,7 +1,7 @@
 @import url("../../base");
 @import url("../../base/theme");
 @import url("../../components/form-extend");
-@import url("../../tokens/css");
+@import url("../../tokens/css/index.css");
 @import url("../../utilities");
 
 :root {
