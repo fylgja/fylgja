@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.3.0 - 2026-10-31
+
 ### Changed
 
 - The Fylgja skills moved from `ai-skill` to their own repository, [fylgja/skills](https://github.com/fylgja/skills). Reinstall them from there. The `fylgja-css` skill has been rewritten around clear rules, with corrected paths and variable names, and now has reference files for Base, Tokens, Utilities, and Components.
