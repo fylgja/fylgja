@@ -58,7 +58,7 @@ Then import what you need in your CSS:
 
 ```css
 @import "@fylgja/base";
-@import "@fylgja/tokens";
+@import "@fylgja/tokens/css";
 @import "@fylgja/utilities";
 ```
 
@@ -82,7 +82,7 @@ Run `npx fylgja@latest help` to see every file you can add. Or link the packages
 
 ## Documentation
 
-Read the full documentation, package guides and the UI gallery at [fylgja.dev](https://fylgja.dev/). Working with an AI assistant? The [Fylgja CSS skill](https://github.com/fylgja/fylgja/tree/main/ai-skill) teaches it how Fylgja is put together.
+Read the full documentation, package guides and the UI gallery at [fylgja.dev](https://fylgja.dev/). Working with an AI assistant? The [Fylgja CSS skill](https://github.com/fylgja/fylgja/tree/main/.agents/skills/fylgja-css) teaches it how Fylgja is put together.
 
 ## Contributing
 

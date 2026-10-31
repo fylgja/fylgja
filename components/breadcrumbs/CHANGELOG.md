@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.0 - 2026-10-31
+
+### Removed
+
+- Classless support via `nav[aria-label="breadcrumbs"]`, use the `.breadcrumbs` class instead
+
+### Changed
+
+- Selectors no longer use `:where()`, so the styles now have class level specificity
+- Published through GitHub Actions with npm provenance
+
 ## 2.0.1 - 2026-02-28
 
 ### Fixed

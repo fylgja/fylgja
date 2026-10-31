@@ -10,7 +10,7 @@ To use this skill locally in your project so your AI assistant always knows abou
 
 ```bash
 mkdir -p .claude/skills/fylgja-css
-curl -o .claude/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+curl -o .claude/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/.agents/skills/fylgja-css/SKILL.md
 ```
 
 ### Other AI Agents
@@ -20,7 +20,7 @@ Agents that read skills from their own dot folder follow the same steps, only th
 ```bash
 # Replace .agents with your AI agent folder, e.g. .cursor, .github or .codex
 mkdir -p .agents/skills/fylgja-css
-curl -o .agents/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/ai-skill/SKILL.md
+curl -o .agents/skills/fylgja-css/SKILL.md https://raw.githubusercontent.com/fylgja/fylgja/main/.agents/skills/fylgja-css/SKILL.md
 ```
 
 Some agents ship their own installer instead, so check their docs first if the folder layout differs.
@@ -35,4 +35,4 @@ Once installed, the skill will automatically activate when you ask the AI assist
 - Fylgja Base and class-less HTML
 - Fylgja Design Tokens
 - Fylgja Dynamic Utilities
-- Fylgja Components (e.g., Badge, Breadcrumbs, Card, Form Extend, Input Group, Toast)
+- Fylgja Components (e.g., Badge, Breadcrumbs, Callout, Card, Form Extend, Input Group, Toast)

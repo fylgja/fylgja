@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.0 - 2026-10-31
+
 ### Added
 
 - `--family-emoji` custom property, so the emoji fallbacks can be swapped or reused on their own.
 - Defaults for popovers that are not a dialog, such as a menu or a tooltip. They get the dialog surface (background, color, radius, shadow) with a smaller padding and no browser border, customizable with `--popover-bg`, `--popover-color`, `--popover-radius`, `--popover-padding`, and `--popover-shadow`.
 - `auto` and `hint` popovers are anchored to their invoker in browsers with anchor positioning. Set where they open with `--popover-position` (any `position-area` value) and the gap with `--popover-offset`. `manual` popovers keep the centered default.
+- Search input clear button scales with the font size and follows the text color. Customize it with `--search-clear-size`, `--search-clear-gap`, `--search-clear-color`, and `--search-clear-icon`.
+- Theme colors the `legend` of a `fieldset` holding an invalid field with `--form-error-color`.
 - Print styles show the content of a closed `details`, and undo a collapsed height from an open and close animation.
 
 ### Fixed

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.0.1 - 2026-10-31
+
+### Fixed
+
+- License link in the README
+
+### Changed
+
+- Published through GitHub Actions with npm provenance
+
 ## 2.0.0 - 2025-03-17
 
 The input group's architecture has undergone a complete refactoring,

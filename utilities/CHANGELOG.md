@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.0 - 2026-10-31
+
 ### Added
 
 - Toggle utilities (`toggle-rotate`, `toggle-flip`, `toggle-turn`, `toggle-hide`, `toggle-show`) now react to popover invokers (`commandfor` or `popovertarget`) when the popover sits right after the invoker, since those never set `aria-expanded`
