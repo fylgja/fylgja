@@ -40,9 +40,9 @@
     "@fylgja/css-attr-polyfill": "^1.0.0",
     "@fylgja/stylelint-config": "^8.0.1",
     "lightningcss-cli": "^1.32.0",
-    "prettier": "^3.9.4",
-    "sass": "^1.101.0",
-    "stylelint": "^17.14.0",
+    "prettier": "^3.9.10",
+    "sass": "^1.107.0",
+    "stylelint": "^17.16.0",
     "typescript": "^7.0.2"
   },
   "stylelint": {
