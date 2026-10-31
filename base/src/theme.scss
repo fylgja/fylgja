@@ -103,6 +103,10 @@ body {
 	outline: 1px solid var(--form-stroke);
 }
 
+:where(fieldset:has(:user-invalid):not(:focus-within)) > legend {
+	color: var(--form-error-color);
+}
+
 .field {
 	display: block;
 
