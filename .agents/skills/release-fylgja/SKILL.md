@@ -66,3 +66,5 @@ npm view @fylgja/card version dist.attestations.provenance.predicateType
 ```
 
 Each published package should show its new version and a provenance type.
+
+If a release renames or removes a class, variable, or import, update [fylgja/skills](https://github.com/fylgja/skills) too.
