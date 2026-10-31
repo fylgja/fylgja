@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A Design Tokens Resolver 2025.10 file (`tokens/fylgja.resolver.json`).
   Sizes using `calc()`, `clamp()` or `ch` are left out, since the specification can't express them.
 
+### Fixed
+
+- The full CSS bundle (`css/index.css`) defined colors and shadows on `:root`, so setting `--hue`, `--chroma`, or `--shadow-color` on an element had no effect. They now use `*`, like their granular files.
+- Dark mode shadows never applied, because `*` set the light `--shadow-color` on every element. `--shadow-color` now stays on `:root` in `css/shadows.css`, and the dark override comes after it in the bundle.
+- Restored the copyright banner in `css/index.css`.
+
 ## 2.2.1 - 2026-06-10
 
 ### Added

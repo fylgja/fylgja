@@ -1,6 +1,7 @@
 // Fylgja (https://fylgja.dev)
 // Licensed under MIT Open Source
 
+import fs from "node:fs";
 import { propsBuilder } from "../../props-builder/index.js";
 
 const COPYRIGHT = "/**\n * Fylgja (https://fylgja.dev)\n * Licensed under MIT Open Source\n */";
@@ -31,9 +32,17 @@ Object.entries({
 	cssBuilder(tokens, `css/${tokenName}.host.css`, { selector: ":host" });
 });
 
-Object.entries({ shadows, colors }).forEach(([tokenName, tokens]) => {
-	cssBuilder(tokens, `css/${tokenName}.css`, { selector: "*" });
-});
+cssBuilder(colors, "css/colors.css", { selector: "*" });
+
+// The scale sits on `*` so it reads each element's --shadow-color, the color stays on
+// :root, since `*` would override its dark mode value on every element.
+const { "shadow-color": shadowColor, ...shadowScale } = shadows;
+const toCss = (tokens, selector) =>
+	propsBuilder(tokens, "shadows.css", { writeToFile: false, selector });
+fs.writeFileSync(
+	"css/shadows.css",
+	`${COPYRIGHT}\n${toCss({ "shadow-color": shadowColor })}\n${toCss(shadowScale, "*")}`,
+);
 
 cssBuilder(darkModeShadows, "css/shadows.dark.css");
 cssBuilder(mq, "css/mq.css");
@@ -62,8 +71,6 @@ const props = {
 ["js", "cjs"].forEach((ext) => {
 	propsBuilder({ ...props, ...darkModeShadows }, `index.${ext}`);
 });
-
-cssBuilder({ ...props, ...darkModeShadows }, "css/index.css");
 
 // Support for jit-props, e.g. the open-props syntax
 propsBuilder(props, "jit-props.js", { parseAs: "css-jit" });
