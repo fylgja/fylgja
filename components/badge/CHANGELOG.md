@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Padding and font size use fixed `rem` values instead of `ch` and `em`
-- Uses the mono font family through `--family-mono`
+- Uses the mono font family through `--family-mono`, with a `monospace` fallback
 - Removed the `min-inline-size` and `max-inline-size` limits
 - Published through GitHub Actions with npm provenance
 

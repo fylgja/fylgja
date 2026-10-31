@@ -4,7 +4,7 @@
   border-radius: var(--badge-radius, 5rem);
   background: var(--badge-bg, var(--brand));
   color: var(--badge-color, var(--on-brand));
-  font: bolder 0.75rem/1 var(--family-mono);
+  font: bolder 0.75rem/1 var(--family-mono, monospace);
   font-variant-numeric: tabular-nums;
   text-align: center;
   text-transform: uppercase;
