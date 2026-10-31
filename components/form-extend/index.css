@@ -102,8 +102,12 @@
 @supports (timeline-scope: --foo) {
   :where(input[type=range]) {
     animation: range-observer linear reverse both;
-    animation-timeline: --range-thumb;
     timeline-scope: --range-thumb;
+  }
+}
+@supports (animation-timeline: --foo) {
+  :where(input[type=range]) {
+    animation-timeline: --range-thumb;
   }
 }
 :where(input[type=range])::-moz-range-progress {

@@ -16,6 +16,10 @@ $open-speed: 400ms !default;
 
 $backdrop: hsl(0 0% 0% / 30%) !default;
 
+$popover-radius: 0.5rem !default;
+$popover-padding: 0.5rem !default;
+$popover-offset: 0.25rem !default;
+
 // 1: Prevents weird overflow, if moving offscreen on Android with a `@starting-style`
 :where(dialog) {
 	--backdrop: #{$backdrop};
@@ -64,4 +68,24 @@ $backdrop: hsl(0 0% 0% / 30%) !default;
 // Add page scroll-lock by default to dialog element modals
 :where(:root:has(dialog[open]:modal)) {
 	overflow: hidden;
+}
+
+// Popovers that are not a dialog, such as a menu or a tooltip, share the dialog surface
+:where([popover]:not(dialog)) {
+	padding: var-if("popover-padding", $popover-padding);
+	border: 0;
+	border-radius: var-if("popover-radius", $popover-radius);
+	background-color: var-if("popover-bg", $bg);
+	color: var-if("popover-color", $color);
+	box-shadow: var(--popover-shadow, #{$shadow});
+}
+
+// Manual popovers keep the centered default, they are usually placed on purpose
+@supports (position-area: block-end) {
+	:where([popover]:not(dialog, [popover="manual"])) {
+		inset: auto;
+		margin: var-if("popover-offset", $popover-offset);
+		position-area: var(--popover-position, block-end span-inline-end);
+		position-try-fallbacks: flip-block, flip-inline;
+	}
 }

@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Toggle utilities (`toggle-rotate`, `toggle-flip`, `toggle-turn`, `toggle-hide`, `toggle-show`) now react to popover invokers (`commandfor` or `popovertarget`) when the popover sits right after the invoker, since those never set `aria-expanded`
 
+### Fixed
+
+- `scroll-mask` fade not running in minified builds, since Lightning CSS folded `animation-timeline` into the `animation` shorthand
+
 ## 2.1.4 - 2026-07-06
 
 ### Fixed
