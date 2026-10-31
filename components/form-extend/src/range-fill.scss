@@ -23,8 +23,12 @@
 
 	@supports (timeline-scope: --foo) {
 		animation: range-observer linear reverse both;
-		animation-timeline: --range-thumb;
 		timeline-scope: --range-thumb;
+	}
+
+	// Kept apart, Lightning CSS folds it into the animation shorthand (parcel-bundler/lightningcss#1283)
+	@supports (animation-timeline: --foo) {
+		animation-timeline: --range-thumb;
 	}
 
 	&::-moz-range-progress {
