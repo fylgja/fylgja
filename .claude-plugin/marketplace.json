@@ -13,6 +13,8 @@
       "strict": false,
       "skills": [
         "./.agents/skills/fylgja-css",
+        "./.agents/skills/create-fylgja-accordion",
+        "./.agents/skills/create-fylgja-menu",
         "./.agents/skills/create-fylgja-modal",
         "./.agents/skills/create-fylgja-offcanvas"
       ]
