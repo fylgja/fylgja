@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- The Fylgja CSS skill moved from `ai-skill` to `.agents/skills/fylgja-css`, and now has reference files for Base, Tokens, Utilities, and Components, so reinstall the whole folder. It has been rewritten around clear rules, with corrected paths and variable names.
+- Added the `create-fylgja-modal` and `create-fylgja-offcanvas` skills.
+- All packages are now published through GitHub Actions with npm provenance.
+
+### [@fylgja/base] 2.2.0
+
+Adds defaults for popovers that are not a dialog, a search input clear button that scales with the font size and follows the text color, and a print rule for the content of closed `details`. The theme now colors the `legend` of an invalid `fieldset`. For full details see the [@fylgja/base] changelog.
+
+### [@fylgja/tokens] 2.3.0
+
+Adds a Design Tokens Resolver 2025.10 file. Also fixes `--hue`, `--chroma`, and `--shadow-color` having no effect on an element when using the full CSS bundle, and dark mode shadows not applying. For full details see the [@fylgja/tokens] changelog.
+
+### [@fylgja/utilities] 2.2.0
+
+Toggle utilities now react to popover invokers. Also fixes the `scroll-mask` fade in minified builds and `sr-only` text wrapping. For full details see the [@fylgja/utilities] changelog.
+
 ## 2.2.2 - 2026-07-06
 
 ### [@fylgja/utilities] 2.1.4

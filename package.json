@@ -32,9 +32,9 @@
     "test": "npx stylelint **/*.scss"
   },
   "dependencies": {
-    "@fylgja/base": "^2.1.6",
-    "@fylgja/tokens": "^2.2.1",
-    "@fylgja/utilities": "^2.1.4"
+    "@fylgja/base": "^2.2.0",
+    "@fylgja/tokens": "^2.3.0",
+    "@fylgja/utilities": "^2.2.0"
   },
   "devDependencies": {
     "@fylgja/css-attr-polyfill": "^1.0.0",
