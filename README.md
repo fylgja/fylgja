@@ -82,7 +82,12 @@ Run `npx fylgja@latest help` to see every file you can add. Or link the packages
 
 ## Documentation
 
-Read the full documentation, package guides and the UI gallery at [fylgja.dev](https://fylgja.dev/). Working with an AI assistant? The [Fylgja CSS skill](https://github.com/fylgja/fylgja/tree/main/.agents/skills/fylgja-css) teaches it how Fylgja is put together.
+Read the full documentation, package guides and the UI gallery at [fylgja.dev](https://fylgja.dev/). Working with an AI assistant? The [Fylgja CSS skill](https://github.com/fylgja/fylgja/tree/main/.agents/skills/fylgja-css) teaches it how Fylgja is put together. In Claude Code, install it with:
+
+```text
+/plugin marketplace add fylgja/fylgja
+/plugin install fylgja-css@fylgja
+```
 
 ## Contributing
 

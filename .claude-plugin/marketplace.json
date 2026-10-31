@@ -1,0 +1,21 @@
+{
+  "name": "fylgja",
+  "description": "Skills for building UI with Fylgja CSS",
+  "owner": {
+    "name": "Fylgja",
+    "url": "https://fylgja.dev/"
+  },
+  "plugins": [
+    {
+      "name": "fylgja-css",
+      "description": "Build and style UI with the Fylgja CSS library, its classless base, design tokens, dynamic utilities, and native HTML components.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./.agents/skills/fylgja-css",
+        "./.agents/skills/create-fylgja-modal",
+        "./.agents/skills/create-fylgja-offcanvas"
+      ]
+    }
+  ]
+}
