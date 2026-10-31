@@ -1,83 +1,60 @@
-<div align="center">
-
-<div role="heading" aria-level="1">
+<h1 align="center">
   <a href="https://fylgja.dev/">
-    <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/logo.svg" alt="Fylgja: Your Modular CSS Toolkit" width="300" height="130">
+    <img src="https://raw.githubusercontent.com/fylgja/.github/main/assets/readme-banner.webp" alt="Fylgja CSS: your modular CSS companion, take only what you need. Library, UI and docs at fylgja.dev" width="1280" height="320">
   </a>
-</div>
+</h1>
 
-**Your CSS Companion**
+<div align="center">
 
 [![Fylgja](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffylgja%2F.github%2Frefs%2Fheads%2Fmain%2Fassets%2Fbadge%2Fv1.0.0.json)](https://fylgja.dev/)
 [![CI](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja/test.yml?color=%230969da&label=&branch=main&logo=github&labelColor=%232b1c2c)](https://github.com/fylgja/fylgja/actions)
 [![Version](https://img.shields.io/npm/v/fylgja?color=%230969da&label=&logo=npm&labelColor=%232b1c2c)](https://www.npmjs.com/package/fylgja)
-[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23ffb900&labelColor=%232b1c2c)](/LICENSE)
+[![License](https://img.shields.io/github/license/fylgja/fylgja?color=%23ffb900&labelColor=%232b1c2c)](https://github.com/fylgja/fylgja/blob/main/LICENSE)
 
 </div>
 
-Built with modularity in mind, Fylgja CSS allows you to pick exactly what you need and combine it seamlessly with other solutions. Whether you're starting a new project or integrating complex UIs, Fylgja provides a flexible, lightweight foundation to streamline your development.
+Fylgja CSS is a modular CSS library built around plain HTML. Pick exactly the parts you need, combine them with the tools you already use, and override anything without fighting specificity.
 
-## Why Choose Fylgja?
+## Why Fylgja?
 
-- **🧩 Modular Design:** Include only the components you need, keeping your bundle lean and efficient.
-- **⚡ Lightweight Core:** Start with a minimal footprint, optimized for performance.
-- **🎨 Customization First:** Override styles effortlessly with low specificity and extensive CSS variable support.
-- **🤝 Seamless Integration:** Works in harmony with frameworks like TailwindCSS, UnoCSS, and other tools.
+- **Modular:** every package works on its own. Use Fylgja Base only for its form styles, or add Tokens without anything else.
+- **Lightweight:** you only ship the CSS you import, and the classless preflight is just a few kilobytes minified.
+- **Easy to customize:** Fylgja Base keeps its element styles at zero specificity with `:where`, and CSS variables drive the rest, so your own styles win without a fight.
+- **Plays well with others:** works alongside Tailwind CSS, UnoCSS and your existing CSS.
 
-## Core Ecosystem
+## Packages
 
-Fylgja offers a suite of packages tailored to your development needs:
+This repository is a monorepo. Each package is published to npm on its own.
 
 ### [Fylgja Base](https://fylgja.dev/library/base/)
-A robust foundation that goes beyond basic resets.
-- Provides sensible default styles for common HTML elements using classless styling.
-- Ensures cross-browser consistency without unnecessary overrides, leveraging `:where` for zero specificity.
-- **Includes:** Improved browser defaults, form controls, and button styles out of the box.
+
+Classless defaults that make plain HTML look good: typography, forms, buttons and dialogs, without a single class. Element styles are wrapped in `:where`, so they don't outweigh your own.
 
 ### [Fylgja Tokens](https://fylgja.dev/library/tokens/)
-A centralized system for managing design values (colors, spacing, typography).
-- Available as SCSS or CSS variables for easy integration.
-- Use Fylgja's build tools to tailor tokens to your specific brand requirements.
+
+One design language as plain CSS variables, for colors, sizes, shadows, easing and more. Available as CSS or SCSS, and you can generate your own set with [props-builder](https://fylgja.dev/library/extensions/props-builder/).
 
 ### [Fylgja Utilities](https://fylgja.dev/library/utilities/)
-A collection of focused CSS utility classes.
-- Designed to complement—not replace—utility-first frameworks.
-- Seamlessly integrates with Fylgja Tokens and other variable-driven systems.
+
+A curated set of utilities you tune with a CSS variable instead of a new class. They complement utility first frameworks rather than replace them.
 
 ### [Fylgja Components](https://fylgja.dev/library/components/)
-Ready-to-use, single-class components for building complex UI elements.
-- Accelerates development with pre-styled, accessible components.
-- Available as individual packages (e.g., `@fylgja/card`, `@fylgja/dialog`).
 
-## Modularity in Action
+Small, single class components such as `@fylgja/card`, `@fylgja/callout` and `@fylgja/toast`, each installable on its own.
 
-Fylgja's modular architecture puts you in control. For instance, you can use **Fylgja Base** solely for its form styles without importing the entire library. This granular control ensures optimal performance and eliminates bloat.
+### [Fylgja UI](https://fylgja.dev/ui/)
 
-## Performance Optimized
+Not a package but a gallery: components you copy, not dependencies you install. Plain, accessible HTML that works with any framework.
 
-We prioritize performance. The minified **Fylgja Base** Preflight is only ~6kb, significantly smaller than many comparable libraries, ensuring your site loads fast.
+## Getting started
 
-## Effortless Customization
-
-Designed for flexibility, Fylgja uses low CSS specificity and CSS variables, enabling you to adapt styles to your unique design system easily. The `:where` selector in **Fylgja Base** ensures your custom styles always take precedence without fighting specificity wars.
-
-## Getting Started
-
-Install the full Fylgja suite via NPM:
+Install Base, Tokens and Utilities in one go with the `fylgja` meta package:
 
 ```bash
 npm install fylgja
 ```
 
-Or install individual packages as needed:
-
-```bash
-npm install @fylgja/base @fylgja/tokens
-```
-
-### Usage
-
-Import the packages in your CSS:
+Then import what you need in your CSS:
 
 ```css
 @import "@fylgja/base";
@@ -85,7 +62,17 @@ Import the packages in your CSS:
 @import "@fylgja/utilities";
 ```
 
-Or use via CDN:
+Prefer individual packages? Install only those, for example `npm install @fylgja/base`.
+
+### Without a build step
+
+Copy a file straight into your project with the CLI, no install needed:
+
+```bash
+npx fylgja@latest add base
+```
+
+Run `npx fylgja@latest help` to see every file you can add. Or link the packages from a CDN:
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/@fylgja/base/index.min.css" rel="stylesheet">
@@ -95,8 +82,12 @@ Or use via CDN:
 
 ## Documentation
 
-Explore the full documentation and component library at [fylgja.dev](https://fylgja.dev/).
+Read the full documentation, package guides and the UI gallery at [fylgja.dev](https://fylgja.dev/). Working with an AI assistant? The [Fylgja CSS skill](https://github.com/fylgja/fylgja/tree/main/ai-skill) teaches it how Fylgja is put together.
+
+## Contributing
+
+Issues and pull requests are welcome. See the [contributing guide](https://github.com/fylgja/fylgja/blob/main/CONTRIBUTING.md) to get set up, and the [security policy](https://github.com/fylgja/fylgja/blob/main/SECURITY.md) for reporting vulnerabilities.
 
 ## License
 
-This project is licensed under the [MIT License](/LICENSE).
+Fylgja CSS is licensed under the [MIT License](https://github.com/fylgja/fylgja/blob/main/LICENSE).

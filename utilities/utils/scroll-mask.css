@@ -37,9 +37,16 @@
   -webkit-mask-image: var(--mask);
   mask-image: var(--mask);
   animation: scroll-mask;
-  animation-timeline: scroll(self inline);
 }
 .scroll-mask.scroll-y {
   --mask-dir: 180deg;
-  animation-timeline: scroll(self block);
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-mask {
+    animation-timeline: scroll(self inline);
+  }
+  .scroll-mask.scroll-y {
+    animation-timeline: scroll(self block);
+  }
 }

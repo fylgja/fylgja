@@ -291,6 +291,10 @@ article, .entry-content, .prose {
   :is(tr, img, svg, pre, blockquote) {
     break-inside: avoid;
   }
+  ::details-content {
+    content-visibility: visible;
+    height: auto !important;
+  }
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
