@@ -4,6 +4,7 @@
   block-size: var(--_show, 1px);
   inline-size: var(--_show, 1px);
   overflow: var(--_show, hidden);
+  white-space: var(--_show, nowrap);
   clip-path: var(--_show, inset(50%));
 }
 

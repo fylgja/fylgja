@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - `scroll-mask` fade not running in minified builds, since Lightning CSS folded `animation-timeline` into the `animation` shorthand
+- `sr-only` text no longer wraps inside the 1px box, which could make screen readers read it without spaces between words
 
 ## 2.1.4 - 2026-07-06
 
