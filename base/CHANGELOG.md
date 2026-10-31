@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `auto` and `hint` popovers are anchored to their invoker in browsers with anchor positioning. Set where they open with `--popover-position` (any `position-area` value) and the gap with `--popover-offset`. `manual` popovers keep the centered default.
 - Print styles show the content of a closed `details`, and undo a collapsed height from an open and close animation.
 
+### Fixed
+
+- The list reset for `[role="list"]` and lists inside a `nav` now also covers `menu`, which gets the same browser list styles as `ul`.
+
 ### Changed
 
 - An `auto` or `hint` popover opened from a script without a `source` now has no anchor and opens at the top start of the viewport, not centered. Open it with an invoker (`commandfor` or `popovertarget`) or `showPopover({ source })`.
