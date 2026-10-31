@@ -57,6 +57,6 @@
   },
   "allowScripts": {
     "lightningcss-cli@1.33.0": true,
-    "@parcel/watcher@2.5.0": true
+    "@parcel/watcher@2.6.0": true
   }
 }
