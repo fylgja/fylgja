@@ -58,7 +58,7 @@ Then import what you need in your CSS:
 
 ```css
 @import "@fylgja/base";
-@import "@fylgja/tokens";
+@import "@fylgja/tokens/css";
 @import "@fylgja/utilities";
 ```
 
