@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- The Fylgja CSS skill moved from `ai-skill` to `.agents/skills/fylgja-css`, and now has reference files for Base, Tokens, Utilities, and Components, so reinstall the whole folder. It has been rewritten around clear rules, with corrected paths and variable names.
+- The Fylgja skills moved from `ai-skill` to their own repository, [fylgja/skills](https://github.com/fylgja/skills). Reinstall them from there. The `fylgja-css` skill has been rewritten around clear rules, with corrected paths and variable names, and now has reference files for Base, Tokens, Utilities, and Components.
 - Added the `create-fylgja-accordion`, `create-fylgja-menu`, `create-fylgja-modal`, and `create-fylgja-offcanvas` skills.
-- The skills can now be installed as a Claude Code plugin with `/plugin marketplace add fylgja/fylgja`.
+- The skills can now be installed as a Claude Code plugin with `/plugin marketplace add fylgja/skills`.
 - All packages are now published through GitHub Actions with npm provenance.
 
 ### [@fylgja/base] 2.2.0
