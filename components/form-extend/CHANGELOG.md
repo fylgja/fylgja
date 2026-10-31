@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.1.1 - 2026-10-31
+
 ### Fixed
 
 - CSS-only range fill not following the thumb in minified builds, since Lightning CSS folded `animation-timeline` into the `animation` shorthand
+
+### Changed
+
+- Updated the Safari support notes in the README
+- Published through GitHub Actions with npm provenance
 
 ## 1.1.0 - 2025-08-02
 

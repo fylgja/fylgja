@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.0 - 2026-10-31
+
+### Changed
+
+- Padding and font size use fixed `rem` values instead of `ch` and `em`
+- Uses the mono font family through `--family-mono`
+- Removed the `min-inline-size` and `max-inline-size` limits
+- Published through GitHub Actions with npm provenance
+
 ## 2.0.0 - 2025-12-27
 
 The badge component has been completely refactored for improved clarity and efficiency.
