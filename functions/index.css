@@ -1,0 +1,26 @@
+/**
+ * Fylgja (https://fylgja.dev)
+ * Licensed under MIT Open Source
+ */
+
+/* TODO Needs a shorter name */
+@function --conditional-radius(--radius, --edge-dist: 4px) {
+	result: clamp(
+		0px,
+		((100vw - var(--edge-dist)) - 100%) * 1e5,
+		var(--radius)
+	);
+}
+
+/* TODO test this with not just font sizes */
+@function --fluid-size(--min, --max, --scalar: 2vw) {
+	result: clamp(var(--min), var(--scalar) + var(--min), var(--max));
+}
+
+@function --negate(--value) {
+	result: calc(-1 * var(--value));
+}
+
+@function --alpha(--color, --alpha) {
+	result: oklch(from var(--color) l c h / var(--alpha));
+}
