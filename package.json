@@ -29,7 +29,8 @@
     "bin"
   ],
   "scripts": {
-    "test": "npx stylelint **/*.scss"
+    "test": "npx stylelint **/*.scss",
+    "test:skills": "node _tests/skills.js"
   },
   "dependencies": {
     "@fylgja/base": "^2.2.0",

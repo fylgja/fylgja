@@ -1,0 +1,20 @@
+name: Skills
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          repository: fylgja/skills
+          path: _skills
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm run test:skills -- _skills
