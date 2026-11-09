@@ -5,8 +5,8 @@
 	display: grid;
 
 	> *,
-	> ::before,
-	> ::after {
+	&::before,
+	&::after {
 		grid-area: 1/1;
 	}
 }
