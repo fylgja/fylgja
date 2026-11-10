@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.2.1 - 2026-11-10
+
 ### Fixed
 
 - `stack` now places its own `::before` and `::after` in the shared grid cell, instead of the pseudo elements of its children
